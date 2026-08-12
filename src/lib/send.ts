@@ -125,7 +125,7 @@ export async function sendEmail(req: SendRequest): Promise<OutboxEntry> {
     ({
       method: 'demo-outbox',
       status: 'queued',
-      detail: 'No email credentials configured — saved to the local outbox. Configure Clerk Google OAuth, SMTP_*, or RESEND_API_KEY to send for real.',
+      detail: 'No email credentials configured, so this was saved to the local outbox. Configure Clerk Google OAuth, SMTP_*, or RESEND_API_KEY to send for real.',
     } satisfies SendResult);
 
   const entry: OutboxEntry = {

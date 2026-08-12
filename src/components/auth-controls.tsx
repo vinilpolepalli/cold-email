@@ -8,7 +8,9 @@ export default function AuthControls() {
   if (isSignedIn) return <UserButton />;
   return (
     <SignInButton mode="modal">
-      <button className="rounded-md bg-indigo-600 px-3 py-1.5 text-white hover:bg-indigo-700">Sign in</button>
+      <button className="rounded-lg bg-orange-700 px-3 py-1.5 font-medium text-white transition-transform hover:bg-orange-800 active:scale-[0.98]">
+        Sign in
+      </button>
     </SignInButton>
   );
 }

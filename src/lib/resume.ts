@@ -93,7 +93,7 @@ export async function summarize(profile: Omit<UserProfile, 'id' | 'aiSummary' | 
           {
             role: 'system',
             content:
-              'You summarize a candidate resume into 2-3 sentences, third person, for use in a cold email to a professor. Focus on education, strongest research/technical experience, and interests. No preamble — reply with the summary only.',
+              'You summarize a candidate resume into 2-3 sentences, third person, for use in a cold email to a professor. Focus on education, strongest research/technical experience, and interests. Never use em-dashes; use periods or commas. No preamble; reply with the summary only.',
           },
           { role: 'user', content: profile.rawResumeText.slice(0, 8000) },
         ],

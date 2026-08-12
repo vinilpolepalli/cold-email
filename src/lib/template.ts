@@ -13,7 +13,7 @@ function firstItem(items: string[], fallback = ''): string {
 
 export function templateDraft(researcher: ResearcherProfile, user: UserProfile): GeneratedDraft {
   const areas = researcher.researchAreas.slice(0, 2).join(' and ') || 'your research';
-  const subject = `Prospective researcher interested in ${areas} — ${user.name}`;
+  const subject = `Prospective researcher interested in ${areas} (${user.name})`;
 
   const whoIAm = user.aiSummary || firstItem(user.education, 'I am an aspiring researcher.');
   const experience = firstItem(user.experience, firstItem(user.projects));
@@ -22,9 +22,9 @@ export function templateDraft(researcher: ResearcherProfile, user: UserProfile):
   const paragraphs = [
     `Dear Professor ${lastName(researcher.name)},`,
     `My name is ${user.name}. ${whoIAm}`,
-    `I came across your work in the ${researcher.department.split(',')[0]} at ${researcher.school}, and your research on ${areas} closely matches what I want to work on${interests ? ` — I have been exploring ${interests.toLowerCase()}` : ''}.${researcher.bio ? ` I was particularly interested to read about your group's focus: ${researcher.bio}` : ''}`,
+    `I came across your work in the ${researcher.department.split(',')[0]} at ${researcher.school}, and your research on ${areas} closely matches what I want to work on.${interests ? ` I have been exploring ${interests.toLowerCase()}.` : ''}${researcher.bio ? ` I was particularly interested to read about your group's focus: ${researcher.bio}` : ''}`,
     experience ? `Some relevant background: ${experience}.${user.skills.length ? ` I work primarily with ${user.skills.slice(0, 5).join(', ')}.` : ''}` : '',
-    `I would be grateful for the chance to briefly speak about opportunities to contribute to your group — even 15 minutes would mean a lot. My resume is summarized above, and I am happy to share more.`,
+    `I would be grateful for the chance to briefly speak about opportunities to contribute to your group. Even 15 minutes would mean a lot. My resume is summarized above, and I am happy to share more.`,
     `Thank you for your time,\n${user.name}${user.email ? `\n${user.email}` : ''}`,
   ].filter(Boolean);
 
@@ -39,7 +39,7 @@ export async function generateDraft(researcher: ResearcherProfile, user: UserPro
         {
           role: 'system',
           content:
-            'You write short, specific cold emails from a student to a professor about research opportunities. 120-180 words, warm but not sycophantic, no placeholder brackets, mention 1-2 concrete overlaps between the student background and the professor research. Reply ONLY with JSON: {"subject": string, "body": string}. The body must end with a signature using the student name.',
+            'You write short, specific cold emails from a student to a professor about research opportunities. 120-180 words, warm but not sycophantic, no placeholder brackets, mention 1-2 concrete overlaps between the student background and the professor research. Never use em-dashes or en-dashes anywhere; use periods, commas, or colons instead. Reply ONLY with JSON: {"subject": string, "body": string}. The body must end with a signature using the student name.',
         },
         {
           role: 'user',

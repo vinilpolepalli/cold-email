@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
   if (!userId) return NextResponse.json({ error: 'Sign in required' }, { status: 401 });
 
   const user = getUserProfile(userId);
-  if (!user) return NextResponse.json({ error: 'Complete onboarding first — upload your resume.' }, { status: 400 });
+  if (!user) return NextResponse.json({ error: 'Complete onboarding first: upload your resume.' }, { status: 400 });
 
   const { researcherId } = await req.json();
   const researcher = getProfile(researcherId);

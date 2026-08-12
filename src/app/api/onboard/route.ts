@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
   }
 
   if (rawText.trim().length < 40) {
-    return NextResponse.json({ error: 'Resume looks empty — upload a PDF or paste at least a few lines of text.' }, { status: 400 });
+    return NextResponse.json({ error: 'Resume looks empty. Upload a PDF or paste at least a few lines of text.' }, { status: 400 });
   }
 
   const parsed = parseResumeText(rawText);

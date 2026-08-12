@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
   const recipient = (typeof to === 'string' && to.includes('@') ? to : null) ?? researcher.email;
   if (!recipient) {
     return NextResponse.json(
-      { error: `${researcher.name} has no published email — check their website (${researcher.website ?? researcher.sourceUrl}) and enter one manually.` },
+      { error: `${researcher.name} has no published email. Check their website (${researcher.website ?? researcher.sourceUrl}) and enter one manually.` },
       { status: 400 }
     );
   }
