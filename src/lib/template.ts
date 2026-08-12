@@ -18,11 +18,15 @@ export function templateDraft(researcher: ResearcherProfile, user: UserProfile):
   const whoIAm = user.aiSummary || firstItem(user.education, 'I am an aspiring researcher.');
   const experience = firstItem(user.experience, firstItem(user.projects));
   const interests = user.researchInterests.slice(0, 2).join(' and ');
+  const dept = researcher.department.split(',')[0].trim();
+  const deptPhrase = /^(the\s+)?(department|school|institute|graduate school|center)\b/i.test(dept)
+    ? `the ${dept.replace(/^the\s+/i, '')}`
+    : dept;
 
   const paragraphs = [
     `Dear Professor ${lastName(researcher.name)},`,
     `My name is ${user.name}. ${whoIAm}`,
-    `I came across your work in the ${researcher.department.split(',')[0]} at ${researcher.school}, and your research on ${areas} closely matches what I want to work on.${interests ? ` I have been exploring ${interests.toLowerCase()}.` : ''}${researcher.bio ? ` I was particularly interested to read about your group's focus: ${researcher.bio}` : ''}`,
+    `I came across your work in ${deptPhrase} at ${researcher.school}, and your research on ${areas} closely matches what I want to work on.${interests ? ` I have been exploring ${interests.toLowerCase()}.` : ''}${researcher.bio ? ` I was particularly interested to read about your group's focus: ${researcher.bio}` : ''}`,
     experience ? `Some relevant background: ${experience}.${user.skills.length ? ` I work primarily with ${user.skills.slice(0, 5).join(', ')}.` : ''}` : '',
     `I would be grateful for the chance to briefly speak about opportunities to contribute to your group. Even 15 minutes would mean a lot. My resume is summarized above, and I am happy to share more.`,
     `Thank you for your time,\n${user.name}${user.email ? `\n${user.email}` : ''}`,
