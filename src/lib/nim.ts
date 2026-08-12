@@ -3,8 +3,10 @@
 // precedence over the server-wide NVIDIA_API_KEY env var. Callers fall back
 // to the deterministic template engine when neither is present.
 
+import { RECOMMENDED_MODEL } from './models';
+
 const NIM_BASE_URL = process.env.NIM_BASE_URL ?? 'https://integrate.api.nvidia.com/v1';
-const DEFAULT_MODEL = 'meta/llama-3.3-70b-instruct';
+const DEFAULT_MODEL = RECOMMENDED_MODEL;
 
 export interface NimAuth {
   apiKey?: string | null;
