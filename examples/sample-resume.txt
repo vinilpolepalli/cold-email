@@ -1,0 +1,23 @@
+Alex Rivera
+alex.rivera@example.com | (555) 201-8890 | github.com/alexrivera
+
+EDUCATION
+B.S. Computer Science, University of Washington, expected 2027 (GPA 3.9)
+Coursework: machine learning, deep learning, computational biology, algorithms
+
+RESEARCH EXPERIENCE
+Undergraduate Researcher, UW Genomics ML Lab (2025 - present) - trained transformer models on single-cell RNA-seq data for cell-type annotation
+Summer Intern, Allen Institute (2025) - built data pipelines for large-scale microscopy image segmentation
+
+PROJECTS
+scGPT-mini: reimplemented a small single-cell foundation model in PyTorch; reproduced key benchmarks
+Protein secondary-structure predictor using CNNs (course project, top of class)
+
+SKILLS
+Python, PyTorch, scikit-learn, pandas, R, Linux, git, AWS
+
+RESEARCH INTERESTS
+Foundation models for genomics, AI for scientific discovery, representation learning for biology
+
+PUBLICATIONS
+Rivera A. et al., "Benchmarking cell-type annotation models", undergraduate symposium poster (2026)
