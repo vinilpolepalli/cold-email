@@ -120,7 +120,115 @@ function splitSkillList(value: string): string[] {
     .filter((s) => s.length > 1 && s.length < 45);
 }
 
+/**
+ * pdfjs (under pdf-parse) expects browser globals that Node does not define.
+ * Serverless runtimes fail at module load with "DOMMatrix is not defined", so
+ * install minimal stand-ins first. Only text extraction is used here, so these
+ * need to carry affine transform math, not real rendering.
+ */
+function ensurePdfGlobals(): void {
+  const g = globalThis as unknown as Record<string, unknown>;
+
+  if (typeof g.DOMMatrix === 'undefined') {
+    class DOMMatrixPolyfill {
+      a = 1; b = 0; c = 0; d = 1; e = 0; f = 0;
+      constructor(init?: number[] | string) {
+        if (Array.isArray(init) && init.length >= 6) {
+          [this.a, this.b, this.c, this.d, this.e, this.f] = init;
+        }
+      }
+      multiplySelf(o: DOMMatrixPolyfill) {
+        const { a, b, c, d, e, f } = this;
+        this.a = a * o.a + c * o.b;
+        this.b = b * o.a + d * o.b;
+        this.c = a * o.c + c * o.d;
+        this.d = b * o.c + d * o.d;
+        this.e = a * o.e + c * o.f + e;
+        this.f = b * o.e + d * o.f + f;
+        return this;
+      }
+      multiply(o: DOMMatrixPolyfill) {
+        return new DOMMatrixPolyfill([this.a, this.b, this.c, this.d, this.e, this.f]).multiplySelf(o);
+      }
+      translateSelf(tx = 0, ty = 0) {
+        this.e += this.a * tx + this.c * ty;
+        this.f += this.b * tx + this.d * ty;
+        return this;
+      }
+      translate(tx = 0, ty = 0) {
+        return new DOMMatrixPolyfill([this.a, this.b, this.c, this.d, this.e, this.f]).translateSelf(tx, ty);
+      }
+      scaleSelf(sx = 1, sy = sx) {
+        this.a *= sx; this.b *= sx; this.c *= sy; this.d *= sy;
+        return this;
+      }
+      scale(sx = 1, sy = sx) {
+        return new DOMMatrixPolyfill([this.a, this.b, this.c, this.d, this.e, this.f]).scaleSelf(sx, sy);
+      }
+      invertSelf() {
+        const det = this.a * this.d - this.b * this.c;
+        if (!det) return this;
+        const { a, b, c, d, e, f } = this;
+        this.a = d / det;
+        this.b = -b / det;
+        this.c = -c / det;
+        this.d = a / det;
+        this.e = (c * f - d * e) / det;
+        this.f = (b * e - a * f) / det;
+        return this;
+      }
+      inverse() {
+        return new DOMMatrixPolyfill([this.a, this.b, this.c, this.d, this.e, this.f]).invertSelf();
+      }
+      transformPoint(p: { x?: number; y?: number } = {}) {
+        const x = p.x ?? 0;
+        const y = p.y ?? 0;
+        return { x: this.a * x + this.c * y + this.e, y: this.b * x + this.d * y + this.f, z: 0, w: 1 };
+      }
+      toString() {
+        return `matrix(${this.a}, ${this.b}, ${this.c}, ${this.d}, ${this.e}, ${this.f})`;
+      }
+    }
+    g.DOMMatrix = DOMMatrixPolyfill;
+  }
+
+  if (typeof g.Path2D === 'undefined') {
+    class Path2DPolyfill {
+      addPath() {}
+      moveTo() {}
+      lineTo() {}
+      bezierCurveTo() {}
+      quadraticCurveTo() {}
+      arc() {}
+      rect() {}
+      closePath() {}
+    }
+    g.Path2D = Path2DPolyfill;
+  }
+
+  if (typeof g.ImageData === 'undefined') {
+    class ImageDataPolyfill {
+      data: Uint8ClampedArray;
+      width: number;
+      height: number;
+      constructor(widthOrData: number | Uint8ClampedArray, heightOrWidth: number, maybeHeight?: number) {
+        if (typeof widthOrData === 'number') {
+          this.width = widthOrData;
+          this.height = heightOrWidth;
+          this.data = new Uint8ClampedArray(this.width * this.height * 4);
+        } else {
+          this.data = widthOrData;
+          this.width = heightOrWidth;
+          this.height = maybeHeight ?? Math.floor(widthOrData.length / 4 / heightOrWidth);
+        }
+      }
+    }
+    g.ImageData = ImageDataPolyfill;
+  }
+}
+
 export async function parseResumePdf(buffer: Buffer): Promise<string> {
+  ensurePdfGlobals();
   const { PDFParse } = await import('pdf-parse');
   const parser = new PDFParse({ data: new Uint8Array(buffer) });
   try {
