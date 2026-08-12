@@ -17,8 +17,8 @@ A cold-emailing site for students reaching out to professors. AI scraping agents
 | Framework | Next.js (App Router, TypeScript, Tailwind) |
 | Auth | [Clerk](https://clerk.com) with Google sign-in — **optional**; without keys the app runs in single-user demo mode |
 | Email sending | Tried in order: **Gmail API with the signed-in user's Google OAuth token (via Clerk)** → SMTP (`nodemailer`) → Resend → local demo outbox |
-| AI generation | **NVIDIA NIM** (OpenAI-compatible, `NVIDIA_API_KEY`) for resume summaries, email drafts, and scraper extraction; deterministic template/heuristic fallbacks when unset |
-| Storage | `data/profiles.json` (checked-in directory) + `.data/` JSON files (users, outbox, runtime-scraped profiles; gitignored) |
+| AI generation | **NVIDIA NIM, BYOK-first**: each user stores their own key on `/settings` (get one free at build.nvidia.com); `NVIDIA_API_KEY` is an optional server-wide fallback; deterministic template/heuristic engines run with no key at all |
+| Storage | `data/profiles.json` (checked-in directory) + a swappable KV layer for user data: **Supabase Postgres** when `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` are set (run `supabase/schema.sql` once), JSON files otherwise |
 
 ## Getting started
 

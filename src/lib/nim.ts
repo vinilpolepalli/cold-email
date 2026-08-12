@@ -1,26 +1,39 @@
 // NVIDIA NIM client — OpenAI-compatible chat completions at integrate.api.nvidia.com.
-// Used for resume summarization and email drafting when NVIDIA_API_KEY is set;
-// callers fall back to the deterministic template engine when it isn't.
+// BYOK: each user can store their own key on the Settings page; it takes
+// precedence over the server-wide NVIDIA_API_KEY env var. Callers fall back
+// to the deterministic template engine when neither is present.
 
 const NIM_BASE_URL = process.env.NIM_BASE_URL ?? 'https://integrate.api.nvidia.com/v1';
-const NIM_MODEL = process.env.NIM_MODEL ?? 'meta/llama-3.3-70b-instruct';
+const DEFAULT_MODEL = 'meta/llama-3.3-70b-instruct';
 
-export function nimAvailable(): boolean {
-  return Boolean(process.env.NVIDIA_API_KEY);
+export interface NimAuth {
+  apiKey?: string | null;
+  model?: string | null;
+}
+
+function resolveKey(auth?: NimAuth): string | undefined {
+  return auth?.apiKey || process.env.NVIDIA_API_KEY || undefined;
+}
+
+export function nimAvailable(auth?: NimAuth): boolean {
+  return Boolean(resolveKey(auth));
 }
 
 export async function nimChat(
   messages: { role: 'system' | 'user' | 'assistant'; content: string }[],
-  opts: { temperature?: number; maxTokens?: number } = {}
+  opts: { temperature?: number; maxTokens?: number } = {},
+  auth?: NimAuth
 ): Promise<string> {
+  const key = resolveKey(auth);
+  if (!key) throw new Error('No NIM API key available');
   const res = await fetch(`${NIM_BASE_URL}/chat/completions`, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${process.env.NVIDIA_API_KEY}`,
+      Authorization: `Bearer ${key}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: NIM_MODEL,
+      model: auth?.model || process.env.NIM_MODEL || DEFAULT_MODEL,
       messages,
       temperature: opts.temperature ?? 0.5,
       max_tokens: opts.maxTokens ?? 1024,

@@ -1,5 +1,5 @@
 import { GeneratedDraft, ResearcherProfile, UserProfile } from './types';
-import { extractJson, nimAvailable, nimChat } from './nim';
+import { NimAuth, extractJson, nimAvailable, nimChat } from './nim';
 
 function lastName(full: string): string {
   const cleaned = full.replace(/,.*$/, '').trim();
@@ -35,8 +35,12 @@ export function templateDraft(researcher: ResearcherProfile, user: UserProfile):
   return { subject, body: paragraphs.join('\n\n'), generator: 'template' };
 }
 
-export async function generateDraft(researcher: ResearcherProfile, user: UserProfile): Promise<GeneratedDraft> {
-  if (!nimAvailable()) return templateDraft(researcher, user);
+export async function generateDraft(
+  researcher: ResearcherProfile,
+  user: UserProfile,
+  nimAuth?: NimAuth
+): Promise<GeneratedDraft> {
+  if (!nimAvailable(nimAuth)) return templateDraft(researcher, user);
   try {
     const reply = await nimChat(
       [
@@ -69,7 +73,8 @@ export async function generateDraft(researcher: ResearcherProfile, user: UserPro
           }),
         },
       ],
-      { temperature: 0.6, maxTokens: 600 }
+      { temperature: 0.6, maxTokens: 600 },
+      nimAuth
     );
     const parsed = extractJson<{ subject: string; body: string }>(reply);
     if (parsed.subject && parsed.body) return { subject: parsed.subject, body: parsed.body, generator: 'nim' };

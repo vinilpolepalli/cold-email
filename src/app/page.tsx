@@ -20,8 +20,8 @@ const STEPS = [
   },
 ];
 
-export default function Home() {
-  const profiles = getAllProfiles();
+export default async function Home() {
+  const profiles = await getAllProfiles();
   const withEmail = profiles.filter((p) => p.email).length;
   const schools = [...new Set(profiles.map((p) => p.school))];
   const areas = new Set(profiles.flatMap((p) => p.researchAreas.map((a) => a.toLowerCase())));

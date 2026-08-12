@@ -8,6 +8,6 @@ export async function GET(req: NextRequest) {
   const q = searchParams.get('q') ?? undefined;
   const school = searchParams.get('school') ?? undefined;
   const area = searchParams.get('area') ?? undefined;
-  const profiles = q || school || area ? searchProfiles({ q, school, area }) : getAllProfiles();
+  const profiles = q || school || area ? await searchProfiles({ q, school, area }) : await getAllProfiles();
   return NextResponse.json({ count: profiles.length, profiles });
 }

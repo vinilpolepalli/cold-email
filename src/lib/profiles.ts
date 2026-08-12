@@ -20,14 +20,14 @@ function loadBase(): ResearcherProfile[] {
 }
 
 /** Profiles added at runtime through the in-app scraper (kept out of git). */
-function loadRuntime(): ResearcherProfile[] {
+function loadRuntime(): Promise<ResearcherProfile[]> {
   return readStore<ResearcherProfile[]>('scraped-profiles', []);
 }
 
-export function getAllProfiles(): ResearcherProfile[] {
+export async function getAllProfiles(): Promise<ResearcherProfile[]> {
   const seen = new Set<string>();
   const all: ResearcherProfile[] = [];
-  for (const p of [...loadRuntime(), ...loadBase()]) {
+  for (const p of [...(await loadRuntime()), ...loadBase()]) {
     if (seen.has(p.id)) continue;
     seen.add(p.id);
     all.push(p);
@@ -35,14 +35,14 @@ export function getAllProfiles(): ResearcherProfile[] {
   return all;
 }
 
-export function getProfile(id: string): ResearcherProfile | undefined {
-  return getAllProfiles().find((p) => p.id === id);
+export async function getProfile(id: string): Promise<ResearcherProfile | undefined> {
+  return (await getAllProfiles()).find((p) => p.id === id);
 }
 
-export function addScrapedProfiles(profiles: ResearcherProfile[]): number {
-  const runtime = loadRuntime();
+export async function addScrapedProfiles(profiles: ResearcherProfile[]): Promise<number> {
+  const runtime = await loadRuntime();
   const existingKeys = new Set(
-    getAllProfiles().map((p) => `${p.name.toLowerCase().replace(/[^a-z]/g, '')}|${p.school.toLowerCase()}`)
+    (await getAllProfiles()).map((p) => `${p.name.toLowerCase().replace(/[^a-z]/g, '')}|${p.school.toLowerCase()}`)
   );
   let added = 0;
   for (const p of profiles) {
@@ -52,13 +52,13 @@ export function addScrapedProfiles(profiles: ResearcherProfile[]): number {
     runtime.push(p);
     added++;
   }
-  writeStore('scraped-profiles', runtime);
+  await writeStore('scraped-profiles', runtime);
   return added;
 }
 
-export function searchProfiles(opts: { q?: string; school?: string; area?: string }): ResearcherProfile[] {
+export async function searchProfiles(opts: { q?: string; school?: string; area?: string }): Promise<ResearcherProfile[]> {
   const q = (opts.q ?? '').trim().toLowerCase();
-  return getAllProfiles().filter((p) => {
+  return (await getAllProfiles()).filter((p) => {
     if (opts.school && p.school !== opts.school) return false;
     if (opts.area && !p.researchAreas.some((a) => a.toLowerCase().includes(opts.area!.toLowerCase()))) return false;
     if (!q) return true;

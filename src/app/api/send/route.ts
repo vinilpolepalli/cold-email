@@ -9,11 +9,11 @@ export async function POST(req: NextRequest) {
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: 'Sign in required' }, { status: 401 });
 
-  const user = getUserProfile(userId);
+  const user = await getUserProfile(userId);
   if (!user) return NextResponse.json({ error: 'Complete onboarding first' }, { status: 400 });
 
   const { researcherId, subject, body, to } = await req.json();
-  const researcher = getProfile(researcherId);
+  const researcher = await getProfile(researcherId);
   if (!researcher) return NextResponse.json({ error: 'Unknown researcher' }, { status: 404 });
 
   const recipient = (typeof to === 'string' && to.includes('@') ? to : null) ?? researcher.email;
@@ -43,5 +43,5 @@ export async function POST(req: NextRequest) {
 export async function GET() {
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: 'Sign in required' }, { status: 401 });
-  return NextResponse.json({ outbox: getOutbox(userId) });
+  return NextResponse.json({ outbox: await getOutbox(userId) });
 }

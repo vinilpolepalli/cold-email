@@ -1,5 +1,5 @@
 import { UserProfile } from './types';
-import { nimAvailable, nimChat } from './nim';
+import { NimAuth, nimAvailable, nimChat } from './nim';
 
 const SECTION_HEADERS: Record<string, keyof Pick<UserProfile, 'education' | 'experience' | 'projects' | 'skills' | 'publications' | 'researchInterests'>> = {
   education: 'education',
@@ -85,8 +85,11 @@ export function parseResumeText(raw: string): Omit<UserProfile, 'id' | 'aiSummar
   };
 }
 
-export async function summarize(profile: Omit<UserProfile, 'id' | 'aiSummary' | 'updatedAt'>): Promise<{ summary: string; generator: 'nim' | 'template' }> {
-  if (nimAvailable()) {
+export async function summarize(
+  profile: Omit<UserProfile, 'id' | 'aiSummary' | 'updatedAt'>,
+  nimAuth?: NimAuth
+): Promise<{ summary: string; generator: 'nim' | 'template' }> {
+  if (nimAvailable(nimAuth)) {
     try {
       const reply = await nimChat(
         [
@@ -97,7 +100,8 @@ export async function summarize(profile: Omit<UserProfile, 'id' | 'aiSummary' | 
           },
           { role: 'user', content: profile.rawResumeText.slice(0, 8000) },
         ],
-        { temperature: 0.3, maxTokens: 200 }
+        { temperature: 0.3, maxTokens: 200 },
+        nimAuth
       );
       return { summary: reply.trim(), generator: 'nim' };
     } catch {

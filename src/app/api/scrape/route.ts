@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { addScrapedProfiles } from '@/lib/profiles';
 import { scrapeUniversity } from '@/lib/scraper';
-import { getCurrentUserId } from '@/lib/user';
+import { getCurrentUserId, getNimAuth } from '@/lib/user';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 300;
@@ -16,10 +16,10 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const result = await scrapeUniversity(url, { school, maxPages });
+    const result = await scrapeUniversity(url, { school, maxPages, nimAuth: await getNimAuth(userId) });
     let added = 0;
     if (save !== false && result.profiles.length > 0) {
-      added = addScrapedProfiles(result.profiles);
+      added = await addScrapedProfiles(result.profiles);
     }
     return NextResponse.json({ ...result, added });
   } catch (err) {

@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 export async function GET() {
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: 'Sign in required' }, { status: 401 });
-  return NextResponse.json({ profile: getUserProfile(userId) });
+  return NextResponse.json({ profile: await getUserProfile(userId) });
 }
 
 const EDITABLE: (keyof UserProfile)[] = [
@@ -17,7 +17,7 @@ const EDITABLE: (keyof UserProfile)[] = [
 export async function PUT(req: NextRequest) {
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: 'Sign in required' }, { status: 401 });
-  const existing = getUserProfile(userId);
+  const existing = await getUserProfile(userId);
   if (!existing) return NextResponse.json({ error: 'Onboard first' }, { status: 400 });
 
   const body = await req.json();
@@ -29,6 +29,6 @@ export async function PUT(req: NextRequest) {
     }
   }
   updated.updatedAt = new Date().toISOString();
-  saveUserProfile(updated);
+  await saveUserProfile(updated);
   return NextResponse.json({ profile: updated });
 }

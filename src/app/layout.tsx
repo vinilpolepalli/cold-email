@@ -18,6 +18,7 @@ const NAV = [
   { href: "/onboarding", label: "Onboarding" },
   { href: "/outbox", label: "Outbox" },
   { href: "/scrape", label: "Scraper" },
+  { href: "/settings", label: "Settings" },
 ];
 
 function Shell({ children, withClerk }: { children: React.ReactNode; withClerk: boolean }) {

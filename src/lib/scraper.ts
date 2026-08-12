@@ -1,5 +1,5 @@
 import { ResearcherProfile } from './types';
-import { extractJson, nimAvailable, nimChat } from './nim';
+import { NimAuth, extractJson, nimAvailable, nimChat } from './nim';
 import { newId } from './store';
 
 // Agentic university-directory scraper. Given a faculty listing URL it:
@@ -16,6 +16,7 @@ const PROFILE_LINK_HINTS = ['people', 'faculty', 'profile', 'person', 'directory
 export interface ScrapeOptions {
   school?: string;
   maxPages?: number;
+  nimAuth?: NimAuth;
 }
 
 async function fetchPage(url: string): Promise<string> {
@@ -133,7 +134,12 @@ function heuristicProfileFromPage(html: string, url: string, school: string, nam
   };
 }
 
-async function nimExtractProfiles(pageText: string, url: string, school: string): Promise<Omit<ResearcherProfile, 'id'>[]> {
+async function nimExtractProfiles(
+  pageText: string,
+  url: string,
+  school: string,
+  nimAuth?: NimAuth
+): Promise<Omit<ResearcherProfile, 'id'>[]> {
   const reply = await nimChat(
     [
       {
@@ -143,7 +149,8 @@ async function nimExtractProfiles(pageText: string, url: string, school: string)
       },
       { role: 'user', content: `School: ${school}\nSource: ${url}\n\nPAGE TEXT:\n${pageText.slice(0, 12000)}` },
     ],
-    { temperature: 0.1, maxTokens: 1500 }
+    { temperature: 0.1, maxTokens: 1500 },
+    nimAuth
   );
   const parsed = extractJson<{ profiles: Array<Partial<ResearcherProfile>> }>(reply);
   return (parsed.profiles ?? [])
@@ -164,7 +171,7 @@ async function nimExtractProfiles(pageText: string, url: string, school: string)
 export async function scrapeUniversity(listingUrl: string, opts: ScrapeOptions = {}): Promise<{ profiles: ResearcherProfile[]; pagesVisited: number; extractor: 'nim' | 'heuristic' }> {
   const school = opts.school?.trim() || new URL(listingUrl).hostname;
   const maxPages = Math.min(opts.maxPages ?? 12, 25);
-  const useNim = nimAvailable();
+  const useNim = nimAvailable(opts.nimAuth);
 
   const listingHtml = await fetchPage(listingUrl);
   const results = new Map<string, Omit<ResearcherProfile, 'id'>>();
@@ -184,7 +191,7 @@ export async function scrapeUniversity(listingUrl: string, opts: ScrapeOptions =
   // Pass 1: extract whatever the listing page itself contains.
   if (useNim) {
     try {
-      (await nimExtractProfiles(stripHtml(listingHtml), listingUrl, school)).forEach(record);
+      (await nimExtractProfiles(stripHtml(listingHtml), listingUrl, school, opts.nimAuth)).forEach(record);
     } catch {
       // NIM hiccup — heuristics below still run
     }
@@ -199,7 +206,7 @@ export async function scrapeUniversity(listingUrl: string, opts: ScrapeOptions =
       const heuristic = heuristicProfileFromPage(html, link.href, school, link.text);
       if (useNim) {
         try {
-          const fromNim = await nimExtractProfiles(stripHtml(html).slice(0, 8000), link.href, school);
+          const fromNim = await nimExtractProfiles(stripHtml(html).slice(0, 8000), link.href, school, opts.nimAuth);
           if (fromNim[0]) {
             record({ ...fromNim[0], website: link.href, email: fromNim[0].email ?? heuristic?.email ?? null });
             continue;

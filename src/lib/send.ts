@@ -141,12 +141,12 @@ export async function sendEmail(req: SendRequest): Promise<OutboxEntry> {
     detail: result.detail,
     createdAt: new Date().toISOString(),
   };
-  const outbox = readStore<OutboxEntry[]>('outbox', []);
+  const outbox = await readStore<OutboxEntry[]>('outbox', []);
   outbox.unshift(entry);
-  writeStore('outbox', outbox);
+  await writeStore('outbox', outbox);
   return entry;
 }
 
-export function getOutbox(userId: string): OutboxEntry[] {
-  return readStore<OutboxEntry[]>('outbox', []).filter((e) => e.userId === userId);
+export async function getOutbox(userId: string): Promise<OutboxEntry[]> {
+  return (await readStore<OutboxEntry[]>('outbox', [])).filter((e) => e.userId === userId);
 }

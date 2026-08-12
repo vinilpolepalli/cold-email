@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { parseResumePdf, parseResumeText, summarize } from '@/lib/resume';
-import { getCurrentUserId, saveUserProfile } from '@/lib/user';
+import { getCurrentUserId, getNimAuth, saveUserProfile } from '@/lib/user';
 import { UserProfile } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
@@ -36,13 +36,13 @@ export async function POST(req: NextRequest) {
   }
 
   const parsed = parseResumeText(rawText);
-  const { summary, generator } = await summarize(parsed);
+  const { summary, generator } = await summarize(parsed, await getNimAuth(userId));
   const profile: UserProfile = {
     ...parsed,
     id: userId,
     aiSummary: summary,
     updatedAt: new Date().toISOString(),
   };
-  saveUserProfile(profile);
+  await saveUserProfile(profile);
   return NextResponse.json({ profile, summaryGenerator: generator });
 }

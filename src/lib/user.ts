@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers';
 import { UserProfile } from './types';
 import { readStore, writeStore } from './store';
+import { NimAuth } from './nim';
 
 export function clerkConfigured(): boolean {
   return Boolean(process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY && process.env.CLERK_SECRET_KEY);
@@ -20,13 +21,39 @@ export async function getCurrentUserId(): Promise<string | null> {
   return jar.get('demo_user')?.value || 'demo-user';
 }
 
-export function getUserProfile(userId: string): UserProfile | null {
-  const users = readStore<Record<string, UserProfile>>('users', {});
+export async function getUserProfile(userId: string): Promise<UserProfile | null> {
+  const users = await readStore<Record<string, UserProfile>>('users', {});
   return users[userId] ?? null;
 }
 
-export function saveUserProfile(profile: UserProfile): void {
-  const users = readStore<Record<string, UserProfile>>('users', {});
+export async function saveUserProfile(profile: UserProfile): Promise<void> {
+  const users = await readStore<Record<string, UserProfile>>('users', {});
   users[profile.id] = profile;
-  writeStore('users', users);
+  await writeStore('users', users);
+}
+
+// ── Per-user settings (BYOK NVIDIA NIM key, model override) ─────────────────
+
+export interface UserSettings {
+  nimApiKey: string | null;
+  nimModel: string | null;
+}
+
+const EMPTY_SETTINGS: UserSettings = { nimApiKey: null, nimModel: null };
+
+export async function getUserSettings(userId: string): Promise<UserSettings> {
+  const all = await readStore<Record<string, UserSettings>>('settings', {});
+  return { ...EMPTY_SETTINGS, ...all[userId] };
+}
+
+export async function saveUserSettings(userId: string, settings: UserSettings): Promise<void> {
+  const all = await readStore<Record<string, UserSettings>>('settings', {});
+  all[userId] = settings;
+  await writeStore('settings', all);
+}
+
+/** NIM auth for a user: their own key first, server env key as fallback. */
+export async function getNimAuth(userId: string): Promise<NimAuth> {
+  const settings = await getUserSettings(userId);
+  return { apiKey: settings.nimApiKey, model: settings.nimModel };
 }
