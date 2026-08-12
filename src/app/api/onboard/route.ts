@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { parseResumePdf, parseResumeText, summarize } from '@/lib/resume';
+import { aiParseResume, parseResumePdf, parseResumeText, summarize } from '@/lib/resume';
 import { getCurrentUserId, getNimAuth, saveUserProfile } from '@/lib/user';
 import { UserProfile } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 120;
 
 export async function POST(req: NextRequest) {
   const userId = await getCurrentUserId();
@@ -32,11 +33,42 @@ export async function POST(req: NextRequest) {
   }
 
   if (rawText.trim().length < 40) {
-    return NextResponse.json({ error: 'Resume looks empty. Upload a PDF or paste at least a few lines of text.' }, { status: 400 });
+    return NextResponse.json(
+      { error: 'Resume looks empty. Upload a text-based PDF (not a scan) or paste the text directly.' },
+      { status: 400 }
+    );
   }
 
-  const parsed = parseResumeText(rawText);
-  const { summary, generator } = await summarize(parsed, await getNimAuth(userId));
+  const nimAuth = await getNimAuth(userId);
+
+  // Prefer LLM extraction (handles any resume layout); fall back to the
+  // deterministic parser when no key is set or the model misfires.
+  const ai = await aiParseResume(rawText, nimAuth);
+  let parser: 'nim' | 'heuristic';
+  let summaryGenerator: 'nim' | 'template';
+  let parsed;
+  let summary: string;
+
+  if (ai) {
+    parser = 'nim';
+    const { summary: aiSummary, ...fields } = ai;
+    parsed = fields;
+    if (aiSummary) {
+      summary = aiSummary;
+      summaryGenerator = 'nim';
+    } else {
+      const s = await summarize(fields, nimAuth);
+      summary = s.summary;
+      summaryGenerator = s.generator;
+    }
+  } else {
+    parser = 'heuristic';
+    parsed = parseResumeText(rawText);
+    const s = await summarize(parsed, nimAuth);
+    summary = s.summary;
+    summaryGenerator = s.generator;
+  }
+
   const profile: UserProfile = {
     ...parsed,
     id: userId,
@@ -44,5 +76,5 @@ export async function POST(req: NextRequest) {
     updatedAt: new Date().toISOString(),
   };
   await saveUserProfile(profile);
-  return NextResponse.json({ profile, summaryGenerator: generator });
+  return NextResponse.json({ profile, parser, summaryGenerator });
 }

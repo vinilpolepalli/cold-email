@@ -22,6 +22,7 @@ export interface UserProfile {
   skills: string[];
   publications: string[];
   researchInterests: string[];
+  awards: string[];
   aiSummary: string;
   rawResumeText: string;
   updatedAt: string;

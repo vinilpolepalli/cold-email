@@ -11,6 +11,7 @@ const LIST_FIELDS: { key: keyof UserProfile; label: string }[] = [
   { key: "skills", label: "Skills" },
   { key: "publications", label: "Publications" },
   { key: "researchInterests", label: "Research interests" },
+  { key: "awards", label: "Awards" },
 ];
 
 const fieldClass =
@@ -169,9 +170,9 @@ export default function OnboardingPage() {
             <label key={key} className="mt-4 block text-sm">
               <span className="font-medium">{label} (one per line)</span>
               <textarea
-                value={(profile[key] as string[]).join("\n")}
+                value={((profile[key] as string[]) ?? []).join("\n")}
                 onChange={(e) => setProfile({ ...profile, [key]: e.target.value.split("\n").filter(Boolean) })}
-                rows={Math.min(6, Math.max(2, (profile[key] as string[]).length + 1))}
+                rows={Math.min(6, Math.max(2, ((profile[key] as string[]) ?? []).length + 1))}
                 className={fieldClass}
               />
             </label>
