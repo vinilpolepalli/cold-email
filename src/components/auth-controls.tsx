@@ -1,6 +1,8 @@
 "use client";
 
-import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+// Sign-up is invite-only: the Clerk instance runs in allowlist mode, so the
+// header offers sign-in only and everyone else goes through the waitlist.
+import { Show, SignInButton, UserButton } from "@clerk/nextjs";
 
 export default function AuthControls() {
   return (
@@ -11,11 +13,6 @@ export default function AuthControls() {
             Sign in
           </button>
         </SignInButton>
-        <SignUpButton mode="modal">
-          <button className="rounded-lg bg-orange-700 px-3 py-1.5 font-medium text-white transition-transform hover:bg-orange-800 active:scale-[0.98]">
-            Sign up
-          </button>
-        </SignUpButton>
       </Show>
       <Show when="signed-in">
         <UserButton />

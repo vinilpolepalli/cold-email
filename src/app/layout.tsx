@@ -3,7 +3,7 @@ import Link from "next/link";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import "./globals.css";
-import { clerkConfigured } from "@/lib/user";
+import { clerkConfigured, getCurrentUserId } from "@/lib/user";
 import { ClerkProvider } from "@clerk/nextjs";
 import AuthControls from "@/components/auth-controls";
 
@@ -21,7 +21,15 @@ const NAV = [
   { href: "/settings", label: "Settings" },
 ];
 
-function Shell({ children, withClerk }: { children: React.ReactNode; withClerk: boolean }) {
+function Shell({
+  children,
+  withClerk,
+  showNav,
+}: {
+  children: React.ReactNode;
+  withClerk: boolean;
+  showNav: boolean;
+}) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
@@ -30,17 +38,19 @@ function Shell({ children, withClerk }: { children: React.ReactNode; withClerk: 
             <Link href="/" className="text-lg font-semibold tracking-tight">
               Lab<span className="text-orange-700 dark:text-orange-400">Reach</span>
             </Link>
-            <nav className="flex gap-5 text-sm text-zinc-600 dark:text-zinc-400">
-              {NAV.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="transition-colors hover:text-zinc-900 dark:hover:text-zinc-100"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
+            {showNav && (
+              <nav className="flex gap-5 text-sm text-zinc-600 dark:text-zinc-400">
+                {NAV.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="transition-colors hover:text-zinc-900 dark:hover:text-zinc-100"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            )}
             <div className="ml-auto text-sm">
               {withClerk ? (
                 <AuthControls />
@@ -67,14 +77,22 @@ function Shell({ children, withClerk }: { children: React.ReactNode; withClerk: 
   );
 }
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
   const withClerk = clerkConfigured();
+  // Signed-out visitors only ever see the waitlist, so the app nav is hidden.
+  const showNav = !withClerk || Boolean(await getCurrentUserId());
   if (withClerk) {
     return (
       <ClerkProvider>
-        <Shell withClerk>{children}</Shell>
+        <Shell withClerk showNav={showNav}>
+          {children}
+        </Shell>
       </ClerkProvider>
     );
   }
-  return <Shell withClerk={false}>{children}</Shell>;
+  return (
+    <Shell withClerk={false} showNav={showNav}>
+      {children}
+    </Shell>
+  );
 }

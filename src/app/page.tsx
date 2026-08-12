@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getAllProfiles } from "@/lib/profiles";
+import { clerkConfigured, getCurrentUserId } from "@/lib/user";
 import HeroPreview from "@/components/hero-preview";
+import WaitlistLanding from "@/components/waitlist-landing";
 import { Reveal } from "@/components/reveal";
 
 export const dynamic = "force-dynamic";
@@ -24,6 +26,19 @@ export default async function Home() {
   const profiles = await getAllProfiles();
   const withEmail = profiles.filter((p) => p.email).length;
   const schools = [...new Set(profiles.map((p) => p.school))];
+  const userId = await getCurrentUserId();
+
+  // The app is private. Signed-out visitors get the waitlist instead, which
+  // shows aggregate counts only, never a researcher's details.
+  if (!userId) {
+    return (
+      <WaitlistLanding
+        stats={{ researchers: profiles.length, withEmail, schools }}
+        withClerk={clerkConfigured()}
+      />
+    );
+  }
+
   const areas = new Set(profiles.flatMap((p) => p.researchAreas.map((a) => a.toLowerCase())));
 
   // Real component preview: pick three profiles from different schools.
@@ -43,7 +58,7 @@ export default async function Home() {
             Cold email the lab you actually want to join
           </h1>
           <p className="mt-5 max-w-md text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-            Real AI and CS faculty from four top schools. A draft built from your resume, sent from your own Gmail.
+            Real AI and CS faculty from five top schools. A draft built from your resume, sent from your own Gmail.
           </p>
           <div className="mt-8">
             <Link
@@ -101,8 +116,8 @@ export default async function Home() {
               A directory built by scraping agents, not a stale spreadsheet
             </h2>
             <p className="mt-4 max-w-prose leading-relaxed text-zinc-600 dark:text-zinc-400">
-              AI agents crawl public faculty directories at Stanford, Harvard, MIT, and Penn, including Wharton,
-              CS+bio, and AI+health labs. They keep names, titles, research areas, and a source link for every
+              AI agents crawl public faculty directories at Stanford, Harvard, MIT, Princeton, and Penn, including
+              Wharton, CS+bio, and AI+health labs. They keep names, titles, research areas, and a source link for every
               profile. An email is stored only when a university page publishes it. Point the built-in scraper at any
               other directory to grow the list.
             </p>
@@ -113,10 +128,7 @@ export default async function Home() {
               >
                 Browse all {profiles.length} researchers
               </Link>
-              <Link
-                href="/scrape"
-                className="font-medium text-orange-700 hover:underline dark:text-orange-400"
-              >
+              <Link href="/scrape" className="font-medium text-orange-700 hover:underline dark:text-orange-400">
                 Run the scraper yourself
               </Link>
             </div>
