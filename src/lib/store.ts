@@ -60,15 +60,21 @@ export async function readStore<T>(name: string, fallback: T): Promise<T> {
 
 export async function writeStore<T>(name: string, value: T): Promise<void> {
   if (supabaseConfigured()) {
-    const res = await sbFetch(TABLE, {
-      method: 'POST',
-      headers: { Prefer: 'resolution=merge-duplicates' },
-      body: JSON.stringify([{ key: name, value, updated_at: new Date().toISOString() }]),
-    });
-    if (!res.ok) {
-      throw new Error(`Supabase write failed (${res.status}): ${(await res.text()).slice(0, 200)}`);
+    try {
+      const res = await sbFetch(TABLE, {
+        method: 'POST',
+        headers: { Prefer: 'resolution=merge-duplicates' },
+        body: JSON.stringify([{ key: name, value, updated_at: new Date().toISOString() }]),
+      });
+      if (res.ok) return;
+      console.warn(
+        `Supabase write failed (${res.status}): ${(await res.text()).slice(0, 200)} — ` +
+          'falling back to file storage. If this is PGRST205, run supabase/schema.sql once.'
+      );
+    } catch (err) {
+      console.warn(`Supabase unreachable, falling back to file storage: ${String(err).slice(0, 150)}`);
     }
-    return;
+    // fall through: degraded (ephemeral on Vercel) but the app keeps working
   }
   fs.mkdirSync(DATA_DIR, { recursive: true });
   const tmp = fileFor(name) + '.tmp';
