@@ -36,7 +36,9 @@ function normalize(raw: string): string {
       .replace(/^[\s]*[•·▪◦‣*•●▪]\s*/gm, '• ')
       .replace(/^[\s]*[-–—]\s+(?=[A-Z0-9])/gm, '• ')
       // Resume text often carries em/en dashes; fold them to hyphens so they
-      // do not travel into generated emails.
+      // do not travel into generated emails. A dash tight against words on
+      // both sides is a compound ("protein-ligand"); a spaced one is a break.
+      .replace(/(\w)[—–](\w)/g, '$1-$2')
       .replace(/\s*[—–]\s*/g, ' - ')
       .replace(/[ \t]+/g, ' ')
   );

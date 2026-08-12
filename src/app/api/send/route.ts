@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getProfile } from '@/lib/profiles';
 import { getOutbox, sendEmail } from '@/lib/send';
+import { getResumeFile } from '@/lib/resume-file';
 import { getCurrentUserId, getUserProfile } from '@/lib/user';
 
 export const dynamic = 'force-dynamic';
@@ -12,7 +13,7 @@ export async function POST(req: NextRequest) {
   const user = await getUserProfile(userId);
   if (!user) return NextResponse.json({ error: 'Complete onboarding first' }, { status: 400 });
 
-  const { researcherId, subject, body, to } = await req.json();
+  const { researcherId, subject, body, to, attachResume } = await req.json();
   const researcher = await getProfile(researcherId);
   if (!researcher) return NextResponse.json({ error: 'Unknown researcher' }, { status: 404 });
 
@@ -27,6 +28,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Subject and body are required' }, { status: 400 });
   }
 
+  // Attach the uploaded resume unless the sender opted out.
+  const stored = attachResume === false ? null : await getResumeFile(userId);
+
   const entry = await sendEmail({
     userId,
     researcherId,
@@ -36,6 +40,9 @@ export async function POST(req: NextRequest) {
     replyTo: user.email || undefined,
     subject: subject.trim(),
     body,
+    attachment: stored
+      ? { fileName: stored.fileName, contentType: stored.contentType, base64: stored.base64 }
+      : null,
   });
   return NextResponse.json({ entry });
 }

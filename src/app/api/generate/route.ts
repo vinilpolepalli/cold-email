@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getProfile } from '@/lib/profiles';
 import { generateDraft } from '@/lib/template';
+import { getResumeFileInfo } from '@/lib/resume-file';
 import { getCurrentUserId, getNimAuth, getUserProfile } from '@/lib/user';
 
 export const dynamic = 'force-dynamic';
@@ -17,5 +18,5 @@ export async function POST(req: NextRequest) {
   if (!researcher) return NextResponse.json({ error: 'Unknown researcher' }, { status: 404 });
 
   const draft = await generateDraft(researcher, user, await getNimAuth(userId));
-  return NextResponse.json({ draft, researcher });
+  return NextResponse.json({ draft, researcher, resume: await getResumeFileInfo(userId) });
 }
