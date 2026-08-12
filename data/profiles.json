@@ -3986,6 +3986,843 @@
     "sourceUrl": "https://statistics.wharton.upenn.edu/profile/zren/"
   },
   {
+    "id": "res_abhishek-bhattacharjee_princeton",
+    "name": "Abhishek Bhattacharjee",
+    "title": "Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "abhattac@cs.princeton.edu",
+    "website": null,
+    "researchAreas": [
+      "computer architecture",
+      "systems",
+      "computational biology"
+    ],
+    "bio": null,
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/abhattac"
+  },
+  {
+    "id": "res_adam-finkelstein_princeton",
+    "name": "Adam Finkelstein",
+    "title": "Phillip Y. Goldman ’86 Professor in Computer Science",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "af@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~af",
+    "researchAreas": [
+      "computer graphics",
+      "vision and graphics",
+      "human-computer interaction"
+    ],
+    "bio": "Joined the Department of Computer Science in 1997 and became a full professor in 2001. He has held sabbatical positions at the Adobe Creative Technologies Lab and Pixar Animation Studios.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/af"
+  },
+  {
+    "id": "res_adji-bousso-dieng_princeton",
+    "name": "Adji Bousso Dieng",
+    "title": "Assistant Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "ad6725@cs.princeton.edu",
+    "website": null,
+    "researchAreas": [
+      "machine learning",
+      "generative models",
+      "ai for science",
+      "computational biology"
+    ],
+    "bio": "Leads Vertaix, a lab researching the intersection of artificial intelligence and the natural sciences. She is also a Research Scientist at Google AI and founder of the nonprofit The Africa I Know.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/ad6725"
+  },
+  {
+    "id": "res_aleksandra-korolova_princeton",
+    "name": "Aleksandra Korolova",
+    "title": "Assistant Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "korolova@cs.princeton.edu",
+    "website": null,
+    "researchAreas": [
+      "privacy",
+      "machine learning",
+      "algorithmic fairness",
+      "ai and society"
+    ],
+    "bio": "Studies societal impacts of algorithms and machine learning, developing algorithms and technologies with privacy and fairness protections. She holds a joint appointment with Princeton's School of Public and International Affairs.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/korolova"
+  },
+  {
+    "id": "res_amir-ali-ahmadi_princeton",
+    "name": "Amir Ali Ahmadi",
+    "title": "Professor of Operations Research and Financial Engineering",
+    "school": "Princeton",
+    "department": "Operations Research and Financial Engineering",
+    "email": "a_a_a@princeton.edu",
+    "website": "http://aaa.princeton.edu/",
+    "researchAreas": [
+      "optimization",
+      "semidefinite programming",
+      "control theory",
+      "algorithms & complexity"
+    ],
+    "bio": "Research interests: algebraic methods in optimization, semidefinite programming, polynomial optimization; optimization-based algorithms for robustness and stability analysis; computational complexity in numerical optimization.",
+    "sourceUrl": "https://engineering.princeton.edu/faculty/amir-ali-ahmadi"
+  },
+  {
+    "id": "res_anirudha-majumdar_princeton",
+    "name": "Anirudha Majumdar",
+    "title": "Associate Professor of Mechanical & Aerospace Engineering",
+    "school": "Princeton",
+    "department": "Mechanical and Aerospace Engineering",
+    "email": "ani.majumdar@princeton.edu",
+    "website": "https://irom-lab.princeton.edu/majumdar/",
+    "researchAreas": [
+      "robotics",
+      "safe autonomy",
+      "control",
+      "machine learning"
+    ],
+    "bio": "Research interests: controlling highly agile robotic systems such as unmanned aerial vehicles, with formal guarantees on their safety and performance.",
+    "sourceUrl": "https://engineering.princeton.edu/faculty/anirudha-majumdar"
+  },
+  {
+    "id": "res_arvind-narayanan_princeton",
+    "name": "Arvind Narayanan",
+    "title": "Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "arvindn@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~arvindn",
+    "researchAreas": [
+      "ai and society",
+      "machine learning fairness",
+      "privacy"
+    ],
+    "bio": "Director of the Center for Information Technology Policy, studying the societal impact of digital technologies, especially AI. His work was among the first to show how machine learning reflects cultural stereotypes.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/arvindn"
+  },
+  {
+    "id": "res_bartolomeo-stellato_princeton",
+    "name": "Bartolomeo Stellato",
+    "title": "Assistant Professor",
+    "school": "Princeton",
+    "department": "Operations Research and Financial Engineering",
+    "email": "bstellato@princeton.edu",
+    "website": "https://stellato.io/",
+    "researchAreas": [
+      "optimization",
+      "machine learning",
+      "optimal control"
+    ],
+    "bio": "His research lies at the interface of mathematical optimization, machine learning, and optimal control, focusing on data-driven computational tools for decision-making in dynamic and uncertain environments. He is associated faculty in Computer Science and Electrical and Computer Engineering.",
+    "sourceUrl": "https://stellato.io/"
+  },
+  {
+    "id": "res_ben-raphael_princeton",
+    "name": "Ben Raphael",
+    "title": "Graduate Class of 1991 Professor of Computer Science",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "braphael@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~braphael",
+    "researchAreas": [
+      "computational biology",
+      "cancer genomics",
+      "machine learning",
+      "algorithms"
+    ],
+    "bio": "His research focuses on the design and application of computational methods to analyze large-scale biological data, using combinatorial optimization, graph algorithms, machine learning, and statistical methods. Recent areas of emphasis include cancer evolution and structural variation in human and cancer genomes.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/braphael"
+  },
+  {
+    "id": "res_benjamin-eysenbach_princeton",
+    "name": "Benjamin Eysenbach",
+    "title": "Assistant Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "eysenbach@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~eysenbach",
+    "researchAreas": [
+      "reinforcement learning",
+      "machine learning"
+    ],
+    "bio": "Develops principled reinforcement learning algorithms that aim for state-of-the-art performance with greater simplicity, scalability, and robustness. Much of his work uses probabilistic inference to tackle long-horizon reasoning, robustness, and exploration.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/eysenbach"
+  },
+  {
+    "id": "res_boris-hanin_princeton",
+    "name": "Boris Hanin",
+    "title": "Associate Professor of Operations Research and Financial Engineering",
+    "school": "Princeton",
+    "department": "Operations Research and Financial Engineering",
+    "email": "bhanin@princeton.edu",
+    "website": "https://boris-hanin.github.io/",
+    "researchAreas": [
+      "deep learning theory",
+      "probability",
+      "spectral asymptotics"
+    ],
+    "bio": "Associate Professor at Princeton ORFE (and Associated Faculty at Princeton PACM) working on deep learning, probability, and spectral asymptotics.",
+    "sourceUrl": "https://engineering.princeton.edu/faculty/boris-hanin"
+  },
+  {
+    "id": "res_brenden-lake_princeton",
+    "name": "Brenden Lake",
+    "title": "Associate Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "bl8144@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~bl8144",
+    "researchAreas": [
+      "machine learning",
+      "cognitive science",
+      "few-shot learning",
+      "natural language processing"
+    ],
+    "bio": "Principal investigator of the lab for Human & Machine Intelligence. His lab uses advances in machine intelligence to better understand human intelligence, and insights from human intelligence to develop more capable machine intelligence.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/bl8144"
+  },
+  {
+    "id": "res_chi-jin_princeton",
+    "name": "Chi Jin",
+    "title": "Associate Professor of Electrical and Computer Engineering",
+    "school": "Princeton",
+    "department": "Electrical and Computer Engineering",
+    "email": "chij@princeton.edu",
+    "website": "https://sites.google.com/view/cjin/home",
+    "researchAreas": [
+      "reinforcement learning",
+      "llm reasoning",
+      "game theory",
+      "statistical learning theory",
+      "optimization"
+    ],
+    "bio": "His research centers on the decision-making aspects of machine learning, spanning reinforcement learning, multi-agent learning, game theory, statistical learning theory, and optimization. He is an associated faculty member of Computer Science and is currently on sabbatical leave at OpenAI.",
+    "sourceUrl": "https://sites.google.com/view/cjin/home"
+  },
+  {
+    "id": "res_christiane-fellbaum_princeton",
+    "name": "Christiane Fellbaum",
+    "title": "Lecturer with rank of Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "fellbaum@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~fellbaum",
+    "researchAreas": [
+      "natural language processing",
+      "computational linguistics",
+      "lexical semantics"
+    ],
+    "bio": "Co-developer and current director of the WordNet project, and co-founder and co-president of the Global WordNet Association.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/fellbaum"
+  },
+  {
+    "id": "res_christine-allen-blanchette_princeton",
+    "name": "Christine Allen-Blanchette",
+    "title": "Assistant Professor of Mechanical and Aerospace Engineering",
+    "school": "Princeton",
+    "department": "Mechanical and Aerospace Engineering",
+    "email": "ca15@princeton.edu",
+    "website": "https://mae.princeton.edu/people/faculty/allen-blanchette",
+    "researchAreas": [
+      "physics-guided ai",
+      "robotics",
+      "machine learning"
+    ],
+    "bio": "Research interests: physics-guided AI, and robotics.",
+    "sourceUrl": "https://engineering.princeton.edu/faculty/christine-allen-blanchette"
+  },
+  {
+    "id": "res_danqi-chen_princeton",
+    "name": "Danqi Chen",
+    "title": "Associate Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "danqic@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~danqic",
+    "researchAreas": [
+      "natural language processing",
+      "large language models",
+      "machine learning"
+    ],
+    "bio": "Co-leads the Princeton NLP Group and is an associate director of Princeton Language and Intelligence. Her research focuses on deep learning for natural language processing, with applications in question answering, information extraction, and conversational systems.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/danqic"
+  },
+  {
+    "id": "res_elad-hazan_princeton",
+    "name": "Elad Hazan",
+    "title": "Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "ehazan@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~ehazan",
+    "researchAreas": [
+      "machine learning",
+      "optimization",
+      "online control",
+      "ml theory"
+    ],
+    "bio": "His research focuses on the design and analysis of algorithms for basic problems in machine learning and optimization. His contributions include co-inventing AdaGrad, the first sublinear-time algorithms for convex optimization, and online nonstochastic control theory.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/ehazan"
+  },
+  {
+    "id": "res_ellen-zhong_princeton",
+    "name": "Ellen Zhong",
+    "title": "Assistant Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "zhonge@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~zhonge",
+    "researchAreas": [
+      "machine learning",
+      "computational biology",
+      "cryo-em",
+      "protein structure"
+    ],
+    "bio": "Leads the E.Z. Lab for Molecular Machine Learning, working on problems at the intersection of AI and biology. Her research develops methods for image analysis and 3D reconstruction that enable discoveries in protein structure, dynamics, and interactions.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/zhonge"
+  },
+  {
+    "id": "res_felix-heide_princeton",
+    "name": "Felix Heide",
+    "title": "Assistant Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "fheide@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~fheide",
+    "researchAreas": [
+      "computational imaging",
+      "computer vision",
+      "machine learning",
+      "robotics"
+    ],
+    "bio": "Leads the Princeton Computational Imaging Lab, researching imaging, vision, and display systems end-to-end. His work lies at the intersection of optics, machine learning, optimization, computer graphics, and computer vision.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/fheide"
+  },
+  {
+    "id": "res_h-vincent-poor_princeton",
+    "name": "H. Vincent Poor",
+    "title": "Michael Henry Strater University Professor of Electrical and Computer Engineering",
+    "school": "Princeton",
+    "department": "Electrical and Computer Engineering",
+    "email": "poor@princeton.edu",
+    "website": "http://ee.princeton.edu/people/faculty/h-vincent-poor",
+    "researchAreas": [
+      "information theory",
+      "signal processing",
+      "wireless networks",
+      "data science"
+    ],
+    "bio": "Research interests: information theory; signal processing; wireless networks; energy systems; social networks.",
+    "sourceUrl": "https://engineering.princeton.edu/faculty/h-vincent-poor"
+  },
+  {
+    "id": "res_jaime-fern-ndez-fisac_princeton",
+    "name": "Jaime Fernández Fisac",
+    "title": "Assistant Professor",
+    "school": "Princeton",
+    "department": "Electrical and Computer Engineering",
+    "email": "jfisac@princeton.edu",
+    "website": "https://saferobotics.princeton.edu/jaime",
+    "researchAreas": [
+      "safe robotics",
+      "reinforcement learning",
+      "control",
+      "human-ai interaction"
+    ],
+    "bio": "Leads Princeton's Safe Robotics Laboratory, combining control systems, artificial intelligence, and game theory to enable robots and AI to operate safely around people. He is a core faculty member of Princeton Robotics and associated faculty in Computer Science.",
+    "sourceUrl": "https://saferobotics.princeton.edu/jaime"
+  },
+  {
+    "id": "res_jason-klusowski_princeton",
+    "name": "Jason Klusowski",
+    "title": "Associate Professor of Operations Research and Financial Engineering",
+    "school": "Princeton",
+    "department": "Operations Research and Financial Engineering",
+    "email": "jason.klusowski@princeton.edu",
+    "website": "https://orfe.princeton.edu/people/jason-klusowski",
+    "researchAreas": [
+      "machine learning",
+      "statistics"
+    ],
+    "bio": "Research interests: machine learning, statistics.",
+    "sourceUrl": "https://engineering.princeton.edu/faculty/jason-klusowski"
+  },
+  {
+    "id": "res_jia-deng_princeton",
+    "name": "Jia Deng",
+    "title": "Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "jiadeng@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~jiadeng",
+    "researchAreas": [
+      "computer vision",
+      "machine learning",
+      "robotics"
+    ],
+    "bio": "Directs the Princeton Vision & Learning Lab. His research focuses on computer vision and machine learning.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/jiadeng"
+  },
+  {
+    "id": "res_jianqing-fan_princeton",
+    "name": "Jianqing Fan",
+    "title": "Frederick L. Moore, Class of 1918, Professor in Finance, Professor of Operations Research and Financial Engineering",
+    "school": "Princeton",
+    "department": "Operations Research and Financial Engineering",
+    "email": "jqfan@princeton.edu",
+    "website": "http://orfe.princeton.edu/~jqfan/",
+    "researchAreas": [
+      "high-dimensional statistics",
+      "machine learning",
+      "financial econometrics",
+      "computational biology"
+    ],
+    "bio": "Research interests: high-dimensional statistics, machine learning, financial econometrics, biostatistics, computational biology, distributed computing.",
+    "sourceUrl": "https://engineering.princeton.edu/faculty/jianqing-fan"
+  },
+  {
+    "id": "res_john-storey_princeton",
+    "name": "John Storey",
+    "title": "Associated Faculty",
+    "school": "Princeton",
+    "department": "Lewis-Sigler Institute for Integrative Genomics",
+    "email": null,
+    "website": "http://storeylab.org/",
+    "researchAreas": [
+      "statistical genomics",
+      "computational biology",
+      "quantitative genomics"
+    ],
+    "bio": "Leads the Storey Lab for Statistical Genomics, based in the Lewis-Sigler Institute for Integrative Genomics at Princeton. The lab works on population and quantitative genomics, statistical theory and methods, and open-source data science software.",
+    "sourceUrl": "http://storeylab.org/"
+  },
+  {
+    "id": "res_kai-li_princeton",
+    "name": "Kai Li",
+    "title": "Paul M. and Marcia R. Wythes Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "li@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~li",
+    "researchAreas": [
+      "ml systems",
+      "machine learning privacy",
+      "computational neuroscience",
+      "data auditing"
+    ],
+    "bio": "His research interests include ML for systems, privacy preservation for ML, data auditing, and computational neuroscience. In 2001 he co-founded Data Domain Inc., a deduplication storage company acquired by EMC in 2009.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/li"
+  },
+  {
+    "id": "res_karthik-narasimhan_princeton",
+    "name": "Karthik Narasimhan",
+    "title": "Associate Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "karthikn@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~karthikn",
+    "researchAreas": [
+      "natural language processing",
+      "reinforcement learning",
+      "autonomous agents"
+    ],
+    "bio": "His research focuses on problems at the intersection of language and decision making, building autonomous agents that learn from their own experience and existing human knowledge. He spent a year as a visiting research scientist at OpenAI, contributing to the GPT language model.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/karthikn"
+  },
+  {
+    "id": "res_lydia-liu_princeton",
+    "name": "Lydia Liu",
+    "title": "Assistant Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "ltliu@cs.princeton.edu",
+    "website": null,
+    "researchAreas": [
+      "machine learning",
+      "algorithmic decision-making",
+      "ml and society"
+    ],
+    "bio": "Her research examines the theoretical foundations of machine learning and algorithmic decision-making, with a focus on societal impact and welfare. Her work has been recognized with an ICML Best Paper Award and a Microsoft Ada Lovelace Fellowship.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/ltliu"
+  },
+  {
+    "id": "res_manoel-horta-ribeiro_princeton",
+    "name": "Manoel Horta Ribeiro",
+    "title": "Assistant Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "mh3586@cs.princeton.edu",
+    "website": null,
+    "researchAreas": [
+      "computational social science",
+      "machine learning",
+      "natural language processing"
+    ],
+    "bio": "Works at the intersection of computational social science and machine learning, and is affiliated with the Princeton Center for Information Technology Policy.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/mh3586"
+  },
+  {
+    "id": "res_mengdi-wang_princeton",
+    "name": "Mengdi Wang",
+    "title": "Professor",
+    "school": "Princeton",
+    "department": "Electrical Engineering / Center for Statistics and Machine Learning",
+    "email": null,
+    "website": "https://mwang.princeton.edu/",
+    "researchAreas": [
+      "reinforcement learning",
+      "ai for science",
+      "generative models",
+      "agentic ai"
+    ],
+    "bio": "Leads the Wang Lab at Princeton, developing AI systems that reason, experiment, and accelerate scientific and engineering discovery. Recent projects include TraceRL for diffusion language models and CRISPR-GPT for AI-guided gene editing.",
+    "sourceUrl": "https://mwang.princeton.edu/"
+  },
+  {
+    "id": "res_mona-singh_princeton",
+    "name": "Mona Singh",
+    "title": "Wang Family Professor in Computer Science",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "mona@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~mona",
+    "researchAreas": [
+      "computational biology",
+      "computational genomics"
+    ],
+    "bio": null,
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/mona"
+  },
+  {
+    "id": "res_niraj-jha_princeton",
+    "name": "Niraj Jha",
+    "title": "Professor of Electrical and Computer Engineering",
+    "school": "Princeton",
+    "department": "Electrical and Computer Engineering",
+    "email": "jha@princeton.edu",
+    "website": "http://ee.princeton.edu/people/faculty/niraj-jha",
+    "researchAreas": [
+      "machine learning",
+      "internet of things",
+      "embedded computing",
+      "cybersecurity"
+    ],
+    "bio": "Research interests: machine learning; Internet of Things; embedded computing; cybersecurity; computer architecture; computer-aided design of integrated circuits and systems.",
+    "sourceUrl": "https://engineering.princeton.edu/faculty/niraj-jha"
+  },
+  {
+    "id": "res_olga-russakovsky_princeton",
+    "name": "Olga Russakovsky",
+    "title": "Associate Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "olgarus@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~olgarus",
+    "researchAreas": [
+      "computer vision",
+      "machine learning",
+      "fairness",
+      "human-computer interaction"
+    ],
+    "bio": "Her research is in computer vision, closely integrated with machine learning, human-computer interaction, and fairness, accountability and transparency. She has been awarded the PAMI Young Researcher Award and the NSF CAREER award.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/olgarus"
+  },
+  {
+    "id": "res_olga-troyanskaya_princeton",
+    "name": "Olga Troyanskaya",
+    "title": "Maduraperuma/Khot Professor of Computer Science",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "ogt@cs.princeton.edu",
+    "website": null,
+    "researchAreas": [
+      "computational biology",
+      "deep learning",
+      "genomics",
+      "precision health"
+    ],
+    "bio": "Professor at the Lewis-Sigler Institute for Integrative Genomics and the Department of Computer Science, and director of Princeton Precision Health. She is also deputy director of Genomics at the Flatiron Institute's Center for Computational Biology.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/ogt"
+  },
+  {
+    "id": "res_parastoo-abtahi_princeton",
+    "name": "Parastoo Abtahi",
+    "title": "Assistant Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "abtahi@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~abtahi",
+    "researchAreas": [
+      "human-computer interaction",
+      "augmented reality",
+      "robotics"
+    ],
+    "bio": "Her research in human-computer interaction focuses on augmented reality and spatial computing. She leads Princeton's Situated Interactions Lab as part of the Princeton HCI Group.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/abtahi"
+  },
+  {
+    "id": "res_peter-henderson_princeton",
+    "name": "Peter Henderson",
+    "title": "Assistant Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "ph4162@cs.princeton.edu",
+    "website": null,
+    "researchAreas": [
+      "machine learning",
+      "ai policy",
+      "ai safety",
+      "natural language processing"
+    ],
+    "bio": "Holds appointments in Computer Science and the School of Public and International Affairs. His research focuses on aligning machine learning, law, and policy for responsible real-world deployments, including AI safety and reasoning in foundation models.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/ph4162"
+  },
+  {
+    "id": "res_prateek-mittal_princeton",
+    "name": "Prateek Mittal",
+    "title": "Professor of Electrical and Computer Engineering",
+    "school": "Princeton",
+    "department": "Electrical and Computer Engineering",
+    "email": "pmittal@princeton.edu",
+    "website": "http://ee.princeton.edu/people/faculty/prateek-mittal",
+    "researchAreas": [
+      "security & privacy",
+      "large-scale machine learning",
+      "trustworthy systems",
+      "networks"
+    ],
+    "bio": "Research interests: secure and privacy-preserving communication systems, including privacy-enhancing technologies, trustworthy social systems, and Internet/network security. Research draws on techniques from distributed systems, large-scale machine learning, and network science.",
+    "sourceUrl": "https://engineering.princeton.edu/faculty/prateek-mittal"
+  },
+  {
+    "id": "res_radhika-nagpal_princeton",
+    "name": "Radhika Nagpal",
+    "title": "Norman R. Augustine ’57 *59 Professor in Engineering",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "rn1627@cs.princeton.edu",
+    "website": "https://www.radhikanagpal.org/",
+    "researchAreas": [
+      "robotics",
+      "swarm robotics",
+      "collective intelligence"
+    ],
+    "bio": "Professor in Robotics at Princeton, joint between the departments of Mechanical and Aerospace Engineering and Computer Science. She was previously the Fred Kavli Professor of Computer Science at Harvard and a founding faculty member of the Harvard Wyss Institute for Biologically Inspired Engineering.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/rn1627"
+  },
+  {
+    "id": "res_ruth-fong_princeton",
+    "name": "Ruth Fong",
+    "title": "Lecturer",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "ruthfong@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~ruthfong",
+    "researchAreas": [
+      "computer vision",
+      "explainable ai",
+      "machine learning"
+    ],
+    "bio": "Teaching faculty member whose research interests include computer vision, machine learning, deep learning, and explainable AI. She develops techniques for understanding AI models after training.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/ruthfong"
+  },
+  {
+    "id": "res_ryan-adams_princeton",
+    "name": "Ryan Adams",
+    "title": "Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "rpa@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~rpa",
+    "researchAreas": [
+      "machine learning",
+      "probabilistic methods",
+      "bayesian inference",
+      "ai for science"
+    ],
+    "bio": "Works on machine learning, artificial intelligence, and computational statistics, with applications across science and engineering, often on probabilistic methods and approximate Bayesian inference. He is Associate Chair of the Computer Science Department and co-director of the AI2 Initiative.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/rpa"
+  },
+  {
+    "id": "res_sanjeev-arora_princeton",
+    "name": "Sanjeev Arora",
+    "title": "Charles C. Fitzmorris Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "arora@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~arora",
+    "researchAreas": [
+      "machine learning",
+      "deep learning theory",
+      "natural language processing",
+      "theory"
+    ],
+    "bio": "Founding director of Princeton Language and Intelligence. Winner of the Fulkerson Prize, the ACM Prize in Computing, and the Gödel Prize (twice).",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/arora"
+  },
+  {
+    "id": "res_sanjeev-kulkarni_princeton",
+    "name": "Sanjeev Kulkarni",
+    "title": "William R. Kenan, Jr., Professor of Electrical and Computer Engineering and Operations Research and Financial Engineering",
+    "school": "Princeton",
+    "department": "Electrical and Computer Engineering",
+    "email": "kulkarni@princeton.edu",
+    "website": "http://ee.princeton.edu/people/faculty/sanjeev-r-kulkarni",
+    "researchAreas": [
+      "machine learning",
+      "statistical pattern recognition",
+      "information theory",
+      "nonparametric statistics"
+    ],
+    "bio": "Research interests: statistical pattern recognition, machine learning; applied probability, nonparametric statistics; information theory, communications; signal, image, and video processing.",
+    "sourceUrl": "https://engineering.princeton.edu/faculty/sanjeev-kulkarni"
+  },
+  {
+    "id": "res_sebastian-seung_princeton",
+    "name": "Sebastian Seung",
+    "title": "Professor of Computer Science and Princeton Neurosciences Institute",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "sseung@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~sseung",
+    "researchAreas": [
+      "computational neuroscience",
+      "connectomics",
+      "machine learning"
+    ],
+    "bio": "Helped pioneer the field of connectomics, developing machine learning and social computing technologies for reconstructing neural circuits from high-resolution brain images. He joined the Princeton faculty in 2014 after several years as a professor at MIT.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/sseung"
+  },
+  {
+    "id": "res_sneha-goenka_princeton",
+    "name": "Sneha Goenka",
+    "title": "Assistant Professor",
+    "school": "Princeton",
+    "department": "Electrical and Computer Engineering",
+    "email": null,
+    "website": "https://snehagoenka.com/",
+    "researchAreas": [
+      "computer architecture",
+      "computational genomics",
+      "hardware-software systems"
+    ],
+    "bio": "Her research spans computer systems architecture and computational genomics, developing systems for accelerated and more efficient genomic pipelines for clinical and research applications. She led the computational team for the world's fastest genome diagnosis technique and is associated faculty in Computer Science.",
+    "sourceUrl": "https://snehagoenka.com/"
+  },
+  {
+    "id": "res_szymon-rusinkiewicz_princeton",
+    "name": "Szymon Rusinkiewicz",
+    "title": "David M. Siegel ’83 Professor of Computer Science, Department Chair",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "smr@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~smr",
+    "researchAreas": [
+      "computer graphics",
+      "computer vision",
+      "robotics",
+      "3d reconstruction"
+    ],
+    "bio": "His work focuses on the interface between computation and the visual and tangible world: acquisition, representation, analysis, and fabrication of 3D shape, motion, and surface appearance. He investigates learning for low-level image and shape analysis as well as robotic localization and planning.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/smr"
+  },
+  {
+    "id": "res_tom-griffiths_princeton",
+    "name": "Tom Griffiths",
+    "title": "Henry R. Luce Professor of Information Technology, Consciousness and Culture",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "tomg@cs.princeton.edu",
+    "website": null,
+    "researchAreas": [
+      "computational cognitive science",
+      "machine learning",
+      "artificial intelligence"
+    ],
+    "bio": "Directs the Computational Cognitive Science Lab and the Princeton Laboratory for Artificial Intelligence. His research focuses on the mathematical foundations of human cognition and their connections to AI.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/tomg"
+  },
+  {
+    "id": "res_tri-dao_princeton",
+    "name": "Tri Dao",
+    "title": "Assistant Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "td8762@cs.princeton.edu",
+    "website": "https://tridao.me",
+    "researchAreas": [
+      "machine learning",
+      "ml systems",
+      "efficient deep learning",
+      "sequence models"
+    ],
+    "bio": "Works at the intersection of machine learning and systems; his work includes FlashAttention and Mamba. He is also chief scientist of Together AI.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/td8762"
+  },
+  {
+    "id": "res_victoria-dean_princeton",
+    "name": "Victoria Dean",
+    "title": "Lecturer",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "vd2713@cs.princeton.edu",
+    "website": null,
+    "researchAreas": [
+      "machine learning",
+      "robotics"
+    ],
+    "bio": "Her research sits at the intersection of machine learning and robotics, investigating generalization, benchmarking, and democratization. She joined the Princeton faculty in 2025.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/vd2713"
+  },
+  {
+    "id": "res_vikram-ramaswamy_princeton",
+    "name": "Vikram Ramaswamy",
+    "title": "Lecturer",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "vr23@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~vr23",
+    "researchAreas": [
+      "machine learning",
+      "computer vision"
+    ],
+    "bio": null,
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/vr23"
+  },
+  {
+    "id": "res_yuri-pritykin_princeton",
+    "name": "Yuri Pritykin",
+    "title": "Assistant Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "pritykin@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~pritykin",
+    "researchAreas": [
+      "computational biology",
+      "machine learning",
+      "genomics"
+    ],
+    "bio": "Assistant professor of computer science and the Lewis-Sigler Institute for Integrative Genomics. He uses applied statistics, machine learning, and efficient algorithms to address fundamental problems in genomics.",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/pritykin"
+  },
+  {
+    "id": "res_zhuang-liu_princeton",
+    "name": "Zhuang Liu",
+    "title": "Assistant Professor",
+    "school": "Princeton",
+    "department": "Computer Science",
+    "email": "zhuangl@cs.princeton.edu",
+    "website": "https://www.cs.princeton.edu/~zhuangl",
+    "researchAreas": [
+      "deep learning",
+      "computer vision",
+      "machine learning"
+    ],
+    "bio": "His research areas are deep learning and computer vision, with an emphasis on empirical approaches to understanding how models work and behave. He was previously a Research Scientist at Meta AI Research (FAIR).",
+    "sourceUrl": "https://www.cs.princeton.edu/people/profile/zhuangl"
+  },
+  {
     "id": "res_aaron-newman_stanford",
     "name": "Aaron Newman",
     "title": "Associate Professor of Biomedical Data Science",
