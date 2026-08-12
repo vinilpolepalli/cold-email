@@ -50,6 +50,16 @@ npm run scrape -- http://localhost:4001/ "Averton Tech"
 
 The agent crawls the directory, extracts all three fictional professors (names, titles, research interests, emails), and adds them to `/researchers`.
 
+## Deploying to Vercel
+
+The app is Vercel-ready out of the box:
+
+1. Push this repo to GitHub (already done if you're reading this on GitHub).
+2. Go to [vercel.com/new](https://vercel.com/new), import the repo, keep the detected Next.js defaults, and deploy.
+3. Optionally add env vars from `.env.example` (Clerk keys, `NVIDIA_API_KEY`, SMTP/Resend) in Project Settings → Environment Variables. The app runs fully in demo mode with none set.
+
+Notes for serverless: runtime user data (profiles, outbox) falls back to the instance tmp dir on Vercel, so it's ephemeral per instance; the researcher directory itself is baked into the deployment from `data/profiles.json`. For persistent user accounts in production, set `DATA_DIR` to a mounted volume or replace `src/lib/store.ts` with a database.
+
 ## How the real directory was built
 
 A multi-agent scraping workflow fanned out over public faculty directories — Stanford CS/HAI/Biomedical Data Science, MIT EECS/CSAIL/Jameel Clinic, Harvard SEAS/Kempner/DBMI, Penn CIS and Wharton (OID/Statistics/AI at Wharton) — extracting name, title, department, research areas, a short bio, source URL, and the email **only if published** on an official page. A per-school verification pass re-fetched sampled source pages to confirm the data. Results live in `data/profiles.json`.
