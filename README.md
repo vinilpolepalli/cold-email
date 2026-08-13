@@ -2,6 +2,14 @@
 
 A cold-emailing site for students reaching out to professors. AI scraping agents build a directory of **real AI/CS faculty** (Stanford, Harvard, MIT, Penn/Wharton — including interdisciplinary CS+bio, CS+health, and AI+business labs). You onboard with your resume, review an AI-personalized draft, and send it with one click.
 
+## Access model
+
+The app is **private**. Signed-out visitors only ever see the waitlist landing page at `/`; every other page redirects there and every data API answers 401. Sign-up is invite-only via Clerk's allowlist, so joining the waitlist does not create an account.
+
+To let someone in: Clerk dashboard → Configure → Restrictions → Allowlist → add their email. They can then sign in with it.
+
+To read waitlist signups, set `WAITLIST_ADMIN_IDS` to your Clerk user id (comma-separated for several) and call `GET /api/waitlist`. Without it, nobody can read the list.
+
 ## Features
 
 - **Researcher directory** (`/researchers`) — real faculty profiles scraped from public university pages by AI agents, stored in `data/profiles.json`. Filter by school, research area, or published-email availability. Emails are included **only when a university page publishes them**.

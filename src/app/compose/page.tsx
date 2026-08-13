@@ -36,6 +36,8 @@ function ComposeInner() {
   const [body, setBody] = useState("");
   const [to, setTo] = useState("");
   const [generator, setGenerator] = useState("");
+  const [resume, setResume] = useState<{ fileName: string; size: number } | null>(null);
+  const [attachResume, setAttachResume] = useState(true);
   const [busy, setBusy] = useState(false);
   const [loadingDraft, setLoadingDraft] = useState(true);
   const [error, setError] = useState("");
@@ -59,6 +61,7 @@ function ComposeInner() {
       setBody(data.draft.body);
       setGenerator(data.draft.generator);
       setTo(data.researcher.email ?? "");
+      setResume(data.resume ?? null);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {
@@ -79,7 +82,7 @@ function ComposeInner() {
       const res = await fetch("/api/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ researcherId, subject, body, to }),
+        body: JSON.stringify({ researcherId, subject, body, to, attachResume }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Send failed");
@@ -152,6 +155,11 @@ function ComposeInner() {
             <p className="mx-auto mt-2 max-w-md text-sm text-zinc-600 dark:text-zinc-400">
               To {sent.to} via {sent.method}. {sent.detail}
             </p>
+            {sent.attachmentName && (
+              <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+                Attached: <span className="font-mono">{sent.attachmentName}</span>
+              </p>
+            )}
             <div className="mt-6 flex justify-center gap-5 text-sm font-medium">
               <Link href="/outbox" className="text-orange-700 hover:underline dark:text-orange-400">
                 View outbox
@@ -187,6 +195,27 @@ function ComposeInner() {
                 className={`${fieldClass} leading-relaxed`}
               />
             </label>
+            {resume ? (
+              <label className="mt-4 flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
+                <input
+                  type="checkbox"
+                  checked={attachResume}
+                  onChange={(e) => setAttachResume(e.target.checked)}
+                  className="accent-orange-700"
+                />
+                Attach{" "}
+                <span className="font-mono text-xs text-zinc-700 dark:text-zinc-300">{resume.fileName}</span>
+                <span className="text-xs text-zinc-400">({Math.round(resume.size / 1024)} KB)</span>
+              </label>
+            ) : (
+              <p className="mt-4 text-sm text-zinc-500 dark:text-zinc-400">
+                Upload a resume file on{" "}
+                <Link href="/onboarding" className="text-orange-700 hover:underline dark:text-orange-400">
+                  onboarding
+                </Link>{" "}
+                to attach it to your emails.
+              </p>
+            )}
             {error && <p className="mt-3 text-sm text-red-700 dark:text-red-400">{error}</p>}
             <div className="mt-5 flex gap-3">
               <button

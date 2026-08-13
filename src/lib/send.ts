@@ -3,6 +3,12 @@ import { OutboxEntry } from './types';
 import { newId, readStore, writeStore } from './store';
 import { clerkConfigured } from './user';
 
+export interface EmailAttachment {
+  fileName: string;
+  contentType: string;
+  base64: string;
+}
+
 export interface SendRequest {
   userId: string;
   researcherId: string;
@@ -12,6 +18,7 @@ export interface SendRequest {
   replyTo?: string;
   subject: string;
   body: string;
+  attachment?: EmailAttachment | null;
 }
 
 export interface SendResult {
@@ -20,16 +27,53 @@ export interface SendResult {
   detail: string | null;
 }
 
-function buildMime(opts: { from: string; to: string; subject: string; body: string; replyTo?: string }): string {
+/** Fold a base64 string to 76-char lines, as MIME requires. */
+function wrapBase64(b64: string): string {
+  return b64.replace(/(.{76})/g, '$1\r\n');
+}
+
+function buildMime(opts: {
+  from: string;
+  to: string;
+  subject: string;
+  body: string;
+  replyTo?: string;
+  attachment?: EmailAttachment | null;
+}): string {
   const headers = [
     `From: ${opts.from}`,
     `To: ${opts.to}`,
     opts.replyTo ? `Reply-To: ${opts.replyTo}` : null,
     `Subject: ${opts.subject}`,
     'MIME-Version: 1.0',
+  ].filter(Boolean) as string[];
+
+  if (!opts.attachment) {
+    headers.push('Content-Type: text/plain; charset="UTF-8"');
+    return `${headers.join('\r\n')}\r\n\r\n${opts.body}`;
+  }
+
+  const boundary = `labreach_${Math.random().toString(36).slice(2)}`;
+  headers.push(`Content-Type: multipart/mixed; boundary="${boundary}"`);
+  const { fileName, contentType, base64 } = opts.attachment;
+  return [
+    headers.join('\r\n'),
+    '',
+    `--${boundary}`,
     'Content-Type: text/plain; charset="UTF-8"',
-  ].filter(Boolean);
-  return `${headers.join('\r\n')}\r\n\r\n${opts.body}`;
+    '',
+    opts.body,
+    '',
+    `--${boundary}`,
+    `Content-Type: ${contentType}; name="${fileName}"`,
+    'Content-Transfer-Encoding: base64',
+    `Content-Disposition: attachment; filename="${fileName}"`,
+    '',
+    wrapBase64(base64),
+    '',
+    `--${boundary}--`,
+    '',
+  ].join('\r\n');
 }
 
 /**
@@ -47,7 +91,13 @@ async function sendViaClerkGmail(req: SendRequest): Promise<SendResult | null> {
     const accessToken = tokens.data?.[0]?.token;
     if (!accessToken) return null;
 
-    const mime = buildMime({ from: 'me', to: req.to, subject: req.subject, body: req.body });
+    const mime = buildMime({
+      from: 'me',
+      to: req.to,
+      subject: req.subject,
+      body: req.body,
+      attachment: req.attachment,
+    });
     const raw = Buffer.from(mime).toString('base64url');
     const res = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
       method: 'POST',
@@ -57,7 +107,11 @@ async function sendViaClerkGmail(req: SendRequest): Promise<SendResult | null> {
     if (!res.ok) {
       return { method: 'gmail-oauth', status: 'failed', detail: `Gmail API ${res.status}: ${(await res.text()).slice(0, 300)}` };
     }
-    return { method: 'gmail-oauth', status: 'sent', detail: 'Sent from your Gmail account' };
+    return {
+      method: 'gmail-oauth',
+      status: 'sent',
+      detail: `Sent from your Gmail account${req.attachment ? ` with ${req.attachment.fileName} attached` : ''}`,
+    };
   } catch {
     return null; // e.g. user didn't sign in with Google — fall through to next method
   }
@@ -79,8 +133,21 @@ async function sendViaSmtp(req: SendRequest): Promise<SendResult | null> {
       replyTo: req.replyTo,
       subject: req.subject,
       text: req.body,
+      attachments: req.attachment
+        ? [
+            {
+              filename: req.attachment.fileName,
+              content: Buffer.from(req.attachment.base64, 'base64'),
+              contentType: req.attachment.contentType,
+            },
+          ]
+        : undefined,
     });
-    return { method: 'smtp', status: 'sent', detail: `Sent via SMTP (${SMTP_HOST})` };
+    return {
+      method: 'smtp',
+      status: 'sent',
+      detail: `Sent via SMTP (${SMTP_HOST})${req.attachment ? ` with ${req.attachment.fileName} attached` : ''}`,
+    };
   } catch (err) {
     return { method: 'smtp', status: 'failed', detail: String(err).slice(0, 300) };
   }
@@ -99,12 +166,19 @@ async function sendViaResend(req: SendRequest): Promise<SendResult | null> {
         reply_to: req.replyTo,
         subject: req.subject,
         text: req.body,
+        attachments: req.attachment
+          ? [{ filename: req.attachment.fileName, content: req.attachment.base64 }]
+          : undefined,
       }),
     });
     if (!res.ok) {
       return { method: 'resend', status: 'failed', detail: `Resend ${res.status}: ${(await res.text()).slice(0, 300)}` };
     }
-    return { method: 'resend', status: 'sent', detail: 'Sent via Resend' };
+    return {
+      method: 'resend',
+      status: 'sent',
+      detail: `Sent via Resend${req.attachment ? ` with ${req.attachment.fileName} attached` : ''}`,
+    };
   } catch (err) {
     return { method: 'resend', status: 'failed', detail: String(err).slice(0, 300) };
   }
@@ -125,7 +199,9 @@ export async function sendEmail(req: SendRequest): Promise<OutboxEntry> {
     ({
       method: 'demo-outbox',
       status: 'queued',
-      detail: 'No email credentials configured, so this was saved to the local outbox. Configure Clerk Google OAuth, SMTP_*, or RESEND_API_KEY to send for real.',
+      detail: `No email credentials configured, so this was saved to the local outbox${
+        req.attachment ? ` (${req.attachment.fileName} would be attached)` : ''
+      }. Configure Clerk Google OAuth, SMTP_*, or RESEND_API_KEY to send for real.`,
     } satisfies SendResult);
 
   const entry: OutboxEntry = {
@@ -136,6 +212,7 @@ export async function sendEmail(req: SendRequest): Promise<OutboxEntry> {
     to: effectiveTo,
     subject,
     body: req.body,
+    attachmentName: req.attachment?.fileName ?? null,
     method: result.method,
     status: result.status,
     detail: result.detail,

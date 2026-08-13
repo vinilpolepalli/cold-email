@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { aiParseResume, parseResumePdf, parseResumeText, summarize } from '@/lib/resume';
 import { getCurrentUserId, getNimAuth, saveUserProfile } from '@/lib/user';
+import { saveResumeFile } from '@/lib/resume-file';
 import { UserProfile } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
@@ -21,6 +22,12 @@ export async function POST(req: NextRequest) {
         rawText = file.name.toLowerCase().endsWith('.pdf')
           ? await parseResumePdf(buffer)
           : buffer.toString('utf8');
+        // Keep the original file so it can be attached to outgoing emails.
+        await saveResumeFile(userId, {
+          fileName: file.name,
+          contentType: file.type || 'application/pdf',
+          buffer,
+        });
       } else {
         rawText = String(form.get('text') ?? '');
       }

@@ -83,6 +83,11 @@ export default function OutboxPage() {
             {open === e.id && (
               <div className="border-t border-zinc-100 p-4 dark:border-zinc-800">
                 {e.detail && <p className="mb-3 text-xs text-zinc-500 dark:text-zinc-400">{e.detail}</p>}
+                {e.attachmentName && (
+                  <p className="mb-3 text-xs text-zinc-500 dark:text-zinc-400">
+                    Attachment: <span className="font-mono">{e.attachmentName}</span>
+                  </p>
+                )}
                 <pre className="whitespace-pre-wrap rounded-lg bg-zinc-50 p-4 font-sans text-sm leading-relaxed text-zinc-700 dark:bg-zinc-950 dark:text-zinc-300">
                   {e.body}
                 </pre>

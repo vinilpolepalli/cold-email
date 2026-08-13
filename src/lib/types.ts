@@ -36,6 +36,7 @@ export interface OutboxEntry {
   to: string;
   subject: string;
   body: string;
+  attachmentName?: string | null;
   method: 'gmail-oauth' | 'smtp' | 'resend' | 'demo-outbox';
   status: 'sent' | 'queued' | 'failed';
   detail: string | null;
