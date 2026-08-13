@@ -1,43 +1,59 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { UserProfile } from "@/lib/types";
+import { Button, Card, Eyebrow, StepRail } from "@/components/ui";
 
-const LIST_FIELDS: { key: keyof UserProfile; label: string }[] = [
-  { key: "education", label: "Education" },
-  { key: "experience", label: "Experience" },
-  { key: "projects", label: "Projects" },
-  { key: "skills", label: "Skills" },
-  { key: "publications", label: "Publications" },
-  { key: "researchInterests", label: "Research interests" },
-  { key: "awards", label: "Awards" },
-];
+// Seamless post-signup flow: upload, confirm the parse, add what only the user
+// knows, then straight into the dashboard. Each step is one focused card.
 
-const fieldClass =
-  "mt-1 w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-900 placeholder:text-zinc-500 focus:border-orange-700 focus:outline-none dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100 dark:placeholder:text-zinc-400 dark:focus:border-orange-400";
+const STEPS = ["Resume", "Basics", "Background", "Interests"];
+
+const inputClass =
+  "h-10 w-full rounded-lg border border-[#e5e5e5] bg-white px-3 text-sm text-black placeholder:text-[#777169] focus:border-black focus:outline-none";
+const areaClass =
+  "w-full rounded-lg border border-[#e5e5e5] bg-white p-3 text-sm leading-6 text-black placeholder:text-[#777169] focus:border-black focus:outline-none";
+
+type ListKey = "education" | "experience" | "projects" | "skills" | "publications" | "researchInterests" | "awards";
 
 export default function OnboardingPage() {
+  const router = useRouter();
+  const [step, setStep] = useState(0);
   const [profile, setProfile] = useState<UserProfile | null>(null);
-  const [tab, setTab] = useState<"upload" | "paste">("upload");
   const [file, setFile] = useState<File | null>(null);
-  const [text, setText] = useState("");
+  const [pasted, setPasted] = useState("");
+  const [mode, setMode] = useState<"upload" | "paste">("upload");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-  const [savedAt, setSavedAt] = useState("");
+  const [parser, setParser] = useState("");
+  const [returning, setReturning] = useState(false);
 
   useEffect(() => {
-    fetch("/api/me")
-      .then((r) => r.json())
-      .then((d) => d.profile && setProfile(d.profile));
+    let cancelled = false;
+    const t = setTimeout(async () => {
+      const d = await fetch("/api/me").then((r) => r.json()).catch(() => null);
+      if (cancelled || !d?.profile) return;
+      // An existing profile means this is an edit, not first-run onboarding.
+      setProfile(d.profile);
+      setReturning(true);
+      setStep(1);
+    }, 0);
+    return () => {
+      cancelled = true;
+      clearTimeout(t);
+    };
   }, []);
 
-  async function submitResume() {
+  const setList = (key: ListKey, value: string) =>
+    setProfile((p) => (p ? { ...p, [key]: value.split("\n").filter((l) => l.trim().length > 0) } : p));
+
+  async function parseResume() {
     setBusy(true);
     setError("");
     try {
       let res: Response;
-      if (tab === "upload") {
+      if (mode === "upload") {
         if (!file) throw new Error("Choose a PDF or text file first");
         const form = new FormData();
         form.set("resume", file);
@@ -46,12 +62,14 @@ export default function OnboardingPage() {
         res = await fetch("/api/onboard", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text }),
+          body: JSON.stringify({ text: pasted }),
         });
       }
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "Failed to parse resume");
+      if (!res.ok) throw new Error(data.error ?? "Could not read that resume");
       setProfile(data.profile);
+      setParser(data.parser ?? "");
+      setStep(1);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {
@@ -59,7 +77,7 @@ export default function OnboardingPage() {
     }
   }
 
-  async function saveProfile() {
+  async function save(then?: () => void) {
     if (!profile) return;
     setBusy(true);
     setError("");
@@ -72,7 +90,7 @@ export default function OnboardingPage() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Save failed");
       setProfile(data.profile);
-      setSavedAt(new Date().toLocaleTimeString());
+      then?.();
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {
@@ -80,120 +98,232 @@ export default function OnboardingPage() {
     }
   }
 
-  return (
-    <div className="mx-auto max-w-3xl px-4 py-10">
-      <h1 className="text-2xl font-semibold tracking-tight">Onboarding</h1>
-      <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-        Upload your resume. We parse it into a profile, write a summary you can edit, and use both to draft your
-        emails.
-      </p>
+  const count = (k: ListKey) => (profile?.[k] as string[] | undefined)?.length ?? 0;
 
-      <div className="mt-8 rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
-        <div className="flex gap-2">
-          {(["upload", "paste"] as const).map((t) => (
-            <button
-              key={t}
-              onClick={() => setTab(t)}
-              className={`rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${
-                tab === t
-                  ? "bg-orange-700 text-white"
-                  : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700"
-              }`}
-            >
-              {t === "upload" ? "Upload PDF / TXT" : "Paste text"}
-            </button>
-          ))}
+  return (
+    <div className="mx-auto max-w-3xl px-6 py-10">
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h1 className="text-2xl tracking-tight">{returning ? "Your profile" : "Let us set you up"}</h1>
+          <p className="mt-1 text-sm text-[#777169]">
+            {returning
+              ? "Everything here feeds your email drafts and recommendations."
+              : "Four short steps. Your resume does most of the work."}
+          </p>
         </div>
-        {tab === "upload" ? (
-          <input
-            type="file"
-            accept=".pdf,.txt,.md"
-            onChange={(e) => setFile(e.target.files?.[0] ?? null)}
-            className="mt-4 block w-full text-sm text-zinc-600 file:mr-3 file:rounded-lg file:border-0 file:bg-zinc-100 file:px-3 file:py-2 file:font-medium file:text-zinc-900 dark:text-zinc-400 dark:file:bg-zinc-800 dark:file:text-zinc-100"
-          />
-        ) : (
-          <textarea
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            rows={10}
-            placeholder={"Jane Okafor\njane@school.edu\n\nEDUCATION\nB.S. Computer Science, ...\n\nEXPERIENCE\n..."}
-            className={`${fieldClass} mt-4 font-mono`}
-          />
+        {profile && (
+          <Button variant="secondary" onClick={() => save(() => router.push("/dashboard"))} disabled={busy}>
+            Save and exit
+          </Button>
         )}
-        <button
-          onClick={submitResume}
-          disabled={busy}
-          className="mt-4 rounded-lg bg-orange-700 px-4 py-2 font-medium text-white transition-transform hover:bg-orange-800 active:scale-[0.98] disabled:opacity-50"
-        >
-          {busy ? "Parsing" : "Parse resume"}
-        </button>
-        {error && <p className="mt-3 text-sm text-red-700 dark:text-red-400">{error}</p>}
       </div>
 
-      {profile && (
-        <div className="mt-8 rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold">Your profile</h2>
-            {savedAt && <span className="text-xs text-emerald-700 dark:text-emerald-400">Saved {savedAt}</span>}
+      <div className="mt-8">
+        <StepRail steps={STEPS} current={step} />
+      </div>
+
+      {error && <p className="mt-6 text-[13px] text-[#ff4704]">{error}</p>}
+
+      {/* 01 Resume */}
+      {step === 0 && (
+        <Card className="mt-6 p-6">
+          <Eyebrow>01 · Resume</Eyebrow>
+          <h2 className="mt-3 text-[17px] font-medium">Upload your resume</h2>
+          <p className="mt-2 text-sm leading-6 text-[#777169]">
+            We read it once to fill in your profile, and keep the file so it can be attached to the emails you send.
+          </p>
+
+          <div className="mt-5 flex gap-2">
+            {(["upload", "paste"] as const).map((m) => (
+              <button
+                key={m}
+                onClick={() => setMode(m)}
+                className={`inline-flex h-8 items-center rounded-full border px-3 text-[13px] ${
+                  mode === m ? "border-transparent bg-black text-[#fdfcfc]" : "border-[#e5e5e5] bg-white text-[#777169]"
+                }`}
+              >
+                {m === "upload" ? "Upload a file" : "Paste text"}
+              </button>
+            ))}
           </div>
 
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <label className="text-sm">
-              <span className="font-medium">Name</span>
+          {mode === "upload" ? (
+            <label className="mt-4 flex cursor-pointer flex-col items-center justify-center rounded-lg border border-dashed border-[#e5e5e5] bg-[#f5f3f1] px-6 py-10 text-center transition-colors hover:border-black">
+              <input
+                type="file"
+                accept=".pdf,.txt,.md"
+                onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+                className="sr-only"
+              />
+              <span className="text-sm font-medium">{file ? file.name : "Choose a PDF"}</span>
+              <span className="mt-1 text-[13px] text-[#777169]">
+                {file ? `${Math.round(file.size / 1024)} KB, ready to parse` : "PDF, TXT, or Markdown"}
+              </span>
+            </label>
+          ) : (
+            <textarea
+              value={pasted}
+              onChange={(e) => setPasted(e.target.value)}
+              rows={12}
+              placeholder={"Alex Rivera\nalex@university.edu\n\nEDUCATION\n...\n\nEXPERIENCE\n..."}
+              className={`${areaClass} mt-4 font-mono`}
+            />
+          )}
+
+          <div className="mt-5 flex items-center gap-3">
+            <Button onClick={parseResume} disabled={busy}>
+              {busy ? "Reading your resume" : "Continue"}
+            </Button>
+            <span className="text-[13px] text-[#777169]">Nothing is sent to anyone at this stage.</span>
+          </div>
+        </Card>
+      )}
+
+      {/* 02 Basics */}
+      {step === 1 && profile && (
+        <Card className="mt-6 p-6">
+          <Eyebrow>02 · Basics</Eyebrow>
+          <h2 className="mt-3 text-[17px] font-medium">Check what we picked up</h2>
+          <p className="mt-2 text-sm leading-6 text-[#777169]">
+            {parser === "nim"
+              ? "Parsed with your NIM model. Correct anything that looks off."
+              : "Parsed from the file. Correct anything that looks off."}
+          </p>
+
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            <label className="block">
+              <span className="eyebrow">Name</span>
               <input
                 value={profile.name}
                 onChange={(e) => setProfile({ ...profile, name: e.target.value })}
-                className={fieldClass}
+                className={`${inputClass} mt-1.5`}
               />
             </label>
-            <label className="text-sm">
-              <span className="font-medium">Email (used as reply-to)</span>
+            <label className="block">
+              <span className="eyebrow">Email professors reply to</span>
               <input
                 value={profile.email}
                 onChange={(e) => setProfile({ ...profile, email: e.target.value })}
-                className={fieldClass}
+                className={`${inputClass} mt-1.5`}
               />
             </label>
           </div>
 
-          <label className="mt-4 block text-sm">
-            <span className="font-medium">Summary (appears in your emails)</span>
+          <label className="mt-4 block">
+            <span className="eyebrow">Education</span>
             <textarea
-              value={profile.aiSummary}
-              onChange={(e) => setProfile({ ...profile, aiSummary: e.target.value })}
+              value={profile.education.join("\n")}
+              onChange={(e) => setList("education", e.target.value)}
               rows={3}
-              className={fieldClass}
+              className={`${areaClass} mt-1.5`}
             />
           </label>
 
-          {LIST_FIELDS.map(({ key, label }) => (
-            <label key={key} className="mt-4 block text-sm">
-              <span className="font-medium">{label} (one per line)</span>
-              <textarea
-                value={((profile[key] as string[]) ?? []).join("\n")}
-                onChange={(e) => setProfile({ ...profile, [key]: e.target.value.split("\n").filter(Boolean) })}
-                rows={Math.min(6, Math.max(2, ((profile[key] as string[]) ?? []).length + 1))}
-                className={fieldClass}
-              />
-            </label>
-          ))}
+          <label className="mt-4 block">
+            <span className="eyebrow">Summary used to open your emails</span>
+            <textarea
+              value={profile.aiSummary}
+              onChange={(e) => setProfile({ ...profile, aiSummary: e.target.value })}
+              rows={4}
+              className={`${areaClass} mt-1.5`}
+            />
+          </label>
 
-          <div className="mt-6 flex items-center gap-4">
-            <button
-              onClick={saveProfile}
-              disabled={busy}
-              className="rounded-lg bg-orange-700 px-4 py-2 font-medium text-white transition-transform hover:bg-orange-800 active:scale-[0.98] disabled:opacity-50"
-            >
-              Save profile
-            </button>
-            <Link
-              href="/researchers"
-              className="text-sm font-medium text-orange-700 hover:underline dark:text-orange-400"
-            >
-              Next: pick a researcher
-            </Link>
+          <div className="mt-5 flex gap-2">
+            <Button onClick={() => save(() => setStep(2))} disabled={busy}>
+              Continue
+            </Button>
+            <Button variant="secondary" onClick={() => setStep(0)}>
+              Back
+            </Button>
           </div>
-        </div>
+        </Card>
+      )}
+
+      {/* 03 Background */}
+      {step === 2 && profile && (
+        <Card className="mt-6 p-6">
+          <Eyebrow>03 · Background</Eyebrow>
+          <h2 className="mt-3 text-[17px] font-medium">What you have actually worked on</h2>
+          <p className="mt-2 text-sm leading-6 text-[#777169]">
+            One entry per line. These become the bullet list in your emails, so keep the concrete results.
+          </p>
+
+          <div className="mt-5 space-y-4">
+            {(
+              [
+                ["experience", "Research and work experience"],
+                ["projects", "Projects"],
+                ["publications", "Publications and links"],
+                ["awards", "Awards"],
+              ] as [ListKey, string][]
+            ).map(([key, label]) => (
+              <label key={key} className="block">
+                <span className="eyebrow">
+                  {label} <span className="font-mono normal-case">({count(key)})</span>
+                </span>
+                <textarea
+                  value={((profile[key] as string[]) ?? []).join("\n")}
+                  onChange={(e) => setList(key, e.target.value)}
+                  rows={Math.min(6, Math.max(2, count(key) + 1))}
+                  className={`${areaClass} mt-1.5`}
+                />
+              </label>
+            ))}
+          </div>
+
+          <div className="mt-5 flex gap-2">
+            <Button onClick={() => save(() => setStep(3))} disabled={busy}>
+              Continue
+            </Button>
+            <Button variant="secondary" onClick={() => setStep(1)}>
+              Back
+            </Button>
+          </div>
+        </Card>
+      )}
+
+      {/* 04 Interests */}
+      {step === 3 && profile && (
+        <Card className="mt-6 p-6">
+          <Eyebrow>04 · Interests</Eyebrow>
+          <h2 className="mt-3 text-[17px] font-medium">What do you want to work on?</h2>
+          <p className="mt-2 text-sm leading-6 text-[#777169]">
+            This is the strongest signal for recommendations. Two or three specific topics beat ten vague ones.
+          </p>
+
+          <label className="mt-5 block">
+            <span className="eyebrow">Research interests, one per line</span>
+            <textarea
+              value={profile.researchInterests.join("\n")}
+              onChange={(e) => setList("researchInterests", e.target.value)}
+              rows={4}
+              placeholder={"machine learning for genomics\nprotein structure prediction"}
+              className={`${areaClass} mt-1.5`}
+            />
+          </label>
+
+          <label className="mt-4 block">
+            <span className="eyebrow">
+              Skills and tools <span className="font-mono normal-case">({count("skills")})</span>
+            </span>
+            <textarea
+              value={profile.skills.join("\n")}
+              onChange={(e) => setList("skills", e.target.value)}
+              rows={5}
+              className={`${areaClass} mt-1.5`}
+            />
+          </label>
+
+          <div className="mt-5 flex gap-2">
+            <Button onClick={() => save(() => router.push("/dashboard"))} disabled={busy}>
+              {busy ? "Saving" : "Finish and see matches"}
+            </Button>
+            <Button variant="secondary" onClick={() => setStep(2)}>
+              Back
+            </Button>
+          </div>
+        </Card>
       )}
     </div>
   );

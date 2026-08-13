@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { SignInButton } from "@clerk/nextjs";
-import { motion, useReducedMotion } from "motion/react";
+import { Button, Card, Eyebrow, Inset, Pill, ScoreRing, SectionHeading } from "./ui";
 
 interface Stats {
   researchers: number;
@@ -10,11 +10,10 @@ interface Stats {
   schools: string[];
 }
 
-const fieldClass =
-  "w-full rounded-lg border border-zinc-300 bg-white px-3 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:border-orange-700 focus:outline-none dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100 dark:placeholder:text-zinc-400 dark:focus:border-orange-400";
+const inputClass =
+  "h-10 w-full rounded-lg border border-[#e5e5e5] bg-white px-3 text-sm text-black placeholder:text-[#777169] focus:border-black focus:outline-none";
 
 export default function WaitlistLanding({ stats, withClerk }: { stats: Stats; withClerk: boolean }) {
-  const reduce = useReducedMotion();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [school, setSchool] = useState("");
@@ -44,75 +43,219 @@ export default function WaitlistLanding({ stats, withClerk }: { stats: Stats; wi
 
   return (
     <div>
-      <section className="mx-auto grid max-w-6xl gap-12 px-4 pt-16 pb-20 lg:grid-cols-[6fr_5fr] lg:gap-16">
-        <div className="flex flex-col justify-center">
-          <span className="text-xs font-medium uppercase tracking-[0.18em] text-orange-700 dark:text-orange-400">
-            Private beta
-          </span>
-          <h1 className="mt-4 max-w-xl text-4xl font-semibold tracking-tighter text-balance md:text-5xl lg:text-6xl">
-            Cold email the lab you actually want to join
-          </h1>
-          <p className="mt-5 max-w-md text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-            {stats.researchers} real AI and CS faculty across {stats.schools.length} universities. Upload your resume,
-            get a draft written around their actual research, send it from your own Gmail.
-          </p>
+      {/* Hero: 96px rhythm, oversized 400-weight display, copy left and
+          controls right, exactly as the reference stages it. */}
+      <section className="container-page pt-20 pb-16">
+        <Pill className="mb-8">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#ff4704]" />
+          Private beta
+        </Pill>
 
-          <div className="mt-8 max-w-md">
+        <h1 className="display max-w-4xl text-balance">
+          Email the lab you actually want to join. Not a template blast.
+        </h1>
+
+        <div className="mt-10 flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+          <p className="max-w-[640px] text-base leading-6 text-[#777169]">
+            LabReach tracks {stats.researchers} AI and CS faculty across {stats.schools.length} universities, reads
+            your resume, and writes each email around the professor&apos;s actual research. You review every word before
+            it sends from your own Gmail.
+          </p>
+          <div className="shrink-0">
+            <div className="flex flex-wrap gap-2">
+              <a href="#access" className="inline-flex">
+                <Button type="button">Request early access</Button>
+              </a>
+              <a href="#how" className="inline-flex">
+                <Button type="button" variant="secondary">
+                  See how it works
+                </Button>
+              </a>
+            </div>
+            <p className="mt-3 text-[13px] text-[#777169]">Invite only while we are in beta.</p>
+          </div>
+        </div>
+
+        <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] text-[#777169]">
+          <span>Covering</span>
+          {stats.schools.map((s) => (
+            <span key={s}>{s}</span>
+          ))}
+        </div>
+
+        {/* Product preview: the reference anchors its hero with a real UI
+            rendering, so this mirrors the dashboard the user gets. */}
+        <div className="mt-14 overflow-hidden rounded-[14px] border border-[#e5e5e5] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+          <DashboardPreview stats={stats} />
+        </div>
+      </section>
+
+      {/* How it works: numbered cards with inset panels. */}
+      <section id="how" className="container-page border-t border-[#e5e5e5] py-24">
+        <SectionHeading
+          eyebrow="How it works"
+          title="Four steps between your resume and a reply"
+          body="Nothing sends automatically. The agent does the research and the drafting; you keep the judgement."
+        />
+        <div className="mt-12 grid gap-4 md:grid-cols-2">
+          <Card className="p-6">
+            <Eyebrow>01 · Onboarding</Eyebrow>
+            <h3 className="mt-3 text-[17px] font-medium">Your resume becomes a profile</h3>
+            <p className="mt-2 text-sm leading-6 text-[#777169]">
+              Upload a PDF. We pull out education, research, projects, publications, and skills, then let you correct
+              anything in a few short cards.
+            </p>
+            <Inset className="mt-5 space-y-2">
+              {["Education", "Research experience", "Projects", "Skills"].map((f) => (
+                <div key={f} className="flex items-center justify-between text-[13px]">
+                  <span className="text-[#777169]">{f}</span>
+                  <span className="font-mono text-[11px] text-[#15362b]">parsed</span>
+                </div>
+              ))}
+            </Inset>
+          </Card>
+
+          <Card className="p-6">
+            <Eyebrow>02 · Matching</Eyebrow>
+            <h3 className="mt-3 text-[17px] font-medium">Researchers ranked against your work</h3>
+            <p className="mt-2 text-sm leading-6 text-[#777169]">
+              Every faculty profile is scored on overlap with your interests and skills, so the shortlist is people who
+              would actually want your email.
+            </p>
+            <Inset className="mt-5 space-y-3">
+              {[
+                { n: "Computational biology", v: 86 },
+                { n: "Machine learning", v: 74 },
+              ].map((r) => (
+                <div key={r.n} className="flex items-center gap-3">
+                  <ScoreRing value={r.v} size={34} />
+                  <span className="text-[13px]">{r.n}</span>
+                </div>
+              ))}
+            </Inset>
+          </Card>
+
+          <Card className="p-6">
+            <Eyebrow>03 · Drafting</Eyebrow>
+            <h3 className="mt-3 text-[17px] font-medium">A draft built on their actual research</h3>
+            <p className="mt-2 text-sm leading-6 text-[#777169]">
+              The email cites the experience closest to that lab&apos;s work, names what they study, and asks one clear
+              question. Every word stays editable.
+            </p>
+            <Inset className="mt-5">
+              <p className="text-[13px] leading-6">
+                <span className="text-[#777169]">In the past, I have worked on the following related projects:</span>
+                <br />- Protein-ligand GNN models reaching 0.984 ROC AUC
+              </p>
+            </Inset>
+          </Card>
+
+          <Card className="p-6" dark>
+            <p className="eyebrow text-[#fdfcfc]/60">04 · Sending</p>
+            <h3 className="mt-3 text-[17px] font-medium">From your address, with your resume attached</h3>
+            <p className="mt-2 text-sm leading-6 text-[#fdfcfc]/70">
+              Sign in with Google and the message leaves from your own Gmail, resume attached, so a reply lands in your
+              inbox like any other email.
+            </p>
+            <div className="mt-5 rounded-lg border border-[#fdfcfc]/10 bg-[#fdfcfc]/5 p-4">
+              <div className="flex items-center justify-between text-[13px]">
+                <span className="text-[#fdfcfc]/70">Resume.pdf</span>
+                <span className="font-mono text-[11px] text-[#ff4704]">attached</span>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Directory stats. */}
+      <section id="directory" className="container-page border-t border-[#e5e5e5] py-24">
+        <SectionHeading
+          eyebrow="The directory"
+          title="Built by scraping agents, not bought as a list"
+          body="Agents crawl public faculty pages and keep a source link for every profile. An email is stored only when a university page publishes it."
+        />
+        <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-[14px] border border-[#e5e5e5] bg-[#e5e5e5] sm:grid-cols-4">
+          {[
+            { n: stats.researchers, l: "faculty profiles" },
+            { n: stats.withEmail, l: "published emails" },
+            { n: stats.schools.length, l: "universities" },
+            { n: 0, l: "guessed addresses" },
+          ].map((s) => (
+            <div key={s.l} className="bg-white p-6">
+              <div className="font-mono text-3xl">{s.n}</div>
+              <div className="mt-1 text-[13px] text-[#777169]">{s.l}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Waitlist form. */}
+      <section id="access" className="container-page border-t border-[#e5e5e5] py-24">
+        <div className="grid gap-12 lg:grid-cols-[1fr_460px]">
+          <div>
+            <SectionHeading
+              eyebrow="Access"
+              title="Request an invite"
+              body="LabReach is invite only while we are in beta. Tell us where you study and we will open a seat when one is free."
+            />
+          </div>
+          <Card className="p-6">
             {joined ? (
-              <motion.div
-                initial={reduce ? false : { opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="rounded-2xl border border-orange-700/30 bg-orange-50 p-6 dark:border-orange-400/30 dark:bg-orange-950/30"
-              >
-                <h2 className="font-semibold">
+              <div className="py-6 text-center">
+                <ScoreRing value={100} size={48} />
+                <h3 className="mt-4 text-[17px] font-medium">
                   {joined.alreadyOn ? "You are already on the list" : "You are on the list"}
-                </h2>
-                <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-                  You are number {joined.position} in line. We will email you when your access opens up.
+                </h3>
+                <p className="mt-2 text-sm text-[#777169]">
+                  Number {joined.position} in line. We will email you when a seat opens.
                 </p>
-              </motion.div>
+              </div>
             ) : (
               <form onSubmit={join} className="space-y-3">
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <input
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Your name"
-                    autoComplete="name"
-                    className={fieldClass}
-                  />
-                  <input
-                    value={school}
-                    onChange={(e) => setSchool(e.target.value)}
-                    placeholder="Your school (optional)"
-                    autoComplete="organization"
-                    className={fieldClass}
-                  />
+                  <label className="block">
+                    <span className="eyebrow">Name</span>
+                    <input
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="Alex Rivera"
+                      autoComplete="name"
+                      className={`${inputClass} mt-1.5`}
+                    />
+                  </label>
+                  <label className="block">
+                    <span className="eyebrow">School</span>
+                    <input
+                      value={school}
+                      onChange={(e) => setSchool(e.target.value)}
+                      placeholder="Optional"
+                      autoComplete="organization"
+                      className={`${inputClass} mt-1.5`}
+                    />
+                  </label>
                 </div>
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@university.edu"
-                  autoComplete="email"
-                  className={fieldClass}
-                />
-                <button
-                  type="submit"
-                  disabled={busy}
-                  className="w-full rounded-lg bg-orange-700 px-6 py-3 font-semibold text-white transition-transform hover:bg-orange-800 active:scale-[0.98] disabled:opacity-50"
-                >
+                <label className="block">
+                  <span className="eyebrow">Email</span>
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@university.edu"
+                    autoComplete="email"
+                    className={`${inputClass} mt-1.5`}
+                  />
+                </label>
+                <Button type="submit" disabled={busy} className="w-full">
                   {busy ? "Saving your spot" : "Request early access"}
-                </button>
-                {error && <p className="text-sm text-red-700 dark:text-red-400">{error}</p>}
-                <p className="text-xs text-zinc-500 dark:text-zinc-400">
+                </Button>
+                {error && <p className="text-[13px] text-[#ff4704]">{error}</p>}
+                <p className="text-[13px] text-[#777169]">
                   {withClerk ? (
                     <>
                       Already have access?{" "}
                       <SignInButton mode="modal">
-                        <button type="button" className="font-medium text-orange-700 hover:underline dark:text-orange-400">
+                        <button type="button" className="text-black underline underline-offset-2">
                           Sign in
                         </button>
                       </SignInButton>
@@ -124,59 +267,110 @@ export default function WaitlistLanding({ stats, withClerk }: { stats: Stats; wi
                 </p>
               </form>
             )}
-          </div>
-        </div>
-
-        <div className="flex items-center">
-          <div className="w-full rounded-2xl border border-zinc-200 bg-white p-8 dark:border-zinc-800 dark:bg-zinc-900">
-            <h2 className="text-sm font-medium text-zinc-500 dark:text-zinc-400">What is inside</h2>
-            <dl className="mt-6 space-y-6">
-              {[
-                { n: stats.researchers.toString(), label: "faculty profiles scraped from official university pages" },
-                { n: stats.withEmail.toString(), label: "with an email published by their department" },
-                { n: stats.schools.length.toString(), label: `universities: ${stats.schools.join(", ")}` },
-              ].map((row) => (
-                <div key={row.label}>
-                  <dt className="font-mono text-3xl font-medium tabular-nums">{row.n}</dt>
-                  <dd className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{row.label}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          </Card>
         </div>
       </section>
+    </div>
+  );
+}
 
-      <section className="border-t border-zinc-200 dark:border-zinc-800">
-        <div className="mx-auto max-w-6xl px-4 py-16">
-          <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">How it works once you are in</h2>
-          <div className="mt-10">
-            {[
-              {
-                title: "Upload your resume",
-                body: "PDF or plain text. It becomes a profile of your education, research, projects, and skills, with a summary you can edit.",
-              },
-              {
-                title: "Pick a researcher",
-                body: "Filter by school or research area. Every profile links back to the university page it came from.",
-              },
-              {
-                title: "Review and send",
-                body: "The draft is built from your background and their actual work, and cites the experience closest to their research. Edit anything, then send from your own Gmail.",
-              },
-            ].map((step) => (
-              <div
-                key={step.title}
-                className="grid gap-2 border-t border-zinc-200 py-8 md:grid-cols-12 md:gap-6 dark:border-zinc-800"
-              >
-                <h3 className="text-lg font-medium md:col-span-4">{step.title}</h3>
-                <p className="max-w-prose leading-relaxed text-zinc-600 md:col-span-7 md:col-start-6 dark:text-zinc-400">
-                  {step.body}
-                </p>
+/** Static rendering of the real dashboard, used as the hero visual. */
+function DashboardPreview({ stats }: { stats: Stats }) {
+  const matches = [
+    { name: "Ellen Zhong", school: "Princeton", area: "protein structure, cryo-EM", score: 86, tone: "bg-[#fef7e0]" },
+    { name: "Ben Raphael", school: "Princeton", area: "cancer genomics", score: 79, tone: "bg-[#e6f6ed]" },
+    { name: "Caroline Uhler", school: "MIT", area: "causal inference, genomics", score: 71, tone: "bg-[#eceaf8]" },
+    { name: "Marinka Zitnik", school: "Harvard", area: "graph ML for medicine", score: 68, tone: "bg-[#fdeceb]" },
+  ];
+  return (
+    <div className="flex min-h-[420px] text-left">
+      <div className="hidden w-[190px] shrink-0 border-r border-[#e5e5e5] p-3 sm:block">
+        <div className="flex items-center gap-2 px-2 py-1.5 text-[13px] font-medium">
+          <span className="flex h-5 w-5 items-center justify-center rounded bg-black text-[10px] text-[#fdfcfc]">L</span>
+          LabReach
+        </div>
+        <p className="eyebrow mt-4 px-2">Workspace</p>
+        <div className="mt-1 space-y-0.5">
+          {["Dashboard", "Researchers", "Outbox", "Scraper"].map((l, i) => (
+            <div
+              key={l}
+              className={`flex items-center justify-between rounded-lg px-2 py-1.5 text-[13px] ${
+                i === 0 ? "bg-[#f5f3f1] font-medium text-black" : "text-[#777169]"
+              }`}
+            >
+              {l}
+              {l === "Outbox" && (
+                <span className="rounded-full bg-[#e5e5e5] px-1.5 font-mono text-[10px]">12</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="min-w-0 flex-1 p-5">
+        <div className="flex items-center justify-between">
+          <h3 className="text-[15px] font-medium">Dashboard</h3>
+          <span className="hidden h-8 items-center rounded-full bg-[#f5f3f1] px-3 text-[13px] text-[#777169] sm:inline-flex">
+            Search {stats.researchers} researchers
+          </span>
+        </div>
+        <div className="mt-5 flex items-center justify-between">
+          <p className="text-[13px] font-medium">Recommended for you</p>
+          <span className="text-[13px] text-[#777169]">Browse all ›</span>
+        </div>
+        <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {matches.map((m) => (
+            <div key={m.name} className="overflow-hidden rounded-[10px] border border-[#e5e5e5]">
+              <div className={`${m.tone} p-3`}>
+                <div className="flex items-start justify-between gap-2">
+                  <div className="min-w-0">
+                    <p className="truncate text-[11px] text-[#777169]">{m.school}</p>
+                    <p className="truncate text-[13px] font-medium">{m.name}</p>
+                  </div>
+                  <ScoreRing value={m.score} size={34} />
+                </div>
+                <p className="mt-2 truncate text-[11px] text-[#777169]">{m.area}</p>
               </div>
+              <div className="flex items-center justify-between bg-white px-3 py-2">
+                <span className="text-[11px] text-[#777169]">match</span>
+                <span className="inline-flex h-6 items-center rounded-full bg-black px-2.5 text-[11px] text-[#fdfcfc]">
+                  Draft
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-6 flex items-center gap-2">
+          {["All", "Sent", "Replied", "Drafts"].map((f, i) => (
+            <span
+              key={f}
+              className={`inline-flex h-7 items-center rounded-full border px-3 text-[11px] ${
+                i === 0 ? "border-transparent bg-black text-[#fdfcfc]" : "border-[#e5e5e5] bg-white text-[#777169]"
+              }`}
+            >
+              {f}
+            </span>
+          ))}
+        </div>
+        <div className="mt-3 overflow-hidden rounded-[10px] border border-[#e5e5e5]">
+          <div className="grid grid-cols-[1.4fr_1fr_0.8fr] gap-2 border-b border-[#e5e5e5] bg-[#f5f3f1] px-3 py-2">
+            {["Researcher", "Subject", "Status"].map((h) => (
+              <span key={h} className="eyebrow">
+                {h}
+              </span>
             ))}
           </div>
+          {[
+            { r: "Danqi Chen", s: "Prospective researcher interested in NLP", st: "Sent" },
+            { r: "Tri Dao", s: "Interested in efficient sequence models", st: "Sent" },
+          ].map((row) => (
+            <div key={row.r} className="grid grid-cols-[1.4fr_1fr_0.8fr] gap-2 px-3 py-2.5 text-[13px]">
+              <span className="truncate">{row.r}</span>
+              <span className="truncate text-[#777169]">{row.s}</span>
+              <span className="text-[#15362b]">{row.st}</span>
+            </div>
+          ))}
         </div>
-      </section>
+      </div>
     </div>
   );
 }
