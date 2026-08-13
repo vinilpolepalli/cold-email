@@ -19,7 +19,7 @@ export default function WaitlistLanding({ stats, withClerk }: { stats: Stats; wi
   const [school, setSchool] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-  const [joined, setJoined] = useState<{ position: number; alreadyOn: boolean } | null>(null);
+  const [joined, setJoined] = useState(false);
 
   async function join(e: React.FormEvent) {
     e.preventDefault();
@@ -33,7 +33,7 @@ export default function WaitlistLanding({ stats, withClerk }: { stats: Stats; wi
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Could not join the waitlist");
-      setJoined({ position: data.position, alreadyOn: data.alreadyOn });
+      setJoined(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {
@@ -57,7 +57,7 @@ export default function WaitlistLanding({ stats, withClerk }: { stats: Stats; wi
 
         <div className="mt-10 flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <p className="max-w-[640px] text-base leading-6 text-[#777169]">
-            LabReach tracks {stats.researchers} AI and CS faculty across {stats.schools.length} universities, reads
+            Sloan tracks {stats.researchers} AI and CS faculty across {stats.schools.length} universities, reads
             your resume, and writes each email around the professor&apos;s actual research. You review every word before
             it sends from your own Gmail.
           </p>
@@ -196,18 +196,16 @@ export default function WaitlistLanding({ stats, withClerk }: { stats: Stats; wi
             <SectionHeading
               eyebrow="Access"
               title="Request an invite"
-              body="LabReach is invite only while we are in beta. Tell us where you study and we will open a seat when one is free."
+              body="Sloan is invite only while we are in beta. Tell us where you study and we will open a seat when one is free."
             />
           </div>
           <Card className="p-6">
             {joined ? (
               <div className="py-6 text-center">
                 <ScoreRing value={100} size={48} />
-                <h3 className="mt-4 text-[17px] font-medium">
-                  {joined.alreadyOn ? "You are already on the list" : "You are on the list"}
-                </h3>
+                <h3 className="mt-4 text-[17px] font-medium">You are on the list</h3>
                 <p className="mt-2 text-sm text-[#777169]">
-                  Number {joined.position} in line. We will email you when a seat opens.
+                  We will email you when a seat opens up.
                 </p>
               </div>
             ) : (
@@ -286,8 +284,8 @@ function DashboardPreview({ stats }: { stats: Stats }) {
     <div className="flex min-h-[420px] text-left">
       <div className="hidden w-[190px] shrink-0 border-r border-[#e5e5e5] p-3 sm:block">
         <div className="flex items-center gap-2 px-2 py-1.5 text-[13px] font-medium">
-          <span className="flex h-5 w-5 items-center justify-center rounded bg-black text-[10px] text-[#fdfcfc]">L</span>
-          LabReach
+          <span className="flex h-5 w-5 items-center justify-center rounded bg-black text-[10px] text-[#fdfcfc]">S</span>
+          Sloan
         </div>
         <p className="eyebrow mt-4 px-2">Workspace</p>
         <div className="mt-1 space-y-0.5">

@@ -1,4 +1,4 @@
-# LabReach (cold-email)
+# Sloan (cold-email)
 
 Next.js App Router + TypeScript + Tailwind 4. Cold-email site: scraped researcher directory → resume onboarding → AI draft → send.
 

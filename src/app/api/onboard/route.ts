@@ -12,6 +12,7 @@ export async function POST(req: NextRequest) {
   if (!userId) return NextResponse.json({ error: 'Sign in required' }, { status: 401 });
 
   let rawText = '';
+  let resumeWarning: string | null = null;
   const contentType = req.headers.get('content-type') ?? '';
   try {
     if (contentType.includes('multipart/form-data')) {
@@ -23,11 +24,16 @@ export async function POST(req: NextRequest) {
           ? await parseResumePdf(buffer)
           : buffer.toString('utf8');
         // Keep the original file so it can be attached to outgoing emails.
-        await saveResumeFile(userId, {
+        const saved = await saveResumeFile(userId, {
           fileName: file.name,
           contentType: file.type || 'application/pdf',
           buffer,
         });
+        if (!saved.saved) {
+          // The parse still succeeds; the caller is told the attachment was
+          // rejected rather than being left thinking an old file is current.
+          resumeWarning = `That file is over ${saved.limitMb} MB, so it will not be attached to emails. The text was still parsed.`;
+        }
       } else {
         rawText = String(form.get('text') ?? '');
       }
@@ -83,5 +89,5 @@ export async function POST(req: NextRequest) {
     updatedAt: new Date().toISOString(),
   };
   await saveUserProfile(profile);
-  return NextResponse.json({ profile, parser, summaryGenerator });
+  return NextResponse.json({ profile, parser, summaryGenerator, resumeWarning });
 }

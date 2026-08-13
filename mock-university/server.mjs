@@ -1,5 +1,5 @@
 // Tiny static server for the fictional Averton Tech faculty site — a local
-// test fixture for the LabReach scraping agent. Run: npm run mock:university
+// test fixture for the Sloan scraping agent. Run: npm run mock:university
 import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';

@@ -27,6 +27,7 @@ export default function OnboardingPage() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [parser, setParser] = useState("");
+  const [warning, setWarning] = useState("");
   const [returning, setReturning] = useState(false);
 
   useEffect(() => {
@@ -69,6 +70,7 @@ export default function OnboardingPage() {
       if (!res.ok) throw new Error(data.error ?? "Could not read that resume");
       setProfile(data.profile);
       setParser(data.parser ?? "");
+      setWarning(data.resumeWarning ?? "");
       setStep(1);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
@@ -123,6 +125,7 @@ export default function OnboardingPage() {
       </div>
 
       {error && <p className="mt-6 text-[13px] text-[#ff4704]">{error}</p>}
+      {warning && <p className="mt-6 text-[13px] text-[#ff4704]">{warning}</p>}
 
       {/* 01 Resume */}
       {step === 0 && (

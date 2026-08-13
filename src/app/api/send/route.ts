@@ -6,6 +6,10 @@ import { getCurrentUserId, getUserProfile } from '@/lib/user';
 
 export const dynamic = 'force-dynamic';
 
+// A real address check, not just "contains @". The recipient reaches a mail
+// header, so a permissive check is how CRLF and extra recipients get in.
+const EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
 export async function POST(req: NextRequest) {
   const userId = await getCurrentUserId();
   if (!userId) return NextResponse.json({ error: 'Sign in required' }, { status: 401 });
@@ -17,12 +21,16 @@ export async function POST(req: NextRequest) {
   const researcher = await getProfile(researcherId);
   if (!researcher) return NextResponse.json({ error: 'Unknown researcher' }, { status: 404 });
 
-  const recipient = (typeof to === 'string' && to.includes('@') ? to : null) ?? researcher.email;
+  const requested = typeof to === 'string' ? to.trim() : '';
+  const recipient = requested || researcher.email || '';
   if (!recipient) {
     return NextResponse.json(
       { error: `${researcher.name} has no published email. Check their website (${researcher.website ?? researcher.sourceUrl}) and enter one manually.` },
       { status: 400 }
     );
+  }
+  if (!EMAIL_RE.test(recipient) || recipient.length > 254) {
+    return NextResponse.json({ error: 'That recipient address is not valid' }, { status: 400 });
   }
   if (!subject?.trim() || !body?.trim()) {
     return NextResponse.json({ error: 'Subject and body are required' }, { status: 400 });
@@ -37,7 +45,7 @@ export async function POST(req: NextRequest) {
     researcherName: researcher.name,
     to: recipient,
     fromName: user.name,
-    replyTo: user.email || undefined,
+    replyTo: user.email && EMAIL_RE.test(user.email) ? user.email : undefined,
     subject: subject.trim(),
     body,
     attachment: stored

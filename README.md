@@ -1,4 +1,4 @@
-# LabReach — cold email real researchers
+# Sloan — cold email real researchers
 
 A cold-emailing site for students reaching out to professors. AI scraping agents build a directory of **real AI/CS faculty** (Stanford, Harvard, MIT, Penn/Wharton — including interdisciplinary CS+bio, CS+health, and AI+business labs). You onboard with your resume, review an AI-personalized draft, and send it with one click.
 

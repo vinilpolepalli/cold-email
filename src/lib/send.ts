@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 import { OutboxEntry } from './types';
-import { newId, readStore, writeStore } from './store';
+import { listStore, newId, writeStore } from './store';
 import { clerkConfigured } from './user';
 
 export interface EmailAttachment {
@@ -27,7 +27,32 @@ export interface SendResult {
   detail: string | null;
 }
 
-/** Fold a base64 string to 76-char lines, as MIME requires. */
+// ── MIME helpers ────────────────────────────────────────────────────────────
+
+/**
+ * Strip CR/LF from anything interpolated into a header. Without this, a
+ * recipient like "prof@x.edu\r\nBcc: someone@else" injects a real Bcc header.
+ */
+function headerSafe(value: string): string {
+  return value.replace(/[\r\n]+/g, ' ').trim();
+}
+
+/**
+ * RFC 2047 encoded-word for header values carrying non-ASCII. Raw UTF-8 in a
+ * header is not valid and renders as mojibake in many clients.
+ */
+function encodeHeader(value: string): string {
+  const safe = headerSafe(value);
+  if (/^[\x00-\x7F]*$/.test(safe)) return safe;
+  return `=?UTF-8?B?${Buffer.from(safe, 'utf8').toString('base64')}?=`;
+}
+
+/** Quote a MIME parameter value, escaping backslashes and quotes. */
+function quoteParam(value: string): string {
+  return `"${headerSafe(value).replace(/([\\"])/g, '\\$1')}"`;
+}
+
+/** Fold a base64 string to 76-character lines, as MIME requires. */
 function wrapBase64(b64: string): string {
   return b64.replace(/(.{76})/g, '$1\r\n');
 }
@@ -41,19 +66,19 @@ function buildMime(opts: {
   attachment?: EmailAttachment | null;
 }): string {
   const headers = [
-    `From: ${opts.from}`,
-    `To: ${opts.to}`,
-    opts.replyTo ? `Reply-To: ${opts.replyTo}` : null,
-    `Subject: ${opts.subject}`,
+    `From: ${headerSafe(opts.from)}`,
+    `To: ${headerSafe(opts.to)}`,
+    opts.replyTo ? `Reply-To: ${headerSafe(opts.replyTo)}` : null,
+    `Subject: ${encodeHeader(opts.subject)}`,
     'MIME-Version: 1.0',
   ].filter(Boolean) as string[];
 
   if (!opts.attachment) {
-    headers.push('Content-Type: text/plain; charset="UTF-8"');
+    headers.push('Content-Type: text/plain; charset="UTF-8"', 'Content-Transfer-Encoding: 8bit');
     return `${headers.join('\r\n')}\r\n\r\n${opts.body}`;
   }
 
-  const boundary = `labreach_${Math.random().toString(36).slice(2)}`;
+  const boundary = `sloan_${Math.random().toString(36).slice(2)}${Date.now().toString(36)}`;
   headers.push(`Content-Type: multipart/mixed; boundary="${boundary}"`);
   const { fileName, contentType, base64 } = opts.attachment;
   return [
@@ -61,13 +86,14 @@ function buildMime(opts: {
     '',
     `--${boundary}`,
     'Content-Type: text/plain; charset="UTF-8"',
+    'Content-Transfer-Encoding: 8bit',
     '',
     opts.body,
     '',
     `--${boundary}`,
-    `Content-Type: ${contentType}; name="${fileName}"`,
+    `Content-Type: ${contentType}; name=${quoteParam(fileName)}`,
     'Content-Transfer-Encoding: base64',
-    `Content-Disposition: attachment; filename="${fileName}"`,
+    `Content-Disposition: attachment; filename=${quoteParam(fileName)}`,
     '',
     wrapBase64(base64),
     '',
@@ -75,6 +101,8 @@ function buildMime(opts: {
     '',
   ].join('\r\n');
 }
+
+// ── providers ───────────────────────────────────────────────────────────────
 
 /**
  * Send as the signed-in user via the Gmail API, using the Google OAuth access
@@ -96,6 +124,9 @@ async function sendViaClerkGmail(req: SendRequest): Promise<SendResult | null> {
       to: req.to,
       subject: req.subject,
       body: req.body,
+      // Replies belong in the address printed in the signature, which is not
+      // necessarily the Google account doing the sending.
+      replyTo: req.replyTo,
       attachment: req.attachment,
     });
     const raw = Buffer.from(mime).toString('base64url');
@@ -128,7 +159,7 @@ async function sendViaSmtp(req: SendRequest): Promise<SendResult | null> {
       auth: { user: SMTP_USER, pass: SMTP_PASS },
     });
     await transport.sendMail({
-      from: SMTP_FROM ?? `"${req.fromName}" <${SMTP_USER}>`,
+      from: SMTP_FROM ?? { name: req.fromName, address: SMTP_USER },
       to: req.to,
       replyTo: req.replyTo,
       subject: req.subject,
@@ -186,10 +217,11 @@ async function sendViaResend(req: SendRequest): Promise<SendResult | null> {
 
 export async function sendEmail(req: SendRequest): Promise<OutboxEntry> {
   // Safety valve for demos/testing: redirect every outgoing email to one
-  // address so no real researcher is contacted accidentally.
+  // address so no real researcher is contacted accidentally. The intended
+  // recipient is noted with ASCII only, since it lands in a header.
   const redirect = process.env.EMAIL_TEST_REDIRECT;
-  const effectiveTo = redirect || req.to;
-  const subject = redirect ? `[TEST → intended for ${req.to}] ${req.subject}` : req.subject;
+  const effectiveTo = headerSafe(redirect || req.to);
+  const subject = redirect ? `[TEST -> intended for ${headerSafe(req.to)}] ${req.subject}` : req.subject;
 
   const attempt = { ...req, to: effectiveTo, subject };
   const result: SendResult =
@@ -218,12 +250,13 @@ export async function sendEmail(req: SendRequest): Promise<OutboxEntry> {
     detail: result.detail,
     createdAt: new Date().toISOString(),
   };
-  const outbox = await readStore<OutboxEntry[]>('outbox', []);
-  outbox.unshift(entry);
-  await writeStore('outbox', outbox);
+  // One row per email: appending to a shared array loses records when two
+  // sends overlap.
+  await writeStore(`outbox:${entry.id}`, entry);
   return entry;
 }
 
 export async function getOutbox(userId: string): Promise<OutboxEntry[]> {
-  return (await readStore<OutboxEntry[]>('outbox', [])).filter((e) => e.userId === userId);
+  const all = await listStore<OutboxEntry>('outbox');
+  return all.filter((e) => e.userId === userId).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 }

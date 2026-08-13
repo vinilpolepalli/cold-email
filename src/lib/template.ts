@@ -80,7 +80,16 @@ function trimToWord(text: string, max: number): string {
 function institutionOf(user: UserProfile): string {
   const first = user.education[0];
   if (!first) return '';
-  return cleanHeadline(first).split(',')[0].trim();
+  // Education entries merge the school line with the degree line, so cut at
+  // the first degree marker; otherwise the institution reads as
+  // "Massachusetts Institute of Technology B.S. in Computer Science".
+  return cleanHeadline(first)
+    // No trailing \b: these abbreviations end in a period, and a word boundary
+    // cannot occur between "." and the following space, so \b never matches.
+    .split(/\b(?:B\.S\.|B\.A\.|A\.B\.|M\.S\.|M\.A\.|Ph\.?D\.?|Sc\.B\.|Dual degree)(?=\s|$)/)[0]
+    .split(',')[0]
+    .replace(/[\s,;|-]+$/, '')
+    .trim();
 }
 
 /**
@@ -96,10 +105,13 @@ function signature(user: UserProfile): string {
   const gradYear = eduText.match(/\b(?:expected|anticipated|class of)\s+\w*\s*(20\d{2})\b/i)?.[1];
   if (institution) lines.push(gradYear ? `${institution} | Class of ${gradYear}` : institution);
 
-  // Case-sensitive and anchored on a non-letter, so month names like "May"
-  // are not mistaken for an "M.A." degree abbreviation.
-  const degree = eduText
-    .match(/\b((?:B\.?S\.?|B\.?A\.?|A\.?B\.?|M\.?S\.?|M\.?A\.?|Ph\.?D\.?|Sc\.?B\.?)(?![a-z])[^,;:|]{0,90})/)?.[1]
+  // Strip "City, ST" first: an undotted MA or MS in a location would otherwise
+  // be read as a degree, yielding a signature line of "MA B.S. in ...".
+  const degreeSource = eduText.replace(/\s+[A-Z][a-zA-Z .]+,\s*[A-Z]{2}\b/g, ' ');
+  // Case-sensitive, and the dotless forms must be followed by degree-ish text
+  // rather than any non-lowercase character.
+  const degree = degreeSource
+    .match(/\b((?:B\.S\.|B\.A\.|A\.B\.|M\.S\.|M\.A\.|Ph\.?D\.?|Sc\.B\.|(?:BS|BA|AB|MS|MA)(?=\s+(?:in|of)\b))[^,;:|]{0,90})/)?.[1]
     ?.trim();
   if (degree) lines.push(trimToWord(degree.replace(/\s+/g, ' '), 90));
   if (user.email) lines.push(user.email);

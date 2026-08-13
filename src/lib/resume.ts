@@ -119,7 +119,9 @@ function splitSkillList(value: string): string[] {
   return value
     .split(/[,;|]/)
     .map((s) => s.replace(/^[-–•\s]+/, '').trim())
-    .filter((s) => s.length > 1 && s.length < 45);
+    // Keep single-letter languages: "R" and "C" are real skills and were
+    // being dropped from "Languages: R, Python, C, MATLAB".
+    .filter((s) => (s.length > 1 || /^[A-Z]$/.test(s)) && s.length < 45);
 }
 
 /**
@@ -307,12 +309,23 @@ export function parseResumeText(raw: string): ParsedResume {
     else skills.push(...splitSkillList(text));
   }
 
-  // Join first, then split: an award list wrapped across lines must be
-  // reassembled before splitting, or entries break mid-name.
-  const awards = buckets.awards
-    .map((line) => line.replace(/^•\s*/, '').trim())
-    .join(' ')
-    .split(/;|\s{2,}/)
+  // Award lists wrap across lines, so continuations are merged back onto the
+  // previous line before splitting. Splitting on runs of whitespace cannot
+  // work here: normalize() has already collapsed them, so without this every
+  // award fuses into one string and the length filter discards the section.
+  const awardLines: string[] = [];
+  for (const line of buckets.awards) {
+    const text = line.replace(/^•\s*/, '').trim();
+    if (!text) continue;
+    const previous = awardLines[awardLines.length - 1];
+    if (previous && isContinuation(text, previous)) {
+      awardLines[awardLines.length - 1] = `${previous} ${text}`;
+    } else {
+      awardLines.push(text);
+    }
+  }
+  const awards = awardLines
+    .flatMap((line) => line.split(';'))
     .map((a) => a.trim())
     .filter((a) => a.length > 2 && a.length < 160);
 
@@ -425,7 +438,14 @@ export function cleanHeadline(entry: string): string {
       /\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s*\d{4}.*$/i,
       ''
     )
-    .replace(/\s+[A-Z][a-zA-Z .]+,\s*[A-Z]{2}\b/, '')
+    // Drop a trailing "City, ST". The character class must exclude spaces:
+    // allowing them made this greedy enough to swallow "Institute of
+    // Technology Cambridge" out of an MIT education line. Two-word cities are
+    // handled by an explicit prefix list rather than a second wildcard word.
+    .replace(
+      /\s+(?:(?:New|San|Los|Las|Santa|Saint|St\.?|Ann|Palo|Chapel|College|Salt|Fort|Ft\.?|Ba(?:ton|ldwin))\s+)?[A-Z][a-zA-Z.'-]+,\s*[A-Z]{2}\b/,
+      ''
+    )
     .replace(/[,\s]+$/, '')
     .trim();
 }
@@ -446,12 +466,22 @@ export function templateSummary(profile: ParsedResume): string {
     const detail = rest.join(':').trim();
     const where = cleanHeadline(head);
     const trimmed = detail.length > 200 ? `${detail.slice(0, 197)}...` : detail;
-    sentences.push(where && trimmed ? `At ${where}, I ${lowerFirst(trimmed)}` : `Recently I worked on ${topExperience.slice(0, 200)}`);
+    sentences.push(
+      where && trimmed
+        ? `At ${where}, I ${lowerFirst(trimmed)}`
+        : sentence(`Recently I worked on ${topExperience.slice(0, 200)}`)
+    );
   }
 
   if (profile.skills.length) sentences.push(`I work with ${profile.skills.slice(0, 8).join(', ')}.`);
 
   return sentences.join(' ') || 'I am an aspiring researcher.';
+}
+
+/** Terminate a clause exactly once. */
+function sentence(text: string): string {
+  const trimmed = text.trim().replace(/[.\s]+$/, '');
+  return trimmed ? `${trimmed}.` : '';
 }
 
 function lowerFirst(text: string): string {

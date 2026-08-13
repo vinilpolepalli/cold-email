@@ -9,7 +9,7 @@ import AppNav from "@/components/app-nav";
 import { getOutbox } from "@/lib/send";
 
 export const metadata: Metadata = {
-  title: "LabReach",
+  title: "Sloan",
   description:
     "Real AI and CS faculty from five top universities. Upload your resume, review a personalized draft, send from your own Gmail.",
 };
@@ -22,8 +22,8 @@ function PublicHeader({ withClerk }: { withClerk: boolean }) {
           stages them, independent of logo or button width. */}
       <div className="container-page grid h-full grid-cols-[1fr_auto_1fr] items-center gap-6">
         <Link href="/" className="flex items-center gap-2 text-[15px] font-medium tracking-tight">
-          <LabReachMark />
-          LabReach
+          <SloanMark />
+          Sloan
         </Link>
         <nav className="hidden items-center gap-6 text-sm md:flex">
           <a href="#how" className="text-black transition-colors hover:text-[#777169]">
@@ -59,8 +59,8 @@ async function AppShell({ children, withClerk }: { children: React.ReactNode; wi
       <header className="sticky top-0 z-40 h-[57px] shrink-0 border-b border-[#e5e5e5] bg-[#fdfcfc]/95 backdrop-blur-sm">
         <div className="mx-auto flex h-full max-w-[1400px] items-center gap-4 px-4">
           <Link href="/dashboard" className="flex items-center gap-2 text-[15px] font-medium tracking-tight">
-            <LabReachMark />
-            LabReach
+            <SloanMark />
+            Sloan
           </Link>
           <div className="ml-auto">{withClerk ? <AuthControls /> : null}</div>
         </div>
@@ -77,10 +77,10 @@ async function AppShell({ children, withClerk }: { children: React.ReactNode; wi
   );
 }
 
-function LabReachMark() {
+function SloanMark() {
   return (
     <span className="flex h-6 w-6 items-center justify-center rounded-md bg-black text-[11px] font-medium text-[#fdfcfc]">
-      L
+      S
     </span>
   );
 }
