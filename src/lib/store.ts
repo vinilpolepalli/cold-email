@@ -18,7 +18,10 @@ const DATA_DIR =
   process.env.DATA_DIR ??
   (process.env.VERCEL ? path.join(os.tmpdir(), 'sloan-data') : path.join(process.cwd(), '.data'));
 
-const TABLE = 'sloan_kv';
+// The physical table name is historical and predates the rename to Sloan. It
+// stays put so an existing deployment keeps working without a migration;
+// override with SUPABASE_TABLE if you would rather rename it.
+const TABLE = process.env.SUPABASE_TABLE ?? 'labreach_kv';
 
 /** Raised when a configured backend could not be reached or answered badly. */
 export class StoreUnavailableError extends Error {
