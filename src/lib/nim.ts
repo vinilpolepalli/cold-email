@@ -21,26 +21,40 @@ export function nimAvailable(auth?: NimAuth): boolean {
   return Boolean(resolveKey(auth));
 }
 
+/** A cold model on the free tier can idle for a while before its first token. */
+const DEFAULT_TIMEOUT_MS = 90_000;
+
 export async function nimChat(
   messages: { role: 'system' | 'user' | 'assistant'; content: string }[],
-  opts: { temperature?: number; maxTokens?: number } = {},
+  opts: { temperature?: number; maxTokens?: number; timeoutMs?: number } = {},
   auth?: NimAuth
 ): Promise<string> {
   const key = resolveKey(auth);
   if (!key) throw new Error('No NIM API key available');
-  const res = await fetch(`${NIM_BASE_URL}/chat/completions`, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${key}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      model: auth?.model || process.env.NIM_MODEL || DEFAULT_MODEL,
-      messages,
-      temperature: opts.temperature ?? 0.5,
-      max_tokens: opts.maxTokens ?? 1024,
-    }),
-  });
+  let res: Response;
+  try {
+    res = await fetch(`${NIM_BASE_URL}/chat/completions`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${key}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        model: auth?.model || process.env.NIM_MODEL || DEFAULT_MODEL,
+        messages,
+        temperature: opts.temperature ?? 0.5,
+        max_tokens: opts.maxTokens ?? 1024,
+      }),
+      // Without this a hung upstream holds the request until the platform
+      // kills the whole function, which reads to the user as the app freezing.
+      signal: AbortSignal.timeout(opts.timeoutMs ?? DEFAULT_TIMEOUT_MS),
+    });
+  } catch (err) {
+    if (err instanceof Error && (err.name === 'TimeoutError' || err.name === 'AbortError')) {
+      throw new Error(`NIM request timed out after ${Math.round((opts.timeoutMs ?? DEFAULT_TIMEOUT_MS) / 1000)}s`);
+    }
+    throw err;
+  }
   if (!res.ok) {
     throw new Error(`NIM request failed (${res.status}): ${(await res.text()).slice(0, 300)}`);
   }

@@ -110,11 +110,21 @@ async function Shell({ children, withClerk }: { children: React.ReactNode; withC
   );
 }
 
+/**
+ * The Clerk instance is still a development one, and its components say so on
+ * screen. That warning is aimed at the developer, not at someone being shown
+ * the product, so it is turned off here. It is cosmetic: the instance keeps
+ * its development limits until production keys are set.
+ */
+const CLERK_APPEARANCE = {
+  options: { unsafe_disableDevelopmentModeWarnings: true },
+};
+
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   const withClerk = clerkConfigured();
   if (withClerk) {
     return (
-      <ClerkProvider>
+      <ClerkProvider appearance={CLERK_APPEARANCE}>
         <Shell withClerk>{children}</Shell>
       </ClerkProvider>
     );
