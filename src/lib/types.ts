@@ -34,6 +34,23 @@ export interface UserProfile {
   school?: string;
   gradYear?: string;
   degree?: string;
+  major?: string;
+}
+
+/**
+ * A paper the sender says they have read, used for the paragraph that proves
+ * this email was written for one person. Either picked from the researcher's
+ * publication record or supplied by hand on the compose screen.
+ */
+export interface FocusPaper {
+  title: string | null;
+  url: string | null;
+  venue: string | null;
+  year: number | null;
+  abstract: string | null;
+  /** What the sender took from it, in their own words. Wins over the abstract. */
+  notes: string | null;
+  source: 'matched' | 'manual';
 }
 
 /** One of a researcher's papers, as shown on their profile and cited in drafts. */

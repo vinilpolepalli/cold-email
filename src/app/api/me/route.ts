@@ -13,7 +13,7 @@ export async function GET() {
 const EDITABLE: (keyof UserProfile)[] = [
   'name', 'email', 'education', 'experience', 'projects', 'skills', 'publications', 'researchInterests', 'awards', 'aiSummary',
   // The four facts the opening line and the signature are built from.
-  'standing', 'school', 'gradYear', 'degree',
+  'standing', 'school', 'gradYear', 'degree', 'major',
 ];
 
 export async function PUT(req: NextRequest) {

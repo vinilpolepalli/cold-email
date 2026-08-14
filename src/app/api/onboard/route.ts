@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { parseResumePdf, parseResumeText, templateSummary } from '@/lib/resume';
+import { looksLikeMemoryExport, parseMemoryExport } from '@/lib/memory-import';
 import { getCurrentUserId, getUserProfile, saveUserProfile } from '@/lib/user';
 import { saveResumeFile } from '@/lib/resume-file';
 import { UserProfile } from '@/lib/types';
@@ -19,10 +20,14 @@ export async function POST(req: NextRequest) {
 
   let rawText = '';
   let resumeWarning: string | null = null;
+  // Where the text came from. A LinkedIn profile saved to PDF is laid out like
+  // a resume and parses the same way; an assistant's memory export is not.
+  let source: 'resume' | 'memory' | 'linkedin' = 'resume';
   const contentType = req.headers.get('content-type') ?? '';
   try {
     if (contentType.includes('multipart/form-data')) {
       const form = await req.formData();
+      if (form.get('source') === 'linkedin') source = 'linkedin';
       const file = form.get('resume');
       if (file instanceof File) {
         const buffer = Buffer.from(await file.arrayBuffer());
@@ -51,6 +56,7 @@ export async function POST(req: NextRequest) {
     } else {
       const body = await req.json();
       rawText = String(body.text ?? '');
+      if (body.source === 'memory' || body.source === 'linkedin') source = body.source;
     }
   } catch (err) {
     return NextResponse.json({ error: `Could not read resume: ${String(err).slice(0, 200)}` }, { status: 400 });
@@ -58,12 +64,20 @@ export async function POST(req: NextRequest) {
 
   if (rawText.trim().length < 40) {
     return NextResponse.json(
-      { error: 'Resume looks empty. Upload a text-based PDF (not a scan) or paste the text directly.' },
+      {
+        error:
+          source === 'memory'
+            ? 'That export looks empty. Paste everything your assistant returned, including the headings.'
+            : 'Resume looks empty. Upload a text-based PDF (not a scan) or paste the text directly.',
+      },
       { status: 400 }
     );
   }
 
-  const parsed = parseResumeText(rawText);
+  // A pasted export is accepted from any tab: people paste it into the resume
+  // box, and refusing it there would be pedantry.
+  const asMemory = source === 'memory' || looksLikeMemoryExport(rawText);
+  const parsed = asMemory ? parseMemoryExport(rawText) : parseResumeText(rawText);
   const candidate: UserProfile = {
     ...parsed,
     id: userId,
@@ -81,6 +95,7 @@ export async function POST(req: NextRequest) {
       candidate,
       isNew: false,
       parser: 'heuristic',
+      source: asMemory ? 'memory' : source,
       rawText: parsed.rawResumeText,
       resumeWarning,
     });
@@ -92,6 +107,7 @@ export async function POST(req: NextRequest) {
     candidate,
     isNew: true,
     parser: 'heuristic',
+    source: asMemory ? 'memory' : source,
     rawText: parsed.rawResumeText,
     resumeWarning,
   });

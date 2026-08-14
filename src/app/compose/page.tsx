@@ -3,7 +3,7 @@
 import { Suspense, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { OutboxEntry, Publication, ResearcherProfile } from "@/lib/types";
+import { FocusPaper, OutboxEntry, ResearcherProfile } from "@/lib/types";
 import { Button, Card, Inset } from "@/components/ui";
 
 const inputClass =
@@ -29,14 +29,20 @@ function ComposeInner() {
   const [to, setTo] = useState("");
   const [generator, setGenerator] = useState("");
   const [resume, setResume] = useState<{ fileName: string; size: number } | null>(null);
-  const [cited, setCited] = useState<Publication | null>(null);
+  const [focus, setFocus] = useState<FocusPaper | null>(null);
+  const [paperUrl, setPaperUrl] = useState("");
+  const [paperNotes, setPaperNotes] = useState("");
+  const [overriding, setOverriding] = useState(false);
   const [attachResume, setAttachResume] = useState(true);
   const [busy, setBusy] = useState(false);
   const [loadingDraft, setLoadingDraft] = useState(true);
   const [error, setError] = useState("");
   const [sent, setSent] = useState<OutboxEntry | null>(null);
 
-  const generate = useCallback(async () => {
+  // The paper override is passed explicitly rather than read from state, so
+  // typing in the notes box does not re-trigger the effect below.
+  const generate = useCallback(
+    async (override?: { paperUrl: string; paperNotes: string }) => {
     if (!researcherId) return;
     setBusy(true);
     setLoadingDraft(true);
@@ -45,7 +51,7 @@ function ComposeInner() {
       const res = await fetch("/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ researcherId }),
+        body: JSON.stringify({ researcherId, ...override }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Draft generation failed");
@@ -55,17 +61,19 @@ function ComposeInner() {
       setGenerator(data.draft.generator);
       setTo(data.researcher.email ?? "");
       setResume(data.resume ?? null);
-      setCited(data.citedPublication ?? null);
+      setFocus(data.focusPaper ?? null);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {
       setBusy(false);
       setLoadingDraft(false);
     }
-  }, [researcherId]);
+  },
+    [researcherId]
+  );
 
   useEffect(() => {
-    const t = setTimeout(generate, 0);
+    const t = setTimeout(() => generate(), 0);
     return () => clearTimeout(t);
   }, [generate]);
 
@@ -128,38 +136,76 @@ function ComposeInner() {
           </Card>
         )}
 
-        {cited && (
+        {/* The paragraph that carries the email. Whatever paper is in here is
+            what the draft reacts to, so it can be swapped for one the sender
+            has actually read. */}
+        {!sent && (
           <Card className="mt-3 p-5">
-            <p className="eyebrow">Paper cited in this draft</p>
-            <p className="mt-2 text-[13px] leading-5">{cited.title}</p>
-            <p className="mt-1 text-[11px] text-[#777169]">
-              {[cited.venue, cited.year].filter(Boolean).join(" · ")}
-            </p>
-            <div className="mt-3 flex gap-2">
-              {cited.pdfUrl && (
-                <a
-                  href={cited.pdfUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex h-7 items-center rounded-full border border-[#ff4704]/30 bg-[#ff4704]/8 px-3 text-[12px] text-[#ff4704]"
+            <p className="eyebrow">The paper this draft reacts to</p>
+            {focus?.title ? (
+              <>
+                <p className="mt-2 text-[13px] leading-5">{focus.title}</p>
+                <p className="mt-1 text-[11px] text-[#777169]">
+                  {[focus.venue, focus.year].filter(Boolean).join(" · ")}
+                </p>
+                {focus.url && (
+                  <a
+                    href={focus.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-3 inline-flex h-7 items-center rounded-full border border-[#ff4704]/30 bg-[#ff4704]/8 px-3 text-[12px] text-[#ff4704]"
+                  >
+                    Read it
+                  </a>
+                )}
+                <p className="mt-3 text-[11px] leading-4 text-[#777169]">
+                  Read it before you send. The draft reacts to it, so a reply will assume you know it.
+                </p>
+              </>
+            ) : (
+              <p className="mt-2 text-[13px] leading-5 text-[#777169]">
+                {focus?.notes
+                  ? "Using the paper and notes you gave below."
+                  : "No paper matched confidently. Paste one you have read and the draft will work from it."}
+              </p>
+            )}
+
+            <button
+              type="button"
+              onClick={() => setOverriding((v) => !v)}
+              className="mt-3 text-[12px] text-black underline underline-offset-2"
+            >
+              {overriding ? "Hide" : "Use a different paper"}
+            </button>
+
+            {overriding && (
+              <div className="mt-3 space-y-2">
+                <input
+                  value={paperUrl}
+                  onChange={(e) => setPaperUrl(e.target.value)}
+                  placeholder="https://link to the paper"
+                  className={`${inputClass} font-mono text-[12px]`}
+                />
+                <textarea
+                  value={paperNotes}
+                  onChange={(e) => setPaperNotes(e.target.value)}
+                  rows={4}
+                  placeholder="A line or two on what you took from it, and what you would try next."
+                  className="w-full rounded-lg border border-[#e5e5e5] bg-white p-3 text-[13px] leading-5 text-black placeholder:text-[#777169] focus:border-black focus:outline-none"
+                />
+                <Button
+                  className="h-8 px-3 text-[12px]"
+                  onClick={() => generate({ paperUrl, paperNotes })}
+                  disabled={busy || (!paperUrl && !paperNotes)}
                 >
-                  Read the PDF
-                </a>
-              )}
-              {cited.url && (
-                <a
-                  href={cited.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex h-7 items-center rounded-full border border-[#e5e5e5] px-3 text-[12px] text-[#777169] hover:border-black hover:text-black"
-                >
-                  Source
-                </a>
-              )}
-            </div>
-            <p className="mt-3 text-[11px] leading-4 text-[#777169]">
-              Skim it before you send. The draft names it, so a reply will assume you know it.
-            </p>
+                  {busy ? "Rewriting" : "Rewrite with this paper"}
+                </Button>
+                <p className="text-[11px] leading-4 text-[#777169]">
+                  A link on its own works when it is one of their indexed papers. Otherwise your notes are what the
+                  paragraph is built from.
+                </p>
+              </div>
+            )}
           </Card>
         )}
         {generator && !sent && (
@@ -247,7 +293,11 @@ function ComposeInner() {
               <Button onClick={send} disabled={busy || !subject || !body}>
                 {busy ? "Working" : "Send email"}
               </Button>
-              <Button variant="secondary" onClick={generate} disabled={busy}>
+              <Button
+                variant="secondary"
+                onClick={() => generate({ paperUrl, paperNotes })}
+                disabled={busy}
+              >
                 Regenerate
               </Button>
             </div>

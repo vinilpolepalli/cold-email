@@ -342,6 +342,7 @@ export function parseResumeText(raw: string): ParsedResume {
     // onboarding so the user can correct them in one place.
     school: deriveSchool(education),
     degree,
+    major: deriveMajor(degree),
     gradYear: deriveGradYear(education),
     standing: deriveStanding(education, degree),
     education,
@@ -405,6 +406,23 @@ export function deriveDegree(education: string[]): string {
   return degree ? trimToWord(degree.replace(/\s+/g, ' '), 90) : '';
 }
 
+/**
+ * The field of study, pulled out of the degree line: "B.S. in Business (Stern)
+ * and B.S. in Computer Science" yields "Business and Computer Science". The
+ * opening sentence of every draft says what the sender studies, so a degree
+ * abbreviation on its own is not enough.
+ */
+export function deriveMajor(degree: string): string {
+  if (!degree) return '';
+  const fields = [...degree.matchAll(/\b(?:in|of)\s+([A-Z][A-Za-z&'-]*(?:\s+(?:and\s+)?[A-Z][A-Za-z&'-]*)*)/g)]
+    .map((m) => m[1].trim())
+    // Parentheticals name the school within a university, not the subject.
+    .filter((field) => field.length > 2 && !/^(?:Science|Arts)$/i.test(field));
+  const unique = [...new Set(fields)];
+  if (!unique.length) return '';
+  return unique.length === 1 ? unique[0] : `${unique.slice(0, -1).join(', ')} and ${unique[unique.length - 1]}`;
+}
+
 export function deriveGradYear(education: string[]): string {
   return education.join(' ').match(/\b(?:expected|anticipated|class of)\s+\w*\s*(20\d{2})\b/i)?.[1] ?? '';
 }
@@ -419,12 +437,13 @@ export function deriveStanding(education: string[], degree: string): string {
 }
 
 const AI_PARSE_SYSTEM = `You extract structured data from a resume. Reply ONLY with JSON matching:
-{"name":string,"email":string,"school":string,"degree":string,"gradYear":string,"standing":string,"education":string[],"experience":string[],"projects":string[],"skills":string[],"publications":string[],"researchInterests":string[],"awards":string[],"summary":string}
+{"name":string,"email":string,"school":string,"degree":string,"major":string,"gradYear":string,"standing":string,"education":string[],"experience":string[],"projects":string[],"skills":string[],"publications":string[],"researchInterests":string[],"awards":string[],"summary":string}
 
 Rules:
 - Copy facts from the resume only. Never invent employers, schools, metrics, or skills.
 - school: the institution they currently attend, name only, no degree or location.
 - degree: the degree line as written, e.g. "B.S. in Computer Science".
+- major: the field or fields of study alone, e.g. "Computer Science" or "Business and Computer Science". No degree abbreviation, no school name.
 - gradYear: four digits, the expected graduation year. "" if the resume does not say.
 - standing: one of "undergraduate", "master's student", "PhD student", "postdoc", or "" if unclear. No article.
 - education/experience/projects: one complete, readable entry per item, ordered most impressive first. Each entry names the organization or project and what the person did, joining any lines the PDF wrapped. Keep concrete numbers, and keep the organization on every entry so a bullet still says where the work happened.
@@ -436,16 +455,29 @@ Rules:
 - Never use em-dashes or en-dashes; use periods or commas.
 - Use "" or [] for anything absent.`;
 
+/**
+ * What the text is, so the model knows what shape to expect. A memory export
+ * is dated one-line entries under headings, not a resume, and telling the
+ * model that is the difference between a full profile and an empty one.
+ */
+const SOURCE_NOTE: Record<string, string> = {
+  memory:
+    'The input is an export of an AI assistant\'s stored memories about this person: dated one-line entries under the headings Instructions, Identity, Career, Projects, and Preferences. Drop the leading date stamps. Career entries are experience, Projects entries are projects. Infer school, degree, major, and standing from the Identity entries.',
+  linkedin: 'The input is a LinkedIn profile saved to PDF. Section headings are Experience, Education, Licenses, Skills, Projects, Publications, and Honors.',
+};
+
 /** LLM-based extraction; returns null when unavailable so callers fall back. */
 export async function aiParseResume(
   raw: string,
-  nimAuth?: NimAuth
+  nimAuth?: NimAuth,
+  source?: string
 ): Promise<(ParsedResume & { summary: string }) | null> {
   if (!nimAvailable(nimAuth)) return null;
+  const note = source ? SOURCE_NOTE[source] : undefined;
   try {
     const reply = await nimChat(
       [
-        { role: 'system', content: AI_PARSE_SYSTEM },
+        { role: 'system', content: note ? `${AI_PARSE_SYSTEM}\n\n${note}` : AI_PARSE_SYSTEM },
         { role: 'user', content: raw.slice(0, 14000) },
       ],
       { temperature: 0.1, maxTokens: 2000 },
@@ -468,6 +500,7 @@ export async function aiParseResume(
       email: str(parsed.email),
       school: str(parsed.school) || deriveSchool(education),
       degree,
+      major: str(parsed.major) || deriveMajor(degree),
       gradYear: str(parsed.gradYear).match(/20\d{2}/)?.[0] ?? deriveGradYear(education),
       standing: str(parsed.standing) || deriveStanding(education, degree),
       education,

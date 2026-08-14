@@ -21,8 +21,9 @@ export async function POST(req: NextRequest) {
   const text = typeof body.text === 'string' ? body.text : '';
   if (text.trim().length < 40) return NextResponse.json({ error: 'No resume text supplied' }, { status: 400 });
 
+  const source = typeof body.source === 'string' ? body.source : undefined;
   const nimAuth = await getNimAuth(userId);
-  const ai = await aiParseResume(text, nimAuth);
+  const ai = await aiParseResume(text, nimAuth, source);
   if (!ai) {
     // No key, or the model misfired. The heuristic parse the client already
     // has stands on its own, so this is not an error.

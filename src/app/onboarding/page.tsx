@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { UserProfile } from "@/lib/types";
 import { Button, Card, Eyebrow, Inset, StepRail } from "@/components/ui";
+import { MEMORY_EXPORT_PROMPT } from "@/lib/memory-prompt";
 
 // Onboarding collects exactly what the email needs, in the order the email
 // uses it: who you are, the two experiences that open it, the linked work that
@@ -19,8 +20,17 @@ const inputClass =
 const areaClass =
   "w-full rounded-lg border border-[#e5e5e5] bg-white p-3 text-sm leading-6 text-black placeholder:text-[#777169] focus:border-black focus:outline-none";
 
+type SourceMode = "upload" | "paste" | "memory" | "linkedin";
+
+const SOURCE_TABS: { key: SourceMode; label: string }[] = [
+  { key: "upload", label: "Upload a resume" },
+  { key: "linkedin", label: "LinkedIn" },
+  { key: "memory", label: "From your AI" },
+  { key: "paste", label: "Paste text" },
+];
+
 type ListKey = "education" | "experience" | "projects" | "skills" | "publications" | "researchInterests" | "awards";
-type TextKey = "name" | "email" | "standing" | "school" | "gradYear" | "degree" | "aiSummary";
+type TextKey = "name" | "email" | "standing" | "school" | "gradYear" | "degree" | "major" | "aiSummary";
 
 const STANDINGS = ["undergraduate", "master's student", "PhD student", "postdoc"];
 
@@ -145,7 +155,8 @@ export default function OnboardingPage() {
   const [storedResume, setStoredResume] = useState<ResumeInfo | null>(null);
   const [file, setFile] = useState<File | null>(null);
   const [pasted, setPasted] = useState("");
-  const [mode, setMode] = useState<"upload" | "paste">("upload");
+  const [mode, setMode] = useState<SourceMode>("upload");
+  const [copied, setCopied] = useState(false);
   const [busy, setBusy] = useState(false);
   const [enhancing, setEnhancing] = useState(false);
   const [parser, setParser] = useState("");
@@ -197,14 +208,14 @@ export default function OnboardingPage() {
    * Run the LLM extraction after the fast parse has already been shown, then
    * fold it into every field the user has not touched.
    */
-  async function enhance(rawText: string, isNew: boolean) {
+  async function enhance(rawText: string, isNew: boolean, source: string) {
     if (!rawText) return;
     setEnhancing(true);
     try {
       const res = await fetch("/api/onboard/enhance", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: rawText }),
+        body: JSON.stringify({ text: rawText, source }),
       });
       const data = await res.json();
       if (!res.ok || !data.enhanced) return;
@@ -236,25 +247,27 @@ export default function OnboardingPage() {
     setError("");
     setWarning("");
     try {
+      const uploading = mode === "upload" || mode === "linkedin";
       let res: Response;
-      if (mode === "upload") {
+      if (uploading) {
         if (!file) throw new Error("Choose a PDF or text file first");
         const form = new FormData();
         form.set("resume", file);
+        form.set("source", mode);
         res = await fetch("/api/onboard", { method: "POST", body: form });
       } else {
         res = await fetch("/api/onboard", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text: pasted }),
+          body: JSON.stringify({ text: pasted, source: mode === "memory" ? "memory" : "resume" }),
         });
       }
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "Could not read that resume");
+      if (!res.ok) throw new Error(data.error ?? "Could not read that file");
 
       setParser(data.parser ?? "");
       setWarning(data.resumeWarning ?? "");
-      if (mode === "upload" && file) {
+      if (uploading && file) {
         setStoredResume({ fileName: file.name, size: file.size, updatedAt: new Date().toISOString() });
       }
 
@@ -267,7 +280,7 @@ export default function OnboardingPage() {
         // file would change, section by section.
         setCandidate(data.candidate);
       }
-      void enhance(data.rawText ?? "", Boolean(data.isNew));
+      void enhance(data.rawText ?? "", Boolean(data.isNew), data.source ?? mode);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {
@@ -356,9 +369,19 @@ export default function OnboardingPage() {
       {step === 0 && (
         <Card className="mt-6 p-6">
           <Eyebrow>01 · Resume</Eyebrow>
-          <h2 className="mt-3 text-[17px] font-medium">{storedResume ? "Replace your resume" : "Upload your resume"}</h2>
+          <h2 className="mt-3 text-[17px] font-medium">
+            {mode === "memory"
+              ? "Bring what your assistant already knows"
+              : mode === "linkedin"
+                ? "Import from LinkedIn"
+                : storedResume
+                  ? "Replace your resume"
+                  : "Upload your resume"}
+          </h2>
           <p className="mt-2 text-sm leading-6 text-[#777169]">
-            We read it once to fill in your profile, and keep the file so it can be attached to the emails you send.
+            {mode === "memory"
+              ? "We read it once to fill in your profile. Only an uploaded file can be attached to your emails, so add a resume too if you want one sent."
+              : "We read it once to fill in your profile, and keep the file so it can be attached to the emails you send."}
           </p>
 
           {storedResume && (
@@ -380,21 +403,56 @@ export default function OnboardingPage() {
             </Inset>
           )}
 
-          <div className="mt-5 flex gap-2">
-            {(["upload", "paste"] as const).map((m) => (
+          <div className="mt-5 flex flex-wrap gap-2">
+            {SOURCE_TABS.map(({ key, label }) => (
               <button
-                key={m}
-                onClick={() => setMode(m)}
+                key={key}
+                onClick={() => setMode(key)}
                 className={`inline-flex h-8 items-center rounded-full border px-3 text-[13px] ${
-                  mode === m ? "border-transparent bg-black text-[#fdfcfc]" : "border-[#e5e5e5] bg-white text-[#777169]"
+                  mode === key ? "border-transparent bg-black text-[#fdfcfc]" : "border-[#e5e5e5] bg-white text-[#777169]"
                 }`}
               >
-                {m === "upload" ? "Upload a file" : "Paste text"}
+                {label}
               </button>
             ))}
           </div>
 
-          {mode === "upload" ? (
+          {mode === "linkedin" && (
+            <Inset className="mt-4">
+              <p className="text-[13px] leading-5">
+                Open your LinkedIn profile, press <span className="font-medium">More</span>, then{" "}
+                <span className="font-medium">Save to PDF</span>, and drop that file below. It comes out with the same
+                sections a resume has, so it parses the same way.
+              </p>
+            </Inset>
+          )}
+
+          {mode === "memory" && (
+            <div className="mt-4">
+              <p className="text-[13px] leading-5 text-[#777169]">
+                Paste this into ChatGPT, Claude, or anything else that remembers you, then paste what it gives back.
+                Assistants that have watched you work often know more about your projects than your resume does.
+              </p>
+              <div className="mt-3 rounded-lg border border-[#e5e5e5] bg-[#f5f3f1] p-4">
+                <pre className="max-h-44 overflow-y-auto font-mono text-[11px] leading-4 whitespace-pre-wrap text-[#777169]">
+                  {MEMORY_EXPORT_PROMPT}
+                </pre>
+                <button
+                  type="button"
+                  onClick={async () => {
+                    await navigator.clipboard.writeText(MEMORY_EXPORT_PROMPT);
+                    setCopied(true);
+                    setTimeout(() => setCopied(false), 2000);
+                  }}
+                  className="mt-3 inline-flex h-8 items-center rounded-full border border-[#e5e5e5] bg-white px-3 text-[12px] hover:border-black"
+                >
+                  {copied ? "Copied" : "Copy the prompt"}
+                </button>
+              </div>
+            </div>
+          )}
+
+          {mode === "upload" || mode === "linkedin" ? (
             <label className="mt-4 flex cursor-pointer flex-col items-center justify-center rounded-lg border border-dashed border-[#e5e5e5] bg-[#f5f3f1] px-6 py-10 text-center transition-colors hover:border-black">
               <input
                 type="file"
@@ -402,7 +460,9 @@ export default function OnboardingPage() {
                 onChange={(e) => setFile(e.target.files?.[0] ?? null)}
                 className="sr-only"
               />
-              <span className="text-sm font-medium">{file ? file.name : "Choose a PDF"}</span>
+              <span className="text-sm font-medium">
+                {file ? file.name : mode === "linkedin" ? "Choose your LinkedIn PDF" : "Choose a PDF"}
+              </span>
               <span className="mt-1 text-[13px] text-[#777169]">
                 {file ? `${Math.round(file.size / 1024)} KB, ready to parse` : "PDF, TXT, or Markdown"}
               </span>
@@ -412,14 +472,18 @@ export default function OnboardingPage() {
               value={pasted}
               onChange={(e) => setPasted(e.target.value)}
               rows={12}
-              placeholder={"Alex Rivera\nalex@university.edu\n\nEDUCATION\n...\n\nEXPERIENCE\n..."}
+              placeholder={
+                mode === "memory"
+                  ? "## Identity\n[2025-09-01] - ...\n\n## Career\n[2025-06-04] - ..."
+                  : "Alex Rivera\nalex@university.edu\n\nEDUCATION\n...\n\nEXPERIENCE\n..."
+              }
               className={`${areaClass} mt-4 font-mono`}
             />
           )}
 
           <div className="mt-5 flex items-center gap-3">
             <Button onClick={parseResume} disabled={busy}>
-              {busy ? "Reading your resume" : returning ? "Read this file" : "Continue"}
+              {busy ? "Reading it" : returning ? "Read this" : "Continue"}
             </Button>
             <span className="text-[13px] text-[#777169]">
               {returning ? "Nothing is replaced until you say so." : "Nothing is sent to anyone at this stage."}
@@ -489,8 +553,9 @@ export default function OnboardingPage() {
           <Eyebrow>02 · You</Eyebrow>
           <h2 className="mt-3 text-[17px] font-medium">How you introduce yourself</h2>
           <p className="mt-2 text-sm leading-6 text-[#777169]">
-            These four lines open every email and sign it off: &ldquo;My name is {profile.name || "you"} and I am{" "}
-            {withArticle(profile.standing) || "a student"} at {profile.school || "your school"}.&rdquo;
+            These lines open every email and sign it off: &ldquo;My name is {profile.name || "you"} and I am{" "}
+            {withArticle(profile.standing) || "a student"} at {profile.school || "your school"}
+            {profile.major ? ` studying ${profile.major}` : ""}.&rdquo;
           </p>
 
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
@@ -527,7 +592,16 @@ export default function OnboardingPage() {
               </datalist>
             </label>
             <label className="block">
-              <span className="eyebrow">Degree</span>
+              <span className="eyebrow">Major</span>
+              <input
+                value={profile.major ?? ""}
+                onChange={(e) => setText("major", e.target.value)}
+                placeholder="Neuroscience"
+                className={`${inputClass} mt-1.5`}
+              />
+            </label>
+            <label className="block">
+              <span className="eyebrow">Degree, as it appears in your signature</span>
               <input
                 value={profile.degree ?? ""}
                 onChange={(e) => setText("degree", e.target.value)}
