@@ -1,4 +1,5 @@
 import { findStore, listStore, newId, writeStore } from './store';
+import { sendSystemEmail } from './notify';
 
 export interface WaitlistEntry {
   id: string;
@@ -40,6 +41,30 @@ export async function addToWaitlist(input: { email: string; name?: string; schoo
     createdAt: new Date().toISOString(),
   };
   await writeStore(`waitlist:${entry.id}`, entry);
+  await notifySignup(entry);
+}
+
+/**
+ * Tell whoever runs the site that somebody asked for access, so a request does
+ * not sit unread in a table. Awaited rather than left dangling, because a
+ * serverless function can be frozen the moment it responds, but a failure here
+ * never fails the signup: the entry is already saved.
+ */
+async function notifySignup(entry: WaitlistEntry): Promise<void> {
+  const to = process.env.WAITLIST_NOTIFY_EMAIL;
+  if (!to) return;
+  const lines = [
+    `${entry.name ?? 'Someone'} asked for access to Sloan.`,
+    '',
+    `Email:  ${entry.email}`,
+    `Name:   ${entry.name ?? 'not given'}`,
+    `School: ${entry.school ?? 'not given'}`,
+    `When:   ${entry.createdAt}`,
+    '',
+    'To let them in, add this address to the allowlist in the Clerk dashboard',
+    'under User and Authentication, Restrictions, Allowlist.',
+  ];
+  await sendSystemEmail(to, `Sloan waitlist: ${entry.email}`, lines.join('\n'));
 }
 
 export async function getWaitlist(): Promise<WaitlistEntry[]> {
