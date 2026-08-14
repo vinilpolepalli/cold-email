@@ -49,7 +49,7 @@ function Row({
   );
 }
 
-export default function AppNav({ sentCount = 0, isAdmin = false }: { sentCount?: number; isAdmin?: boolean }) {
+export default function AppNav({ sentCount = 0 }: { sentCount?: number }) {
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
@@ -70,11 +70,6 @@ export default function AppNav({ sentCount = 0, isAdmin = false }: { sentCount?:
       {SECONDARY.map((item) => (
         <Row key={item.href} href={item.href} label={item.label} Icon={item.icon} active={isActive(item.href)} />
       ))}
-      {/* Only whoever runs the site can read the signups, so only they see the
-          link to them. */}
-      {isAdmin && (
-        <Row href="/waitlist" label="Waitlist" Icon={ListIcon} active={isActive("/waitlist")} />
-      )}
     </nav>
   );
 }
@@ -82,17 +77,6 @@ export default function AppNav({ sentCount = 0, isAdmin = false }: { sentCount?:
 // Inline 1.5px-stroke icons keep the set visually consistent and avoid pulling
 // a whole icon library into the client bundle for six glyphs.
 const S = { fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round" } as const;
-
-function ListIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} {...S}>
-      <path d="M8 6h13M8 12h13M8 18h13" />
-      <circle cx="3.5" cy="6" r="1" />
-      <circle cx="3.5" cy="12" r="1" />
-      <circle cx="3.5" cy="18" r="1" />
-    </svg>
-  );
-}
 
 function SquaresIcon({ className }: { className?: string }) {
   return (

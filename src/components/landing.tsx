@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { SignInButton } from "@clerk/nextjs";
+import { SignInButton, SignUpButton } from "@clerk/nextjs";
 import { Button, Card, Eyebrow, Inset, Pill, ScoreRing, SectionHeading } from "./ui";
 
 interface Stats {
@@ -10,37 +9,7 @@ interface Stats {
   schools: string[];
 }
 
-const inputClass =
-  "h-10 w-full rounded-lg border border-[#e5e5e5] bg-white px-3 text-sm text-black placeholder:text-[#777169] focus:border-black focus:outline-none";
-
-export default function WaitlistLanding({ stats, withClerk }: { stats: Stats; withClerk: boolean }) {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [school, setSchool] = useState("");
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState("");
-  const [joined, setJoined] = useState(false);
-
-  async function join(e: React.FormEvent) {
-    e.preventDefault();
-    setBusy(true);
-    setError("");
-    try {
-      const res = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, name, school }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "Could not join the waitlist");
-      setJoined(true);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : String(err));
-    } finally {
-      setBusy(false);
-    }
-  }
-
+export default function Landing({ stats, withClerk }: { stats: Stats; withClerk: boolean }) {
   return (
     <div>
       {/* Hero: 96px rhythm, oversized 400-weight display, copy left and
@@ -48,7 +17,7 @@ export default function WaitlistLanding({ stats, withClerk }: { stats: Stats; wi
       <section className="container-page pt-20 pb-16">
         <Pill className="mb-8">
           <span className="h-1.5 w-1.5 rounded-full bg-[#ff4704]" />
-          Private beta
+          Free while in beta
         </Pill>
 
         <h1 className="display max-w-4xl text-balance">
@@ -63,16 +32,22 @@ export default function WaitlistLanding({ stats, withClerk }: { stats: Stats; wi
           </p>
           <div className="shrink-0">
             <div className="flex flex-wrap gap-2">
-              <a href="#access" className="inline-flex">
-                <Button type="button">Request early access</Button>
-              </a>
+              {withClerk ? (
+                <SignUpButton mode="modal">
+                  <Button type="button">Get started</Button>
+                </SignUpButton>
+              ) : (
+                <a href="#access" className="inline-flex">
+                  <Button type="button">Get started</Button>
+                </a>
+              )}
               <a href="#how" className="inline-flex">
                 <Button type="button" variant="secondary">
                   See how it works
                 </Button>
               </a>
             </div>
-            <p className="mt-3 text-[13px] text-[#777169]">Invite only while we are in beta.</p>
+            <p className="mt-3 text-[13px] text-[#777169]">Free to use. Bring your own Gmail.</p>
           </div>
         </div>
 
@@ -189,81 +164,62 @@ export default function WaitlistLanding({ stats, withClerk }: { stats: Stats; wi
         </div>
       </section>
 
-      {/* Waitlist form. */}
+      {/* Sign-up. Open to anyone; the only thing a new account has to supply is
+          a Google account to send from. */}
       <section id="access" className="container-page border-t border-[#e5e5e5] py-24">
         <div className="grid gap-12 lg:grid-cols-[1fr_460px]">
           <div>
             <SectionHeading
               eyebrow="Access"
-              title="Request an invite"
-              body="Sloan is invite only while we are in beta. Tell us where you study and we will open a seat when one is free."
+              title="Make an account and start writing"
+              body="Sloan is open and free while in beta. You bring the Gmail account the emails send from, so replies land in your own inbox."
             />
           </div>
           <Card className="p-6">
-            {joined ? (
-              <div className="py-6 text-center">
-                <ScoreRing value={100} size={48} />
-                <h3 className="mt-4 text-[17px] font-medium">You are on the list</h3>
-                <p className="mt-2 text-sm text-[#777169]">
-                  We will email you when a seat opens up.
+            <Eyebrow>What you need</Eyebrow>
+            <ul className="mt-4 space-y-3">
+              {[
+                {
+                  t: "A Google account",
+                  d: "Sign in with Google and drafts send from your own Gmail, resume attached.",
+                },
+                {
+                  t: "Your resume",
+                  d: "A PDF. We read it once and turn it into a profile you can correct.",
+                },
+                {
+                  t: "An NVIDIA NIM key, optionally",
+                  d: "Paste your own key in Settings for AI drafting. Without one, drafts still write themselves from a built-in template.",
+                },
+              ].map((item) => (
+                <li key={item.t} className="flex gap-3">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ff4704]" />
+                  <div>
+                    <p className="text-[13px] font-medium">{item.t}</p>
+                    <p className="mt-0.5 text-[13px] leading-5 text-[#777169]">{item.d}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            {withClerk ? (
+              <>
+                <SignUpButton mode="modal">
+                  <Button type="button" className="mt-6 w-full">
+                    Create an account
+                  </Button>
+                </SignUpButton>
+                <p className="mt-3 text-[13px] text-[#777169]">
+                  Already have one?{" "}
+                  <SignInButton mode="modal">
+                    <button type="button" className="text-black underline underline-offset-2">
+                      Sign in
+                    </button>
+                  </SignInButton>
+                  .
                 </p>
-              </div>
+              </>
             ) : (
-              <form onSubmit={join} className="space-y-3">
-                <div className="grid gap-3 sm:grid-cols-2">
-                  <label className="block">
-                    <span className="eyebrow">Name</span>
-                    <input
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      placeholder="Alex Rivera"
-                      autoComplete="name"
-                      className={`${inputClass} mt-1.5`}
-                    />
-                  </label>
-                  <label className="block">
-                    <span className="eyebrow">School</span>
-                    <input
-                      value={school}
-                      onChange={(e) => setSchool(e.target.value)}
-                      placeholder="Optional"
-                      autoComplete="organization"
-                      className={`${inputClass} mt-1.5`}
-                    />
-                  </label>
-                </div>
-                <label className="block">
-                  <span className="eyebrow">Email</span>
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@university.edu"
-                    autoComplete="email"
-                    className={`${inputClass} mt-1.5`}
-                  />
-                </label>
-                <Button type="submit" disabled={busy} className="w-full">
-                  {busy ? "Saving your spot" : "Request early access"}
-                </Button>
-                {error && <p className="text-[13px] text-[#ff4704]">{error}</p>}
-                <p className="text-[13px] text-[#777169]">
-                  {withClerk ? (
-                    <>
-                      Already have access?{" "}
-                      <SignInButton mode="modal">
-                        <button type="button" className="text-black underline underline-offset-2">
-                          Sign in
-                        </button>
-                      </SignInButton>
-                      .
-                    </>
-                  ) : (
-                    "Set Clerk keys to enable sign-in."
-                  )}
-                </p>
-              </form>
+              <p className="mt-6 text-[13px] text-[#777169]">Set Clerk keys to enable sign-up.</p>
             )}
           </Card>
         </div>
