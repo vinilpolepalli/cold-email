@@ -1,12 +1,16 @@
+import Link from "next/link";
 import { ResearcherProfile } from "@/lib/types";
 import { ButtonLink } from "./ui";
 
 export default function ResearcherCard({ profile, compact = false }: { profile: ResearcherProfile; compact?: boolean }) {
+  const profileHref = `/researchers/${encodeURIComponent(profile.id)}`;
   return (
     <div className="flex h-full flex-col rounded-[12px] border border-[#e5e5e5] bg-white p-5 transition-colors hover:border-black">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <p className="truncate text-sm font-medium">{profile.name}</p>
+          <Link href={profileHref} className="truncate text-sm font-medium hover:underline underline-offset-2">
+            {profile.name}
+          </Link>
           <p className="mt-0.5 line-clamp-1 text-[13px] text-[#777169]">{profile.title}</p>
         </div>
         <span className="shrink-0 rounded-full border border-[#e5e5e5] bg-[#f5f3f1] px-2.5 py-0.5 text-[11px] text-[#777169]">
@@ -31,12 +35,17 @@ export default function ResearcherCard({ profile, compact = false }: { profile: 
         <span className={`truncate text-[11px] ${profile.email ? "font-mono text-[#777169]" : "text-[#777169]/60"}`}>
           {profile.email ?? "no public email"}
         </span>
-        <ButtonLink
-          href={`/compose?researcher=${encodeURIComponent(profile.id)}`}
-          className="h-7 shrink-0 px-3 text-[12px]"
-        >
-          Draft
-        </ButtonLink>
+        <div className="flex shrink-0 gap-1.5">
+          <ButtonLink href={profileHref} variant="secondary" className="h-7 px-3 text-[12px]">
+            Profile
+          </ButtonLink>
+          <ButtonLink
+            href={`/compose?researcher=${encodeURIComponent(profile.id)}`}
+            className="h-7 px-3 text-[12px]"
+          >
+            Draft
+          </ButtonLink>
+        </div>
       </div>
     </div>
   );

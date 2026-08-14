@@ -1,11 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { aiParseResume, parseResumePdf, parseResumeText, summarize } from '@/lib/resume';
-import { getCurrentUserId, getNimAuth, saveUserProfile } from '@/lib/user';
+import { parseResumePdf, parseResumeText, templateSummary } from '@/lib/resume';
+import { getCurrentUserId, getUserProfile, saveUserProfile } from '@/lib/user';
 import { saveResumeFile } from '@/lib/resume-file';
 import { UserProfile } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
-export const maxDuration = 120;
+export const maxDuration = 60;
+
+// Upload is deliberately the fast half of onboarding. It extracts the text,
+// stores the file, and answers with a deterministic parse. The LLM pass runs
+// afterwards through /api/onboard/enhance, so the user is editing their
+// profile within a couple of seconds instead of watching a spinner for a
+// minute while a model streams.
 
 export async function POST(req: NextRequest) {
   const userId = await getCurrentUserId();
@@ -20,15 +26,20 @@ export async function POST(req: NextRequest) {
       const file = form.get('resume');
       if (file instanceof File) {
         const buffer = Buffer.from(await file.arrayBuffer());
-        rawText = file.name.toLowerCase().endsWith('.pdf')
-          ? await parseResumePdf(buffer)
-          : buffer.toString('utf8');
-        // Keep the original file so it can be attached to outgoing emails.
-        const saved = await saveResumeFile(userId, {
-          fileName: file.name,
-          contentType: file.type || 'application/pdf',
-          buffer,
-        });
+        const isPdf = file.name.toLowerCase().endsWith('.pdf');
+        // Text extraction and the file write are independent, and the write
+        // is a few hundred KB over the network. Overlapping them takes the
+        // slower of the two rather than their sum.
+        const [text, saved] = await Promise.all([
+          isPdf ? parseResumePdf(buffer) : Promise.resolve(buffer.toString('utf8')),
+          // Keep the original file so it can be attached to outgoing emails.
+          saveResumeFile(userId, {
+            fileName: file.name,
+            contentType: file.type || 'application/pdf',
+            buffer,
+          }),
+        ]);
+        rawText = text;
         if (!saved.saved) {
           // The parse still succeeds; the caller is told the attachment was
           // rejected rather than being left thinking an old file is current.
@@ -52,42 +63,36 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const nimAuth = await getNimAuth(userId);
-
-  // Prefer LLM extraction (handles any resume layout); fall back to the
-  // deterministic parser when no key is set or the model misfires.
-  const ai = await aiParseResume(rawText, nimAuth);
-  let parser: 'nim' | 'heuristic';
-  let summaryGenerator: 'nim' | 'template';
-  let parsed;
-  let summary: string;
-
-  if (ai) {
-    parser = 'nim';
-    const { summary: aiSummary, ...fields } = ai;
-    parsed = fields;
-    if (aiSummary) {
-      summary = aiSummary;
-      summaryGenerator = 'nim';
-    } else {
-      const s = await summarize(fields, nimAuth);
-      summary = s.summary;
-      summaryGenerator = s.generator;
-    }
-  } else {
-    parser = 'heuristic';
-    parsed = parseResumeText(rawText);
-    const s = await summarize(parsed, nimAuth);
-    summary = s.summary;
-    summaryGenerator = s.generator;
-  }
-
-  const profile: UserProfile = {
+  const parsed = parseResumeText(rawText);
+  const candidate: UserProfile = {
     ...parsed,
     id: userId,
-    aiSummary: summary,
+    aiSummary: templateSummary(parsed),
     updatedAt: new Date().toISOString(),
   };
-  await saveUserProfile(profile);
-  return NextResponse.json({ profile, parser, summaryGenerator, resumeWarning });
+
+  // A returning user's saved profile is never overwritten here: they may have
+  // spent time correcting it, and the new file might be a small edit. The
+  // client shows what changed and merges section by section.
+  const existing = await getUserProfile(userId);
+  if (existing) {
+    return NextResponse.json({
+      profile: existing,
+      candidate,
+      isNew: false,
+      parser: 'heuristic',
+      rawText: parsed.rawResumeText,
+      resumeWarning,
+    });
+  }
+
+  await saveUserProfile(candidate);
+  return NextResponse.json({
+    profile: candidate,
+    candidate,
+    isNew: true,
+    parser: 'heuristic',
+    rawText: parsed.rawResumeText,
+    resumeWarning,
+  });
 }

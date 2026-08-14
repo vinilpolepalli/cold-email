@@ -45,6 +45,10 @@ export async function saveResumeFile(
   return { saved: true };
 }
 
+export async function deleteResumeFile(userId: string): Promise<void> {
+  await deleteStore(keyFor(userId));
+}
+
 export async function getResumeFile(userId: string): Promise<StoredResume | null> {
   const stored = await readStore<StoredResume | null>(keyFor(userId), null);
   return stored && stored.base64 ? stored : null;

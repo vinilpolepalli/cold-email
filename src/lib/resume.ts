@@ -77,6 +77,10 @@ function isContinuation(line: string, previous: string): boolean {
 function groupEntries(lines: string[]): string[] {
   const entries: string[] = [];
   let headerBuf: string[] = [];
+  // The organization stays attached to every bullet under it, not just the
+  // first. A bullet on its own ("Created a virtual-screening workflow") loses
+  // the one fact that makes it worth reading: where it happened.
+  let currentHead = '';
 
   const flushHeader = () => {
     if (headerBuf.length) {
@@ -92,11 +96,10 @@ function groupEntries(lines: string[]): string[] {
 
     if (isBullet) {
       if (headerBuf.length) {
-        entries.push(`${headerBuf.join(' | ')}: ${text}`);
+        currentHead = headerBuf.join(' | ');
         headerBuf = [];
-      } else {
-        entries.push(text);
       }
+      entries.push(currentHead ? `${currentHead}: ${text}` : text);
       continue;
     }
 
@@ -329,10 +332,19 @@ export function parseResumeText(raw: string): ParsedResume {
     .map((a) => a.trim())
     .filter((a) => a.length > 2 && a.length < 160);
 
+  const education = groupEntries(buckets.education).slice(0, 8);
+  const degree = deriveDegree(education);
+
   return {
     name,
     email,
-    education: groupEntries(buckets.education).slice(0, 8),
+    // Derived once here rather than re-parsed on every draft, and shown in
+    // onboarding so the user can correct them in one place.
+    school: deriveSchool(education),
+    degree,
+    gradYear: deriveGradYear(education),
+    standing: deriveStanding(education, degree),
+    education,
     experience: groupEntries(buckets.experience).slice(0, 14),
     projects: groupEntries(buckets.projects).slice(0, 12),
     skills: [...new Set(skills)].slice(0, 28),
@@ -347,14 +359,79 @@ export function parseResumeText(raw: string): ParsedResume {
   };
 }
 
+// ── the four facts the email signs off with ─────────────────────────────────
+//
+// School, degree, class year, and standing appear in the opening line and the
+// signature of every draft. They are derived here, stored on the profile, and
+// shown in onboarding so a bad guess is corrected once instead of surfacing in
+// every email.
+
+/** Cut to a whole word, dropping a dangling half-parenthetical. */
+export function trimToWord(text: string, max: number): string {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  const trimmed = cut.slice(0, cut.lastIndexOf(' ')).replace(/[\s,;(]+$/, '');
+  // Count brackets rather than test for presence: an earlier "(Stern)" must
+  // not mask a later unclosed "(Courant".
+  const opens = (trimmed.match(/\(/g) ?? []).length;
+  const closes = (trimmed.match(/\)/g) ?? []).length;
+  return opens > closes ? trimmed.slice(0, trimmed.lastIndexOf('(')).replace(/[\s,;]+$/, '') : trimmed;
+}
+
+export function deriveSchool(education: string[]): string {
+  const first = education[0];
+  if (!first) return '';
+  // Education entries merge the school line with the degree line, so cut at
+  // the first degree marker; otherwise the institution reads as
+  // "Massachusetts Institute of Technology B.S. in Computer Science".
+  return cleanHeadline(first)
+    // No trailing \b: these abbreviations end in a period, and a word boundary
+    // cannot occur between "." and the following space, so \b never matches.
+    .split(/\b(?:B\.S\.|B\.A\.|A\.B\.|M\.S\.|M\.A\.|Ph\.?D\.?|Sc\.B\.|Dual degree)(?=\s|$)/)[0]
+    .split(',')[0]
+    .replace(/[\s,;|-]+$/, '')
+    .trim();
+}
+
+export function deriveDegree(education: string[]): string {
+  // Strip "City, ST" first: an undotted MA or MS in a location would otherwise
+  // be read as a degree, yielding a signature line of "MA B.S. in ...".
+  const source = education.join(' ').replace(/\s+[A-Z][a-zA-Z .]+,\s*[A-Z]{2}\b/g, ' ');
+  // Case-sensitive, and the dotless forms must be followed by degree-ish text
+  // rather than any non-lowercase character.
+  const degree = source
+    .match(/\b((?:B\.S\.|B\.A\.|A\.B\.|M\.S\.|M\.A\.|Ph\.?D\.?|Sc\.B\.|(?:BS|BA|AB|MS|MA)(?=\s+(?:in|of)\b))[^,;:|]{0,90})/)?.[1]
+    ?.trim();
+  return degree ? trimToWord(degree.replace(/\s+/g, ' '), 90) : '';
+}
+
+export function deriveGradYear(education: string[]): string {
+  return education.join(' ').match(/\b(?:expected|anticipated|class of)\s+\w*\s*(20\d{2})\b/i)?.[1] ?? '';
+}
+
+/** "undergraduate", "master's student", "PhD student". No article. */
+export function deriveStanding(education: string[], degree: string): string {
+  const source = `${degree} ${education.join(' ')}`;
+  if (/ph\.?d|doctoral/i.test(source)) return 'PhD student';
+  if (/\bm\.?s\.?\b|\bm\.?a\.?\b|master/i.test(source)) return "master's student";
+  if (/b\.?s\.?|b\.?a\.?|a\.?b\.?|sc\.?b\.?|undergrad/i.test(source)) return 'undergraduate';
+  return education.length ? 'student' : '';
+}
+
 const AI_PARSE_SYSTEM = `You extract structured data from a resume. Reply ONLY with JSON matching:
-{"name":string,"email":string,"education":string[],"experience":string[],"projects":string[],"skills":string[],"publications":string[],"researchInterests":string[],"awards":string[],"summary":string}
+{"name":string,"email":string,"school":string,"degree":string,"gradYear":string,"standing":string,"education":string[],"experience":string[],"projects":string[],"skills":string[],"publications":string[],"researchInterests":string[],"awards":string[],"summary":string}
 
 Rules:
 - Copy facts from the resume only. Never invent employers, schools, metrics, or skills.
-- education/experience/projects: one complete, readable entry per item. Each entry names the organization or project and what the person did, joining any lines the PDF wrapped. Keep concrete numbers where present.
+- school: the institution they currently attend, name only, no degree or location.
+- degree: the degree line as written, e.g. "B.S. in Computer Science".
+- gradYear: four digits, the expected graduation year. "" if the resume does not say.
+- standing: one of "undergraduate", "master's student", "PhD student", "postdoc", or "" if unclear. No article.
+- education/experience/projects: one complete, readable entry per item, ordered most impressive first. Each entry names the organization or project and what the person did, joining any lines the PDF wrapped. Keep concrete numbers, and keep the organization on every entry so a bullet still says where the work happened.
+- publications: papers, preprints, posters, and talks, each with its URL if the resume gives one.
 - skills: individual technologies or methods, not sentences.
 - researchInterests: only topics the resume itself indicates through their work; empty array if unclear.
+- awards: honours and press, each with its URL if the resume gives one.
 - summary: 2-3 sentences in the FIRST PERSON ("I study...", "I built..."), for the opening of a cold email to a professor: strongest research and technical work plus focus areas.
 - Never use em-dashes or en-dashes; use periods or commas.
 - Use "" or [] for anything absent.`;
@@ -384,10 +461,16 @@ export async function aiParseResume(
     // deterministic parser handle it instead of saving an empty profile.
     if (!name && list(parsed.experience).length === 0 && list(parsed.education).length === 0) return null;
 
+    const education = list(parsed.education).slice(0, 8);
+    const degree = str(parsed.degree) || deriveDegree(education);
     return {
       name: name || 'Unknown',
       email: str(parsed.email),
-      education: list(parsed.education).slice(0, 8),
+      school: str(parsed.school) || deriveSchool(education),
+      degree,
+      gradYear: str(parsed.gradYear).match(/20\d{2}/)?.[0] ?? deriveGradYear(education),
+      standing: str(parsed.standing) || deriveStanding(education, degree),
+      education,
       experience: list(parsed.experience).slice(0, 14),
       projects: list(parsed.projects).slice(0, 12),
       skills: list(parsed.skills).slice(0, 28),

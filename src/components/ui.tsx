@@ -145,7 +145,7 @@ export function ScoreRing({ value, size = 44 }: { value: number; size?: number }
 /** Numbered progress rail: active step solid, completed rules in accent. */
 export function StepRail({ steps, current }: { steps: string[]; current: number }) {
   return (
-    <div className="flex items-center gap-3 overflow-x-auto pb-1">
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-2 pb-1">
       {steps.map((label, i) => (
         <div key={label} className="flex shrink-0 items-center gap-3">
           <span
@@ -161,7 +161,7 @@ export function StepRail({ steps, current }: { steps: string[]; current: number 
             {label}
           </span>
           {i < steps.length - 1 && (
-            <span className={`h-px w-8 sm:w-16 ${i < current ? "bg-[#ff4704]" : "bg-[#e5e5e5]"}`} />
+            <span className={`h-px w-4 sm:w-8 ${i < current ? "bg-[#ff4704]" : "bg-[#e5e5e5]"}`} />
           )}
         </div>
       ))}

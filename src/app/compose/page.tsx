@@ -3,7 +3,7 @@
 import { Suspense, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { OutboxEntry, ResearcherProfile } from "@/lib/types";
+import { OutboxEntry, Publication, ResearcherProfile } from "@/lib/types";
 import { Button, Card, Inset } from "@/components/ui";
 
 const inputClass =
@@ -29,6 +29,7 @@ function ComposeInner() {
   const [to, setTo] = useState("");
   const [generator, setGenerator] = useState("");
   const [resume, setResume] = useState<{ fileName: string; size: number } | null>(null);
+  const [cited, setCited] = useState<Publication | null>(null);
   const [attachResume, setAttachResume] = useState(true);
   const [busy, setBusy] = useState(false);
   const [loadingDraft, setLoadingDraft] = useState(true);
@@ -54,6 +55,7 @@ function ComposeInner() {
       setGenerator(data.draft.generator);
       setTo(data.researcher.email ?? "");
       setResume(data.resume ?? null);
+      setCited(data.citedPublication ?? null);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {
@@ -117,14 +119,47 @@ function ComposeInner() {
               ))}
             </div>
             {researcher.bio && <p className="mt-3 text-[13px] leading-5 text-[#777169]">{researcher.bio}</p>}
-            <a
-              href={researcher.website ?? researcher.sourceUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-3 inline-block text-[11px] text-[#777169] underline underline-offset-2 hover:text-black"
+            <Link
+              href={`/researchers/${encodeURIComponent(researcher.id)}`}
+              className="mt-3 inline-block text-[11px] text-black underline underline-offset-2"
             >
-              Profile source
-            </a>
+              Read their research
+            </Link>
+          </Card>
+        )}
+
+        {cited && (
+          <Card className="mt-3 p-5">
+            <p className="eyebrow">Paper cited in this draft</p>
+            <p className="mt-2 text-[13px] leading-5">{cited.title}</p>
+            <p className="mt-1 text-[11px] text-[#777169]">
+              {[cited.venue, cited.year].filter(Boolean).join(" · ")}
+            </p>
+            <div className="mt-3 flex gap-2">
+              {cited.pdfUrl && (
+                <a
+                  href={cited.pdfUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex h-7 items-center rounded-full border border-[#ff4704]/30 bg-[#ff4704]/8 px-3 text-[12px] text-[#ff4704]"
+                >
+                  Read the PDF
+                </a>
+              )}
+              {cited.url && (
+                <a
+                  href={cited.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex h-7 items-center rounded-full border border-[#e5e5e5] px-3 text-[12px] text-[#777169] hover:border-black hover:text-black"
+                >
+                  Source
+                </a>
+              )}
+            </div>
+            <p className="mt-3 text-[11px] leading-4 text-[#777169]">
+              Skim it before you send. The draft names it, so a reply will assume you know it.
+            </p>
           </Card>
         )}
         {generator && !sent && (
