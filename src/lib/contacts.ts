@@ -98,7 +98,10 @@ function describeNear(context: string): { name: string | null; role: string | nu
  * next to it. Works on the raw HTML rather than the stripped text so the
  * anchor's own label is available: on most lab pages that label is the name.
  */
-const ADDRESS_RE = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
+// The local part must start and end alphanumeric. Without the anchors, a page
+// reading "email: .jane@mit.edu" or "(see jane@mit.edu)" yields an address
+// with punctuation glued to it, which then bounces when the email is sent.
+const ADDRESS_RE = /[A-Za-z0-9](?:[A-Za-z0-9._%+-]*[A-Za-z0-9])?@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
 
 /**
  * Academic pages hide addresses from scrapers by writing "jane [at] mit [dot]
