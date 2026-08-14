@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { addToWaitlist, getWaitlist, isValidEmail, isWaitlistAdmin } from '@/lib/waitlist';
+import { addToWaitlist, getWaitlist, isValidEmail, isWaitlistAdmin, removeFromWaitlist } from '@/lib/waitlist';
 import { getCurrentUserId } from '@/lib/user';
 
 export const dynamic = 'force-dynamic';
@@ -43,4 +43,21 @@ export async function GET() {
   }
   const entries = await getWaitlist();
   return NextResponse.json({ count: entries.length, entries });
+}
+
+/** Admin only: drop a signup, once it has been let in or turned down. */
+export async function DELETE(req: NextRequest) {
+  const userId = await getCurrentUserId();
+  if (!userId) return NextResponse.json({ error: 'Sign in required' }, { status: 401 });
+  if (!isWaitlistAdmin(userId)) {
+    return NextResponse.json({ error: 'Not authorized' }, { status: 403 });
+  }
+
+  const id = new URL(req.url).searchParams.get('id') ?? '';
+  try {
+    await removeFromWaitlist(id);
+  } catch {
+    return NextResponse.json({ error: 'Unknown signup' }, { status: 400 });
+  }
+  return NextResponse.json({ ok: true });
 }
