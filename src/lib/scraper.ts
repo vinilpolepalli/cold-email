@@ -19,7 +19,7 @@ export interface ScrapeOptions {
   nimAuth?: NimAuth;
 }
 
-async function fetchPage(url: string): Promise<string> {
+export async function fetchPage(url: string): Promise<string> {
   const res = await fetch(url, {
     redirect: 'follow',
     headers: { 'User-Agent': 'cold-email-research-scraper/1.0 (+academic outreach demo)' },
@@ -29,7 +29,7 @@ async function fetchPage(url: string): Promise<string> {
   return await res.text();
 }
 
-function stripHtml(html: string): string {
+export function stripHtml(html: string): string {
   return html
     .replace(/<head[\s\S]*?<\/head>/gi, ' ')
     .replace(/<script[\s\S]*?<\/script>/gi, ' ')
@@ -46,7 +46,7 @@ function stripHtml(html: string): string {
     .trim();
 }
 
-function extractLinks(html: string, baseUrl: string): { href: string; text: string }[] {
+export function extractLinks(html: string, baseUrl: string): { href: string; text: string }[] {
   const links: { href: string; text: string }[] = [];
   const re = /<a\b[^>]*href=["']([^"'#]+)["'][^>]*>([\s\S]*?)<\/a>/gi;
   let m: RegExpExecArray | null;

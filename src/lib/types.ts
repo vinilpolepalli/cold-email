@@ -82,12 +82,35 @@ export interface ResearcherWorks {
   fetchedAt: string;
 }
 
+/**
+ * Someone else worth copying on the email: the professor's assistant, a lab
+ * manager, a postdoc who runs the project. Every address here was published on
+ * a page we fetched, never constructed, same rule as researcher emails.
+ */
+export interface LabContact {
+  name: string | null;
+  role: string | null;
+  email: string;
+  /** admin: assistants and coordinators. lab: people doing the research. */
+  kind: 'admin' | 'lab';
+  sourceUrl: string;
+}
+
+export interface ContactLookup {
+  researcherId: string;
+  contacts: LabContact[];
+  /** Pages actually read, so the UI can say where an address came from. */
+  pagesChecked: string[];
+  fetchedAt: string;
+}
+
 export interface OutboxEntry {
   id: string;
   userId: string;
   researcherId: string;
   researcherName: string;
   to: string;
+  cc?: string[];
   subject: string;
   body: string;
   attachmentName?: string | null;
