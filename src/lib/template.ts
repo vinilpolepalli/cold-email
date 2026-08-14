@@ -54,7 +54,12 @@ function relevanceScore(entry: string, target: Set<string>): number {
  */
 function researcherTerms(researcher: ResearcherProfile, works?: ResearcherWorks | null): Set<string> {
   const sources = [...researcher.researchAreas, researcher.bio ?? '', researcher.department];
-  for (const pub of works?.publications ?? []) sources.push(pub.title);
+  for (const pub of works?.publications ?? []) {
+    sources.push(pub.title);
+    // The opening of an abstract names the methods and materials, which is
+    // where a student's own vocabulary usually meets a lab's.
+    if (pub.abstract) sources.push(pub.abstract.slice(0, 400));
+  }
   sources.push(...(works?.topics ?? []));
   return new Set(tokens(sources.join(' ')));
 }
@@ -206,20 +211,29 @@ function signature(user: UserProfile): string {
  */
 function paperSentence(pub: Publication, overlap: string): string {
   const context = publicationContext(pub);
-  const cite = context ? `"${pub.title}" (${context})` : `"${pub.title}"`;
+  // The title is wrapped in quotes, so any quotes inside it become single.
+  const title = pub.title.replace(/"/g, "'");
+  const cite = context ? `"${title}" (${context})` : `"${title}"`;
   return overlap
     ? `Your paper ${cite} is the closest thing I have found to what I want to work on, particularly the ${overlap} side of it.`
     : `Your paper ${cite} is the closest thing I have found to what I want to work on.`;
 }
 
-/** The topic the sender and the paper share, for the sentence above. */
+/**
+ * The topic the sender and the paper share, for the sentence above. Stated
+ * interests come first, then the lab's own area labels, and only multi-word
+ * skills after that: "the Python side of it" is not a research topic.
+ */
 function sharedTopic(pub: Publication, user: UserProfile, researcher: ResearcherProfile): string {
   const paperTerms = new Set(tokens(`${pub.title} ${pub.abstract ?? ''}`));
-  const mine = [...user.researchInterests, ...user.skills];
-  const hit = mine.find((term) => tokens(term).some((t) => paperTerms.has(t)));
-  if (hit) return lowerFirst(hit.trim());
-  const area = researcher.researchAreas.find((a) => tokens(a).some((t) => paperTerms.has(t)));
-  return area ? lowerFirst(area) : '';
+  const overlaps = (term: string) => tokens(term).some((t) => paperTerms.has(t));
+  const candidates = [
+    ...user.researchInterests,
+    ...researcher.researchAreas,
+    ...user.skills.filter((s) => s.trim().includes(' ')),
+  ];
+  const hit = candidates.find((term) => term.trim() && overlaps(term));
+  return hit ? lowerFirst(hit.trim()) : '';
 }
 
 export function templateDraft(
@@ -284,11 +298,18 @@ export function templateDraft(
   // list with unrelated work (a finance internship for a biology lab) reads
   // worse than a short list.
   const spoken = new Set([primary?.entry, secondary?.entry].filter(Boolean) as string[]);
-  const related = scored.filter((r) => r.score > 0 && !spoken.has(r.entry)).map((r) => r.entry);
+  const unspoken = scored.filter((r) => !spoken.has(r.entry));
+  const overlapping = unspoken.filter((r) => r.score > 0).map((r) => r.entry);
+  // With nothing overlapping, the strongest remaining work still carries the
+  // email. An empty evidence section is worse than an adjacent one, and the
+  // paragraph after it says plainly that the fit is indirect.
+  const related = overlapping.length ? overlapping : unspoken.slice(0, 3).map((r) => r.entry);
   // An award or press mention that carries a link belongs in this list too:
   // it is checkable, which is the whole point of the bullets.
   const linkedAwards = (user.awards ?? []).filter((a) => /https?:\/\//.test(a));
-  const bulletSource = [...user.publications, ...linkedAwards, ...related].slice(0, 4);
+  const bulletSource = [...user.publications, ...linkedAwards, ...related]
+    .filter((entry) => entry.trim().length > 0)
+    .slice(0, 4);
   let previousHead = '';
   const bulletLines = bulletSource.map((entry) => {
     const line = toBullet(entry, previousHead);
@@ -304,6 +325,29 @@ export function templateDraft(
     ? `More broadly, I have been exploring ${lowerFirst(interests)}, which is what draws me to your lab specifically.`
     : '';
 
+  // The reference email owns its weakest link rather than hiding it: adjacent
+  // work is named, called adjacent, and turned into an argument about
+  // groundwork. That is more convincing than pretending everything fits.
+  const orgOf = (entry: string) => splitOrgRole(splitEntry(entry).head).org.replace(/\.$/, '').trim();
+  // Somewhere already named in the email is not "work you can also see in my
+  // resume", and calling it unrelated after quoting it contradicts the email.
+  const alreadyNamed = new Set([...spoken, ...bulletSource].map(orgOf).filter(Boolean));
+  const bulleted = new Set(bulletSource);
+  const adjacent = [
+    ...new Set(
+      unspoken
+        .filter((r) => r.score === 0 && !bulleted.has(r.entry))
+        .map((r) => orgOf(r.entry))
+        .filter((org) => !alreadyNamed.has(org))
+        // A resume that lists "GitHub" or "Demo" as a project header is
+        // naming a link, not a place worth citing to a professor.
+        .filter((org) => org.length > 3 && !/^(?:github|gitlab|demo|link|website|site|paper|slides|video)$/i.test(org))
+    ),
+  ].slice(0, 2);
+  const groundwork = adjacent.length
+    ? `I also have work at ${adjacent.join(' and ')} that you can see in my attached resume. Those projects are not directly related to your lab's work, but they have given me a foundation in problem solving, computational techniques, and working on a research team.`
+    : '';
+
   const skills = user.skills.length
     ? `I have extensively used ${user.skills.slice(0, 4).join(', ')} in past work, but have a lot of coding experience and am adaptable to whichever libraries your lab utilizes. Please let me know if there is a fit in your lab.`
     : 'Please let me know if there is a fit in your lab.';
@@ -313,6 +357,7 @@ export function templateDraft(
     intro,
     connection,
     bullets,
+    groundwork,
     context,
     skills,
     'I would be happy to elaborate on my skills and where I think I can best help out.',

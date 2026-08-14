@@ -102,7 +102,9 @@ const SCHOOL_ALIASES: { match: RegExp; aliases: string[] }[] = [
     aliases: ['massachusetts institute of technology', 'mit ', 'broad institute', 'whitehead institute', 'lincoln laboratory'],
   },
   { match: /princeton/i, aliases: ['princeton'] },
-  { match: /penn|wharton|pennsylvania/i, aliases: ['university of pennsylvania', 'pennsylvania', 'wharton', 'perelman', "children's hospital of philadelphia"] },
+  // Deliberately no bare "pennsylvania": it matches Pennsylvania State
+  // University, which is a different school with plenty of shared surnames.
+  { match: /penn|wharton|pennsylvania/i, aliases: ['university of pennsylvania', 'wharton', 'perelman', "children's hospital of philadelphia"] },
 ];
 
 function aliasesFor(school: string): string[] {

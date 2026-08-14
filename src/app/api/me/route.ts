@@ -25,10 +25,14 @@ export async function PUT(req: NextRequest) {
   const body = await req.json();
   const updated: UserProfile = { ...existing };
   for (const key of EDITABLE) {
-    if (key in body) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      (updated as any)[key] = body[key];
-    }
+    if (!(key in body)) continue;
+    const value = body[key];
+    // The row editors leave a blank entry behind when someone adds a line and
+    // does not fill it. Left in, it becomes an empty bullet in a real email.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (updated as any)[key] = Array.isArray(value)
+      ? value.filter((item: unknown) => typeof item === 'string' && item.trim().length > 0)
+      : value;
   }
   updated.updatedAt = new Date().toISOString();
   await saveUserProfile(updated);
