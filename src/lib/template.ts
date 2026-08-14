@@ -309,10 +309,20 @@ function keyClaim(abstract: string, title: string): string {
       best = sentence;
     }
   });
-  return toSecondPerson(best.replace(/\s+/g, ' '))
-    // "In this work, you develop ..." is framing for a reader of the paper,
-    // not of an email. The sentence works better without it.
-    .replace(/^(?:in this (?:work|paper|study|article),?\s*|here,?\s*|to this end,?\s*|in particular,?\s*)/i, '')
+  return cleanAbstractSentence(best);
+}
+
+/**
+ * An abstract sentence, rewritten for a reader of an email rather than of the
+ * paper: second person, and without the framing clause that only makes sense
+ * inside the abstract.
+ */
+function cleanAbstractSentence(sentenceText: string): string {
+  return toSecondPerson(sentenceText.replace(/\s+/g, ' '))
+    .replace(
+      /^(?:in this (?:work|paper|study|article),?\s*|here,?\s*|to this end,?\s*|in particular,?\s*|specifically,?\s*)/i,
+      ''
+    )
     .trim();
 }
 
@@ -339,6 +349,11 @@ function paperInsight(paper: FocusPaper, user: UserProfile, researcher: Research
   }
 
   const reaction = `I went through ${where}, and the part I keep coming back to is that ${lowerFirst(sentence(claim))}`;
+  // A second detail from the abstract, so the paragraph reads as someone who
+  // got past the first paragraph of it. Skipped when the abstract has nothing
+  // further to say, rather than padded.
+  const secondClaim = paper.abstract ? supportingClaim(paper.abstract, paper.title ?? '', claim) : '';
+  const detail = secondClaim ? `You also ${lowerFirst(sentence(stripLeadingSubject(secondClaim)))}` : '';
 
   // What the sender would add. Only their own stated interests can name a
   // direction; naming the lab's own area back at them is circular, and naming
@@ -349,12 +364,59 @@ function paperInsight(paper: FocusPaper, user: UserProfile, researcher: Research
   };
   const interest = user.researchInterests.map((i) => i.trim()).find((i) => i && overlaps(i));
   const skill = user.skills.map((s) => s.trim()).find((s) => s.includes(' ') && overlaps(s));
+  // Where the sender would take it. An overlapping interest names the
+  // direction; failing that, a method they actually know is a concrete thing
+  // to offer. A bare language is not: "Python is where my work has been" says
+  // nothing to someone who works on matrix completion, so it is left out.
   const next = interest
-    ? `The direction I would want to take that is ${lowerFirst(interest)}.`
+    ? `The direction I would want to take that is ${lowerFirst(interest)}${
+        skill ? `, starting from the ${lowerFirst(skill)} work I have already done` : ''
+      }.`
     : skill
       ? `What I would want to try from there is bringing ${lowerFirst(skill)} to it.`
       : '';
-  return [reaction, next].filter(Boolean).join(' ');
+  return [reaction, detail, next].filter(Boolean).join(' ');
+}
+
+/**
+ * A second sentence from the abstract, distinct from the one already quoted.
+ * Prefers the sentences that report a result or name a limitation, which are
+ * the ones worth reacting to.
+ */
+const RESULT_MARKER =
+  /\b(?:we\s+(?:find|show|observe|identify|demonstrate|report|derive|develop|propose|present|introduce|extend|apply|achieve|train|build|evaluate)|our\s+(?:method|approach|model|results?|framework)|results?\s+(?:show|suggest|indicate)|however|remains?|limitation|challenge|future work|unclear|open question|yet to)\b/i;
+
+function supportingClaim(abstract: string, title: string, already: string): string {
+  const titleTerms = new Set(tokens(title));
+  // Compare the cleaned forms. The quoted claim has already had its framing
+  // clause removed, so matching raw abstract text against it lets the same
+  // sentence through twice.
+  const fingerprint = (text: string) => cleanAbstractSentence(text).toLowerCase().slice(0, 60);
+  const taken = fingerprint(already);
+
+  const sentences = abstract
+    .split(/(?<=[.!?])\s+/)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 45 && s.length < 300 && fingerprint(s) !== taken);
+  if (!sentences.length) return '';
+
+  let best = '';
+  let bestScore = 0;
+  for (const candidate of sentences) {
+    const overlap = [...new Set(tokens(candidate))].filter((t) => titleTerms.has(t)).length;
+    const score = (RESULT_MARKER.test(candidate) ? 5 : 0) + overlap;
+    if (score > bestScore) {
+      bestScore = score;
+      best = candidate;
+    }
+  }
+  // Only worth a sentence if it actually reports something.
+  return bestScore >= 5 ? cleanAbstractSentence(best) : '';
+}
+
+/** "You show that X" reads badly after "You also"; drop the repeated subject. */
+function stripLeadingSubject(text: string): string {
+  return text.replace(/^(?:you|your team)\s+/i, '').trim();
 }
 
 /**
@@ -450,16 +512,12 @@ export function templateDraft(
     return `${opener}, I ${lowerFirst(sentence(detail))}`;
   };
 
+  // One experience, not two. The opening paragraph is the least interesting
+  // part of the email to the person reading it: they can see the rest in the
+  // bullets and the attached resume. The sentences saved here go to the
+  // paragraph about their own work, which is what earns a reply.
   const primary = scored[0];
-  // The second experience only earns a place when it relates to this lab and
-  // happened somewhere else. Two bullets from one job read as padding, which
-  // is exactly what makes a cold email look like a form letter.
-  const secondary = primary
-    ? scored.slice(1).find((r) => r.score > 0 && splitEntry(r.entry).head !== splitEntry(primary.entry).head)
-    : undefined;
-
   if (primary) opening.push(narrate(primary.entry, ''));
-  if (secondary) opening.push(narrate(secondary.entry, 'Earlier'));
   if (opening.length === 1 && user.aiSummary) opening.push(user.aiSummary);
   const intro = opening.filter(Boolean).join(' ');
 
@@ -477,7 +535,7 @@ export function templateDraft(
   // that actually overlap this researcher's work earn a bullet: padding the
   // list with unrelated work (a finance internship for a biology lab) reads
   // worse than a short list.
-  const spoken = new Set([primary?.entry, secondary?.entry].filter(Boolean) as string[]);
+  const spoken = new Set([primary?.entry].filter(Boolean) as string[]);
   const unspoken = scored.filter((r) => !spoken.has(r.entry));
   const overlapping = unspoken.filter((r) => r.score > 0).map((r) => r.entry);
   // With nothing overlapping, the strongest remaining work still carries the
@@ -553,8 +611,8 @@ export function templateDraft(
 const DRAFT_SYSTEM = `You write cold emails from a student to a professor asking to join their lab. Follow this exact structure, which is proven to get replies:
 
 1. "Hello Professor <LastName)," greeting.
-2. One paragraph: the student's name, their standing, school and major, then their TWO most relevant prior experiences, most relevant first, each with a concrete result. Order by relevance to this professor's work, not by date.
-3. One short paragraph, two or three sentences, that proves the student read the supplied paper. Say you came across their work in the area, then name something SPECIFIC from that paper: a method, a result, a dataset, a limitation. Then say what the student would want to extend, try next, or apply it to, connected to their own skills. Use the student's own notes about the paper when supplied, in preference to the abstract. NEVER write "Your paper <title> (Venue, Year) is ..." or any other bare citation, and never state a finding that is not in the supplied abstract or notes.
+2. TWO sentences only: the student's name, standing, school and major, then their single most relevant prior experience with a concrete result. Pick it by relevance to this professor's work, not by date. Do NOT list a second experience here; the bullets below cover the rest.
+3. The longest paragraph, three or four sentences, showing the student actually read the supplied paper. Name something SPECIFIC from it: the method, the result, the dataset, the limitation. Add a second concrete detail from it. Then say what the student would extend, try next, or apply it to, and how, connected to their own skills. Use the student's own notes about the paper when supplied, in preference to the abstract. NEVER write "Your paper <title> (Venue, Year) is ..." or any other bare citation, and never state a finding that is not in the supplied abstract or notes.
 4. The literal line "In the past, I have worked on the following related projects:" followed by 2 to 4 bullets starting with "- ". Each bullet names the project and one concrete outcome. Include any URLs the student supplied, verbatim.
 5. One short paragraph on tools the student knows plus adaptability, ending with "Please let me know if there is a fit in your lab."
 6. The line "I would be happy to elaborate on my skills and where I think I can best help out."

@@ -386,6 +386,57 @@ async function fromCrossref(researcher: ResearcherProfile): Promise<ResearcherWo
   };
 }
 
+// ── abstracts ───────────────────────────────────────────────────────────────
+
+/**
+ * Fill in abstracts the metadata providers left empty.
+ *
+ * The draft reacts to something specific in a paper, so a record without an
+ * abstract produces a generic line instead. Measured over 21 real DOIs from
+ * this directory: Crossref supplied an abstract for 43%, Semantic Scholar for
+ * 76%, and on the subset where our providers returned nothing, Semantic
+ * Scholar filled 9 of 9. It needs no key.
+ *
+ * This runs while the works cache is being filled, not when a paper is chosen.
+ * Fetching lazily for the already-selected paper would let the abstract bonus
+ * in pickRelevantPublication score papers on whether their abstract happened
+ * to have been fetched yet, which biases the choice for no reason.
+ */
+const SEMANTIC_SCHOLAR = 'https://api.semanticscholar.org/graph/v1/paper';
+
+/** Keyless Semantic Scholar allows roughly one request a second per address. */
+const ABSTRACT_GAP_LIMIT = 6;
+const ABSTRACT_SPACING_MS = 1100;
+
+async function fillAbstracts(publications: Publication[]): Promise<Publication[]> {
+  const gaps = publications.filter((p) => !p.abstract && p.doi).slice(0, ABSTRACT_GAP_LIMIT);
+  if (!gaps.length) return publications;
+
+  // Sequential and spaced, not Promise.all. Firing these together is a
+  // guaranteed 429 from a one-per-second endpoint, which is exactly how the
+  // first version of this managed to fill nothing at all. It runs once per
+  // researcher per cache period, so the seconds do not matter.
+  const byDoi = new Map<string, string>();
+  let consecutiveFailures = 0;
+  for (const pub of gaps) {
+    const data = await getJson<{ abstract?: string | null }>(
+      `${SEMANTIC_SCHOLAR}/DOI:${encodeURIComponent(pub.doi!)}?fields=abstract`
+    );
+    const abstract = data?.abstract?.trim();
+    if (abstract && abstract.length >= 40) {
+      byDoi.set(pub.doi!, abstract.length > 900 ? `${abstract.slice(0, 897)}...` : abstract);
+      consecutiveFailures = 0;
+    } else if (++consecutiveFailures >= 3) {
+      // Throttled or down. Stop rather than spend the rest of the budget.
+      break;
+    }
+    await new Promise((resolve) => setTimeout(resolve, ABSTRACT_SPACING_MS));
+  }
+
+  if (!byDoi.size) return publications;
+  return publications.map((p) => (p.doi && byDoi.has(p.doi) ? { ...p, abstract: byDoi.get(p.doi)! } : p));
+}
+
 // ── cache ───────────────────────────────────────────────────────────────────
 
 function emptyWorks(researcherId: string): ResearcherWorks {
@@ -441,6 +492,9 @@ export async function getPublications(
   // here, and two of the three are temporary.
   if (!fresh?.publications.length && cached?.publications.length) return cached;
 
+  if (fresh?.publications.length) {
+    fresh = { ...fresh, publications: await fillAbstracts(fresh.publications) };
+  }
   const result = fresh ?? emptyWorks(researcher.id);
 
   try {
@@ -489,7 +543,12 @@ export function pickRelevantPublication(works: ResearcherWorks, senderTerms: str
     for (const w of wanted) if (haystack.has(w)) overlap++;
     // Overlap dominates; a well-cited or recent paper only breaks ties.
     const age = pub.year ? Math.max(0, currentYear - pub.year) : 25;
-    const score = overlap * 10 + Math.min(3, Math.log10((pub.citations ?? 0) + 1)) - Math.min(3, age / 10);
+    // An abstract is worth roughly half an overlapping term. The draft reacts
+    // to something specific in the paper, and without an abstract it has
+    // nothing to react to, but relevance still has to win: a closely matched
+    // paper with no abstract beats a distant one that has one.
+    const readable = pub.abstract ? 5 : 0;
+    const score = overlap * 10 + readable + Math.min(3, Math.log10((pub.citations ?? 0) + 1)) - Math.min(3, age / 10);
     if (score > bestScore) {
       bestScore = score;
       best = pub;
