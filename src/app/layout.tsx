@@ -7,6 +7,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import AuthControls from "@/components/auth-controls";
 import AppNav from "@/components/app-nav";
 import { getOutbox } from "@/lib/send";
+import { isWaitlistAdmin } from "@/lib/waitlist";
 
 export const metadata: Metadata = {
   title: "Sloan",
@@ -54,6 +55,7 @@ function PublicHeader({ withClerk }: { withClerk: boolean }) {
 async function AppShell({ children, withClerk }: { children: React.ReactNode; withClerk: boolean }) {
   const userId = await getCurrentUserId();
   const sent = userId ? (await getOutbox(userId)).length : 0;
+  const admin = userId ? isWaitlistAdmin(userId) : false;
   return (
     <div className="flex min-h-full flex-col">
       <header className="sticky top-0 z-40 h-[57px] shrink-0 border-b border-[#e5e5e5] bg-[#fdfcfc]/95 backdrop-blur-sm">
@@ -68,7 +70,7 @@ async function AppShell({ children, withClerk }: { children: React.ReactNode; wi
       <div className="mx-auto flex w-full max-w-[1400px] flex-1 px-4">
         <aside className="hidden w-[220px] shrink-0 border-r border-[#e5e5e5] md:block">
           <div className="sticky top-[57px]">
-            <AppNav sentCount={sent} />
+            <AppNav sentCount={sent} isAdmin={admin} />
           </div>
         </aside>
         <main className="min-w-0 flex-1 pb-16">{children}</main>
