@@ -3,7 +3,7 @@
 import { Suspense, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { FocusPaper, OutboxEntry, ResearcherProfile } from "@/lib/types";
+import { ContactLookup, FocusPaper, LabContact, OutboxEntry, ResearcherProfile } from "@/lib/types";
 import { Button, Card, Inset } from "@/components/ui";
 
 const inputClass =
@@ -34,6 +34,10 @@ function ComposeInner() {
   const [paperNotes, setPaperNotes] = useState("");
   const [overriding, setOverriding] = useState(false);
   const [attachResume, setAttachResume] = useState(true);
+  const [contacts, setContacts] = useState<ContactLookup | null>(null);
+  const [findingContacts, setFindingContacts] = useState(false);
+  const [ccChecked, setCcChecked] = useState<Record<string, boolean>>({});
+  const [ccExtra, setCcExtra] = useState("");
   const [busy, setBusy] = useState(false);
   const [loadingDraft, setLoadingDraft] = useState(true);
   const [error, setError] = useState("");
@@ -77,6 +81,41 @@ function ComposeInner() {
     return () => clearTimeout(t);
   }, [generate]);
 
+  // Contacts are looked up separately: it reads the lab's own pages, which is
+  // far slower than writing the draft and should not hold it up.
+  useEffect(() => {
+    if (!researcherId) return;
+    let cancelled = false;
+    const t = setTimeout(async () => {
+      setFindingContacts(true);
+      try {
+        const res = await fetch(`/api/researchers/${encodeURIComponent(researcherId)}/contacts`);
+        const data: { lookup?: ContactLookup } = await res.json();
+        if (cancelled || !data.lookup) return;
+        setContacts(data.lookup);
+        // Assistants are pre-selected because reaching one is usually the
+        // point. Lab members are not: copying a stranger's postdoc is a
+        // judgement call the sender should make deliberately.
+        setCcChecked(
+          Object.fromEntries(data.lookup.contacts.filter((c) => c.kind === "admin").map((c) => [c.email, true]))
+        );
+      } catch {
+        // No suggestions is a fine outcome; the email sends without them.
+      } finally {
+        if (!cancelled) setFindingContacts(false);
+      }
+    }, 0);
+    return () => {
+      cancelled = true;
+      clearTimeout(t);
+    };
+  }, [researcherId]);
+
+  const ccList = [
+    ...(contacts?.contacts ?? []).filter((c) => ccChecked[c.email]).map((c) => c.email),
+    ...ccExtra.split(/[\s,;]+/).map((s) => s.trim()).filter(Boolean),
+  ];
+
   async function send() {
     setBusy(true);
     setError("");
@@ -84,7 +123,7 @@ function ComposeInner() {
       const res = await fetch("/api/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ researcherId, subject, body, to, attachResume }),
+        body: JSON.stringify({ researcherId, subject, body, to, cc: ccList, attachResume }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Send failed");
@@ -208,6 +247,61 @@ function ComposeInner() {
             )}
           </Card>
         )}
+        {/* Reaching a professor often works better through the person who runs
+            their calendar, and the lab member on the project is frequently the
+            one who replies. */}
+        {!sent && (
+          <Card className="mt-3 p-5">
+            <p className="eyebrow">Who else to copy</p>
+
+            {findingContacts && (
+              <p className="mt-2 text-[13px] leading-5 text-[#777169]">Reading their lab and department pages.</p>
+            )}
+
+            {!findingContacts && !contacts?.contacts.length && (
+              <p className="mt-2 text-[13px] leading-5 text-[#777169]">
+                Nobody else published an address on their lab or department pages, so there is nobody to suggest. Add
+                one below if you know it.
+              </p>
+            )}
+
+            {contacts?.contacts.map((c: LabContact) => (
+              <label key={c.email} className="mt-3 flex cursor-pointer items-start gap-2">
+                <input
+                  type="checkbox"
+                  checked={Boolean(ccChecked[c.email])}
+                  onChange={(e) => setCcChecked((prev) => ({ ...prev, [c.email]: e.target.checked }))}
+                  className="mt-1 accent-black"
+                />
+                <span className="min-w-0">
+                  <span className="flex items-center gap-1.5">
+                    <span className="text-[13px]">{c.name ?? c.email}</span>
+                    <span
+                      className={`rounded-full px-1.5 py-px text-[10px] ${
+                        c.kind === "admin" ? "bg-[#ff4704]/10 text-[#ff4704]" : "bg-[#f5f3f1] text-[#777169]"
+                      }`}
+                    >
+                      {c.kind === "admin" ? "assistant" : "lab"}
+                    </span>
+                  </span>
+                  {c.role && <span className="mt-0.5 block text-[11px] leading-4 text-[#777169]">{c.role}</span>}
+                  <span className="mt-0.5 block font-mono text-[11px] break-all text-[#777169]">{c.email}</span>
+                </span>
+              </label>
+            ))}
+
+            <input
+              value={ccExtra}
+              onChange={(e) => setCcExtra(e.target.value)}
+              placeholder="someone.else@lab.edu"
+              className={`${inputClass} mt-4 font-mono text-[12px]`}
+            />
+            <p className="mt-2 text-[11px] leading-4 text-[#777169]">
+              Only addresses published on their own pages are suggested, never guessed from a name.
+            </p>
+          </Card>
+        )}
+
         {generator && !sent && (
           <p className="mt-3 text-[11px] text-[#777169]">
             Drafted by {generator === "nim" ? "your NIM model" : "the built-in template engine"}. Edit before sending.
@@ -220,7 +314,8 @@ function ComposeInner() {
           <div className="py-10 text-center">
             <h2 className="text-[17px] font-medium">{sent.status === "sent" ? "Email sent" : "Saved to outbox"}</h2>
             <p className="mx-auto mt-2 max-w-md text-[13px] text-[#777169]">
-              To {sent.to} via {sent.method}. {sent.detail}
+              To {sent.to}
+              {sent.cc?.length ? `, copying ${sent.cc.join(", ")}` : ""} via {sent.method}. {sent.detail}
             </p>
             {sent.attachmentName && (
               <p className="mt-1 text-[11px] text-[#777169]">
@@ -251,6 +346,15 @@ function ComposeInner() {
                 className={`${inputClass} mt-1.5`}
               />
             </label>
+            {/* Stated here rather than only in the sidebar: these are real
+                people who will receive the email, and the sender should see
+                them without looking for them. */}
+            {ccList.length > 0 && (
+              <p className="mt-2 text-[13px] text-[#777169]">
+                Copying <span className="font-mono text-[12px] text-black">{ccList.join(", ")}</span>
+              </p>
+            )}
+
             <label className="mt-4 block">
               <span className="eyebrow">Subject</span>
               <input value={subject} onChange={(e) => setSubject(e.target.value)} className={`${inputClass} mt-1.5`} />

@@ -14,6 +14,7 @@ export interface SendRequest {
   researcherId: string;
   researcherName: string;
   to: string;
+  cc?: string[];
   fromName: string;
   replyTo?: string;
   subject: string;
@@ -60,6 +61,7 @@ function wrapBase64(b64: string): string {
 function buildMime(opts: {
   from: string;
   to: string;
+  cc?: string[];
   subject: string;
   body: string;
   replyTo?: string;
@@ -68,6 +70,7 @@ function buildMime(opts: {
   const headers = [
     `From: ${headerSafe(opts.from)}`,
     `To: ${headerSafe(opts.to)}`,
+    opts.cc?.length ? `Cc: ${opts.cc.map(headerSafe).join(', ')}` : null,
     opts.replyTo ? `Reply-To: ${headerSafe(opts.replyTo)}` : null,
     `Subject: ${encodeHeader(opts.subject)}`,
     'MIME-Version: 1.0',
@@ -122,6 +125,7 @@ async function sendViaClerkGmail(req: SendRequest): Promise<SendResult | null> {
     const mime = buildMime({
       from: 'me',
       to: req.to,
+      cc: req.cc,
       subject: req.subject,
       body: req.body,
       // Replies belong in the address printed in the signature, which is not
@@ -141,7 +145,9 @@ async function sendViaClerkGmail(req: SendRequest): Promise<SendResult | null> {
     return {
       method: 'gmail-oauth',
       status: 'sent',
-      detail: `Sent from your Gmail account${req.attachment ? ` with ${req.attachment.fileName} attached` : ''}`,
+      detail: `Sent from your Gmail account${req.attachment ? ` with ${req.attachment.fileName} attached` : ''}${
+        req.cc?.length ? `, copying ${req.cc.join(', ')}` : ''
+      }`,
     };
   } catch {
     return null; // e.g. user didn't sign in with Google — fall through to next method
@@ -161,6 +167,7 @@ async function sendViaSmtp(req: SendRequest): Promise<SendResult | null> {
     await transport.sendMail({
       from: SMTP_FROM ?? { name: req.fromName, address: SMTP_USER },
       to: req.to,
+      cc: req.cc?.length ? req.cc : undefined,
       replyTo: req.replyTo,
       subject: req.subject,
       text: req.body,
@@ -177,7 +184,9 @@ async function sendViaSmtp(req: SendRequest): Promise<SendResult | null> {
     return {
       method: 'smtp',
       status: 'sent',
-      detail: `Sent via SMTP (${SMTP_HOST})${req.attachment ? ` with ${req.attachment.fileName} attached` : ''}`,
+      detail: `Sent via SMTP (${SMTP_HOST})${req.attachment ? ` with ${req.attachment.fileName} attached` : ''}${
+        req.cc?.length ? `, copying ${req.cc.join(', ')}` : ''
+      }`,
     };
   } catch (err) {
     return { method: 'smtp', status: 'failed', detail: String(err).slice(0, 300) };
@@ -194,6 +203,7 @@ async function sendViaResend(req: SendRequest): Promise<SendResult | null> {
       body: JSON.stringify({
         from: RESEND_FROM ?? 'onboarding@resend.dev',
         to: [req.to],
+        cc: req.cc?.length ? req.cc : undefined,
         reply_to: req.replyTo,
         subject: req.subject,
         text: req.body,
@@ -221,9 +231,16 @@ export async function sendEmail(req: SendRequest): Promise<OutboxEntry> {
   // recipient is noted with ASCII only, since it lands in a header.
   const redirect = process.env.EMAIL_TEST_REDIRECT;
   const effectiveTo = headerSafe(redirect || req.to);
-  const subject = redirect ? `[TEST -> intended for ${headerSafe(req.to)}] ${req.subject}` : req.subject;
+  const requestedCc = (req.cc ?? []).map(headerSafe).filter(Boolean);
+  // Under redirect, the copied addresses are dropped entirely. Rerouting the
+  // recipient while still copying a real assistant would defeat the whole
+  // point of the safety valve.
+  const effectiveCc = redirect ? [] : requestedCc;
+  const subject = redirect
+    ? `[TEST -> intended for ${[headerSafe(req.to), ...requestedCc].join(', ')}] ${req.subject}`
+    : req.subject;
 
-  const attempt = { ...req, to: effectiveTo, subject };
+  const attempt = { ...req, to: effectiveTo, cc: effectiveCc, subject };
   const result: SendResult =
     (await sendViaClerkGmail(attempt)) ??
     (await sendViaSmtp(attempt)) ??
@@ -242,6 +259,7 @@ export async function sendEmail(req: SendRequest): Promise<OutboxEntry> {
     researcherId: req.researcherId,
     researcherName: req.researcherName,
     to: effectiveTo,
+    cc: effectiveCc,
     subject,
     body: req.body,
     attachmentName: req.attachment?.fileName ?? null,

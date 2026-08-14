@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
   const user = await getUserProfile(userId);
   if (!user) return NextResponse.json({ error: 'Complete onboarding first' }, { status: 400 });
 
-  const { researcherId, subject, body, to, attachResume } = await req.json();
+  const { researcherId, subject, body, to, cc, attachResume } = await req.json();
   const researcher = await getProfile(researcherId);
   if (!researcher) return NextResponse.json({ error: 'Unknown researcher' }, { status: 404 });
 
@@ -36,6 +36,26 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Subject and body are required' }, { status: 400 });
   }
 
+  // Copied addresses reach a mail header exactly like the recipient does, so
+  // they get the same validation. The cap is a blast-radius limit: a cold
+  // email copying a dozen people is a mailing list, not an introduction.
+  const copies = Array.isArray(cc) ? cc : [];
+  const seen = new Set([recipient.toLowerCase()]);
+  const validated: string[] = [];
+  for (const raw of copies) {
+    const address = typeof raw === 'string' ? raw.trim() : '';
+    if (!address) continue;
+    if (!EMAIL_RE.test(address) || address.length > 254) {
+      return NextResponse.json({ error: `That CC address is not valid: ${address.slice(0, 80)}` }, { status: 400 });
+    }
+    if (seen.has(address.toLowerCase())) continue;
+    seen.add(address.toLowerCase());
+    validated.push(address);
+  }
+  if (validated.length > 5) {
+    return NextResponse.json({ error: 'Copy at most five people on one email' }, { status: 400 });
+  }
+
   // Attach the uploaded resume unless the sender opted out.
   const stored = attachResume === false ? null : await getResumeFile(userId);
 
@@ -44,6 +64,7 @@ export async function POST(req: NextRequest) {
     researcherId,
     researcherName: researcher.name,
     to: recipient,
+    cc: validated,
     fromName: user.name,
     replyTo: user.email && EMAIL_RE.test(user.email) ? user.email : undefined,
     subject: subject.trim(),
