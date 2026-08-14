@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProfile } from "@/lib/profiles";
 import { getPublications } from "@/lib/publications";
+import { getCurrentUserId } from "@/lib/user";
 import { ResearcherProfile } from "@/lib/types";
 import PublicationList from "@/components/publication-list";
 import { ButtonLink, Card, Eyebrow, Pill } from "@/components/ui";
@@ -98,6 +99,8 @@ export default async function ResearcherProfilePage({ params }: { params: Promis
   const { id } = await params;
   const researcher = await getProfile(id);
   if (!researcher) notFound();
+  // Anyone can read the page; the published address needs an account.
+  const signedIn = Boolean(await getCurrentUserId());
 
   return (
     <div className="px-6 py-8">
@@ -123,8 +126,11 @@ export default async function ResearcherProfilePage({ params }: { params: Promis
           </div>
         </div>
 
-        <ButtonLink href={`/compose?researcher=${encodeURIComponent(researcher.id)}`} className="shrink-0">
-          Draft an email
+        <ButtonLink
+          href={signedIn ? `/compose?researcher=${encodeURIComponent(researcher.id)}` : "/"}
+          className="shrink-0"
+        >
+          {signedIn ? "Draft an email" : "Sign in to draft"}
         </ButtonLink>
       </div>
 
@@ -148,7 +154,12 @@ export default async function ResearcherProfilePage({ params }: { params: Promis
         <aside className="space-y-6">
           <Card className="p-5">
             <Eyebrow>Contact</Eyebrow>
-            {researcher.email ? (
+            {!signedIn ? (
+              <p className="mt-3 text-[13px] leading-5 text-[#777169]">
+                Published addresses are shown to signed-in members. They come from department pages, and we would
+                rather not hand the whole directory to a script.
+              </p>
+            ) : researcher.email ? (
               <p className="mt-3 font-mono text-[13px] break-all">{researcher.email}</p>
             ) : (
               <p className="mt-3 text-[13px] text-[#777169]">

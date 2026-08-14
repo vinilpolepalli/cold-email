@@ -23,6 +23,7 @@ function CardSkeleton() {
 export default function ResearchersPage() {
   const [profiles, setProfiles] = useState<ResearcherProfile[]>([]);
   const [loading, setLoading] = useState(true);
+  const [emailsVisible, setEmailsVisible] = useState(true);
   const [q, setQ] = useState("");
   const [school, setSchool] = useState("");
   const [onlyEmail, setOnlyEmail] = useState(false);
@@ -30,7 +31,10 @@ export default function ResearchersPage() {
   useEffect(() => {
     fetch("/api/profiles")
       .then((r) => r.json())
-      .then((d) => setProfiles(d.profiles ?? []))
+      .then((d) => {
+        setProfiles(d.profiles ?? []);
+        setEmailsVisible(d.emailsVisible !== false);
+      })
       .finally(() => setLoading(false));
   }, []);
 
@@ -84,20 +88,23 @@ export default function ResearchersPage() {
             {s}
           </button>
         ))}
-        <button
-          onClick={() => setOnlyEmail(!onlyEmail)}
-          className={`inline-flex h-7 items-center rounded-full border px-3 text-[12px] ${
-            onlyEmail ? "border-transparent bg-black text-[#fdfcfc]" : "border-[#e5e5e5] bg-white text-[#777169]"
-          }`}
-        >
-          Has published email
-        </button>
+        {/* Pointless when addresses are withheld: every card would filter out. */}
+        {emailsVisible && (
+          <button
+            onClick={() => setOnlyEmail(!onlyEmail)}
+            className={`inline-flex h-7 items-center rounded-full border px-3 text-[12px] ${
+              onlyEmail ? "border-transparent bg-black text-[#fdfcfc]" : "border-[#e5e5e5] bg-white text-[#777169]"
+            }`}
+          >
+            Has published email
+          </button>
+        )}
       </div>
 
       <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {loading
           ? Array.from({ length: 6 }, (_, i) => <CardSkeleton key={i} />)
-          : filtered.map((p) => <ResearcherCard key={p.id} profile={p} />)}
+          : filtered.map((p) => <ResearcherCard key={p.id} profile={p} emailsVisible={emailsVisible} />)}
       </div>
 
       {!loading && profiles.length === 0 && (
