@@ -28,12 +28,11 @@ export default hasClerk
       if (isPublic(pathname) || pathname.startsWith('/api') || pathname.startsWith('/__clerk')) {
         return NextResponse.next();
       }
-      const { userId } = await auth();
-      if (!userId) {
-        const waitlist = new URL('/', req.url);
-        waitlist.searchParams.set('from', pathname);
-        return NextResponse.redirect(waitlist);
-      }
+      const { userId, redirectToSignIn } = await auth();
+      // Sign-up is open, so an anonymous visitor is one step from an account
+      // rather than someone to turn away. Send them to Clerk and bring them
+      // back to the page they were reaching for.
+      if (!userId) return redirectToSignIn({ returnBackUrl: req.url });
       return NextResponse.next();
     })
   : () => NextResponse.next();

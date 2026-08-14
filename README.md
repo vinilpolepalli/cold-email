@@ -4,11 +4,13 @@ A cold-emailing site for students reaching out to professors. AI scraping agents
 
 ## Access model
 
-The app is **private**. Signed-out visitors only ever see the waitlist landing page at `/`; every other page redirects there and every data API answers 401. Sign-up is invite-only via Clerk's allowlist, so joining the waitlist does not create an account.
+**Sign-up is open** — anyone can make an account and use the app.
 
-To let someone in: Clerk dashboard → Configure → Restrictions → Allowlist → add their email. They can then sign in with it.
+Signed-out visitors get the landing page at `/` and the researcher directory at `/researchers`, with published email addresses withheld and labelled as such. Everything that writes or sends needs an account: those pages redirect to sign-in and the data APIs answer 401.
 
-To read waitlist signups, set `WAITLIST_ADMIN_IDS` to your Clerk user id (comma-separated for several) and call `GET /api/waitlist`. Without it, nobody can read the list.
+Each account brings its own credentials. Emails send from the user's own Gmail via Clerk's Google OAuth token, and AI drafting uses an NVIDIA NIM key the user pastes into Settings — the server holds no shared key for either. With no NIM key the drafts still write, from the deterministic template in `src/lib/template.ts`.
+
+To close sign-up again: Clerk dashboard → Configure → Restrictions → set access mode to Restricted, then allowlist individual addresses.
 
 ## Features
 

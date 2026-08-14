@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { getAllProfiles } from "@/lib/profiles";
 import { clerkConfigured, getCurrentUserId } from "@/lib/user";
-import WaitlistLanding from "@/components/waitlist-landing";
+import Landing from "@/components/landing";
 
 export const dynamic = "force-dynamic";
 
@@ -12,7 +12,7 @@ export default async function Home() {
 
   const profiles = await getAllProfiles();
   return (
-    <WaitlistLanding
+    <Landing
       stats={{
         researchers: profiles.length,
         withEmail: profiles.filter((p) => p.email).length,
