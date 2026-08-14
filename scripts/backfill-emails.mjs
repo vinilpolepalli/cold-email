@@ -54,7 +54,10 @@ const URL_PATTERNS = {
 const ROLE_ACCOUNT =
   /^(?:webmaster|postmaster|no-?reply|donotreply|privacy|accessibility|help|support|helpdesk|it|security|abuse|legal|hr|jobs|careers|apply|admissions|giving|alumni|press|media|news|marketing|comms|events|feedback|info|contact|inquiries|general|office|mail|email|admin|operations|dbds-\w+|\w+-operations|\w+-admissions|\w+-info|\w+-help)@/i;
 
-const ADDRESS_RE = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
+// The local part must start and end alphanumeric. Without the anchors a page
+// reading "email: .akundaje@stanford.edu" or "(see jane@x.edu)" yields an
+// address with punctuation glued to it, which then bounces on send.
+const ADDRESS_RE = /[A-Za-z0-9](?:[A-Za-z0-9._%+-]*[A-Za-z0-9])?@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
 
 function stripHtml(html) {
   return html
@@ -135,8 +138,23 @@ function addressMatchesName(email, name) {
   // Truncated forms are common: "andrewg" for Andrew Gentles, "sabatin" for
   // Sabatini. Require a real prefix of one part plus a piece of the other.
   if (local.startsWith(first) && local.length >= first.length + 1 && last.startsWith(local.slice(first.length))) return true;
-  if (local.startsWith(last.slice(0, 5)) && last.length >= 5) return true;
+  // Truncations of the surname: "sabatti", "sabatin". A prefix of the name is
+  // fine; the name plus extra tokens is not, which is how "covert.lab" was
+  // being read as belonging to Markus Covert.
+  if (last.length >= 5 && last.startsWith(local) && local.length >= 5) return true;
+  if (last.length >= 5 && local.startsWith(last) && local.length - last.length <= 1) return true;
   return false;
+}
+
+/**
+ * Institutional addresses only. A lab's shared gmail is published on plenty of
+ * official pages, but it is the lab's mailbox rather than the professor's, and
+ * a directory of faculty contacts is more useful when it holds the one the
+ * university itself assigns.
+ */
+function isInstitutional(email) {
+  const domain = email.split('@')[1] ?? '';
+  return domain.endsWith('.edu');
 }
 
 /** Addresses on a page, with how far each sits from the person's name. */
@@ -153,7 +171,7 @@ function addressesNear(text, name) {
   let match;
   while ((match = ADDRESS_RE.exec(clean))) {
     const email = match[0].toLowerCase();
-    if (ROLE_ACCOUNT.test(email)) continue;
+    if (ROLE_ACCOUNT.test(email) || !isInstitutional(email)) continue;
     out.push({ email, distance: anchor === -1 ? Infinity : Math.abs(match.index - anchor) });
   }
   return out;
