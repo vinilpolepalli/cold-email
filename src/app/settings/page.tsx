@@ -33,6 +33,8 @@ const TEST_REASON: Record<string, string> = {
   "no-key": "No key saved or entered. Paste one above first.",
   "bad-key": "NVIDIA rejected that key. Check it was copied whole from build.nvidia.com.",
   "bad-model": "The key works, but this model is not available to your account. Try the recommended one.",
+  "slow-model":
+    "Your key is valid, but this model did not answer in 20 seconds. Free-tier models idle when unused, so try again or pick another.",
   failed: "The request did not get through.",
 };
 
