@@ -18,6 +18,26 @@ interface ModelOption {
 const fieldClass =
   "mt-1.5 w-full rounded-lg border border-[#e5e5e5] bg-white px-3 py-2 text-sm text-black placeholder:text-[#777169] focus:border-black focus:outline-none";
 
+interface TestResult {
+  ok: boolean;
+  model?: string;
+  latencyMs?: number;
+  usingServerKey?: boolean;
+  reply?: string;
+  reason?: string;
+  error?: string;
+}
+
+/** What each failure actually means, rather than making the user read a 401. */
+const TEST_REASON: Record<string, string> = {
+  "no-key": "No key saved or entered. Paste one above first.",
+  "bad-key": "NVIDIA rejected that key. Check it was copied whole from build.nvidia.com.",
+  "bad-model": "The key works, but this model is not available to your account. Try the recommended one.",
+  "slow-model":
+    "Your key is valid, but this model did not answer in 20 seconds. Free-tier models idle when unused, so try again or pick another.",
+  failed: "The request did not get through.",
+};
+
 const SOURCE_COPY: Record<SettingsView["nimSource"], string> = {
   user: "Drafts and summaries use your NVIDIA NIM key.",
   server: "Drafts and summaries use the server-wide NIM key. Add your own to override it.",
@@ -33,6 +53,8 @@ export default function SettingsPage() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [savedAt, setSavedAt] = useState("");
+  const [testing, setTesting] = useState(false);
+  const [test, setTest] = useState<TestResult | null>(null);
 
   const loadModels = useCallback(async () => {
     const res = await fetch("/api/models");
@@ -60,6 +82,30 @@ export default function SettingsPage() {
       clearTimeout(timer);
     };
   }, [loadModels]);
+
+  /**
+   * A real call to the model. The key in the form field wins over the saved
+   * one, so a new key can be checked before it is stored.
+   */
+  async function testConnection() {
+    setTesting(true);
+    setTest(null);
+    setError("");
+    try {
+      const res = await fetch("/api/nim/test", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ apiKey: nimApiKey.trim() || undefined, model: nimModel || undefined }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? "Test failed");
+      setTest(data);
+    } catch (err) {
+      setTest({ ok: false, reason: "failed", error: err instanceof Error ? err.message : String(err) });
+    } finally {
+      setTesting(false);
+    }
+  }
 
   async function save(clearKey = false) {
     setBusy(true);
@@ -169,13 +215,44 @@ export default function SettingsPage() {
 
         {error && <p className="mt-3 text-[13px] text-[#ff4704]">{error}</p>}
 
-        <div className="mt-6 flex items-center gap-4">
+        {test && (
+          <div
+            className={`mt-4 rounded-lg border px-3 py-2.5 text-[13px] ${
+              test.ok ? "border-[#15362b]/20 bg-[#15362b]/5 text-[#15362b]" : "border-[#ff4704]/30 bg-[#ff4704]/5 text-[#ff4704]"
+            }`}
+          >
+            {test.ok ? (
+              <>
+                <p className="font-medium">Connection works.</p>
+                <p className="mt-0.5 text-[12px] opacity-80">
+                  <span className="font-mono">{test.model}</span> replied in{" "}
+                  <span className="font-mono">{test.latencyMs}ms</span>
+                  {test.usingServerKey ? ", using the server key" : ""}.
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="font-medium">{TEST_REASON[test.reason ?? "failed"] ?? "The request did not get through."}</p>
+                {test.error && <p className="mt-1 font-mono text-[11px] break-all opacity-80">{test.error}</p>}
+              </>
+            )}
+          </div>
+        )}
+
+        <div className="mt-6 flex flex-wrap items-center gap-4">
           <button
             onClick={() => save(false)}
             disabled={busy}
             className="inline-flex h-9 items-center rounded-full border border-[#e5e5e5] bg-black px-4 text-sm font-medium text-[#fdfcfc] hover:bg-[#171717] disabled:opacity-50"
           >
             Save settings
+          </button>
+          <button
+            onClick={testConnection}
+            disabled={testing || busy}
+            className="inline-flex h-9 items-center rounded-full border border-[#e5e5e5] bg-white px-4 text-sm font-medium text-black hover:bg-[#f5f3f1] disabled:opacity-50"
+          >
+            {testing ? "Testing" : "Test connection"}
           </button>
           {view?.nimKeyMasked && (
             <button
