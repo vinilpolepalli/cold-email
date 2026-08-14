@@ -536,14 +536,14 @@ export function focusFromWorks(works: ResearcherWorks, user: UserProfile): Focus
  */
 const MAX_SUBJECT = 52;
 
-function subjectLine(researcher: ResearcherProfile, paper: FocusPaper | null): string {
-  const topic = paper ? paperTopic(paper) : '';
-  // The paper's own subject is more specific than a department tag, so it wins
-  // when it is short enough to survive the preview pane.
+function subjectLine(researcher: ResearcherProfile): string {
+  // Always the plain form. An earlier version led with the paper's own title
+  // when it was short enough, which produced subjects like "Your work on
+  // one-for-all" that read as a fragment out of context.
+  const area = researcher.researchAreas[0] ? sentenceCase(researcher.researchAreas[0]) : '';
   const candidates = [
-    topic && topic.length <= 34 ? `Your work on ${topic}` : '',
-    researcher.researchAreas[0] ? `Interested in your ${sentenceCase(researcher.researchAreas[0])} work` : '',
-    researcher.researchAreas[0] ? `Interested in your ${sentenceCase(researcher.researchAreas[0])}` : '',
+    area ? `Interested in your ${area} work` : '',
+    area ? `Interested in your ${area}` : '',
     'Interested in joining your lab',
   ];
   return candidates.find((c) => c && c.length <= MAX_SUBJECT) ?? 'Interested in joining your lab';
@@ -558,7 +558,7 @@ export function templateDraft(
   const areas = researcher.researchAreas.slice(0, 2).join(' and ') || 'your research';
   const standing = standingOf(user);
   const paper = focus ?? (works ? focusFromWorks(works, user) : null);
-  const subject = subjectLine(researcher, paper);
+  const subject = subjectLine(researcher);
 
   const target = researcherTerms(researcher, works);
   const targetDomains = domainsOf(researcherText(researcher, works));
@@ -775,7 +775,7 @@ export async function generateDraft(
       // was written for, so fall back to the built one rather than truncate.
       const subject = parsed.subject.trim().length <= MAX_SUBJECT + 12
         ? parsed.subject.trim()
-        : subjectLine(researcher, paper);
+        : subjectLine(researcher);
       return { subject, body: parsed.body, generator: 'nim' };
     }
     return templateDraft(researcher, user, works, paper);
