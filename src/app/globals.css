@@ -1,33 +1,92 @@
 @import "tailwindcss";
+@import "@fontsource-variable/inter";
 
 /*
-  LabReach design tokens.
-  Palette: zinc neutrals + one burnt-orange accent (locked page-wide).
-  Radius system (locked): buttons/inputs 8px (rounded-lg), cards 16px (rounded-2xl).
-  Theme: auto (prefers-color-scheme); dark: variants throughout.
+  LabReach design tokens, matched to the Tsenta reference:
+    type      Inter 400 body / 500 controls, Geist Mono for numerals
+    headline  60px / 63px, weight 400, letter-spacing -1.2px
+    body      16px / 24px, letter-spacing 0.1px, warm grey #777169
+    surface   #FDFCFC page, #FFFFFF cards, #F5F3F1 inset panels
+    line      1px #E5E5E5
+    accent    #FF4704 orange, used sparingly
+    radius    pills for controls, 14px cards, 8px inset
+    rhythm    1200px container, 96px section padding
 */
 
 @theme inline {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-sans: "Inter Variable", Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-page: #fdfcfc;
+  --color-surface: #ffffff;
+  --color-inset: #f5f3f1;
+  --color-line: #e5e5e5;
+  --color-ink: #000000;
+  --color-muted: #777169;
+  --color-accent: #ff4704;
+  --color-forest: #15362b;
+}
+
+:root {
+  --page: #fdfcfc;
+  --surface: #ffffff;
+  --inset: #f5f3f1;
+  --line: #e5e5e5;
+  --ink: #000000;
+  --muted: #777169;
+  --accent: #ff4704;
+}
+
+/*
+  The reference is a single committed light theme. Dark mode here would be an
+  invention rather than a match, so the palette is fixed and painted explicitly.
+*/
+html {
+  color-scheme: light;
 }
 
 body {
+  background: var(--page);
+  color: var(--ink);
   font-family: var(--font-sans);
-  background: #fafafa; /* zinc-50 */
-  color: #18181b; /* zinc-900 */
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #09090b; /* zinc-950 */
-    color: #f4f4f5; /* zinc-100 */
-  }
+  letter-spacing: 0.1px;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: #c2410c; /* orange-700 */
-  color: #ffffff;
+  background: var(--accent);
+  color: #fdfcfc;
+}
+
+@utility container-page {
+  margin-inline: auto;
+  max-width: 1200px;
+  padding-inline: 1.5rem;
+}
+
+/* 60px/63px/-1.2px at desktop, scaled down on small screens. */
+@utility display {
+  font-size: clamp(2.25rem, 1.4rem + 3.6vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -1.2px;
+  font-weight: 400;
+}
+
+@utility display-sm {
+  font-size: clamp(1.75rem, 1.2rem + 2.2vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  font-weight: 400;
+}
+
+/* Tiny uppercase label that sits above a card headline in the reference. */
+@utility eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.43;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 @media (prefers-reduced-motion: reduce) {

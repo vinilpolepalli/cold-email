@@ -26,6 +26,60 @@ export interface UserProfile {
   aiSummary: string;
   rawResumeText: string;
   updatedAt: string;
+  // Optional because profiles saved before these existed must keep loading.
+  // The email opens with "I am a <standing> at <school>" and signs off with the
+  // degree and class year, so these are asked for directly rather than being
+  // re-derived from an education line on every draft.
+  standing?: string;
+  school?: string;
+  gradYear?: string;
+  degree?: string;
+  major?: string;
+}
+
+/**
+ * A paper the sender says they have read, used for the paragraph that proves
+ * this email was written for one person. Either picked from the researcher's
+ * publication record or supplied by hand on the compose screen.
+ */
+export interface FocusPaper {
+  title: string | null;
+  url: string | null;
+  venue: string | null;
+  year: number | null;
+  abstract: string | null;
+  /** What the sender took from it, in their own words. Wins over the abstract. */
+  notes: string | null;
+  source: 'matched' | 'manual';
+}
+
+/** One of a researcher's papers, as shown on their profile and cited in drafts. */
+export interface Publication {
+  title: string;
+  year: number | null;
+  venue: string | null;
+  authors: string[];
+  citations: number | null;
+  doi: string | null;
+  /** Landing page: publisher, repository, or doi.org. */
+  url: string | null;
+  /** Direct PDF, only when the work is openly accessible. */
+  pdfUrl: string | null;
+  abstract: string | null;
+}
+
+/** A researcher's publication record, cached per researcher. */
+export interface ResearcherWorks {
+  researcherId: string;
+  /** Author name as the provider spells it, which may differ from ours. */
+  authorName: string | null;
+  authorUrl: string | null;
+  worksCount: number | null;
+  citedByCount: number | null;
+  topics: string[];
+  publications: Publication[];
+  provider: 'openalex' | 'crossref' | 'none';
+  fetchedAt: string;
 }
 
 export interface OutboxEntry {

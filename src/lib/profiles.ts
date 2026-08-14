@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { ResearcherProfile } from './types';
-import { readStore, writeStore } from './store';
+import { listStore, writeStore } from './store';
 
 const PROFILES_PATH = path.join(process.cwd(), 'data', 'profiles.json');
 
@@ -21,7 +21,9 @@ function loadBase(): ResearcherProfile[] {
 
 /** Profiles added at runtime through the in-app scraper (kept out of git). */
 function loadRuntime(): Promise<ResearcherProfile[]> {
-  return readStore<ResearcherProfile[]>('scraped-profiles', []);
+  // One row per profile: a single shared array loses entries when two scrapes
+  // overlap, since each would write back a copy missing the other's results.
+  return listStore<ResearcherProfile>('scraped');
 }
 
 export async function getAllProfiles(): Promise<ResearcherProfile[]> {
@@ -40,7 +42,6 @@ export async function getProfile(id: string): Promise<ResearcherProfile | undefi
 }
 
 export async function addScrapedProfiles(profiles: ResearcherProfile[]): Promise<number> {
-  const runtime = await loadRuntime();
   const existingKeys = new Set(
     (await getAllProfiles()).map((p) => `${p.name.toLowerCase().replace(/[^a-z]/g, '')}|${p.school.toLowerCase()}`)
   );
@@ -49,10 +50,9 @@ export async function addScrapedProfiles(profiles: ResearcherProfile[]): Promise
     const key = `${p.name.toLowerCase().replace(/[^a-z]/g, '')}|${p.school.toLowerCase()}`;
     if (existingKeys.has(key)) continue;
     existingKeys.add(key);
-    runtime.push(p);
+    await writeStore(`scraped:${p.id}`, p);
     added++;
   }
-  await writeStore('scraped-profiles', runtime);
   return added;
 }
 

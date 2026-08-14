@@ -16,7 +16,7 @@ interface ModelOption {
 }
 
 const fieldClass =
-  "mt-1 w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-900 placeholder:text-zinc-500 focus:border-orange-700 focus:outline-none dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100 dark:placeholder:text-zinc-400 dark:focus:border-orange-400";
+  "mt-1.5 w-full rounded-lg border border-[#e5e5e5] bg-white px-3 py-2 text-sm text-black placeholder:text-[#777169] focus:border-black focus:outline-none";
 
 const SOURCE_COPY: Record<SettingsView["nimSource"], string> = {
   user: "Drafts and summaries use your NVIDIA NIM key.",
@@ -92,30 +92,30 @@ export default function SettingsPage() {
   const speciality = models.filter((m) => m.speciality);
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-10">
-      <h1 className="text-2xl font-semibold tracking-tight">Settings</h1>
-      <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+    <div className="mx-auto max-w-2xl px-6 py-8">
+      <h1 className="text-2xl tracking-tight">Settings</h1>
+      <p className="mt-1 text-sm text-[#777169]">
         Bring your own NVIDIA NIM key for AI-generated summaries, drafts, and scraper extraction. Get a free key at{" "}
         <a
           href="https://build.nvidia.com"
           target="_blank"
           rel="noreferrer"
-          className="text-orange-700 hover:underline dark:text-orange-400"
+          className="text-black underline underline-offset-2"
         >
           build.nvidia.com
         </a>
         .
       </p>
 
-      <div className="mt-8 rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+      <div className="mt-8 rounded-[14px] border border-[#e5e5e5] bg-white p-6">
         {view && (
-          <p className="rounded-lg bg-zinc-50 px-3 py-2 text-sm text-zinc-600 dark:bg-zinc-950 dark:text-zinc-400">
+          <p className="rounded-lg bg-[#f5f3f1] px-3 py-2 text-sm text-[#777169]">
             {SOURCE_COPY[view.nimSource]}
           </p>
         )}
 
         <label className="mt-5 block text-sm">
-          <span className="font-medium">NVIDIA NIM API key</span>
+          <span className="eyebrow">NVIDIA NIM API key</span>
           <input
             type="password"
             value={nimApiKey}
@@ -124,13 +124,13 @@ export default function SettingsPage() {
             autoComplete="off"
             className={fieldClass}
           />
-          <span className="mt-1 block text-xs text-zinc-500 dark:text-zinc-400">
+          <span className="mt-1.5 block text-[11px] text-[#777169]">
             Stored server-side for your account and never shown again in full.
           </span>
         </label>
 
         <label className="mt-5 block text-sm">
-          <span className="font-medium">Model</span>
+          <span className="eyebrow">Model</span>
           <select
             value={nimModel}
             onChange={(e) => setNimModel(e.target.value)}
@@ -160,20 +160,20 @@ export default function SettingsPage() {
               </optgroup>
             )}
           </select>
-          <span className="mt-1 block text-xs text-zinc-500 dark:text-zinc-400">
+          <span className="mt-1.5 block text-[11px] text-[#777169]">
             {hasKey
               ? `${models.length} models available on the NVIDIA NIM free tier. Leave on the default to use ${recommended || "the recommended model"}.`
               : "Save an API key to choose a model."}
           </span>
         </label>
 
-        {error && <p className="mt-3 text-sm text-red-700 dark:text-red-400">{error}</p>}
+        {error && <p className="mt-3 text-[13px] text-[#ff4704]">{error}</p>}
 
         <div className="mt-6 flex items-center gap-4">
           <button
             onClick={() => save(false)}
             disabled={busy}
-            className="rounded-lg bg-orange-700 px-4 py-2 font-medium text-white transition-transform hover:bg-orange-800 active:scale-[0.98] disabled:opacity-50"
+            className="inline-flex h-9 items-center rounded-full border border-[#e5e5e5] bg-black px-4 text-sm font-medium text-[#fdfcfc] hover:bg-[#171717] disabled:opacity-50"
           >
             Save settings
           </button>
@@ -181,12 +181,12 @@ export default function SettingsPage() {
             <button
               onClick={() => save(true)}
               disabled={busy}
-              className="text-sm font-medium text-zinc-500 hover:text-red-700 dark:text-zinc-400 dark:hover:text-red-400"
+              className="text-[13px] text-[#777169] hover:text-[#ff4704]"
             >
               Remove my key
             </button>
           )}
-          {savedAt && <span className="text-xs text-emerald-700 dark:text-emerald-400">Saved {savedAt}</span>}
+          {savedAt && <span className="text-[11px] text-[#15362b]">Saved {savedAt}</span>}
         </div>
       </div>
     </div>

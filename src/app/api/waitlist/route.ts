@@ -19,15 +19,19 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const { alreadyOn, position } = await addToWaitlist({
+    await addToWaitlist({
       email,
       name: typeof body.name === 'string' ? body.name : undefined,
       school: typeof body.school === 'string' ? body.school : undefined,
     });
-    return NextResponse.json({ ok: true, alreadyOn, position });
-  } catch (err) {
-    return NextResponse.json({ error: `Could not save your spot: ${String(err).slice(0, 150)}` }, { status: 500 });
+  } catch {
+    return NextResponse.json({ error: 'Could not save your spot. Please try again.' }, { status: 503 });
   }
+
+  // Deliberately identical for a new and an existing signup, and carrying no
+  // queue position or total. Differing responses would let anyone test whether
+  // a given address is on a private beta list and read the signup count.
+  return NextResponse.json({ ok: true });
 }
 
 /** Admin only: read the signup list. */
