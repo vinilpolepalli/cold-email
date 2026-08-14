@@ -7,17 +7,25 @@ import { clerkMiddleware } from '@clerk/nextjs/server';
 const hasClerk = Boolean(process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY && process.env.CLERK_SECRET_KEY);
 
 /**
- * The app itself is private. Only the waitlist landing page and the waitlist
- * signup endpoint are reachable when signed out; every other page redirects
- * there. API routes are left to answer 401 themselves so callers get JSON
- * rather than an HTML redirect.
+ * Anyone can look: the landing page and the researcher directory are open, so
+ * a shared link shows the actual product rather than a sign-in wall. Published
+ * email addresses are still withheld from signed-out visitors, and everything
+ * that writes or sends stays behind sign-in.
+ *
+ * API routes are left to answer for themselves so callers get JSON rather than
+ * an HTML redirect.
  */
-const PUBLIC_PAGES = new Set(['/']);
+const PUBLIC_PAGES = new Set(['/', '/researchers']);
+const PUBLIC_PREFIXES = ['/researchers/'];
+
+function isPublic(pathname: string): boolean {
+  return PUBLIC_PAGES.has(pathname) || PUBLIC_PREFIXES.some((prefix) => pathname.startsWith(prefix));
+}
 
 export default hasClerk
   ? clerkMiddleware(async (auth, req) => {
       const { pathname } = req.nextUrl;
-      if (PUBLIC_PAGES.has(pathname) || pathname.startsWith('/api') || pathname.startsWith('/__clerk')) {
+      if (isPublic(pathname) || pathname.startsWith('/api') || pathname.startsWith('/__clerk')) {
         return NextResponse.next();
       }
       const { userId } = await auth();

@@ -2,7 +2,16 @@ import Link from "next/link";
 import { ResearcherProfile } from "@/lib/types";
 import { ButtonLink } from "./ui";
 
-export default function ResearcherCard({ profile, compact = false }: { profile: ResearcherProfile; compact?: boolean }) {
+export default function ResearcherCard({
+  profile,
+  compact = false,
+  emailsVisible = true,
+}: {
+  profile: ResearcherProfile;
+  compact?: boolean;
+  /** Signed-out visitors browse the directory without the addresses. */
+  emailsVisible?: boolean;
+}) {
   const profileHref = `/researchers/${encodeURIComponent(profile.id)}`;
   return (
     <div className="flex h-full flex-col rounded-[12px] border border-[#e5e5e5] bg-white p-5 transition-colors hover:border-black">
@@ -33,18 +42,27 @@ export default function ResearcherCard({ profile, compact = false }: { profile: 
 
       <div className="mt-auto flex items-center justify-between gap-2 pt-4">
         <span className={`truncate text-[11px] ${profile.email ? "font-mono text-[#777169]" : "text-[#777169]/60"}`}>
-          {profile.email ?? "no public email"}
+          {profile.email ?? (emailsVisible ? "no public email" : "sign in to see email")}
         </span>
         <div className="flex shrink-0 gap-1.5">
-          <ButtonLink href={profileHref} variant="secondary" className="h-7 px-3 text-[12px]">
-            Profile
-          </ButtonLink>
+          {/* Signed-out visitors get the profile only: a Draft button that
+              bounces them to a sign-in page is a dead end, and the profile
+              page carries its own sign-in call to action. */}
           <ButtonLink
-            href={`/compose?researcher=${encodeURIComponent(profile.id)}`}
+            href={profileHref}
+            variant={emailsVisible ? "secondary" : "primary"}
             className="h-7 px-3 text-[12px]"
           >
-            Draft
+            Profile
           </ButtonLink>
+          {emailsVisible && (
+            <ButtonLink
+              href={`/compose?researcher=${encodeURIComponent(profile.id)}`}
+              className="h-7 px-3 text-[12px]"
+            >
+              Draft
+            </ButtonLink>
+          )}
         </div>
       </div>
     </div>

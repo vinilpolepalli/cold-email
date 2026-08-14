@@ -41,6 +41,15 @@ export async function getProfile(id: string): Promise<ResearcherProfile | undefi
   return (await getAllProfiles()).find((p) => p.id === id);
 }
 
+/**
+ * The directory is public to browse, but the addresses are not. Every one was
+ * published by a department for people who need it, and handing all of them
+ * out through an open endpoint turns this into a harvesting API.
+ */
+export function withoutEmails<T extends { email: string | null }>(profiles: T[]): T[] {
+  return profiles.map((p) => ({ ...p, email: null }));
+}
+
 export async function addScrapedProfiles(profiles: ResearcherProfile[]): Promise<number> {
   const existingKeys = new Set(
     (await getAllProfiles()).map((p) => `${p.name.toLowerCase().replace(/[^a-z]/g, '')}|${p.school.toLowerCase()}`)
