@@ -40,6 +40,20 @@ const STOPWORDS = new Set([
   'methods', 'group', 'lab', 'laboratory', 'university', 'college', 'professor', 'department', 'project',
   'projects', 'develop', 'develops', 'developing', 'development', 'build', 'built', 'building', 'new', 'based',
   'focus', 'focuses', 'including', 'through', 'used', 'use', 'uses', 'team', 'intern', 'internship', 'student',
+  // Ordinary English that a paper abstract and a resume bullet both contain.
+  // Left in, a convex optimization lab matched a meeting-recorder side project
+  // on "present", "under", "second", and "flows", which is noise scoring as
+  // topical overlap and is how the wrong experience reached the opening line.
+  'present', 'presents', 'presented', 'time', 'times', 'under', 'over', 'second', 'seconds', 'first', 'data',
+  'running', 'run', 'runs', 'improve', 'improves', 'improved', 'flow', 'flows', 'result', 'results', 'approach',
+  'approaches', 'problem', 'problems', 'show', 'shows', 'shown', 'high', 'higher', 'low', 'lower', 'large',
+  'larger', 'small', 'smaller', 'number', 'numbers', 'set', 'sets', 'given', 'case', 'cases', 'general', 'better',
+  'best', 'more', 'most', 'also', 'well', 'within', 'between', 'each', 'per', 'via', 'level', 'levels', 'state',
+  'states', 'value', 'values', 'term', 'terms', 'order', 'orders', 'form', 'forms', 'part', 'parts', 'way', 'ways',
+  'type', 'types', 'key', 'main', 'many', 'much', 'several', 'various', 'different', 'same', 'common', 'single',
+  'multiple', 'full', 'real', 'current', 'currently', 'recent', 'recently', 'prior', 'past', 'made', 'make',
+  'makes', 'making', 'take', 'takes', 'provide', 'provides', 'provided', 'allow', 'allows', 'allowed', 'enable',
+  'enables', 'enabled', 'support', 'supports', 'help', 'helps', 'need', 'needs', 'require', 'required', 'end',
 ]);
 
 function tokens(text: string): string[] {
@@ -61,7 +75,7 @@ function relevanceScore(entry: string, target: Set<string>): number {
  * Paper titles are the sharpest signal available: a department blurb says
  * "computational biology", a title says "single-cell RNA sequencing".
  */
-function researcherTerms(researcher: ResearcherProfile, works?: ResearcherWorks | null): Set<string> {
+function researcherText(researcher: ResearcherProfile, works?: ResearcherWorks | null): string {
   const sources = [...researcher.researchAreas, researcher.bio ?? '', researcher.department];
   for (const pub of works?.publications ?? []) {
     sources.push(pub.title);
@@ -70,7 +84,67 @@ function researcherTerms(researcher: ResearcherProfile, works?: ResearcherWorks 
     if (pub.abstract) sources.push(pub.abstract.slice(0, 400));
   }
   sources.push(...(works?.topics ?? []));
-  return new Set(tokens(sources.join(' ')));
+  return sources.join(' ');
+}
+
+function researcherTerms(researcher: ResearcherProfile, works?: ResearcherWorks | null): Set<string> {
+  return new Set(tokens(researcherText(researcher, works)));
+}
+
+/**
+ * Coarse field labels, matched on both sides.
+ *
+ * Word overlap alone is too literal to see that "protein-ligand docking for
+ * Hsp90" belongs next to a single-cell genomics lab: they share no words at
+ * all, so a computational biology professor was being sent the sender's
+ * venture capital internship, which shares no words either but happened to sit
+ * higher in the resume. Recognising both as biology fixes the ordering without
+ * pretending the two are the same thing.
+ */
+const DOMAINS: { name: string; pattern: RegExp }[] = [
+  {
+    name: 'biology',
+    pattern:
+      /\b(?:bio\w*|genom\w*|genetic\w*|protein\w*|ligand\w*|molecul\w*|cell\w*|rna|dna|sequenc\w*|transcript\w*|drug\w*|pharma\w*|clinical|disease\w*|cancer|tumou?r\w*|oncolog\w*|docking|epitope\w*|omics|immun\w*|microb\w*|enzym\w*|inhibitor\w*|compound\w*|chemistr\w*|screening|assay\w*|patient\w*|health)\b/i,
+  },
+  {
+    name: 'neuroscience',
+    pattern: /\b(?:neuro\w*|brain|cortex|cortical|synap\w*|neuron\w*|eeg|fmri|cognit\w*)\b/i,
+  },
+  {
+    name: 'machine learning',
+    pattern:
+      /\b(?:machine learning|deep learning|neural network\w*|transformer\w*|classif\w*|embedding\w*|gnn|cnn|llm\w*|pytorch|tensorflow|supervised|unsupervised|reinforcement learning|generative)\b/i,
+  },
+  {
+    name: 'vision',
+    pattern: /\b(?:computer vision|segmentation|object detection|imaging|image\w*|visual|video|mri|ct scan\w*|microscopy)\b/i,
+  },
+  {
+    name: 'statistics',
+    // Deliberately no bare "inference": in a resume it usually means running a
+    // model, not statistical inference, and it was pulling a meeting-recorder
+    // side project to the top for a lab that works on convex optimization.
+    pattern: /\b(?:statistic\w*|probabilist\w*|bayesian|estimation|estimator\w*|causal|randomi\w*|sampling|variance|hypothesis test\w*)\b/i,
+  },
+  {
+    name: 'systems',
+    pattern: /\b(?:compiler\w*|distributed|hardware|processor\w*|operating system\w*|database\w*|architecture)\b/i,
+  },
+  {
+    name: 'optimization',
+    pattern: /\b(?:optimi\w*|convex|gradient|linear program\w*|complexity|combinatorial|approximation algorithm\w*)\b/i,
+  },
+  {
+    name: 'business',
+    pattern: /\b(?:venture|startup\w*|investor\w*|investment\w*|market\w*|portfolio|business|financ\w*|trading|revenue|fundrais\w*)\b/i,
+  },
+];
+
+function domainsOf(text: string): Set<string> {
+  const found = new Set<string>();
+  for (const domain of DOMAINS) if (domain.pattern.test(text)) found.add(domain.name);
+  return found;
 }
 
 /** Split "Organization, Role: what they did" into its two halves. */
@@ -487,12 +561,23 @@ export function templateDraft(
   const subject = subjectLine(researcher, paper);
 
   const target = researcherTerms(researcher, works);
+  const targetDomains = domainsOf(researcherText(researcher, works));
   const institution = institutionOf(user);
 
-  // Rank everything the sender has done against this researcher's work. The
-  // two strongest carry the opening paragraph; the rest become the bullets.
+  // Rank everything the sender has done against this researcher's work. Shared
+  // words come first; a shared field is worth about three of them, which is
+  // what lets a docking project outrank a venture internship for a
+  // computational biology lab when neither shares a word with the lab's own.
   const scored = [...user.experience, ...user.projects]
-    .map((entry) => ({ entry, score: relevanceScore(entry, target) }))
+    .map((entry) => {
+      const entryDomains = domainsOf(entry);
+      const shared = [...entryDomains].filter((d) => targetDomains.has(d)).length;
+      // When nothing matches at all, a research project still opens a letter to
+      // a professor better than a commercial one. Worth a single point, so it
+      // only decides ties and never outranks a real overlap.
+      const researchy = [...entryDomains].some((d) => d !== 'business') ? 1 : 0;
+      return { entry, score: relevanceScore(entry, target) + shared * 3 + researchy };
+    })
     .sort((a, b) => b.score - a.score);
 
   const major = user.major?.trim() || deriveMajor(degreeOf(user));
