@@ -32,6 +32,19 @@ const DIRECTORIES = {
     'https://cs.stanford.edu/directory/faculty',
     'https://profiles.stanford.edu/',
   ],
+  MIT: [
+    // Both of these publish addresses on the listing itself, not only on the
+    // person pages behind it.
+    'https://www.eecs.mit.edu/role/faculty/',
+    'https://idss.mit.edu/people/faculty/',
+    'https://www.csail.mit.edu/people?person_type=Faculty',
+  ],
+  Penn: [
+    // Penn publishes nothing on the listings; these are here for the person
+    // pages they link to, which sometimes carry an address.
+    'https://statistics.wharton.upenn.edu/faculty/',
+    'https://www.dbei.med.upenn.edu/faculty',
+  ],
 };
 
 /**
@@ -48,6 +61,15 @@ const URL_PATTERNS = {
     'https://icme.stanford.edu/people/{first}-{last}',
     'https://statistics.stanford.edu/people/{first}-{last}',
     'https://bioengineering.stanford.edu/people/{first}-{last}',
+  ],
+  MIT: [
+    'https://www.eecs.mit.edu/people/{first}-{last}/',
+    'https://www.csail.mit.edu/person/{first}-{last}',
+    'https://idss.mit.edu/staff/{first}-{last}/',
+  ],
+  Penn: [
+    'https://directory.seas.upenn.edu/{first}-{last}/',
+    'https://www.dbei.med.upenn.edu/bio/{first}-{last}',
   ],
 };
 
@@ -142,7 +164,11 @@ function addressMatchesName(email, name) {
   // fine; the name plus extra tokens is not, which is how "covert.lab" was
   // being read as belonging to Markus Covert.
   if (last.length >= 5 && last.startsWith(local) && local.length >= 5) return true;
-  if (last.length >= 5 && local.startsWith(last) && local.length - last.length <= 1) return true;
+  // Deliberately no "surname plus one more letter" rule. A surname with a
+  // letter appended is usually just a different surname, not a variant of this
+  // one: it accepted rivest@mit.edu for Alex Rives, which is Ron Rivest's
+  // address. Surname-plus-initial is a real convention and is already covered
+  // by the `${last}${first[0]}` candidate above.
   return false;
 }
 
