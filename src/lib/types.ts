@@ -120,6 +120,35 @@ export interface OutboxEntry {
   createdAt: string;
 }
 
+/**
+ * An email queued to go out later. It stores the draft rather than a reference
+ * to one, so editing a draft afterwards cannot silently change what was
+ * already scheduled. The resume is deliberately not stored here: it is read
+ * from the user's file at send time, so replacing a resume updates what goes
+ * out, and one row never carries a megabyte of base64.
+ */
+export interface ScheduledEmail {
+  id: string;
+  userId: string;
+  researcherId: string;
+  researcherName: string;
+  to: string;
+  cc: string[];
+  subject: string;
+  body: string;
+  attachResume: boolean;
+  sendAt: string;
+  createdAt: string;
+  /** `sending` is a claim held while a run has the row; see runDueSends. */
+  status: 'scheduled' | 'sending' | 'sent' | 'failed' | 'canceled';
+  /** Random token identifying which run claimed the row. */
+  claim?: string | null;
+  claimedAt?: string | null;
+  /** The outbox row written once it actually went out. */
+  outboxId?: string | null;
+  detail?: string | null;
+}
+
 export interface GeneratedDraft {
   subject: string;
   body: string;

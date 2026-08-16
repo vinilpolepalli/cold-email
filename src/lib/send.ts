@@ -274,6 +274,46 @@ export async function sendEmail(req: SendRequest): Promise<OutboxEntry> {
   return entry;
 }
 
+// A real address check, not just "contains @". These values reach mail headers,
+// so a permissive check is how CRLF and extra recipients get in.
+const EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+const MAX_COPIES = 5;
+
+export function isSendableAddress(value: string): boolean {
+  return value.length <= 254 && EMAIL_RE.test(value);
+}
+
+/**
+ * Check a recipient and copy list once, for both the send-now and the
+ * send-later paths. Shared rather than duplicated because a scheduled email is
+ * still an email: if the two paths disagree, the weaker one is the one that
+ * actually reaches a professor.
+ */
+export function validateRecipients(
+  to: string,
+  cc: unknown
+): { to: string; cc: string[] } | { error: string } {
+  const recipient = to.trim();
+  if (!isSendableAddress(recipient)) return { error: 'That recipient address is not valid' };
+
+  const seen = new Set([recipient.toLowerCase()]);
+  const copies: string[] = [];
+  for (const raw of Array.isArray(cc) ? cc : []) {
+    const address = typeof raw === 'string' ? raw.trim() : '';
+    if (!address) continue;
+    if (!isSendableAddress(address)) {
+      return { error: `That CC address is not valid: ${address.slice(0, 80)}` };
+    }
+    if (seen.has(address.toLowerCase())) continue;
+    seen.add(address.toLowerCase());
+    copies.push(address);
+  }
+  // A blast-radius limit: a cold email copying a dozen people is a mailing
+  // list, not an introduction.
+  if (copies.length > MAX_COPIES) return { error: `Copy at most ${MAX_COPIES} people on one email` };
+  return { to: recipient, cc: copies };
+}
+
 export async function getOutbox(userId: string): Promise<OutboxEntry[]> {
   const all = await listStore<OutboxEntry>('outbox');
   return all.filter((e) => e.userId === userId).sort((a, b) => b.createdAt.localeCompare(a.createdAt));

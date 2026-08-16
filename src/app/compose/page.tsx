@@ -3,8 +3,33 @@
 import { Suspense, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ContactLookup, FocusPaper, LabContact, OutboxEntry, ResearcherProfile } from "@/lib/types";
+import { ContactLookup, FocusPaper, LabContact, OutboxEntry, ResearcherProfile, ScheduledEmail } from "@/lib/types";
 import { Button, Card, Inset } from "@/components/ui";
+
+/**
+ * `datetime-local` wants local wall time with no zone, and gives it back the
+ * same way. Both directions go through the browser's own zone, so "9:00 am"
+ * means nine in the morning where the sender is.
+ */
+function toLocalInputValue(date: Date): string {
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
+}
+
+/** Tomorrow at 9am reads as the obvious default for a cold email. */
+function defaultSendAt(): string {
+  const at = new Date();
+  at.setDate(at.getDate() + 1);
+  at.setHours(9, 0, 0, 0);
+  return toLocalInputValue(at);
+}
+
+function whenLabel(iso: string): string {
+  const at = new Date(iso);
+  return Number.isNaN(at.getTime())
+    ? iso
+    : at.toLocaleString(undefined, { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+}
 
 const inputClass =
   "h-10 w-full rounded-lg border border-[#e5e5e5] bg-white px-3 text-sm text-black placeholder:text-[#777169] focus:border-black focus:outline-none";
@@ -42,6 +67,12 @@ function ComposeInner() {
   const [loadingDraft, setLoadingDraft] = useState(true);
   const [error, setError] = useState("");
   const [sent, setSent] = useState<OutboxEntry | null>(null);
+  const [scheduling, setScheduling] = useState(false);
+  const [sendAt, setSendAt] = useState("");
+  // Fixed when the picker opens rather than read during render, which would
+  // make rendering depend on the clock.
+  const [minSendAt, setMinSendAt] = useState("");
+  const [scheduled, setScheduled] = useState<ScheduledEmail | null>(null);
 
   // The paper override is passed explicitly rather than read from state, so
   // typing in the notes box does not re-trigger the effect below.
@@ -128,6 +159,36 @@ function ComposeInner() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Send failed");
       setSent(data.entry);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : String(err));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function schedule() {
+    setBusy(true);
+    setError("");
+    try {
+      // The input carries local wall time; the server stores an instant.
+      const at = new Date(sendAt);
+      if (Number.isNaN(at.getTime())) throw new Error("Pick when to send it");
+      const res = await fetch("/api/schedule", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          researcherId,
+          subject,
+          body,
+          to,
+          cc: ccList,
+          attachResume,
+          sendAt: at.toISOString(),
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error ?? "Could not schedule that");
+      setScheduled(data.entry);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {
@@ -310,7 +371,27 @@ function ComposeInner() {
       </aside>
 
       <Card className="p-6">
-        {sent ? (
+        {scheduled ? (
+          <div className="py-10 text-center">
+            <h2 className="text-[17px] font-medium">Scheduled</h2>
+            <p className="mx-auto mt-2 max-w-md text-[13px] text-[#777169]">
+              Going to {scheduled.to}
+              {scheduled.cc?.length ? `, copying ${scheduled.cc.join(", ")}` : ""} on{" "}
+              <span className="text-black">{whenLabel(scheduled.sendAt)}</span>. You can cancel it from the outbox up
+              until it sends.
+            </p>
+            <div className="mt-6 flex justify-center gap-2">
+              <Link href="/dashboard" className="inline-flex">
+                <Button type="button">Back to dashboard</Button>
+              </Link>
+              <Link href="/outbox" className="inline-flex">
+                <Button type="button" variant="secondary">
+                  View outbox
+                </Button>
+              </Link>
+            </div>
+          </div>
+        ) : sent ? (
           <div className="py-10 text-center">
             <h2 className="text-[17px] font-medium">{sent.status === "sent" ? "Email sent" : "Saved to outbox"}</h2>
             <p className="mx-auto mt-2 max-w-md text-[13px] text-[#777169]">
@@ -392,18 +473,63 @@ function ComposeInner() {
               </p>
             )}
 
+            {/* Send later. Collapsed by default so the ordinary path stays one
+                button, and the picker only appears once it is asked for. */}
+            {scheduling && (
+              <Inset className="mt-4">
+                <label className="block">
+                  <span className="eyebrow">Send at</span>
+                  <input
+                    type="datetime-local"
+                    value={sendAt}
+                    min={minSendAt}
+                    onChange={(e) => setSendAt(e.target.value)}
+                    className={`${inputClass} mt-1.5`}
+                  />
+                </label>
+                <p className="mt-2 text-[12px] leading-5 text-[#777169]">
+                  Your local time. A weekday morning in the professor&apos;s own timezone tends to beat a Friday night.
+                  The draft is stored as it reads now, so editing it afterwards will not change what goes out.
+                </p>
+              </Inset>
+            )}
+
             {error && <p className="mt-3 text-[13px] text-[#ff4704]">{error}</p>}
-            <div className="mt-5 flex gap-2">
-              <Button onClick={send} disabled={busy || !subject || !body}>
-                {busy ? "Working" : "Send email"}
-              </Button>
-              <Button
-                variant="secondary"
-                onClick={() => generate({ paperUrl, paperNotes })}
-                disabled={busy}
-              >
-                Regenerate
-              </Button>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {scheduling ? (
+                <>
+                  <Button onClick={schedule} disabled={busy || !subject || !body || !sendAt}>
+                    {busy ? "Working" : "Schedule send"}
+                  </Button>
+                  <Button variant="secondary" onClick={() => setScheduling(false)} disabled={busy}>
+                    Cancel
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button onClick={send} disabled={busy || !subject || !body}>
+                    {busy ? "Working" : "Send email"}
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    onClick={() => {
+                      setSendAt(sendAt || defaultSendAt());
+                      setMinSendAt(toLocalInputValue(new Date(Date.now() + 60_000)));
+                      setScheduling(true);
+                    }}
+                    disabled={busy || !subject || !body}
+                  >
+                    Send later
+                  </Button>
+                  <Button
+                    variant="secondary"
+                    onClick={() => generate({ paperUrl, paperNotes })}
+                    disabled={busy}
+                  >
+                    Regenerate
+                  </Button>
+                </>
+              )}
             </div>
           </>
         )}
