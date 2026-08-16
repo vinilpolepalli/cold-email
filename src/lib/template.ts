@@ -235,7 +235,14 @@ function sentence(text: string): string {
 
 function lowerFirst(text: string): string {
   const t = text.trim();
-  if (!t || /^[A-Z]{2,}/.test(t)) return t;
+  if (!t) return t;
+  // Only a plain capitalised word may be lowered to sit mid-sentence. An
+  // acronym (DNA), a CamelCase name (MethylMix, PyTorch), and the pronoun "I"
+  // are spelled that way on purpose, and lowering them misspells them. Paper
+  // and tool names carry internal capitals constantly in this field, so this
+  // is the common case rather than an edge one.
+  const [firstWord] = t.split(/\s/, 1);
+  if (firstWord === 'I' || /[A-Z]/.test(firstWord.slice(1))) return t;
   return t.charAt(0).toLowerCase() + t.slice(1);
 }
 

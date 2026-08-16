@@ -666,7 +666,7 @@
     "title": "Assistant Professor of Business Administration, Harvard Business School",
     "school": "Harvard",
     "department": "Department of Statistics (affiliate) and Harvard Business School",
-    "email": null,
+    "email": "ibojinov@hbs.edu",
     "website": "https://www.ibojinov.com/",
     "researchAreas": [
       "causal inference",
@@ -2480,7 +2480,7 @@
     "title": "Professor, MIT Statistics and Data Science Center, IDSS; Department of Brain & Cognitive Sciences; Laboratory for Information & Decision Systems",
     "school": "MIT",
     "department": "Institute for Data, Systems, and Society (IDSS) / Department of Brain and Cognitive Sciences",
-    "email": null,
+    "email": "rakhlin@mit.edu",
     "website": "https://www.mit.edu/~rakhlin/",
     "researchAreas": [
       "machine learning theory",
@@ -2676,7 +2676,7 @@
     "title": "MathWorks Professor and Department Head of EECS",
     "school": "MIT",
     "department": "Electrical Engineering and Computer Science",
-    "email": null,
+    "email": "asuman@mit.edu",
     "website": "https://lids.mit.edu/people/facultypi/asu-ozdaglar",
     "researchAreas": [
       "optimization",
@@ -2947,7 +2947,7 @@
     "title": "Dean, MIT Schwarzman College of Computing; Henry Ellis Warren (1894) Professor of Electrical Engineering and Computer Science; Chair, MIT Jameel Clinic",
     "school": "MIT",
     "department": "MIT Schwarzman College of Computing",
-    "email": null,
+    "email": "huttenlocher@mit.edu",
     "website": null,
     "researchAreas": [
       "computer science",
@@ -3065,7 +3065,7 @@
     "title": "Professor of Electrical Engineering and Computer Science",
     "school": "MIT",
     "department": "Electrical Engineering and Computer Science (EECS) / CSAIL / IMES",
-    "email": null,
+    "email": "dsontag@mit.edu",
     "website": null,
     "researchAreas": [
       "machine learning",
@@ -3929,7 +3929,7 @@
     "title": "Dugald C. Jackson Professor of Computer Science and Electrical Engineering",
     "school": "MIT",
     "department": "Electrical Engineering and Computer Science (EECS) / CSAIL",
-    "email": null,
+    "email": "guttag@mit.edu",
     "website": null,
     "researchAreas": [
       "machine learning for healthcare",
@@ -4569,7 +4569,7 @@
     "title": "NEC Professor of Software Science and Engineering",
     "school": "MIT",
     "department": "Electrical Engineering and Computer Science (EECS) / Research Laboratory of Electronics",
-    "email": null,
+    "email": "medard@mit.edu",
     "website": null,
     "researchAreas": [
       "network coding",
@@ -5391,7 +5391,7 @@
     "title": "Alfred Henry and Jean Morrison Hayes Career Development Associate Professor",
     "school": "MIT",
     "department": "Electrical Engineering and Computer Science (EECS) / Research Laboratory of Electronics",
-    "email": null,
+    "email": "sixian@mit.edu",
     "website": null,
     "researchAreas": [
       "biophotonics",
@@ -6743,7 +6743,7 @@
     "title": "K.P. Chao Professor; Vice Dean of Analytics at Wharton",
     "school": "Penn",
     "department": "Department of Marketing / Statistics and Data Science",
-    "email": null,
+    "email": "ebradlow@wharton.upenn.edu",
     "website": null,
     "researchAreas": [
       "bayesian computation",
@@ -6794,7 +6794,7 @@
     "title": "Associate Professor of Biology",
     "school": "Penn",
     "department": "Biology",
-    "email": null,
+    "email": "eakcay@sas.upenn.edu",
     "website": "https://akcay.theoretical.bio/",
     "researchAreas": [
       "theoretical biology",
@@ -7017,7 +7017,7 @@
     "title": "Professor of Biostatistics; Director of the Laboratory of Statistical Genetics and Genomics",
     "school": "Penn",
     "department": "Department of Biostatistics, Epidemiology and Informatics",
-    "email": null,
+    "email": "hongzhe@pennmedicine.upenn.edu",
     "website": "http://statgene.med.upenn.edu/",
     "researchAreas": [
       "statistical genetics",
@@ -8020,7 +8020,7 @@
     "title": "Professor of Biostatistics",
     "school": "Penn",
     "department": "Department of Biostatistics, Epidemiology and Informatics",
-    "email": null,
+    "email": "mingyao@pennmedicine.upenn.edu",
     "website": null,
     "researchAreas": [
       "statistical genomics",
@@ -8292,7 +8292,7 @@
     "title": "Professor; Founding Director, Center for Cancer Data Science",
     "school": "Penn",
     "department": "Department of Biostatistics, Epidemiology and Informatics",
-    "email": null,
+    "email": "qlong@pennmedicine.upenn.edu",
     "website": "https://www.med.upenn.edu/long-lab/",
     "researchAreas": [
       "statistical machine learning",
