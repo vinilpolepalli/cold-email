@@ -307,11 +307,19 @@ function initialisms(text: string): Set<string> {
  */
 function dropDanglingWords(text: string): string {
   let cut = text;
-  for (let i = 0; i < 4; i++) {
-    const trimmed = cut.replace(
-      /\s+(?:[A-Za-z]+(?:-[A-Za-z]+)+|with|for|of|in|on|and|to|by|using|from|at|via|through|under|during|across|between|among|without|into|over|after|before|toward|towards)$/i,
-      ''
-    );
+  for (let i = 0; i < 6; i++) {
+    const trimmed = cut
+      // A preposition with its verb still attached is as unfinished as the
+      // preposition alone: "0.88 F1 by validating" needs both words gone, and
+      // dropping only "validating" would leave "by" for the next pass to find.
+      .replace(
+        /\s+(?:by|using|through|via|with|for|after|before|while|when)\s+[a-z]+(?:ing|ed)$/i,
+        ''
+      )
+      .replace(
+        /\s+(?:[A-Za-z]+(?:-[A-Za-z]+)+|with|for|of|in|on|and|to|by|using|from|at|via|through|under|during|across|between|among|without|into|over|after|before|toward|towards)$/i,
+        ''
+      );
     if (trimmed === cut || trimmed.length < 12) break;
     cut = trimmed;
   }
@@ -324,7 +332,25 @@ const ACTION_VERB =
 
 /** A resume heading that is the label on a link rather than the name of
  *  anything: "Live Demo | GitHub" at the end of a project bullet. */
-const LINK_LABEL = /^(?:github|gitlab|demo|live demo|live dashboard|dashboard|link|website|site|paper|slides|video|repo|code)$/i;
+const LINK_LABEL = /^(?:github|gitlab|demo|live demo|live dashboard|dashboard|link|website|site|paper|slides|video|repo|code)\b[.\s]*$/i;
+
+/**
+ * Drop link labels stranded on the front of a heading by the resume parser.
+ * Repeated because a bullet can end with more than one: "Live Dashboard |
+ * GitHub." arrives as two labels in front of the next project's real name.
+ */
+function stripLeadingLinkLabels(head: string): string {
+  let cut = head.trim();
+  for (let i = 0; i < 3; i++) {
+    const next = cut.replace(
+      /^(?:github|gitlab|demo|live demo|live dashboard|dashboard|link|website|site|paper|slides|video|repo|code)\b[\s.,;:|-]+/i,
+      ''
+    );
+    if (next === cut || !next) break;
+    cut = next;
+  }
+  return cut || head;
+}
 
 /** Past-tense openers a "-ed" test misses. */
 const IRREGULAR_PAST =
@@ -937,14 +963,16 @@ export function templateDraft(
       if (!placesLeft.includes(org)) placesLeft.push(org);
       continue;
     }
-    const name = cleanHeadline(head).replace(/[\s,;:.-]+$/, '');
-    if (!name) continue;
     // Resume bullets end with their links: "...; Live Dashboard | GitHub." The
-    // parser can hand back that trailing label as the next entry's heading, and
-    // naming it produced "projects like GitHub, where I built an agent-operated
-    // trading firm". There is no real name to recover in that entry, and a
-    // wrong one is worse than leaving it to the attached resume.
-    if (LINK_LABEL.test(name)) continue;
+    // parser hands that trailing label back on the front of the next entry, as
+    // "GitHub. | QuantFirm | Python, pandas", which is how the draft came to
+    // advertise "projects like GitHub". Dropping the label recovers the real
+    // name behind it instead of losing the project along with it.
+    const named = stripLeadingLinkLabels(head);
+    const name = cleanHeadline(named).replace(/[\s,;:.-]+$/, '');
+    // Nothing but link labels: no name to recover, and a wrong one is worse
+    // than leaving the entry to the attached resume.
+    if (!name || LINK_LABEL.test(name)) continue;
     // A resume lists one project across several bullets. Naming it once per
     // bullet produced "projects like QuantFirm, where I ... and QuantFirm,
     // where I ...", which reads as two projects with the same name.

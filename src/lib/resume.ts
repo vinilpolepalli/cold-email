@@ -549,10 +549,24 @@ export async function summarize(
 }
 
 /** Strip city/state and date tails so an entry reads as a name, not a record. */
+/**
+ * A heading segment that is the label on a link rather than the name of
+ * anything. Trailing punctuation is allowed because these arrive as "GitHub."
+ * from the end of the previous bullet.
+ */
+const LINK_LABEL_SEGMENT =
+  /^(?:github|gitlab|demo|live demo|live dashboard|dashboard|link|website|site|paper|slides|video|repo|code)\b[.\s]*$/i;
+
 export function cleanHeadline(entry: string): string {
-  return entry
-    .split(':')[0]
-    .split('|')[0]
+  const segments = entry.split(':')[0].split('|').map((s) => s.trim());
+  // Resume bullets end with their links, and the parser hands that trailing
+  // label back on the front of the next entry: "GitHub. | QuantFirm | Python,
+  // pandas". Taking the first segment blindly named the link rather than the
+  // project, so the draft offered "projects like GitHub". The first segment
+  // that is not a link label is the name. If every segment is one, the
+  // original is kept, so a project genuinely called "Live Dashboard" survives.
+  const named = segments.find((s) => s && !LINK_LABEL_SEGMENT.test(s)) ?? segments[0] ?? '';
+  return named
     .replace(/\s+(Expected|Anticipated|Present).*$/i, '')
     .replace(
       /\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.?\s*\d{4}.*$/i,
