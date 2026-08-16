@@ -47,14 +47,19 @@ const SHARED_RULES = [
 const START = '%%%REVISED%%%';
 const END = '%%%END%%%';
 
-const FORMAT = `Reply in exactly this form and nothing else:
+// Deliberately carries no sample line between the markers. Every placeholder
+// put there has come back as the answer at some point: the angle-bracket one
+// verbatim, and the prose one paraphrased into "` followed by the revised
+// text, then `". A structure that is described but never shown has nothing to
+// copy.
+const FORMAT = `Reply with exactly three parts and nothing else:
 
-SUBJECT: NONE
-${START}
-the revised text, written out in full
-${END}
+First a line reading SUBJECT: NONE, or SUBJECT: followed by a new subject line, but only if the instruction was about the subject.
+Then a line containing only ${START}.
+Then the edited words themselves, as many lines as they take, exactly as they should appear in the email.
+Then a line containing only ${END}.
 
-Write the actual revised text on the lines between the markers. Never reply with a placeholder, a description of what should go there, or anything in angle brackets. Replace NONE with a new subject line only if the instruction was about the subject. No commentary before or after the markers, no quotes, no code fences.`;
+The middle part is the email text itself. Never write a description of what belongs there, a placeholder, or anything in angle brackets or backticks. No commentary before or after, no quotes around it, no code fences.`;
 
 const WHOLE_SYSTEM = `You are editing a cold email a student is sending to a professor. The student has told you what to change. Apply that change to the whole email and return the complete revised email.
 
@@ -98,6 +103,17 @@ const NARRATING_ITSELF =
 const DEGENERATE = /\b(\w+)\b(?:\s+\1\b){7,}/i;
 
 /**
+ * The model talking about the answer instead of giving it. This is the same
+ * failure as echoing the template, but paraphrased, so the "appears verbatim
+ * in the prompt" test cannot see it: "` followed by the revised text, then `"
+ * reached a real draft that way. No student writing to a professor refers to
+ * "the revised text", and a backtick in a plain-text email is a formatting
+ * artefact rather than something anyone typed.
+ */
+const DESCRIBES_THE_ANSWER =
+  /(?:the\s+)?revised\s+text|the\s+text\s+goes\s+here|your\s+(?:revised\s+)?(?:text|answer)\s+here|followed\s+by\s+the\s+\w+\s+text|between\s+the\s+markers|^\s*`|`\s*$/i;
+
+/**
  * Whether the model wrote an edit or something else entirely.
  *
  * Two families of failure are refused here. The first is the instructions
@@ -115,6 +131,7 @@ function usable(text: string, system: string, selection: string | null): boolean
   if (trimmed.length < 200 && system.includes(trimmed)) return false;
   if (NARRATING_ITSELF.test(trimmed)) return false;
   if (DEGENERATE.test(trimmed)) return false;
+  if (DESCRIBES_THE_ANSWER.test(trimmed)) return false;
   // A replacement for one passage that comes back many times its length is a
   // runaway, not an edit. Generous, because "expand this" is a fair request.
   if (selection && trimmed.length > Math.max(400, selection.length * 6)) return false;

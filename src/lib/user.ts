@@ -32,8 +32,29 @@ function userKey(prefix: string, userId: string): string {
   return `${prefix}:${userId}`;
 }
 
+/**
+ * A dash in front of a number is a minus sign, not a sentence break. Resume
+ * parsing gets this right now, but profiles stored before it did carry "at -
+ * 7.5% max drawdown", which reads as a stray bullet mid-sentence. Repaired on
+ * read so an existing account does not have to re-upload a resume to stop the
+ * artefact reaching a professor.
+ */
+function repairNumericMinus(text: string): string {
+  return text.replace(/(\S)\s-\s(?=\d)/g, '$1 -');
+}
+
+const REPAIRED_FIELDS = ['education', 'experience', 'projects', 'publications', 'awards'] as const;
+
 export async function getUserProfile(userId: string): Promise<UserProfile | null> {
-  return readStore<UserProfile | null>(userKey('user', userId), null);
+  const profile = await readStore<UserProfile | null>(userKey('user', userId), null);
+  if (!profile) return null;
+  const repaired = { ...profile };
+  for (const field of REPAIRED_FIELDS) {
+    const value = repaired[field];
+    if (Array.isArray(value)) repaired[field] = value.map((entry) => repairNumericMinus(String(entry)));
+  }
+  if (repaired.aiSummary) repaired.aiSummary = repairNumericMinus(repaired.aiSummary);
+  return repaired;
 }
 
 export async function saveUserProfile(profile: UserProfile): Promise<void> {
