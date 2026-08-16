@@ -75,10 +75,12 @@ Notes for serverless: runtime user data (profiles, outbox) falls back to the ins
 
 There is no long-running process to hold a timer — the app is a set of serverless functions — so a scheduled email goes out when something asks whether anything is due. Two things ask:
 
-1. **Vercel Cron** hits `/api/cron/send-scheduled` on the schedule in `vercel.json` (hourly). The route requires `CRON_SECRET`; Vercel sends it as `Authorization: Bearer $CRON_SECRET`. **With `CRON_SECRET` unset the route is disabled**, because it sends real mail for real accounts and an open endpoint would let anyone flush every user's queue early.
-2. **Opening the outbox** flushes anything already due. This is what makes scheduling usable on a Vercel plan whose cron only fires once a day.
+1. **Vercel Cron** hits `/api/cron/send-scheduled` on the schedule in `vercel.json`. The route requires `CRON_SECRET`; Vercel sends it as `Authorization: Bearer $CRON_SECRET`. **With `CRON_SECRET` unset the route is disabled**, because it sends real mail for real accounts and an open endpoint would let anyone flush every user's queue early.
+2. **Opening the outbox** flushes anything already due.
 
-Cron frequency is plan-dependent: Hobby triggers a cron roughly once a day regardless of the expression, Pro honours it. On Hobby, an email scheduled for 9am goes out at the next daily cron *or* the next time you open the app, whichever comes first — so it is "no earlier than", never "exactly at". Change `vercel.json` to `*/5 * * * *` on Pro if you want it tight.
+The cron is set to `0 13 * * *` — once a day, 13:00 UTC — because **Vercel's Hobby plan rejects the deployment outright** for anything more frequent ("Hobby accounts are limited to daily cron jobs"), rather than silently throttling it. On Pro, change it to `*/5 * * * *` and scheduled email goes out within five minutes of its time.
+
+So on Hobby the honest guarantee is **"no earlier than", never "exactly at"**: an email scheduled for 3pm goes out at the next daily cron or the next time somebody opens the app, whichever comes first. The outbox flush is what keeps this usable rather than useless — in practice a student who schedules an email is also someone who opens the app.
 
 Two deliberate choices in `src/lib/schedule.ts`:
 
