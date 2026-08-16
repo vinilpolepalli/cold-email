@@ -3,7 +3,7 @@
 // text and nothing else, so the caller can splice it back exactly where it came
 // from.
 
-import { NimAuth, extractJson, nimChat } from './nim';
+import { NimAuth, nimChat } from './nim';
 import { EmailRule, rulesPrompt } from './preferences';
 import { ResearcherProfile, UserProfile } from './types';
 
@@ -36,21 +36,69 @@ const SHARED_RULES = [
   'Keep the sender\'s voice: first person, plain, specific, no salesmanship.',
 ].join('\n');
 
+// Deliberately not JSON. The thing being returned is a multi-paragraph email,
+// and asking a model to escape every newline into a JSON string is a reliable
+// way to get back something that will not parse. Markers also cannot be echoed
+// back as a schema: a model that copies the format instruction verbatim still
+// produces a parsable envelope, where copying {"text": string} does not.
+const START = '%%%REVISED%%%';
+const END = '%%%END%%%';
+
+const FORMAT = `Reply in exactly this form and nothing else:
+
+SUBJECT: <a new subject line, or the word NONE>
+${START}
+<the text>
+${END}
+
+Write real content between the markers. Do not describe the format, do not add commentary before or after it, and do not wrap the text in quotes or code fences.`;
+
 const WHOLE_SYSTEM = `You are editing a cold email a student is sending to a professor. The student has told you what to change. Apply that change to the whole email and return the complete revised email.
 
 ${SHARED_RULES}
 Preserve the parts the instruction does not touch. This is an edit, not a rewrite: if the instruction is about one paragraph, the other paragraphs should come back unchanged.
 Keep the greeting and the signature block intact unless the instruction is about them.
+Put the complete revised email body between the markers. Give a SUBJECT only if the instruction was about the subject line, otherwise write NONE.
 
-Reply ONLY with JSON: {"text": string, "subject": string or null}. "text" is the complete revised email body. "subject" is a new subject line ONLY if the instruction was about the subject, otherwise null.`;
+${FORMAT}`;
 
 const SELECTION_SYSTEM = `You are editing one passage of a cold email a student is sending to a professor. You are given the whole email for context and the exact passage the student highlighted. Apply their instruction to the highlighted passage ONLY.
 
 ${SHARED_RULES}
-Return a replacement for the highlighted passage and nothing else: no surrounding sentences, no quotation marks around it, no explanation. It will be spliced back into the email exactly where the highlighted passage was, so it must read continuously with the text on either side.
+Between the markers put a replacement for the highlighted passage and nothing else: no surrounding sentences, no explanation. It is spliced back into the email exactly where the highlighted passage was, so it must read continuously with the text on either side.
 Match the shape of what you replace. A replacement for one sentence is a sentence; a replacement for a bullet keeps the leading "- ".
+Always write NONE for SUBJECT.
 
-Reply ONLY with JSON: {"text": string, "subject": null}.`;
+${FORMAT}`;
+
+/**
+ * Pull the reply out of the envelope. Tolerant on purpose: a model that drops
+ * the closing marker, or answers with the bare replacement and no markers at
+ * all, has still done the work, and throwing that away to be strict about
+ * punctuation would fail an edit that is sitting right there.
+ */
+function unwrap(reply: string): { text: string; subject: string | null } | null {
+  const subjectLine = reply.match(/^\s*SUBJECT:\s*(.+)$/m)?.[1]?.trim() ?? '';
+  const subject = subjectLine && !/^none$/i.test(subjectLine) ? subjectLine : null;
+
+  const from = reply.indexOf(START);
+  let text = '';
+  if (from !== -1) {
+    const after = from + START.length;
+    const to = reply.indexOf(END, after);
+    text = reply.slice(after, to === -1 ? undefined : to);
+  } else if (!/\{\s*"text"/.test(reply)) {
+    // No markers and no half-written JSON envelope: treat the whole reply as
+    // the answer, minus the subject line if it wrote one.
+    text = reply.replace(/^\s*SUBJECT:.*$/m, '');
+  }
+
+  // Only the padding around the block is dropped. Indentation inside it is the
+  // sender's bullet list.
+  text = text.replace(/^[\r\n]+/, '').replace(/\s+$/, '');
+  if (!text || text.includes(START)) return null;
+  return { text, subject };
+}
 
 /** The model gets a strict budget: a rewritten email is about the length of the
  *  one it was given, and a reply longer than this is a runaway, not an edit. */
@@ -89,26 +137,41 @@ export async function reviseEmail(req: ReviseRequest, nimAuth?: NimAuth): Promis
     },
   };
 
-  const reply = await nimChat(
-    [
-      { role: 'system', content: system },
-      { role: 'user', content: JSON.stringify(payload) },
-    ],
-    // Low temperature: this is an edit to a draft the sender already accepted
-    // most of, and creativity here shows up as paragraphs they did not ask to
-    // have touched.
-    { temperature: 0.3, maxTokens: MAX_TOKENS },
-    nimAuth
-  );
+  const messages: { role: 'system' | 'user' | 'assistant'; content: string }[] = [
+    { role: 'system', content: system },
+    { role: 'user', content: JSON.stringify(payload) },
+  ];
 
-  const parsed = extractJson<{ text?: unknown; subject?: unknown }>(reply);
-  const text = typeof parsed.text === 'string' ? parsed.text.trim() : '';
-  if (!text) throw new Error('The model returned nothing to apply');
+  // Low temperature: this is an edit to a draft the sender already accepted
+  // most of, and creativity here shows up as paragraphs they did not ask to
+  // have touched.
+  const reply = await nimChat(messages, { temperature: 0.3, maxTokens: MAX_TOKENS }, nimAuth);
+  let parsed = unwrap(reply);
+
+  if (!parsed) {
+    // One corrective round. Smaller models answer the first time by repeating
+    // the format instruction back; shown their own reply they generally do the
+    // work instead.
+    parsed = unwrap(
+      await nimChat(
+        [
+          ...messages,
+          { role: 'assistant', content: reply.slice(0, 2000) },
+          {
+            role: 'user',
+            content: `That reply did not contain the revised text. Do not repeat the format description. Write the actual revised text between ${START} and ${END}, starting your reply with SUBJECT:`,
+          },
+        ],
+        { temperature: 0.2, maxTokens: MAX_TOKENS },
+        nimAuth
+      )
+    );
+  }
+
+  if (!parsed) throw new Error('the model did not return an edit. Try rewording the instruction.');
 
   const subject =
-    typeof parsed.subject === 'string' && parsed.subject.trim() && parsed.subject.trim() !== req.subject
-      ? parsed.subject.trim().slice(0, 200)
-      : null;
+    parsed.subject && parsed.subject !== req.subject ? parsed.subject.slice(0, 200) : null;
 
-  return { text, subject };
+  return { text: parsed.text, subject };
 }
