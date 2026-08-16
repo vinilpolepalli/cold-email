@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getProfile } from '@/lib/profiles';
+import { getRules } from '@/lib/preferences';
 import { getPublications } from '@/lib/publications';
 import { focusFromWorks, generateDraft } from '@/lib/template';
 import { getResumeFileInfo } from '@/lib/resume-file';
@@ -80,13 +81,18 @@ export async function POST(req: NextRequest) {
   // fetched (from cache, usually) before writing anything.
   const works = await getPublications(researcher);
   const focus = resolveFocus(works, user, paperUrl, paperNotes);
-  const draft = await generateDraft(researcher, user, await getNimAuth(userId), works, focus);
+  // Instructions the sender gave the AI on earlier drafts apply to this one.
+  const rules = await getRules(userId);
+  const draft = await generateDraft(researcher, user, await getNimAuth(userId), works, focus, rules);
 
   return NextResponse.json({
     draft,
     researcher,
     resume: await getResumeFileInfo(userId),
     works,
+    // Listed on the compose screen so the sender can see what is steering the
+    // draft and drop anything that should no longer apply.
+    rules,
     // Surfaced so the compose screen can show which paper the draft leans on
     // and link straight to it.
     focusPaper: focus,

@@ -4,7 +4,9 @@ import { Suspense, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ContactLookup, FocusPaper, LabContact, OutboxEntry, ResearcherProfile, ScheduledEmail } from "@/lib/types";
+import { EmailRule } from "@/lib/preferences";
 import { Button, Card, Inset } from "@/components/ui";
+import { DraftEditor } from "@/components/draft-editor";
 
 /**
  * `datetime-local` wants local wall time with no zone, and gives it back the
@@ -73,6 +75,11 @@ function ComposeInner() {
   // make rendering depend on the clock.
   const [minSendAt, setMinSendAt] = useState("");
   const [scheduled, setScheduled] = useState<ScheduledEmail | null>(null);
+  const [rules, setRules] = useState<EmailRule[]>([]);
+  // Whether AI edits are possible at all: the sender's own NIM key, or a
+  // server-wide one. Without either, the prompt box says so rather than
+  // failing on submit.
+  const [aiAvailable, setAiAvailable] = useState(false);
 
   // The paper override is passed explicitly rather than read from state, so
   // typing in the notes box does not re-trigger the effect below.
@@ -97,6 +104,7 @@ function ComposeInner() {
       setTo(data.researcher.email ?? "");
       setResume(data.resume ?? null);
       setFocus(data.focusPaper ?? null);
+      if (Array.isArray(data.rules)) setRules(data.rules);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {
@@ -111,6 +119,23 @@ function ComposeInner() {
     const t = setTimeout(() => generate(), 0);
     return () => clearTimeout(t);
   }, [generate]);
+
+  // Whether the draft editor can call a model at all. Asked once on load, so
+  // the prompt box can be honest about it before anyone types into it.
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/api/settings")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (!cancelled && data?.settings) setAiAvailable(data.settings.nimSource !== "none");
+      })
+      .catch(() => {
+        // Treated as unavailable, which is the safe reading.
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   // Contacts are looked up separately: it reads the lab's own pages, which is
   // far slower than writing the draft and should not hold it up.
@@ -440,15 +465,19 @@ function ComposeInner() {
               <span className="eyebrow">Subject</span>
               <input value={subject} onChange={(e) => setSubject(e.target.value)} className={`${inputClass} mt-1.5`} />
             </label>
-            <label className="mt-4 block">
-              <span className="eyebrow">Body</span>
-              <textarea
-                value={body}
-                onChange={(e) => setBody(e.target.value)}
-                rows={18}
-                className="mt-1.5 w-full rounded-lg border border-[#e5e5e5] bg-white p-4 text-sm leading-6 text-black focus:border-black focus:outline-none"
+            <div className="mt-4">
+              <DraftEditor
+                body={body}
+                setBody={setBody}
+                subject={subject}
+                setSubject={setSubject}
+                researcherId={researcherId}
+                aiAvailable={aiAvailable}
+                rules={rules}
+                setRules={setRules}
+                disabled={busy}
               />
-            </label>
+            </div>
 
             {resume ? (
               <Inset className="mt-4 flex items-center justify-between">
