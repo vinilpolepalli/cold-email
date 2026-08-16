@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getDraft } from '@/lib/drafts';
 import { getProfile } from '@/lib/profiles';
+import { getRules } from '@/lib/preferences';
 import { getPublications } from '@/lib/publications';
 import { focusFromWorks, generateDraft } from '@/lib/template';
 import { getResumeFileInfo } from '@/lib/resume-file';
@@ -80,13 +82,29 @@ export async function POST(req: NextRequest) {
   // fetched (from cache, usually) before writing anything.
   const works = await getPublications(researcher);
   const focus = resolveFocus(works, user, paperUrl, paperNotes);
-  const draft = await generateDraft(researcher, user, await getNimAuth(userId), works, focus);
+  // Instructions the sender gave the AI on earlier drafts apply to this one.
+  const rules = await getRules(userId);
+
+  // An email already in progress is the one to reopen. Writing a new draft
+  // over the top would throw away every edit the sender made last time they
+  // were on this screen, which is the whole point of saving it. Asking for a
+  // different paper, or pressing regenerate, is an explicit request for new
+  // text and skips this.
+  const saved = paperUrl || paperNotes || body.regenerate ? null : await getDraft(userId, researcher.id);
+  const draft = saved
+    ? { subject: saved.subject, body: saved.body, generator: 'saved' as const }
+    : await generateDraft(researcher, user, await getNimAuth(userId), works, focus, rules);
 
   return NextResponse.json({
     draft,
+    // The rest of the saved state: who it was going to and what was attached.
+    saved,
     researcher,
     resume: await getResumeFileInfo(userId),
     works,
+    // Listed on the compose screen so the sender can see what is steering the
+    // draft and drop anything that should no longer apply.
+    rules,
     // Surfaced so the compose screen can show which paper the draft leans on
     // and link straight to it.
     focusPaper: focus,

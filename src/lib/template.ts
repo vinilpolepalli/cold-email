@@ -1,5 +1,6 @@
 import { FocusPaper, GeneratedDraft, ResearcherProfile, ResearcherWorks, UserProfile } from './types';
 import { NimAuth, extractJson, nimAvailable, nimChat } from './nim';
+import { EmailRule, rulesPrompt } from './preferences';
 import { pickRelevantPublication } from './publications';
 import {
   cleanHeadline,
@@ -321,6 +322,28 @@ function dropDanglingWords(text: string): string {
 const ACTION_VERB =
   /^(?:built|created|developed|designed|implemented|led|wrote|trained|improved|delivered|achieved|shipped|launched|automated|analy[sz]ed|integrated|reduced|increased|scaled|deployed|published|ran|won|founded|organi[sz]ed|maintained|refactored|migrated|benchmarked|evaluated|assembled|screened|curated)\b/i;
 
+/** A resume heading that is the label on a link rather than the name of
+ *  anything: "Live Demo | GitHub" at the end of a project bullet. */
+const LINK_LABEL = /^(?:github|gitlab|demo|live demo|live dashboard|dashboard|link|website|site|paper|slides|video|repo|code)$/i;
+
+/** Past-tense openers a "-ed" test misses. */
+const IRREGULAR_PAST =
+  /^(?:built|wrote|ran|won|led|made|took|drove|grew|set|put|taught|sold|held|kept|spoke|began|chose|rebuilt|oversaw|drew|found)\b/i;
+
+/**
+ * Whether a resume description opens with something the sender did, in a form
+ * that can follow "I". A resume line is either a past-tense clause ("built a
+ * pipeline") or a noun phrase ("sequencing pipelines"), and the second needs
+ * "worked on" in front of it or the sentence reads "I sequencing pipelines".
+ *
+ * Deliberately a test for the past tense rather than a list of approved verbs:
+ * a list is always missing one, and every verb it misses becomes a sentence
+ * saying "I worked on conducted a study".
+ */
+function startsWithPastVerb(detail: string): boolean {
+  return /^[a-z]+ed\b/i.test(detail) || IRREGULAR_PAST.test(detail) || ACTION_VERB.test(detail);
+}
+
 const ACRONYMS = [
   'AI', 'ML', 'LLM', 'LLMs', 'NLP', 'RL', 'GNN', 'GNNs', 'CNN', 'CNNs', 'RNN', 'ASR', 'CV', 'HPC', 'GPU', 'API',
   'DNA', 'RNA', 'MRI', 'EEG', 'fMRI', 'NGS', 'QSAR', 'PDE', 'ODE', 'SLAM', 'UAV', 'IoT', 'AR', 'VR',
@@ -588,8 +611,12 @@ function paperInsight(paper: FocusPaper, user: UserProfile, researcher: Research
   // part that reads as someone who thought about the work rather than skimmed
   // it, so the fallbacks narrow rather than disappear — the last one still
   // names this paper's own subject and the sender's own field.
+  // Their own field is not worth naming when it is also the reader's: "biology
+  // in particular, which is where my own work has been" told to a cancer
+  // genomics lab claims a contrast that is not there.
+  const theirDomains = domainsOf(researcherText(researcher));
   const ownField = [...domainsOf(`${user.experience.join(' ')} ${user.projects.join(' ')}`)].find(
-    (d) => d !== 'business'
+    (d) => d !== 'business' && !theirDomains.has(d)
   );
   const next = interest
     ? `The follow-up I would want to run is ${lowerFirst(interest)} on top of that${
@@ -741,7 +768,12 @@ export function templateDraft(
     const place = head ? placeClause(head) : '';
     if (!place || !detail) return sentence(entry);
     const opener = lead ? `${lead}, ${place}` : `${place.charAt(0).toUpperCase()}${place.slice(1)}`;
-    return `${opener}, I ${lowerFirst(sentence(detail))}`;
+    // "I" needs a verb after it. A resume line whose description is a noun
+    // phrase ("sequencing pipelines", "3 papers") produces "I sequencing
+    // pipelines", so it is introduced as a thing worked on instead.
+    return startsWithPastVerb(detail)
+      ? `${opener}, I ${lowerFirst(sentence(detail))}`
+      : `${opener}, I worked on ${lowerFirst(sentence(detail))}`;
   };
 
   // One experience, not two. The opening paragraph is the least interesting
@@ -868,31 +900,12 @@ export function templateDraft(
     ? `In the past, I have worked on the following related projects:\n${bulletLines.join('\n')}`
     : '';
 
-  // Interests are put in the order this researcher would care about, not the
-  // order they were typed. Leading a speech recognition lab with "computational
-  // biology" reads as a list the sender pastes into every email; leading with
-  // the one that overlaps reads as someone who picked this lab.
-  const rankedInterests = user.researchInterests
-    .map((i) => fixAcronyms(i.trim()))
-    .filter(Boolean)
-    .map((i) => ({ i, score: rank(i) }))
-    .sort((a, b) => b.score - a.score);
-  // `rank` hands every research-flavoured phrase a point so it outranks a
-  // finance internship, which is right for ordering bullets and wrong here: a
-  // point that every interest earns is not evidence of overlap with this lab.
-  // Claiming one where there is none is the exact thing this sentence is
-  // supposed to prove the sender did not do.
-  const shared = rankedInterests
-    .filter(({ i }) => relevanceScore(i, target) > 0 || [...domainsOf(i)].some((d) => targetDomains.has(d)))
-    .map((r) => r.i);
-  const context = rankedInterests.length
-    ? shared.length
-      // Deliberately not "the part I keep coming back to" again: when there is
-      // a focus paper that phrase is already three paragraphs up, and the echo
-      // makes both sentences read as filler.
-      ? `What lines up most directly with your lab is ${lowerFirst(listPhrase(shared.slice(0, 2)))}, and that is why I am writing to you specifically rather than casting around.`
-      : `More broadly, I have been exploring ${lowerFirst(listPhrase(rankedInterests.slice(0, 3).map((r) => r.i)))}, and your group is the closest I have found to where I want to take that.`
-    : '';
+  // No standalone "my interests are X, Y and Z" sentence. Listing them back at
+  // a professor is the most skippable line in the email: it asserts an interest
+  // instead of showing one, and the paragraphs around it already do the showing
+  // through the work quoted and the follow-up proposed. Interests still steer
+  // which experience leads and which paper the draft reacts to; they just do it
+  // silently.
 
   // The reference email owns its weakest link rather than hiding it: adjacent
   // work is named, called adjacent, and turned into an argument about
@@ -912,38 +925,50 @@ export function templateDraft(
   // one "work at Live Dashboard" invents a company the sender never worked for.
   // Employers are named, projects are described.
   const placesLeft: string[] = [];
-  const projectsLeft: string[] = [];
+  const projectsLeft: { name: string; text: string }[] = [];
   for (const entry of leftover) {
     const { head, detail } = splitEntry(entry);
     const { org, role } = splitOrgRole(head);
     // Having a job title is what makes something a job. "Analyst Intern,
     // QuantFirm" parses into a role and an employer; "Live Dashboard" parses
     // into neither, and calling it a place invents a company.
-    const isPlace =
-      Boolean(role && org) &&
-      !alreadyNamed.has(org) &&
-      org.length > 3 &&
-      // A resume that lists "GitHub" or "Demo" as a project header is naming a
-      // link, not a place worth citing to a professor.
-      !/^(?:github|gitlab|demo|link|website|site|paper|slides|video)$/i.test(org);
+    const isPlace = Boolean(role && org) && !alreadyNamed.has(org) && org.length > 3 && !LINK_LABEL.test(org);
     if (isPlace) {
       if (!placesLeft.includes(org)) placesLeft.push(org);
       continue;
     }
     const name = cleanHeadline(head).replace(/[\s,;:.-]+$/, '');
     if (!name) continue;
-    const what = detail ? trimToWord(detail, 90).replace(/[\s,;:.-]+$/, '') : '';
+    // Resume bullets end with their links: "...; Live Dashboard | GitHub." The
+    // parser can hand back that trailing label as the next entry's heading, and
+    // naming it produced "projects like GitHub, where I built an agent-operated
+    // trading firm". There is no real name to recover in that entry, and a
+    // wrong one is worse than leaving it to the attached resume.
+    if (LINK_LABEL.test(name)) continue;
+    // A resume lists one project across several bullets. Naming it once per
+    // bullet produced "projects like QuantFirm, where I ... and QuantFirm,
+    // where I ...", which reads as two projects with the same name.
+    if (projectsLeft.some((p) => p.name === name)) continue;
+    // Cutting at a word boundary still leaves the sentence hanging on whatever
+    // word came before the cut: "by validating and" was where 90 characters
+    // happened to fall.
+    const what = detail ? dropDanglingWords(trimToWord(detail, 90)).replace(/[\s,;:.-]+$/, '') : '';
     // "Live Dashboard, where I a realtime dashboard for tracking runs" is what
     // comes of assuming the description starts with a verb. When it does not,
     // it is an appositive and reads as one.
-    projectsLeft.push(
-      !what ? name : ACTION_VERB.test(what) ? `${name}, where I ${lowerFirst(what)}` : `${name}, ${lowerFirst(what)}`
-    );
+    projectsLeft.push({
+      name,
+      text: !what
+        ? name
+        : startsWithPastVerb(what)
+          ? `${name}, where I ${lowerFirst(what)}`
+          : `${name}, ${lowerFirst(what)}`,
+    });
   }
 
   const alsoDid = [
     placesLeft.length ? `work at ${listPhrase(placesLeft.slice(0, 2))}` : '',
-    projectsLeft.length ? `projects like ${listPhrase(projectsLeft.slice(0, 2))}` : '',
+    projectsLeft.length ? `projects like ${listPhrase(projectsLeft.slice(0, 2).map((p) => p.text))}` : '',
   ].filter(Boolean);
   const groundwork = alsoDid.length
     ? `I have also done ${listPhrase(alsoDid)}, which you can see in my attached resume. That work is not directly related to your lab's, but it is where I learned to carry a problem from a rough idea to something that runs and can be checked.`
@@ -959,7 +984,6 @@ export function templateDraft(
     connection,
     bullets,
     groundwork,
-    context,
     skills,
     'I would be happy to elaborate on my skills and where I think I can best help out.',
     'Thank you!',
@@ -991,14 +1015,19 @@ export async function generateDraft(
   user: UserProfile,
   nimAuth?: NimAuth,
   works?: ResearcherWorks | null,
-  focus?: FocusPaper | null
+  focus?: FocusPaper | null,
+  // What the sender has told the AI about their emails on earlier drafts. The
+  // whole point of keeping those instructions is that they apply here without
+  // being retyped.
+  rules?: EmailRule[]
 ): Promise<GeneratedDraft> {
   const paper = focus ?? (works ? focusFromWorks(works, user) : null);
   if (!nimAvailable(nimAuth)) return templateDraft(researcher, user, works, paper);
+  const standing = rulesPrompt(rules ?? []);
   try {
     const reply = await nimChat(
       [
-        { role: 'system', content: DRAFT_SYSTEM },
+        { role: 'system', content: standing ? `${DRAFT_SYSTEM}\n\n${standing}` : DRAFT_SYSTEM },
         {
           role: 'user',
           content: JSON.stringify({

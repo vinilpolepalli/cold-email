@@ -283,12 +283,7 @@ export function isSendableAddress(value: string): boolean {
   return value.length <= 254 && EMAIL_RE.test(value);
 }
 
-/**
- * Check a recipient and copy list once, for both the send-now and the
- * send-later paths. Shared rather than duplicated because a scheduled email is
- * still an email: if the two paths disagree, the weaker one is the one that
- * actually reaches a professor.
- */
+/** Check a recipient and copy list before anything is handed to a provider. */
 export function validateRecipients(
   to: string,
   cc: unknown

@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { EmailRule } from "@/lib/preferences";
+import { RulesPanel } from "@/components/rules-panel";
 
 interface SettingsView {
   nimKeyMasked: string | null;
@@ -55,6 +57,7 @@ export default function SettingsPage() {
   const [savedAt, setSavedAt] = useState("");
   const [testing, setTesting] = useState(false);
   const [test, setTest] = useState<TestResult | null>(null);
+  const [rules, setRules] = useState<EmailRule[]>([]);
 
   const loadModels = useCallback(async () => {
     const res = await fetch("/api/models");
@@ -75,6 +78,10 @@ export default function SettingsPage() {
         setView(d.settings);
         setNimModel(d.settings.nimModel ?? "");
       }
+      const prefs = await fetch("/api/preferences")
+        .then((r) => r.json())
+        .catch(() => null);
+      if (!cancelled && Array.isArray(prefs?.rules)) setRules(prefs.rules);
       loadModels();
     }, 0);
     return () => {
@@ -265,6 +272,17 @@ export default function SettingsPage() {
           )}
           {savedAt && <span className="text-[11px] text-[#15362b]">Saved {savedAt}</span>}
         </div>
+      </div>
+
+      {/* What the sender has taught the AI on past drafts. It accumulates
+          silently while they edit emails, so there has to be one place that
+          shows the whole list and lets them cut it back. */}
+      <div className="mt-6 rounded-[14px] border border-[#e5e5e5] bg-white p-6">
+        <h2 className="text-[15px] font-medium">How your emails should read</h2>
+        <p className="mt-1 mb-4 text-[13px] leading-5 text-[#777169]">
+          Anything you ask the AI to change while composing is kept here and applied to every email you write after it.
+        </p>
+        <RulesPanel rules={rules} onChange={setRules} allowAdd />
       </div>
     </div>
   );
