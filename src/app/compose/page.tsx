@@ -3,44 +3,27 @@
 import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ContactLookup, FocusPaper, LabContact, OutboxEntry, ResearcherProfile, ScheduledEmail } from "@/lib/types";
+import { ContactLookup, FocusPaper, LabContact, OutboxEntry, ResearcherProfile } from "@/lib/types";
 import { EmailRule } from "@/lib/preferences";
 import { SavedDraft } from "@/lib/drafts";
 import { Button, Card, Inset } from "@/components/ui";
 import { DraftEditor } from "@/components/draft-editor";
 
-/**
- * `datetime-local` wants local wall time with no zone, and gives it back the
- * same way. Both directions go through the browser's own zone, so "9:00 am"
- * means nine in the morning where the sender is.
- */
-function toLocalInputValue(date: Date): string {
-  const pad = (n: number) => String(n).padStart(2, "0");
-  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
-}
-
-/** Tomorrow at 9am reads as the obvious default for a cold email. */
-function defaultSendAt(): string {
-  const at = new Date();
-  at.setDate(at.getDate() + 1);
-  at.setHours(9, 0, 0, 0);
-  return toLocalInputValue(at);
-}
-
-function whenLabel(iso: string): string {
-  const at = new Date(iso);
-  return Number.isNaN(at.getTime())
-    ? iso
-    : at.toLocaleString(undefined, { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
-}
-
 const inputClass =
   "h-10 w-full rounded-lg border border-[#e5e5e5] bg-white px-3 text-sm text-black placeholder:text-[#777169] focus:border-black focus:outline-none";
 
 /** Everything the saved copy holds, as one comparable string. Autosave fires
- *  on a change to any of it and skips when nothing has moved. */
-function snapshotOf(subject: string, body: string, to: string, cc: string[], attachResume: boolean): string {
-  return JSON.stringify({ subject, body, to, cc, attachResume });
+ *  on a change to any of it and skips when nothing has moved. The ticked
+ *  contacts are sorted so re-ordering the same set is not read as an edit. */
+function snapshotOf(
+  subject: string,
+  body: string,
+  to: string,
+  ccExtra: string,
+  ccChecked: string[],
+  attachResume: boolean
+): string {
+  return JSON.stringify({ subject, body, to, ccExtra, ccChecked: [...ccChecked].sort(), attachResume });
 }
 
 function DraftSkeleton() {
@@ -76,12 +59,6 @@ function ComposeInner() {
   const [loadingDraft, setLoadingDraft] = useState(true);
   const [error, setError] = useState("");
   const [sent, setSent] = useState<OutboxEntry | null>(null);
-  const [scheduling, setScheduling] = useState(false);
-  const [sendAt, setSendAt] = useState("");
-  // Fixed when the picker opens rather than read during render, which would
-  // make rendering depend on the clock.
-  const [minSendAt, setMinSendAt] = useState("");
-  const [scheduled, setScheduled] = useState<ScheduledEmail | null>(null);
   const [rules, setRules] = useState<EmailRule[]>([]);
   // Whether AI edits are possible at all: the sender's own NIM key, or a
   // server-wide one. Without either, the prompt box says so rather than
@@ -90,6 +67,9 @@ function ComposeInner() {
   // The last state written to the server, so autosave can tell a real edit
   // from a re-render.
   const savedState = useRef("");
+  // Set once a saved draft has supplied the copy list, so the contacts lookup
+  // knows not to impose its defaults.
+  const ccRestored = useRef(false);
   const [saveState, setSaveState] = useState<"idle" | "saving" | "saved">("idle");
 
   // The paper override is passed explicitly rather than read from state, so
@@ -120,10 +100,22 @@ function ComposeInner() {
       setTo(saved ? saved.to : data.researcher.email ?? "");
       if (saved) {
         setAttachResume(saved.attachResume);
-        setCcExtra(saved.cc.join(", "));
+        setCcExtra(saved.ccExtra);
+        setCcChecked(Object.fromEntries(saved.ccChecked.map((email) => [email, true])));
+        // Who to copy was decided last time. The contacts lookup below must not
+        // re-tick its own suggestions over the top, or unticking one would not
+        // survive a reload.
+        ccRestored.current = true;
         // Reopened exactly as it was left, so there is nothing to write back
         // until something actually changes.
-        savedState.current = snapshotOf(saved.subject, saved.body, saved.to, saved.cc, saved.attachResume);
+        savedState.current = snapshotOf(
+          saved.subject,
+          saved.body,
+          saved.to,
+          saved.ccExtra,
+          saved.ccChecked,
+          saved.attachResume
+        );
         setSaveState("saved");
       } else {
         // Freshly written: no stored copy yet, so let the autosave below make
@@ -177,10 +169,13 @@ function ComposeInner() {
         setContacts(data.lookup);
         // Assistants are pre-selected because reaching one is usually the
         // point. Lab members are not: copying a stranger's postdoc is a
-        // judgement call the sender should make deliberately.
-        setCcChecked(
-          Object.fromEntries(data.lookup.contacts.filter((c) => c.kind === "admin").map((c) => [c.email, true]))
-        );
+        // judgement call the sender should make deliberately. A reopened draft
+        // already carries that decision, so the defaults stay out of its way.
+        if (!ccRestored.current) {
+          setCcChecked(
+            Object.fromEntries(data.lookup.contacts.filter((c) => c.kind === "admin").map((c) => [c.email, true]))
+          );
+        }
       } catch {
         // No suggestions is a fine outcome; the email sends without them.
       } finally {
@@ -193,19 +188,27 @@ function ComposeInner() {
     };
   }, [researcherId]);
 
+  // Deduplicated: an address that is both a ticked suggestion and typed into
+  // the box is one recipient, not two, and a duplicate in a Cc header is a
+  // thing the professor can see.
   const ccList = [
-    ...(contacts?.contacts ?? []).filter((c) => ccChecked[c.email]).map((c) => c.email),
-    ...ccExtra.split(/[\s,;]+/).map((s) => s.trim()).filter(Boolean),
+    ...new Set([
+      ...(contacts?.contacts ?? []).filter((c) => ccChecked[c.email]).map((c) => c.email),
+      ...ccExtra.split(/[\s,;]+/).map((s) => s.trim()).filter(Boolean),
+    ]),
   ];
+  const ccCheckedList = Object.entries(ccChecked)
+    .filter(([, on]) => on)
+    .map(([email]) => email);
 
   // Autosave. The email survives leaving this page for the profile screen and
   // coming back, which is otherwise a silent way to lose a draft that took
   // several AI edits to get right. Debounced so typing does not write on every
   // keystroke, and skipped once the email has gone out, since the server drops
   // the saved copy at that point and re-saving would resurrect it.
-  const snapshot = snapshotOf(subject, body, to, ccList, attachResume);
+  const snapshot = snapshotOf(subject, body, to, ccExtra, ccCheckedList, attachResume);
   useEffect(() => {
-    if (loadingDraft || !researcherId || sent || scheduled) return;
+    if (loadingDraft || !researcherId || sent) return;
     if (!subject && !body) return;
     if (snapshot === savedState.current) return;
 
@@ -215,7 +218,7 @@ function ComposeInner() {
         const res = await fetch("/api/draft", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ researcherId, subject, body, to, cc: ccList, attachResume }),
+          body: JSON.stringify({ researcherId, subject, body, to, ccExtra, ccChecked: ccCheckedList, attachResume }),
         });
         if (!res.ok) throw new Error("save failed");
         savedState.current = snapshot;
@@ -230,7 +233,7 @@ function ComposeInner() {
     // `snapshot` covers every field the save writes; listing them again would
     // only re-run this for a re-render that changed nothing.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [snapshot, loadingDraft, researcherId, sent, scheduled]);
+  }, [snapshot, loadingDraft, researcherId, sent]);
 
   async function send() {
     setBusy(true);
@@ -244,36 +247,6 @@ function ComposeInner() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Send failed");
       setSent(data.entry);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : String(err));
-    } finally {
-      setBusy(false);
-    }
-  }
-
-  async function schedule() {
-    setBusy(true);
-    setError("");
-    try {
-      // The input carries local wall time; the server stores an instant.
-      const at = new Date(sendAt);
-      if (Number.isNaN(at.getTime())) throw new Error("Pick when to send it");
-      const res = await fetch("/api/schedule", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          researcherId,
-          subject,
-          body,
-          to,
-          cc: ccList,
-          attachResume,
-          sendAt: at.toISOString(),
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "Could not schedule that");
-      setScheduled(data.entry);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {
@@ -458,27 +431,7 @@ function ComposeInner() {
       </aside>
 
       <Card className="p-6">
-        {scheduled ? (
-          <div className="py-10 text-center">
-            <h2 className="text-[17px] font-medium">Scheduled</h2>
-            <p className="mx-auto mt-2 max-w-md text-[13px] text-[#777169]">
-              Going to {scheduled.to}
-              {scheduled.cc?.length ? `, copying ${scheduled.cc.join(", ")}` : ""} on{" "}
-              <span className="text-black">{whenLabel(scheduled.sendAt)}</span>. You can cancel it from the outbox up
-              until it sends.
-            </p>
-            <div className="mt-6 flex justify-center gap-2">
-              <Link href="/dashboard" className="inline-flex">
-                <Button type="button">Back to dashboard</Button>
-              </Link>
-              <Link href="/outbox" className="inline-flex">
-                <Button type="button" variant="secondary">
-                  View outbox
-                </Button>
-              </Link>
-            </div>
-          </div>
-        ) : sent ? (
+        {sent ? (
           <div className="py-10 text-center">
             <h2 className="text-[17px] font-medium">{sent.status === "sent" ? "Email sent" : "Saved to outbox"}</h2>
             <p className="mx-auto mt-2 max-w-md text-[13px] text-[#777169]">
@@ -564,73 +517,28 @@ function ComposeInner() {
               </p>
             )}
 
-            {/* Send later. Collapsed by default so the ordinary path stays one
-                button, and the picker only appears once it is asked for. */}
-            {scheduling && (
-              <Inset className="mt-4">
-                <label className="block">
-                  <span className="eyebrow">Send at</span>
-                  <input
-                    type="datetime-local"
-                    value={sendAt}
-                    min={minSendAt}
-                    onChange={(e) => setSendAt(e.target.value)}
-                    className={`${inputClass} mt-1.5`}
-                  />
-                </label>
-                <p className="mt-2 text-[12px] leading-5 text-[#777169]">
-                  Your local time. A weekday morning in the professor&apos;s own timezone tends to beat a Friday night.
-                  The draft is stored as it reads now, so editing it afterwards will not change what goes out.
-                </p>
-              </Inset>
-            )}
-
             {error && <p className="mt-3 text-[13px] text-[#ff4704]">{error}</p>}
             <div className="mt-5 flex flex-wrap gap-2">
-              {scheduling ? (
-                <>
-                  <Button onClick={schedule} disabled={busy || !subject || !body || !sendAt}>
-                    {busy ? "Working" : "Schedule send"}
-                  </Button>
-                  <Button variant="secondary" onClick={() => setScheduling(false)} disabled={busy}>
-                    Cancel
-                  </Button>
-                </>
-              ) : (
-                <>
-                  <Button onClick={send} disabled={busy || !subject || !body}>
-                    {busy ? "Working" : "Send email"}
-                  </Button>
-                  <Button
-                    variant="secondary"
-                    onClick={() => {
-                      setSendAt(sendAt || defaultSendAt());
-                      setMinSendAt(toLocalInputValue(new Date(Date.now() + 60_000)));
-                      setScheduling(true);
-                    }}
-                    disabled={busy || !subject || !body}
-                  >
-                    Send later
-                  </Button>
-                  <Button
-                    variant="secondary"
-                    onClick={() => {
-                      // An explicit request for new text. The stored copy is
-                      // dropped first so the generate call does not just hand
-                      // back the draft being replaced.
-                      savedState.current = "";
-                      setSaveState("idle");
-                      generate({ paperUrl, paperNotes, regenerate: true });
-                    }}
-                    disabled={busy}
-                  >
-                    Start over
-                  </Button>
-                  <span className="self-center text-[11px] text-[#777169]">
-                    {saveState === "saving" ? "Saving" : saveState === "saved" ? "Draft saved" : ""}
-                  </span>
-                </>
-              )}
+              <Button onClick={send} disabled={busy || !subject || !body}>
+                {busy ? "Working" : "Send email"}
+              </Button>
+              <Button
+                variant="secondary"
+                onClick={() => {
+                  // An explicit request for new text. The stored copy is
+                  // dropped first so the generate call does not just hand back
+                  // the draft being replaced.
+                  savedState.current = "";
+                  setSaveState("idle");
+                  generate({ paperUrl, paperNotes, regenerate: true });
+                }}
+                disabled={busy}
+              >
+                Start over
+              </Button>
+              <span className="self-center text-[11px] text-[#777169]">
+                {saveState === "saving" ? "Saving" : saveState === "saved" ? "Draft saved" : ""}
+              </span>
             </div>
           </>
         )}

@@ -17,7 +17,6 @@ To close sign-up again: Clerk dashboard → Configure → Restrictions → set a
 - **Researcher directory** (`/researchers`) — real faculty profiles scraped from public university pages by AI agents, stored in `data/profiles.json`. Filter by school, research area, or published-email availability. Emails are included **only when a university page publishes them**.
 - **Resume onboarding** (`/onboarding`) — upload a PDF (or paste text). The resume is parsed into education/experience/projects/skills/publications, an AI summary is generated, and every field is editable.
 - **Compose** (`/compose`) — a personalized draft is generated from your profile + the researcher's actual research areas and bio. Edit the subject/body/recipient freely, then hit **Send**.
-- **Send later** — schedule a draft for a chosen time instead of sending it now. Queued emails are listed on the outbox and can be cancelled up until they go out. See [Scheduled sends](#scheduled-sends).
 - **Outbox** (`/outbox`) — every send attempt with method and status.
 - **Built-in AI scraper** (`/scrape`) — point it at any faculty-directory URL; it crawls profile links and extracts structured profiles, then adds them to the directory. Also available as a CLI: `npm run scrape -- <url> [school]`.
 
@@ -70,22 +69,6 @@ The app is Vercel-ready out of the box:
 3. Optionally add env vars from `.env.example` (Clerk keys, `NVIDIA_API_KEY`, SMTP/Resend) in Project Settings → Environment Variables. The app runs fully in demo mode with none set.
 
 Notes for serverless: runtime user data (profiles, outbox) falls back to the instance tmp dir on Vercel, so it's ephemeral per instance; the researcher directory itself is baked into the deployment from `data/profiles.json`. For persistent user accounts in production, set `DATA_DIR` to a mounted volume or replace `src/lib/store.ts` with a database.
-
-## Scheduled sends
-
-There is no long-running process to hold a timer — the app is a set of serverless functions — so a scheduled email goes out when something asks whether anything is due. Two things ask:
-
-1. **Vercel Cron** hits `/api/cron/send-scheduled` on the schedule in `vercel.json`. The route requires `CRON_SECRET`; Vercel sends it as `Authorization: Bearer $CRON_SECRET`. **With `CRON_SECRET` unset the route is disabled**, because it sends real mail for real accounts and an open endpoint would let anyone flush every user's queue early.
-2. **Opening the outbox** flushes anything already due.
-
-The cron is set to `0 13 * * *` — once a day, 13:00 UTC — because **Vercel's Hobby plan rejects the deployment outright** for anything more frequent ("Hobby accounts are limited to daily cron jobs"), rather than silently throttling it. On Pro, change it to `*/5 * * * *` and scheduled email goes out within five minutes of its time.
-
-So on Hobby the honest guarantee is **"no earlier than", never "exactly at"**: an email scheduled for 3pm goes out at the next daily cron or the next time somebody opens the app, whichever comes first. The outbox flush is what keeps this usable rather than useless — in practice a student who schedules an email is also someone who opens the app.
-
-Two deliberate choices in `src/lib/schedule.ts`:
-
-- **Rows are claimed before sending.** The store is last-write-wins with no compare-and-set, so a run writes a random token, reads it back, and only sends if its own token survived. Two overlapping runs therefore produce one send, not two.
-- **An interrupted send is not retried.** If a run dies mid-send the row is marked failed after ten minutes rather than re-queued, because the dead run may already have handed the message to Gmail, and sending a cold email twice is worse than not sending it.
 
 ## How the real directory was built
 

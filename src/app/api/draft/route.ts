@@ -28,7 +28,8 @@ export async function PUT(req: NextRequest) {
       subject: typeof body.subject === 'string' ? body.subject : '',
       body: typeof body.body === 'string' ? body.body : '',
       to: typeof body.to === 'string' ? body.to : '',
-      cc: Array.isArray(body.cc) ? body.cc : [],
+      ccExtra: typeof body.ccExtra === 'string' ? body.ccExtra : '',
+      ccChecked: Array.isArray(body.ccChecked) ? body.ccChecked : [],
       attachResume: body.attachResume !== false,
     });
     return NextResponse.json({ draft });

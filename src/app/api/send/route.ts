@@ -31,8 +31,7 @@ export async function POST(req: NextRequest) {
   }
 
   // Copied addresses reach a mail header exactly like the recipient does, so
-  // they get the same validation. Shared with the scheduled path so the two
-  // cannot drift apart.
+  // they get the same validation.
   const addresses = validateRecipients(recipient, cc);
   if ('error' in addresses) return NextResponse.json({ error: addresses.error }, { status: 400 });
 

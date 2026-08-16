@@ -10,7 +10,15 @@ export interface SavedDraft {
   subject: string;
   body: string;
   to: string;
-  cc: string[];
+  /**
+   * The two copy fields are stored as the sender left them rather than as the
+   * one list they combine into. Storing the combined list and restoring it
+   * into the free-text box duplicates every suggested contact, because the
+   * suggestion is re-ticked when the lab's contacts load and is then counted
+   * twice; saving that back doubles it again on the next visit.
+   */
+  ccExtra: string;
+  ccChecked: string[];
   attachResume: boolean;
   updatedAt: string;
 }
@@ -48,7 +56,11 @@ export async function saveDraft(
     subject: draft.subject.slice(0, MAX_LINE),
     body: draft.body.slice(0, MAX_BODY),
     to: draft.to.slice(0, MAX_LINE),
-    cc: draft.cc.filter((c) => typeof c === 'string' && c.trim()).slice(0, MAX_CC).map((c) => c.trim().slice(0, MAX_LINE)),
+    ccExtra: draft.ccExtra.slice(0, MAX_LINE * 2),
+    ccChecked: draft.ccChecked
+      .filter((c) => typeof c === 'string' && c.trim())
+      .slice(0, MAX_CC)
+      .map((c) => c.trim().slice(0, MAX_LINE)),
     attachResume: Boolean(draft.attachResume),
     updatedAt: new Date().toISOString(),
   };
