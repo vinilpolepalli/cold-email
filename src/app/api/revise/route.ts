@@ -2,7 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getProfile } from '@/lib/profiles';
 import { nimAvailable } from '@/lib/nim';
 import { addRule, getRules } from '@/lib/preferences';
+import { getPublications } from '@/lib/publications';
 import { reviseEmail } from '@/lib/revise';
+import { focusFromWorks } from '@/lib/template';
 import { getCurrentUserId, getNimAuth, getUserProfile } from '@/lib/user';
 
 export const dynamic = 'force-dynamic';
@@ -65,9 +67,15 @@ export async function POST(req: NextRequest) {
 
   const rules = await getRules(userId);
 
+  // The same paper the draft reacts to. Without it, "say more about his paper"
+  // has nothing to work from but the sentence already in the email, and an
+  // editor asked to expand on a paper it cannot see will invent the rest.
+  const works = await getPublications(researcher).catch(() => null);
+  const paper = works ? focusFromWorks(works, user) : null;
+
   let result;
   try {
-    result = await reviseEmail({ instruction, body, subject, selection, researcher, user, rules }, nimAuth);
+    result = await reviseEmail({ instruction, body, subject, selection, researcher, user, paper, rules }, nimAuth);
   } catch (err) {
     // The instruction is not saved when the edit failed: a rule the sender
     // never saw applied is not something they agreed to keep.

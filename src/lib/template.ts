@@ -322,6 +322,10 @@ function dropDanglingWords(text: string): string {
 const ACTION_VERB =
   /^(?:built|created|developed|designed|implemented|led|wrote|trained|improved|delivered|achieved|shipped|launched|automated|analy[sz]ed|integrated|reduced|increased|scaled|deployed|published|ran|won|founded|organi[sz]ed|maintained|refactored|migrated|benchmarked|evaluated|assembled|screened|curated)\b/i;
 
+/** A resume heading that is the label on a link rather than the name of
+ *  anything: "Live Demo | GitHub" at the end of a project bullet. */
+const LINK_LABEL = /^(?:github|gitlab|demo|live demo|live dashboard|dashboard|link|website|site|paper|slides|video|repo|code)$/i;
+
 /** Past-tense openers a "-ed" test misses. */
 const IRREGULAR_PAST =
   /^(?:built|wrote|ran|won|led|made|took|drove|grew|set|put|taught|sold|held|kept|spoke|began|chose|rebuilt|oversaw|drew|found)\b/i;
@@ -607,8 +611,12 @@ function paperInsight(paper: FocusPaper, user: UserProfile, researcher: Research
   // part that reads as someone who thought about the work rather than skimmed
   // it, so the fallbacks narrow rather than disappear — the last one still
   // names this paper's own subject and the sender's own field.
+  // Their own field is not worth naming when it is also the reader's: "biology
+  // in particular, which is where my own work has been" told to a cancer
+  // genomics lab claims a contrast that is not there.
+  const theirDomains = domainsOf(researcherText(researcher));
   const ownField = [...domainsOf(`${user.experience.join(' ')} ${user.projects.join(' ')}`)].find(
-    (d) => d !== 'business'
+    (d) => d !== 'business' && !theirDomains.has(d)
   );
   const next = interest
     ? `The follow-up I would want to run is ${lowerFirst(interest)} on top of that${
@@ -917,38 +925,50 @@ export function templateDraft(
   // one "work at Live Dashboard" invents a company the sender never worked for.
   // Employers are named, projects are described.
   const placesLeft: string[] = [];
-  const projectsLeft: string[] = [];
+  const projectsLeft: { name: string; text: string }[] = [];
   for (const entry of leftover) {
     const { head, detail } = splitEntry(entry);
     const { org, role } = splitOrgRole(head);
     // Having a job title is what makes something a job. "Analyst Intern,
     // QuantFirm" parses into a role and an employer; "Live Dashboard" parses
     // into neither, and calling it a place invents a company.
-    const isPlace =
-      Boolean(role && org) &&
-      !alreadyNamed.has(org) &&
-      org.length > 3 &&
-      // A resume that lists "GitHub" or "Demo" as a project header is naming a
-      // link, not a place worth citing to a professor.
-      !/^(?:github|gitlab|demo|link|website|site|paper|slides|video)$/i.test(org);
+    const isPlace = Boolean(role && org) && !alreadyNamed.has(org) && org.length > 3 && !LINK_LABEL.test(org);
     if (isPlace) {
       if (!placesLeft.includes(org)) placesLeft.push(org);
       continue;
     }
     const name = cleanHeadline(head).replace(/[\s,;:.-]+$/, '');
     if (!name) continue;
-    const what = detail ? trimToWord(detail, 90).replace(/[\s,;:.-]+$/, '') : '';
+    // Resume bullets end with their links: "...; Live Dashboard | GitHub." The
+    // parser can hand back that trailing label as the next entry's heading, and
+    // naming it produced "projects like GitHub, where I built an agent-operated
+    // trading firm". There is no real name to recover in that entry, and a
+    // wrong one is worse than leaving it to the attached resume.
+    if (LINK_LABEL.test(name)) continue;
+    // A resume lists one project across several bullets. Naming it once per
+    // bullet produced "projects like QuantFirm, where I ... and QuantFirm,
+    // where I ...", which reads as two projects with the same name.
+    if (projectsLeft.some((p) => p.name === name)) continue;
+    // Cutting at a word boundary still leaves the sentence hanging on whatever
+    // word came before the cut: "by validating and" was where 90 characters
+    // happened to fall.
+    const what = detail ? dropDanglingWords(trimToWord(detail, 90)).replace(/[\s,;:.-]+$/, '') : '';
     // "Live Dashboard, where I a realtime dashboard for tracking runs" is what
     // comes of assuming the description starts with a verb. When it does not,
     // it is an appositive and reads as one.
-    projectsLeft.push(
-      !what ? name : startsWithPastVerb(what) ? `${name}, where I ${lowerFirst(what)}` : `${name}, ${lowerFirst(what)}`
-    );
+    projectsLeft.push({
+      name,
+      text: !what
+        ? name
+        : startsWithPastVerb(what)
+          ? `${name}, where I ${lowerFirst(what)}`
+          : `${name}, ${lowerFirst(what)}`,
+    });
   }
 
   const alsoDid = [
     placesLeft.length ? `work at ${listPhrase(placesLeft.slice(0, 2))}` : '',
-    projectsLeft.length ? `projects like ${listPhrase(projectsLeft.slice(0, 2))}` : '',
+    projectsLeft.length ? `projects like ${listPhrase(projectsLeft.slice(0, 2).map((p) => p.text))}` : '',
   ].filter(Boolean);
   const groundwork = alsoDid.length
     ? `I have also done ${listPhrase(alsoDid)}, which you can see in my attached resume. That work is not directly related to your lab's, but it is where I learned to carry a problem from a rough idea to something that runs and can be checked.`

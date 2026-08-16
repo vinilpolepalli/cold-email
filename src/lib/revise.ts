@@ -5,7 +5,7 @@
 
 import { NimAuth, nimChat } from './nim';
 import { EmailRule, rulesPrompt } from './preferences';
-import { ResearcherProfile, UserProfile } from './types';
+import { FocusPaper, ResearcherProfile, UserProfile } from './types';
 
 export interface ReviseRequest {
   instruction: string;
@@ -17,6 +17,9 @@ export interface ReviseRequest {
   selection: string | null;
   researcher: ResearcherProfile;
   user: UserProfile;
+  /** The paper the draft was built around, so an instruction about it can be
+   *  answered from the abstract rather than from memory. */
+  paper: FocusPaper | null;
   rules: EmailRule[];
 }
 
@@ -74,56 +77,90 @@ ${FORMAT}`;
 /** A lone "<the text>" style stand-in rather than anything to put in an email. */
 const PLACEHOLDER = /^<[^>\n]{0,120}>$/;
 
+/** Reasoning models wrap their scratchpad in one of these. It is not content. */
+const THINK_BLOCK = /<(think|thinking|reasoning|scratchpad)\b[^>]*>[\s\S]*?<\/\1>/gi;
+
+/** An unterminated scratchpad: everything from the opening tag on is working out. */
+const THINK_OPEN = /<(think|thinking|reasoning|scratchpad)\b[^>]*>[\s\S]*$/i;
+
 /**
- * Whether the model wrote something or just handed the instructions back.
- *
- * The general test is whether the fragment appears verbatim in the prompt it
- * was given: a real edit is derived from the email, which lives in the user
- * message, so anything short enough to quote and found word for word in the
- * system prompt is the template coming back rather than an answer. This is
- * what catches the "<the text>" that got spliced into a real draft, and it
- * keeps catching the next variant without needing to name it.
+ * The model narrating its own task instead of doing it. A cold email does not
+ * open by discussing the user's request, and every one of these has appeared
+ * in a reply that then got spliced into a real draft.
  */
-function usable(text: string, system: string): boolean {
+const NARRATING_ITSELF =
+  /(^|\n)\s*(here'?s?\s+(a|my)\s+(thinking|thought|reasoning)\s+process|let me think|okay,?\s+(so\s+)?the user|the user (wants|asked|is asking)|i need to (analyze|figure|understand)|\d+\.\s+\*\*anal)/i;
+
+/**
+ * The same word over and over. Models fall into this loop when they run out of
+ * anything to say, and it produced a paragraph of "in in in in" in a draft.
+ */
+const DEGENERATE = /\b(\w+)\b(?:\s+\1\b){7,}/i;
+
+/**
+ * Whether the model wrote an edit or something else entirely.
+ *
+ * Two families of failure are refused here. The first is the instructions
+ * coming back: the general test is whether the fragment appears verbatim in
+ * the prompt it was given, since a real edit derives from the email, which
+ * lives in the user message. The second is the model's own working — a
+ * scratchpad, a plan, or a repetition loop — which reads nothing like the
+ * passage it was asked to replace and must never reach a professor.
+ */
+function usable(text: string, system: string, selection: string | null): boolean {
   const trimmed = text.trim();
   if (trimmed.length < 2) return false;
   if (PLACEHOLDER.test(trimmed)) return false;
   if (trimmed.includes(START) || trimmed.includes(END)) return false;
   if (trimmed.length < 200 && system.includes(trimmed)) return false;
+  if (NARRATING_ITSELF.test(trimmed)) return false;
+  if (DEGENERATE.test(trimmed)) return false;
+  // A replacement for one passage that comes back many times its length is a
+  // runaway, not an edit. Generous, because "expand this" is a fair request.
+  if (selection && trimmed.length > Math.max(400, selection.length * 6)) return false;
   return true;
 }
 
 /**
- * Pull the reply out of the envelope. Tolerant on purpose: a model that drops
- * the closing marker, or answers with the bare replacement and no markers at
- * all, has still done the work, and throwing that away to be strict about
- * punctuation would fail an edit that is sitting right there. Tolerant of
- * formatting only, though. Content that is visibly not an edit is refused, so
- * the retry gets a chance rather than the draft getting a placeholder in it.
+ * Pull the reply out of the envelope.
+ *
+ * Lenient about formatting: a dropped closing marker or commentary either side
+ * of the block has still done the work. Strict about content, because whatever
+ * comes back is spliced straight into an email a real professor will read.
+ *
+ * The bare-reply path is the narrow one. It exists because a model that
+ * answers with just the replacement has answered, but it is only taken when
+ * the reply carries no marker at all and survives every content check, since
+ * accepting "whatever was returned" is what let a page of reasoning into a
+ * draft.
  */
-function unwrap(reply: string, system: string): { text: string; subject: string | null } | null {
-  const subjectLine = reply.match(/^\s*SUBJECT:\s*(.+)$/m)?.[1]?.trim() ?? '';
+function unwrap(reply: string, system: string, selection: string | null): { text: string; subject: string | null } | null {
+  // Strip the scratchpad before anything else looks at the reply, so a model
+  // that thinks out loud and then answers correctly is not penalised for it.
+  const cleaned = reply.replace(THINK_BLOCK, '').replace(THINK_OPEN, '');
+
+  const subjectLine = cleaned.match(/^\s*SUBJECT:\s*(.+)$/m)?.[1]?.trim() ?? '';
   const subject =
     subjectLine && !/^none$/i.test(subjectLine) && !PLACEHOLDER.test(subjectLine) && !system.includes(subjectLine)
       ? subjectLine
       : null;
 
-  const from = reply.indexOf(START);
+  const from = cleaned.indexOf(START);
   let text = '';
   if (from !== -1) {
     const after = from + START.length;
-    const to = reply.indexOf(END, after);
-    text = reply.slice(after, to === -1 ? undefined : to);
-  } else if (!/\{\s*"text"/.test(reply)) {
-    // No markers and no half-written JSON envelope: treat the whole reply as
-    // the answer, minus the subject line if it wrote one.
-    text = reply.replace(/^\s*SUBJECT:.*$/m, '');
+    const to = cleaned.indexOf(END, after);
+    text = cleaned.slice(after, to === -1 ? undefined : to);
+  } else if (!/\{\s*"text"/.test(cleaned)) {
+    // No markers and no half-written JSON envelope: the whole reply is the
+    // candidate, and the content checks below decide whether it is an answer.
+    text = cleaned.replace(/^\s*SUBJECT:.*$/m, '');
   }
 
   // Only the padding around the block is dropped. Indentation inside it is the
   // sender's bullet list.
   text = text.replace(/^[\r\n]+/, '').replace(/\s+$/, '');
-  return usable(text, system) ? { text, subject } : null;
+  return usable(text, system, selection) ? { text, subject } : null;
 }
 
 /** The model gets a strict budget: a rewritten email is about the length of the
@@ -146,20 +183,38 @@ export async function reviseEmail(req: ReviseRequest, nimAuth?: NimAuth): Promis
       school: req.researcher.school,
       department: req.researcher.department,
       researchAreas: req.researcher.researchAreas,
+      bio: req.researcher.bio,
     },
+    // The paper the email reacts to. "Say more about his paper" is a plain
+    // thing to ask of an editor, and without the abstract here the only way to
+    // answer it is to make something up.
+    paperTheEmailReactsTo: req.paper
+      ? {
+          title: req.paper.title,
+          venue: req.paper.venue,
+          year: req.paper.year,
+          abstract: req.paper.abstract,
+          senderNotes: req.paper.notes,
+        }
+      : null,
     // Supplied so an instruction like "mention my fencing award" can be carried
     // out from the record rather than imagined.
     sender: {
       name: req.user.name,
+      email: req.user.email,
       standing: req.user.standing || undefined,
       school: req.user.school || undefined,
+      degree: req.user.degree || undefined,
       major: req.user.major || undefined,
-      experience: req.user.experience.slice(0, 8),
-      projects: req.user.projects.slice(0, 6),
-      publications: req.user.publications.slice(0, 6),
-      skills: req.user.skills.slice(0, 12),
+      gradYear: req.user.gradYear || undefined,
+      summary: req.user.aiSummary || undefined,
+      education: req.user.education.slice(0, 3),
+      experience: req.user.experience.slice(0, 10),
+      projects: req.user.projects.slice(0, 8),
+      publications: req.user.publications.slice(0, 8),
+      skills: req.user.skills.slice(0, 16),
       researchInterests: req.user.researchInterests,
-      awards: (req.user.awards ?? []).slice(0, 6),
+      awards: (req.user.awards ?? []).slice(0, 8),
     },
   };
 
@@ -172,7 +227,7 @@ export async function reviseEmail(req: ReviseRequest, nimAuth?: NimAuth): Promis
   // most of, and creativity here shows up as paragraphs they did not ask to
   // have touched.
   const reply = await nimChat(messages, { temperature: 0.3, maxTokens: MAX_TOKENS }, nimAuth);
-  let parsed = unwrap(reply, system);
+  let parsed = unwrap(reply, system, selecting ? req.selection : null);
 
   if (!parsed) {
     // One corrective round. Smaller models answer the first time by repeating
@@ -191,7 +246,8 @@ export async function reviseEmail(req: ReviseRequest, nimAuth?: NimAuth): Promis
         { temperature: 0.2, maxTokens: MAX_TOKENS },
         nimAuth
       ),
-      system
+      system,
+      selecting ? req.selection : null
     );
   }
 

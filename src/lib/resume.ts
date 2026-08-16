@@ -39,7 +39,11 @@ function normalize(raw: string): string {
       // do not travel into generated emails. A dash tight against words on
       // both sides is a compound ("protein-ligand"); a spaced one is a break.
       .replace(/(\w)[—–](\w)/g, '$1-$2')
-      .replace(/\s*[—–]\s*/g, ' - ')
+      // A dash sitting directly in front of a number is a minus sign, not a
+      // break: "-7.5% max drawdown" became "- 7.5% max drawdown" under the
+      // rule below, which reads as a stray bullet in the middle of a sentence.
+      .replace(/[—–−]\s*(?=\d)/g, '-')
+      .replace(/\s*[—–−]\s*/g, ' - ')
       .replace(/[ \t]+/g, ' ')
   );
 }
