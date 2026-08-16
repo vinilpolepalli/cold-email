@@ -1,10 +1,11 @@
 "use client";
 
-import { Suspense, useCallback, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ContactLookup, FocusPaper, LabContact, OutboxEntry, ResearcherProfile, ScheduledEmail } from "@/lib/types";
 import { EmailRule } from "@/lib/preferences";
+import { SavedDraft } from "@/lib/drafts";
 import { Button, Card, Inset } from "@/components/ui";
 import { DraftEditor } from "@/components/draft-editor";
 
@@ -35,6 +36,12 @@ function whenLabel(iso: string): string {
 
 const inputClass =
   "h-10 w-full rounded-lg border border-[#e5e5e5] bg-white px-3 text-sm text-black placeholder:text-[#777169] focus:border-black focus:outline-none";
+
+/** Everything the saved copy holds, as one comparable string. Autosave fires
+ *  on a change to any of it and skips when nothing has moved. */
+function snapshotOf(subject: string, body: string, to: string, cc: string[], attachResume: boolean): string {
+  return JSON.stringify({ subject, body, to, cc, attachResume });
+}
 
 function DraftSkeleton() {
   return (
@@ -80,11 +87,15 @@ function ComposeInner() {
   // server-wide one. Without either, the prompt box says so rather than
   // failing on submit.
   const [aiAvailable, setAiAvailable] = useState(false);
+  // The last state written to the server, so autosave can tell a real edit
+  // from a re-render.
+  const savedState = useRef("");
+  const [saveState, setSaveState] = useState<"idle" | "saving" | "saved">("idle");
 
   // The paper override is passed explicitly rather than read from state, so
   // typing in the notes box does not re-trigger the effect below.
   const generate = useCallback(
-    async (override?: { paperUrl: string; paperNotes: string }) => {
+    async (override?: { paperUrl: string; paperNotes: string; regenerate?: boolean }) => {
     if (!researcherId) return;
     setBusy(true);
     setLoadingDraft(true);
@@ -101,10 +112,25 @@ function ComposeInner() {
       setSubject(data.draft.subject);
       setBody(data.draft.body);
       setGenerator(data.draft.generator);
-      setTo(data.researcher.email ?? "");
       setResume(data.resume ?? null);
       setFocus(data.focusPaper ?? null);
       if (Array.isArray(data.rules)) setRules(data.rules);
+
+      const saved: SavedDraft | null = data.saved ?? null;
+      setTo(saved ? saved.to : data.researcher.email ?? "");
+      if (saved) {
+        setAttachResume(saved.attachResume);
+        setCcExtra(saved.cc.join(", "));
+        // Reopened exactly as it was left, so there is nothing to write back
+        // until something actually changes.
+        savedState.current = snapshotOf(saved.subject, saved.body, saved.to, saved.cc, saved.attachResume);
+        setSaveState("saved");
+      } else {
+        // Freshly written: no stored copy yet, so let the autosave below make
+        // one on its next pass.
+        savedState.current = "";
+        setSaveState("idle");
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
     } finally {
@@ -171,6 +197,40 @@ function ComposeInner() {
     ...(contacts?.contacts ?? []).filter((c) => ccChecked[c.email]).map((c) => c.email),
     ...ccExtra.split(/[\s,;]+/).map((s) => s.trim()).filter(Boolean),
   ];
+
+  // Autosave. The email survives leaving this page for the profile screen and
+  // coming back, which is otherwise a silent way to lose a draft that took
+  // several AI edits to get right. Debounced so typing does not write on every
+  // keystroke, and skipped once the email has gone out, since the server drops
+  // the saved copy at that point and re-saving would resurrect it.
+  const snapshot = snapshotOf(subject, body, to, ccList, attachResume);
+  useEffect(() => {
+    if (loadingDraft || !researcherId || sent || scheduled) return;
+    if (!subject && !body) return;
+    if (snapshot === savedState.current) return;
+
+    setSaveState("saving");
+    const timer = setTimeout(async () => {
+      try {
+        const res = await fetch("/api/draft", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ researcherId, subject, body, to, cc: ccList, attachResume }),
+        });
+        if (!res.ok) throw new Error("save failed");
+        savedState.current = snapshot;
+        setSaveState("saved");
+      } catch {
+        // Losing one autosave is not worth an error banner over the draft. The
+        // next keystroke tries again, and the indicator stops claiming "saved".
+        setSaveState("idle");
+      }
+    }, 900);
+    return () => clearTimeout(timer);
+    // `snapshot` covers every field the save writes; listing them again would
+    // only re-run this for a re-render that changed nothing.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [snapshot, loadingDraft, researcherId, sent, scheduled]);
 
   async function send() {
     setBusy(true);
@@ -389,8 +449,10 @@ function ComposeInner() {
         )}
 
         {generator && !sent && (
-          <p className="mt-3 text-[11px] text-[#777169]">
-            Drafted by {generator === "nim" ? "your NIM model" : "the built-in template engine"}. Edit before sending.
+          <p className="mt-3 text-[11px] leading-4 text-[#777169]">
+            {generator === "saved"
+              ? "Picked up where you left off. Your edits are saved as you make them, and Start over writes a new draft."
+              : `Drafted by ${generator === "nim" ? "your NIM model" : "the built-in template engine"}. Edit before sending.`}
           </p>
         )}
       </aside>
@@ -552,11 +614,21 @@ function ComposeInner() {
                   </Button>
                   <Button
                     variant="secondary"
-                    onClick={() => generate({ paperUrl, paperNotes })}
+                    onClick={() => {
+                      // An explicit request for new text. The stored copy is
+                      // dropped first so the generate call does not just hand
+                      // back the draft being replaced.
+                      savedState.current = "";
+                      setSaveState("idle");
+                      generate({ paperUrl, paperNotes, regenerate: true });
+                    }}
                     disabled={busy}
                   >
-                    Regenerate
+                    Start over
                   </Button>
+                  <span className="self-center text-[11px] text-[#777169]">
+                    {saveState === "saving" ? "Saving" : saveState === "saved" ? "Draft saved" : ""}
+                  </span>
                 </>
               )}
             </div>

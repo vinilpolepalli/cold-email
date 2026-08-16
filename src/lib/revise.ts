@@ -46,12 +46,12 @@ const END = '%%%END%%%';
 
 const FORMAT = `Reply in exactly this form and nothing else:
 
-SUBJECT: <a new subject line, or the word NONE>
+SUBJECT: NONE
 ${START}
-<the text>
+the revised text, written out in full
 ${END}
 
-Write real content between the markers. Do not describe the format, do not add commentary before or after it, and do not wrap the text in quotes or code fences.`;
+Write the actual revised text on the lines between the markers. Never reply with a placeholder, a description of what should go there, or anything in angle brackets. Replace NONE with a new subject line only if the instruction was about the subject. No commentary before or after the markers, no quotes, no code fences.`;
 
 const WHOLE_SYSTEM = `You are editing a cold email a student is sending to a professor. The student has told you what to change. Apply that change to the whole email and return the complete revised email.
 
@@ -71,15 +71,42 @@ Always write NONE for SUBJECT.
 
 ${FORMAT}`;
 
+/** A lone "<the text>" style stand-in rather than anything to put in an email. */
+const PLACEHOLDER = /^<[^>\n]{0,120}>$/;
+
+/**
+ * Whether the model wrote something or just handed the instructions back.
+ *
+ * The general test is whether the fragment appears verbatim in the prompt it
+ * was given: a real edit is derived from the email, which lives in the user
+ * message, so anything short enough to quote and found word for word in the
+ * system prompt is the template coming back rather than an answer. This is
+ * what catches the "<the text>" that got spliced into a real draft, and it
+ * keeps catching the next variant without needing to name it.
+ */
+function usable(text: string, system: string): boolean {
+  const trimmed = text.trim();
+  if (trimmed.length < 2) return false;
+  if (PLACEHOLDER.test(trimmed)) return false;
+  if (trimmed.includes(START) || trimmed.includes(END)) return false;
+  if (trimmed.length < 200 && system.includes(trimmed)) return false;
+  return true;
+}
+
 /**
  * Pull the reply out of the envelope. Tolerant on purpose: a model that drops
  * the closing marker, or answers with the bare replacement and no markers at
  * all, has still done the work, and throwing that away to be strict about
- * punctuation would fail an edit that is sitting right there.
+ * punctuation would fail an edit that is sitting right there. Tolerant of
+ * formatting only, though. Content that is visibly not an edit is refused, so
+ * the retry gets a chance rather than the draft getting a placeholder in it.
  */
-function unwrap(reply: string): { text: string; subject: string | null } | null {
+function unwrap(reply: string, system: string): { text: string; subject: string | null } | null {
   const subjectLine = reply.match(/^\s*SUBJECT:\s*(.+)$/m)?.[1]?.trim() ?? '';
-  const subject = subjectLine && !/^none$/i.test(subjectLine) ? subjectLine : null;
+  const subject =
+    subjectLine && !/^none$/i.test(subjectLine) && !PLACEHOLDER.test(subjectLine) && !system.includes(subjectLine)
+      ? subjectLine
+      : null;
 
   const from = reply.indexOf(START);
   let text = '';
@@ -96,8 +123,7 @@ function unwrap(reply: string): { text: string; subject: string | null } | null 
   // Only the padding around the block is dropped. Indentation inside it is the
   // sender's bullet list.
   text = text.replace(/^[\r\n]+/, '').replace(/\s+$/, '');
-  if (!text || text.includes(START)) return null;
-  return { text, subject };
+  return usable(text, system) ? { text, subject } : null;
 }
 
 /** The model gets a strict budget: a rewritten email is about the length of the
@@ -146,7 +172,7 @@ export async function reviseEmail(req: ReviseRequest, nimAuth?: NimAuth): Promis
   // most of, and creativity here shows up as paragraphs they did not ask to
   // have touched.
   const reply = await nimChat(messages, { temperature: 0.3, maxTokens: MAX_TOKENS }, nimAuth);
-  let parsed = unwrap(reply);
+  let parsed = unwrap(reply, system);
 
   if (!parsed) {
     // One corrective round. Smaller models answer the first time by repeating
@@ -159,12 +185,13 @@ export async function reviseEmail(req: ReviseRequest, nimAuth?: NimAuth): Promis
           { role: 'assistant', content: reply.slice(0, 2000) },
           {
             role: 'user',
-            content: `That reply did not contain the revised text. Do not repeat the format description. Write the actual revised text between ${START} and ${END}, starting your reply with SUBJECT:`,
+            content: `That reply did not contain the revised text. You repeated the format description instead of using it. Write out the actual edited words between ${START} and ${END}, starting your reply with SUBJECT:`,
           },
         ],
         { temperature: 0.2, maxTokens: MAX_TOKENS },
         nimAuth
-      )
+      ),
+      system
     );
   }
 

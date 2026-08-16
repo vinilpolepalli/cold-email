@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { discardDraft } from '@/lib/drafts';
 import { getProfile } from '@/lib/profiles';
 import { validateRecipients } from '@/lib/send';
 import { cancelScheduled, dismissScheduled, getScheduled, runDueSends, scheduleEmail } from '@/lib/schedule';
@@ -65,6 +66,10 @@ export async function POST(req: NextRequest) {
       attachResume: attachResume !== false,
       sendAt,
     });
+    // The queued copy is now the one that matters. Editing compose afterwards
+    // does not change what goes out, so leaving the draft behind would only
+    // offer an edit that has no effect.
+    await discardDraft(userId, researcher.id);
     return NextResponse.json({ entry });
   } catch (err) {
     return NextResponse.json({ error: err instanceof Error ? err.message : 'Could not schedule that' }, { status: 400 });

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { discardDraft } from '@/lib/drafts';
 import { getProfile } from '@/lib/profiles';
 import { getOutbox, isSendableAddress, sendEmail, validateRecipients } from '@/lib/send';
 import { getResumeFile } from '@/lib/resume-file';
@@ -52,6 +53,9 @@ export async function POST(req: NextRequest) {
       ? { fileName: stored.fileName, contentType: stored.contentType, base64: stored.base64 }
       : null,
   });
+  // The email has left. Reopening compose for this researcher should start
+  // fresh rather than on the copy that was already sent.
+  await discardDraft(userId, researcherId);
   return NextResponse.json({ entry });
 }
 

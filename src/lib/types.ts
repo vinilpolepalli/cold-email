@@ -152,5 +152,7 @@ export interface ScheduledEmail {
 export interface GeneratedDraft {
   subject: string;
   body: string;
-  generator: 'nim' | 'template';
+  /** `saved` means nothing was generated: this is the email the sender was
+   *  already working on, reopened as they left it. */
+  generator: 'nim' | 'template' | 'saved';
 }
