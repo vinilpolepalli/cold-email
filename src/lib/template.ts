@@ -121,6 +121,14 @@ const DOMAINS: { name: string; pattern: RegExp }[] = [
     pattern: /\b(?:computer vision|segmentation|object detection|imaging|image\w*|visual|video|mri|ct scan\w*|microscopy)\b/i,
   },
   {
+    // Kept apart from vision so that drone and manipulator work lands next to a
+    // robotics lab rather than a radiology one, even though both talk about
+    // images.
+    name: 'robotics',
+    pattern:
+      /\b(?:robot\w*|uav|drone\w*|autonomous|slam|manipulat\w*|navigation|lidar|odometry|kinematic\w*|actuat\w*|locomotion|control system\w*)\b/i,
+  },
+  {
     name: 'statistics',
     // Deliberately no bare "inference": in a resume it usually means running a
     // model, not statistical inference, and it was pulling a meeting-recorder
@@ -147,9 +155,28 @@ function domainsOf(text: string): Set<string> {
   return found;
 }
 
-/** Split "Organization, Role: what they did" into its two halves. */
+/** Links the sender pasted alongside an entry, kept whole wherever text is cut. */
+const URL_RE = /https?:\/\/\S+/g;
+// Separate, and deliberately not global: `test` on a /g regex advances
+// lastIndex between calls, so the same pattern used for both would skip
+// entries depending on what was checked before it.
+const HAS_URL = /https?:\/\//;
+
+/**
+ * The colon that separates a heading from its description, ignoring the one
+ * inside a URL.
+ *
+ * "MSK research I worked on https://hsp90-dashboard.vercel.app/" used to split
+ * at the colon in "https:", so the heading became "...worked on https" and the
+ * bullet rendered the link as "https: //hsp90-dashboard.vercel.app/" — a dead
+ * link in the one part of the email a professor is most likely to click.
+ */
+function headBoundary(entry: string): number {
+  return entry.replace(URL_RE, (match) => ' '.repeat(match.length)).indexOf(':');
+}
+
 function splitEntry(entry: string): { head: string; detail: string } {
-  const idx = entry.indexOf(':');
+  const idx = headBoundary(entry);
   if (idx !== -1) {
     return { head: cleanHeadline(entry.slice(0, idx)).replace(/\s*\|\s*/g, ', '), detail: entry.slice(idx + 1).trim() };
   }
@@ -192,6 +219,17 @@ function splitOrgRole(head: string): { org: string; role: string } {
     return { org: roleFirst[2].replace(/[\s,/|-]+$/, ''), role: roleFirst[1].trim() };
   }
 
+  // "Research Intern, Chiosis Lab, Memorial Sloan Kettering Cancer Center"
+  // names the job first and the employer after a comma. Nothing handled it, so
+  // the whole string was treated as the organisation and the opener read "At
+  // Research Intern, Chiosis Lab, Memorial Sloan Kettering Cancer Center, I
+  // created...". The second half must not itself look like a job title, or an
+  // "Organisation, Role" header would be read backwards.
+  const commaFirst = cleaned.match(/^([^,]{3,60}),\s*(.+)$/);
+  if (commaFirst && ROLE_NOUN.test(commaFirst[1]) && !ROLE_NOUN.test(commaFirst[2])) {
+    return { org: commaFirst[2].replace(/[\s,/|-]+$/, ''), role: commaFirst[1].trim() };
+  }
+
   const match = ROLE_NOUN.exec(cleaned);
   if (!match) return { org: cleaned.replace(/[\s,/|-]+$/, ''), role: '' };
 
@@ -216,16 +254,50 @@ function splitOrgRole(head: string): { org: string; role: string } {
     .replace(/[\s,/|-]+$/, '')
     .trim();
 
-  // A role with no organization left in front of it is not a split worth making.
-  return org ? { org, role } : { org: cleaned.replace(/[\s,/|-]+$/, ''), role: '' };
+  // A heading that is only a job title has no organisation to name. Returning
+  // it as one produced "At Genomics Intern, I ...", the same shape of mistake
+  // as "At Research Intern, Chiosis Lab, ...".
+  if (!org) return { org: '', role: cleaned.replace(/[\s,/|-]+$/, '') };
+  return { org, role };
 }
 
 /** "As a research intern at MIT, I ..." with the right article. */
 function placeClause(head: string): string {
   const { org, role } = splitOrgRole(head);
-  if (!org) return '';
+  const article = (word: string) => (/^[aeiou]/i.test(word) ? 'an' : 'a');
+  if (!org) return role ? `as ${article(role)} ${role}` : '';
   if (!role) return `at ${org}`;
-  return `as ${/^[aeiou]/i.test(role) ? 'an' : 'a'} ${role} at ${org}`;
+  return `as ${article(role)} ${role} at ${org}`;
+}
+
+/**
+ * Every abbreviation a run of capitalised words could be written as, so that a
+ * sender who typed "MSK" can be matched to the resume line that spells out
+ * "Memorial Sloan Kettering Cancer Center".
+ */
+function initialisms(text: string): Set<string> {
+  const found = new Set<string>();
+  for (const run of text.match(/(?:\b[A-Z][a-zA-Z]*\s+){1,7}\b[A-Z][a-zA-Z]*/g) ?? []) {
+    const letters = run.split(/\s+/).map((w) => w[0].toLowerCase());
+    for (let start = 0; start < letters.length; start++) {
+      for (let end = start + 2; end <= letters.length; end++) {
+        found.add(letters.slice(start, end).join(''));
+      }
+    }
+  }
+  return found;
+}
+
+/**
+ * "a, b and c" rather than "a, b, c". A bare comma list reads as a fragment
+ * mid-sentence: "exploring computational biology, drug discovery, machine
+ * learning, which is what draws me" has no verb between the last item and the
+ * clause that follows it.
+ */
+function listPhrase(items: string[]): string {
+  const clean = items.map((i) => i.trim()).filter(Boolean);
+  if (clean.length < 2) return clean[0] ?? '';
+  return `${clean.slice(0, -1).join(', ')} and ${clean[clean.length - 1]}`;
 }
 
 function sentence(text: string): string {
@@ -341,14 +413,23 @@ function paperTopic(paper: FocusPaper): string {
     const conjunction = topic.lastIndexOf(' and ');
     if (conjunction > 20) topic = topic.slice(0, conjunction);
   }
-  // Cutting to a whole word still leaves the preposition that word belonged
-  // to: "matrix completion with" reads as an unfinished thought.
-  const phrase = sentenceCase(
-    trimToWord(topic, 70).replace(
-      /\s+(?:with|for|of|in|on|and|to|by|using|from|at|via|through|under|during|across|between|among|without|into|over|after|before|toward|towards)$/i,
+  // Long enough for an ordinary title to survive whole. At 70 the cut landed
+  // inside "Internal Language Model Estimation for Domain-Adaptive End-to-End
+  // Speech Recognition", leaving "for domain-adaptive end-to-end" hanging.
+  let cut = trimToWord(topic, 100);
+  // Cutting to a whole word still leaves whatever that word was qualifying: a
+  // trailing preposition ("matrix completion with") or a hyphenated adjective
+  // ("domain-adaptive end-to-end") both read as unfinished thoughts. Repeat,
+  // because trimming one can expose another.
+  for (let i = 0; i < 4; i++) {
+    const trimmed = cut.replace(
+      /\s+(?:[A-Za-z]+(?:-[A-Za-z]+)+|with|for|of|in|on|and|to|by|using|from|at|via|through|under|during|across|between|among|without|into|over|after|before|toward|towards)$/i,
       ''
-    )
-  );
+    );
+    if (trimmed === cut || trimmed.length < 12) break;
+    cut = trimmed;
+  }
+  const phrase = sentenceCase(cut);
   // A title that opens with a list of adjectives needs an article to sit after
   // "paper on": "on simple, fast, and flexible framework" is missing one,
   // while "on single-cell meta-analysis" and "on transfer learning" are not.
@@ -429,12 +510,7 @@ function paperInsight(paper: FocusPaper, user: UserProfile, researcher: Research
       : `I went through ${where}, and it is the closest thing I have found to what I want to work on.`;
   }
 
-  const reaction = `I went through ${where}, and the part I keep coming back to is that ${lowerFirst(sentence(claim))}`;
-  // A second detail from the abstract, so the paragraph reads as someone who
-  // got past the first paragraph of it. Skipped when the abstract has nothing
-  // further to say, rather than padded.
-  const secondClaim = paper.abstract ? supportingClaim(paper.abstract, paper.title ?? '', claim) : '';
-  const detail = secondClaim ? `You also ${lowerFirst(sentence(stripLeadingSubject(secondClaim)))}` : '';
+  const reaction = `I went through ${where}, and the part I keep coming back to is that ${lowerFirst(sentence(condense(claim)))}`;
 
   // What the sender would add. Only their own stated interests can name a
   // direction; naming the lab's own area back at them is circular, and naming
@@ -456,49 +532,39 @@ function paperInsight(paper: FocusPaper, user: UserProfile, researcher: Research
     : skill
       ? `What I would want to try from there is bringing ${lowerFirst(skill)} to it.`
       : '';
-  return [reaction, detail, next].filter(Boolean).join(' ');
+  return [reaction, next].filter(Boolean).join(' ');
 }
 
 /**
- * A second sentence from the abstract, distinct from the one already quoted.
- * Prefers the sentences that report a result or name a limitation, which are
- * the ones worth reacting to.
+ * Cut an abstract sentence down to the clause that carries the point.
+ *
+ * Abstracts pile qualifications onto one sentence, and quoting the whole thing
+ * produced a 60-word bullet of somebody else's prose in the middle of the
+ * email. Two sentences of understanding is what earns a reply; a paragraph of
+ * their own abstract read back to them is what gets skimmed. Cuts at a clause
+ * boundary so the result is still a sentence.
  */
-const RESULT_MARKER =
-  /\b(?:we\s+(?:find|show|observe|identify|demonstrate|report|derive|develop|propose|present|introduce|extend|apply|achieve|train|build|evaluate)|our\s+(?:method|approach|model|results?|framework)|results?\s+(?:show|suggest|indicate)|however|remains?|limitation|challenge|future work|unclear|open question|yet to)\b/i;
+function condense(text: string, limit = 190): string {
+  const clean = text.trim();
+  if (clean.length <= limit) return clean;
 
-function supportingClaim(abstract: string, title: string, already: string): string {
-  const titleTerms = new Set(tokens(title));
-  // Compare the cleaned forms. The quoted claim has already had its framing
-  // clause removed, so matching raw abstract text against it lets the same
-  // sentence through twice.
-  const fingerprint = (text: string) => cleanAbstractSentence(text).toLowerCase().slice(0, 60);
-  const taken = fingerprint(already);
-
-  const sentences = abstract
-    .split(/(?<=[.!?])\s+/)
-    .map((s) => s.trim())
-    .filter((s) => s.length > 45 && s.length < 300 && fingerprint(s) !== taken);
-  if (!sentences.length) return '';
-
-  let best = '';
-  let bestScore = 0;
-  for (const candidate of sentences) {
-    const overlap = [...new Set(tokens(candidate))].filter((t) => titleTerms.has(t)).length;
-    const score = (RESULT_MARKER.test(candidate) ? 5 : 0) + overlap;
-    if (score > bestScore) {
-      bestScore = score;
-      best = candidate;
-    }
-  }
-  // Only worth a sentence if it actually reports something.
-  return bestScore >= 5 ? cleanAbstractSentence(best) : '';
+  // Prefer a comma or a joining word late in the allowance, so the sentence
+  // ends on a complete thought rather than mid-phrase.
+  const window = clean.slice(0, limit);
+  const boundary = Math.max(
+    window.lastIndexOf(', '),
+    window.lastIndexOf(' including '),
+    window.lastIndexOf(' with '),
+    window.lastIndexOf(' which '),
+    window.lastIndexOf(' that '),
+    window.lastIndexOf(' and ')
+  );
+  if (boundary > limit * 0.45) return clean.slice(0, boundary).replace(/[\s,;:]+$/, '');
+  return trimToWord(clean, limit).replace(/[\s,;:]+$/, '');
 }
+
 
 /** "You show that X" reads badly after "You also"; drop the repeated subject. */
-function stripLeadingSubject(text: string): string {
-  return text.replace(/^(?:you|your team)\s+/i, '').trim();
-}
 
 /**
  * The topic the sender and the paper share, for the sentence above. Stated
@@ -575,16 +641,18 @@ export function templateDraft(
   // words come first; a shared field is worth about three of them, which is
   // what lets a docking project outrank a venture internship for a
   // computational biology lab when neither shares a word with the lab's own.
+  const rank = (entry: string): number => {
+    const entryDomains = domainsOf(entry);
+    const shared = [...entryDomains].filter((d) => targetDomains.has(d)).length;
+    // When nothing matches at all, a research project still opens a letter to
+    // a professor better than a commercial one. Worth a single point, so it
+    // only decides ties and never outranks a real overlap.
+    const researchy = [...entryDomains].some((d) => d !== 'business') ? 1 : 0;
+    return relevanceScore(entry, target) + shared * 3 + researchy;
+  };
+
   const scored = [...user.experience, ...user.projects]
-    .map((entry) => {
-      const entryDomains = domainsOf(entry);
-      const shared = [...entryDomains].filter((d) => targetDomains.has(d)).length;
-      // When nothing matches at all, a research project still opens a letter to
-      // a professor better than a commercial one. Worth a single point, so it
-      // only decides ties and never outranks a real overlap.
-      const researchy = [...entryDomains].some((d) => d !== 'business') ? 1 : 0;
-      return { entry, score: relevanceScore(entry, target) + shared * 3 + researchy };
-    })
+    .map((entry) => ({ entry, score: rank(entry) }))
     .sort((a, b) => b.score - a.score);
 
   const major = user.major?.trim() || deriveMajor(degreeOf(user));
@@ -628,16 +696,86 @@ export function templateDraft(
   // list with unrelated work (a finance internship for a biology lab) reads
   // worse than a short list.
   const spoken = new Set([primary?.entry].filter(Boolean) as string[]);
-  const unspoken = scored.filter((r) => !spoken.has(r.entry));
-  const overlapping = unspoken.filter((r) => r.score > 0).map((r) => r.entry);
+
+  // A link the sender pasted is labelled in a few words — "MSK research that I
+  // worked on" — while the resume says what was actually built. The link is
+  // why the bullet is worth reading, but the sentence beside it should be the
+  // resume's, so each link is matched back to the entry it describes and that
+  // entry's own wording is used.
+  const resumeEntries = [...user.experience, ...user.projects];
+  const describedBy = (label: string): string => {
+    // The link itself carries words the label leaves out: a project at
+    // hsp90-dashboard.vercel.app names the target its resume line also names.
+    const url = label.match(URL_RE)?.[0] ?? '';
+    const labelTerms = new Set([...tokens(label.replace(URL_RE, ' ')), ...tokens(url.replace(/^https?:\/\//, ''))]);
+    if (!labelTerms.size) return '';
+    let best = '';
+    // One shared word is a coincidence; two is a description.
+    let bestOverlap = 1;
+    for (const entry of resumeEntries) {
+      const entryTerms = new Set(tokens(entry));
+      // Senders abbreviate the places they worked. "MSK research" and
+      // "Memorial Sloan Kettering Cancer Center" share no word at all, so
+      // without this the link never finds the experience it belongs to.
+      const shorthand = [...initialisms(entry)].filter((i) => labelTerms.has(i)).length * 2;
+      const overlap = [...entryTerms].filter((t) => labelTerms.has(t)).length + shorthand;
+      if (overlap > bestOverlap) {
+        bestOverlap = overlap;
+        best = entry;
+      }
+    }
+    return best;
+  };
+
+  // Everything competes on one scale. Publications used to be prepended
+  // unconditionally, so a computational biology lab was shown whichever links
+  // the sender happened to add — computer vision first — while the docking
+  // work sat at the bottom or fell off the end of the list entirely.
+  const linked: { text: string; score: number }[] = [];
+  const plain: { text: string; score: number }[] = [];
+  const consumed = new Set<string>();
+  for (const entry of [...user.publications, ...(user.awards ?? [])]) {
+    const url = entry.match(URL_RE)?.[0];
+    if (!url) continue;
+    const described = describedBy(entry);
+    if (described) consumed.add(described);
+    // The opening paragraph already narrates one experience in full. When the
+    // link belongs to that one, the bullet restates its heading immediately
+    // below, so only the description is kept and the link is what the line
+    // adds.
+    const restated = described && spoken.has(described);
+    const source = restated ? splitEntry(described).detail || described : described;
+    let body = (source || entry.replace(URL_RE, '')).trim().replace(/[\s,;:-]+$/, '');
+    // Without its heading the description is a sentence fragment starting mid
+    // clause ("created a reproducible..."), so it gets a capital to stand on
+    // its own as a list item.
+    if (restated && body) body = body.charAt(0).toUpperCase() + body.slice(1);
+    // Ranked on the resume's words as well as the label's: the handful of words
+    // typed next to a link rarely name the field the work belongs to.
+    linked.push({ text: `${body} ${url}`.trim(), score: rank(`${body} ${entry}`) });
+  }
+  // A publication without a link is still evidence, and dropping it because it
+  // has no URL would lose "3rd author on a genomics paper" entirely.
+  for (const entry of user.publications) {
+    if (HAS_URL.test(entry)) continue;
+    if (entry.trim()) plain.push({ text: entry, score: rank(entry) });
+  }
+  for (const { entry, score } of scored) {
+    if (spoken.has(entry) || consumed.has(entry)) continue;
+    plain.push({ text: entry, score });
+  }
+
+  // Something a professor can open is the strongest thing in a cold email, so
+  // a linked entry is never dropped for scoring zero the way an unlinked one
+  // is — it only has to compete on where it sits in the list.
+  //
   // With nothing overlapping, the strongest remaining work still carries the
   // email. An empty evidence section is worse than an adjacent one, and the
   // paragraph after it says plainly that the fit is indirect.
-  const related = overlapping.length ? overlapping : unspoken.slice(0, 3).map((r) => r.entry);
-  // An award or press mention that carries a link belongs in this list too:
-  // it is checkable, which is the whole point of the bullets.
-  const linkedAwards = (user.awards ?? []).filter((a) => /https?:\/\//.test(a));
-  const bulletSource = [...user.publications, ...linkedAwards, ...related]
+  const overlapping = plain.filter((b) => b.score > 0);
+  const bulletSource = [...linked, ...(overlapping.length ? overlapping : plain)]
+    .sort((a, b) => b.score - a.score)
+    .map((b) => b.text)
     .filter((entry) => entry.trim().length > 0)
     .slice(0, 4);
   let previousHead = '';
@@ -650,7 +788,7 @@ export function templateDraft(
     ? `In the past, I have worked on the following related projects:\n${bulletLines.join('\n')}`
     : '';
 
-  const interests = user.researchInterests.slice(0, 3).join(', ');
+  const interests = listPhrase(user.researchInterests.slice(0, 3));
   const context = interests
     ? `More broadly, I have been exploring ${lowerFirst(interests)}, which is what draws me to your lab specifically.`
     : '';
@@ -662,11 +800,13 @@ export function templateDraft(
   // Somewhere already named in the email is not "work you can also see in my
   // resume", and calling it unrelated after quoting it contradicts the email.
   const alreadyNamed = new Set([...spoken, ...bulletSource].map(orgOf).filter(Boolean));
-  const bulleted = new Set(bulletSource);
   const adjacent = [
     ...new Set(
-      unspoken
-        .filter((r) => r.score === 0 && !bulleted.has(r.entry))
+      scored
+        // `consumed` entries were rewritten into linked bullets, so their text
+        // no longer appears verbatim in bulletSource and they have to be
+        // excluded by name rather than by lookup.
+        .filter((r) => r.score === 0 && !spoken.has(r.entry) && !consumed.has(r.entry))
         .map((r) => orgOf(r.entry))
         .filter((org) => !alreadyNamed.has(org))
         // A resume that lists "GitHub" or "Demo" as a project header is
