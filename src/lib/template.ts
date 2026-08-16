@@ -157,6 +157,10 @@ function domainsOf(text: string): Set<string> {
 
 /** Links the sender pasted alongside an entry, kept whole wherever text is cut. */
 const URL_RE = /https?:\/\/\S+/g;
+// How long the evidence list runs, and how much of it is reserved for entries
+// carrying a link. A professor can check a link; the rest is assertion.
+const MAX_BULLETS = 5;
+const MAX_LINKED_BULLETS = 3;
 // Separate, and deliberately not global: `test` on a /g regex advances
 // lastIndex between calls, so the same pattern used for both would skip
 // entries depending on what was checked before it.
@@ -289,6 +293,47 @@ function initialisms(text: string): Set<string> {
 }
 
 /**
+ * Restore the capitals on terms people type in lower case. Someone who writes
+ * "agentic ai" in a form still means AI, and an email to a professor that says
+ * "agentic ai" reads as careless in exactly the wrong place.
+ */
+/**
+ * Trim whatever the cut left hanging. Stopping at a whole word still leaves
+ * the thing that word was qualifying: a trailing preposition ("matrix
+ * completion with", "language model estimation for") or a hyphenated adjective
+ * ("domain-adaptive end-to-end") both read as unfinished. Repeated, because
+ * trimming one can expose another.
+ */
+function dropDanglingWords(text: string): string {
+  let cut = text;
+  for (let i = 0; i < 4; i++) {
+    const trimmed = cut.replace(
+      /\s+(?:[A-Za-z]+(?:-[A-Za-z]+)+|with|for|of|in|on|and|to|by|using|from|at|via|through|under|during|across|between|among|without|into|over|after|before|toward|towards)$/i,
+      ''
+    );
+    if (trimmed === cut || trimmed.length < 12) break;
+    cut = trimmed;
+  }
+  return cut;
+}
+
+/** A resume description that opens with something the sender did. */
+const ACTION_VERB =
+  /^(?:built|created|developed|designed|implemented|led|wrote|trained|improved|delivered|achieved|shipped|launched|automated|analy[sz]ed|integrated|reduced|increased|scaled|deployed|published|ran|won|founded|organi[sz]ed|maintained|refactored|migrated|benchmarked|evaluated|assembled|screened|curated)\b/i;
+
+const ACRONYMS = [
+  'AI', 'ML', 'LLM', 'LLMs', 'NLP', 'RL', 'GNN', 'GNNs', 'CNN', 'CNNs', 'RNN', 'ASR', 'CV', 'HPC', 'GPU', 'API',
+  'DNA', 'RNA', 'MRI', 'EEG', 'fMRI', 'NGS', 'QSAR', 'PDE', 'ODE', 'SLAM', 'UAV', 'IoT', 'AR', 'VR',
+];
+function fixAcronyms(text: string): string {
+  let out = text;
+  for (const acronym of ACRONYMS) {
+    out = out.replace(new RegExp(`\\b${acronym}\\b`, 'gi'), acronym);
+  }
+  return out;
+}
+
+/**
  * "a, b and c" rather than "a, b, c". A bare comma list reads as a fragment
  * mid-sentence: "exploring computational biology, drug discovery, machine
  * learning, which is what draws me" has no verb between the last item and the
@@ -326,8 +371,12 @@ function toBullet(entry: string, previousHead: string): string {
   const { head, detail } = splitEntry(entry);
   const body = detail || entry;
   const trimmed = body.length > 240 ? `${body.slice(0, 237)}...` : body;
-  if (!head || !detail) return `- ${trimmed}`;
-  return head === previousHead ? `- ${trimmed}` : `- ${prettyHead(head)}: ${lowerFirst(trimmed)}`;
+  // A bullet that drops the heading — because the one above already carried it
+  // — starts on the description, which was written to follow a colon and so
+  // begins in lower case.
+  const standalone = `- ${trimmed.charAt(0).toUpperCase()}${trimmed.slice(1)}`;
+  if (!head || !detail) return standalone;
+  return head === previousHead ? standalone : `- ${prettyHead(head)}: ${lowerFirst(trimmed)}`;
 }
 
 /** "Machine Learning Research Intern, Carnegie Mellon University" */
@@ -416,20 +465,8 @@ function paperTopic(paper: FocusPaper): string {
   // Long enough for an ordinary title to survive whole. At 70 the cut landed
   // inside "Internal Language Model Estimation for Domain-Adaptive End-to-End
   // Speech Recognition", leaving "for domain-adaptive end-to-end" hanging.
-  let cut = trimToWord(topic, 100);
-  // Cutting to a whole word still leaves whatever that word was qualifying: a
-  // trailing preposition ("matrix completion with") or a hyphenated adjective
-  // ("domain-adaptive end-to-end") both read as unfinished thoughts. Repeat,
-  // because trimming one can expose another.
-  for (let i = 0; i < 4; i++) {
-    const trimmed = cut.replace(
-      /\s+(?:[A-Za-z]+(?:-[A-Za-z]+)+|with|for|of|in|on|and|to|by|using|from|at|via|through|under|during|across|between|among|without|into|over|after|before|toward|towards)$/i,
-      ''
-    );
-    if (trimmed === cut || trimmed.length < 12) break;
-    cut = trimmed;
-  }
-  const phrase = sentenceCase(cut);
+  const cut = trimToWord(topic, 100);
+  const phrase = sentenceCase(dropDanglingWords(cut));
   // A title that opens with a list of adjectives needs an article to sit after
   // "paper on": "on simple, fast, and flexible framework" is missing one,
   // while "on single-cell meta-analysis" and "on transfer learning" are not.
@@ -445,6 +482,26 @@ function toSecondPerson(text: string): string {
     .replace(/\bour\b/g, 'your')
     .replace(/\bours\b/g, 'yours')
     .replace(/\bus\b/g, 'you');
+}
+
+/**
+ * Turn a directory bio, written about the professor, into something that can be
+ * said to them. "His lab focuses on biomedical data fusion" quoted verbatim
+ * becomes "your group's focus: His lab focuses on...", which talks about the
+ * reader in the third person while addressing them.
+ *
+ * Only the possessives are rewritten, because they are the ones where the verb
+ * still agrees afterwards: "his lab focuses" and "your lab focuses" are both
+ * fine, while "he works" would have to become "you work". A bio still leading
+ * with a bare pronoun is returned empty rather than mangled, and the caller
+ * says something simpler instead.
+ */
+function bioAddressedToThem(bio: string): string {
+  const rewritten = bio
+    .replace(/\b(?:his|her|their)\b/gi, (m) => (m[0] === m[0].toUpperCase() ? 'Your' : 'your'))
+    .replace(/\bDr\.?\s+[A-Z][a-zA-Z-]*(?:'s)?\b/g, 'your')
+    .trim();
+  return /\b(?:he|she|they)\s+\w/i.test(rewritten) ? '' : rewritten;
 }
 
 /**
@@ -519,19 +576,34 @@ function paperInsight(paper: FocusPaper, user: UserProfile, researcher: Research
     const paperTerms = new Set(tokens(`${paper.title ?? ''} ${paper.abstract ?? ''} ${paper.notes ?? ''}`));
     return tokens(term).some((t) => paperTerms.has(t));
   };
-  const interest = user.researchInterests.map((i) => i.trim()).find((i) => i && overlaps(i));
-  const skill = user.skills.map((s) => s.trim()).find((s) => s.includes(' ') && overlaps(s));
-  // Where the sender would take it. An overlapping interest names the
-  // direction; failing that, a method they actually know is a concrete thing
-  // to offer. A bare language is not: "Python is where my work has been" says
-  // nothing to someone who works on matrix completion, so it is left out.
+  const interest = user.researchInterests.map((i) => fixAcronyms(i.trim())).find((i) => i && overlaps(i));
+  const skill = user.skills.map((s) => fixAcronyms(s.trim())).find((s) => s.includes(' ') && overlaps(s));
+
+  // Where the sender would take it, and there is always somewhere.
+  //
+  // This used to be dropped whenever no interest and no multi-word skill
+  // happened to share a word with the abstract, which is most of the time: a
+  // sender whose skills are "Python, TypeScript, C++" got a paragraph that
+  // admired the paper and proposed nothing. Naming a specific follow-up is the
+  // part that reads as someone who thought about the work rather than skimmed
+  // it, so the fallbacks narrow rather than disappear — the last one still
+  // names this paper's own subject and the sender's own field.
+  const ownField = [...domainsOf(`${user.experience.join(' ')} ${user.projects.join(' ')}`)].find(
+    (d) => d !== 'business'
+  );
   const next = interest
-    ? `The direction I would want to take that is ${lowerFirst(interest)}${
+    ? `The follow-up I would want to run is ${lowerFirst(interest)} on top of that${
         skill ? `, starting from the ${lowerFirst(skill)} work I have already done` : ''
-      }.`
+      }, and I would be curious whether the same result holds once that is in the loop.`
     : skill
-      ? `What I would want to try from there is bringing ${lowerFirst(skill)} to it.`
-      : '';
+      ? `The follow-up I would want to run is bringing ${lowerFirst(skill)} to it and seeing whether the same result survives that change.`
+      : topic
+        ? // The full title is too long to sit inside a sentence a second time,
+          // having already been named at the top of the paragraph.
+          `The follow-up I would want to run is how far ${lowerFirst(dropDanglingWords(trimToWord(topic, 48)).replace(/[\s,;:-]+$/, ''))} carries outside the setting you tested it in${
+            ownField ? `, ${ownField} in particular, which is where my own work has been` : ''
+          }.`
+        : '';
   return [reaction, next].filter(Boolean).join(' ');
 }
 
@@ -686,7 +758,9 @@ export function templateDraft(
   const connection = [
     `I recently came across your work on ${areas}, and was interested in getting involved.`,
     paper ? paperInsight(paper, user, researcher) : null,
-    !paper && researcher.bio ? `I was glad to read about your group's focus: ${sentence(researcher.bio)}` : null,
+    !paper && researcher.bio && bioAddressedToThem(researcher.bio)
+      ? `I was glad to read about your group's focus: ${sentence(bioAddressedToThem(researcher.bio))}`
+      : null,
   ]
     .filter(Boolean)
     .join(' ');
@@ -773,11 +847,17 @@ export function templateDraft(
   // email. An empty evidence section is worse than an adjacent one, and the
   // paragraph after it says plainly that the fit is indirect.
   const overlapping = plain.filter((b) => b.score > 0);
-  const bulletSource = [...linked, ...(overlapping.length ? overlapping : plain)]
-    .sort((a, b) => b.score - a.score)
+  const byScore = (a: { score: number }, b: { score: number }) => b.score - a.score;
+  // Linked entries are seated before the list is filled, not merely allowed to
+  // compete for a seat. Ranking them together and then cutting at four dropped
+  // every link whenever the sender had four resume entries that scored higher,
+  // which is the whole reason for putting a link there.
+  const seated = linked.sort(byScore).slice(0, MAX_LINKED_BULLETS);
+  const filler = (overlapping.length ? overlapping : plain).sort(byScore);
+  const bulletSource = [...seated, ...filler.slice(0, Math.max(0, MAX_BULLETS - seated.length))]
+    .sort(byScore)
     .map((b) => b.text)
-    .filter((entry) => entry.trim().length > 0)
-    .slice(0, 4);
+    .filter((entry) => entry.trim().length > 0);
   let previousHead = '';
   const bulletLines = bulletSource.map((entry) => {
     const line = toBullet(entry, previousHead);
@@ -788,9 +868,30 @@ export function templateDraft(
     ? `In the past, I have worked on the following related projects:\n${bulletLines.join('\n')}`
     : '';
 
-  const interests = listPhrase(user.researchInterests.slice(0, 3));
-  const context = interests
-    ? `More broadly, I have been exploring ${lowerFirst(interests)}, which is what draws me to your lab specifically.`
+  // Interests are put in the order this researcher would care about, not the
+  // order they were typed. Leading a speech recognition lab with "computational
+  // biology" reads as a list the sender pastes into every email; leading with
+  // the one that overlaps reads as someone who picked this lab.
+  const rankedInterests = user.researchInterests
+    .map((i) => fixAcronyms(i.trim()))
+    .filter(Boolean)
+    .map((i) => ({ i, score: rank(i) }))
+    .sort((a, b) => b.score - a.score);
+  // `rank` hands every research-flavoured phrase a point so it outranks a
+  // finance internship, which is right for ordering bullets and wrong here: a
+  // point that every interest earns is not evidence of overlap with this lab.
+  // Claiming one where there is none is the exact thing this sentence is
+  // supposed to prove the sender did not do.
+  const shared = rankedInterests
+    .filter(({ i }) => relevanceScore(i, target) > 0 || [...domainsOf(i)].some((d) => targetDomains.has(d)))
+    .map((r) => r.i);
+  const context = rankedInterests.length
+    ? shared.length
+      // Deliberately not "the part I keep coming back to" again: when there is
+      // a focus paper that phrase is already three paragraphs up, and the echo
+      // makes both sentences read as filler.
+      ? `What lines up most directly with your lab is ${lowerFirst(listPhrase(shared.slice(0, 2)))}, and that is why I am writing to you specifically rather than casting around.`
+      : `More broadly, I have been exploring ${lowerFirst(listPhrase(rankedInterests.slice(0, 3).map((r) => r.i)))}, and your group is the closest I have found to where I want to take that.`
     : '';
 
   // The reference email owns its weakest link rather than hiding it: adjacent
@@ -800,22 +901,52 @@ export function templateDraft(
   // Somewhere already named in the email is not "work you can also see in my
   // resume", and calling it unrelated after quoting it contradicts the email.
   const alreadyNamed = new Set([...spoken, ...bulletSource].map(orgOf).filter(Boolean));
-  const adjacent = [
-    ...new Set(
-      scored
-        // `consumed` entries were rewritten into linked bullets, so their text
-        // no longer appears verbatim in bulletSource and they have to be
-        // excluded by name rather than by lookup.
-        .filter((r) => r.score === 0 && !spoken.has(r.entry) && !consumed.has(r.entry))
-        .map((r) => orgOf(r.entry))
-        .filter((org) => !alreadyNamed.has(org))
-        // A resume that lists "GitHub" or "Demo" as a project header is
-        // naming a link, not a place worth citing to a professor.
-        .filter((org) => org.length > 3 && !/^(?:github|gitlab|demo|link|website|site|paper|slides|video)$/i.test(org))
-    ),
-  ].slice(0, 2);
-  const groundwork = adjacent.length
-    ? `I also have work at ${adjacent.join(' and ')} that you can see in my attached resume. Those projects are not directly related to your lab's work, but they have given me a foundation in problem solving, computational techniques, and working on a research team.`
+  const leftover = scored
+    // `consumed` entries were rewritten into linked bullets, so their text no
+    // longer appears verbatim in bulletSource and they have to be excluded by
+    // name rather than by lookup.
+    .filter((r) => r.score === 0 && !spoken.has(r.entry) && !consumed.has(r.entry))
+    .map((r) => r.entry);
+
+  // A job has an employer to name; a side project has no employer, and calling
+  // one "work at Live Dashboard" invents a company the sender never worked for.
+  // Employers are named, projects are described.
+  const placesLeft: string[] = [];
+  const projectsLeft: string[] = [];
+  for (const entry of leftover) {
+    const { head, detail } = splitEntry(entry);
+    const { org, role } = splitOrgRole(head);
+    // Having a job title is what makes something a job. "Analyst Intern,
+    // QuantFirm" parses into a role and an employer; "Live Dashboard" parses
+    // into neither, and calling it a place invents a company.
+    const isPlace =
+      Boolean(role && org) &&
+      !alreadyNamed.has(org) &&
+      org.length > 3 &&
+      // A resume that lists "GitHub" or "Demo" as a project header is naming a
+      // link, not a place worth citing to a professor.
+      !/^(?:github|gitlab|demo|link|website|site|paper|slides|video)$/i.test(org);
+    if (isPlace) {
+      if (!placesLeft.includes(org)) placesLeft.push(org);
+      continue;
+    }
+    const name = cleanHeadline(head).replace(/[\s,;:.-]+$/, '');
+    if (!name) continue;
+    const what = detail ? trimToWord(detail, 90).replace(/[\s,;:.-]+$/, '') : '';
+    // "Live Dashboard, where I a realtime dashboard for tracking runs" is what
+    // comes of assuming the description starts with a verb. When it does not,
+    // it is an appositive and reads as one.
+    projectsLeft.push(
+      !what ? name : ACTION_VERB.test(what) ? `${name}, where I ${lowerFirst(what)}` : `${name}, ${lowerFirst(what)}`
+    );
+  }
+
+  const alsoDid = [
+    placesLeft.length ? `work at ${listPhrase(placesLeft.slice(0, 2))}` : '',
+    projectsLeft.length ? `projects like ${listPhrase(projectsLeft.slice(0, 2))}` : '',
+  ].filter(Boolean);
+  const groundwork = alsoDid.length
+    ? `I have also done ${listPhrase(alsoDid)}, which you can see in my attached resume. That work is not directly related to your lab's, but it is where I learned to carry a problem from a rough idea to something that runs and can be checked.`
     : '';
 
   const skills = user.skills.length
