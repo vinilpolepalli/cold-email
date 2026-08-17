@@ -3,7 +3,7 @@
   "name": "Vinil Polepalli",
   "email": "vinil.polepalli@gmail.com",
   "education": [
-    "New York University, Stern School of Business and Courant Institute — Dual degree: B.S. in Business (Stern) and B.S. in Computer Science (Courant), expected May 2029",
+    "New York University — Dual degree: B.S. in Computer Science and B.S. in Business, expected May 2029",
     "Khubani Program for Business, Technology & Entrepreneurship — selective 30 to 50 student cohort"
   ],
   "experience": [
@@ -41,7 +41,7 @@
   ],
   "publications": [
     "Sole author, A Novel cVAE-Augmented Deep Learning Framework for Pan-Cancer RNA-Seq Classification (arXiv, August 2025): reduced 20,531 gene features to 500 across 801 TCGA tumor samples in 5 cancer types, used a conditional variational autoencoder to generate synthetic training samples, and reached about 98% test accuracy; https://arxiv.org/abs/2508.02743",
-    "First author, Quantifying the Impact of Epigallocatechin Gallate and Piperine on D. tigrina Regeneration (IEEE, 2025): used planaria and their neoblast stem cells as a proliferation model, showed a synergistic growth-inhibiting effect of EGCG and piperine across concentrations at p < 0.05; https://arxiv.org/abs/2509.06972"
+    "First author, Quantifying the Impact of Epigallocatechin Gallate and Piperine on D. tigrina Regeneration (IEEE MIT Undergraduate Research Technology Conference, 2025): used planaria and their neoblast stem cells as a proliferation model, showed a synergistic growth-inhibiting effect of EGCG and piperine across concentrations at p < 0.05; https://ieeexplore.ieee.org/document/11533121"
   ],
   "researchInterests": [
     "computational biology",
@@ -54,19 +54,20 @@
     "cancer biology"
   ],
   "awards": [
-    "Y Combinator Startup School Selected Participant",
+    "Invited to Y Combinator Startup School",
+    "VEX Robotics World Championship semifinalist",
+    "AIME qualifier 3x",
     "Autodesk Design & Make Ambassador",
     "Columbia Science Honors Program",
     "National Junior Science & Humanities Symposium, 3rd Place",
-    "M3 Mathematical Modeling Challenge Semifinalist",
-    "AIME Qualifier 3x"
+    "M3 Mathematical Modeling Challenge Semifinalist"
   ],
   "aiSummary": "Undergraduate at NYU pursuing a dual degree in Computer Science at the Courant Institute and Business at Stern. Works at the intersection of machine learning and biology: protein-ligand graph neural networks for Hsp90 and epichaperome inhibitor discovery at Memorial Sloan Kettering's Chiosis Lab, and a sole-authored paper using conditional variational autoencoders to augment pan-cancer RNA-seq classification. Also trained semantic segmentation models for UAV-based environmental monitoring at Carnegie Mellon's Robotics Institute.",
   "rawResumeText": "Seeded from Polepalli_Resume_2.pdf. Re-upload the PDF at /onboarding to have it re-parsed.",
-  "updatedAt": "2026-08-17T16:34:12.964Z",
+  "updatedAt": "2026-08-17T17:08:59.747Z",
   "standing": "undergraduate",
   "school": "New York University",
   "gradYear": "2029",
-  "degree": "B.S. Computer Science (Courant) and B.S. Business (Stern)",
+  "degree": "B.S. Computer Science and B.S. Business",
   "major": "Computer Science and Business"
 }
