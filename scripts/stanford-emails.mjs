@@ -250,7 +250,7 @@ const record = (hit) => {
 };
 
 const seen = new Set();
-async function scan(url, wanted, label) {
+async function scan(url, wanted) {
   if (seen.has(url) || !wanted.length) return;
   seen.add(url);
   const html = await get(url);
@@ -266,7 +266,7 @@ const extraListings = new Set();
 for (const url of SEED_LISTINGS) {
   const outstanding = missing.filter((p) => !results.has(p.id));
   if (!outstanding.length) break;
-  const html = await scan(url, outstanding, 'listing');
+  const html = await scan(url, outstanding);
   if (!html) continue;
   // A listing links to its own person pages; keep the ones naming someone we want.
   for (const l of links(html, url)) {
@@ -284,7 +284,7 @@ console.log('B. person pages from listings');
 for (const url of [...extraListings].slice(0, 300)) {
   const outstanding = missing.filter((p) => !results.has(p.id));
   if (!outstanding.length) break;
-  await scan(url, outstanding, 'person');
+  await scan(url, outstanding);
 }
 console.log(`   ${results.size} found\n`);
 
@@ -316,7 +316,7 @@ for (const person of missing) {
   }
   for (const url of [...labPages, ...tries].slice(0, 14)) {
     if (results.has(person.id)) break;
-    await scan(url, [person], 'lab');
+    await scan(url, [person]);
   }
 }
 console.log(`   ${results.size} found\n`);
