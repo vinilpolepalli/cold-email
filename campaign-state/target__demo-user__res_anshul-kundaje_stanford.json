@@ -1,0 +1,25 @@
+{
+  "id": "tgt_mswjyjv5xnomom",
+  "userId": "demo-user",
+  "researcherId": "res_anshul-kundaje_stanford",
+  "researcherName": "Anshul Kundaje",
+  "school": "Stanford",
+  "trackId": "cs-bio",
+  "status": "drafted",
+  "rank": 85,
+  "reasons": [
+    "Overlaps on machine learning, deep learning, computational genomics",
+    "Stanford is priority one"
+  ],
+  "subject": "Interested in your machine learning work",
+  "body": "Hello Professor Kundaje,\n\nMy name is Vinil Polepalli and I am an undergraduate at New York University, where I am pursuing a dual degree in Computer Science at the Courant Institute and Business at Stern. I have been a research intern in the Chiosis Lab at Memorial Sloan Kettering, where I built protein-ligand graph neural networks for Hsp90 and epichaperome complexes and reached 0.984 ROC AUC separating active from inactive inhibitor candidates.\n\nI went through your 2018 paper on opportunities and obstacles for deep learning in biology, and the part I keep coming back to is that you examine applications of deep learning to a variety of biomedical problems-patient classification, fundamental biological processes. The follow-up I would want to run is how far opportunities and obstacles for deep learning carries outside the setting you tested it in, vision in particular, which is where my own work has been.\n\nIn the past, I have worked on the following related projects:\n- Sole author on cVAE-augmented deep learning for pan-cancer RNA-seq classification, about 98% test accuracy across 5 cancer types: https://arxiv.org/abs/2508.02743\n- Hsp90 inhibitor virtual screening in the Chiosis Lab at Memorial Sloan Kettering, 4,566 candidates screened at 0.984 GNN ROC AUC and 5x enrichment: https://hsp90-dashboard.vercel.app/\n- Semantic segmentation for UAV-based environmental monitoring at Carnegie Mellon Robotics Institute, 0.88 mean IoU and 0.94 F1 on 25,000 labeled aerial images\n\nI have extensively used PyTorch and Python in past work, along with molecular docking and graph neural network tooling, but have a lot of coding experience and am adaptable to whichever libraries your lab utilizes. Please let me know if there is a fit in your lab.\n\nI would be happy to elaborate on my skills and where I think I can best help out.\n\nThank you!\n\n--\nVinil Polepalli\nNew York University | Class of 2029\nB.S. Computer Science (Courant) and B.S. Business (Stern)\nvinil.polepalli@gmail.com",
+  "to": "akundaje@stanford.edu",
+  "cc": [],
+  "scheduledAt": "2026-08-17T16:25:00.000Z",
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": "Drafted by template using your skeleton template",
+  "createdAt": "2026-08-17T01:25:57.905Z",
+  "updatedAt": "2026-08-17T01:25:59.111Z"
+}

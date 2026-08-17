@@ -195,7 +195,38 @@ export async function completeConsent(
 
 // ── using the grant ─────────────────────────────────────────────────────────
 
+/**
+ * A mailbox configured entirely through the environment, for runs with no
+ * browser and no database.
+ *
+ * A scheduled run happens in a container that is thrown away afterwards, so
+ * the grant cannot live in a store that does not survive it. The alternative,
+ * committing it alongside the campaign state, would put a live token for the
+ * sender's university mailbox into a git repository, which is not a trade
+ * worth making for any amount of convenience.
+ *
+ * So the token comes from the environment, where a secret belongs, and this
+ * takes precedence over anything stored.
+ */
+function identityFromEnv(): SenderIdentity | null {
+  const refreshToken = process.env.GOOGLE_REFRESH_TOKEN;
+  const email = process.env.SCHOOL_EMAIL;
+  if (!refreshToken || !email) return null;
+  return {
+    email,
+    refreshToken,
+    // Assume both scopes were granted. If read access was not, the reply check
+    // fails and follow-ups skip rather than nudging blind, which is the safe
+    // direction for a wrong guess here.
+    scopes: [GMAIL_SEND_SCOPE, GMAIL_READ_SCOPE, EMAIL_SCOPE],
+    connectedAt: 'from environment',
+    lastError: null,
+  };
+}
+
 export async function getSenderIdentity(userId: string): Promise<SenderIdentity | null> {
+  const fromEnv = identityFromEnv();
+  if (fromEnv) return fromEnv;
   const stored = await readStore<SenderIdentity | null>(identityKey(userId), null);
   return stored?.refreshToken ? stored : null;
 }
@@ -229,12 +260,16 @@ export async function disconnectSender(userId: string): Promise<void> {
 
 /** Note a failure on the stored grant so the UI can prompt a reconnect. */
 async function noteError(userId: string, message: string): Promise<void> {
+  // An environment-supplied grant has nothing to write back to, and writing a
+  // record would put the token into the store this exists to keep it out of.
+  if (identityFromEnv()) return;
   const identity = await getSenderIdentity(userId);
   if (!identity) return;
   await writeStore(identityKey(userId), { ...identity, lastError: message.slice(0, 300) });
 }
 
 async function clearError(userId: string, identity: SenderIdentity): Promise<void> {
+  if (identityFromEnv()) return;
   if (identity.lastError) await writeStore(identityKey(userId), { ...identity, lastError: null });
 }
 

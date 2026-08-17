@@ -622,10 +622,12 @@ function paperInsight(paper: FocusPaper, user: UserProfile, researcher: Research
   // What the sender would add. Only their own stated interests can name a
   // direction; naming the lab's own area back at them is circular, and naming
   // an unrelated skill invents a connection. Better to say nothing.
-  const overlaps = (term: string) => {
-    const paperTerms = new Set(tokens(`${paper.title ?? ''} ${paper.abstract ?? ''} ${paper.notes ?? ''}`));
-    return tokens(term).some((t) => paperTerms.has(t));
-  };
+  // Same rule as sharedTopic: every word of the phrase has to be in the paper.
+  // Proposing "graph neural networks on top of that" to a paper about graph
+  // evolution, on the strength of the shared word "graph", is a follow-up that
+  // does not follow from anything.
+  const paperTerms = new Set(tokens(`${paper.title ?? ''} ${paper.abstract ?? ''} ${paper.notes ?? ''}`));
+  const overlaps = (term: string) => sharesTopic(term, paperTerms);
   const interest = user.researchInterests.map((i) => fixAcronyms(i.trim())).find((i) => i && overlaps(i));
   const skill = user.skills.map((s) => fixAcronyms(s.trim())).find((s) => s.includes(' ') && overlaps(s));
 
@@ -703,14 +705,30 @@ function sharedTopic(
   researcher: ResearcherProfile
 ): string {
   const paperTerms = new Set(tokens(`${paper.title ?? ''} ${paper.abstract ?? ''} ${paper.notes ?? ''}`));
-  const overlaps = (term: string) => tokens(term).some((t) => paperTerms.has(t));
   const candidates = [
     ...user.researchInterests,
     ...researcher.researchAreas,
     ...user.skills.filter((s) => s.trim().includes(' ')),
   ];
-  const hit = candidates.find((term) => term.trim() && overlaps(term));
+  const hit = candidates.find((term) => term.trim() && sharesTopic(term, paperTerms));
   return hit ? lowerFirst(hit.trim()) : '';
+}
+
+/**
+ * Whether a phrase genuinely describes what a paper is about.
+ *
+ * Every content word has to appear, not merely one of them. Matching on one
+ * word claimed a shared research interest that did not exist: "machine
+ * learning for drug discovery" and a paper on robot control share the word
+ * "learning" and nothing else, which was enough to tell a robotics professor
+ * that their paper was the closest thing to the drug discovery work the sender
+ * wanted to do. Overstating the overlap is worse than saying less, because the
+ * reader is the one person guaranteed to know the paper.
+ */
+function sharesTopic(term: string, paperTerms: Set<string>): boolean {
+  const words = tokens(term);
+  if (!words.length) return false;
+  return words.every((word) => paperTerms.has(word));
 }
 
 /** The auto-picked paper, in the shape the paragraph builder wants. */
@@ -746,6 +764,71 @@ function subjectLine(researcher: ResearcherProfile): string {
     'Interested in joining your lab',
   ];
   return candidates.find((c) => c && c.length <= MAX_SUBJECT) ?? 'Interested in joining your lab';
+}
+
+/**
+ * Fill the sender's own template in, without a model.
+ *
+ * A skeleton template is already the finished email except for the one
+ * paragraph that has to be different every time, so there is very little for a
+ * model to add: substitute the professor's name, write the paper paragraph the
+ * same way templateDraft does, and leave every other word exactly as the
+ * sender wrote it.
+ *
+ * This exists because the alternative was worse in a way that would not have
+ * been obvious. With no NIM key the draft engine falls back to templateDraft,
+ * which knows nothing about the sender's template, so a carefully pasted email
+ * was silently ignored and the generic built-in shape went out instead.
+ *
+ * Only skeleton templates are filled. A reference template is explicitly not
+ * meant to be reproduced, so with no model available there is nothing sensible
+ * to do with one and the built-in shape is the honest answer.
+ */
+export function fillSkeleton(
+  template: EmailTemplate,
+  researcher: ResearcherProfile,
+  user: UserProfile,
+  works?: ResearcherWorks | null,
+  focus?: FocusPaper | null
+): GeneratedDraft | null {
+  if (template.mode !== 'skeleton') return null;
+
+  const paper = focus ?? (works ? focusFromWorks(works, user) : null);
+  const surname = lastName(researcher.name);
+
+  // Placeholders the sender is likely to have left in a pasted email, in the
+  // square-bracket form the saved templates use.
+  let body = template.text
+    .replace(/\[\s*(?:professor'?s?\s+)?(?:last\s*name|surname|name)\s*\]/gi, surname)
+    .replace(/\[\s*school\s*\]/gi, researcher.school)
+    .replace(/\[\s*department\s*\]/gi, researcher.department || researcher.school);
+
+  // The paragraph that has to be written fresh for each professor. Matched by
+  // its mention of a paper rather than by position, since the sender may have
+  // moved it.
+  const slot = /^.*\[[^\]]*\b(?:paper|papers|research|publication)\b[^\]]*\].*$/gim;
+  const insight = paper
+    ? paperInsight(paper, user, researcher)
+    : researcher.researchAreas.length
+      ? `I recently came across your work on ${researcher.researchAreas.slice(0, 2).join(' and ')}, and was interested in getting involved.`
+      : '';
+
+  if (slot.test(body)) {
+    slot.lastIndex = 0;
+    body = body.replace(slot, insight);
+  } else if (insight) {
+    // No slot left in the template. Rather than drop the one paragraph that
+    // makes this email specific to this professor, put it after the opening.
+    const paragraphs = body.split(/\n\s*\n/);
+    paragraphs.splice(Math.min(2, paragraphs.length), 0, insight);
+    body = paragraphs.join('\n\n');
+  }
+
+  // Any placeholder left over would be sent verbatim to a professor, so an
+  // unfilled template is refused rather than shipped with brackets in it.
+  if (/\[[^\]\n]{3,80}\]/.test(body)) return null;
+
+  return { subject: subjectLine(researcher), body: body.trim(), generator: 'template' };
 }
 
 export function templateDraft(
@@ -1055,7 +1138,15 @@ export async function generateDraft(
   template?: EmailTemplate | null
 ): Promise<GeneratedDraft> {
   const paper = focus ?? (works ? focusFromWorks(works, user) : null);
-  if (!nimAvailable(nimAuth)) return templateDraft(researcher, user, works, paper);
+  if (!nimAvailable(nimAuth)) {
+    // No model. A skeleton template is still almost the whole email, so fill
+    // it in rather than throwing the sender's own words away and sending the
+    // generic shape instead.
+    return (
+      (template ? fillSkeleton(template, researcher, user, works, paper) : null) ??
+      templateDraft(researcher, user, works, paper)
+    );
+  }
   const standing = rulesPrompt(rules ?? []);
   const shape = templatePrompt(template ?? null);
   try {

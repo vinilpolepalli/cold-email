@@ -1,0 +1,20 @@
+{
+  "routine": "build-queue",
+  "id": "run_mswjwe2kly9uco",
+  "userId": "demo-user",
+  "startedAt": "2026-08-17T01:24:17.084Z",
+  "finishedAt": "2026-08-17T01:24:17.255Z",
+  "ok": true,
+  "dryRun": false,
+  "summary": "Queued 3 professor(s) from 397 ranked candidates.",
+  "counts": {
+    "added": 3,
+    "ranked": 397
+  },
+  "details": [
+    "Jure Leskovec (Stanford, cs-core) — Overlaps on graph neural networks, machine learning, network science; Stanford is priority one",
+    "Anshul Kundaje (Stanford, cs-bio) — Overlaps on machine learning, deep learning, computational genomics; Stanford is priority one",
+    "Chelsea Finn (Stanford, cs-robotics) — Overlaps on machine learning, robotics, reinforcement learning; Stanford is priority one"
+  ],
+  "error": null
+}

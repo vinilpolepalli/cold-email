@@ -1,0 +1,25 @@
+{
+  "id": "tgt_mswjyjv4dv0zfo",
+  "userId": "demo-user",
+  "researcherId": "res_jure-leskovec_stanford",
+  "researcherName": "Jure Leskovec",
+  "school": "Stanford",
+  "trackId": "cs-core",
+  "status": "drafted",
+  "rank": 99,
+  "reasons": [
+    "Overlaps on graph neural networks, machine learning, network science",
+    "Stanford is priority one"
+  ],
+  "subject": "Interested in your graph neural networks work",
+  "body": "Hello Professor Leskovec,\n\nMy name is Vinil Polepalli and I am an undergraduate at New York University, where I am pursuing a dual degree in Computer Science at the Courant Institute and Business at Stern. I have been a research intern in the Chiosis Lab at Memorial Sloan Kettering, where I built protein-ligand graph neural networks for Hsp90 and epichaperome complexes and reached 0.984 ROC AUC separating active from inactive inhibitor candidates.\n\nI went through your 2007 paper on graph evolution, and the part I keep coming back to is that you study a wide range of real graphs, and you observe some surprising phenomena. The follow-up I would want to run is how far graph evolution carries outside the setting you tested it in, vision in particular, which is where my own work has been.\n\nIn the past, I have worked on the following related projects:\n- Sole author on cVAE-augmented deep learning for pan-cancer RNA-seq classification, about 98% test accuracy across 5 cancer types: https://arxiv.org/abs/2508.02743\n- Hsp90 inhibitor virtual screening in the Chiosis Lab at Memorial Sloan Kettering, 4,566 candidates screened at 0.984 GNN ROC AUC and 5x enrichment: https://hsp90-dashboard.vercel.app/\n- Semantic segmentation for UAV-based environmental monitoring at Carnegie Mellon Robotics Institute, 0.88 mean IoU and 0.94 F1 on 25,000 labeled aerial images\n\nI have extensively used PyTorch and Python in past work, along with molecular docking and graph neural network tooling, but have a lot of coding experience and am adaptable to whichever libraries your lab utilizes. Please let me know if there is a fit in your lab.\n\nI would be happy to elaborate on my skills and where I think I can best help out.\n\nThank you!\n\n--\nVinil Polepalli\nNew York University | Class of 2029\nB.S. Computer Science (Courant) and B.S. Business (Stern)\nvinil.polepalli@gmail.com",
+  "to": "jure@cs.stanford.edu",
+  "cc": [],
+  "scheduledAt": "2026-08-17T16:00:00.000Z",
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": "Drafted by template using your skeleton template",
+  "createdAt": "2026-08-17T01:25:57.904Z",
+  "updatedAt": "2026-08-17T01:25:59.108Z"
+}

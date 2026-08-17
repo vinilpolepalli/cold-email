@@ -10,6 +10,7 @@ import { isSendableAddress, sendEmail, validateRecipients, getOutbox } from '../
 import { getSenderIdentity } from '../sender-identity';
 import { canAutoSend, getTrackStates, trackOf } from '../tracks';
 import { isCampaignSchool } from '../schools';
+import { getLabContacts } from '../contacts';
 import { huntCandidates, huntEmail } from '../agents/email-finder';
 import { checkOpportunities, opportunityCandidates } from '../agents/opportunities';
 import { candidatesFor, decide, followUpBody } from '../followups';
@@ -30,6 +31,40 @@ import {
 // The individual jobs. Each is independently runnable and independently safe
 // to run twice: they all work from stored state rather than from whatever the
 // previous job in the chain happened to return.
+
+/**
+ * Copies for one professor: their assistant and the people running the lab.
+ *
+ * Capped below validateRecipients' own limit of five, because a cold email
+ * copying half a lab is a mailing list rather than an introduction. Admins
+ * come first: the assistant is the one who actually books the meeting.
+ */
+const MAX_CAMPAIGN_COPIES = 3;
+
+async function copiesFor(
+  researcher: Parameters<typeof getLabContacts>[0],
+  nimAuth: Awaited<ReturnType<typeof getNimAuth>>
+): Promise<string[]> {
+  try {
+    const lookup = await getLabContacts(researcher, { nimAuth });
+    const ranked = [...lookup.contacts].sort(
+      (a, b) => Number(b.kind === 'admin') - Number(a.kind === 'admin')
+    );
+    const seen = new Set([researcher.email?.toLowerCase()].filter(Boolean) as string[]);
+    const out: string[] = [];
+    for (const contact of ranked) {
+      const address = contact.email.trim().toLowerCase();
+      if (!address || seen.has(address)) continue;
+      seen.add(address);
+      out.push(contact.email.trim());
+      if (out.length >= MAX_CAMPAIGN_COPIES) break;
+    }
+    return out;
+  } catch {
+    // No contacts is a fine answer, and the email sends without them.
+    return [];
+  }
+}
 
 /**
  * A time written in the sender's own zone. Run reports are read by a person
@@ -235,6 +270,14 @@ const writeDrafts: Routine = {
       const trackId = trackOf(researcher);
       const works = await getPublications(researcher).catch(() => null);
       const template = await resolveTemplate(ctx.userId, trackId);
+
+      // Who else belongs on the email. A cold email to a professor often
+      // reaches them through the person who manages their calendar, and the
+      // postdoc running the project is frequently the one who replies. This
+      // runs on the campaign path for the same reason it runs on the compose
+      // screen; leaving it out here made every unattended email a worse
+      // version of the one sent by hand.
+      const cc = await copiesFor(researcher, nimAuth);
       const draft = await generateDraft(
         researcher,
         user,
@@ -255,9 +298,12 @@ const writeDrafts: Routine = {
         subject: draft.subject,
         body: draft.body,
         to: researcher.email,
+        cc,
         scheduledAt: slots[index]?.toISOString() ?? null,
         autoApproved: auto,
-        note: `Drafted by ${draft.generator}${template ? ` using your ${template.mode} template` : ''}`,
+        note: `Drafted by ${draft.generator}${template ? ` using your ${template.mode} template` : ''}${
+          cc.length ? `, copying ${cc.length} lab contact(s)` : ''
+        }`,
       });
 
       drafted++;

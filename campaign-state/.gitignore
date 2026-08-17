@@ -1,0 +1,13 @@
+# Campaign state is committed on purpose: it is how a scheduled run in a fresh
+# container knows who has already been emailed. These files are the exception,
+# and they are ignored here rather than merely left uncommitted, so that a
+# secret cannot reach the repository even if some future code path writes one.
+#
+#   sender__*    a live OAuth refresh token for the sender's university mailbox
+#   settings__*  the user's own NVIDIA NIM API key
+#   oauthstate__ short-lived CSRF nonces, worthless to keep and unwise to publish
+#
+# The tokens belong in the environment instead. See GOOGLE_REFRESH_TOKEN.
+sender__*.json
+settings__*.json
+oauthstate__*.json

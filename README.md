@@ -86,11 +86,25 @@ Set `ROUTINE_SECRET` (and `ROUTINE_USER_ID`, so a headless run knows whose queue
 
 **Vercel Cron** — `vercel.json` already schedules `daily` at 04:00 UTC on weekdays. Set `CRON_SECRET` in the project and it works; the route accepts GET for exactly this reason.
 
-**Claude Code Routine, or any crontab** — point it at the CLI. The container a Routine runs in is ephemeral, so configure Supabase storage (`SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY`) or the queue is lost between firings:
+**Claude Code Routine, or any crontab — no database needed.** `npm run campaign` runs a whole cycle against nothing but the repository:
 
 ```bash
-SLOAN_BASE_URL=https://your-app ROUTINE_SECRET=... npm run routine -- daily
+npm run campaign                 # the daily chain, then commit the state
+npm run campaign -- --dry-run    # everything except sending
+npm run campaign -- write-drafts --limit 3
 ```
+
+It boots the app against `campaign-state/`, runs the routine, shuts the app down, and commits what changed. The container a Routine runs in is thrown away afterwards, so the repository is the memory: the next run clones it and picks up where the last one stopped. That is what `campaign-state/` is for, and why it is committed rather than ignored.
+
+Secrets are the exception. `campaign-state/.gitignore` drops the mailbox token and the API key, and a commit is refused outright if one ever reaches the index. They come from the environment instead:
+
+```bash
+SCHOOL_EMAIL=you@school.edu GOOGLE_REFRESH_TOKEN=... npm run campaign
+```
+
+Mint that token once with `npm run connect-school` — it opens Google's consent screen, then prints the refresh token and the address it belongs to.
+
+Supabase still works if you want it (`SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY`), and is the better answer for more than one user. For one person it is a service to run for no benefit.
 
 ### Send policy
 
@@ -149,7 +163,7 @@ The app is Vercel-ready out of the box:
 
 Notes for serverless: runtime user data (profiles, outbox) falls back to the instance tmp dir on Vercel, so it's ephemeral per instance; the researcher directory itself is baked into the deployment from `data/profiles.json`. For persistent user accounts in production, set `DATA_DIR` to a mounted volume or configure Supabase.
 
-**If you are running campaigns, Supabase is not optional.** The queue, the connected mailbox, and everything the routines have already done live in the KV store. On ephemeral storage a scheduled run starts from nothing every night: it re-queues professors it already emailed and loses the record that it did.
+**A scheduled campaign needs somewhere durable to remember what it has done**, or it re-queues professors it already emailed. Either commit the state (`npm run campaign`, see above) or configure Supabase. Vercel's own tmp dir is not enough.
 
 ### Environment variables
 

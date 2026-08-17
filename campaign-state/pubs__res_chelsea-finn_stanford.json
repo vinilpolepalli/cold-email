@@ -1,0 +1,157 @@
+{
+  "researcherId": "res_chelsea-finn_stanford",
+  "authorName": "Chelsea Finn",
+  "authorUrl": "https://openalex.org/A5005431772",
+  "worksCount": 390,
+  "citedByCount": 26688,
+  "topics": [
+    "Reinforcement Learning in Robotics",
+    "Domain Adaptation and Few-Shot Learning",
+    "Robot Manipulation and Learning",
+    "Multimodal Machine Learning Applications",
+    "Machine Learning and Data Classification"
+  ],
+  "publications": [
+    {
+      "title": "Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks",
+      "year": 2017,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Chelsea Finn",
+        "Pieter Abbeel",
+        "Sergey Levine"
+      ],
+      "citations": 5791,
+      "doi": "10.48550/arxiv.1703.03400",
+      "url": "http://arxiv.org/abs/1703.03400",
+      "pdfUrl": "https://arxiv.org/pdf/1703.03400",
+      "abstract": "We propose an algorithm for meta-learning that is model-agnostic, in the sense that it is compatible with any model trained with gradient descent and applicable to a variety of different learning problems, including classification, regression, and reinforcement learning. The goal of meta-learning is to train a model on a variety of learning tasks, such that it can solve new learning tasks using only a small number of training samples. In our approach, the parameters of the model are explicitly trained such that a small number of gradient steps with a small amount of training data from a new task will produce good generalization performance on that task. In effect, our method trains the model to be easy to fine-tune. We demonstrate that this approach leads to state-of-the-art performance on two few-shot image classification benchmarks, produces good results on few-shot regression, and ..."
+    },
+    {
+      "title": "On the Opportunities and Risks of Foundation Models",
+      "year": 2021,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Rishi Bommasani",
+        "Drew A. Hudson",
+        "Ehsan Adeli",
+        "Russ B. Altman",
+        "Simran Arora",
+        "Sydney von Arx",
+        "Michael S. Bernstein",
+        "Jeannette Bohg"
+      ],
+      "citations": 2247,
+      "doi": "10.48550/arxiv.2108.07258",
+      "url": "http://arxiv.org/abs/2108.07258",
+      "pdfUrl": "https://arxiv.org/pdf/2108.07258",
+      "abstract": "AI is undergoing a paradigm shift with the rise of models (e.g., BERT, DALL-E, GPT-3) that are trained on broad data at scale and are adaptable to a wide range of downstream tasks. We call these models foundation models to underscore their critically central yet incomplete character. This report provides a thorough account of the opportunities and risks of foundation models, ranging from their capabilities (e.g., language, vision, robotics, reasoning, human interaction) and technical principles(e.g., model architectures, training procedures, data, systems, security, evaluation, theory) to their applications (e.g., law, healthcare, education) and societal impact (e.g., inequity, misuse, economic and environmental impact, legal and ethical considerations). Though foundation models are based on standard deep learning and transfer learning, their scale results in new emergent capabilities..."
+    },
+    {
+      "title": "End-to-end training of deep visuomotor policies",
+      "year": 2016,
+      "venue": "Journal of Machine Learning Research",
+      "authors": [
+        "Sergey Levine",
+        "Chelsea Finn",
+        "Trevor Darrell",
+        "Pieter Abbeel"
+      ],
+      "citations": 1706,
+      "doi": null,
+      "url": "http://rll.berkeley.edu/RSS2015-BlueSky-Shakey/Levine-ShakeyWS-2015.pdf",
+      "pdfUrl": "https://arxiv.org/pdf/1504.00702",
+      "abstract": "Policy search methods can allow robots to learn control policies for a wide range of tasks, but practical applications of policy search often require hand-engineered components for perception, state estimation, and low-level control. In this paper, we aim to answer the following question: does training the perception and control systems jointly end-to-end provide better performance than training each component separately? To this end, we develop a method that can be used to learn policies that map raw image observations directly to torques at the robot's motors. The policies are represented by deep convolutional neural networks (CNNs) with 92,000 parameters, and are trained using a guided policy search method, which transforms policy search into supervised learning, with supervision provided by a simple trajectory-centric reinforcement learning method. We evaluate our method on a rang..."
+    },
+    {
+      "title": "Deep visual foresight for planning robot motion",
+      "year": 2017,
+      "venue": null,
+      "authors": [
+        "Chelsea Finn",
+        "Sergey Levine"
+      ],
+      "citations": 627,
+      "doi": "10.1109/icra.2017.7989324",
+      "url": "https://doi.org/10.1109/icra.2017.7989324",
+      "pdfUrl": null,
+      "abstract": "A key challenge in scaling up robot learning to many skills and environments is removing the need for human supervision, so that robots can collect their own data and improve their own performance without being limited by the cost of requesting human feedback. Model-based reinforcement learning holds the promise of enabling an agent to learn to predict the effects of its actions, which could provide flexible predictive models for a wide range of tasks and environments, without detailed human supervision. We develop a method for combining deep action-conditioned video prediction models with model-predictive control that uses entirely unlabeled training data. Our approach does not require a calibrated camera, an instrumented training set-up, nor precise sensing and actuation. Our results show that our method enables a real robot to perform nonprehensile manipulation - pushing objects - ..."
+    },
+    {
+      "title": "RT-1: Robotics Transformer for Real-World Control at Scale",
+      "year": 2023,
+      "venue": null,
+      "authors": [
+        "Anthony Brohan",
+        "Noah Brown",
+        "Justice Carbajal",
+        "Yevgen Chebotar",
+        "Joseph Dabis",
+        "Chelsea Finn",
+        "Keerthana Gopalakrishnan",
+        "Karol Hausman"
+      ],
+      "citations": 578,
+      "doi": "10.15607/rss.2023.xix.025",
+      "url": "https://doi.org/10.15607/rss.2023.xix.025",
+      "pdfUrl": "https://doi.org/10.15607/rss.2023.xix.025",
+      "abstract": "By transferring knowledge from large, diverse, taskagnostic datasets, modern machine learning models can solve specific downstream tasks either zero-shot or with small taskspecific datasets to a high level of performance.While this capability has been demonstrated in other fields such as computer vision, natural language processing or speech recognition, it remains to be shown in robotics, where the generalization capabilities of the models are particularly critical due to the difficulty of collecting real-world robotic data.We argue that one of the keys to the success of such general robotic models lies with open-ended task-agnostic training, combined with highcapacity architectures that can absorb all of the diverse, robotic data.In this paper, we present a model class, dubbed Robotics Transformer, that exhibits promising scalable model properties.We verify our conclusions in a stud..."
+    },
+    {
+      "title": "How to train your robot with deep reinforcement learning: lessons we have learned",
+      "year": 2021,
+      "venue": "The International Journal of Robotics Research",
+      "authors": [
+        "Julian Ibarz",
+        "Jie Tan",
+        "Chelsea Finn",
+        "Mrinal Kalakrishnan",
+        "Peter Pástor",
+        "Sergey Levine"
+      ],
+      "citations": 563,
+      "doi": "10.1177/0278364920987859",
+      "url": "https://doi.org/10.1177/0278364920987859",
+      "pdfUrl": null,
+      "abstract": "Deep reinforcement learning (RL) has emerged as a promising approach for autonomously acquiring complex behaviors from low-level sensor observations. Although a large portion of deep RL research has focused on applications in video games and simulated control, which does not connect with the constraints of learning in real environments, deep RL has also demonstrated promise in enabling physical robots to learn complex skills in the real world. At the same time, real-world robotics provides an appealing domain for evaluating such algorithms, as it connects directly to how humans learn: as an embodied agent in the real world. Learning to perceive and move in the real world presents numerous challenges, some of which are easier to address than others, and some of which are often not considered in RL research that focuses only on simulated domains. In this review article, we present a num..."
+    },
+    {
+      "title": "Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware",
+      "year": 2023,
+      "venue": null,
+      "authors": [
+        "Tony Z. Zhao",
+        "Vikas Kumar",
+        "Sergey Levine",
+        "Chelsea Finn"
+      ],
+      "citations": 535,
+      "doi": "10.15607/rss.2023.xix.016",
+      "url": "https://doi.org/10.15607/rss.2023.xix.016",
+      "pdfUrl": "https://doi.org/10.15607/rss.2023.xix.016",
+      "abstract": "ALOHA : A Low-cost Open-source Hardware System for Bimanual Teleoperation.The whole system costs <$20k with off-the-shelf robots and 3D printed components.Left: The user teleoperates by backdriving the leader robots, with the follower robots mirroring the motion.Right: ALOHA is capable of precise, contact-rich, and dynamic tasks.We show examples of both teleoperated and learned skills.Abstract-Fine manipulation tasks, such as threading cable ties or slotting a battery, are notoriously difficult for robots because they require precision, careful coordination of contact forces, and closed-loop visual feedback.Performing these tasks typically requires high-end robots, accurate sensors, or careful calibration, which can be expensive and difficult to set up.Can learning enable low-cost and imprecise hardware to perform these fine manipulation tasks?We present a low-cost system that perform..."
+    },
+    {
+      "title": "Do As I Can, Not As I Say: Grounding Language in Robotic Affordances",
+      "year": 2022,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Ahn, Michael",
+        "Anthony Brohan",
+        "Noah Brown",
+        "Yevgen Chebotar",
+        "Omar Andrés Carmona Cortes",
+        "Byron David",
+        "Chelsea Finn",
+        "Fu, Chuyuan"
+      ],
+      "citations": 520,
+      "doi": "10.48550/arxiv.2204.01691",
+      "url": "http://arxiv.org/abs/2204.01691",
+      "pdfUrl": "https://arxiv.org/pdf/2204.01691",
+      "abstract": "Large language models can encode a wealth of semantic knowledge about the world. Such knowledge could be extremely useful to robots aiming to act upon high-level, temporally extended instructions expressed in natural language. However, a significant weakness of language models is that they lack real-world experience, which makes it difficult to leverage them for decision making within a given embodiment. For example, asking a language model to describe how to clean a spill might result in a reasonable narrative, but it may not be applicable to a particular agent, such as a robot, that needs to perform this task in a particular environment. We propose to provide real-world grounding by means of pretrained skills, which are used to constrain the model to propose natural language actions that are both feasible and contextually appropriate. The robot can act as the language model's \"hands..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-17T01:24:32.791Z"
+}

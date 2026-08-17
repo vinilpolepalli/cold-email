@@ -1,0 +1,144 @@
+{
+  "researcherId": "res_jure-leskovec_stanford",
+  "authorName": "Jure Leskovec",
+  "authorUrl": "https://openalex.org/A5091272738",
+  "worksCount": 631,
+  "citedByCount": 113459,
+  "topics": [
+    "Complex Network Analysis Techniques",
+    "Advanced Graph Neural Networks",
+    "Opinion Dynamics and Social Influence",
+    "Topic Modeling",
+    "Bioinformatics and Genomic Networks"
+  ],
+  "publications": [
+    {
+      "title": "node2vec",
+      "year": 2016,
+      "venue": null,
+      "authors": [
+        "Aditya Grover",
+        "Jure Leskovec"
+      ],
+      "citations": 11028,
+      "doi": "10.1145/2939672.2939754",
+      "url": "https://doi.org/10.1145/2939672.2939754",
+      "pdfUrl": null,
+      "abstract": "Prediction tasks over nodes and edges in networks require careful effort in engineering features used by learning algorithms. Recent research in the broader field of representation learning has led to significant progress in automating prediction by learning the features themselves. However, present feature learning approaches are not expressive enough to capture the diversity of connectivity patterns observed in networks. Here we propose node2vec, an algorithmic framework for learning continuous feature representations for nodes in networks. In node2vec, we learn a mapping of nodes to a low-dimensional space of features that maximizes the likelihood of preserving network neighborhoods of nodes. We define a flexible notion of a node's network neighborhood and design a biased random walk procedure, which efficiently explores diverse neighborhoods. Our algorithm generalizes prior work w..."
+    },
+    {
+      "title": "Inductive Representation Learning on Large Graphs",
+      "year": 2017,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "William L. Hamilton",
+        "Rex Ying",
+        "Jure Leskovec"
+      ],
+      "citations": 4538,
+      "doi": "10.48550/arxiv.1706.02216",
+      "url": "http://arxiv.org/abs/1706.02216",
+      "pdfUrl": "https://arxiv.org/pdf/1706.02216",
+      "abstract": "Low-dimensional embeddings of nodes in large graphs have proved extremely useful in a variety of prediction tasks, from content recommendation to identifying protein functions. However, most existing approaches require that all nodes in the graph are present during training of the embeddings; these previous approaches are inherently transductive and do not naturally generalize to unseen nodes. Here we present GraphSAGE, a general, inductive framework that leverages node feature information (e.g., text attributes) to efficiently generate node embeddings for previously unseen data. Instead of training individual embeddings for each node, we learn a function that generates embeddings by sampling and aggregating features from a node's local neighborhood. Our algorithm outperforms strong baselines on three inductive node-classification benchmarks: we classify the category of unseen nodes i..."
+    },
+    {
+      "title": "Friendship and mobility",
+      "year": 2011,
+      "venue": null,
+      "authors": [
+        "Eunjoon Cho",
+        "Seth A. Myers",
+        "Jure Leskovec"
+      ],
+      "citations": 2933,
+      "doi": "10.1145/2020408.2020579",
+      "url": "https://doi.org/10.1145/2020408.2020579",
+      "pdfUrl": null,
+      "abstract": "Even though human movement and mobility patterns have a high degree of freedom and variation, they also exhibit structural patterns due to geographic and social constraints. Using cell phone location data, as well as data from two online location-based social networks, we aim to understand what basic laws govern human motion and dynamics. We find that humans experience a combination of periodic movement that is geographically limited and seemingly random jumps correlated with their social networks. Short-ranged travel is periodic both spatially and temporally and not effected by the social network structure, while long-distance travel is more influenced by social network ties. We show that social relationships can explain about 10% to 30% of all human movement, while periodic behavior explains 50% to 70%. Based on our findings, we develop a model of human mobility that combines period..."
+    },
+    {
+      "title": "{SNAP Datasets}: {Stanford} Large Network Dataset Collection",
+      "year": 2014,
+      "venue": null,
+      "authors": [
+        "Jure Leskovec",
+        "Andrej Krevl"
+      ],
+      "citations": 2762,
+      "doi": null,
+      "url": null,
+      "pdfUrl": null,
+      "abstract": "A collection of more than 50 large network datasets from tens of thousands of nodes and edges to tens of millions of nodes and edges. In includes social networks, web graphs, road networks, internet networks, citation networks, collaboration networks, and communication networks."
+    },
+    {
+      "title": "Cost-effective outbreak detection in networks",
+      "year": 2007,
+      "venue": "Figshare",
+      "authors": [
+        "Jure Leskovec",
+        "Andreas Krause",
+        "Carlos Guestrin",
+        "Christos Faloutsos",
+        "Jeanne M. VanBriesen",
+        "Natalie Glance"
+      ],
+      "citations": 2529,
+      "doi": "10.1145/1281192.1281239",
+      "url": "https://figshare.com/articles/journal_contribution/Cost-effective_Outbreak_Detection_in_Networks/6604535",
+      "pdfUrl": null,
+      "abstract": "Given a water distribution network, where should we place sensors toquickly detect contaminants? Or, which blogs should we read to avoid missing important stories?."
+    },
+    {
+      "title": "Graph evolution",
+      "year": 2007,
+      "venue": "ACM Transactions on Knowledge Discovery from Data",
+      "authors": [
+        "Jure Leskovec",
+        "Jon Kleinberg",
+        "Christos Faloutsos"
+      ],
+      "citations": 2487,
+      "doi": "10.1145/1217299.1217301",
+      "url": "https://doi.org/10.1145/1217299.1217301",
+      "pdfUrl": null,
+      "abstract": "How do real graphs evolve over time? What are normal growth patterns in social, technological, and information networks? Many studies have discovered patterns in static graphs , identifying properties in a single snapshot of a large network or in a very small number of snapshots; these include heavy tails for in- and out-degree distributions, communities, small-world phenomena, and others. However, given the lack of information about network evolution over long periods, it has been hard to convert these findings into statements about trends over time. Here we study a wide range of real graphs, and we observe some surprising phenomena. First, most of these graphs densify over time with the number of edges growing superlinearly in the number of nodes. Second, the average distance between nodes often shrinks over time in contrast to the conventional wisdom that such distance parameters s..."
+    },
+    {
+      "title": "Graphs over time",
+      "year": 2005,
+      "venue": null,
+      "authors": [
+        "Jure Leskovec",
+        "Jon Kleinberg",
+        "Christos Faloutsos"
+      ],
+      "citations": 2308,
+      "doi": "10.1145/1081870.1081893",
+      "url": "https://doi.org/10.1145/1081870.1081893",
+      "pdfUrl": null,
+      "abstract": "How do real graphs evolve over time? What are \"normal\" growth patterns in social, technological, and information networks? Many studies have discovered patterns in static graphs, identifying properties in a single snapshot of a large network, or in a very small number of snapshots; these include heavy tails for in- and out-degree distributions, communities, small-world phenomena, and others. However, given the lack of information about network evolution over long periods, it has been hard to convert these findings into statements about trends over time.Here we study a wide range of real graphs, and we observe some surprising phenomena. First, most of these graphs densify over time, with the number of edges growing super-linearly in the number of nodes. Second, the average distance between nodes often shrinks over time, in contrast to the conventional wisdom that such distance paramete..."
+    },
+    {
+      "title": "On the Opportunities and Risks of Foundation Models",
+      "year": 2021,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Rishi Bommasani",
+        "Drew A. Hudson",
+        "Ehsan Adeli",
+        "Russ B. Altman",
+        "Simran Arora",
+        "Sydney von Arx",
+        "Michael S. Bernstein",
+        "Jeannette Bohg"
+      ],
+      "citations": 2247,
+      "doi": "10.48550/arxiv.2108.07258",
+      "url": "http://arxiv.org/abs/2108.07258",
+      "pdfUrl": "https://arxiv.org/pdf/2108.07258",
+      "abstract": "AI is undergoing a paradigm shift with the rise of models (e.g., BERT, DALL-E, GPT-3) that are trained on broad data at scale and are adaptable to a wide range of downstream tasks. We call these models foundation models to underscore their critically central yet incomplete character. This report provides a thorough account of the opportunities and risks of foundation models, ranging from their capabilities (e.g., language, vision, robotics, reasoning, human interaction) and technical principles(e.g., model architectures, training procedures, data, systems, security, evaluation, theory) to their applications (e.g., law, healthcare, education) and societal impact (e.g., inequity, misuse, economic and environmental impact, legal and ethical considerations). Though foundation models are based on standard deep learning and transfer learning, their scale results in new emergent capabilities..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-17T01:24:26.155Z"
+}
