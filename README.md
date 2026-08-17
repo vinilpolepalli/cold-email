@@ -19,6 +19,84 @@ To close sign-up again: Clerk dashboard → Configure → Restrictions → set a
 - **Compose** (`/compose`) — a personalized draft is generated from your profile + the researcher's actual research areas and bio. Edit the subject/body/recipient freely, then hit **Send**.
 - **Outbox** (`/outbox`) — every send attempt with method and status.
 - **Built-in AI scraper** (`/scrape`) — point it at any faculty-directory URL; it crawls profile links and extracts structured profiles, then adds them to the directory. Also available as a CLI: `npm run scrape -- <url> [school]`.
+- **Campaign** (`/campaign`) — the autonomous half: a ranked queue aimed at Stanford, then MIT, then Harvard; drafts written overnight and held for review; per-track approval gates; follow-ups that check for a reply first. See [Running a campaign](#running-a-campaign).
+
+## Running a campaign
+
+The campaign turns the directory into a queue that works while you are not looking. It is built around one idea: **autonomy is earned per research area, not granted globally.**
+
+### Research tracks
+
+Every professor is filed under a track from their research areas, title and department:
+
+| Track | What it covers | Reachable in campaign schools |
+| --- | --- | --- |
+| `cs-core` | Theory, algorithms, systems, ML and NLP foundations | ~156 |
+| `cs-bio` | Computational biology, genomics, neuro, health AI | ~165 |
+| `cs-robotics` | Robotics, computer vision, control, autonomy | ~57 |
+| `cs-other` | Statistics, HCI, social, everything else | ~30 |
+
+A track starts **locked**. You approve two emails in it by hand — from `/campaign` or the ordinary compose screen — and it becomes **ready**. You then *explicitly* arm it, and it becomes **armed**: drafts on that track are sent without waiting for you. Reaching the threshold never arms a track by itself, because "it has sent two emails" is not consent to send two hundred.
+
+### Sending identity
+
+Emails go out from **your university account**, connected once on `/campaign` or `/settings` — deliberately separate from whatever Google account you sign in with. Once a school account is connected it is the *only* mailbox allowed to send: if its grant expires, the send fails loudly rather than falling back to a personal Gmail, because the address a cold email arrives from is part of the email.
+
+Set up requires a Google Cloud OAuth client:
+
+1. Create an OAuth 2.0 Client ID (type: Web application) in Google Cloud Console.
+2. Add `https://your-app/api/auth/google/callback` as an authorized redirect URI (`http://localhost:3000/api/auth/google/callback` for local).
+3. Enable the Gmail API for the project.
+4. Set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`. Set `GOOGLE_REDIRECT_URI` too if it must differ from the derived one.
+5. Open `/campaign` → **Connect school account**, and pick your `.edu` address.
+
+The requested scopes are `gmail.send` and `gmail.readonly`. Read access exists for one reason: a follow-up checks the thread for a reply before nudging. Decline it and follow-ups are skipped rather than sent blind, unless you turn that off in the send policy.
+
+### Your own template
+
+Paste an email you have actually sent into `/settings` → **Your cold email template**. Every draft is shaped like it. There is one default plus an override per track, since the email that works on a robotics lab is not the one that works on a genomics lab.
+
+Two modes: **skeleton** follows your structure closely; **reference** matches voice and length but writes fresh. Names, papers and numbers inside your template stay behind — they belong to whoever it was originally written to, and are replaced with each professor's real details or dropped.
+
+### The routines
+
+| Routine | Sends? | What it does |
+| --- | --- | --- |
+| `find-emails` | no | Hunts published addresses for the ~150 directory entries that have none |
+| `find-opportunities` | no | Reads lab pages for whether they are recruiting, **or have said not to ask** |
+| `build-queue` | no | Ranks the directory and queues the best unqueued professors |
+| `write-drafts` | no | Drafts queued professors and schedules them for the next morning |
+| `send-due` | **yes** | Sends approved drafts whose time has come |
+| `follow-up` | **yes** | Nudges quiet threads, after checking they are actually quiet |
+| `daily` | **yes** | The whole chain in order — this is what you schedule |
+
+Rank is `topic match × school weight × recruiting stance`, multiplied rather than added so a lab that has said it is not taking anyone cannot be dragged to the top by a strong topic match alone. School weights are Stanford 1.0, MIT 0.78, Harvard 0.6.
+
+Run any of them from `/campaign`, or headlessly:
+
+```bash
+npm run routine -- daily
+npm run routine -- send-due --dry-run     # everything except the sending
+npm run routine -- write-drafts --limit 3
+```
+
+Set `ROUTINE_SECRET` (and `ROUTINE_USER_ID`, so a headless run knows whose queue it is) to allow unattended runs.
+
+### Scheduling it
+
+**Vercel Cron** — `vercel.json` already schedules `daily` at 04:00 UTC on weekdays. Set `CRON_SECRET` in the project and it works; the route accepts GET for exactly this reason.
+
+**Claude Code Routine, or any crontab** — point it at the CLI. The container a Routine runs in is ephemeral, so configure Supabase storage (`SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY`) or the queue is lost between firings:
+
+```bash
+SLOAN_BASE_URL=https://your-app ROUTINE_SECRET=... npm run routine -- daily
+```
+
+### Send policy
+
+Defaults, all clamped server-side and editable per user: at most **8 emails a day** and **4 per run**, spaced **25 minutes**, only between **09:00 and 17:00 on weekdays** in your timezone, with follow-ups at **day 5 and day 12** and a hard ceiling of two nudges per thread.
+
+Drafts are always written a night ahead of when they send. That gap is the review window, and it is why an armed track still is not the same as sending the instant a draft exists.
 
 ## Architecture
 
@@ -26,7 +104,8 @@ To close sign-up again: Clerk dashboard → Configure → Restrictions → set a
 | --- | --- |
 | Framework | Next.js (App Router, TypeScript, Tailwind) |
 | Auth | [Clerk](https://clerk.com) with Google sign-in — **optional**; without keys the app runs in single-user demo mode |
-| Email sending | Tried in order: **Gmail API with the signed-in user's Google OAuth token (via Clerk)** → SMTP (`nodemailer`) → Resend → local demo outbox |
+| Email sending | **Your connected school Gmail** when one is attached (terminal — never falls back), otherwise: Gmail API via Clerk's Google token → SMTP (`nodemailer`) → Resend → local demo outbox |
+| Automation | Routines in `src/lib/routines/`, each runnable from `/campaign`, `POST/GET /api/routines/<name>`, or `npm run routine -- <name>` |
 | AI generation | **NVIDIA NIM, BYOK-first**: each user stores their own key on `/settings` (get one free at build.nvidia.com); `NVIDIA_API_KEY` is an optional server-wide fallback; deterministic template/heuristic engines run with no key at all |
 | Storage | `data/profiles.json` (checked-in directory) + a swappable KV layer for user data: **Supabase Postgres** when `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` are set (run `supabase/schema.sql` once), JSON files otherwise |
 
@@ -66,9 +145,23 @@ The app is Vercel-ready out of the box:
 
 1. Push this repo to GitHub (already done if you're reading this on GitHub).
 2. Go to [vercel.com/new](https://vercel.com/new), import the repo, keep the detected Next.js defaults, and deploy.
-3. Optionally add env vars from `.env.example` (Clerk keys, `NVIDIA_API_KEY`, SMTP/Resend) in Project Settings → Environment Variables. The app runs fully in demo mode with none set.
+3. Optionally add env vars (Clerk keys, `NVIDIA_API_KEY`, SMTP/Resend) in Project Settings → Environment Variables. The app runs fully in demo mode with none set.
 
-Notes for serverless: runtime user data (profiles, outbox) falls back to the instance tmp dir on Vercel, so it's ephemeral per instance; the researcher directory itself is baked into the deployment from `data/profiles.json`. For persistent user accounts in production, set `DATA_DIR` to a mounted volume or replace `src/lib/store.ts` with a database.
+Notes for serverless: runtime user data (profiles, outbox) falls back to the instance tmp dir on Vercel, so it's ephemeral per instance; the researcher directory itself is baked into the deployment from `data/profiles.json`. For persistent user accounts in production, set `DATA_DIR` to a mounted volume or configure Supabase.
+
+**If you are running campaigns, Supabase is not optional.** The queue, the connected mailbox, and everything the routines have already done live in the KV store. On ephemeral storage a scheduled run starts from nothing every night: it re-queues professors it already emailed and loses the record that it did.
+
+### Environment variables
+
+| Variable | For |
+| --- | --- |
+| `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | Connecting your school mailbox. Without these, campaign sending is unavailable |
+| `GOOGLE_REDIRECT_URI` | Only when the callback URL cannot be derived from the request |
+| `ROUTINE_SECRET` | Lets a scheduler run routines without a browser session |
+| `ROUTINE_USER_ID` | Whose queue a headless run acts on |
+| `CRON_SECRET` | Vercel Cron sends this automatically; accepted in place of `ROUTINE_SECRET` |
+| `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` | Durable storage. Required for scheduled campaigns |
+| `EMAIL_TEST_REDIRECT` | Redirects every outgoing email to you. Worth setting on the first live run |
 
 ## How the real directory was built
 

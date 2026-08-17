@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 
 const PRIMARY = [
   { href: "/dashboard", label: "Dashboard", icon: SquaresIcon },
+  { href: "/campaign", label: "Campaign", icon: TargetIcon },
   { href: "/researchers", label: "Researchers", icon: SearchIcon },
   { href: "/outbox", label: "Outbox", icon: MailIcon },
   { href: "/scrape", label: "Scraper", icon: SpiderIcon },
@@ -85,6 +86,16 @@ function SquaresIcon({ className }: { className?: string }) {
       <rect x="14" y="3" width="7" height="7" rx="1.5" />
       <rect x="3" y="14" width="7" height="7" rx="1.5" />
       <rect x="14" y="14" width="7" height="7" rx="1.5" />
+    </svg>
+  );
+}
+
+function TargetIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} {...S}>
+      <circle cx="12" cy="12" r="8.5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="12" cy="12" r="0.75" fill="currentColor" stroke="none" />
     </svg>
   );
 }

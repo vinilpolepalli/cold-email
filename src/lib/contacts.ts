@@ -34,7 +34,7 @@ const ROLE_ACCOUNT =
   /^(?:webmaster|postmaster|no-?reply|donotreply|privacy|accessibility|ada|help|support|helpdesk|it|itsupport|security|abuse|legal|copyright|hr|jobs|careers|apply|admissions|giving|alumni|press|media|news|marketing|comms|communications|events|webteam|feedback|info|contact|inquiries|enquiries|general|office|mail|email|test)@/i;
 
 /** Fetch only public web hosts: a scraped profile can carry any URL. */
-function isPublicHttpUrl(raw: string): boolean {
+export function isPublicHttpUrl(raw: string): boolean {
   try {
     const url = new URL(raw);
     if (url.protocol !== 'http:' && url.protocol !== 'https:') return false;

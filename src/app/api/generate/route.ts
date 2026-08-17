@@ -6,6 +6,8 @@ import { getPublications } from '@/lib/publications';
 import { focusFromWorks, generateDraft } from '@/lib/template';
 import { getResumeFileInfo } from '@/lib/resume-file';
 import { getCurrentUserId, getNimAuth, getUserProfile } from '@/lib/user';
+import { resolveTemplate } from '@/lib/user-template';
+import { trackOf } from '@/lib/tracks';
 import { FocusPaper, Publication, ResearcherWorks } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
@@ -91,9 +93,14 @@ export async function POST(req: NextRequest) {
   // different paper, or pressing regenerate, is an explicit request for new
   // text and skips this.
   const saved = paperUrl || paperNotes || body.regenerate ? null : await getDraft(userId, researcher.id);
+  // The sender's own email for this professor's research area, when they have
+  // supplied one. Composing by hand and the overnight routine draft from the
+  // same template, or the two would drift apart and the emails a track was
+  // proven on would stop resembling the ones it later sends.
+  const template = await resolveTemplate(userId, trackOf(researcher));
   const draft = saved
     ? { subject: saved.subject, body: saved.body, generator: 'saved' as const }
-    : await generateDraft(researcher, user, await getNimAuth(userId), works, focus, rules);
+    : await generateDraft(researcher, user, await getNimAuth(userId), works, focus, rules, template);
 
   return NextResponse.json({
     draft,

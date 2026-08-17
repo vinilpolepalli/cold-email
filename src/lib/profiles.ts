@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { ResearcherProfile } from './types';
 import { listStore, writeStore } from './store';
+import { getDiscoveredEmails } from './agents/email-finder';
 
 const PROFILES_PATH = path.join(process.cwd(), 'data', 'profiles.json');
 
@@ -34,7 +35,16 @@ export async function getAllProfiles(): Promise<ResearcherProfile[]> {
     seen.add(p.id);
     all.push(p);
   }
-  return all;
+
+  // Addresses the email-finder agent has since read off a department or lab
+  // page. They are merged here rather than written back into
+  // data/profiles.json because that file is checked in and read-only at
+  // runtime; without this an overnight run would find addresses that the app
+  // could not then use. An entry that already has an address keeps it: the
+  // checked-in one was reviewed by a human.
+  const discovered = await getDiscoveredEmails();
+  if (discovered.size === 0) return all;
+  return all.map((p) => (p.email ? p : { ...p, email: discovered.get(p.id)?.email ?? null }));
 }
 
 export async function getProfile(id: string): Promise<ResearcherProfile | undefined> {

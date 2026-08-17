@@ -1,7 +1,8 @@
 import nodemailer from 'nodemailer';
-import { OutboxEntry } from './types';
+import { OutboxEntry, TrackId } from './types';
 import { listStore, newId, writeStore } from './store';
 import { clerkConfigured } from './user';
+import { getAccessToken } from './sender-identity';
 
 export interface EmailAttachment {
   fileName: string;
@@ -20,12 +21,25 @@ export interface SendRequest {
   subject: string;
   body: string;
   attachment?: EmailAttachment | null;
+  // ── threading, for follow-ups ────────────────────────────────────────────
+  /** Put this message on an existing conversation instead of starting one. */
+  threadId?: string | null;
+  /** RFC822 Message-ID being replied to, so clients other than Gmail thread it. */
+  inReplyTo?: string | null;
+  // ── bookkeeping carried through to the outbox record ─────────────────────
+  trackId?: TrackId;
+  autonomous?: boolean;
+  followUpOf?: string | null;
+  followUpNumber?: number;
 }
 
 export interface SendResult {
   method: OutboxEntry['method'];
   status: OutboxEntry['status'];
   detail: string | null;
+  /** Set by providers that can report where the message landed. */
+  threadId?: string | null;
+  messageId?: string | null;
 }
 
 // ── MIME helpers ────────────────────────────────────────────────────────────
@@ -66,6 +80,7 @@ function buildMime(opts: {
   body: string;
   replyTo?: string;
   attachment?: EmailAttachment | null;
+  inReplyTo?: string | null;
 }): string {
   const headers = [
     `From: ${headerSafe(opts.from)}`,
@@ -73,6 +88,11 @@ function buildMime(opts: {
     opts.cc?.length ? `Cc: ${opts.cc.map(headerSafe).join(', ')}` : null,
     opts.replyTo ? `Reply-To: ${headerSafe(opts.replyTo)}` : null,
     `Subject: ${encodeHeader(opts.subject)}`,
+    // Gmail threads by its own thread id, but every other client threads by
+    // these. Without them a follow-up arrives in the professor's inbox as an
+    // unconnected second email, which reads as a stranger emailing twice.
+    opts.inReplyTo ? `In-Reply-To: ${headerSafe(opts.inReplyTo)}` : null,
+    opts.inReplyTo ? `References: ${headerSafe(opts.inReplyTo)}` : null,
     'MIME-Version: 1.0',
   ].filter(Boolean) as string[];
 
@@ -106,6 +126,89 @@ function buildMime(opts: {
 }
 
 // ── providers ───────────────────────────────────────────────────────────────
+
+/**
+ * Read back the RFC822 Message-ID Gmail assigned to a message we just sent, so
+ * a later follow-up can quote it in In-Reply-To. Best effort: threading is an
+ * improvement on the follow-up, not a precondition for having sent anything.
+ */
+async function readMessageId(token: string, id: string): Promise<string | null> {
+  try {
+    const res = await fetch(
+      `https://gmail.googleapis.com/gmail/v1/users/me/messages/${encodeURIComponent(id)}?format=metadata&metadataHeaders=Message-ID`,
+      { headers: { Authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(10000) }
+    );
+    if (!res.ok) return null;
+    const msg = (await res.json()) as { payload?: { headers?: { name: string; value: string }[] } };
+    return msg.payload?.headers?.find((h) => h.name.toLowerCase() === 'message-id')?.value ?? null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Send from the university account the sender connected on the settings page.
+ *
+ * This runs ahead of every other provider and, once an account is connected,
+ * is the only one allowed to run at all (see sendEmail). A cold email that
+ * arrives from a personal Gmail instead of a .edu address is a different email
+ * as far as the professor reading it is concerned, so falling back to another
+ * mailbox when this one is misconfigured would be the wrong kind of helpful.
+ */
+async function sendViaSchoolGmail(req: SendRequest): Promise<SendResult | null> {
+  let auth;
+  try {
+    auth = await getAccessToken(req.userId);
+  } catch (err) {
+    // Connected but unusable: expired grant, revoked access, missing server
+    // credentials. Surface it rather than silently sending as someone else.
+    return { method: 'school-gmail', status: 'failed', detail: String(err instanceof Error ? err.message : err).slice(0, 300) };
+  }
+  if (!auth) return null; // nothing connected — the older providers may apply
+
+  try {
+    const mime = buildMime({
+      // "me" resolves to the authorised account, so the From address is always
+      // the school one and cannot drift from what the settings page displays.
+      from: `${req.fromName} <${auth.email}>`,
+      to: req.to,
+      cc: req.cc,
+      subject: req.subject,
+      body: req.body,
+      replyTo: req.replyTo,
+      attachment: req.attachment,
+      inReplyTo: req.inReplyTo,
+    });
+    const res = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${auth.token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        raw: Buffer.from(mime).toString('base64url'),
+        ...(req.threadId ? { threadId: req.threadId } : {}),
+      }),
+      signal: AbortSignal.timeout(30000),
+    });
+    if (!res.ok) {
+      return {
+        method: 'school-gmail',
+        status: 'failed',
+        detail: `Gmail API ${res.status}: ${(await res.text()).slice(0, 300)}`,
+      };
+    }
+    const sent = (await res.json()) as { id?: string; threadId?: string };
+    return {
+      method: 'school-gmail',
+      status: 'sent',
+      detail: `Sent from ${auth.email}${req.attachment ? ` with ${req.attachment.fileName} attached` : ''}${
+        req.cc?.length ? `, copying ${req.cc.join(', ')}` : ''
+      }`,
+      threadId: sent.threadId ?? req.threadId ?? null,
+      messageId: sent.id ? await readMessageId(auth.token, sent.id) : null,
+    };
+  } catch (err) {
+    return { method: 'school-gmail', status: 'failed', detail: String(err).slice(0, 300) };
+  }
+}
 
 /**
  * Send as the signed-in user via the Gmail API, using the Google OAuth access
@@ -241,7 +344,14 @@ export async function sendEmail(req: SendRequest): Promise<OutboxEntry> {
     : req.subject;
 
   const attempt = { ...req, to: effectiveTo, cc: effectiveCc, subject };
+
+  // The school account, when one is connected, is the only account allowed to
+  // send. Whatever it answers stands: a failure here is reported as a failure
+  // rather than retried through SMTP or a personal Gmail, because the address
+  // an email arrives from is part of the email.
+  const school = await sendViaSchoolGmail(attempt);
   const result: SendResult =
+    school ??
     (await sendViaClerkGmail(attempt)) ??
     (await sendViaSmtp(attempt)) ??
     (await sendViaResend(attempt)) ??
@@ -250,7 +360,7 @@ export async function sendEmail(req: SendRequest): Promise<OutboxEntry> {
       status: 'queued',
       detail: `No email credentials configured, so this was saved to the local outbox${
         req.attachment ? ` (${req.attachment.fileName} would be attached)` : ''
-      }. Configure Clerk Google OAuth, SMTP_*, or RESEND_API_KEY to send for real.`,
+      }. Connect your school account on the settings page, or configure SMTP_* or RESEND_API_KEY.`,
     } satisfies SendResult);
 
   const entry: OutboxEntry = {
@@ -267,6 +377,15 @@ export async function sendEmail(req: SendRequest): Promise<OutboxEntry> {
     status: result.status,
     detail: result.detail,
     createdAt: new Date().toISOString(),
+    // Threading: prefer what the provider reported, falling back to the thread
+    // we were asked to join so a follow-up chain does not break when the
+    // provider answers without one.
+    threadId: result.threadId ?? req.threadId ?? null,
+    rfcMessageId: result.messageId ?? null,
+    trackId: req.trackId,
+    autonomous: req.autonomous === true,
+    followUpOf: req.followUpOf ?? null,
+    followUpNumber: req.followUpNumber,
   };
   // One row per email: appending to a shared array loses records when two
   // sends overlap.

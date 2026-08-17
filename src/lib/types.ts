@@ -104,6 +104,13 @@ export interface ContactLookup {
   fetchedAt: string;
 }
 
+/**
+ * The research directions the sender is pursuing. Declared here rather than in
+ * tracks.ts so records that carry a track (outbox entries, campaign targets)
+ * can be typed without importing the classifier they have no use for.
+ */
+export type TrackId = 'cs-core' | 'cs-bio' | 'cs-robotics' | 'cs-other';
+
 export interface OutboxEntry {
   id: string;
   userId: string;
@@ -114,10 +121,27 @@ export interface OutboxEntry {
   subject: string;
   body: string;
   attachmentName?: string | null;
-  method: 'gmail-oauth' | 'smtp' | 'resend' | 'demo-outbox';
+  method: 'school-gmail' | 'gmail-oauth' | 'smtp' | 'resend' | 'demo-outbox';
   status: 'sent' | 'queued' | 'failed';
   detail: string | null;
   createdAt: string;
+  // ── added for campaigns and follow-ups; all optional so entries written
+  //    before they existed keep loading.
+  /** Gmail's thread id, so a follow-up lands on the original conversation
+   *  rather than starting a second one the professor has to reconcile. */
+  threadId?: string | null;
+  /** The RFC822 Message-ID, quoted in a follow-up's In-Reply-To so mail clients
+   *  other than Gmail also thread the nudge onto the original. */
+  rfcMessageId?: string | null;
+  /** Which track this email belonged to, for the per-track approval gate. */
+  trackId?: TrackId;
+  /** True when a routine sent this unattended, false when a human pressed send.
+   *  The gate counts only the reviewed ones. */
+  autonomous?: boolean;
+  /** The outbox entry this one is a nudge for, when it is a follow-up. */
+  followUpOf?: string | null;
+  /** How many nudges have gone out on this thread, including this one. */
+  followUpNumber?: number;
 }
 
 export interface GeneratedDraft {

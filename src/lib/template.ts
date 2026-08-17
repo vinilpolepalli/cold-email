@@ -1,6 +1,7 @@
 import { FocusPaper, GeneratedDraft, ResearcherProfile, ResearcherWorks, UserProfile } from './types';
 import { NimAuth, extractJson, nimAvailable, nimChat } from './nim';
 import { EmailRule, rulesPrompt } from './preferences';
+import { EmailTemplate, templatePrompt } from './user-template';
 import { pickRelevantPublication } from './publications';
 import {
   cleanHeadline,
@@ -1047,15 +1048,23 @@ export async function generateDraft(
   // What the sender has told the AI about their emails on earlier drafts. The
   // whole point of keeping those instructions is that they apply here without
   // being retyped.
-  rules?: EmailRule[]
+  rules?: EmailRule[],
+  // The sender's own email, when they have supplied one. It shapes the draft
+  // more than anything else here, so it goes last in the system prompt where
+  // it outranks the built-in guidance.
+  template?: EmailTemplate | null
 ): Promise<GeneratedDraft> {
   const paper = focus ?? (works ? focusFromWorks(works, user) : null);
   if (!nimAvailable(nimAuth)) return templateDraft(researcher, user, works, paper);
   const standing = rulesPrompt(rules ?? []);
+  const shape = templatePrompt(template ?? null);
   try {
     const reply = await nimChat(
       [
-        { role: 'system', content: standing ? `${DRAFT_SYSTEM}\n\n${standing}` : DRAFT_SYSTEM },
+        {
+          role: 'system',
+          content: [DRAFT_SYSTEM, standing, shape].filter(Boolean).join('\n\n'),
+        },
         {
           role: 'user',
           content: JSON.stringify({

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { EmailRule } from "@/lib/preferences";
 import { RulesPanel } from "@/components/rules-panel";
+import { TemplatePanel } from "@/components/template-panel";
 
 interface SettingsView {
   nimKeyMasked: string | null;
@@ -283,6 +284,12 @@ export default function SettingsPage() {
           Anything you ask the AI to change while composing is kept here and applied to every email you write after it.
         </p>
         <RulesPanel rules={rules} onChange={setRules} allowAdd />
+      </div>
+
+      {/* The sender's own email. Rules describe a preference; this shows one,
+          which is a far stronger signal for the draft than any instruction. */}
+      <div className="mt-6">
+        <TemplatePanel />
       </div>
     </div>
   );
