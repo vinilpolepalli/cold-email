@@ -7,8 +7,10 @@ import {
   updateTarget,
   nextSendSlot,
 } from '@/lib/campaign';
-import { getCurrentUserId } from '@/lib/user';
+import { getCurrentUserId, getUserProfile } from '@/lib/user';
 import { recordReviewedSend } from '@/lib/tracks';
+import { createSchoolGmailDraft, isSendableAddress, validateRecipients } from '@/lib/send';
+import { getResumeFile } from '@/lib/resume-file';
 
 export const dynamic = 'force-dynamic';
 
@@ -105,6 +107,40 @@ export async function POST(req: NextRequest) {
     case 'replied': {
       const updated = await updateTarget(userId, researcherId, { status: 'replied', note: 'They replied' });
       return NextResponse.json({ target: updated });
+    }
+
+    // Copy the draft into the school mailbox so it can be read as an email
+    // rather than as a form field — with the resume attached, which is the one
+    // part of the message this screen cannot show. Storing a draft is not
+    // sending: nothing here touches the queue's status or its schedule.
+    case 'draft-to-mailbox': {
+      if (!target.subject || !target.body || !target.to) {
+        return NextResponse.json({ error: 'This target has no draft yet' }, { status: 400 });
+      }
+      const addresses = validateRecipients(target.to, target.cc);
+      if ('error' in addresses) return NextResponse.json({ error: addresses.error }, { status: 400 });
+
+      const [user, resume] = await Promise.all([getUserProfile(userId), getResumeFile(userId)]);
+      if (!user) return NextResponse.json({ error: 'Finish onboarding first' }, { status: 400 });
+
+      const result = await createSchoolGmailDraft({
+        userId,
+        to: addresses.to,
+        cc: addresses.cc,
+        fromName: user.name,
+        replyTo: user.email && isSendableAddress(user.email) ? user.email : undefined,
+        subject: typeof body.subject === 'string' ? body.subject.slice(0, MAX_SUBJECT) : target.subject,
+        body: typeof body.body === 'string' ? body.body.slice(0, MAX_BODY) : target.body,
+        attachment: resume
+          ? { fileName: resume.fileName, contentType: resume.contentType, base64: resume.base64 }
+          : null,
+      });
+      if (!result.ok) return NextResponse.json({ error: result.error }, { status: 502 });
+
+      const updated = await updateTarget(userId, researcherId, {
+        note: `Draft in ${result.email}${result.attached ? ` with ${result.attached} attached` : ' — no resume on file'}`,
+      });
+      return NextResponse.json({ target: updated, draft: result });
     }
 
     default:

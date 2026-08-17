@@ -1007,7 +1007,7 @@
     "title": "Edith and Benjamin Geisinger Professor of Government and of Statistics",
     "school": "Harvard",
     "department": "Department of Statistics and Department of Government",
-    "email": null,
+    "email": "imai@harvard.edu",
     "website": "https://imai.fas.harvard.edu",
     "researchAreas": [
       "causal inference",
@@ -1016,7 +1016,8 @@
       "survey research"
     ],
     "bio": "Research interests are causal inference, program evaluation, survey research, and applied Bayesian statistics in the social sciences.",
-    "sourceUrl": "https://statistics.fas.harvard.edu/people/kosuke-imai"
+    "sourceUrl": "https://statistics.fas.harvard.edu/people/kosuke-imai",
+    "emailSource": "https://imai.fas.harvard.edu"
   },
   {
     "id": "res_krzysztof-z-gajos_harvard",
@@ -3115,7 +3116,7 @@
     "title": "Associate Professor of Media Arts and Sciences; AT&T Career Development Professor",
     "school": "MIT",
     "department": "MIT Media Lab, Program in Media Arts and Sciences",
-    "email": null,
+    "email": "deblina@mit.edu",
     "website": "https://web.mit.edu/deblina-sarkar/",
     "researchAreas": [
       "nanoelectronics",
@@ -3124,7 +3125,8 @@
       "bioelectronics"
     ],
     "bio": "Heads the Nano-Cybernetic Biotrek research group, fusing engineering, applied physics, and biology to bridge nanotechnology and synthetic biology. One main direction is developing ultra-low power nanoelectronic devices as energy efficient hardware for artificial intelligence.",
-    "sourceUrl": "https://www.media.mit.edu/people/deblina/overview/"
+    "sourceUrl": "https://www.media.mit.edu/people/deblina/overview/",
+    "emailSource": "https://web.mit.edu/deblina-sarkar/contact.html"
   },
   {
     "id": "res_devavrat-shah_mit",
@@ -10613,7 +10615,7 @@
     "title": "Assistant Professor of Genetics and of Biomedical Data Science",
     "school": "Stanford",
     "department": "Department of Biomedical Data Science",
-    "email": null,
+    "email": "ioannid@stanford.edu",
     "website": null,
     "researchAreas": [
       "precision health",
@@ -10622,7 +10624,8 @@
       "ai in healthcare"
     ],
     "bio": "Research focuses on the design of algorithms and application of computational methods for problems in precision health, genomics, clinical data science, and AI in healthcare. He earned his PhD from Stanford in Computational and Mathematical Engineering.",
-    "sourceUrl": "https://profiles.stanford.edu/alexander-ioannidis"
+    "sourceUrl": "https://profiles.stanford.edu/alexander-ioannidis",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22ioannidis%20a%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_alison-marsden_stanford",
@@ -10630,7 +10633,7 @@
     "title": "Douglass M. and Nola Leishman Professor of Cardiovascular Diseases, Professor of Pediatrics (Cardiology) and of Bioengineering",
     "school": "Stanford",
     "department": "Bioengineering",
-    "email": null,
+    "email": "amarsden@stanford.edu",
     "website": null,
     "researchAreas": [
       "computational modeling",
@@ -10639,7 +10642,8 @@
       "virtual surgery"
     ],
     "bio": "The Cardiovascular Biomechanics Computation Lab develops novel computational methods for the study of cardiovascular disease progression, surgical methods and medical devices. The group uses virtual surgery to design novel surgical concepts for children born with heart defects.",
-    "sourceUrl": "https://profiles.stanford.edu/alison-marsden"
+    "sourceUrl": "https://profiles.stanford.edu/alison-marsden",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22marsden%20alison%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_ami-bhatt_stanford",
@@ -10647,7 +10651,7 @@
     "title": "Professor of Medicine (Hematology) and of Genetics",
     "school": "Stanford",
     "department": "Genetics",
-    "email": null,
+    "email": "asbhatt@stanford.edu",
     "website": null,
     "researchAreas": [
       "microbiome genomics",
@@ -10656,7 +10660,8 @@
       "sequencing methods"
     ],
     "bio": "Her lab characterizes the dynamics of the microbiome in patients with noncommunicable diseases and explores how microbiome changes associate with clinical outcomes. The group works to better understand what microbial genes do and how they are regulated.",
-    "sourceUrl": "https://profiles.stanford.edu/ami-bhatt"
+    "sourceUrl": "https://profiles.stanford.edu/ami-bhatt",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22bhatt%20ami%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_amin-saberi_stanford",
@@ -10747,7 +10752,7 @@
     "title": "Associate Professor of Pathology",
     "school": "Stanford",
     "department": "Pathology",
-    "email": null,
+    "email": "satpathy@stanford.edu",
     "website": null,
     "researchAreas": [
       "computational genomics",
@@ -10756,7 +10761,8 @@
       "single-cell analysis"
     ],
     "bio": "His lab works at the interface of immunology, cancer biology and genomics, leveraging high-throughput genomic technologies to study the tumor-specific T cell response. His research combines expertise in immunology, high-throughput genomics and computation.",
-    "sourceUrl": "https://profiles.stanford.edu/ansuman-satpathy"
+    "sourceUrl": "https://profiles.stanford.edu/ansuman-satpathy",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22satpathy%20ansuman%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_art-b-owen_stanford",
@@ -10764,7 +10770,7 @@
     "title": "Max H. Stein Professor, Professor of Statistics",
     "school": "Stanford",
     "department": "Department of Statistics",
-    "email": null,
+    "email": "owen@stanford.edu",
     "website": "https://artowen.su.domains",
     "researchAreas": [
       "monte carlo",
@@ -10774,7 +10780,8 @@
       "transposable data"
     ],
     "bio": "Owen's research covers Monte Carlo and quasi-Monte Carlo methods, empirical likelihood, bioinformatics, and matrix/transposable data. He was elected to the National Academy of Sciences in 2024 and named a SIAM Fellow the same year.",
-    "sourceUrl": "https://statistics.stanford.edu/people/art-b-owen"
+    "sourceUrl": "https://statistics.stanford.edu/people/art-b-owen",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22owen%20art%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_ashish-goel_stanford",
@@ -10900,7 +10907,7 @@
     "title": "Assistant Professor of Chemical Engineering; Dieter Schwarz Foundation Stanford Data Science Faculty Fellow",
     "school": "Stanford",
     "department": "Department of Chemical Engineering",
-    "email": null,
+    "email": "brianhie@stanford.edu",
     "website": null,
     "researchAreas": [
       "machine learning",
@@ -10909,7 +10916,8 @@
       "protein science"
     ],
     "bio": "Supervises the Laboratory of Evolutionary Design, conducting research at the intersection of biology and machine learning. He is also an Innovation Investigator at the Arc Institute and an HAI Faculty Affiliate.",
-    "sourceUrl": "https://profiles.stanford.edu/brian-hie"
+    "sourceUrl": "https://profiles.stanford.edu/brian-hie",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22hie%20brian%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_brian-trippe_stanford",
@@ -10979,23 +10987,6 @@
     ],
     "bio": "Farhat's research spans fluid-structure interaction, computational fluid dynamics, structural mechanics, acoustics, supercomputing, model order reduction, and physics-based machine learning. He directed the Army High Performance Computing Research Center from 2007 to 2018.",
     "sourceUrl": "https://icme.stanford.edu/people/charbel-farhat"
-  },
-  {
-    "id": "res_chelsea-finn_stanford",
-    "name": "Chelsea Finn",
-    "title": "Assistant Professor of Computer Science and of Electrical Engineering",
-    "school": "Stanford",
-    "department": "Computer Science",
-    "email": "cbfinn@cs.stanford.edu",
-    "website": "http://ai.stanford.edu/~cbfinn/",
-    "researchAreas": [
-      "machine learning",
-      "robotics",
-      "reinforcement learning",
-      "meta-learning"
-    ],
-    "bio": "Her research enables robots and other agents to develop broadly intelligent behavior through learning and interaction, at the intersection of machine learning and robotic control. Topics include end-to-end learning of visual perception and manipulation, deep reinforcement learning from autonomously collected data, and meta-learning.",
-    "sourceUrl": "https://www.cs.stanford.edu/people/chelsea-finn"
   },
   {
     "id": "res_chiara-sabatti_stanford",
@@ -11087,7 +11078,7 @@
     "title": "Professor of Radiology (Molecular Imaging Program at Stanford/Nuclear Medicine) and, by courtesy, of Physics, of Electrical Engineering and of Bioengineering",
     "school": "Stanford",
     "department": "Radiology",
-    "email": null,
+    "email": "cslevin@stanford.edu",
     "website": null,
     "researchAreas": [
       "imaging instrumentation",
@@ -11096,7 +11087,8 @@
       "pet systems"
     ],
     "bio": "He directs the Molecular Imaging Instrumentation Laboratory, developing novel instrumentation and software algorithms for in vivo imaging of cellular and molecular signatures of disease. The projects push sensitivity and spatial, spectral and temporal resolution of imaging systems.",
-    "sourceUrl": "https://profiles.stanford.edu/craig-levin"
+    "sourceUrl": "https://profiles.stanford.edu/craig-levin",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22levin%20craig%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_curtis-langlotz_stanford",
@@ -11137,7 +11129,7 @@
     "title": "William Benjamin Scott & Luna M. Scott Professor of Law, Professor of Political Science, and Professor, by courtesy, of Computer Science",
     "school": "Stanford",
     "department": "Stanford Law School; Computer Science (by courtesy)",
-    "email": null,
+    "email": "dho@law.stanford.edu",
     "website": null,
     "researchAreas": [
       "ai and law",
@@ -11146,7 +11138,8 @@
       "responsible ai"
     ],
     "bio": "Directs Stanford's Regulation, Evaluation, and Governance Lab (RegLab) and is a Senior Fellow at the Stanford Institute for Human-Centered AI. He has served on the National Artificial Intelligence Advisory Commission (NAIAC), advising the White House on artificial intelligence.",
-    "sourceUrl": "https://www.cs.stanford.edu/people/daniel-ho"
+    "sourceUrl": "https://www.cs.stanford.edu/people/daniel-ho",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22ho%20daniel%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_daniel-yamins_stanford",
@@ -11338,7 +11331,7 @@
     "title": "Ben Davenport and Lucy Zhang Professor of Medicine, Professor of Medicine (Center for Digital Health) and, by courtesy, of Epidemiology and Population Health",
     "school": "Stanford",
     "department": "Medicine (Center for Digital Health)",
-    "email": null,
+    "email": "linos@stanford.edu",
     "website": null,
     "researchAreas": [
       "digital health",
@@ -11347,7 +11340,8 @@
       "population health data"
     ],
     "bio": "She is Director of the Stanford Center for Digital Health and Associate Dean for Research at Stanford Medicine. Her research focuses on the use of technology in health, dermatology, public health and cancer prevention.",
-    "sourceUrl": "https://profiles.stanford.edu/eleni-linos"
+    "sourceUrl": "https://profiles.stanford.edu/eleni-linos",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22linos%20eleni%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_ellen-vitercik_stanford",
@@ -11439,7 +11433,7 @@
     "title": "Associate Professor of Bioengineering and of Pathology",
     "school": "Stanford",
     "department": "Department of Bioengineering",
-    "email": null,
+    "email": "emmalu@stanford.edu",
     "website": null,
     "researchAreas": [
       "bioimaging",
@@ -11448,7 +11442,8 @@
       "cell biology"
     ],
     "bio": "At the intersection of bioimaging, proteomics, and artificial intelligence, her research aims to define the spatiotemporal organization of the human proteome at cellular and subcellular levels. She directs the Cell Atlas of the Human Protein Atlas and works toward virtual cell models that simulate cell behavior.",
-    "sourceUrl": "https://profiles.stanford.edu/emma-lundberg"
+    "sourceUrl": "https://profiles.stanford.edu/emma-lundberg",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22lundberg%20emma%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_emmanuel-j-cand-s_stanford",
@@ -11474,7 +11469,7 @@
     "title": "Roger and Joelle Burnell Professor of Genomics and Precision Health; Professor of Medicine (Cardiovascular Medicine), of Genetics and of Biomedical Data Science; Associate Dean, School of Medicine",
     "school": "Stanford",
     "department": "Department of Medicine (Cardiovascular Medicine)",
-    "email": null,
+    "email": "euan@stanford.edu",
     "website": "http://ashleylab.stanford.edu",
     "researchAreas": [
       "precision medicine",
@@ -11483,7 +11478,8 @@
       "big data"
     ],
     "bio": "The Ashley lab focuses on precision medicine, developing methods for the interpretation of whole-genome sequencing data to improve diagnosis of genetic disease and personalize the practice of medicine. The lab embraces big data questions and systems approaches to biology, including analysis of network graphs.",
-    "sourceUrl": "https://med.stanford.edu/profiles/euan-ashley"
+    "sourceUrl": "https://med.stanford.edu/profiles/euan-ashley",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22ashley%20euan%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_fei-fei-li_stanford",
@@ -11508,7 +11504,7 @@
     "title": "Professor of Developmental Biology, of Computer Science and of Pediatrics (Genetics)",
     "school": "Stanford",
     "department": "Developmental Biology",
-    "email": null,
+    "email": "bejerano@stanford.edu",
     "website": null,
     "researchAreas": [
       "machine learning",
@@ -11518,7 +11514,8 @@
       "genome regulation"
     ],
     "bio": "The Bejerano lab spans data science, genomic variants of large effect, cryptogenomics and machine learning with electronic health records. The group has done seminal work on automating monogenic patient diagnosis and reanalysis.",
-    "sourceUrl": "https://profiles.stanford.edu/gill-bejerano"
+    "sourceUrl": "https://profiles.stanford.edu/gill-bejerano",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22bejerano%20gill%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_grant-m-rotskoff_stanford",
@@ -11526,7 +11523,7 @@
     "title": "Assistant Professor of Chemistry",
     "school": "Stanford",
     "department": "Institute for Computational and Mathematical Engineering",
-    "email": null,
+    "email": "rotskoff@stanford.edu",
     "website": "https://profiles.stanford.edu/232351",
     "researchAreas": [
       "machine learning for physical systems",
@@ -11536,7 +11533,8 @@
       "statistical physics"
     ],
     "bio": "Rotskoff investigates nonequilibrium dynamics of living matter, from molecular to cellular scales. He applies machine learning and statistical techniques to sampling and coarse-graining in computational chemistry, including reinforcement learning for nonequilibrium control.",
-    "sourceUrl": "https://icme.stanford.edu/people/grant-rotskoff"
+    "sourceUrl": "https://icme.stanford.edu/people/grant-rotskoff",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22rotskoff%20grant%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_greg-zaharchuk_stanford",
@@ -11544,7 +11542,7 @@
     "title": "Professor of Radiology (Neuroimaging and Neurointervention)",
     "school": "Stanford",
     "department": "Radiology",
-    "email": null,
+    "email": "gregz@stanford.edu",
     "website": null,
     "researchAreas": [
       "medical imaging ai",
@@ -11554,7 +11552,8 @@
       "pet/mri"
     ],
     "bio": "His research focuses on improving medical image value using AI and on outcome prediction with AI. He also works on imaging of cerebral hemodynamics with MRI and CT and on PET/MRI in neuroradiology.",
-    "sourceUrl": "https://profiles.stanford.edu/greg-zaharchuk"
+    "sourceUrl": "https://profiles.stanford.edu/greg-zaharchuk",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22zaharchuk%20greg%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_gregory-valiant_stanford",
@@ -11596,7 +11595,7 @@
     "title": "Assistant Professor of Urology",
     "school": "Stanford",
     "department": "Urology",
-    "email": null,
+    "email": "guolanlu@stanford.edu",
     "website": null,
     "researchAreas": [
       "spatial omics",
@@ -11606,7 +11605,8 @@
       "single-cell analysis"
     ],
     "bio": "The Lu Lab develops spatial omics and computational methods to measure, model and predict how cells, tissues and therapeutic agents interact in their native spatial context. Current areas include generative and foundation models for spatial and spatiotemporal omics analysis.",
-    "sourceUrl": "https://profiles.stanford.edu/guolan-lu"
+    "sourceUrl": "https://profiles.stanford.edu/guolan-lu",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22lu%20guolan%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_hanlee-p-ji_stanford",
@@ -11750,7 +11750,7 @@
     "title": "Associate Professor of Pathology",
     "school": "Stanford",
     "department": "Pathology",
-    "email": null,
+    "email": "jeannes@stanford.edu",
     "website": null,
     "researchAreas": [
       "machine learning",
@@ -11759,7 +11759,8 @@
       "gastrointestinal pathology"
     ],
     "bio": "Her work covers gastrointestinal and pancreatobiliary pathology with emphasis on GI and pancreatic neoplasia and inflammatory bowel disease. A major focus is the application of machine learning to digital pathology.",
-    "sourceUrl": "https://profiles.stanford.edu/jeanne-shen"
+    "sourceUrl": "https://profiles.stanford.edu/jeanne-shen",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22shen%20jeanne%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_jeannette-bohg_stanford",
@@ -11784,7 +11785,7 @@
     "title": "Associate Professor (Research) of Radiology (Radiological Sciences Laboratory)",
     "school": "Stanford",
     "department": "Radiology",
-    "email": null,
+    "email": "mcnabj@stanford.edu",
     "website": null,
     "researchAreas": [
       "diffusion mri",
@@ -11793,7 +11794,8 @@
       "neuroimaging biomarkers"
     ],
     "bio": "Her research develops MRI methods that probe brain tissue microstructure, requiring new contrast mechanisms, encoding and reconstruction schemes, and brain tissue modeling. Applications include neuronavigation, neurosurgical planning and biomarkers for brain development and disease.",
-    "sourceUrl": "https://profiles.stanford.edu/jennifer-mcnab"
+    "sourceUrl": "https://profiles.stanford.edu/jennifer-mcnab",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22mcnab%20jennifer%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_jeremy-dahl_stanford",
@@ -11801,7 +11803,7 @@
     "title": "Professor of Radiology (Pediatric Radiology)",
     "school": "Stanford",
     "department": "Radiology",
-    "email": null,
+    "email": "jeremy.dahl@stanford.edu",
     "website": null,
     "researchAreas": [
       "ultrasound beamforming",
@@ -11810,7 +11812,8 @@
       "computational imaging"
     ],
     "bio": "His ultrasound engineering laboratory develops ultrasonic beamforming and image reconstruction methods for diagnostic imaging. The lab developed a differentiable beamforming technique that estimates local sound speed to correct distortion in ultrasound images.",
-    "sourceUrl": "https://profiles.stanford.edu/jeremy-dahl"
+    "sourceUrl": "https://profiles.stanford.edu/jeremy-dahl",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22dahl%20jeremy%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_jiajun-wu_stanford",
@@ -11887,7 +11890,7 @@
     "title": "Bing Professor of Population Studies, Professor of Genetics and of Biology",
     "school": "Stanford",
     "department": "Genetics",
-    "email": null,
+    "email": "pritch@stanford.edu",
     "website": null,
     "researchAreas": [
       "statistical genetics",
@@ -11897,7 +11900,8 @@
       "complex traits"
     ],
     "bio": "His group develops new statistical methods for genetic analysis and applies them to genomic data from humans and other organisms. His early contributions include the Structure algorithm for inferring population structure.",
-    "sourceUrl": "https://profiles.stanford.edu/jonathan-pritchard"
+    "sourceUrl": "https://profiles.stanford.edu/jonathan-pritchard",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22pritchard%20jonathan%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_jonathan-taylor_stanford",
@@ -12024,7 +12028,7 @@
     "title": "Professor (Research) of Psychiatry and Behavioral Sciences and, by courtesy, of Electrical Engineering",
     "school": "Stanford",
     "department": "Psychiatry and Behavioral Sciences",
-    "email": null,
+    "email": "kpohl@stanford.edu",
     "website": null,
     "researchAreas": [
       "machine learning",
@@ -12033,7 +12037,8 @@
       "biomedical phenotyping"
     ],
     "bio": "His laboratory is founded on computational science aimed at identifying biomedical phenotypes to improve understanding, diagnosis and treatment of neuropsychiatric disorders. Phenotypes are discovered by unbiased machine learning searches across biological, neuroimaging and neuropsychological data.",
-    "sourceUrl": "https://profiles.stanford.edu/kilian-pohl"
+    "sourceUrl": "https://profiles.stanford.edu/kilian-pohl",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22pohl%20kilian%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_koen-nieman_stanford",
@@ -12041,7 +12046,7 @@
     "title": "Professor of Medicine (Cardiovascular Medicine) and of Radiology (CV Imaging)",
     "school": "Stanford",
     "department": "Medicine (Cardiovascular Medicine)",
-    "email": null,
+    "email": "knieman@stanford.edu",
     "website": null,
     "researchAreas": [
       "cardiac ct",
@@ -12050,7 +12055,8 @@
       "cardiovascular imaging"
     ],
     "bio": "He investigates advanced cardiac imaging techniques including the development and technical validation of functional CT applications for ischemic heart disease. His projects include CT myocardial perfusion imaging and CTA-derived fractional flow reserve.",
-    "sourceUrl": "https://profiles.stanford.edu/koen-nieman"
+    "sourceUrl": "https://profiles.stanford.edu/koen-nieman",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22nieman%20koen%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_kunle-olukotun_stanford",
@@ -12074,7 +12080,7 @@
     "title": "Professor of Bioengineering and of Electrical Engineering",
     "school": "Stanford",
     "department": "Bioengineering",
-    "email": null,
+    "email": "boahen@stanford.edu",
     "website": null,
     "researchAreas": [
       "neuromorphic engineering",
@@ -12083,7 +12089,8 @@
       "brain-inspired computing"
     ],
     "bio": "His group analyzes neural behavior computationally to elucidate principles of neural design and synthesizes neuromorphic electronic systems that scale energy use as efficiently as the brain. He founded the Brains in Silicon Lab to link neuronal biophysics to cognitive behavior through computational modeling.",
-    "sourceUrl": "https://profiles.stanford.edu/kwabena-boahen"
+    "sourceUrl": "https://profiles.stanford.edu/kwabena-boahen",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22boahen%20kwabena%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_lars-steinmetz_stanford",
@@ -12091,7 +12098,7 @@
     "title": "Dieter Schwarz Foundation Endowed Professor of Genetics",
     "school": "Stanford",
     "department": "Genetics",
-    "email": null,
+    "email": "lars.steinmetz@stanford.edu",
     "website": null,
     "researchAreas": [
       "genomics technologies",
@@ -12100,7 +12107,8 @@
       "computational genomics"
     ],
     "bio": "His research develops genomics technologies and approaches to study the molecular processes underlying complex traits of health and disease. The lab investigates how genetic variation governs phenotypic diversity.",
-    "sourceUrl": "https://profiles.stanford.edu/lars-steinmetz"
+    "sourceUrl": "https://profiles.stanford.edu/lars-steinmetz",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22steinmetz%20lars%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_lei-xing_stanford",
@@ -12108,7 +12116,7 @@
     "title": "Jacob Haimson and Sarah S. Donaldson Professor of Radiation Oncology and Professor, by courtesy, of Electrical Engineering",
     "school": "Stanford",
     "department": "Radiation Oncology",
-    "email": null,
+    "email": "lei@stanford.edu",
     "website": null,
     "researchAreas": [
       "artificial intelligence in medicine",
@@ -12118,7 +12126,8 @@
       "clinical decision making"
     ],
     "bio": "He directs the Medical Physics Division of the Radiation Oncology Department at Stanford. His research focuses on artificial intelligence in medicine, medical imaging, treatment planning and image-guided interventions.",
-    "sourceUrl": "https://profiles.stanford.edu/lei-xing"
+    "sourceUrl": "https://profiles.stanford.edu/lei-xing",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22xing%20lei%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_leila-wehbe_stanford",
@@ -12229,7 +12238,7 @@
     "title": "Associate Professor (Research) of Psychiatry and Behavioral Sciences (Interdisciplinary Brain Science Research)",
     "school": "Stanford",
     "department": "Psychiatry and Behavioral Sciences",
-    "email": null,
+    "email": "saggar@stanford.edu",
     "website": null,
     "researchAreas": [
       "computational neuropsychiatry",
@@ -12238,7 +12247,8 @@
       "computational modeling"
     ],
     "bio": "He directs the Brain Dynamics Lab, whose goal is to develop computational methods that anchor psychiatric diagnosis in biological features such as neural circuits and spatiotemporal neurodynamics. His lab is funded through an NIH Director's New Innovator Award and an NIMH R01.",
-    "sourceUrl": "https://profiles.stanford.edu/manish-saggar"
+    "sourceUrl": "https://profiles.stanford.edu/manish-saggar",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22saggar%20manish%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_manisha-desai_stanford",
@@ -12264,7 +12274,7 @@
     "title": "Associate Professor of Aeronautics and Astronautics; Associate Professor, by courtesy, of Electrical Engineering and of Computer Science; Senior Fellow at the Precourt Institute for Energy",
     "school": "Stanford",
     "department": "Institute for Computational and Mathematical Engineering",
-    "email": null,
+    "email": "pavone@stanford.edu",
     "website": "https://profiles.stanford.edu/46879",
     "researchAreas": [
       "autonomous systems",
@@ -12274,7 +12284,8 @@
       "mobility systems"
     ],
     "bio": "Pavone works on methodologies for the analysis, design, and control of autonomous systems, emphasizing self-driving cars, autonomous aerospace vehicles, and future mobility systems. He directs the Autonomous Systems Laboratory and the Center for Automotive Research at Stanford.",
-    "sourceUrl": "https://icme.stanford.edu/people/marco-pavone"
+    "sourceUrl": "https://icme.stanford.edu/people/marco-pavone",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22pavone%20marco%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_margaret-brandeau_stanford",
@@ -12282,7 +12293,7 @@
     "title": "Coleman F. Fung Professor in the School of Engineering; Professor of Health Policy, by courtesy",
     "school": "Stanford",
     "department": "Department of Management Science and Engineering",
-    "email": null,
+    "email": "brandeau@stanford.edu",
     "website": "https://profiles.stanford.edu/7904",
     "researchAreas": [
       "applied mathematical modeling",
@@ -12291,7 +12302,8 @@
       "economic modeling"
     ],
     "bio": "Brandeau develops applied mathematical and economic models to support health policy decisions. Recent research examines HIV and drug abuse prevention and treatment, control of the opioid epidemic, and responses to homelessness.",
-    "sourceUrl": "https://msande.stanford.edu/people/margaret-brandeau"
+    "sourceUrl": "https://msande.stanford.edu/people/margaret-brandeau",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22brandeau%20margaret%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_mark-musen_stanford",
@@ -12317,7 +12329,7 @@
     "title": "Shriram Chair of the Department of Bioengineering, Professor of Bioengineering; Professor, by courtesy, of Chemical and Systems Biology",
     "school": "Stanford",
     "department": "Institute for Computational and Mathematical Engineering",
-    "email": null,
+    "email": "mcovert@stanford.edu",
     "website": "https://www.covert.stanford.edu/",
     "researchAreas": [
       "computational modeling",
@@ -12326,7 +12338,8 @@
       "network modeling"
     ],
     "bio": "Covert's group builds computational models of complex biological processes and uses them to guide experimental programs. Their work covers metabolic, regulatory, and signaling networks, cell-cell interactions, and the dynamic behavior of NF-kappaB.",
-    "sourceUrl": "https://icme.stanford.edu/people/markus-covert"
+    "sourceUrl": "https://icme.stanford.edu/people/markus-covert",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22covert%20markus%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_markus-pelger_stanford",
@@ -12454,7 +12467,7 @@
     "title": "Assistant Professor of Radiology (Integrative Biomedical Imaging Informatics) and, by courtesy, of Urology and of Biomedical Data Science",
     "school": "Stanford",
     "department": "Department of Radiology",
-    "email": null,
+    "email": "mirabela.rusu@stanford.edu",
     "website": "http://rusulab.stanford.edu",
     "researchAreas": [
       "medical imaging",
@@ -12463,7 +12476,8 @@
       "machine learning"
     ],
     "bio": "Leads the Personalized Integrative Medicine Laboratory (PIMed), developing analytic methods for biomedical data integration with a particular interest in radiology-pathology fusion to create multi-scale representations of pathological conditions.",
-    "sourceUrl": "https://profiles.stanford.edu/mirabela-rusu"
+    "sourceUrl": "https://profiles.stanford.edu/mirabela-rusu",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22rusu%20mirabela%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_mohsen-bayati_stanford",
@@ -12558,7 +12572,7 @@
     "title": "Professor of Medicine (Computational Medicine) and of Biomedical Data Science; Chief Data Scientist, Stanford Health Care",
     "school": "Stanford",
     "department": "Department of Medicine (Computational Medicine)",
-    "email": null,
+    "email": "nigam@stanford.edu",
     "website": "http://shahlab.stanford.edu/",
     "researchAreas": [
       "clinical informatics",
@@ -12567,7 +12581,8 @@
       "predictive modeling"
     ],
     "bio": "His research group analyzes multiple types of health data — EHR, claims, wearables, weblogs, and patient blogs — to answer clinical questions, generate insights, and build predictive models for the learning health system.",
-    "sourceUrl": "https://med.stanford.edu/profiles/nigam-shah"
+    "sourceUrl": "https://med.stanford.edu/profiles/nigam-shah",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22shah%20nigam%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_nima-aghaeepour_stanford",
@@ -12609,7 +12624,7 @@
     "title": "Stanford Professor of Population Genetics and Society",
     "school": "Stanford",
     "department": "Institute for Computational and Mathematical Engineering",
-    "email": null,
+    "email": "noahr@stanford.edu",
     "website": "https://web.stanford.edu/group/rosenberglab",
     "researchAreas": [
       "population genetics",
@@ -12617,7 +12632,8 @@
       "mathematical biology"
     ],
     "bio": null,
-    "sourceUrl": "https://icme.stanford.edu/people/noah-rosenberg"
+    "sourceUrl": "https://icme.stanford.edu/people/noah-rosenberg",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22rosenberg%20noah%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_olivier-gevaert_stanford",
@@ -12725,7 +12741,7 @@
     "title": "Associate Professor of Bioengineering and of Genetics",
     "school": "Stanford",
     "department": "Bioengineering",
-    "email": null,
+    "email": "pfordyce@stanford.edu",
     "website": null,
     "researchAreas": [
       "biophysical modeling",
@@ -12735,7 +12751,8 @@
       "quantitative biochemistry"
     ],
     "bio": "Her laboratory develops and applies new microfluidic platforms for quantitative, high-throughput biophysics, biochemistry and single-cell genomics. The goal is to understand and eventually engineer molecular interactions by building and testing biophysical models.",
-    "sourceUrl": "https://profiles.stanford.edu/polly-fordyce"
+    "sourceUrl": "https://profiles.stanford.edu/polly-fordyce",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22fordyce%20polly%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_possu-huang_stanford",
@@ -12743,7 +12760,7 @@
     "title": "Assistant Professor of Bioengineering",
     "school": "Stanford",
     "department": "Bioengineering",
-    "email": null,
+    "email": "possu@stanford.edu",
     "website": null,
     "researchAreas": [
       "computational protein design",
@@ -12752,7 +12769,8 @@
       "protein therapeutics"
     ],
     "bio": "He received his PhD from Caltech with the first demonstration of a computationally designed novel protein-protein interface. His research focuses on advancing the understanding of proteins for engineering novel therapeutics and protein-based nanotechnology.",
-    "sourceUrl": "https://profiles.stanford.edu/possu-huang"
+    "sourceUrl": "https://profiles.stanford.edu/possu-huang",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22huang%20p%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_ramesh-johari_stanford",
@@ -12830,7 +12848,7 @@
     "title": "Associate Professor of Management Science and Engineering",
     "school": "Stanford",
     "department": "Management Science and Engineering",
-    "email": null,
+    "email": "shachter@stanford.edu",
     "website": null,
     "researchAreas": [
       "bayesian networks",
@@ -12840,7 +12858,8 @@
       "medical decision making"
     ],
     "bio": "His research focuses on the representation, manipulation and analysis of uncertainty and probabilistic reasoning in decision systems. He developed many of the fundamental methods for analyzing Bayesian belief networks and influence diagrams.",
-    "sourceUrl": "https://profiles.stanford.edu/ross-shachter"
+    "sourceUrl": "https://profiles.stanford.edu/ross-shachter",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22shachter%20ross%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_roxana-daneshjou_stanford",
@@ -12848,7 +12867,7 @@
     "title": "Assistant Professor of Biomedical Data Science and of Dermatology",
     "school": "Stanford",
     "department": "Department of Biomedical Data Science",
-    "email": null,
+    "email": "roxanad@stanford.edu",
     "website": null,
     "researchAreas": [
       "ai in medicine",
@@ -12857,7 +12876,8 @@
       "biomedical informatics"
     ],
     "bio": "Physician-scientist with an MD and a PhD in Genetics who completed a postdoc in Biomedical Data Science with James Zou. She is assistant director of the Center of Excellence for Precision Health & Pharmacogenomics, director of informatics for the Stanford Skin Innovation and Interventional Research Group, and a faculty affiliate of Stanford HAI and the AI in Medicine and Imaging (AIMI) center.",
-    "sourceUrl": "https://profiles.stanford.edu/roxana-daneshjou"
+    "sourceUrl": "https://profiles.stanford.edu/roxana-daneshjou",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22daneshjou%20roxana%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_ruijiang-li_stanford",
@@ -12883,7 +12903,7 @@
     "title": "Kenneth Fong Professor and Professor of Bioengineering, of Genetics, of Medicine, of Biomedical Data Science and, by courtesy, of Computer Science",
     "school": "Stanford",
     "department": "Department of Bioengineering",
-    "email": null,
+    "email": "russ.altman@stanford.edu",
     "website": "http://helix.stanford.edu",
     "researchAreas": [
       "bioinformatics",
@@ -12892,7 +12912,8 @@
       "drug response"
     ],
     "bio": "Applies computing and AI/data science to problems in molecular biology of relevance to medicine, focusing on drug response at the molecular level. His laboratory builds the PharmGKB pharmacogenomics knowledge base relating genetic variation to variation in drug response.",
-    "sourceUrl": "https://med.stanford.edu/profiles/russ-altman"
+    "sourceUrl": "https://med.stanford.edu/profiles/russ-altman",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22altman%20russ%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_russell-poldrack_stanford",
@@ -12934,7 +12955,7 @@
     "title": "James H. Clark Professor in the School of Engineering, Professor of Bioengineering and of Mechanical Engineering",
     "school": "Stanford",
     "department": "Bioengineering",
-    "email": null,
+    "email": "delp@stanford.edu",
     "website": null,
     "researchAreas": [
       "computational biomechanics",
@@ -12944,7 +12965,8 @@
       "musculoskeletal modeling"
     ],
     "bio": "He uses experimental and computational approaches to study human movement, developing biomechanical models to analyze muscle function and guide surgery. His group applies wearable technologies, video motion capture and machine learning to enable large-scale analysis.",
-    "sourceUrl": "https://profiles.stanford.edu/scott-delp"
+    "sourceUrl": "https://profiles.stanford.edu/scott-delp",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22delp%20scott%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_scott-linderman_stanford",
@@ -12952,7 +12974,7 @@
     "title": "Assistant Professor of Statistics; Wu Tsai Neurosciences Institute; Co-Director, Stanford Center for Neural Data Science",
     "school": "Stanford",
     "department": "Department of Statistics",
-    "email": null,
+    "email": "scott.linderman@stanford.edu",
     "website": null,
     "researchAreas": [
       "machine learning",
@@ -12961,7 +12983,8 @@
       "state space models"
     ],
     "bio": "His research focuses on machine learning, computational neuroscience, and how computational and statistical methods can help decipher neural computation. He combines methodological development in state space models, deep generative models, and approximate Bayesian inference with applied analyses of large-scale neural and behavioral data.",
-    "sourceUrl": "https://profiles.stanford.edu/scott-linderman"
+    "sourceUrl": "https://profiles.stanford.edu/scott-linderman",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22linderman%20scott%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_serena-yeung-levy_stanford",
@@ -12969,7 +12992,7 @@
     "title": "Assistant Professor of Biomedical Data Science and, by courtesy, of Computer Science and of Electrical Engineering",
     "school": "Stanford",
     "department": "Department of Biomedical Data Science",
-    "email": null,
+    "email": "slevy@stanford.edu",
     "website": null,
     "researchAreas": [
       "computer vision",
@@ -12978,7 +13001,8 @@
       "cell microscopy"
     ],
     "bio": "Develops artificial intelligence and machine learning algorithms to enable new capabilities in biomedicine and healthcare, with expertise in deep learning and computer vision applied to video of human behavior, medical images, and cell microscopy images. She leads the Medical AI and Computer Vision Lab at Stanford and is a Chan Zuckerberg Biohub Investigator.",
-    "sourceUrl": "https://med.stanford.edu/profiles/serena-yeung"
+    "sourceUrl": "https://med.stanford.edu/profiles/serena-yeung",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22levy%20s%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_sergios-gatidis_stanford",
@@ -12986,7 +13010,7 @@
     "title": "Associate Professor of Radiology (Pediatric Radiology)",
     "school": "Stanford",
     "department": "Radiology",
-    "email": null,
+    "email": "sgatidis@stanford.edu",
     "website": null,
     "researchAreas": [
       "machine learning",
@@ -12995,7 +13019,8 @@
       "pediatric radiology"
     ],
     "bio": "He completed medical training at the University of Tuebingen and holds a diploma in mathematics. His research focuses on methods and applications of machine learning for medical data analysis and the translation of AI into clinical practice.",
-    "sourceUrl": "https://profiles.stanford.edu/sergios-gatidis"
+    "sourceUrl": "https://profiles.stanford.edu/sergios-gatidis",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22gatidis%20sergios%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_shreyas-vasanawala_stanford",
@@ -13003,7 +13028,7 @@
     "title": "William R. Brody Professor of Pediatric Radiology and Child Health",
     "school": "Stanford",
     "department": "Radiology",
-    "email": null,
+    "email": "vasanawala@stanford.edu",
     "website": null,
     "researchAreas": [
       "mri",
@@ -13013,7 +13038,8 @@
       "pediatric radiology"
     ],
     "bio": "His group develops new MRI techniques with novel applications for children, exploring hardware, data acquisition, image reconstruction and image analysis. The group also develops quantitative MRI methods for cardiovascular and renal function and tumor perfusion.",
-    "sourceUrl": "https://profiles.stanford.edu/shreyas-vasanawala"
+    "sourceUrl": "https://profiles.stanford.edu/shreyas-vasanawala",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22vasanawala%20shreyas%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_shuran-song_stanford",
@@ -13139,7 +13165,7 @@
     "title": "Associate Professor (Research) of Neurosurgery, of Medicine (Computational Medicine) and, by courtesy, of Epidemiology and Population Health",
     "school": "Stanford",
     "department": "Neurosurgery",
-    "email": null,
+    "email": "summer.han@stanford.edu",
     "website": null,
     "researchAreas": [
       "statistical genetics",
@@ -13149,7 +13175,8 @@
       "health policy modeling"
     ],
     "bio": "Her research focuses on the genetic and environmental etiology of complex disease and on developing efficient screening strategies. She has developed statistical methods to analyze high-dimensional data and identify gene-environment interactions.",
-    "sourceUrl": "https://profiles.stanford.edu/summer-han"
+    "sourceUrl": "https://profiles.stanford.edu/summer-han",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22han%20summer%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_susan-athey_stanford",
@@ -13157,7 +13184,7 @@
     "title": "Economics of Technology Professor; Professor, by courtesy, of Economics; Senior Fellow at the Stanford Institute for Economic Policy Research; Senior Fellow at the Institute for Human-Centered AI",
     "school": "Stanford",
     "department": "Institute for Computational and Mathematical Engineering",
-    "email": null,
+    "email": "athey@stanford.edu",
     "website": "https://profiles.stanford.edu/55492",
     "researchAreas": [
       "machine learning",
@@ -13167,7 +13194,8 @@
       "computational social science"
     ],
     "bio": "Athey's work focuses on machine learning and causal inference, including applications to policy evaluation and technology markets. Her research spans heterogeneous treatment effects, experimental design, algorithmic decision-making, and computational social science.",
-    "sourceUrl": "https://profiles.stanford.edu/55492"
+    "sourceUrl": "https://profiles.stanford.edu/55492",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22athey%20susan%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_suzanne-tamang_stanford",
@@ -13175,7 +13203,7 @@
     "title": "Assistant Professor of Medicine (Immunology and Rheumatology)",
     "school": "Stanford",
     "department": "Medicine (Immunology and Rheumatology)",
-    "email": null,
+    "email": "stamang@stanford.edu",
     "website": null,
     "researchAreas": [
       "biomedical informatics",
@@ -13184,7 +13212,8 @@
       "health services research"
     ],
     "bio": "She uses training in biology, computer science, health services research and biomedical informatics to work on population health problems of public interest. She is Computation Systems Evaluation Lead at the VA Office of Mental Health and Suicide Prevention's Program Evaluation Resource Center.",
-    "sourceUrl": "https://profiles.stanford.edu/suzanne-tamang"
+    "sourceUrl": "https://profiles.stanford.edu/suzanne-tamang",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22tamang%20suzanne%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_sylvia-k-plevritis_stanford",
@@ -13192,7 +13221,7 @@
     "title": "Professor and Chair, Department of Biomedical Data Science; Director, Biomedical Informatics Training Program",
     "school": "Stanford",
     "department": "Department of Biomedical Data Science",
-    "email": null,
+    "email": "sylvia.plevritis@stanford.edu",
     "website": "https://plevritislab.stanford.edu/",
     "researchAreas": [
       "computational biology",
@@ -13201,7 +13230,8 @@
       "multiomics"
     ],
     "bio": "Leads a systems biology cancer research program that bridges multiomic, imaging, clinical and population data to decipher properties of cancer. Her laboratory develops stochastic models of the natural history of cancer to estimate population-level outcomes under differing screening and treatment interventions.",
-    "sourceUrl": "https://profiles.stanford.edu/sylvia-plevritis"
+    "sourceUrl": "https://profiles.stanford.edu/sylvia-plevritis",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22plevritis%20sylvia%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_tatsunori-hashimoto_stanford",
@@ -13327,7 +13357,7 @@
     "title": "Rachael L. and Walter F. Nichols, MD, Professor of Psychiatry and Behavioral Sciences and Professor, by courtesy, of Education and of Neurology",
     "school": "Stanford",
     "department": "Psychiatry and Behavioral Sciences",
-    "email": null,
+    "email": "menon@stanford.edu",
     "website": null,
     "researchAreas": [
       "computational neuroscience",
@@ -13336,7 +13366,8 @@
       "cognitive development"
     ],
     "bio": "His lab uses advanced imaging and computational techniques to investigate the functional and structural architecture of cognitive networks in the human brain. He directs the Stanford Cognitive and Systems Neuroscience Laboratory.",
-    "sourceUrl": "https://profiles.stanford.edu/vinod-menon"
+    "sourceUrl": "https://profiles.stanford.edu/vinod-menon",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22menon%20vinod%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_weidong-cai_stanford",
@@ -13344,7 +13375,7 @@
     "title": "Clinical Associate Professor of Psychiatry and Behavioral Sciences",
     "school": "Stanford",
     "department": "Psychiatry and Behavioral Sciences",
-    "email": null,
+    "email": "wdcai@stanford.edu",
     "website": null,
     "researchAreas": [
       "computational modeling",
@@ -13353,7 +13384,8 @@
       "neurodevelopmental disorders"
     ],
     "bio": "His research program investigates the neurobiological basis of cognitive dysfunction across the lifespan in children with neurodevelopmental disorders and elders with neurodegenerative conditions. He integrates cognitive science, advanced functional neuroimaging and computational modeling.",
-    "sourceUrl": "https://profiles.stanford.edu/weidong-cai"
+    "sourceUrl": "https://profiles.stanford.edu/weidong-cai",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22cai%20weidong%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_william-greenleaf_stanford",
@@ -13396,7 +13428,7 @@
     "title": "Associate Professor of Radiation Oncology (Medical Physics)",
     "school": "Stanford",
     "department": "Radiation Oncology",
-    "email": null,
+    "email": "xuejungu@stanford.edu",
     "website": null,
     "researchAreas": [
       "artificial intelligence in medicine",
@@ -13405,7 +13437,8 @@
       "clinical decision making"
     ],
     "bio": "She is Director of Translational Research in the Radiation Oncology Department at Stanford. Her research focuses on artificial intelligence in medicine, medical imaging and image analysis, and treatment planning.",
-    "sourceUrl": "https://profiles.stanford.edu/xuejun-gu"
+    "sourceUrl": "https://profiles.stanford.edu/xuejun-gu",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22gu%20xuejun%22%20AND%20AFF%3A%22Stanford%22"
   },
   {
     "id": "res_yejin-choi_stanford",
@@ -13429,7 +13462,7 @@
     "title": "Assistant Professor (Research) of Neurology, of Medicine (Computational Medicine) and, by courtesy, of Biomedical Data Science",
     "school": "Stanford",
     "department": "Department of Neurology and Neurological Sciences",
-    "email": null,
+    "email": "zihuai@stanford.edu",
     "website": null,
     "researchAreas": [
       "statistical genetics",
@@ -13438,6 +13471,7 @@
       "integrative omics"
     ],
     "bio": "Research concentrates on statistical genomics and integrative analysis of omics data, developing novel statistical and computational methods to study Alzheimer's disease and aging.",
-    "sourceUrl": "https://profiles.stanford.edu/zihuai-he"
+    "sourceUrl": "https://profiles.stanford.edu/zihuai-he",
+    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22he%20zihuai%22%20AND%20AFF%3A%22Stanford%22"
   }
 ]

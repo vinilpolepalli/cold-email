@@ -10,6 +10,16 @@ export interface ResearcherProfile {
   bio: string | null;
   sourceUrl: string;
   scrapedFrom?: string; // set when added via the in-app scraper
+  /**
+   * Where this address was published, when that is not `sourceUrl`.
+   *
+   * Kept separate because the two answer different questions. `sourceUrl` is
+   * the directory page the person was found on; this is the page the address
+   * itself appeared on. For most entries they are the same and this is unset.
+   * It is set for addresses recovered from a researcher's own papers, where
+   * the department page lists no address at all.
+   */
+  emailSource?: string;
 }
 
 export interface UserProfile {

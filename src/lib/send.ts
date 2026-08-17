@@ -210,6 +210,71 @@ async function sendViaSchoolGmail(req: SendRequest): Promise<SendResult | null> 
   }
 }
 
+export interface DraftRequest {
+  userId: string;
+  to: string;
+  cc?: string[];
+  fromName: string;
+  replyTo?: string;
+  subject: string;
+  body: string;
+  attachment?: EmailAttachment | null;
+}
+
+export type DraftResult =
+  | { ok: true; draftId: string; email: string; attached: string | null }
+  | { ok: false; error: string };
+
+/**
+ * Put a draft in the connected school mailbox instead of sending it.
+ *
+ * This exists because a draft is the only review step that shows the sender
+ * exactly what the professor will get. The campaign screen can render a
+ * subject and a body, but it cannot show a resume riding along as a real MIME
+ * part — and the resume is the thing most likely to be silently missing, since
+ * every draft claims it is attached.
+ *
+ * It is deliberately the same buildMime() call that sendEmail() makes, so what
+ * is reviewed in Gmail is byte-for-byte what goes out. A separate, simpler
+ * draft builder would defeat the point: the failure it is meant to catch is
+ * precisely a difference between the reviewed message and the sent one.
+ *
+ * Nothing here can send. The Gmail drafts endpoint only stores.
+ */
+export async function createSchoolGmailDraft(req: DraftRequest): Promise<DraftResult> {
+  let auth;
+  try {
+    auth = await getAccessToken(req.userId);
+  } catch (err) {
+    return { ok: false, error: String(err instanceof Error ? err.message : err).slice(0, 300) };
+  }
+  if (!auth) return { ok: false, error: 'No school account connected. Connect one on the campaign screen first.' };
+
+  try {
+    const mime = buildMime({
+      from: `${req.fromName} <${auth.email}>`,
+      to: req.to,
+      cc: req.cc,
+      subject: req.subject,
+      body: req.body,
+      replyTo: req.replyTo,
+      attachment: req.attachment,
+    });
+    const res = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/drafts', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${auth.token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: { raw: Buffer.from(mime).toString('base64url') } }),
+      signal: AbortSignal.timeout(30000),
+    });
+    if (!res.ok) return { ok: false, error: `Gmail API ${res.status}: ${(await res.text()).slice(0, 300)}` };
+    const draft = (await res.json()) as { id?: string };
+    if (!draft.id) return { ok: false, error: 'Gmail accepted the draft but returned no id' };
+    return { ok: true, draftId: draft.id, email: auth.email, attached: req.attachment?.fileName ?? null };
+  } catch (err) {
+    return { ok: false, error: String(err).slice(0, 300) };
+  }
+}
+
 /**
  * Send as the signed-in user via the Gmail API, using the Google OAuth access
  * token Clerk stores when the user signs in with Google (requires the

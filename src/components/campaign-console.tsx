@@ -428,6 +428,14 @@ function DraftCard({
           </Button>
           <Button
             variant="secondary"
+            disabled={busy.startsWith("draft-to-mailbox")}
+            onClick={() => onAct("draft-to-mailbox", target, { subject, body })}
+            title="Save this as a Gmail draft in your school account, resume attached, so you can read it as an email before approving. Does not send."
+          >
+            Draft in Gmail
+          </Button>
+          <Button
+            variant="secondary"
             disabled={busy.startsWith("skip")}
             onClick={() => onAct("skip", target)}
           >
