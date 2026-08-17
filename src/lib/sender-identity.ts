@@ -30,11 +30,20 @@ export interface SenderIdentityView {
   connectedAt: string;
   /** Whether follow-up nudges can tell that somebody already replied. */
   canDetectReplies: boolean;
+  /** Whether a draft can be stored in the mailbox for review before sending. */
+  canDraft: boolean;
   lastError: string | null;
 }
 
 const GMAIL_SEND_SCOPE = 'https://www.googleapis.com/auth/gmail.send';
 const GMAIL_READ_SCOPE = 'https://www.googleapis.com/auth/gmail.readonly';
+/**
+ * Storing a draft is a different permission from sending one. gmail.send
+ * authorises messages.send and nothing else, so the drafts endpoint answers
+ * "insufficient authentication scopes" without it — a 403 that reads like a
+ * broken token rather than a missing permission.
+ */
+const GMAIL_COMPOSE_SCOPE = 'https://www.googleapis.com/auth/gmail.compose';
 const EMAIL_SCOPE = 'https://www.googleapis.com/auth/userinfo.email';
 
 /**
@@ -43,7 +52,7 @@ const EMAIL_SCOPE = 'https://www.googleapis.com/auth/userinfo.email';
  * Google may still grant only a subset; everything downstream checks the
  * granted scopes rather than assuming.
  */
-const SCOPES = [GMAIL_SEND_SCOPE, GMAIL_READ_SCOPE, EMAIL_SCOPE];
+const SCOPES = [GMAIL_SEND_SCOPE, GMAIL_COMPOSE_SCOPE, GMAIL_READ_SCOPE, EMAIL_SCOPE];
 
 export function googleOAuthConfigured(): boolean {
   return Boolean(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET);
@@ -218,7 +227,7 @@ function identityFromEnv(): SenderIdentity | null {
     // Assume both scopes were granted. If read access was not, the reply check
     // fails and follow-ups skip rather than nudging blind, which is the safe
     // direction for a wrong guess here.
-    scopes: [GMAIL_SEND_SCOPE, GMAIL_READ_SCOPE, EMAIL_SCOPE],
+    scopes: [GMAIL_SEND_SCOPE, GMAIL_COMPOSE_SCOPE, GMAIL_READ_SCOPE, EMAIL_SCOPE],
     connectedAt: 'from environment',
     lastError: null,
   };
@@ -236,6 +245,7 @@ export function toView(identity: SenderIdentity): SenderIdentityView {
     email: identity.email,
     connectedAt: identity.connectedAt,
     canDetectReplies: identity.scopes.includes(GMAIL_READ_SCOPE),
+    canDraft: identity.scopes.includes(GMAIL_COMPOSE_SCOPE),
     lastError: identity.lastError,
   };
 }
@@ -281,6 +291,7 @@ export interface AccessToken {
   token: string;
   email: string;
   canDetectReplies: boolean;
+  canDraft: boolean;
 }
 
 /**
@@ -298,7 +309,13 @@ export async function getAccessToken(userId: string): Promise<AccessToken | null
 
   const cached = tokenCache.get(userId);
   if (cached && cached.expiresAt > Date.now() + 60_000) {
-    return { token: cached.token, email: identity.email, canDetectReplies: toView(identity).canDetectReplies };
+    const view = toView(identity);
+    return {
+      token: cached.token,
+      email: identity.email,
+      canDetectReplies: view.canDetectReplies,
+      canDraft: view.canDraft,
+    };
   }
 
   const refreshed = await tokenRequest({
@@ -319,7 +336,13 @@ export async function getAccessToken(userId: string): Promise<AccessToken | null
     expiresAt: Date.now() + (refreshed.expires_in ?? 3600) * 1000,
   });
   await clearError(userId, identity);
-  return { token: refreshed.access_token, email: identity.email, canDetectReplies: toView(identity).canDetectReplies };
+  const view = toView(identity);
+  return {
+    token: refreshed.access_token,
+    email: identity.email,
+    canDetectReplies: view.canDetectReplies,
+    canDraft: view.canDraft,
+  };
 }
 
 /**

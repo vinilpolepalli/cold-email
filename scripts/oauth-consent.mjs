@@ -32,11 +32,18 @@ const CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 const REDIRECT =
   process.env.GOOGLE_REDIRECT_URI || 'http://localhost:3000/api/auth/google/callback';
 
+const SEND = 'https://www.googleapis.com/auth/gmail.send';
+const COMPOSE = 'https://www.googleapis.com/auth/gmail.compose';
+const READ = 'https://www.googleapis.com/auth/gmail.readonly';
+
 const SCOPES = [
-  'https://www.googleapis.com/auth/gmail.send',
+  SEND,
+  // Storing a draft is a separate permission from sending one; gmail.send
+  // alone gets a 403 from the drafts endpoint.
+  COMPOSE,
   // Lets a follow-up check whether the professor already replied before
   // nudging. Decline it and follow-ups skip rather than going out blind.
-  'https://www.googleapis.com/auth/gmail.readonly',
+  READ,
   'https://www.googleapis.com/auth/userinfo.email',
 ];
 
@@ -142,8 +149,9 @@ const email = who.ok ? (await who.json()).email : null;
 
 const granted = (token.scope ?? '').split(/\s+/);
 console.log(`\n  Connected: ${email ?? '(address unavailable)'}`);
-console.log(`  Can send:  ${granted.includes(SCOPES[0]) ? 'yes' : 'NO — sending will not work'}`);
-console.log(`  Can check replies: ${granted.includes(SCOPES[1]) ? 'yes' : 'no, follow-ups will skip'}`);
+console.log(`  Can send:   ${granted.includes(SEND) ? 'yes' : 'NO — sending will not work'}`);
+console.log(`  Can draft:  ${granted.includes(COMPOSE) ? 'yes' : 'no, "Draft in Gmail" will fail'}`);
+console.log(`  Can check replies: ${granted.includes(READ) ? 'yes' : 'no, follow-ups will skip'}`);
 console.log('\nSet these on whatever runs the campaign. Never commit them.\n');
 console.log(`SCHOOL_EMAIL=${email ?? 'you@school.edu'}`);
 console.log(`GOOGLE_REFRESH_TOKEN=${token.refresh_token}\n`);

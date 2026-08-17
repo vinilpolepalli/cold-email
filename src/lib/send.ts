@@ -249,6 +249,15 @@ export async function createSchoolGmailDraft(req: DraftRequest): Promise<DraftRe
     return { ok: false, error: String(err instanceof Error ? err.message : err).slice(0, 300) };
   }
   if (!auth) return { ok: false, error: 'No school account connected. Connect one on the campaign screen first.' };
+  // Gmail answers a bare 403 "insufficient authentication scopes" here, which
+  // reads like a dead token. Say what is actually missing instead, because the
+  // fix is reconnecting the account rather than debugging the grant.
+  if (!auth.canDraft) {
+    return {
+      ok: false,
+      error: `${auth.email} was connected without permission to store drafts. Reconnect the account to grant it — sending is unaffected.`,
+    };
+  }
 
   try {
     const mime = buildMime({

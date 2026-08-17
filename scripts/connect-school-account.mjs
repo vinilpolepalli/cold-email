@@ -17,11 +17,18 @@ import { spawn } from 'node:child_process';
 const PORT = Number(process.env.CONNECT_PORT ?? 4477);
 const REDIRECT = `http://localhost:${PORT}/callback`;
 
+const SEND = 'https://www.googleapis.com/auth/gmail.send';
+const COMPOSE = 'https://www.googleapis.com/auth/gmail.compose';
+const READ = 'https://www.googleapis.com/auth/gmail.readonly';
+
 const SCOPES = [
-  'https://www.googleapis.com/auth/gmail.send',
+  SEND,
+  // Storing a draft is a separate permission from sending one; gmail.send
+  // alone gets a 403 from the drafts endpoint.
+  COMPOSE,
   // Lets a follow-up check whether the professor already replied. Decline it
   // and nudges are skipped rather than sent blind.
-  'https://www.googleapis.com/auth/gmail.readonly',
+  READ,
   'https://www.googleapis.com/auth/userinfo.email',
 ];
 
@@ -127,8 +134,9 @@ const server = http.createServer(async (req, res) => {
 
     const granted = (token.scope ?? '').split(/\s+/);
     console.log(`\n  Connected: ${email ?? '(address unavailable)'}`);
-    console.log(`  Can send:  ${granted.includes(SCOPES[0]) ? 'yes' : 'NO — sending will not work'}`);
-    console.log(`  Can check replies: ${granted.includes(SCOPES[1]) ? 'yes' : 'no, follow-ups will skip'}`);
+    console.log(`  Can send:   ${granted.includes(SEND) ? 'yes' : 'NO — sending will not work'}`);
+    console.log(`  Can draft:  ${granted.includes(COMPOSE) ? 'yes' : 'no, "Draft in Gmail" will fail'}`);
+    console.log(`  Can check replies: ${granted.includes(READ) ? 'yes' : 'no, follow-ups will skip'}`);
     console.log('\nAdd these to the environment that runs the campaign. Never commit them.\n');
     console.log(`SCHOOL_EMAIL=${email ?? 'you@school.edu'}`);
     console.log(`GOOGLE_REFRESH_TOKEN=${token.refresh_token}`);
