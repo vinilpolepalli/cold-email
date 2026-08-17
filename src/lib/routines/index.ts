@@ -19,6 +19,20 @@ export type { Routine, RoutineContext, RoutineReport } from './types';
  */
 const DAILY_CHAIN = ['find-emails', 'find-opportunities', 'build-queue', 'write-drafts', 'send-due', 'follow-up'];
 
+/**
+ * Steps that must run even when the chain is short of time.
+ *
+ * The crawling steps at the front are the slow ones and the ones it is safe to
+ * cut: an address not found tonight is found tomorrow. Sending is not like
+ * that. A draft the sender approved for 9am has to actually go at 9am, so the
+ * chain reserves time for these two rather than letting a slow crawl eat the
+ * whole budget and silently skip the send.
+ */
+const MUST_RUN = new Set(['send-due', 'follow-up']);
+
+/** Time held back for the sending steps at the end of the chain. */
+const RESERVE_MS = 60_000;
+
 const daily: Routine = {
   name: 'daily',
   description: 'The whole chain: find addresses, check who is recruiting, rank, draft, send, nudge.',
@@ -31,11 +45,23 @@ const daily: Routine = {
     for (const name of DAILY_CHAIN) {
       const job = JOBS.find((j) => j.name === name);
       if (!job) continue;
+
+      // Hand the slow front half a deadline that stops short of the real one,
+      // so there is still time left to send when they finish.
+      const stepDeadline =
+        ctx.deadline && !MUST_RUN.has(name) ? ctx.deadline - RESERVE_MS : ctx.deadline;
+
+      if (stepDeadline && Date.now() >= stepDeadline) {
+        summaries.push(`${job.name}: skipped, out of time`);
+        details.push(`── ${job.name} ── skipped, out of time this run`);
+        continue;
+      }
+
       try {
         // Each step gets the chain's own context; a per-step limit would have
         // to come from the policy, which the steps already read for
         // themselves.
-        const result = await job.run({ ...ctx, limit: undefined });
+        const result = await job.run({ ...ctx, limit: undefined, deadline: stepDeadline });
         summaries.push(`${job.name}: ${result.summary}`);
         details.push(`── ${job.name} ──`, ...result.details);
         for (const [key, value] of Object.entries(result.counts)) {

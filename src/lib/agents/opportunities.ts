@@ -44,9 +44,56 @@ const OPEN_PATTERNS: { kind: OpportunityKind; re: RegExp }[] = [
   { kind: 'postdoc', re: /\b(?:post-?doc\w*)\b[^.!?]{0,60}\b(?:position|opening|available|hiring|seeking|recruiting)/i },
   { kind: 'general', re: /\b(?:we\s+are|i\s+am)\s+hiring\b/i },
   { kind: 'general', re: /\b(?:openings?|positions?)\s+(?:are\s+)?available\b/i },
-  { kind: 'general', re: /\bjoin\s+(?:the\s+|our\s+|my\s+)?(?:lab|group|team)\b/i },
-  { kind: 'general', re: /\bprospective\s+students?\b/i },
+  // "Join Lab" and "Prospective Students" are menu items on a large fraction
+  // of university sites, so on their own they are page furniture rather than
+  // an invitation. Both now require nearby wording that only appears when
+  // somebody is actually addressing a reader who might apply.
+  {
+    kind: 'general',
+    re: /\bjoin\s+(?:the\s+|our\s+|my\s+)?(?:lab|group|team)\b[^.!?]{0,80}\b(?:if|please|interested|apply|application|contact|email|looking|welcome|opening|position)\b/i,
+  },
+  {
+    kind: 'general',
+    re: /\bprospective\s+students?\b[^.!?]{0,80}\b(?:should|please|can|may|encouraged|welcome|interested|apply|application|contact|email|note)\b/i,
+  },
 ];
+
+/**
+ * Whether a matched sentence is prose somebody wrote, rather than a strip of
+ * navigation the text extractor flattened into one line.
+ *
+ * This check exists because of what the first live run turned up. Alexander
+ * Young's page matched on "Search this site Embedded Files Skip to main
+ * content Skip to navigation", and Ariel Procaccia's on "Skip to main content
+ * Main navigation Academics Faculty & Research News Events". Neither is a
+ * recruiting note; both would have promoted the professor and, worse, handed
+ * the draft a quote to build an opening sentence out of.
+ *
+ * Applied to open matches only. The asymmetry is deliberate: a false "closed"
+ * costs one skipped email, while a false "open" produces an email that claims
+ * something the page never said.
+ */
+const NAV_CHROME =
+  /\b(?:skip to (?:main )?(?:content|navigation)|search this site|embedded files|open menu|close menu|main navigation|toggle navigation|breadcrumb|site map)\b/i;
+
+/** Ordinary connective words. Prose has them; a row of menu labels does not. */
+const FUNCTION_WORDS =
+  /\b(?:i|we|my|our|am|are|is|was|be|been|have|has|if|who|that|this|for|to|with|from|and|but|would|will|can|may|please|about|interested|looking)\b/gi;
+
+function looksLikeProse(sentence: string): boolean {
+  const text = sentence.trim();
+  if (text.length < 25 || text.length > 400) return false;
+  if (NAV_CHROME.test(text)) return false;
+
+  const words = text.split(/\s+/).filter(Boolean);
+  if (words.length < 6) return false;
+
+  // A menu is mostly capitalised labels; a sentence is mostly lowercase.
+  const capitalised = words.filter((w) => /^[A-Z]/.test(w)).length;
+  if (capitalised / words.length > 0.5) return false;
+
+  return (text.match(FUNCTION_WORDS) ?? []).length >= 2;
+}
 
 /**
  * Phrases that mean the door is shut. Checked before the open patterns and
@@ -127,8 +174,12 @@ function readPage(text: string, url: string): { stance: 'open' | 'closed' | 'unk
   for (const { kind, re } of OPEN_PATTERNS) {
     const match = re.exec(text);
     if (!match) continue;
+    // The quote has to survive as prose before the match counts at all. A hit
+    // whose only evidence is a navigation bar is not evidence of anything.
+    const quote = sentenceAround(text, match.index);
+    if (!looksLikeProse(quote)) continue;
     kinds.add(kind);
-    if (evidence.length < 3) evidence.push({ quote: sentenceAround(text, match.index), url });
+    if (evidence.length < 3) evidence.push({ quote, url });
   }
 
   return kinds.size

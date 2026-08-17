@@ -1,4 +1,4 @@
-import { Routine, RoutineContext, emptyResult } from './types';
+import { Routine, RoutineContext, emptyResult, hasTime } from './types';
 import { getAllProfiles } from '../profiles';
 import { getUserProfile, getNimAuth } from '../user';
 import { getRules } from '../preferences';
@@ -72,7 +72,15 @@ const findEmails: Routine = {
 
     const details: string[] = [];
     let found = 0;
+    let checked = 0;
     for (const researcher of candidates) {
+      // One person can mean eight page fetches, so leave room for a slow one
+      // rather than starting a hunt that will be killed halfway through.
+      if (!hasTime(ctx, 20_000)) {
+        details.push(`Stopped early with ${candidates.length - checked} left; they are first in line next run.`);
+        break;
+      }
+      checked++;
       const hunt = await huntEmail(researcher);
       if (hunt.email) {
         found++;
@@ -84,8 +92,8 @@ const findEmails: Routine = {
 
     const stillMissing = wanted.length - found;
     return {
-      summary: `Checked ${candidates.length}, found ${found}. ${stillMissing} directory entries still have no address.`,
-      counts: { checked: candidates.length, found, stillMissing },
+      summary: `Checked ${checked}, found ${found}. ${stillMissing} directory entries still have no address.`,
+      counts: { checked, found, stillMissing },
       details,
     };
   },
@@ -106,6 +114,10 @@ const findOpportunities: Routine = {
     const details: string[] = [];
     const counts = { checked: 0, open: 0, closed: 0, unknown: 0 };
     for (const researcher of candidates) {
+      if (!hasTime(ctx, 20_000)) {
+        details.push(`Stopped early with ${candidates.length - counts.checked} labs left; they are checked next run.`);
+        break;
+      }
       const signal = await checkOpportunities(researcher);
       counts.checked++;
       counts[signal.stance]++;
@@ -196,6 +208,12 @@ const writeDrafts: Routine = {
     let autoApproved = 0;
 
     for (const [index, target] of queued.entries()) {
+      // Drafting means a publication fetch and a model call. Both can be slow,
+      // and a draft half-written is a draft not written at all.
+      if (!hasTime(ctx, 45_000)) {
+        details.push(`Stopped early with ${queued.length - index} still to draft; they stay queued for the next run.`);
+        break;
+      }
       const researcher = profiles.find((p) => p.id === target.researcherId);
       if (!researcher) {
         await updateTarget(ctx.userId, target.researcherId, {

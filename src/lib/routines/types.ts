@@ -14,6 +14,21 @@ export interface RoutineContext {
   dryRun: boolean;
   /** Optional ceiling for this run, overriding the policy's own. */
   limit?: number;
+  /**
+   * Epoch ms after which this run should stop starting new work.
+   *
+   * Serverless platforms cap how long a request may take and then kill it
+   * outright. Being killed is survivable here — every routine persists as it
+   * goes, so the next run resumes — but it is silent, and a run that stops
+   * cleanly can say what it did not get to. Crawling loops check this between
+   * items; the daily chain sets it and skips steps that cannot start.
+   */
+  deadline?: number;
+}
+
+/** Whether there is still time to start another item. */
+export function hasTime(ctx: RoutineContext, needMs = 0): boolean {
+  return !ctx.deadline || Date.now() + needMs < ctx.deadline;
 }
 
 export interface RoutineReport {

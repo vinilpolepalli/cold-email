@@ -3,10 +3,24 @@ import { getRoutine, routineNames, runRoutine } from '@/lib/routines';
 import { getCurrentUserId } from '@/lib/user';
 
 export const dynamic = 'force-dynamic';
-// Crawling and drafting several professors takes real time. The routines are
-// individually bounded, but a chain of them needs the longest window a
-// serverless function will give.
-export const maxDuration = 800;
+
+/**
+ * Crawling and drafting several professors takes real time, so this asks for
+ * the longest window the platform allows. 300s is the Vercel ceiling outside
+ * the higher plans; asking for more fails the deployment outright rather than
+ * being clamped, so this stays where every plan accepts it.
+ *
+ * A run that needs longer is not a problem: the routines stop cleanly at
+ * WORK_BUDGET_MS below and resume on the next run.
+ */
+export const maxDuration = 300;
+
+/**
+ * How long a run may work before it starts wrapping up, leaving enough of the
+ * window to finish the item in hand and write its report. Being killed by the
+ * platform loses the report, which is the part a person reads.
+ */
+const WORK_BUDGET_MS = (maxDuration - 25) * 1000;
 
 /**
  * Run one routine.
@@ -62,6 +76,7 @@ async function execute(req: NextRequest, name: string, body: Record<string, unkn
     // "really do it", or the nightly job silently does nothing forever.
     dryRun: body?.dryRun === true,
     limit: Number.isFinite(limit) ? Math.max(1, Math.min(50, Math.floor(limit))) : undefined,
+    deadline: Date.now() + WORK_BUDGET_MS,
   });
 
   return NextResponse.json({ report }, { status: report.ok ? 200 : 500 });
