@@ -1,5 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "github": {
+    "silent": true
+  },
   "functions": {
     "src/app/api/routines/[name]/route.ts": {
       "maxDuration": 300
