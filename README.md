@@ -50,6 +50,8 @@ Set up requires a Google Cloud OAuth client:
 4. Set `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`. Set `GOOGLE_REDIRECT_URI` too if it must differ from the derived one.
 5. Open `/campaign` → **Connect school account**, and pick your `.edu` address.
 
+Step 5 needs the app running somewhere your browser can reach. When it is not — a cloud session, a container with no inbound network, a phone — `scripts/oauth-consent.mjs` does the same round trip without a callback server: it prints a consent URL, you approve on any device and land on an error page, and you paste that URL back for a refresh token. Put the token in `GOOGLE_REFRESH_TOKEN` and `SCHOOL_EMAIL`, which `identityFromEnv()` prefers over anything stored. `scripts/connect-school-account.mjs` does the same thing with a real callback when you do have a browser on the machine.
+
 The requested scopes are `gmail.send` and `gmail.readonly`. Read access exists for one reason: a follow-up checks the thread for a reply before nudging. Decline it and follow-ups are skipped rather than sent blind, unless you turn that off in the send policy.
 
 ### Your own template
