@@ -201,6 +201,17 @@ export async function queuedResearcherIds(userId: string): Promise<Set<string>> 
 // ── send policy: how fast, and when ─────────────────────────────────────────
 
 export interface SendPolicy {
+  /**
+   * Master switch. While this is on, no routine sends anything, whatever else
+   * is approved, armed, scheduled or connected.
+   *
+   * The other guards are each conditional on something: a track being unarmed,
+   * a target sitting at drafted, no mailbox attached. That is four things to
+   * reason about when the only question worth answering quickly is "can this
+   * send an email right now". This is the one switch that answers it, and it
+   * is checked before any of the rest.
+   */
+  paused: boolean;
   /** Hard ceiling on emails sent in any rolling 24 hours. */
   maxPerDay: number;
   /** Ceiling for one routine run, so a single pass cannot empty the queue. */
@@ -233,6 +244,11 @@ export interface SendPolicy {
 }
 
 export const DEFAULT_POLICY: SendPolicy = {
+  // Paused until the sender says otherwise. A campaign that starts able to
+  // send is one misconfiguration away from mailing a professor before anybody
+  // has read what it wrote; a campaign that starts paused merely needs turning
+  // on, and the person turning it on knows they did.
+  paused: true,
   maxPerDay: 8,
   maxPerRun: 4,
   minGapMinutes: 25,
@@ -258,6 +274,9 @@ export async function getPolicy(userId: string): Promise<SendPolicy> {
   // a hand-edited record must not be able to produce an unbounded blast.
   return {
     ...merged,
+    // Only an explicit false unpauses. A stored record missing the field, or
+    // one that fails to load and falls back to defaults, stays paused.
+    paused: merged.paused !== false,
     maxPerDay: clamp(merged.maxPerDay, 1, 40),
     maxPerRun: clamp(merged.maxPerRun, 1, 20),
     minGapMinutes: clamp(merged.minGapMinutes, 1, 24 * 60),

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getRoutine, routineNames, runRoutine } from '@/lib/routines';
-import { getCurrentUserId } from '@/lib/user';
+import { clerkConfigured, getCurrentUserId } from '@/lib/user';
 
 export const dynamic = 'force-dynamic';
 
@@ -68,6 +68,21 @@ async function execute(req: NextRequest, name: string, body: Record<string, unkn
   const auth = await authorize(req, body);
   if ('error' in auth) return NextResponse.json({ error: auth.error }, { status: auth.status });
 
+  // Demo mode has no real sign-in: getCurrentUserId returns the single local
+  // user to anyone who asks. That is fine for reading and for the crawls, and
+  // not fine for a route that can send email, so a routine that sends needs
+  // the shared secret when there is no account system to authenticate against.
+  const routine = getRoutine(name);
+  if (routine?.sends && !auth.viaSecret && !clerkConfigured()) {
+    return NextResponse.json(
+      {
+        error:
+          'Sending routines need ROUTINE_SECRET when authentication is not configured. Run it through `npm run campaign`, or set up Clerk.',
+      },
+      { status: 401 }
+    );
+  }
+
   const limit = Number(body?.limit);
   const report = await runRoutine(name, {
     userId: auth.userId,
@@ -82,7 +97,7 @@ async function execute(req: NextRequest, name: string, body: Record<string, unkn
   return NextResponse.json({ report }, { status: report.ok ? 200 : 500 });
 }
 
-type Authorized = { userId: string } | { error: string; status: number };
+type Authorized = { userId: string; viaSecret: boolean } | { error: string; status: number };
 
 async function authorize(req: NextRequest, body: { userId?: unknown }): Promise<Authorized> {
   // CRON_SECRET is what Vercel Cron sends automatically; ROUTINE_SECRET is for
@@ -106,7 +121,7 @@ async function authorize(req: NextRequest, body: { userId?: unknown }): Promise<
       };
     }
     if (!/^[A-Za-z0-9_-]{1,120}$/.test(userId)) return { error: 'Unsupported user id', status: 400 };
-    return { userId };
+    return { userId, viaSecret: true };
   }
 
   // A presented-but-wrong secret is a failed attempt, not an invitation to try
@@ -116,7 +131,7 @@ async function authorize(req: NextRequest, body: { userId?: unknown }): Promise<
   const userId = await getCurrentUserId();
   if (!userId) return { error: 'Sign in required', status: 401 };
   // A signed-in caller only ever runs their own routines, whatever the body says.
-  return { userId };
+  return { userId, viaSecret: false };
 }
 
 /** Constant-time compare, so a wrong secret cannot be found a byte at a time. */

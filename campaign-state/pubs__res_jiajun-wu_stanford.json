@@ -1,0 +1,156 @@
+{
+  "researcherId": "res_jiajun-wu_stanford",
+  "authorName": "Jiajun Wu",
+  "authorUrl": "https://openalex.org/A5100621605",
+  "worksCount": 349,
+  "citedByCount": 15261,
+  "topics": [
+    "Human Pose and Action Recognition",
+    "Advanced Vision and Imaging",
+    "3D Shape Modeling and Analysis",
+    "Multimodal Machine Learning Applications",
+    "Computer Graphics and Visualization Techniques"
+  ],
+  "publications": [
+    {
+      "title": "Learning a Probabilistic Latent Space of Object Shapes via 3D Generative-Adversarial Modeling",
+      "year": 2016,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Jiajun Wu",
+        "Chengkai Zhang",
+        "Tianfan Xue",
+        "William T. Freeman",
+        "Joshua B. Tenenbaum"
+      ],
+      "citations": 1565,
+      "doi": "10.48550/arxiv.1610.07584",
+      "url": "http://arxiv.org/abs/1610.07584",
+      "pdfUrl": "https://arxiv.org/pdf/1610.07584",
+      "abstract": "We study the problem of 3D object generation. We propose a novel framework, namely 3D Generative Adversarial Network (3D-GAN), which generates 3D objects from a probabilistic space by leveraging recent advances in volumetric convolutional networks and generative adversarial nets. The benefits of our model are three-fold: first, the use of an adversarial criterion, instead of traditional heuristic criteria, enables the generator to capture object structure implicitly and to synthesize high-quality 3D objects; second, the generator establishes a mapping from a low-dimensional probabilistic space to the space of 3D objects, so that we can sample objects without a reference image or CAD models, and explore the 3D object manifold; third, the adversarial discriminator provides a powerful 3D shape descriptor which, learned without supervision, has wide applications in 3D object recognition. ..."
+    },
+    {
+      "title": "Video Enhancement with Task-Oriented Flow",
+      "year": 2019,
+      "venue": "International Journal of Computer Vision",
+      "authors": [
+        "Tianfan Xue",
+        "Baian Chen",
+        "Jiajun Wu",
+        "Donglai Wei",
+        "William T. Freeman"
+      ],
+      "citations": 1357,
+      "doi": "10.1007/s11263-018-01144-2",
+      "url": "http://arxiv.org/abs/1711.09078",
+      "pdfUrl": "https://arxiv.org/pdf/1711.09078",
+      "abstract": null
+    },
+    {
+      "title": "Pix3D: Dataset and Methods for Single-Image 3D Shape Modeling",
+      "year": 2018,
+      "venue": null,
+      "authors": [
+        "Xingyuan Sun",
+        "Jiajun Wu",
+        "Xiuming Zhang",
+        "Zhoutong Zhang",
+        "Chengkai Zhang",
+        "Tianfan Xue",
+        "Joshua B. Tenenbaum",
+        "William T. Freeman"
+      ],
+      "citations": 471,
+      "doi": "10.1109/cvpr.2018.00314",
+      "url": "https://doi.org/10.1109/cvpr.2018.00314",
+      "pdfUrl": null,
+      "abstract": "We study 3D shape modeling from a single image and make contributions to it in three aspects. First, we present Pix3D, a large-scale benchmark of diverse image-shape pairs with pixel-level 2D-3D alignment. Pix3D has wide applications in shape-related tasks including reconstruction, retrieval, viewpoint estimation, etc. Building such a large-scale dataset, however, is highly challenging; existing datasets either contain only synthetic data, or lack precise alignment between 2D images and 3D shapes, or only have a small number of images. Second, we calibrate the evaluation criteria for 3D shape reconstruction through behavioral studies, and use them to objectively and systematically benchmark cutting-edge reconstruction algorithms on Pix3D. Third, we design a novel model that simultaneously performs 3D reconstruction and pose estimation; our multi-task learning approach achieves state-o..."
+    },
+    {
+      "title": "Ambient Sound Provides Supervision for Visual Learning",
+      "year": 2016,
+      "venue": "Lecture notes in computer science",
+      "authors": [
+        "Andrew Owens",
+        "Jiajun Wu",
+        "Josh H. McDermott",
+        "William T. Freeman",
+        "Antonio Torralba"
+      ],
+      "citations": 423,
+      "doi": "10.1007/978-3-319-46448-0_48",
+      "url": "https://doi.org/10.1007/978-3-319-46448-0_48",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "3D Shape Generation and Completion through Point-Voxel Diffusion",
+      "year": 2021,
+      "venue": "2021 IEEE/CVF International Conference on Computer Vision (ICCV)",
+      "authors": [
+        "Linqi Zhou",
+        "Yilun Du",
+        "Jiajun Wu"
+      ],
+      "citations": 406,
+      "doi": "10.1109/iccv48922.2021.00577",
+      "url": "https://doi.org/10.1109/iccv48922.2021.00577",
+      "pdfUrl": null,
+      "abstract": "We propose a novel approach for probabilistic generative modeling of 3D shapes. Unlike most existing models that learn to deterministically translate a latent vector to a shape, our model, Point-Voxel Diffusion (PVD), is a unified, probabilistic formulation for unconditional shape generation and conditional, multi-modal shape completion. PVD marries denoising diffusion models with the hybrid, point-voxel representation of 3D shapes. It can be viewed as a series of denoising steps, reversing the diffusion process from observed point cloud data to Gaussian noise, and is trained by optimizing a variational lower bound to the (conditional) likelihood function. Experiments demonstrate that PVD is capable of synthesizing high-fidelity shapes, completing partial point clouds, and generating multiple completion results from single-view depth scans of real objects."
+    },
+    {
+      "title": "Deep multiple instance learning for image classification and auto-annotation",
+      "year": 2015,
+      "venue": null,
+      "authors": [
+        "Jiajun Wu",
+        "Yinan Yu",
+        "Chang Huang",
+        "Kai Yu"
+      ],
+      "citations": 402,
+      "doi": "10.1109/cvpr.2015.7298968",
+      "url": "https://doi.org/10.1109/cvpr.2015.7298968",
+      "pdfUrl": null,
+      "abstract": "The recent development in learning deep representations has demonstrated its wide applications in traditional vision tasks like classification and detection. However, there has been little investigation on how we could build up a deep learning framework in a weakly supervised setting. In this paper, we attempt to model deep learning in a weakly supervised learning (multiple instance learning) framework. In our setting, each image follows a dual multi-instance assumption, where its object proposals and possible text annotations can be regarded as two instance sets. We thus design effective systems to exploit the MIL property with deep learning strategies from the two ends; we also try to jointly learn the relationship between object and annotation proposals. We conduct extensive experiments and prove that our weakly supervised deep learning framework not only achieves convincing perfor..."
+    },
+    {
+      "title": "The Neuro-Symbolic Concept Learner: Interpreting Scenes, Words, and\\n Sentences From Natural Supervision",
+      "year": 2019,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Jiayuan Mao",
+        "Chuang Gan",
+        "Pushmeet Kohli",
+        "Joshua B. Tenenbaum",
+        "Jiajun Wu"
+      ],
+      "citations": 314,
+      "doi": "10.48550/arxiv.1904.12584",
+      "url": "http://arxiv.org/abs/1904.12584",
+      "pdfUrl": "https://arxiv.org/pdf/1904.12584",
+      "abstract": "We propose the Neuro-Symbolic Concept Learner (NS-CL), a model that learns\\nvisual concepts, words, and semantic parsing of sentences without explicit\\nsupervision on any of them; instead, our model learns by simply looking at\\nimages and reading paired questions and answers. Our model builds an\\nobject-based scene representation and translates sentences into executable,\\nsymbolic programs. To bridge the learning of two modules, we use a\\nneuro-symbolic reasoning module that executes these programs on the latent\\nscene representation. Analogical to human concept learning, the perception\\nmodule learns visual concepts based on the language description of the object\\nbeing referred to. Meanwhile, the learned visual concepts facilitate learning\\nnew words and parsing new sentences. We use curriculum learning to guide the\\nsearching over the large compositional space of images and languag..."
+    },
+    {
+      "title": "SDEdit: Guided Image Synthesis and Editing with Stochastic Differential Equations",
+      "year": 2021,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Chenlin Meng",
+        "Yutong He",
+        "Yang Song",
+        "Jiaming Song",
+        "Jiajun Wu",
+        "Jun-Yan Zhu",
+        "Stefano Ermon"
+      ],
+      "citations": 305,
+      "doi": "10.48550/arxiv.2108.01073",
+      "url": "http://arxiv.org/abs/2108.01073",
+      "pdfUrl": "https://arxiv.org/pdf/2108.01073",
+      "abstract": "Guided image synthesis enables everyday users to create and edit photo-realistic images with minimum effort. The key challenge is balancing faithfulness to the user input (e.g., hand-drawn colored strokes) and realism of the synthesized image. Existing GAN-based methods attempt to achieve such balance using either conditional GANs or GAN inversions, which are challenging and often require additional training data or loss functions for individual applications. To address these issues, we introduce a new image synthesis and editing method, Stochastic Differential Editing (SDEdit), based on a diffusion model generative prior, which synthesizes realistic images by iteratively denoising through a stochastic differential equation (SDE). Given an input image with user guide of any type, SDEdit first adds noise to the input, then subsequently denoises the resulting image through the SDE prior..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-17T01:36:52.971Z"
+}

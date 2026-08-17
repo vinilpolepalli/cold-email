@@ -1,0 +1,18 @@
+{
+  "routine": "send-due",
+  "id": "run_mswkakx0jf3gx2",
+  "userId": "demo-user",
+  "startedAt": "2026-08-17T01:35:19.140Z",
+  "finishedAt": "2026-08-17T01:35:19.141Z",
+  "ok": true,
+  "dryRun": false,
+  "summary": "Campaign is paused, so nothing was sent.",
+  "counts": {
+    "sent": 0,
+    "blocked": 1
+  },
+  "details": [
+    "Unpause it from the campaign page when you are ready to start sending."
+  ],
+  "error": null
+}

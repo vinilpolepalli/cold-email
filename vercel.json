@@ -1,11 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "crons": [
-    {
-      "path": "/api/routines/daily",
-      "schedule": "0 4 * * 1-5"
-    }
-  ],
   "functions": {
     "src/app/api/routines/[name]/route.ts": {
       "maxDuration": 300

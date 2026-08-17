@@ -1,0 +1,20 @@
+{
+  "researcherId": "res_george-church_harvard",
+  "name": "George Church",
+  "school": "Harvard",
+  "email": null,
+  "foundOn": null,
+  "pagesChecked": [
+    "http://arep.med.harvard.edu/gmc/",
+    "https://wyss.harvard.edu/team/core-faculty/george-church/",
+    "http://arep.med.harvard.edu/visit.html",
+    "https://wyss.harvard.edu/about/",
+    "https://wyss.harvard.edu/team/",
+    "https://wyss.harvard.edu/contact/",
+    "https://wyss.harvard.edu/team/core-faculty/pamela-silver/",
+    "https://www.seas.harvard.edu/faculty/people/george-church"
+  ],
+  "status": "not-found",
+  "triedAt": "2026-08-17T01:35:43.804Z",
+  "attempts": 1
+}

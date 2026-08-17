@@ -1,0 +1,142 @@
+{
+  "researcherId": "res_vasilis-syrgkanis_stanford",
+  "authorName": "Vasilis Syrgkanis",
+  "authorUrl": "https://openalex.org/A5017741738",
+  "worksCount": 137,
+  "citedByCount": 1935,
+  "topics": [
+    "Auction Theory and Applications",
+    "Advanced Bandit Algorithms Research",
+    "Consumer Market Behavior and Pricing",
+    "Game Theory and Applications",
+    "Experimental Behavioral Economics Studies"
+  ],
+  "publications": [
+    {
+      "title": "Composable and efficient mechanisms",
+      "year": 2013,
+      "venue": null,
+      "authors": [
+        "Vasilis Syrgkanis",
+        "Éva Tardos"
+      ],
+      "citations": 178,
+      "doi": "10.1145/2488608.2488635",
+      "url": "https://doi.org/10.1145/2488608.2488635",
+      "pdfUrl": null,
+      "abstract": "We initiate the study of efficient mechanism design with guaranteed good properties even when players participate in multiple mechanisms simultaneously or sequentially. We define the class of smooth mechanisms, related to smooth games defined by Roughgarden, that can be thought of as mechanisms that generate approximately market clearing prices. We show that smooth mechanisms result in high quality outcome both in equilibrium and in learning outcomes in the full information setting, as well as in Bayesian equilibrium with uncertainty about participants. Our main result is to show that smooth mechanisms compose well: smoothness locally at each mechanism implies global efficiency."
+    },
+    {
+      "title": "Last-Iterate Convergence: Zero-Sum Games and Constrained Min-Max Optimization",
+      "year": 2017,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Constantinos Daskalakis",
+        "Ilyas, Andrew",
+        "Vasilis Syrgkanis",
+        "Haoyang Zeng"
+      ],
+      "citations": 108,
+      "doi": "10.4230/lipics.itcs.2019.27",
+      "url": "http://arxiv.org/abs/1711.00141",
+      "pdfUrl": "https://arxiv.org/pdf/1711.00141",
+      "abstract": "Motivated by applications in Game Theory, Optimization, and Generative Adversarial Networks, recent work of Daskalakis et al [Daskalakis et al., ICLR, 2018] and follow-up work of Liang and Stokes [Liang and Stokes, 2018] have established that a variant of the widely used Gradient Descent/Ascent procedure, called \"Optimistic Gradient Descent/Ascent (OGDA)\", exhibits last-iterate convergence to saddle points in unconstrained convex-concave min-max optimization problems. We show that the same holds true in the more general problem of constrained min-max optimization under a variant of the no-regret Multiplicative-Weights-Update method called \"Optimistic Multiplicative-Weights Update (OMWU)\". This answers an open question of Syrgkanis et al [Syrgkanis et al., NIPS, 2015]. The proof of our result requires fundamentally different techniques from those that exist in no-regret learning litera..."
+    },
+    {
+      "title": "Bayesian Incentive-Compatible Bandit Exploration",
+      "year": 2015,
+      "venue": null,
+      "authors": [
+        "Yishay Mansour",
+        "Aleksandrs Slivkins",
+        "Vasilis Syrgkanis"
+      ],
+      "citations": 102,
+      "doi": "10.1145/2764468.2764508",
+      "url": "https://doi.org/10.1145/2764468.2764508",
+      "pdfUrl": null,
+      "abstract": "Individual decision-makers consume information revealed by the previous decision makers, and produce information that may help in future decision makers. This phenomenon is common in a wide range of scenarios in the Internet economy, as well as elsewhere, such as medical decisions. Each decision maker when required to select an action, would individually prefer to exploit, select the highest expected reward action conditional on her information. At the same time, each decision maker would prefer previous decision makers to explore, producing information about the rewards of various actions. A social planner, by means of carefully designed information disclosure, can incentivize the agents to balance the exploration and exploitation, and maximize social welfare. We formulate this problem as a multi-arm bandit problem (and various generalizations thereof) under incentive-compatibility c..."
+    },
+    {
+      "title": "Genome-scale screens identify factors regulating tumor cell responses to natural killer cells",
+      "year": 2021,
+      "venue": "Nature Genetics",
+      "authors": [
+        "Michal Sheffer",
+        "Emily Lowry",
+        "Nicky A. Beelen",
+        "Minasri Borah",
+        "Suha Naffar-Abu Amara",
+        "Chris Mader",
+        "Jennifer A. Roth",
+        "Aviad Tsherniak"
+      ],
+      "citations": 100,
+      "doi": "10.1038/s41588-021-00889-w",
+      "url": "https://doi.org/10.1038/s41588-021-00889-w",
+      "pdfUrl": "https://www.nature.com/articles/s41588-021-00889-w.pdf",
+      "abstract": null
+    },
+    {
+      "title": "Fast convergence of regularized learning in games",
+      "year": 2015,
+      "venue": "Neural Information Processing Systems",
+      "authors": [
+        "Vasilis Syrgkanis",
+        "Alekh Agarwal",
+        "Haipeng Luo",
+        "Robert E. Schapire"
+      ],
+      "citations": 86,
+      "doi": null,
+      "url": "https://proceedings.neurips.cc/paper/2015/file/7fea637fd6d02b8f0adf6f7dc36aed93-Paper.pdf",
+      "pdfUrl": null,
+      "abstract": "We show that natural classes of regularized learning algorithms with a form of recency bias achieve faster convergence rates to approximate efficiency and to coarse correlated equilibria in multiplayer normal form games. When each player in a game uses an algorithm from our class, their individual regret decays at O(T-3/4), while the sum of utilities converges to an approximate optimum at O(T-1)-an improvement upon the worst case O(T-1/2) rates. We show a black-box reduction for any algorithm in the class to achieve O(T-1/2) rates against an adversary, while maintaining the faster rates against algorithms in the class. Our results extend those of Rakhlin and Shridharan [17] and Daskalakis et al. [4], who only analyzed two-player zero-sum games for specific algorithms."
+    },
+    {
+      "title": "The Price of Anarchy in Auctions",
+      "year": 2017,
+      "venue": "Journal of Artificial Intelligence Research",
+      "authors": [
+        "Tim Roughgarden",
+        "Vasilis Syrgkanis",
+        "Éva Tardos"
+      ],
+      "citations": 79,
+      "doi": "10.1613/jair.5272",
+      "url": "https://doi.org/10.1613/jair.5272",
+      "pdfUrl": "https://jair.org/index.php/jair/article/download/11062/26240",
+      "abstract": "This survey outlines a general and modular theory for proving approximation guarantees for equilibria of auctions in complex settings. This theory complements traditional economic techniques, which generally focus on exact and optimal solutions and are accordingly limited to relatively stylized settings. We highlight three user-friendly analytical tools: smoothness-type inequalities, which immediately yield approximation guarantees for many auction formats of interest in the special case of complete information and deterministic strategies; extension theorems, which extend such guarantees to randomized strategies, no-regret learning outcomes, and incomplete-information settings; and composition theorems, which extend such guarantees from simpler to more complex auctions. Combining these tools yields tight worst-case approximation guarantees for the equilibria of many widely-used aucti..."
+    },
+    {
+      "title": "Econometrics for Learning Agents",
+      "year": 2015,
+      "venue": null,
+      "authors": [
+        "Denis Nekipelov",
+        "Vasilis Syrgkanis",
+        "Éva Tardos"
+      ],
+      "citations": 58,
+      "doi": "10.1145/2764468.2764522",
+      "url": "https://doi.org/10.1145/2764468.2764522",
+      "pdfUrl": null,
+      "abstract": "The main goal of this paper is to develop a theory of inference of player valuations from observed data in the generalized second price auction without relying on the Nash equilibrium assumption. Existing work in Economics on inferring agent values from data relies on the assumption that all participant strategies are best responses of the observed play of other players, i.e. they constitute a Nash equilibrium. In this paper, we show how to perform inference relying on a weaker assumption instead: assuming that players are using some form of no-regret learning. Learning outcomes emerged in recent years as an attractive alternative to Nash equilibrium in analyzing game outcomes, modeling players who haven't reached a stable equilibrium, but rather use algorithmic learning, aiming to learn the best way to play from previous observations. In this paper we show how to infer values of play..."
+    },
+    {
+      "title": "Bayesian Games and the Smoothness Framework",
+      "year": 2012,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Vasilis Syrgkanis"
+      ],
+      "citations": 57,
+      "doi": "10.48550/arxiv.1203.5155",
+      "url": "http://arxiv.org/abs/1203.5155",
+      "pdfUrl": "https://arxiv.org/pdf/1203.5155",
+      "abstract": "We consider a general class of Bayesian Games where each players utility depends on his type (possibly multidimensional) and on the strategy profile and where players' types are distributed independently. We show that if their full information version for any fixed instance of the type profile is a smooth game then the Price of Anarchy bound implied by the smoothness property, carries over to the Bayes-Nash Price of Anarchy. We show how some proofs from the literature (item bidding auctions, greedy auctions) can be cast as smoothness proofs or be simplified using smoothness. For first price item bidding with fractionally subadditive bidders we actually manage to improve by much the existing result \\cite{Hassidim2011a} from 4 to $\\frac{e}{e-1}\\approx 1.58$. This also shows a very interesting separation between first and second price item bidding since second price item bidding has PoA ..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-17T01:37:24.886Z"
+}

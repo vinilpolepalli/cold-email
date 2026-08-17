@@ -193,6 +193,31 @@ export default function CampaignConsole() {
         <div className="rounded-lg border border-[#e5e5e5] bg-[#f5f3f1] px-4 py-3 text-[13px] text-black">{notice}</div>
       )}
 
+      {policy && (
+        <PausePanel
+          paused={policy.paused}
+          busy={busy === "pause"}
+          onToggle={async () => {
+            setBusy("pause");
+            setError("");
+            try {
+              const res = await fetch("/api/campaign", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ action: "policy", policy: { paused: !policy.paused } }),
+              });
+              const data = await res.json();
+              if (!res.ok) throw new Error(data.error ?? "Could not change that");
+              await load();
+            } catch (err) {
+              setError(err instanceof Error ? err.message : String(err));
+            } finally {
+              setBusy("");
+            }
+          }}
+        />
+      )}
+
       <SenderPanel
         sender={sender}
         configured={oauthConfigured}
@@ -216,6 +241,38 @@ export default function CampaignConsole() {
 
       <Routines routines={routines} scheduled={scheduled} busy={busy} onRun={runRoutine} />
     </div>
+  );
+}
+
+// ── the master switch ───────────────────────────────────────────────────────
+
+/**
+ * Whether anything can leave at all, stated at the top of the page in one
+ * sentence. Everything below it is conditional on something; this is not.
+ */
+function PausePanel({ paused, busy, onToggle }: { paused: boolean; busy: boolean; onToggle: () => void }) {
+  return (
+    <Card className="p-5">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <div className="flex items-center gap-2">
+            <span
+              className={`inline-block h-2 w-2 rounded-full ${paused ? "bg-[#ff4704]" : "bg-[#15362b]"}`}
+              aria-hidden
+            />
+            <p className="text-sm text-black">{paused ? "Sending is paused" : "Sending is live"}</p>
+          </div>
+          <p className="mt-1 max-w-2xl text-[13px] text-[#777169]">
+            {paused
+              ? "No routine will send an email or a follow-up while this is on, whatever is approved, armed or scheduled. Drafting and the crawls still run."
+              : "Approved drafts will go out at their scheduled time, and armed tracks will send without waiting for you."}
+          </p>
+        </div>
+        <Button variant={paused ? "primary" : "secondary"} onClick={onToggle} disabled={busy}>
+          {busy ? "Saving…" : paused ? "Start sending" : "Pause sending"}
+        </Button>
+      </div>
+    </Card>
   );
 }
 

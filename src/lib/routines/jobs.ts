@@ -333,6 +333,18 @@ const sendDue: Routine = {
     const user = await getUserProfile(ctx.userId);
     if (!user) return emptyResult('No profile yet');
 
+    // The master switch, checked before anything else so that "is the campaign
+    // paused" is the first and cheapest question, not a conclusion drawn from
+    // four other settings.
+    const paused = await getPolicy(ctx.userId);
+    if (paused.paused) {
+      return {
+        summary: 'Campaign is paused, so nothing was sent.',
+        counts: { sent: 0, blocked: 1 },
+        details: ['Unpause it from the campaign page when you are ready to start sending.'],
+      };
+    }
+
     // Refuse to send from the wrong mailbox. Without a connected school
     // account the send chain would fall through to whatever else is
     // configured, and the entire point of this campaign is the .edu address.
@@ -462,6 +474,9 @@ const followUp: Routine = {
     if (!user) return emptyResult('No profile yet');
 
     const policy = await getPolicy(ctx.userId);
+    // A nudge is an email too. Pausing has to stop these as well, or "paused"
+    // would quietly mean "paused except for the ones already in flight".
+    if (policy.paused) return emptyResult('Campaign is paused, so nothing was nudged');
     if (!policy.followUpsEnabled) return emptyResult('Follow-ups are switched off');
 
     const identity = await getSenderIdentity(ctx.userId);

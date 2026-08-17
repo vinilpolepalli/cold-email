@@ -1,0 +1,172 @@
+{
+  "researcherId": "res_olivier-gevaert_stanford",
+  "authorName": "Olivier Gevaert",
+  "authorUrl": "https://openalex.org/A5078274543",
+  "worksCount": 573,
+  "citedByCount": 16687,
+  "topics": [
+    "Radiomics and Machine Learning in Medical Imaging",
+    "Glioma Diagnosis and Treatment",
+    "AI in cancer detection",
+    "RNA modifications and cancer",
+    "Cancer-related gene regulation"
+  ],
+  "publications": [
+    {
+      "title": "Machine Learning Identifies Stemness Features Associated with Oncogenic Dedifferentiation",
+      "year": 2018,
+      "venue": "Cell",
+      "authors": [
+        "Tathiane M. Malta",
+        "Artem Sokolov",
+        "Andrew J. Gentles",
+        "Tomasz Burzykowski",
+        "Laila Poisson",
+        "John N. Weinstein",
+        "Bożena Kamińska",
+        "Joerg Huelsken"
+      ],
+      "citations": 2378,
+      "doi": "10.1016/j.cell.2018.03.034",
+      "url": "https://doi.org/10.1016/j.cell.2018.03.034",
+      "pdfUrl": "http://www.cell.com/article/S0092867418303581/pdf",
+      "abstract": "Cancer progression involves the gradual loss of a differentiated phenotype and acquisition of progenitor and stem-cell-like features. Here, we provide novel stemness indices for assessing the degree of oncogenic dedifferentiation. We used an innovative one-class logistic regression (OCLR) machine-learning algorithm to extract transcriptomic and epigenetic feature sets derived from non-transformed pluripotent stem cells and their differentiated progeny. Using OCLR, we were able to identify previously undiscovered biological mechanisms associated with the dedifferentiated oncogenic state. Analyses of the tumor microenvironment revealed unanticipated correlation of cancer stemness with immune checkpoint expression and infiltrating immune cells. We found that the dedifferentiated oncogenic phenotype was generally most prominent in metastatic tumors. Application of our stemness indices to ..."
+    },
+    {
+      "title": "Intrinsic Gene Expression Profiles of Gliomas Are a Better Predictor of Survival than Histology",
+      "year": 2009,
+      "venue": "Cancer Research",
+      "authors": [
+        "Lonneke A.M. Gravendeel",
+        "Mathilde C.M. Kouwenhoven",
+        "Olivier Gevaert",
+        "Johan J. de Rooi",
+        "Andrew Stubbs",
+        "J. Elza Duijm",
+        "Anneleen Daemen",
+        "Fonnet E. Bleeker"
+      ],
+      "citations": 713,
+      "doi": "10.1158/0008-5472.can-09-2307",
+      "url": "https://doi.org/10.1158/0008-5472.can-09-2307",
+      "pdfUrl": null,
+      "abstract": "Gliomas are the most common primary brain tumors with heterogeneous morphology and variable prognosis. Treatment decisions in patients rely mainly on histologic classification and clinical parameters. However, differences between histologic subclasses and grades are subtle, and classifying gliomas is subject to a large interobserver variability. To improve current classification standards, we have performed gene expression profiling on a large cohort of glioma samples of all histologic subtypes and grades. We identified seven distinct molecular subgroups that correlate with survival. These include two favorable prognostic subgroups (median survival, >4.7 years), two with intermediate prognosis (median survival, 1-4 years), two with poor prognosis (median survival, <1 year), and one control group. The intrinsic molecular subtypes of glioma are different from histologic subgroups and co..."
+    },
+    {
+      "title": "Central focused convolutional neural networks: Developing a data-driven model for lung nodule segmentation",
+      "year": 2017,
+      "venue": "Medical Image Analysis",
+      "authors": [
+        "Shuo Wang",
+        "Mu Zhou",
+        "Zaiyi Liu",
+        "Zhenyu Liu",
+        "Dongsheng Gu",
+        "Yali Zang",
+        "Di Dong",
+        "Olivier Gevaert"
+      ],
+      "citations": 489,
+      "doi": "10.1016/j.media.2017.06.014",
+      "url": "https://doi.org/10.1016/j.media.2017.06.014",
+      "pdfUrl": "https://www.sciencedirect.com/science/article/pii/S1361841517301019/pdf",
+      "abstract": "Accurate lung nodule segmentation from computed tomography (CT) images is of great importance for image-driven lung cancer analysis. However, the heterogeneity of lung nodules and the presence of similar visual characteristics between nodules and their surroundings make it difficult for robust nodule segmentation. In this study, we propose a data-driven model, termed the Central Focused Convolutional Neural Networks (CF-CNN), to segment lung nodules from heterogeneous CT images. Our approach combines two key insights: 1) the proposed model captures a diverse set of nodule-sensitive features from both 3-D and 2-D CT images simultaneously; 2) when classifying an image voxel, the effects of its neighbor voxels can vary according to their spatial locations. We describe this phenomenon by proposing a novel central pooling layer retaining much information on voxel patch center, followed by ..."
+    },
+    {
+      "title": "Oncogenic transformation of diverse gastrointestinal tissues in primary organoid culture",
+      "year": 2014,
+      "venue": "Nature Medicine",
+      "authors": [
+        "Xingnan Li",
+        "Lincoln Nadauld",
+        "Akifumi Ootani",
+        "David C. Corney",
+        "Reetesh K. Pai",
+        "Olivier Gevaert",
+        "Michael A. Cantrell",
+        "Paul G Rack"
+      ],
+      "citations": 454,
+      "doi": "10.1038/nm.3585",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4087144",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Predicting EGFR mutation status in lung adenocarcinoma on computed tomography image using deep learning",
+      "year": 2019,
+      "venue": "European Respiratory Journal",
+      "authors": [
+        "Shuo Wang",
+        "Jingyun Shi",
+        "Zhaoxiang Ye",
+        "Di Dong",
+        "Dongdong Yu",
+        "Mu Zhou",
+        "Ying Liu",
+        "Olivier Gevaert"
+      ],
+      "citations": 441,
+      "doi": "10.1183/13993003.00986-2018",
+      "url": "https://doi.org/10.1183/13993003.00986-2018",
+      "pdfUrl": "https://erj.ersjournals.com/content/erj/53/3/1800986.full.pdf",
+      "abstract": "Epidermal growth factor receptor (EGFR) genotyping is critical for treatment guidelines such as the use of tyrosine kinase inhibitors in lung adenocarcinoma. Conventional identification of EGFR genotype requires biopsy and sequence testing which is invasive and may suffer from the difficulty of accessing tissue samples. Here, we propose a deep learning model to predict EGFR mutation status in lung adenocarcinoma using non-invasive computed tomography (CT).We retrospectively collected data from 844 lung adenocarcinoma patients with pre-operative CT images, EGFR mutation and clinical information from two hospitals. An end-to-end deep learning model was proposed to predict the EGFR mutation status by CT scanning.By training in 14 926 CT images, the deep learning model achieved encouraging predictive performance in both the primary cohort (n=603; AUC 0.85, 95% CI 0.83-0.88) and the indepe..."
+    },
+    {
+      "title": "Radiomics in Brain Tumor: Image Assessment, Quantitative Feature Descriptors, and Machine-Learning Approaches",
+      "year": 2017,
+      "venue": "American Journal of Neuroradiology",
+      "authors": [
+        "Mu Zhou",
+        "Jacob G. Scott",
+        "Baishali Chaudhury",
+        "Lawrence Hall",
+        "Dmitry B. Goldgof",
+        "Kristen W. Yeom",
+        "Michael Iv",
+        "Yangming Ou"
+      ],
+      "citations": 431,
+      "doi": "10.3174/ajnr.a5391",
+      "url": "https://doi.org/10.3174/ajnr.a5391",
+      "pdfUrl": "http://www.ajnr.org/content/ajnr/39/2/208.full.pdf",
+      "abstract": "Radiomics describes a broad set of computational methods that extract quantitative features from radiographic images. The resulting features can be used to inform imaging diagnosis, prognosis, and therapy response in oncology. However, major challenges remain for methodologic developments to optimize feature extraction and provide rapid information flow in clinical settings. Equally important, to be clinically useful, predictive radiomic properties must be clearly linked to meaningful biologic characteristics and qualitative imaging properties familiar to radiologists. Here we use a cross-disciplinary approach to highlight studies in radiomics. We review brain tumor radiologic studies (eg, imaging interpretation) through computational models (eg, computer vision and machine learning) that provide novel clinical insights. We outline current quantitative image feature extraction and pre..."
+    },
+    {
+      "title": "Deep learning with multimodal representation for pancancer prognosis prediction",
+      "year": 2019,
+      "venue": "Bioinformatics",
+      "authors": [
+        "Anika Cheerla",
+        "Olivier Gevaert"
+      ],
+      "citations": 421,
+      "doi": "10.1093/bioinformatics/btz342",
+      "url": "https://doi.org/10.1093/bioinformatics/btz342",
+      "pdfUrl": "https://academic.oup.com/bioinformatics/article-pdf/35/14/i446/28913346/btz342.pdf",
+      "abstract": "MOTIVATION: Estimating the future course of patients with cancer lesions is invaluable to physicians; however, current clinical methods fail to effectively use the vast amount of multimodal data that is available for cancer patients. To tackle this problem, we constructed a multimodal neural network-based model to predict the survival of patients for 20 different cancer types using clinical data, mRNA expression data, microRNA expression data and histopathology whole slide images (WSIs). We developed an unsupervised encoder to compress these four data modalities into a single feature vector for each patient, handling missing data through a resilient, multimodal dropout method. Encoding methods were tailored to each data type-using deep highway networks to extract features from clinical and genomic data, and convolutional neural networks to extract features from WSIs. RESULTS: We used ..."
+    },
+    {
+      "title": "Non–Small Cell Lung Cancer: Identifying Prognostic Imaging Biomarkers by Leveraging Public Gene Expression Microarray Data—Methods and Preliminary Results",
+      "year": 2012,
+      "venue": "Radiology",
+      "authors": [
+        "Olivier Gevaert",
+        "Jiajing Xu",
+        "Chuong D. Hoang",
+        "Ann N. Leung",
+        "Yue Xu",
+        "Andrew Quon",
+        "Daniel L. Rubin",
+        "Sandy Napel"
+      ],
+      "citations": 413,
+      "doi": "10.1148/radiol.12111607",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/3401348",
+      "pdfUrl": null,
+      "abstract": "PURPOSE: To identify prognostic imaging biomarkers in non-small cell lung cancer (NSCLC) by means of a radiogenomics strategy that integrates gene expression and medical images in patients for whom survival outcomes are not available by leveraging survival data in public gene expression data sets. MATERIALS AND METHODS: A radiogenomics strategy for associating image features with clusters of coexpressed genes (metagenes) was defined. First, a radiogenomics correlation map is created for a pairwise association between image features and metagenes. Next, predictive models of metagenes are built in terms of image features by using sparse linear regression. Similarly, predictive models of image features are built in terms of metagenes. Finally, the prognostic significance of the predicted image features are evaluated in a public gene expression data set with survival outcomes. This radiog..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-17T01:37:00.124Z"
+}
