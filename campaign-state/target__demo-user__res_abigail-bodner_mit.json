@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x4qx8gb5",
+  "userId": "demo-user",
+  "researcherId": "res_abigail-bodner_mit",
+  "researcherName": "Abigail Bodner",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 61.6,
+  "reasons": [
+    "Overlaps on machine learning, climate modeling",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "abodner@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.856Z",
+  "updatedAt": "2026-08-18T14:28:42.856Z"
+}

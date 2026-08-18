@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0wzbipo99",
+  "userId": "demo-user",
+  "researcherId": "res_dan-huttenlocher_mit",
+  "researcherName": "Dan Huttenlocher",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 73.3,
+  "reasons": [
+    "Overlaps on computer science, machine learning, vision and graphics",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "huttenlocher@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.851Z",
+  "updatedAt": "2026-08-18T14:28:42.851Z"
+}

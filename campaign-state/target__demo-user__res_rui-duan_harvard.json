@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0thgkb4nm",
+  "userId": "demo-user",
+  "researcherId": "res_rui-duan_harvard",
+  "researcherName": "Rui Duan",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 43.8,
+  "reasons": [
+    "Overlaps on data integration, high-dimensional data, real-world data",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "rduan@hsph.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.725Z",
+  "updatedAt": "2026-08-18T14:28:42.725Z"
+}

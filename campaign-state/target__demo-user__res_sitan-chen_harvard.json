@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tffw1u9v",
+  "userId": "demo-user",
+  "researcherId": "res_sitan-chen_harvard",
+  "researcherName": "Sitan Chen",
+  "school": "Harvard",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 50.4,
+  "reasons": [
+    "Overlaps on machine learning theory, diffusion models, quantum learning",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "sitan@seas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.723Z",
+  "updatedAt": "2026-08-18T14:28:42.723Z"
+}

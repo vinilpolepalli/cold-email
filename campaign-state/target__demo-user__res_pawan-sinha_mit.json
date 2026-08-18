@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x26r7dky",
+  "userId": "demo-user",
+  "researcherId": "res_pawan-sinha_mit",
+  "researcherName": "Pawan Sinha",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 66.3,
+  "reasons": [
+    "Overlaps on computational neuroscience, computer vision, computational modeling",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "psinha@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.854Z",
+  "updatedAt": "2026-08-18T14:28:42.854Z"
+}

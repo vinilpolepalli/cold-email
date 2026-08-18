@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0wvn1hy4z",
+  "userId": "demo-user",
+  "researcherId": "res_adityanarayanan-radhakrishnan_mit",
+  "researcherName": "Adityanarayanan Radhakrishnan",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 76.4,
+  "reasons": [
+    "Overlaps on machine learning theory, deep learning",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "aradha@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.847Z",
+  "updatedAt": "2026-08-18T14:28:42.847Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0yz88tznn",
+  "userId": "demo-user",
+  "researcherId": "res_yuri-pritykin_princeton",
+  "researcherName": "Yuri Pritykin",
+  "school": "Princeton",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 23.1,
+  "reasons": [
+    "Overlaps on computational biology, machine learning, genomics",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "pritykin@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.923Z",
+  "updatedAt": "2026-08-18T14:28:42.923Z"
+}

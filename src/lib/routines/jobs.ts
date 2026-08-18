@@ -190,7 +190,20 @@ const buildQueue: Routine = {
     // target either, even though they never went through this queue.
     for (const entry of await getOutbox(ctx.userId)) exclude.add(entry.researcherId);
 
-    const ranked = await rankTargets(user, await getAllProfiles(), { excludeIds: exclude });
+    const wanted = ctx.schools?.map((s) => s.trim().toLowerCase()).filter(Boolean) ?? [];
+    const deptRe = ctx.departmentPattern ? new RegExp(ctx.departmentPattern, 'i') : null;
+    const profiles = (await getAllProfiles()).filter((p) => {
+      if (wanted.length && !wanted.includes((p.school ?? '').trim().toLowerCase())) return false;
+      if (deptRe && !deptRe.test(`${p.department ?? ''} ${p.title ?? ''}`)) return false;
+      return true;
+    });
+
+    const ranked = await rankTargets(user, profiles, {
+      excludeIds: exclude,
+      // A named school list is the instruction; the standing campaign-school
+      // restriction is the default it replaces.
+      campaignSchoolsOnly: wanted.length ? false : undefined,
+    });
     if (!ranked.length) return emptyResult('Nothing new to queue');
 
     const details: string[] = [];

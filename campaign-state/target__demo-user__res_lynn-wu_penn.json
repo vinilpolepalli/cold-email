@@ -1,0 +1,24 @@
+{
+  "id": "tgt_msyrd10y3v7jj3",
+  "userId": "demo-user",
+  "researcherId": "res_lynn-wu_penn",
+  "researcherName": "Lynn Wu",
+  "school": "Penn",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 9.6,
+  "reasons": [
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "wulynn@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.994Z",
+  "updatedAt": "2026-08-18T14:28:42.994Z"
+}

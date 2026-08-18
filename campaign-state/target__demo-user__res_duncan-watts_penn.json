@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10sw1y1cy",
+  "userId": "demo-user",
+  "researcherId": "res_duncan-watts_penn",
+  "researcherName": "Duncan Watts",
+  "school": "Penn",
+  "trackId": "cs-other",
+  "status": "queued",
+  "rank": 27.3,
+  "reasons": [
+    "Overlaps on computational social science, social networks, large-scale digital data",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "djwatts@engineering.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.988Z",
+  "updatedAt": "2026-08-18T14:28:42.988Z"
+}

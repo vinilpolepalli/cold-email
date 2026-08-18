@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tbfourqm",
+  "userId": "demo-user",
+  "researcherId": "res_yilun-du_harvard",
+  "researcherName": "Yilun Du",
+  "school": "Harvard",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 59.4,
+  "reasons": [
+    "Overlaps on generative models, robotics, machine learning",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ydu@seas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.719Z",
+  "updatedAt": "2026-08-18T14:28:42.719Z"
+}

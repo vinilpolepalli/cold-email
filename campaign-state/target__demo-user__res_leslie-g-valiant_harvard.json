@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tkywfhjm",
+  "userId": "demo-user",
+  "researcherId": "res_leslie-g-valiant_harvard",
+  "researcherName": "Leslie G. Valiant",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 39,
+  "reasons": [
+    "Overlaps on machine learning, computational neuroscience",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "valiant@seas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.728Z",
+  "updatedAt": "2026-08-18T14:28:42.728Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z5xikf5g",
+  "userId": "demo-user",
+  "researcherId": "res_adam-finkelstein_princeton",
+  "researcherName": "Adam Finkelstein",
+  "school": "Princeton",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 17.7,
+  "reasons": [
+    "Overlaps on computer graphics, vision and graphics, human-computer interaction",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "af@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.929Z",
+  "updatedAt": "2026-08-18T14:28:42.929Z"
+}

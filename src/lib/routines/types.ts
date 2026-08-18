@@ -24,6 +24,18 @@ export interface RoutineContext {
    * items; the daily chain sets it and skips steps that cannot start.
    */
   deadline?: number;
+  /**
+   * Restrict this run to these schools, by name.
+   *
+   * The campaign normally works from CAMPAIGN_SCHOOLS, which is the standing
+   * answer to "who would an unattended run contact". A named list here is the
+   * sender asking for one specific batch, so it also lifts that restriction —
+   * naming a school is a more explicit instruction than the default it
+   * overrides.
+   */
+  schools?: string[];
+  /** Further narrow to departments matching this pattern, e.g. Wharton within Penn. */
+  departmentPattern?: string;
 }
 
 /** Whether there is still time to start another item. */

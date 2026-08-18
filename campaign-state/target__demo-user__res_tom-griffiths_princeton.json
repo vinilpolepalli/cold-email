@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z794ny0g",
+  "userId": "demo-user",
+  "researcherId": "res_tom-griffiths_princeton",
+  "researcherName": "Tom Griffiths",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 16.8,
+  "reasons": [
+    "Overlaps on computational cognitive science, machine learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "tomg@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.931Z",
+  "updatedAt": "2026-08-18T14:28:42.931Z"
+}

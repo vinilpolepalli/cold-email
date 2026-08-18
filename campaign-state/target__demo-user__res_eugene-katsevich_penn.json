@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10xyx92cx",
+  "userId": "demo-user",
+  "researcherId": "res_eugene-katsevich_penn",
+  "researcherName": "Eugene Katsevich",
+  "school": "Penn",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 11.7,
+  "reasons": [
+    "Overlaps on statistical genomics",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ekatsevi@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.993Z",
+  "updatedAt": "2026-08-18T14:28:42.993Z"
+}

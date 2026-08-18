@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tl3bw0s8",
+  "userId": "demo-user",
+  "researcherId": "res_michael-baym_harvard",
+  "researcherName": "Michael Baym",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 37.8,
+  "reasons": [
+    "Overlaps on evolutionary biology, computational biology",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "baym@hms.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.729Z",
+  "updatedAt": "2026-08-18T14:28:42.729Z"
+}

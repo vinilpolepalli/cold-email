@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z94vk2xz",
+  "userId": "demo-user",
+  "researcherId": "res_h-vincent-poor_princeton",
+  "researcherName": "H. Vincent Poor",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 15,
+  "reasons": [
+    "Overlaps on wireless networks, data science",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "poor@princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.933Z",
+  "updatedAt": "2026-08-18T14:28:42.933Z"
+}

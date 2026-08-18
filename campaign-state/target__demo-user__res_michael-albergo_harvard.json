@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tieorgz1",
+  "userId": "demo-user",
+  "researcherId": "res_michael-albergo_harvard",
+  "researcherName": "Michael Albergo",
+  "school": "Harvard",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 41.4,
+  "reasons": [
+    "Overlaps on generative modeling, machine learning",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "michaelsalbergo@gmail.com",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.726Z",
+  "updatedAt": "2026-08-18T14:28:42.726Z"
+}

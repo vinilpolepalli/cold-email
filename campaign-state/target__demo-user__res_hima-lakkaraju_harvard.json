@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tevd9wfr",
+  "userId": "demo-user",
+  "researcherId": "res_hima-lakkaraju_harvard",
+  "researcherName": "Hima Lakkaraju",
+  "school": "Harvard",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 51.6,
+  "reasons": [
+    "Overlaps on explainable machine learning, machine learning, human-ai interaction",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "hlakkaraju@hbs.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.722Z",
+  "updatedAt": "2026-08-18T14:28:42.722Z"
+}

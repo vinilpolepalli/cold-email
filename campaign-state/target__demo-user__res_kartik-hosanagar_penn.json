@@ -1,0 +1,24 @@
+{
+  "id": "tgt_msyrd10y66uyca",
+  "userId": "demo-user",
+  "researcherId": "res_kartik-hosanagar_penn",
+  "researcherName": "Kartik Hosanagar",
+  "school": "Penn",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 9.3,
+  "reasons": [
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "kartikh@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.994Z",
+  "updatedAt": "2026-08-18T14:28:42.994Z"
+}

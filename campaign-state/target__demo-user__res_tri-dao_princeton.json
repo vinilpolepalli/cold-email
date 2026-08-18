@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0yzc6jg9y",
+  "userId": "demo-user",
+  "researcherId": "res_tri-dao_princeton",
+  "researcherName": "Tri Dao",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 23.7,
+  "reasons": [
+    "Overlaps on machine learning, efficient deep learning, sequence models",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "td8762@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.923Z",
+  "updatedAt": "2026-08-18T14:28:42.923Z"
+}

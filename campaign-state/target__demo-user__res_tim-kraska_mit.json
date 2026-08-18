@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0wzxaj6gp",
+  "userId": "demo-user",
+  "researcherId": "res_tim-kraska_mit",
+  "researcherName": "Tim Kraska",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 74.9,
+  "reasons": [
+    "Overlaps on machine learning, data systems, generative ai",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "kraska@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.851Z",
+  "updatedAt": "2026-08-18T14:28:42.851Z"
+}

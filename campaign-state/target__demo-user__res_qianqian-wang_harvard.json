@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tdnxx9le",
+  "userId": "demo-user",
+  "researcherId": "res_qianqian-wang_harvard",
+  "researcherName": "Qianqian Wang",
+  "school": "Harvard",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 55.8,
+  "reasons": [
+    "Overlaps on computer vision, machine learning, robotics",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "qwang@seas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.721Z",
+  "updatedAt": "2026-08-18T14:28:42.721Z"
+}

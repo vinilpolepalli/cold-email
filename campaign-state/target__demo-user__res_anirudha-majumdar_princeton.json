@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z7q94iwd",
+  "userId": "demo-user",
+  "researcherId": "res_anirudha-majumdar_princeton",
+  "researcherName": "Anirudha Majumdar",
+  "school": "Princeton",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 16.8,
+  "reasons": [
+    "Overlaps on robotics, machine learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ani.majumdar@princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.931Z",
+  "updatedAt": "2026-08-18T14:28:42.931Z"
+}

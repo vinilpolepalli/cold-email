@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x3v7fswn",
+  "userId": "demo-user",
+  "researcherId": "res_bruce-tidor_mit",
+  "researcherName": "Bruce Tidor",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 64,
+  "reasons": [
+    "Overlaps on computational biology, molecular modeling, network analysis",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "tidor@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.855Z",
+  "updatedAt": "2026-08-18T14:28:42.855Z"
+}

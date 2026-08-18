@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x5f30cfz",
+  "userId": "demo-user",
+  "researcherId": "res_regina-barzilay_mit",
+  "researcherName": "Regina Barzilay",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 60.8,
+  "reasons": [
+    "Overlaps on machine learning",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "regina@csail.mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.857Z",
+  "updatedAt": "2026-08-18T14:28:42.857Z"
+}

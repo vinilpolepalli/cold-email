@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10ter1zov",
+  "userId": "demo-user",
+  "researcherId": "res_damek-davis_penn",
+  "researcherName": "Damek Davis",
+  "school": "Penn",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 22.8,
+  "reasons": [
+    "Overlaps on machine learning",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "damek@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.989Z",
+  "updatedAt": "2026-08-18T14:28:42.989Z"
+}

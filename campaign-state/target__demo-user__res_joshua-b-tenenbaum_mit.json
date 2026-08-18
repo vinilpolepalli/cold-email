@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x4x3vodj",
+  "userId": "demo-user",
+  "researcherId": "res_joshua-b-tenenbaum_mit",
+  "researcherName": "Joshua B. Tenenbaum",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 62.4,
+  "reasons": [
+    "Overlaps on computational cognitive science, machine learning, bayesian modeling",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "jbt@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.856Z",
+  "updatedAt": "2026-08-18T14:28:42.856Z"
+}

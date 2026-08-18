@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tj5rwjir",
+  "userId": "demo-user",
+  "researcherId": "res_peter-park_harvard",
+  "researcherName": "Peter Park",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 39.6,
+  "reasons": [
+    "Overlaps on computational genomics, cancer genomics",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "peter_park@hms.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.727Z",
+  "updatedAt": "2026-08-18T14:28:42.727Z"
+}

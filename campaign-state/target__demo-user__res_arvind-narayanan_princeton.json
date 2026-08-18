@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z70ghrp5",
+  "userId": "demo-user",
+  "researcherId": "res_arvind-narayanan_princeton",
+  "researcherName": "Arvind Narayanan",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 16.8,
+  "reasons": [
+    "Overlaps on machine learning fairness",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "arvindn@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.931Z",
+  "updatedAt": "2026-08-18T14:28:42.931Z"
+}

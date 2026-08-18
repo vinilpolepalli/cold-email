@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10vetxvct",
+  "userId": "demo-user",
+  "researcherId": "res_yuting-wei_penn",
+  "researcherName": "Yuting Wei",
+  "school": "Penn",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 16.2,
+  "reasons": [
+    "Overlaps on reinforcement learning",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ytwei@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.991Z",
+  "updatedAt": "2026-08-18T14:28:42.991Z"
+}

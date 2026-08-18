@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10ved09mc",
+  "userId": "demo-user",
+  "researcherId": "res_abraham-j-wyner_penn",
+  "researcherName": "Abraham J. Wyner",
+  "school": "Penn",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 21.9,
+  "reasons": [
+    "Overlaps on probabilistic modeling, machine learning",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ajw@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.991Z",
+  "updatedAt": "2026-08-18T14:28:42.991Z"
+}

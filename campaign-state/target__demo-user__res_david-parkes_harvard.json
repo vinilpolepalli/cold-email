@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tjvpk0w8",
+  "userId": "demo-user",
+  "researcherId": "res_david-parkes_harvard",
+  "researcherName": "David Parkes",
+  "school": "Harvard",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 40.8,
+  "reasons": [
+    "Overlaps on multi-agent ai, machine learning",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "parkes@eecs.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.727Z",
+  "updatedAt": "2026-08-18T14:28:42.727Z"
+}

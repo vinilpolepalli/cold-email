@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tkqrmd2e",
+  "userId": "demo-user",
+  "researcherId": "res_heather-mattie_harvard",
+  "researcherName": "Heather Mattie",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 37.8,
+  "reasons": [
+    "Overlaps on machine learning, network science",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "hemattie@hsph.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.728Z",
+  "updatedAt": "2026-08-18T14:28:42.728Z"
+}

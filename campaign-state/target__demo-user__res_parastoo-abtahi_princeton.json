@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z9ysjxlx",
+  "userId": "demo-user",
+  "researcherId": "res_parastoo-abtahi_princeton",
+  "researcherName": "Parastoo Abtahi",
+  "school": "Princeton",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 15.3,
+  "reasons": [
+    "Overlaps on human-computer interaction, augmented reality, robotics",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "abtahi@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.933Z",
+  "updatedAt": "2026-08-18T14:28:42.933Z"
+}

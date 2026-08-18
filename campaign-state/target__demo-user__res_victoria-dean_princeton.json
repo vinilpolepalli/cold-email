@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z474d2iz",
+  "userId": "demo-user",
+  "researcherId": "res_victoria-dean_princeton",
+  "researcherName": "Victoria Dean",
+  "school": "Princeton",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 18.9,
+  "reasons": [
+    "Overlaps on machine learning, robotics",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "vd2713@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.928Z",
+  "updatedAt": "2026-08-18T14:28:42.928Z"
+}

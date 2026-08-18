@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tgiytlew",
+  "userId": "demo-user",
+  "researcherId": "res_galit-lahav_harvard",
+  "researcherName": "Galit Lahav",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 46.8,
+  "reasons": [
+    "Overlaps on quantitative single-cell biology, cancer systems biology",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "lahav_office@hms.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.724Z",
+  "updatedAt": "2026-08-18T14:28:42.724Z"
+}

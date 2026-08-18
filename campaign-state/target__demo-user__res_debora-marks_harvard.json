@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0th57wvro",
+  "userId": "demo-user",
+  "researcherId": "res_debora-marks_harvard",
+  "researcherName": "Debora Marks",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 43.8,
+  "reasons": [
+    "Overlaps on computational biology, protein structure prediction, statistical modeling",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "debbie@hms.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.725Z",
+  "updatedAt": "2026-08-18T14:28:42.725Z"
+}

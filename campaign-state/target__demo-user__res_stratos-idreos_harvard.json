@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tkubeopo",
+  "userId": "demo-user",
+  "researcherId": "res_stratos-idreos_harvard",
+  "researcherName": "Stratos Idreos",
+  "school": "Harvard",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 39,
+  "reasons": [
+    "Overlaps on data systems, machine learning",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "stratos@seas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.728Z",
+  "updatedAt": "2026-08-18T14:28:42.728Z"
+}

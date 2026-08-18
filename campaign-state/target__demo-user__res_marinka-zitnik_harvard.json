@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tgcrino8",
+  "userId": "demo-user",
+  "researcherId": "res_marinka-zitnik_harvard",
+  "researcherName": "Marinka Zitnik",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 46.2,
+  "reasons": [
+    "Overlaps on geometric deep learning, foundation models, drug discovery",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "marinka@hms.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.724Z",
+  "updatedAt": "2026-08-18T14:28:42.724Z"
+}

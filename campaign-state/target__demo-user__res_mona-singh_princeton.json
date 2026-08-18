@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z9l4p6ar",
+  "userId": "demo-user",
+  "researcherId": "res_mona-singh_princeton",
+  "researcherName": "Mona Singh",
+  "school": "Princeton",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 16.2,
+  "reasons": [
+    "Overlaps on computational biology, computational genomics",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "mona@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.933Z",
+  "updatedAt": "2026-08-18T14:28:42.933Z"
+}

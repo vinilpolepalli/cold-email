@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z87fpcn9",
+  "userId": "demo-user",
+  "researcherId": "res_abhishek-bhattacharjee_princeton",
+  "researcherName": "Abhishek Bhattacharjee",
+  "school": "Princeton",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 16.2,
+  "reasons": [
+    "Overlaps on computer architecture, computational biology",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "abhattac@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.932Z",
+  "updatedAt": "2026-08-18T14:28:42.932Z"
+}

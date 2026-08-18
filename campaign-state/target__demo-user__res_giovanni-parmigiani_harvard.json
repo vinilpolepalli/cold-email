@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tcr9fa4d",
+  "userId": "demo-user",
+  "researcherId": "res_giovanni-parmigiani_harvard",
+  "researcherName": "Giovanni Parmigiani",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 57.6,
+  "reasons": [
+    "Overlaps on machine learning for precision medicine, cancer risk prediction, multi-study methods",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "parmigia@hsph.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.720Z",
+  "updatedAt": "2026-08-18T14:28:42.720Z"
+}

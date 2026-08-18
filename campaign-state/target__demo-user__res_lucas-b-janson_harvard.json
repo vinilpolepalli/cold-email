@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0th9dh621",
+  "userId": "demo-user",
+  "researcherId": "res_lucas-b-janson_harvard",
+  "researcherName": "Lucas B Janson",
+  "school": "Harvard",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 45,
+  "reasons": [
+    "Overlaps on statistical machine learning, high-dimensional inference, representation learning theory",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ljanson@fas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.725Z",
+  "updatedAt": "2026-08-18T14:28:42.725Z"
+}

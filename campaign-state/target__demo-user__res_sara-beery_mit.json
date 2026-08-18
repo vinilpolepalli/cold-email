@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0wvjcpxjr",
+  "userId": "demo-user",
+  "researcherId": "res_sara-beery_mit",
+  "researcherName": "Sara Beery",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 76.4,
+  "reasons": [
+    "Overlaps on machine learning, computer vision",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "beery@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.847Z",
+  "updatedAt": "2026-08-18T14:28:42.847Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0wyppzy8c",
+  "userId": "demo-user",
+  "researcherId": "res_deb-roy_mit",
+  "researcherName": "Deb Roy",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 74.9,
+  "reasons": [
+    "Overlaps on applied machine learning, human-machine systems, communication technology",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "dkroy@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.850Z",
+  "updatedAt": "2026-08-18T14:28:42.850Z"
+}

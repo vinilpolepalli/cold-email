@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10xzar3zv",
+  "userId": "demo-user",
+  "researcherId": "res_dean-knox_penn",
+  "researcherName": "Dean Knox",
+  "school": "Penn",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 12.6,
+  "reasons": [
+    "Overlaps on computational social science",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "dcknox@upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.993Z",
+  "updatedAt": "2026-08-18T14:28:42.993Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x1b09jkm",
+  "userId": "demo-user",
+  "researcherId": "res_gregory-wornell_mit",
+  "researcherName": "Gregory Wornell",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 67.9,
+  "reasons": [
+    "Overlaps on machine learning, vision and graphics",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "gww@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.853Z",
+  "updatedAt": "2026-08-18T14:28:42.853Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10rdxxsag",
+  "userId": "demo-user",
+  "researcherId": "res_giles-hooker_penn",
+  "researcherName": "Giles Hooker",
+  "school": "Penn",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 29.1,
+  "reasons": [
+    "Overlaps on machine learning, functional data analysis, computational statistics",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ghooker@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.987Z",
+  "updatedAt": "2026-08-18T14:28:42.987Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z5f5a5cj",
+  "userId": "demo-user",
+  "researcherId": "res_kenneth-norman_princeton",
+  "researcherName": "Kenneth Norman",
+  "school": "Princeton",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 18.3,
+  "reasons": [
+    "Overlaps on computational models of memory, neural decoding",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "knorman@princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.929Z",
+  "updatedAt": "2026-08-18T14:28:42.929Z"
+}

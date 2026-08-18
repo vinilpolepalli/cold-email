@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z5dygj8l",
+  "userId": "demo-user",
+  "researcherId": "res_chi-jin_princeton",
+  "researcherName": "Chi Jin",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 18,
+  "reasons": [
+    "Overlaps on reinforcement learning, statistical learning theory",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "chij@princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.929Z",
+  "updatedAt": "2026-08-18T14:28:42.929Z"
+}

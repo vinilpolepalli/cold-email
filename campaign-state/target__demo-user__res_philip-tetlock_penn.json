@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10wzmgf45",
+  "userId": "demo-user",
+  "researcherId": "res_philip-tetlock_penn",
+  "researcherName": "Philip Tetlock",
+  "school": "Penn",
+  "trackId": "cs-other",
+  "status": "queued",
+  "rank": 13.5,
+  "reasons": [
+    "Overlaps on big data",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "tetlock@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.992Z",
+  "updatedAt": "2026-08-18T14:28:42.992Z"
+}

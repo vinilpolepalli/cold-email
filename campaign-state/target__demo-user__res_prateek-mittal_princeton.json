@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z3va07q8",
+  "userId": "demo-user",
+  "researcherId": "res_prateek-mittal_princeton",
+  "researcherName": "Prateek Mittal",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 19.8,
+  "reasons": [
+    "Overlaps on large-scale machine learning, networks",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "pmittal@princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.927Z",
+  "updatedAt": "2026-08-18T14:28:42.927Z"
+}

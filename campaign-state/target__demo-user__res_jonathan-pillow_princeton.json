@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0yyy9ekpp",
+  "userId": "demo-user",
+  "researcherId": "res_jonathan-pillow_princeton",
+  "researcherName": "Jonathan Pillow",
+  "school": "Princeton",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 24.6,
+  "reasons": [
+    "Overlaps on statistical machine learning, neural coding, latent variable models",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "pillow@princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.922Z",
+  "updatedAt": "2026-08-18T14:28:42.922Z"
+}

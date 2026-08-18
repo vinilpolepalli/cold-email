@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z63n5s00",
+  "userId": "demo-user",
+  "researcherId": "res_joshua-shaevitz_princeton",
+  "researcherName": "Joshua Shaevitz",
+  "school": "Princeton",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 17.1,
+  "reasons": [
+    "Overlaps on computational behavior analysis, data analysis, quantitative biology",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "shaevitz@princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.930Z",
+  "updatedAt": "2026-08-18T14:28:42.930Z"
+}

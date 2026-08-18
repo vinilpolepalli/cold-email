@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x4tgm6b2",
+  "userId": "demo-user",
+  "researcherId": "res_jacob-andreas_mit",
+  "researcherName": "Jacob Andreas",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 60.8,
+  "reasons": [
+    "Overlaps on machine learning",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "jda@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.856Z",
+  "updatedAt": "2026-08-18T14:28:42.856Z"
+}

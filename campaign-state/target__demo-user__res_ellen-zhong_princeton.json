@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0yzlfvali",
+  "userId": "demo-user",
+  "researcherId": "res_ellen-zhong_princeton",
+  "researcherName": "Ellen Zhong",
+  "school": "Princeton",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 24,
+  "reasons": [
+    "Overlaps on machine learning, computational biology, protein structure",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "zhonge@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.923Z",
+  "updatedAt": "2026-08-18T14:28:42.923Z"
+}

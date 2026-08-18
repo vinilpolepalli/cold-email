@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z49gbjmw",
+  "userId": "demo-user",
+  "researcherId": "res_brenden-lake_princeton",
+  "researcherName": "Brenden Lake",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 19.2,
+  "reasons": [
+    "Overlaps on machine learning, few-shot learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "bl8144@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.928Z",
+  "updatedAt": "2026-08-18T14:28:42.928Z"
+}

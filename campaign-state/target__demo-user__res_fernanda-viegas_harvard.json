@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tg2sp86f",
+  "userId": "demo-user",
+  "researcherId": "res_fernanda-viegas_harvard",
+  "researcherName": "Fernanda Viegas",
+  "school": "Harvard",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 45.6,
+  "reasons": [
+    "Overlaps on machine learning, human-computer interaction, visualization",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "fernanda@seas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.724Z",
+  "updatedAt": "2026-08-18T14:28:42.724Z"
+}

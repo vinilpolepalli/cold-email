@@ -90,7 +90,14 @@ async function execute(req: NextRequest, name: string, body: Record<string, unkn
     // A scheduled run is a dry run only if it says so. The default has to be
     // "really do it", or the nightly job silently does nothing forever.
     dryRun: body?.dryRun === true,
-    limit: Number.isFinite(limit) ? Math.max(1, Math.min(50, Math.floor(limit))) : undefined,
+    limit: Number.isFinite(limit) ? Math.max(1, Math.min(200, Math.floor(limit))) : undefined,
+    // Naming schools is how one batch is aimed at one university rather than
+    // at whatever the global ranking happens to surface.
+    schools: Array.isArray(body?.schools)
+      ? (body.schools as unknown[]).filter((s): s is string => typeof s === 'string').slice(0, 10)
+      : undefined,
+    departmentPattern:
+      typeof body?.departmentPattern === 'string' ? body.departmentPattern.slice(0, 200) : undefined,
     deadline: Date.now() + WORK_BUDGET_MS,
   });
 

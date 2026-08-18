@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10xye1jse",
+  "userId": "demo-user",
+  "researcherId": "res_shane-t-jensen_penn",
+  "researcherName": "Shane T. Jensen",
+  "school": "Penn",
+  "trackId": "cs-other",
+  "status": "queued",
+  "rank": 9.9,
+  "reasons": [
+    "Overlaps on bayesian modeling",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "stjensen@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.993Z",
+  "updatedAt": "2026-08-18T14:28:42.993Z"
+}

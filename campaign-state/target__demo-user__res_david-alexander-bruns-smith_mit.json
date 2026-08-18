@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x62vfhj9",
+  "userId": "demo-user",
+  "researcherId": "res_david-alexander-bruns-smith_mit",
+  "researcherName": "David Alexander Bruns-Smith",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 58.5,
+  "reasons": [
+    "Overlaps on machine learning, causal inference",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "dbruns@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.858Z",
+  "updatedAt": "2026-08-18T14:28:42.858Z"
+}

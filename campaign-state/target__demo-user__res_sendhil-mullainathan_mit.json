@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x1bratgw",
+  "userId": "demo-user",
+  "researcherId": "res_sendhil-mullainathan_mit",
+  "researcherName": "Sendhil Mullainathan",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 68.6,
+  "reasons": [
+    "Overlaps on machine learning, large language models",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "sendhil@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.853Z",
+  "updatedAt": "2026-08-18T14:28:42.853Z"
+}

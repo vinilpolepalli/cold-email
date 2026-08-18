@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x0cmxjl3",
+  "userId": "demo-user",
+  "researcherId": "res_michale-s-fee_mit",
+  "researcherName": "Michale S. Fee",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 69.4,
+  "reasons": [
+    "Overlaps on computational neuroscience, biophysical modeling, neural sequence learning",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "fee@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.852Z",
+  "updatedAt": "2026-08-18T14:28:42.852Z"
+}

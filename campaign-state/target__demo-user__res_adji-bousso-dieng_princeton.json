@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0yzqax0iv",
+  "userId": "demo-user",
+  "researcherId": "res_adji-bousso-dieng_princeton",
+  "researcherName": "Adji Bousso Dieng",
+  "school": "Princeton",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 23.7,
+  "reasons": [
+    "Overlaps on machine learning, generative models, computational biology",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ad6725@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.923Z",
+  "updatedAt": "2026-08-18T14:28:42.923Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0wzm5t3ay",
+  "userId": "demo-user",
+  "researcherId": "res_song-han_mit",
+  "researcherName": "Song Han",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 71.8,
+  "reasons": [
+    "Overlaps on machine learning, computer architecture",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "songhan@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.851Z",
+  "updatedAt": "2026-08-18T14:28:42.851Z"
+}

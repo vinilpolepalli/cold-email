@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z7amyoes",
+  "userId": "demo-user",
+  "researcherId": "res_niraj-jha_princeton",
+  "researcherName": "Niraj Jha",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 17.1,
+  "reasons": [
+    "Overlaps on machine learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "jha@princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.931Z",
+  "updatedAt": "2026-08-18T14:28:42.931Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x2qylwmm",
+  "userId": "demo-user",
+  "researcherId": "res_arvind-satyanarayan_mit",
+  "researcherName": "Arvind Satyanarayan",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 65.5,
+  "reasons": [
+    "Overlaps on machine learning, data visualization",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "arvindsatya@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.854Z",
+  "updatedAt": "2026-08-18T14:28:42.854Z"
+}

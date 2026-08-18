@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0yztnbvho",
+  "userId": "demo-user",
+  "researcherId": "res_jia-deng_princeton",
+  "researcherName": "Jia Deng",
+  "school": "Princeton",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 24,
+  "reasons": [
+    "Overlaps on computer vision, machine learning, robotics",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "jiadeng@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.923Z",
+  "updatedAt": "2026-08-18T14:28:42.923Z"
+}
