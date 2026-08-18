@@ -5,7 +5,7 @@
   "researcherName": "Ramesh Johari",
   "school": "Stanford",
   "trackId": "cs-core",
-  "status": "approved",
+  "status": "sent",
   "rank": 59,
   "reasons": [
     "Overlaps on machine learning, statistical inference",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msyx31gav689vz",
+  "sentAt": "2026-08-18T17:08:54.682Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T01:18:55.509Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:08:54.682Z",
   "mailboxDraftId": "r-6860014847010314497"
 }

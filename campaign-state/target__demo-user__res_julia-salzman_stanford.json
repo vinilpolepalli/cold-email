@@ -5,7 +5,7 @@
   "researcherName": "Julia Salzman",
   "school": "Stanford",
   "trackId": "cs-bio",
-  "status": "approved",
+  "status": "sent",
   "rank": 86,
   "reasons": [
     "Overlaps on statistical computational biology, genomics, rna splicing",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msyx0i24xaid1i",
+  "sentAt": "2026-08-18T17:06:56.236Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-17T01:36:52.180Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:06:56.236Z",
   "mailboxDraftId": "r2607731082542643390"
 }

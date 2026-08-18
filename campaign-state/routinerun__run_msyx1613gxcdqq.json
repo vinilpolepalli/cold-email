@@ -1,0 +1,27 @@
+{
+  "routine": "send-due",
+  "id": "run_msyx1613gxcdqq",
+  "userId": "demo-user",
+  "startedAt": "2026-08-18T17:07:27.303Z",
+  "finishedAt": "2026-08-18T17:07:32.684Z",
+  "ok": true,
+  "dryRun": false,
+  "summary": "Sent 9 from vrp5483@stern.nyu.edu.",
+  "counts": {
+    "sent": 9,
+    "failed": 0,
+    "capRemaining": 0
+  },
+  "details": [
+    "Sent to Markus Pelger <mpelger@stanford.edu>",
+    "Sent to Scott L. Delp <delp@stanford.edu>",
+    "Sent to Susan Athey <athey@stanford.edu>",
+    "Sent to C. Karen Liu <karenliu@cs.stanford.edu>",
+    "Sent to James Zou <jamesz@cs.stanford.edu>",
+    "Sent to Stefano Ermon <stefano.ermon@cs.stanford.edu>",
+    "Sent to Stephen P. Boyd <boyd@stanford.edu>",
+    "Sent to Mirabela Rusu <mirabela.rusu@stanford.edu>",
+    "Sent to Guolan Lu <guolanlu@stanford.edu>"
+  ],
+  "error": null
+}

@@ -5,7 +5,7 @@
   "researcherName": "Nigam H. Shah",
   "school": "Stanford",
   "trackId": "cs-bio",
-  "status": "approved",
+  "status": "sent",
   "rank": 61,
   "reasons": [
     "Overlaps on machine learning, predictive modeling",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msyx2y127o0t7b",
+  "sentAt": "2026-08-18T17:08:50.246Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T01:12:59.022Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:08:50.247Z",
   "mailboxDraftId": "r8671687315819390762"
 }

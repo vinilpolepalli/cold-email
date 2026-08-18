@@ -5,7 +5,7 @@
   "researcherName": "Jure Leskovec",
   "school": "Stanford",
   "trackId": "cs-core",
-  "status": "approved",
+  "status": "sent",
   "rank": 99,
   "reasons": [
     "Overlaps on graph neural networks, machine learning, network science",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msyx0fqrgd9zm7",
+  "sentAt": "2026-08-18T17:06:53.235Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-17T01:25:57.904Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:06:53.236Z",
   "mailboxDraftId": "r1171723380946337041"
 }

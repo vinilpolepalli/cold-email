@@ -5,7 +5,7 @@
   "researcherName": "Charbel Farhat",
   "school": "Stanford",
   "trackId": "cs-core",
-  "status": "approved",
+  "status": "sent",
   "rank": 72,
   "reasons": [
     "Overlaps on physics-based machine learning, computational fluid dynamics, model order reduction",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msywwf2r3vlkje",
+  "sentAt": "2026-08-18T17:03:45.747Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T01:12:59.016Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:03:45.748Z",
   "mailboxDraftId": "r7377384784813662754"
 }

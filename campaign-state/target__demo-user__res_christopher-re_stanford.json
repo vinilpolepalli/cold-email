@@ -5,7 +5,7 @@
   "researcherName": "Christopher Re",
   "school": "Stanford",
   "trackId": "cs-core",
-  "status": "approved",
+  "status": "sent",
   "rank": 76,
   "reasons": [
     "Overlaps on machine learning systems, foundation models, data-centric ai",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msyx0nhrrbj6d3",
+  "sentAt": "2026-08-18T17:07:03.279Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T01:12:59.014Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:07:03.279Z",
   "mailboxDraftId": "r-7930884477180841908"
 }

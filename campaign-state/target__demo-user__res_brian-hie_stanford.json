@@ -5,7 +5,7 @@
   "researcherName": "Brian Hie",
   "school": "Stanford",
   "trackId": "cs-bio",
-  "status": "approved",
+  "status": "sent",
   "rank": 80,
   "reasons": [
     "Overlaps on machine learning, computational biology, protein science",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msyx0kq5ottd0l",
+  "sentAt": "2026-08-18T17:06:59.693Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T01:12:59.011Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:06:59.694Z",
   "mailboxDraftId": "r4211714820603207623"
 }

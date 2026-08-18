@@ -5,7 +5,7 @@
   "researcherName": "Shuran Song",
   "school": "Stanford",
   "trackId": "cs-robotics",
-  "status": "approved",
+  "status": "sent",
   "rank": 61,
   "reasons": [
     "Overlaps on robotics, computer vision",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msyx2z07lfdsqx",
+  "sentAt": "2026-08-18T17:08:51.511Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T01:12:59.022Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:08:51.511Z",
   "mailboxDraftId": "r2851647703598489460"
 }

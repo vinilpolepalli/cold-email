@@ -1,0 +1,16 @@
+{
+  "routine": "send-due",
+  "id": "run_msyx1hogq3fudr",
+  "userId": "demo-user",
+  "startedAt": "2026-08-18T17:07:42.400Z",
+  "finishedAt": "2026-08-18T17:07:42.410Z",
+  "ok": true,
+  "dryRun": false,
+  "summary": "Daily cap reached (40/40 in the last 24h)",
+  "counts": {
+    "sent": 0,
+    "capped": 1
+  },
+  "details": [],
+  "error": null
+}

@@ -5,7 +5,7 @@
   "researcherName": "Stephen P. Boyd",
   "school": "Stanford",
   "trackId": "cs-core",
-  "status": "approved",
+  "status": "sent",
   "rank": 63,
   "reasons": [
     "Overlaps on machine learning, computational finance",
@@ -19,10 +19,10 @@
   ],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msyx19ajh80yn8",
+  "sentAt": "2026-08-18T17:07:31.531Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached, copying sgoodner@stanford.edu",
   "createdAt": "2026-08-18T01:12:59.020Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:07:31.531Z",
   "mailboxDraftId": "r-6790018591888715935"
 }

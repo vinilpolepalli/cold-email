@@ -5,7 +5,7 @@
   "researcherName": "Edward Chang",
   "school": "Stanford",
   "trackId": "cs-bio",
-  "status": "approved",
+  "status": "sent",
   "rank": 59,
   "reasons": [
     "Overlaps on machine learning",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msyx30hc2fziuf",
+  "sentAt": "2026-08-18T17:08:53.424Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T01:18:55.509Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:08:53.424Z",
   "mailboxDraftId": "r-8864355299146933942"
 }

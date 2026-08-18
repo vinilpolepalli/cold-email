@@ -5,7 +5,7 @@
   "researcherName": "Madeleine Udell",
   "school": "Stanford",
   "trackId": "cs-core",
-  "status": "approved",
+  "status": "sent",
   "rank": 67,
   "reasons": [
     "Overlaps on large-scale data analysis, machine learning",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msywwgy8wqy85n",
+  "sentAt": "2026-08-18T17:03:48.176Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T01:12:59.017Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:03:48.177Z",
   "mailboxDraftId": "r-1783340201993564614"
 }

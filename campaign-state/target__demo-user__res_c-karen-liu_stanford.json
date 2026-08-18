@@ -5,7 +5,7 @@
   "researcherName": "C. Karen Liu",
   "school": "Stanford",
   "trackId": "cs-robotics",
-  "status": "approved",
+  "status": "sent",
   "rank": 64,
   "reasons": [
     "Overlaps on robotics, reinforcement learning, computer graphics",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msyx181lkz166t",
+  "sentAt": "2026-08-18T17:07:29.913Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T01:12:59.019Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:07:29.913Z",
   "mailboxDraftId": "r-5305326839515078037"
 }

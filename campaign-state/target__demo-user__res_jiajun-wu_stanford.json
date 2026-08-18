@@ -5,7 +5,7 @@
   "researcherName": "Jiajun Wu",
   "school": "Stanford",
   "trackId": "cs-robotics",
-  "status": "approved",
+  "status": "sent",
   "rank": 91,
   "reasons": [
     "Overlaps on computer vision, machine learning, robotics",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msyx0g6adl1nuh",
+  "sentAt": "2026-08-18T17:06:53.794Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-17T01:36:52.179Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:06:53.795Z",
   "mailboxDraftId": "r837616544095431853"
 }

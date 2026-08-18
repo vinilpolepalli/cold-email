@@ -5,7 +5,7 @@
   "researcherName": "Jonathan H. Chen",
   "school": "Stanford",
   "trackId": "cs-bio",
-  "status": "approved",
+  "status": "sent",
   "rank": 60,
   "reasons": [
     "Overlaps on machine learning",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msyx2zwo382fwm",
+  "sentAt": "2026-08-18T17:08:52.680Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T01:18:55.508Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:08:52.680Z",
   "mailboxDraftId": "r-2635262589704786396"
 }

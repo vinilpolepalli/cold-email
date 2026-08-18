@@ -1,0 +1,28 @@
+{
+  "routine": "send-due",
+  "id": "run_msyx2wg1a80bdn",
+  "userId": "demo-user",
+  "startedAt": "2026-08-18T17:08:48.193Z",
+  "finishedAt": "2026-08-18T17:08:54.683Z",
+  "ok": true,
+  "dryRun": false,
+  "summary": "Sent 10 from vrp5483@stern.nyu.edu.",
+  "counts": {
+    "sent": 10,
+    "failed": 0,
+    "capRemaining": 10
+  },
+  "details": [
+    "Sent to Jeanne Shen <jeannes@stanford.edu>",
+    "Sent to Jeannette Bohg <jbohg@cs.stanford.edu>",
+    "Sent to Nigam H. Shah <nigam@stanford.edu>",
+    "Sent to Sergios Gatidis <sgatidis@stanford.edu>",
+    "Sent to Shuran Song <shurans@cs.stanford.edu>",
+    "Sent to John Duchi <jduchi@stanford.edu>",
+    "Sent to Jonathan H. Chen <jonc101@stanford.edu>",
+    "Sent to Edward Chang <echang@cs.stanford.edu>",
+    "Sent to Gregory Valiant <valiant@cs.stanford.edu>",
+    "Sent to Ramesh Johari <rjohari@stanford.edu>"
+  ],
+  "error": null
+}

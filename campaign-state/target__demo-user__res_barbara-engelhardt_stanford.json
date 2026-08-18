@@ -5,7 +5,7 @@
   "researcherName": "Barbara Engelhardt",
   "school": "Stanford",
   "trackId": "cs-bio",
-  "status": "approved",
+  "status": "sent",
   "rank": 68,
   "reasons": [
     "Overlaps on machine learning, statistical genomics, biomedical data science",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msywwfz92iw289",
+  "sentAt": "2026-08-18T17:03:46.917Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T01:12:59.017Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:03:46.917Z",
   "mailboxDraftId": "r-5106785612219706708"
 }

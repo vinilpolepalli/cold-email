@@ -5,7 +5,7 @@
   "researcherName": "Leonidas Guibas",
   "school": "Stanford",
   "trackId": "cs-robotics",
-  "status": "approved",
+  "status": "sent",
   "rank": 65,
   "reasons": [
     "Overlaps on 3d computer vision, computer graphics, robotics",
@@ -17,9 +17,9 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_guibasmanualfix01",
+  "sentAt": "2026-08-18T17:03:50.000Z",
+  "note": "Sent from vrp5483@stern.nyu.edu (reconciled: real Gmail send succeeded before local state write completed)",
   "createdAt": "2026-08-18T01:12:59.018Z",
   "updatedAt": "2026-08-18T02:30:00.000Z",
   "mailboxDraftId": "r-7626291221539424026"

@@ -5,7 +5,7 @@
   "researcherName": "Christopher Manning",
   "school": "Stanford",
   "trackId": "cs-core",
-  "status": "approved",
+  "status": "sent",
   "rank": 77,
   "reasons": [
     "Overlaps on deep learning, machine learning",
@@ -19,10 +19,10 @@
   ],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msyx0mz0617pan",
+  "sentAt": "2026-08-18T17:07:02.604Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached, copying slessard@stanford.edu",
   "createdAt": "2026-08-18T01:12:59.013Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:07:02.604Z",
   "mailboxDraftId": "r1580641881368884520"
 }

@@ -1,0 +1,20 @@
+{
+  "id": "out_msywwisqwnblu5",
+  "userId": "demo-user",
+  "researcherId": "res_kwabena-boahen_stanford",
+  "researcherName": "Kwabena Boahen",
+  "to": "boahen@stanford.edu",
+  "cc": [],
+  "subject": "Interested in your neuromorphic engineering work",
+  "body": "Hello Professor Boahen,\n\nMy name is Vinil Polepalli and I am an undergraduate at New York University studying Computer Science and Business. I have been a research intern in the Chiosis Lab at Memorial Sloan Kettering, where I built protein-ligand graph neural networks for Hsp90 and epichaperome complexes that reached 0.984 ROC AUC separating active from inactive inhibitor candidates.\n\nI read your review of silicon neuron circuits, and the framing that stuck is that the analog transistor is not being made to imitate a neuron so much as both are exponential devices operating on the same physics, which is why subthreshold circuits get the dynamics almost for free. That is a very different bargain from the one I am used to. At Carnegie Mellon I had a 100 ms inference budget on a UAV and I bought it by shrinking the network until it fit, trading accuracy for latency on hardware built for dense synchronous arithmetic that a segmentation model does not need. Event-driven computation would have spent power only where the scene changed, which across 30 flights of largely static terrain is most of the frame doing nothing. I would want to learn where that advantage actually holds and where the conversion overhead eats it.\n\nI would like to hear more about what the lab is working on now, and where my background would be useful to you.\n\nIn the past, I have worked on the following related projects:\n- Semantic segmentation for UAV-based environmental monitoring at Carnegie Mellon Robotics Institute: 0.88 mean IoU and 0.94 F1 on 25,000 labeled aerial images, sub-100 ms inference across 30 flights\n- Sole author, cVAE-augmented deep learning for pan-cancer RNA-seq classification, about 98% test accuracy across 5 cancer types on TCGA: https://arxiv.org/abs/2508.02743\n- Hsp90 inhibitor virtual screening in the Chiosis Lab at Memorial Sloan Kettering: 4,566 candidates screened at 0.984 GNN ROC AUC and 5x enrichment, 0 Lipinski violations in the top 50: https://hsp90-dashboard.vercel.app/\n- First author, EGCG and piperine synergy in D. tigrina regeneration, IEEE MIT Undergraduate Research Technology Conference: https://ieeexplore.ieee.org/document/11533121\n\nOutside of research I was invited to Y Combinator's Startup School, reached the VEX Robotics World Championship semifinals, and have qualified for the AIME three times.\n\nI have extensively used PyTorch, Python and C in past work, along with embedded and real-time tooling from robotics, but have a lot of coding experience and am adaptable to whichever stack your lab uses. My resume is attached. Please let me know if there is a fit in your lab.\n\nI would be happy to elaborate on my skills and where I think I can best help out.\n\nThank you!\n\n--\nVinil Polepalli\nNew York University | Class of 2029\nB.S. Computer Science and B.S. Business",
+  "attachmentName": "Polepalli_Resume.pdf",
+  "method": "school-gmail",
+  "status": "sent",
+  "detail": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "createdAt": "2026-08-18T17:03:50.570Z",
+  "threadId": "1a015d44fbc94c86",
+  "rfcMessageId": "<CAFruEoo+qTeebkdV7_PvK+iDZWamggWn2TjrGz9fFz_LPHiXsw@mail.gmail.com>",
+  "trackId": "cs-bio",
+  "autonomous": true,
+  "followUpOf": null
+}

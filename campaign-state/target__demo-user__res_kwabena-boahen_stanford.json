@@ -5,7 +5,7 @@
   "researcherName": "Kwabena Boahen",
   "school": "Stanford",
   "trackId": "cs-bio",
-  "status": "approved",
+  "status": "sent",
   "rank": 65,
   "reasons": [
     "Overlaps on computational modeling, neural networks",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msywwisqwnblu5",
+  "sentAt": "2026-08-18T17:03:50.570Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T01:12:59.018Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:03:50.570Z",
   "mailboxDraftId": "r778206339230902777"
 }

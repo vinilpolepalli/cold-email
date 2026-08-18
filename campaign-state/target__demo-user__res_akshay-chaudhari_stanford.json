@@ -5,7 +5,7 @@
   "researcherName": "Akshay Chaudhari",
   "school": "Stanford",
   "trackId": "cs-robotics",
-  "status": "approved",
+  "status": "sent",
   "rank": 77,
   "reasons": [
     "Overlaps on deep learning, multimodal machine learning, image reconstruction",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msyx0mh8ncg6ma",
+  "sentAt": "2026-08-18T17:07:01.964Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T01:12:59.012Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:07:01.964Z",
   "mailboxDraftId": "r3495807448010030110"
 }

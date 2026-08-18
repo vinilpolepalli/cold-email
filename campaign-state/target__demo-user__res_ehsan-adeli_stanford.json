@@ -5,7 +5,7 @@
   "researcherName": "Ehsan Adeli",
   "school": "Stanford",
   "trackId": "cs-bio",
-  "status": "approved",
+  "status": "sent",
   "rank": 79,
   "reasons": [
     "Overlaps on computer vision, machine learning, computational neuroscience",
@@ -17,10 +17,10 @@
   "cc": [],
   "scheduledAt": "2026-08-18T16:27:00.000Z",
   "autoApproved": false,
-  "outboxId": null,
-  "sentAt": null,
-  "note": "Approved for the 12:27 Eastern batch",
+  "outboxId": "out_msyx0lja6uu6dh",
+  "sentAt": "2026-08-18T17:07:00.742Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T01:12:59.011Z",
-  "updatedAt": "2026-08-18T02:30:00.000Z",
+  "updatedAt": "2026-08-18T17:07:00.743Z",
   "mailboxDraftId": "r-6792786558691750530"
 }
