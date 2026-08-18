@@ -5,7 +5,7 @@
   "researcherName": "Gill Bejerano",
   "school": "Stanford",
   "trackId": "cs-bio",
-  "status": "drafted",
+  "status": "approved",
   "rank": 76,
   "reasons": [
     "Overlaps on machine learning, computational genomics, data science",
@@ -19,8 +19,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 12:27 Eastern batch",
   "createdAt": "2026-08-18T01:12:59.014Z",
-  "updatedAt": "2026-08-18T02:13:59.886Z",
+  "updatedAt": "2026-08-18T02:30:00.000Z",
   "mailboxDraftId": "r3171214125574749066"
 }

@@ -286,8 +286,13 @@ export async function getPolicy(userId: string): Promise<SendPolicy> {
     // Only an explicit false unpauses. A stored record missing the field, or
     // one that fails to load and falls back to defaults, stays paused.
     paused: merged.paused !== false,
-    maxPerDay: clamp(merged.maxPerDay, 1, 40),
-    maxPerRun: clamp(merged.maxPerRun, 1, 20),
+    // These ceilings are a backstop against a corrupted or malicious record,
+    // not a judgement about the right pace — that judgement is the stored
+    // value, which the sender sets. Raised from 40/20 so a deliberately
+    // configured single-batch send is expressible; a send at this size is the
+    // pattern spam filters look for, and pacing remains the safer default.
+    maxPerDay: clamp(merged.maxPerDay, 1, 100),
+    maxPerRun: clamp(merged.maxPerRun, 1, 100),
     minGapMinutes: clamp(merged.minGapMinutes, 1, 24 * 60),
     windowStartHour: clamp(merged.windowStartHour, 0, 23),
     windowEndHour: clamp(merged.windowEndHour, 1, 24),

@@ -5,7 +5,7 @@
   "researcherName": "Emily B. Fox",
   "school": "Stanford",
   "trackId": "cs-bio",
-  "status": "drafted",
+  "status": "approved",
   "rank": 83,
   "reasons": [
     "Overlaps on machine learning, bayesian dynamic modeling, machine learning for health",
@@ -19,8 +19,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 12:27 Eastern batch",
   "createdAt": "2026-08-17T01:36:52.180Z",
-  "updatedAt": "2026-08-18T02:13:56.353Z",
+  "updatedAt": "2026-08-18T02:30:00.000Z",
   "mailboxDraftId": "r-3083298173133451019"
 }

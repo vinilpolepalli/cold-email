@@ -5,7 +5,7 @@
   "researcherName": "Jeannette Bohg",
   "school": "Stanford",
   "trackId": "cs-robotics",
-  "status": "drafted",
+  "status": "approved",
   "rank": 61,
   "reasons": [
     "Overlaps on robotics, machine learning",
@@ -19,8 +19,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 12:27 Eastern batch",
   "createdAt": "2026-08-18T01:12:59.022Z",
-  "updatedAt": "2026-08-18T02:14:05.909Z",
+  "updatedAt": "2026-08-18T02:30:00.000Z",
   "mailboxDraftId": "r5175114492771378310"
 }

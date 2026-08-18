@@ -5,7 +5,7 @@
   "researcherName": "Aaron Newman",
   "school": "Stanford",
   "trackId": "cs-bio",
-  "status": "drafted",
+  "status": "approved",
   "rank": 81,
   "reasons": [
     "Overlaps on computational biology, cancer genomics, tumor microenvironment",
@@ -19,8 +19,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 12:27 Eastern batch",
   "createdAt": "2026-08-18T01:12:59.009Z",
-  "updatedAt": "2026-08-18T02:13:57.118Z",
+  "updatedAt": "2026-08-18T02:30:00.000Z",
   "mailboxDraftId": "r-8208740489418534259"
 }

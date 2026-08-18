@@ -5,7 +5,7 @@
   "researcherName": "Christina Curtis",
   "school": "Stanford",
   "trackId": "cs-bio",
-  "status": "drafted",
+  "status": "approved",
   "rank": 78,
   "reasons": [
     "Overlaps on cancer genomics, computational modeling, multi-omics",
@@ -19,8 +19,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 12:27 Eastern batch",
   "createdAt": "2026-08-18T01:12:59.012Z",
-  "updatedAt": "2026-08-18T02:13:58.184Z",
+  "updatedAt": "2026-08-18T02:30:00.000Z",
   "mailboxDraftId": "r-7769932978451967507"
 }
