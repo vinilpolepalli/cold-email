@@ -12619,7 +12619,7 @@
     "title": "Assistant Professor of Biomedical Data Science and, by courtesy, of Computer Science and of Electrical Engineering",
     "school": "Stanford",
     "department": "Department of Biomedical Data Science",
-    "email": "slevy@stanford.edu",
+    "email": null,
     "website": null,
     "researchAreas": [
       "computer vision",
@@ -12628,8 +12628,7 @@
       "cell microscopy"
     ],
     "bio": "Develops artificial intelligence and machine learning algorithms to enable new capabilities in biomedicine and healthcare, with expertise in deep learning and computer vision applied to video of human behavior, medical images, and cell microscopy images. She leads the Medical AI and Computer Vision Lab at Stanford and is a Chan Zuckerberg Biohub Investigator.",
-    "sourceUrl": "https://med.stanford.edu/profiles/serena-yeung",
-    "emailSource": "https://europepmc.org/search?query=AUTH%3A%22levy%20s%22%20AND%20AFF%3A%22Stanford%22"
+    "sourceUrl": "https://med.stanford.edu/profiles/serena-yeung"
   },
   {
     "id": "res_sergios-gatidis_stanford",

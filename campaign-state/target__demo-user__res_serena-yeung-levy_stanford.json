@@ -5,7 +5,7 @@
   "researcherName": "Serena Yeung-Levy",
   "school": "Stanford",
   "trackId": "cs-bio",
-  "status": "sent",
+  "status": "failed",
   "rank": 73,
   "reasons": [
     "Overlaps on computer vision, deep learning",
@@ -19,7 +19,7 @@
   "autoApproved": false,
   "outboxId": "out_msywwenzm6w9wc",
   "sentAt": "2026-08-18T17:03:45.215Z",
-  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Bounced: 550 5.1.1 User Unknown. Address was sourced from a EuropePMC author search, not an official Stanford page, and was wrong. Cleared from data/profiles.json.",
   "createdAt": "2026-08-18T01:12:59.016Z",
   "updatedAt": "2026-08-18T17:03:45.216Z"
 }
