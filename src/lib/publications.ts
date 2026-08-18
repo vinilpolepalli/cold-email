@@ -23,6 +23,10 @@ const TTL_MS = 14 * 24 * 60 * 60 * 1000;
 const EMPTY_TTL_MS = 2 * 24 * 60 * 60 * 1000;
 
 const MAX_WORKS = 8;
+/** Beyond this, a work is a consortium output rather than a person's own. */
+const MAX_CROSSREF_AUTHORS = 25;
+/** Author lists this short make a first initial trustworthy evidence. */
+const INITIALS_OK_UP_TO = 6;
 const REQUEST_TIMEOUT_MS = 8000;
 
 /**
@@ -351,10 +355,32 @@ async function fromCrossref(researcher: ResearcherProfile): Promise<ResearcherWo
   );
   const items = data?.message?.items ?? [];
 
-  // Crossref matches on text, so keep only works this person is actually on.
-  const mine = items.filter((item) =>
-    (item.author ?? []).some((a) => a.family && samePerson(`${a.given ?? ''} ${a.family}`.trim(), researcher.name))
-  );
+  // Crossref matches on text and carries no affiliation, so a name is the only
+  // evidence available here. That makes this path far weaker than OpenAlex, and
+  // it has to be filtered accordingly.
+  //
+  // Two rules, both learned from real wrong answers. A run that fell back to
+  // Crossref attributed LIGO's binary-neutron-star paper to a robotics
+  // researcher, the ATLAS Higgs discovery to a geometer, and a 2004 metallurgy
+  // paper to a learning theorist. Every one matched on surname plus a first
+  // initial inside an author list thousands long.
+  const mine = items.filter((item) => {
+    const authors = item.author ?? [];
+    // A consortium paper is not the thing a cold email means by "your work",
+    // and its author list is long enough to contain any common name by chance.
+    if (authors.length > MAX_CROSSREF_AUTHORS) return false;
+    return authors.some((a) => {
+      if (!a.family) return false;
+      const candidate = `${a.given ?? ''} ${a.family}`.trim();
+      if (!samePerson(candidate, researcher.name)) return false;
+      // An initial is only evidence on a short author list. Past a handful of
+      // names, require the given name in full.
+      if (authors.length <= INITIALS_OK_UP_TO) return true;
+      const given = normalizeName(a.given ?? '').split(' ')[0] ?? '';
+      const wanted = normalizeName(researcher.name).split(' ')[0] ?? '';
+      return given.length > 1 && wanted.length > 1 && given === wanted;
+    });
+  });
   if (!mine.length) return null;
 
   const publications: Publication[] = mine.slice(0, MAX_WORKS).map((item) => {
