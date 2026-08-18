@@ -1166,25 +1166,10 @@
       "computational omics",
       "evolutionary genetics",
       "genetic architecture",
-      "methods development"
+      "methods development",
+      "computational genomics"
     ],
     "bio": "His laboratory investigates the genetic architecture of common disease, statistical methods development, and the problem of translating genetic associations into biological insight.",
-    "sourceUrl": "https://dbmi.hms.harvard.edu/people/luke-oconnor-0"
-  },
-  {
-    "id": "res_luke-o-connor_harvard",
-    "name": "Luke O'Connor",
-    "title": "Assistant Professor of Biomedical Informatics, Harvard Medical School",
-    "school": "Harvard",
-    "department": "Department of Biomedical Informatics, Harvard Medical School",
-    "email": "loconnor@hms.harvard.edu",
-    "website": "https://oconnorlab.hms.harvard.edu/",
-    "researchAreas": [
-      "statistical genetics",
-      "computational genomics",
-      "methods development"
-    ],
-    "bio": "His lab focuses on the genetic architecture of common disease, statistical methods development, and the problem of translating genetic associations into biological insight. Previously a Schmidt Fellow/PI at the Broad Institute.",
     "sourceUrl": "https://dbmi.hms.harvard.edu/people/luke-oconnor-0"
   },
   {
@@ -2387,27 +2372,14 @@
       "computational neuroscience",
       "functional neuroimaging",
       "neural network modeling",
-      "molecular imaging"
-    ],
-    "bio": "The Jasanoff laboratory develops a new generation of functional magnetic resonance imaging methods to study the neural mechanisms of behavior. The lab's goal is to use these methods to build explanatory models of neural network function in animals, with current emphasis on brain circuitry involved in instrumental learning.",
-    "sourceUrl": "https://be.mit.edu/faculty/alan-jasanoff/"
-  },
-  {
-    "id": "res_alan-pradip-jasanoff_mit",
-    "name": "Alan Pradip Jasanoff",
-    "title": "Professor",
-    "school": "MIT",
-    "department": "Biological Engineering; Brain and Cognitive Sciences",
-    "email": "jasanoff@mit.edu",
-    "website": null,
-    "researchAreas": [
+      "molecular imaging",
       "brain imaging",
       "molecular engineering",
       "neural activity mapping",
       "computational analysis"
     ],
-    "bio": "Jasanoff is a bioengineer and neuroscientist pioneering next generation brain imaging techniques for studying mechanisms of behavior and cognition. His laboratory creates probes for noninvasive detection of neural activity and uses them to map and interpret previously inaccessible aspects of brain function.",
-    "sourceUrl": "https://bcs.mit.edu/directory/alan-pradip-jasanoff"
+    "bio": "The Jasanoff laboratory develops a new generation of functional magnetic resonance imaging methods to study the neural mechanisms of behavior. The lab's goal is to use these methods to build explanatory models of neural network function in animals, with current emphasis on brain circuitry involved in instrumental learning.",
+    "sourceUrl": "https://be.mit.edu/faculty/alan-jasanoff/"
   },
   {
     "id": "res_alberto-abadie_mit",
@@ -2655,23 +2627,6 @@
     "sourceUrl": "https://www.eecs.mit.edu/people/ashia-wilson/"
   },
   {
-    "id": "res_asu-ozdaglar_mit",
-    "name": "Asu Ozdaglar",
-    "title": "EECS Department Head; MIT Schwarzman College of Computing Deputy Dean of Academics; MathWorks Professor",
-    "school": "MIT",
-    "department": "Electrical Engineering and Computer Science",
-    "email": "asuman@mit.edu",
-    "website": "https://asu.mit.edu/",
-    "researchAreas": [
-      "ai and society",
-      "machine learning",
-      "optimization and game theory",
-      "control and autonomy"
-    ],
-    "bio": "Research spans optimization, machine learning, economics, game theory, and networks; recent focus includes game-theoretic AI, multi-agent decision-making and reinforcement learning, and human-AI collaboration.",
-    "sourceUrl": "https://www.eecs.mit.edu/people/asu-ozdaglar/"
-  },
-  {
     "id": "res_asuman-ozdaglar_mit",
     "name": "Asuman Ozdaglar",
     "title": "MathWorks Professor and Department Head of EECS",
@@ -2684,7 +2639,11 @@
       "game theory",
       "multi-agent networks",
       "distributed optimization",
-      "network economics"
+      "network economics",
+      "ai and society",
+      "machine learning",
+      "optimization and game theory",
+      "control and autonomy"
     ],
     "bio": "Ozdaglar's research focuses on the analysis and optimization of large-scale dynamic multi-agent networked systems, including communication, transportation, and social and economic networks. Her areas include nonlinear and convex optimization, game theory, and distributed optimization methods.",
     "sourceUrl": "https://idss.mit.edu/staff/asuman-ozdaglar/"
@@ -2853,26 +2812,12 @@
       "drug discovery",
       "chemical synthesis",
       "autonomous discovery",
-      "molecular design"
-    ],
-    "bio": "His group develops computational methods at the intersection of artificial intelligence and chemistry, with relevance to small-molecule drug discovery, chemical synthesis, and structure elucidation. Interests include autonomous discovery, laboratory automation, and molecular design.",
-    "sourceUrl": "https://jclinic.mit.edu/team-member/connor-coley/"
-  },
-  {
-    "id": "res_connor-wilson-coley_mit",
-    "name": "Connor Wilson Coley",
-    "title": "Associate Professor / Shared appointment in ChemE",
-    "school": "MIT",
-    "department": "Electrical Engineering and Computer Science",
-    "email": "ccoley@mit.edu",
-    "website": "https://coley.mit.edu/",
-    "researchAreas": [
-      "machine learning",
+      "molecular design",
       "biomedical systems",
       "chemical engineering"
     ],
-    "bio": "Research areas at MIT EECS include machine learning and biomedical systems, with a shared appointment in Chemical Engineering.",
-    "sourceUrl": "https://www.eecs.mit.edu/people/connor-wilson-coley/"
+    "bio": "His group develops computational methods at the intersection of artificial intelligence and chemistry, with relevance to small-molecule drug discovery, chemical synthesis, and structure elucidation. Interests include autonomous discovery, laboratory automation, and molecular design.",
+    "sourceUrl": "https://jclinic.mit.edu/team-member/connor-coley/"
   },
   {
     "id": "res_constantinos-daskalakis_mit",
@@ -2953,26 +2898,13 @@
     "researchAreas": [
       "computer science",
       "artificial intelligence",
-      "computing and society"
-    ],
-    "bio": "Inaugural dean of the MIT Schwarzman College of Computing and chair of the Jameel Clinic. He previously helped found Cornell Tech and served as its first Dean and Vice Provost, with a mixed academic and industry background including Xerox PARC.",
-    "sourceUrl": "https://jclinic.mit.edu/team-member/dan-huttenlocher/"
-  },
-  {
-    "id": "res_daniel-huttenlocher_mit",
-    "name": "Daniel Huttenlocher",
-    "title": "Dean, MIT Stephen A. Schwarzman College of Computing; Panasonic Professor",
-    "school": "MIT",
-    "department": "Electrical Engineering and Computer Science",
-    "email": "huttenlocher@mit.edu",
-    "website": "https://web.mit.edu/hutt/www/",
-    "researchAreas": [
+      "computing and society",
       "ai and society",
       "machine learning",
       "vision and graphics"
     ],
-    "bio": "Dean of the MIT Schwarzman College of Computing; recent work examines the broader implications of AI, including co-authoring the book The Age of AI: And Our Human Future.",
-    "sourceUrl": "https://www.eecs.mit.edu/people/daniel-huttenlocher/"
+    "bio": "Inaugural dean of the MIT Schwarzman College of Computing and chair of the Jameel Clinic. He previously helped found Cornell Tech and served as its first Dean and Vice Provost, with a mixed academic and industry background including Xerox PARC.",
+    "sourceUrl": "https://jclinic.mit.edu/team-member/dan-huttenlocher/"
   },
   {
     "id": "res_daniela-rus_mit",
@@ -5086,22 +5018,6 @@
     "sourceUrl": "https://idss.mit.edu/staff/richard-nielsen/"
   },
   {
-    "id": "res_robert-berwick_mit",
-    "name": "Robert Berwick",
-    "title": "Professor of CS and Engineering and Computational Linguistics (Post-Tenure)",
-    "school": "MIT",
-    "department": "Electrical Engineering and Computer Science",
-    "email": "berwick@csail.mit.edu",
-    "website": "https://berwick.mit.edu/",
-    "researchAreas": [
-      "computational linguistics",
-      "nlp and speech",
-      "machine learning"
-    ],
-    "bio": "Investigates computational models of language acquisition, processing, and change, combining machine learning with grammatical theory and dynamical systems models.",
-    "sourceUrl": "https://www.eecs.mit.edu/people/robert-berwick/"
-  },
-  {
     "id": "res_robert-c-berwick_mit",
     "name": "Robert C. Berwick",
     "title": "Professor (Post Tenure)",
@@ -5113,7 +5029,8 @@
       "computational linguistics",
       "machine learning",
       "language acquisition modeling",
-      "dynamical systems"
+      "dynamical systems",
+      "nlp and speech"
     ],
     "bio": "Berwick and his group investigate computation and cognition, including computational models of language acquisition, processing, and change within the context of machine learning and mathematical models of dynamical systems. A second line of inquiry probes the biological and evolutionary underpinnings of human language.",
     "sourceUrl": "https://idss.mit.edu/staff/robert-c-berwick/"
@@ -5448,27 +5365,12 @@
       "machine learning",
       "statistical inference",
       "optimization and game theory",
-      "information and decision systems"
+      "information and decision systems",
+      "uncertainty quantification",
+      "distribution shift"
     ],
     "bio": "Works on uncertainty and reliable decision-making with data, developing tools for statistical inference with AI models, data affected by strategic behavior, and distribution shift.",
     "sourceUrl": "https://www.eecs.mit.edu/people/stephen-bates/"
-  },
-  {
-    "id": "res_stephen-d-bates_mit",
-    "name": "Stephen D. Bates",
-    "title": "Assistant Professor of AI and Decision-making",
-    "school": "MIT",
-    "department": "Electrical Engineering and Computer Science",
-    "email": "s_bates@mit.edu",
-    "website": "https://stephenbates19.github.io/",
-    "researchAreas": [
-      "statistical inference",
-      "uncertainty quantification",
-      "machine learning",
-      "distribution shift"
-    ],
-    "bio": "Bates works to understand uncertainty and reliable decision-making with data. He develops tools for statistical inference with AI models, data impacted by strategic behavior, and settings with distribution shift.",
-    "sourceUrl": "https://lids.mit.edu/people/faculty"
   },
   {
     "id": "res_sven-dorkenwald_mit",
@@ -6108,21 +6010,6 @@
     ],
     "bio": "CJ's research interests focus on computer vision and robotics. His work on recovering 3-D models from 2-D images has led to commercially deployed techniques for recovering architectural models.",
     "sourceUrl": "https://www.grasp.upenn.edu/people/camillo-j-taylor/"
-  },
-  {
-    "id": "res_camillo-jose-taylor_penn",
-    "name": "Camillo Jose Taylor",
-    "title": "Raymond S. Markowitz President's Distinguished Professor",
-    "school": "Penn",
-    "department": "Computer and Information Science",
-    "email": "cjtaylor@seas.upenn.edu",
-    "website": "https://www.cis.upenn.edu/~cjtaylor/",
-    "researchAreas": [
-      "computer vision",
-      "robotics"
-    ],
-    "bio": "Raymond S. Markowitz President's Distinguished Professor in the CIS Department and GRASP Laboratory, working on computer vision and robotics.",
-    "sourceUrl": "https://directory.engineering.upenn.edu/camillo-jose-taylor/"
   },
   {
     "id": "res_cesar-de-la-fuente_penn",
@@ -6910,23 +6797,6 @@
     "sourceUrl": "https://ibi.med.upenn.edu/people/george-demiris-ph-d-facmi/"
   },
   {
-    "id": "res_george-j-pappas_penn",
-    "name": "George J. Pappas",
-    "title": "UPS Foundation Professor",
-    "school": "Penn",
-    "department": "Electrical and Systems Engineering",
-    "email": "pappasg@seas.upenn.edu",
-    "website": "https://www.georgejpappas.org/",
-    "researchAreas": [
-      "safe autonomy",
-      "formal methods",
-      "cyber-physical systems",
-      "robotics"
-    ],
-    "bio": "UPS Foundation Professor in ESE with secondary appointments in CIS and MEAM, working on safe autonomy, formal methods, and cyber-physical systems. Serves as Associate Dean for Research and Innovation at Penn Engineering and is a member of the National Academy of Engineering.",
-    "sourceUrl": "https://directory.engineering.upenn.edu/george-j-pappas/"
-  },
-  {
     "id": "res_george-pappas_penn",
     "name": "George Pappas",
     "title": "Joseph Moore Professor & Department Chair",
@@ -6939,7 +6809,11 @@
       "learning for control",
       "machine learning",
       "multi-robot systems",
-      "autonomy"
+      "autonomy",
+      "safe autonomy",
+      "formal methods",
+      "cyber-physical systems",
+      "robotics"
     ],
     "bio": "George's research focuses on developing methods for the control of next-generation hierarchical and distributed systems. His group develops analysis and design algorithms and tools for hybrid systems that merge control with computing systems.",
     "sourceUrl": "https://www.grasp.upenn.edu/people/george-pappas/"
@@ -7498,43 +7372,11 @@
       "data science",
       "machine learning",
       "causal inference",
-      "personalized medicine"
+      "personalized medicine",
+      "causality"
     ],
     "bio": "Konrad Kording's research uses data science to advance understanding of brain function and to improve personalized medicine. He collaborates with clinicians to diagnose diseases based on mobile phone data.",
     "sourceUrl": "https://warrencenter.upenn.edu/people/"
-  },
-  {
-    "id": "res_konrad-paul-kording_penn",
-    "name": "Konrad Paul Kording",
-    "title": "Professor",
-    "school": "Penn",
-    "department": "Computer and Information Science",
-    "email": "kording@upenn.edu",
-    "website": "http://koerding.com",
-    "researchAreas": [
-      "computational neuroscience",
-      "data science",
-      "causality",
-      "machine learning"
-    ],
-    "bio": "Seeks to understand how the world, and in particular the brain, works using data. Early lab research focused on computational neuroscience and movement, with current focus on causality in data science applications.",
-    "sourceUrl": "https://directory.engineering.upenn.edu/konrad-paul-kording/"
-  },
-  {
-    "id": "res_konstantinos-daniilidis_penn",
-    "name": "Konstantinos Daniilidis",
-    "title": "Ruth Yalom Stone Professor",
-    "school": "Penn",
-    "department": "Computer and Information Science",
-    "email": "kostas@cis.upenn.edu",
-    "website": "http://www.cis.upenn.edu/~kostas/",
-    "researchAreas": [
-      "computer vision",
-      "robotics",
-      "machine perception"
-    ],
-    "bio": "Ruth Yalom Stone Professor in the GRASP Laboratory working on computer vision and robotics, with recent work on event-based cameras and geometry in deep learning.",
-    "sourceUrl": "https://directory.engineering.upenn.edu/konstantinos-daniilidis/"
   },
   {
     "id": "res_kostas-daniilidis_penn",
@@ -7549,7 +7391,9 @@
       "geometric deep learning",
       "neuromorphic vision",
       "3d vision",
-      "robot perception"
+      "robot perception",
+      "robotics",
+      "machine perception"
     ],
     "bio": "Ruth Yalom Stone Professor working on neuromorphic vision algorithms, 3D vision, geometric deep learning, and semantic SLAM.",
     "sourceUrl": "https://www.amcs.upenn.edu/people/faculty"
@@ -7654,27 +7498,13 @@
       "nlp",
       "machine learning",
       "computational social science",
-      "ai for health"
-    ],
-    "bio": "Professor of CIS with graduate-group appointments in Bioengineering, Genomics and Computational Biology, Operations, Information and Decisions, and Psychology. His group's work spans machine learning, NLP, computational social science, and AI for health.",
-    "sourceUrl": "https://directory.engineering.upenn.edu/lyle-h-ungar/"
-  },
-  {
-    "id": "res_lyle-ungar_penn",
-    "name": "Lyle Ungar",
-    "title": "Professor of Computer and Information Science",
-    "school": "Penn",
-    "department": "Department of Computer and Information Science",
-    "email": "ungar@cis.upenn.edu",
-    "website": null,
-    "researchAreas": [
+      "ai for health",
       "natural language processing",
-      "machine learning",
       "computational psychology",
       "digital health"
     ],
-    "bio": "Professor of Computer and Information Science working at the intersection of natural language processing, machine learning, and psychology.",
-    "sourceUrl": "https://www.amcs.upenn.edu/people/faculty"
+    "bio": "Professor of CIS with graduate-group appointments in Bioengineering, Genomics and Computational Biology, Operations, Information and Decisions, and Psychology. His group's work spans machine learning, NLP, computational social science, and AI for health.",
+    "sourceUrl": "https://directory.engineering.upenn.edu/lyle-h-ungar/"
   },
   {
     "id": "res_lynn-wu_penn",
@@ -7966,23 +7796,6 @@
     "sourceUrl": "https://directory.engineering.upenn.edu/michael-posa/"
   },
   {
-    "id": "res_michelle-j-johnson_penn",
-    "name": "Michelle J. Johnson",
-    "title": "Professor of Physical Medicine and Rehabilitation",
-    "school": "Penn",
-    "department": "Department of Physical Medicine and Rehabilitation / Bioengineering",
-    "email": "johnmic@pennmedicine.upenn.edu",
-    "website": "https://www.med.upenn.edu/rehabilitation-robotics-lab/",
-    "researchAreas": [
-      "rehabilitation robotics",
-      "neuroscience",
-      "motor control",
-      "assistive technology"
-    ],
-    "bio": "Directs the Rehabilitation Robotics Lab, using rehabilitation robotics and neuroscience to investigate brain plasticity and motor function after brain injury.",
-    "sourceUrl": "https://directory.engineering.upenn.edu/michelle-johnson/"
-  },
-  {
     "id": "res_michelle-johnson_penn",
     "name": "Michelle Johnson",
     "title": "Associate Professor of Physical Medicine and Rehabilitation; Secondary Faculty, Bioengineering",
@@ -7994,7 +7807,10 @@
       "rehabilitation robotics",
       "robot-assisted therapy",
       "tele-rehabilitation",
-      "human-robot interaction"
+      "human-robot interaction",
+      "neuroscience",
+      "motor control",
+      "assistive technology"
     ],
     "bio": "Michelle Johnson's research is mainly in robot-mediated rehabilitation. She focuses on the investigation and rehabilitation of dysfunction due to aging, neural disease, and neural injury.",
     "sourceUrl": "https://www.grasp.upenn.edu/people/michelle-johnson/"
@@ -8395,24 +8211,6 @@
     "sourceUrl": "https://www.amcs.upenn.edu/people/faculty"
   },
   {
-    "id": "res_rene-vidal_penn",
-    "name": "Rene Vidal",
-    "title": "Rachleff University Professor",
-    "school": "Penn",
-    "department": "Department of Electrical and Systems Engineering / Radiology",
-    "email": "vidalr@seas.upenn.edu",
-    "website": null,
-    "researchAreas": [
-      "deep learning theory",
-      "non-convex optimization",
-      "subspace learning",
-      "clustering",
-      "sparse representation"
-    ],
-    "bio": "Rachleff University Professor with appointments in Electrical and Systems Engineering and Radiology, working on deep learning theory and non-convex optimization.",
-    "sourceUrl": "https://www.amcs.upenn.edu/people/faculty"
-  },
-  {
     "id": "res_ren-vidal_penn",
     "name": "René Vidal",
     "title": "Rachleff University Professor",
@@ -8423,7 +8221,12 @@
     "researchAreas": [
       "machine learning",
       "computer vision",
-      "biomedical imaging"
+      "biomedical imaging",
+      "deep learning theory",
+      "non-convex optimization",
+      "subspace learning",
+      "clustering",
+      "sparse representation"
     ],
     "bio": "Rachleff and Penn Integrates Knowledge University Professor and director of the Center for Innovation in Data Engineering and Science (IDEAS). Research in machine learning, computer vision, and biomedical imaging.",
     "sourceUrl": "https://directory.engineering.upenn.edu/rene-vidal/"
@@ -8480,22 +8283,6 @@
     "sourceUrl": "https://directory.engineering.upenn.edu/ryan-marcus/"
   },
   {
-    "id": "res_sampath-k-kannan_penn",
-    "name": "Sampath K. Kannan",
-    "title": "Henry Salvatori Professor of Computer and Information Science",
-    "school": "Penn",
-    "department": "Department of Computer and Information Science",
-    "email": "kannan@cis.upenn.edu",
-    "website": null,
-    "researchAreas": [
-      "algorithms",
-      "computational complexity",
-      "algorithmic fairness"
-    ],
-    "bio": "Henry Salvatori Professor in Computer and Information Science working on algorithms and complexity.",
-    "sourceUrl": "https://www.amcs.upenn.edu/people/faculty"
-  },
-  {
     "id": "res_sampath-kannan_penn",
     "name": "Sampath Kannan",
     "title": "Henry Salvatori Professor",
@@ -8506,7 +8293,8 @@
     "researchAreas": [
       "algorithms",
       "algorithmic fairness",
-      "computational biology"
+      "computational biology",
+      "computational complexity"
     ],
     "bio": "Henry Salvatori Professor working on algorithms and computational complexity, with work spanning algorithmic fairness and computational biology.",
     "sourceUrl": "https://directory.engineering.upenn.edu/sampath-k-kannan/"
@@ -8821,23 +8609,6 @@
     "sourceUrl": "https://www.amcs.upenn.edu/people/faculty"
   },
   {
-    "id": "res_victor-m-preciado_penn",
-    "name": "Victor M. Preciado",
-    "title": "Associate Professor of Electrical and Systems Engineering",
-    "school": "Penn",
-    "department": "Department of Electrical and Systems Engineering / Computer and Information Science",
-    "email": "preciado@seas.upenn.edu",
-    "website": null,
-    "researchAreas": [
-      "complex networks",
-      "machine learning",
-      "dynamical systems",
-      "network epidemiology"
-    ],
-    "bio": "Associate Professor working on complex networks, machine learning, and dynamical systems.",
-    "sourceUrl": "https://www.amcs.upenn.edu/people/faculty"
-  },
-  {
     "id": "res_victor-preciado_penn",
     "name": "Victor Preciado",
     "title": "Associate Professor of Electrical and Systems Engineering",
@@ -8850,7 +8621,10 @@
       "dynamical systems",
       "data science",
       "complex systems",
-      "control"
+      "control",
+      "complex networks",
+      "machine learning",
+      "network epidemiology"
     ],
     "bio": "Victor Preciado's main research interests lie at the intersection of networks, dynamics, and data sciences. He uses innovative mathematical and computational approaches to model and control complex, high-dimensional dynamical systems.",
     "sourceUrl": "https://warrencenter.upenn.edu/people/"
@@ -10818,23 +10592,6 @@
     "sourceUrl": "https://www.cs.stanford.edu/people/azalia-mirhoseini"
   },
   {
-    "id": "res_barbara-elizabeth-engelhardt_stanford",
-    "name": "Barbara Elizabeth Engelhardt",
-    "title": "Professor (Research) of Biomedical Data Science and, by courtesy, of Statistics and of Computer Science",
-    "school": "Stanford",
-    "department": "Biomedical Data Science",
-    "email": "bengelhardt@stanford.edu",
-    "website": null,
-    "researchAreas": [
-      "statistical machine learning",
-      "computational genomics",
-      "bayesian methods",
-      "biomedical data science"
-    ],
-    "bio": "She is a Senior Investigator at Gladstone Institutes and Professor at Stanford in Biomedical Data Science. She received her PhD from UC Berkeley in EECS advised by Michael I. Jordan and was previously a professor of computer science at Princeton.",
-    "sourceUrl": "https://profiles.stanford.edu/barbara-engelhardt"
-  },
-  {
     "id": "res_barbara-engelhardt_stanford",
     "name": "Barbara Engelhardt",
     "title": "Professor of Biomedical Data Science",
@@ -10846,7 +10603,10 @@
       "machine learning",
       "statistical genomics",
       "biomedical data science",
-      "decision support"
+      "decision support",
+      "statistical machine learning",
+      "computational genomics",
+      "bayesian methods"
     ],
     "bio": "Develops and applies models for structured biomedical data that capture patterns, predict results of interventions, assist with decision-making support, and prioritize experiments. She is also a Senior Investigator at Gladstone Institutes.",
     "sourceUrl": "https://profiles.stanford.edu/barbara-engelhardt"
@@ -12701,21 +12461,6 @@
     ],
     "bio": "Director of the Center for Research on Foundation Models (CRFM), focused on making foundation models more accessible through open source and understandable through rigorous benchmarking. His past work spans machine learning and NLP, including robustness, interpretability, semantics, and reasoning.",
     "sourceUrl": "https://www.cs.stanford.edu/people/percy-liang"
-  },
-  {
-    "id": "res_percy-shuo-liang_stanford",
-    "name": "Percy Shuo Liang",
-    "title": "Associate Professor of Computer Science; Associate Professor, by courtesy, of Statistics",
-    "school": "Stanford",
-    "department": "Department of Computer Science (courtesy: Department of Statistics)",
-    "email": "pliang@cs.stanford.edu",
-    "website": "https://cs.stanford.edu/~pliang/",
-    "researchAreas": [
-      "machine learning",
-      "natural language processing"
-    ],
-    "bio": "Liang's research areas are machine learning and natural language processing. He has received the Presidential Early Career Award for Scientists and Engineers and a Sloan Research Fellowship.",
-    "sourceUrl": "https://statistics.stanford.edu/people/percy-shuo-liang"
   },
   {
     "id": "res_peter-w-glynn_stanford",

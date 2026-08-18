@@ -51,15 +51,50 @@ export function isPublicHttpUrl(raw: string): boolean {
   }
 }
 
-function classify(role: string | null, context: string): LabContact['kind'] | null {
+/**
+ * A professor's own page often names their assistant without ever writing the
+ * job title. Christopher Manning's reads "Contact Suzanne — Suzanne Lessard,
+ * Gates 232, slessard@stanford.edu": the role keyword the classifier wants is
+ * simply not there, and the word "contact" standing in front of somebody
+ * else's name and address carries the whole meaning.
+ *
+ * Deliberately narrow. "Contact" is a nav-bar word on every university site,
+ * so it only counts inside the last stretch of text before the address, and
+ * only when a person's name was found next to it — a heading above a generic
+ * office address is not somebody to copy.
+ */
+const CONTACT_INTRO = /\bcontact(?:\s+(?:info(?:rmation)?|us|the)\b)?/i;
+const CONTACT_WINDOW = 120;
+
+function classify(
+  role: string | null,
+  context: string,
+  opts: { name?: string | null; near?: string } = {}
+): LabContact['kind'] | null {
   const haystack = `${role ?? ''} ${context}`;
   if (ADMIN_ROLE.test(haystack)) return 'admin';
   if (LAB_ROLE.test(haystack)) return 'lab';
+
+  if (opts.name && opts.near) {
+    const window = opts.near.slice(-CONTACT_WINDOW);
+    // "Contact us" and "Contact information" are headings, not introductions
+    // to a person, so they are matched only to be excluded.
+    const match = CONTACT_INTRO.exec(window);
+    if (match && !/\b(?:info(?:rmation)?|us|the)\b/i.test(match[0])) return 'admin';
+  }
   return null;
 }
 
+/**
+ * Labels that sit in front of a name and capitalise like one. "Contact Suzanne"
+ * reads as a two-word name to the pattern below, and copying an email to
+ * somebody recorded as "Contact Suzanne" looks exactly as careless as it is.
+ */
+const NAME_PREFIX_LABEL = /^(?:contact|email|e-?mail|phone|tel|office|address|assistant|admin|write|reach|ask)\s+/i;
+
 function looksLikePersonName(text: string): boolean {
   const t = text.trim();
+  if (NAME_PREFIX_LABEL.test(t)) return false;
   return (
     t.length > 3 &&
     t.length < 60 &&
@@ -131,12 +166,13 @@ function contactsFromText(text: string, url: string, researcher: ResearcherProfi
     const before = clean.slice(Math.max(0, match.index - 300), match.index);
     const context = `${before}\n${clean.slice(ADDRESS_RE.lastIndex, ADDRESS_RE.lastIndex + 160)}`;
     const { name, role } = describeNear(context);
-    const kind = classify(role, context);
-    if (!kind) continue;
-
     const fallbackName =
       before.split('\n').map((l) => l.trim()).filter(Boolean).slice(-4).reverse().find(looksLikePersonName) ?? null;
-    found.push({ name: name ?? fallbackName, role, email, kind, sourceUrl: url });
+    const who = name ?? fallbackName;
+    const kind = classify(role, context, { name: who, near: before });
+    if (!kind) continue;
+
+    found.push({ name: who, role, email, kind, sourceUrl: url });
   }
   return found;
 }
@@ -160,13 +196,13 @@ function contactsFromPage(html: string, url: string, researcher: ResearcherProfi
     const context = `${before}\n${label}\n${after}`;
 
     const { name, role } = describeNear(context);
-    const kind = classify(role, context);
-    if (!kind) continue;
-
     const tail = before.split('\n').map((l) => l.trim()).filter(Boolean).slice(-4);
     const fallbackName = (looksLikePersonName(label) ? label : null) ?? tail.reverse().find(looksLikePersonName) ?? null;
+    const who = name ?? fallbackName;
+    const kind = classify(role, context, { name: who, near: `${before}\n${label}` });
+    if (!kind) continue;
 
-    found.push({ name: name ?? fallbackName, role, email, kind, sourceUrl: url });
+    found.push({ name: who, role, email, kind, sourceUrl: url });
   }
   return found;
 }
