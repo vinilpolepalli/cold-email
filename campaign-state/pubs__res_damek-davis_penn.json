@@ -1,0 +1,32 @@
+{
+  "researcherId": "res_damek-davis_penn",
+  "authorName": "Damek Davis",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "GW170817: Observation of Gravitational Waves from a Binary Neutron Star Inspiral",
+      "year": 2017,
+      "venue": "Physical Review Letters",
+      "authors": [
+        "B. P. Abbott",
+        "R. Abbott",
+        "T. D. Abbott",
+        "F. Acernese",
+        "K. Ackley",
+        "C. Adams",
+        "T. Adams",
+        "P. Addesso"
+      ],
+      "citations": 8280,
+      "doi": "10.1103/physrevlett.119.161101",
+      "url": "https://doi.org/10.1103/physrevlett.119.161101",
+      "pdfUrl": null,
+      "abstract": "On August 17, 2017 at 12∶41:04 UTC the Advanced LIGO and Advanced Virgo gravitational-wave detectors made their first observation of a binary neutron star inspiral. The signal, GW170817, was detected with a combined signal-to-noise ratio of 32.4 and a false-alarm-rate estimate of less than one per 8.0 × 10 4 years . We infer the component masses of the binary to be between 0.86 and 2.26 M ⊙ , in agreement with masses of known neutron stars. Restricting the component spins to the range inferred in binary neutron stars, we find the component masses to be in the range 1.17 – 1.60 M ⊙ , with the total mass of the system 2.7 4 − 0.01 + 0.04 M ⊙ . The source was localized within a sky region of 28 deg 2 (90% probability) and had a luminosity distance of 4 0 − 14 + 8 Mpc , the closest and most precisely localized gravitational-wave signal yet. The association with the γ -ray burst GRB 170817..."
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:31:46.744Z"
+}

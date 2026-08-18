@@ -1,0 +1,26 @@
+{
+  "researcherId": "res_daniela-rus_mit",
+  "authorName": "Daniela Rus",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "Design, fabrication and control of soft robots",
+      "year": 2015,
+      "venue": "Nature",
+      "authors": [
+        "Daniela Rus",
+        "Michael T. Tolley"
+      ],
+      "citations": 5428,
+      "doi": "10.1038/nature14543",
+      "url": "https://doi.org/10.1038/nature14543",
+      "pdfUrl": "http://www.nature.com/articles/nature14543.pdf",
+      "abstract": null
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:30:55.459Z"
+}

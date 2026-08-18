@@ -1,0 +1,52 @@
+{
+  "researcherId": "res_polina-golland_mit",
+  "authorName": "Polina Golland",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "The Multimodal Brain Tumor Image Segmentation Benchmark (BRATS)",
+      "year": 2015,
+      "venue": "IEEE Transactions on Medical Imaging",
+      "authors": [
+        "Bjoern H. Menze",
+        "Andras Jakab",
+        "Stefan Bauer",
+        "Jayashree Kalpathy-Cramer",
+        "Keyvan Farahani",
+        "Justin Kirby",
+        "Yuliya Burren",
+        "Nicole Porz"
+      ],
+      "citations": 5744,
+      "doi": "10.1109/tmi.2014.2377694",
+      "url": "https://doi.org/10.1109/tmi.2014.2377694",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "CellProfiler: image analysis software for identifying and quantifying cell phenotypes",
+      "year": 2006,
+      "venue": "Genome Biology",
+      "authors": [
+        "Anne E Carpenter",
+        "Thouis R Jones",
+        "Michael R Lamprecht",
+        "Colin Clarke",
+        "In Han Kang",
+        "Ola Friman",
+        "David A Guertin",
+        "Joo Han Chang"
+      ],
+      "citations": 4950,
+      "doi": "10.1186/gb-2006-7-10-r100",
+      "url": "https://doi.org/10.1186/gb-2006-7-10-r100",
+      "pdfUrl": "https://link.springer.com/content/pdf/10.1186/gb-2006-7-10-r100.pdf",
+      "abstract": "Biologists can now prepare and image thousands of samples per day using automation, enabling chemical screens and functional genomics (for example, using RNA interference). Here we describe the first free, open-source system designed for flexible, high-throughput cell image analysis, CellProfiler. CellProfiler can address a variety of biological questions quantitatively, including standard assays (for example, cell count, size, per-cell protein levels) and complex morphological assays (for example, cell/organelle shape or subcellular patterns of DNA or protein staining)."
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:30:52.610Z"
+}

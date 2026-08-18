@@ -1,0 +1,32 @@
+{
+  "researcherId": "res_olga-russakovsky_princeton",
+  "authorName": "Olga Russakovsky",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "ImageNet Large Scale Visual Recognition Challenge",
+      "year": 2015,
+      "venue": "International Journal of Computer Vision",
+      "authors": [
+        "Olga Russakovsky",
+        "Jia Deng",
+        "Hao Su",
+        "Jonathan Krause",
+        "Sanjeev Satheesh",
+        "Sean Ma",
+        "Zhiheng Huang",
+        "Andrej Karpathy"
+      ],
+      "citations": 30606,
+      "doi": "10.1007/s11263-015-0816-y",
+      "url": "https://doi.org/10.1007/s11263-015-0816-y",
+      "pdfUrl": "http://link.springer.com/content/pdf/10.1007/s11263-015-0816-y.pdf",
+      "abstract": null
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:31:13.624Z"
+}

@@ -1,0 +1,26 @@
+{
+  "researcherId": "res_duncan-watts_penn",
+  "authorName": "Duncan Watts",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "Collective dynamics of ‘small-world’ networks",
+      "year": 1998,
+      "venue": "Nature",
+      "authors": [
+        "Duncan J. Watts",
+        "Steven H. Strogatz"
+      ],
+      "citations": 34153,
+      "doi": "10.1038/30918",
+      "url": "https://doi.org/10.1038/30918",
+      "pdfUrl": "http://www.nature.com/articles/30918.pdf",
+      "abstract": null
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:31:47.215Z"
+}

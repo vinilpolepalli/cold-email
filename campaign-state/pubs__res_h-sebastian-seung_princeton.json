@@ -1,0 +1,26 @@
+{
+  "researcherId": "res_h-sebastian-seung_princeton",
+  "authorName": "H. Sebastian Seung",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "Learning the parts of objects by non-negative matrix factorization",
+      "year": 1999,
+      "venue": "Nature",
+      "authors": [
+        "Daniel D. Lee",
+        "H. Sebastian Seung"
+      ],
+      "citations": 11239,
+      "doi": "10.1038/44565",
+      "url": "https://doi.org/10.1038/44565",
+      "pdfUrl": "http://www.nature.com/articles/44565.pdf",
+      "abstract": null
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:31:21.892Z"
+}

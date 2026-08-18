@@ -1,0 +1,25 @@
+{
+  "researcherId": "res_abraham-j-wyner_penn",
+  "authorName": "Abraham J. Wyner",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "The Wire-Tap Channel",
+      "year": 1975,
+      "venue": "Bell System Technical Journal",
+      "authors": [
+        "A. D. Wyner"
+      ],
+      "citations": 6263,
+      "doi": "10.1002/j.1538-7305.1975.tb02040.x",
+      "url": "https://doi.org/10.1002/j.1538-7305.1975.tb02040.x",
+      "pdfUrl": null,
+      "abstract": null
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:31:50.114Z"
+}

@@ -1,0 +1,90 @@
+{
+  "researcherId": "res_stratos-idreos_harvard",
+  "authorName": "Stratos Idreos",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "Monkey",
+      "year": 2017,
+      "venue": "Proceedings of the 2017 ACM International Conference on Management of Data",
+      "authors": [
+        "Niv Dayan",
+        "Manos Athanassoulis",
+        "Stratos Idreos"
+      ],
+      "citations": 210,
+      "doi": "10.1145/3035918.3064054",
+      "url": "https://doi.org/10.1145/3035918.3064054",
+      "pdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3035918.3064054",
+      "abstract": null
+    },
+    {
+      "title": "Overview of Data Exploration Techniques",
+      "year": 2015,
+      "venue": "Proceedings of the 2015 ACM SIGMOD International Conference on Management of Data",
+      "authors": [
+        "Stratos Idreos",
+        "Olga Papaemmanouil",
+        "Surajit Chaudhuri"
+      ],
+      "citations": 177,
+      "doi": "10.1145/2723372.2731084",
+      "url": "https://doi.org/10.1145/2723372.2731084",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Dostoevsky",
+      "year": 2018,
+      "venue": "Proceedings of the 2018 International Conference on Management of Data",
+      "authors": [
+        "Niv Dayan",
+        "Stratos Idreos"
+      ],
+      "citations": 162,
+      "doi": "10.1145/3183713.3196927",
+      "url": "https://doi.org/10.1145/3183713.3196927",
+      "pdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3183713.3196927",
+      "abstract": "In this paper, we show that all mainstream LSM-tree based key-value stores in the literature and in industry are suboptimal with respect to how they trade off among the I/O costs of updates, point lookups, range lookups, as well as the cost of storage, measured as space-amplification. The reason is that they perform expensive merge operations in order to (1) bound the number of runs that a lookup has to probe, and to (2) remove obsolete entries to reclaim space. However, most of these merge operations reduce point lookup cost, long range lookup cost, and space-amplification by a negligible amount. To address this problem, we expand the LSM-tree design space with Lazy Leveling, a new design that prohibits merge operations at all levels of LSM-tree but the largest. We show that Lazy Leveling improves the worst-case cost complexity of updates while maintaining the same bounds on point lo..."
+    },
+    {
+      "title": "NoDB",
+      "year": 2012,
+      "venue": "Proceedings of the 2012 ACM SIGMOD International Conference on Management of Data",
+      "authors": [
+        "Ioannis Alagiannis",
+        "Renata Borovica",
+        "Miguel Branco",
+        "Stratos Idreos",
+        "Anastasia Ailamaki"
+      ],
+      "citations": 142,
+      "doi": "10.1145/2213836.2213864",
+      "url": "https://doi.org/10.1145/2213836.2213864",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "The Design and Implementation of Modern Column-Oriented Database Systems",
+      "year": 2013,
+      "venue": "Foundations and Trends in Databases",
+      "authors": [
+        "Daniel Abadi",
+        "Peter Boncz",
+        "Stavros Harizopoulos",
+        "Stratos Idreos",
+        "Samuel Madden"
+      ],
+      "citations": 119,
+      "doi": "10.1561/1900000024",
+      "url": "https://doi.org/10.1561/1900000024",
+      "pdfUrl": "https://www.emerald.com/ftdbs/article-pdf/5/3/197/10901321/1900000024en.pdf",
+      "abstract": "In this article, we survey recent research on column-oriented database systems, or column-stores, where each attribute of a table is stored in a separate file or region on storage. Such databases have seen a resurgence in recent years with a rise in interest in analytic queries that perform scans and aggregates over large portions of a few columns of a table. The main advantage of a column-store is that it can access just the columns needed to answer such queries. We specifically focus on three influential research prototypes, MonetDB [46], VectorWise [18], and C-Store [88]. These systems have formed the basis for several wellknown commercial column-store implementations. We describe their similarities and differences and discuss their specific architectural features for compression, late materialization, join processing, vectorization and adaptive indexing (database cracking)."
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:30:33.706Z"
+}

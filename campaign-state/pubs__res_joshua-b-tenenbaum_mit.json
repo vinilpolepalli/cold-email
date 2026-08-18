@@ -1,0 +1,27 @@
+{
+  "researcherId": "res_joshua-b-tenenbaum_mit",
+  "authorName": "Joshua B. Tenenbaum",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "A Global Geometric Framework for Nonlinear Dimensionality Reduction",
+      "year": 2000,
+      "venue": "Science",
+      "authors": [
+        "Joshua B. Tenenbaum",
+        "Vin de Silva",
+        "John C. Langford"
+      ],
+      "citations": 10427,
+      "doi": "10.1126/science.290.5500.2319",
+      "url": "https://doi.org/10.1126/science.290.5500.2319",
+      "pdfUrl": null,
+      "abstract": "Scientists working with large volumes of high-dimensional data, such as global climate patterns, stellar spectra, or human gene distributions, regularly confront the problem of dimensionality reduction: finding meaningful low-dimensional structures hidden in their high-dimensional observations. The human brain confronts the same problem in everyday perception, extracting from its high-dimensional sensory inputs—30,000 auditory nerve fibers or 10 6 optic nerve fibers—a manageably small number of perceptually relevant features. Here we describe an approach to solving dimensionality reduction problems that uses easily measured local metric information to learn the underlying global geometry of a data set. Unlike classical techniques such as principal component analysis (PCA) and multidimensional scaling (MDS), our approach is capable of discovering the nonlinear degrees of freedom that u..."
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:31:09.273Z"
+}

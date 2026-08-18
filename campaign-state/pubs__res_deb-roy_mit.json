@@ -1,0 +1,27 @@
+{
+  "researcherId": "res_deb-roy_mit",
+  "authorName": "Deb Roy",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "The spread of true and false news online",
+      "year": 2018,
+      "venue": "Science",
+      "authors": [
+        "Soroush Vosoughi",
+        "Deb Roy",
+        "Sinan Aral"
+      ],
+      "citations": 6421,
+      "doi": "10.1126/science.aap9559",
+      "url": "https://doi.org/10.1126/science.aap9559",
+      "pdfUrl": null,
+      "abstract": "Lies spread faster than the truth There is worldwide concern over false news and the possibility that it can influence political, economic, and social well-being. To understand how false news spreads, Vosoughi et al. used a data set of rumor cascades on Twitter from 2006 to 2017. About 126,000 rumors were spread by ∼3 million people. False news reached more people than the truth; the top 1% of false news cascades diffused to between 1000 and 100,000 people, whereas the truth rarely diffused to more than 1000 people. Falsehood also diffused faster than the truth. The degree of novelty and the emotional reactions of recipients may be responsible for the differences observed. Science , this issue p. 1146"
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:30:39.468Z"
+}

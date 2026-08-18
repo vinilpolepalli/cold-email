@@ -1,0 +1,150 @@
+{
+  "researcherId": "res_marinka-zitnik_harvard",
+  "authorName": "Marinka Zitnik",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "Scientific discovery in the age of artificial intelligence",
+      "year": 2023,
+      "venue": "Nature",
+      "authors": [
+        "Hanchen Wang",
+        "Tianfan Fu",
+        "Yuanqi Du",
+        "Wenhao Gao",
+        "Kexin Huang",
+        "Ziming Liu",
+        "Payal Chandak",
+        "Shengchao Liu"
+      ],
+      "citations": 1660,
+      "doi": "10.1038/s41586-023-06221-2",
+      "url": "https://doi.org/10.1038/s41586-023-06221-2",
+      "pdfUrl": "https://www.nature.com/articles/s41586-023-06221-2.pdf",
+      "abstract": null
+    },
+    {
+      "title": "Modeling polypharmacy side effects with graph convolutional networks",
+      "year": 2018,
+      "venue": "Bioinformatics",
+      "authors": [
+        "Marinka Zitnik",
+        "Monica Agrawal",
+        "Jure Leskovec"
+      ],
+      "citations": 1212,
+      "doi": "10.1093/bioinformatics/bty294",
+      "url": "https://doi.org/10.1093/bioinformatics/bty294",
+      "pdfUrl": "https://academic.oup.com/bioinformatics/article-pdf/34/13/i457/50316205/bioinformatics_34_13_i457.pdf",
+      "abstract": "Motivation The use of drug combinations, termed polypharmacy, is common to treat patients with complex diseases or co-existing conditions. However, a major consequence of polypharmacy is a much higher risk of adverse side effects for the patient. Polypharmacy side effects emerge because of drug–drug interactions, in which activity of one drug may change, favorably or unfavorably, if taken with another drug. The knowledge of drug interactions is often limited because these complex relationships are rare, and are usually not observed in relatively small clinical testing. Discovering polypharmacy side effects thus remains an important challenge with significant implications for patient mortality and morbidity. Results Here, we present Decagon, an approach for modeling polypharmacy side effects. The approach constructs a multimodal graph of protein–protein interactions, drug–protein targe..."
+    },
+    {
+      "title": "Machine learning for integrating data in biology and medicine: Principles, practice, and opportunities",
+      "year": 2019,
+      "venue": "Information Fusion",
+      "authors": [
+        "Marinka Zitnik",
+        "Francis Nguyen",
+        "Bo Wang",
+        "Jure Leskovec",
+        "Anna Goldenberg",
+        "Michael M. Hoffman"
+      ],
+      "citations": 615,
+      "doi": "10.1016/j.inffus.2018.09.012",
+      "url": "https://doi.org/10.1016/j.inffus.2018.09.012",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Building a knowledge graph to enable precision medicine",
+      "year": 2023,
+      "venue": "Scientific Data",
+      "authors": [
+        "Payal Chandak",
+        "Kexin Huang",
+        "Marinka Zitnik"
+      ],
+      "citations": 468,
+      "doi": "10.1038/s41597-023-01960-3",
+      "url": "https://doi.org/10.1038/s41597-023-01960-3",
+      "pdfUrl": "https://www.nature.com/articles/s41597-023-01960-3.pdf",
+      "abstract": "Developing personalized diagnostic strategies and targeted treatments requires a deep understanding of disease biology and the ability to dissect the relationship between molecular and genetic factors and their phenotypic consequences. However, such knowledge is fragmented across publications, non-standardized repositories, and evolving ontologies describing various scales of biological organization between genotypes and clinical phenotypes. Here, we present PrimeKG, a multimodal knowledge graph for precision medicine analyses. PrimeKG integrates 20 high-quality resources to describe 17,080 diseases with 4,050,249 relationships representing ten major biological scales, including disease-associated protein perturbations, biological processes and pathways, anatomical and phenotypic scales, and the entire range of approved drugs with their therapeutic action, considerably expanding previ..."
+    },
+    {
+      "title": "Predicting multicellular function through multi-layer tissue networks",
+      "year": 2017,
+      "venue": "Bioinformatics",
+      "authors": [
+        "Marinka Zitnik",
+        "Jure Leskovec"
+      ],
+      "citations": 418,
+      "doi": "10.1093/bioinformatics/btx252",
+      "url": "https://doi.org/10.1093/bioinformatics/btx252",
+      "pdfUrl": "https://academic.oup.com/bioinformatics/article-pdf/33/14/i190/50314632/bioinformatics_33_14_i190.pdf",
+      "abstract": "Motivation Understanding functions of proteins in specific human tissues is essential for insights into disease diagnostics and therapeutics, yet prediction of tissue-specific cellular function remains a critical challenge for biomedicine. Results Here, we present OhmNet, a hierarchy-aware unsupervised node feature learning approach for multi-layer networks. We build a multi-layer network, where each layer represents molecular interactions in a different human tissue. OhmNet then automatically learns a mapping of proteins, represented as nodes, to a neural embedding-based low-dimensional space of features. OhmNet encourages sharing of similar features among proteins with similar network neighborhoods and among proteins activated in similar tissues. The algorithm generalizes prior work, which generally ignores relationships between tissues, by modeling tissue organization with a rich m..."
+    },
+    {
+      "title": "Interpretability of machine learning‐based prediction models in healthcare",
+      "year": 2020,
+      "venue": "WIREs Data Mining and Knowledge Discovery",
+      "authors": [
+        "Gregor Stiglic",
+        "Primoz Kocbek",
+        "Nino Fijacko",
+        "Marinka Zitnik",
+        "Katrien Verbert",
+        "Leona Cilar"
+      ],
+      "citations": 411,
+      "doi": "10.1002/widm.1379",
+      "url": "https://doi.org/10.1002/widm.1379",
+      "pdfUrl": "https://api.wiley.com/onlinelibrary/tdm/v1/articles/10.1002%2Fwidm.1379",
+      "abstract": "There is a need of ensuring that learning (ML) models are interpretable. Higher interpretability of the model means easier comprehension and explanation of future predictions for end‐users. Further, interpretable ML models allow healthcare experts to make reasonable and data‐driven decisions to provide personalized decisions that can ultimately lead to higher quality of service in healthcare. Generally, we can classify interpretability approaches in two groups where the first focuses on personalized interpretation (local interpretability) while the second summarizes prediction models on a population level (global interpretability). Alternatively, we can group interpretability methods into model‐specific techniques, which are designed to interpret predictions generated by a specific model, such as a neural network, and model‐agnostic approaches, which provide easy‐to‐understand explana..."
+    },
+    {
+      "title": "DeepPurpose: a deep learning library for drug–target interaction prediction",
+      "year": 2020,
+      "venue": "Bioinformatics",
+      "authors": [
+        "Kexin Huang",
+        "Tianfan Fu",
+        "Lucas M Glass",
+        "Marinka Zitnik",
+        "Cao Xiao",
+        "Jimeng Sun"
+      ],
+      "citations": 398,
+      "doi": "10.1093/bioinformatics/btaa1005",
+      "url": "https://doi.org/10.1093/bioinformatics/btaa1005",
+      "pdfUrl": "http://academic.oup.com/bioinformatics/advance-article-pdf/doi/10.1093/bioinformatics/btaa1005/34883308/btaa1005.pdf",
+      "abstract": "Summary Accurate prediction of drug–target interactions (DTI) is crucial for drug discovery. Recently, deep learning (DL) models for show promising performance for DTI prediction. However, these models can be difficult to use for both computer scientists entering the biomedical field and bioinformaticians with limited DL experience. We present DeepPurpose, a comprehensive and easy-to-use DL library for DTI prediction. DeepPurpose supports training of customized DTI prediction models by implementing 15 compound and protein encoders and over 50 neural architectures, along with providing many other useful features. We demonstrate state-of-the-art performance of DeepPurpose on several benchmark datasets. Availability and implementation https://github.com/kexinhuang12345/DeepPurpose. Supplementary information Supplementary data are available at Bioinformatics online."
+    },
+    {
+      "title": "How to build the virtual cell with artificial intelligence: Priorities and opportunities",
+      "year": 2024,
+      "venue": "Cell",
+      "authors": [
+        "Charlotte Bunne",
+        "Yusuf Roohani",
+        "Yanay Rosen",
+        "Ankit Gupta",
+        "Xikun Zhang",
+        "Marcel Roed",
+        "Theo Alexandrov",
+        "Mohammed AlQuraishi"
+      ],
+      "citations": 369,
+      "doi": "10.1016/j.cell.2024.11.015",
+      "url": "https://doi.org/10.1016/j.cell.2024.11.015",
+      "pdfUrl": null,
+      "abstract": null
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:30:16.469Z"
+}

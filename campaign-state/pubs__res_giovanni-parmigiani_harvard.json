@@ -1,0 +1,32 @@
+{
+  "researcherId": "res_giovanni-parmigiani_harvard",
+  "authorName": "Giovanni Parmigiani",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "An Integrated Genomic Analysis of Human Glioblastoma Multiforme",
+      "year": 2008,
+      "venue": "Science",
+      "authors": [
+        "D. Williams Parsons",
+        "Siân Jones",
+        "Xiaosong Zhang",
+        "Jimmy Cheng-Ho Lin",
+        "Rebecca J. Leary",
+        "Philipp Angenendt",
+        "Parminder Mankoo",
+        "Hannah Carter"
+      ],
+      "citations": 4978,
+      "doi": "10.1126/science.1164382",
+      "url": "https://doi.org/10.1126/science.1164382",
+      "pdfUrl": null,
+      "abstract": "Glioblastoma multiforme (GBM) is the most common and lethal type of brain cancer. To identify the genetic alterations in GBMs, we sequenced 20,661 protein coding genes, determined the presence of amplifications and deletions using high-density oligonucleotide arrays, and performed gene expression analyses using next-generation sequencing technologies in 22 human tumor samples. This comprehensive analysis led to the discovery of a variety of genes that were not known to be altered in GBMs. Most notably, we found recurrent mutations in the active site of isocitrate dehydrogenase 1 ( IDH1 ) in 12% of GBM patients. Mutations in IDH1 occurred in a large fraction of young patients and in most patients with secondary GBMs and were associated with an increase in overall survival. These studies demonstrate the value of unbiased genomic analyses in the characterization of human brain cancer and..."
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:30:06.185Z"
+}

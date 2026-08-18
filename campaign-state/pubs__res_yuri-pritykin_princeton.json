@@ -1,0 +1,32 @@
+{
+  "researcherId": "res_yuri-pritykin_princeton",
+  "authorName": "Yuri Pritykin",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "Expanded encyclopaedias of DNA elements in the human and mouse genomes",
+      "year": 2020,
+      "venue": "Nature",
+      "authors": [
+        "Federico Abascal",
+        "Reyes Acosta",
+        "Nicholas J. Addleman",
+        "Jessika Adrian",
+        "Veena Afzal",
+        "Rizi Ai",
+        "Bronwen Aken",
+        "Jennifer A. Akiyama"
+      ],
+      "citations": 2439,
+      "doi": "10.1038/s41586-020-2493-4",
+      "url": "https://doi.org/10.1038/s41586-020-2493-4",
+      "pdfUrl": "https://www.nature.com/articles/s41586-020-2493-4.pdf",
+      "abstract": "The human and mouse genomes contain instructions that specify RNAs and proteins and govern the timing, magnitude, and cellular context of their production. To better delineate these elements, phase III of the Encyclopedia of DNA Elements (ENCODE) Project has expanded analysis of the cell and tissue repertoires of RNA transcription, chromatin structure and modification, DNA methylation, chromatin looping, and occupancy by transcription factors and RNA-binding proteins. Here we summarize these efforts, which have produced 5,992 new experimental datasets, including systematic determinations across mouse fetal development. All data are available through the ENCODE data portal ( https://www.encodeproject.org ), including phase II ENCODE 1 and Roadmap Epigenomics 2 data. We have developed a registry of 926,535 human and 339,815 mouse candidate cis -regulatory elements, covering 7.9 and 3.4%..."
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:31:19.740Z"
+}

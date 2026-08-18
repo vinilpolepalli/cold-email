@@ -1,0 +1,32 @@
+{
+  "researcherId": "res_bhaswar-b-bhattacharya_penn",
+  "authorName": "Bhaswar B. Bhattacharya",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "The Infrared Array Camera (IRAC) for the Spitzer Space Telescope",
+      "year": 2004,
+      "venue": "The Astrophysical Journal Supplement Series",
+      "authors": [
+        "G. G. Fazio",
+        "J. L. Hora",
+        "L. E. Allen",
+        "M. L. N. Ashby",
+        "P. Barmby",
+        "L. K. Deutsch",
+        "J.‐S. Huang",
+        "S. Kleiner"
+      ],
+      "citations": 2859,
+      "doi": "10.1086/422843",
+      "url": "https://doi.org/10.1086/422843",
+      "pdfUrl": null,
+      "abstract": null
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:31:49.055Z"
+}

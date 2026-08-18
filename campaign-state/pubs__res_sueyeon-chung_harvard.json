@@ -1,0 +1,52 @@
+{
+  "researcherId": "res_sueyeon-chung_harvard",
+  "authorName": "SueYeon Chung",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "Observation of Gravitational Waves from a Binary Black Hole Merger",
+      "year": 2016,
+      "venue": "Physical Review Letters",
+      "authors": [
+        "B. P. Abbott",
+        "R. Abbott",
+        "T. D. Abbott",
+        "M. R. Abernathy",
+        "F. Acernese",
+        "K. Ackley",
+        "C. Adams",
+        "T. Adams"
+      ],
+      "citations": 11742,
+      "doi": "10.1103/physrevlett.116.061102",
+      "url": "https://doi.org/10.1103/physrevlett.116.061102",
+      "pdfUrl": null,
+      "abstract": "On September 14, 2015 at 09:50:45 UTC the two detectors of the Laser Interferometer Gravitational-Wave Observatory simultaneously observed a transient gravitational-wave signal. The signal sweeps upwards in frequency from 35 to 250 Hz with a peak gravitational-wave strain of 1.0 × 10 − 21 . It matches the waveform predicted by general relativity for the inspiral and merger of a pair of black holes and the ringdown of the resulting single black hole. The signal was observed with a matched-filter signal-to-noise ratio of 24 and a false alarm rate estimated to be less than 1 event per 203 000 years, equivalent to a significance greater than 5.1 σ . The source lies at a luminosity distance of 41 0 − 180 + 160 Mpc corresponding to a redshift z = 0.0 9 − 0.04 + 0.03 . In the source frame, the initial black hole masses are 3 6 − 4 + 5 M ⊙ and 2 9 − 4 + 4 M ⊙ , and the final black hole mass i..."
+    },
+    {
+      "title": "GW170817: Observation of Gravitational Waves from a Binary Neutron Star Inspiral",
+      "year": 2017,
+      "venue": "Physical Review Letters",
+      "authors": [
+        "B. P. Abbott",
+        "R. Abbott",
+        "T. D. Abbott",
+        "F. Acernese",
+        "K. Ackley",
+        "C. Adams",
+        "T. Adams",
+        "P. Addesso"
+      ],
+      "citations": 8280,
+      "doi": "10.1103/physrevlett.119.161101",
+      "url": "https://doi.org/10.1103/physrevlett.119.161101",
+      "pdfUrl": null,
+      "abstract": "On August 17, 2017 at 12∶41:04 UTC the Advanced LIGO and Advanced Virgo gravitational-wave detectors made their first observation of a binary neutron star inspiral. The signal, GW170817, was detected with a combined signal-to-noise ratio of 32.4 and a false-alarm-rate estimate of less than one per 8.0 × 10 4 years . We infer the component masses of the binary to be between 0.86 and 2.26 M ⊙ , in agreement with masses of known neutron stars. Restricting the component spins to the range inferred in binary neutron stars, we find the component masses to be in the range 1.17 – 1.60 M ⊙ , with the total mass of the system 2.7 4 − 0.01 + 0.04 M ⊙ . The source was localized within a sky region of 28 deg 2 (90% probability) and had a luminosity distance of 4 0 − 14 + 8 Mpc , the closest and most precisely localized gravitational-wave signal yet. The association with the γ -ray burst GRB 170817..."
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:30:15.761Z"
+}

@@ -1,0 +1,32 @@
+{
+  "researcherId": "res_sanjeev-arora_princeton",
+  "authorName": "Sanjeev Arora",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "Observation of a new boson at a mass of 125 GeV with the CMS experiment at the LHC",
+      "year": 2012,
+      "venue": "Physics Letters B",
+      "authors": [
+        "S. Chatrchyan",
+        "V. Khachatryan",
+        "A.M. Sirunyan",
+        "A. Tumasyan",
+        "W. Adam",
+        "E. Aguilo",
+        "T. Bergauer",
+        "M. Dragicevic"
+      ],
+      "citations": 6664,
+      "doi": "10.1016/j.physletb.2012.08.021",
+      "url": "https://doi.org/10.1016/j.physletb.2012.08.021",
+      "pdfUrl": null,
+      "abstract": "Results are presented from searches for the standard model Higgs boson in proton-proton collisions at sqrt(s)=7 and 8 TeV in the CMS experiment at the LHC, using data samples corresponding to integrated luminosities of up to 5.1 inverse femtobarns at 7 TeV and 5.3 inverse femtobarns at 8 TeV. The search is performed in five decay modes: gamma gamma, ZZ, WW, tau tau, and b b-bar. An excess of events is observed above the expected background, a local significance of 5.0 standard deviations, at a mass near 125 GeV, signalling the production of a new particle. The expected significance for a standard model Higgs boson of that mass is 5.8 standard deviations. The excess is most significant in the two decay modes with the best mass resolution, gamma gamma and ZZ; a fit to these signals gives a mass of 125.3 +/- 0.4 (stat.) +/- 0.5 (syst.) GeV. The decay to two photons indicates that the new..."
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:31:25.606Z"
+}

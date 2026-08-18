@@ -1,0 +1,172 @@
+{
+  "researcherId": "res_manolis-kellis_mit",
+  "authorName": "Manolis Kellis",
+  "authorUrl": null,
+  "worksCount": null,
+  "citedByCount": null,
+  "topics": [],
+  "publications": [
+    {
+      "title": "The Genotype-Tissue Expression (GTEx) project",
+      "year": 2013,
+      "venue": "Nature Genetics",
+      "authors": [
+        "John Lonsdale",
+        "Jeffrey Thomas",
+        "Mike Salvatore",
+        "Rebecca Phillips",
+        "Edmund Lo",
+        "Saboor Shad",
+        "Richard Hasz",
+        "Gary Walters"
+      ],
+      "citations": 8600,
+      "doi": "10.1038/ng.2653",
+      "url": "https://doi.org/10.1038/ng.2653",
+      "pdfUrl": "http://www.nature.com/articles/ng.2653.pdf",
+      "abstract": null
+    },
+    {
+      "title": "Integrative analysis of 111 reference human epigenomes",
+      "year": 2015,
+      "venue": "Nature",
+      "authors": [
+        "Anshul Kundaje",
+        "Wouter Meuleman",
+        "Jason Ernst",
+        "Misha Bilenky",
+        "Angela Yen",
+        "Alireza Heravi-Moussavi",
+        "Pouya Kheradpour",
+        "Zhizhuo Zhang"
+      ],
+      "citations": 6315,
+      "doi": "10.1038/nature14248",
+      "url": "https://doi.org/10.1038/nature14248",
+      "pdfUrl": "http://www.nature.com/articles/nature14248.pdf",
+      "abstract": null
+    },
+    {
+      "title": "The GTEx Consortium atlas of genetic regulatory effects across human tissues",
+      "year": 2020,
+      "venue": "Science",
+      "authors": [
+        "François Aguet",
+        "Shankara Anand",
+        "Kristin G. Ardlie",
+        "Stacey Gabriel",
+        "Gad A. Getz",
+        "Aaron Graubert",
+        "Kane Hadley",
+        "Robert E. Handsaker"
+      ],
+      "citations": 5388,
+      "doi": "10.1126/science.aaz1776",
+      "url": "https://doi.org/10.1126/science.aaz1776",
+      "pdfUrl": null,
+      "abstract": "The Genotype-Tissue Expression (GTEx) project dissects how genetic variation affects gene expression and splicing."
+    },
+    {
+      "title": "The Genotype-Tissue Expression (GTEx) pilot analysis: Multitissue gene regulation in humans",
+      "year": 2015,
+      "venue": "Science",
+      "authors": [
+        "Kristin G. Ardlie",
+        "David S. Deluca",
+        "Ayellet V. Segrè",
+        "Timothy J. Sullivan",
+        "Taylor R. Young",
+        "Ellen T. Gelfand",
+        "Casandra A. Trowbridge",
+        "Julian B. Maller"
+      ],
+      "citations": 4860,
+      "doi": "10.1126/science.1262110",
+      "url": "https://doi.org/10.1126/science.1262110",
+      "pdfUrl": null,
+      "abstract": "Expression, genetic variation, and tissues Human genomes show extensive genetic variation across individuals, but we have only just started documenting the effects of this variation on the regulation of gene expression. Furthermore, only a few tissues have been examined per genetic variant. In order to examine how genetic expression varies among tissues within individuals, the Genotype-Tissue Expression (GTEx) Consortium collected 1641 postmortem samples covering 54 body sites from 175 individuals. They identified quantitative genetic traits that affect gene expression and determined which of these exhibit tissue-specific expression patterns. Melé et al. measured how transcription varies among tissues, and Rivas et al. looked at how truncated protein variants affect expression across tissues. Science , this issue p. 648 , p. 660 , p. 666 ; see also p. 640"
+    },
+    {
+      "title": "GENCODE: The reference human genome annotation for The ENCODE Project",
+      "year": 2012,
+      "venue": "Genome Research",
+      "authors": [
+        "Jennifer Harrow",
+        "Adam Frankish",
+        "Jose M. Gonzalez",
+        "Electra Tapanari",
+        "Mark Diekhans",
+        "Felix Kokocinski",
+        "Bronwen L. Aken",
+        "Daniel Barrell"
+      ],
+      "citations": 4354,
+      "doi": "10.1101/gr.135350.111",
+      "url": "https://doi.org/10.1101/gr.135350.111",
+      "pdfUrl": null,
+      "abstract": "The GENCODE Consortium aims to identify all gene features in the human genome using a combination of computational analysis, manual annotation, and experimental validation. Since the first public release of this annotation data set, few new protein-coding loci have been added, yet the number of alternative splicing transcripts annotated has steadily increased. The GENCODE 7 release contains 20,687 protein-coding and 9640 long noncoding RNA loci and has 33,977 coding transcripts not represented in UCSC genes and RefSeq. It also has the most comprehensive annotation of long noncoding RNA (lncRNA) loci publicly available with the predominant transcript form consisting of two exons. We have examined the completeness of the transcript annotation and found that 35% of transcriptional start sites are supported by CAGE clusters and 62% of protein-coding genes have annotated polyA sites. Over ..."
+    },
+    {
+      "title": "Chromatin signature reveals over a thousand highly conserved large non-coding RNAs in mammals",
+      "year": 2009,
+      "venue": "Nature",
+      "authors": [
+        "Mitchell Guttman",
+        "Ido Amit",
+        "Manuel Garber",
+        "Courtney French",
+        "Michael F. Lin",
+        "David Feldser",
+        "Maite Huarte",
+        "Or Zuk"
+      ],
+      "citations": 3546,
+      "doi": "10.1038/nature07672",
+      "url": "https://doi.org/10.1038/nature07672",
+      "pdfUrl": "http://www.nature.com/articles/nature07672.pdf",
+      "abstract": "There is growing recognition that mammalian cells produce many thousands of large intergenic transcripts. However, the functional significance of these transcripts has been particularly controversial. Although there are some well-characterized examples, most (>95%) show little evidence of evolutionary conservation and have been suggested to represent transcriptional noise. Here we report a new approach to identifying large non-coding RNAs using chromatin-state maps to discover discrete transcriptional units intervening known protein-coding loci. Our approach identified ∼1,600 large multi-exonic RNAs across four mouse cell types. In sharp contrast to previous collections, these large intervening non-coding RNAs (lincRNAs) show strong purifying selection in their genomic loci, exonic sequences and promoter regions, with greater than 95% showing clear evolutionary conservation. We also d..."
+    },
+    {
+      "title": "The repertoire of mutational signatures in human cancer",
+      "year": 2020,
+      "venue": "Nature",
+      "authors": [
+        "Ludmil B. Alexandrov",
+        "Jaegil Kim",
+        "Nicholas J. Haradhvala",
+        "Mi Ni Huang",
+        "Alvin Wei Tian Ng",
+        "Yang Wu",
+        "Arnoud Boot",
+        "Kyle R. Covington"
+      ],
+      "citations": 3348,
+      "doi": "10.1038/s41586-020-1943-3",
+      "url": "https://doi.org/10.1038/s41586-020-1943-3",
+      "pdfUrl": "https://www.nature.com/articles/s41586-020-1943-3.pdf",
+      "abstract": "Somatic mutations in cancer genomes are caused by multiple mutational processes, each of which generates a characteristic mutational signature 1 . Here, as part of the Pan-Cancer Analysis of Whole Genomes (PCAWG) Consortium 2 of the International Cancer Genome Consortium (ICGC) and The Cancer Genome Atlas (TCGA), we characterized mutational signatures using 84,729,690 somatic mutations from 4,645 whole-genome and 19,184 exome sequences that encompass most types of cancer. We identified 49 single-base-substitution, 11 doublet-base-substitution, 4 clustered-base-substitution and 17 small insertion-and-deletion signatures. The substantial size of our dataset, compared with previous analyses 3–15 , enabled the discovery of new signatures, the separation of overlapping signatures and the decomposition of signatures into components that may represent associated—but distinct—DNA damage, repa..."
+    },
+    {
+      "title": "GENCODE reference annotation for the human and mouse genomes",
+      "year": 2018,
+      "venue": "Nucleic Acids Research",
+      "authors": [
+        "Adam Frankish",
+        "Mark Diekhans",
+        "Anne-Maud Ferreira",
+        "Rory Johnson",
+        "Irwin Jungreis",
+        "Jane Loveland",
+        "Jonathan M Mudge",
+        "Cristina Sisu"
+      ],
+      "citations": 3065,
+      "doi": "10.1093/nar/gky955",
+      "url": "https://doi.org/10.1093/nar/gky955",
+      "pdfUrl": null,
+      "abstract": null
+    }
+  ],
+  "provider": "crossref",
+  "fetchedAt": "2026-08-18T14:31:10.934Z"
+}
