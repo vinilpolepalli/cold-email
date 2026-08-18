@@ -1,0 +1,155 @@
+{
+  "researcherId": "res_emily-fox_stanford",
+  "authorName": "Emily B. Fox",
+  "authorUrl": "https://openalex.org/A5068568859",
+  "worksCount": 195,
+  "citedByCount": 7197,
+  "topics": [
+    "Bayesian Methods and Mixture Models",
+    "Gaussian Processes and Bayesian Inference",
+    "Markov Chains and Monte Carlo Methods",
+    "Topic Modeling",
+    "Statistical Methods and Inference"
+  ],
+  "publications": [
+    {
+      "title": "Advances in Neural Information Processing Systems 32 (NeurIPS 2019)",
+      "year": 2020,
+      "venue": "HAL (Le Centre pour la Communication Scientifique Directe)",
+      "authors": [
+        "Hanna Wallach",
+        "Hugo Larochelle",
+        "Alina Beygelzimer",
+        "Florence d’Alché–Buc",
+        "Emily B. Fox",
+        "Roman Garnett"
+      ],
+      "citations": 2419,
+      "doi": null,
+      "url": "https://hal.science/hal-03888793",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Stochastic Gradient Hamiltonian Monte Carlo",
+      "year": 2014,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Tianqi Chen",
+        "Emily B. Fox",
+        "Carlos Guestrin"
+      ],
+      "citations": 353,
+      "doi": "10.48550/arxiv.1402.4102",
+      "url": "http://arxiv.org/abs/1402.4102",
+      "pdfUrl": "https://arxiv.org/pdf/1402.4102",
+      "abstract": "Hamiltonian Monte Carlo (HMC) sampling methods provide a mechanism for defining distant proposals with high acceptance probabilities in a Metropolis-Hastings framework, enabling more efficient exploration of the state space than standard random-walk proposals. The popularity of such methods has grown significantly in recent years. However, a limitation of HMC methods is the required gradient computation for simulation of the Hamiltonian dynamical system-such computation is infeasible in problems involving a large sample size or streaming data. Instead, we must rely on a noisy gradient estimate computed from a subset of the data. In this paper, we explore the properties of such a stochastic gradient HMC approach. Surprisingly, the natural implementation of the stochastic approximation can be arbitrarily bad. To address this problem we introduce a variant that uses second-order Langevin..."
+    },
+    {
+      "title": "How to build the virtual cell with artificial intelligence: Priorities and opportunities",
+      "year": 2024,
+      "venue": "Cell",
+      "authors": [
+        "Charlotte Bunne",
+        "Yusuf Roohani",
+        "Yanay Rosen",
+        "Ankit Gupta",
+        "Xikun Zhang",
+        "Marcel Roed",
+        "Theodore Alexandrov",
+        "Mohammed AlQuraishi"
+      ],
+      "citations": 339,
+      "doi": "10.1016/j.cell.2024.11.015",
+      "url": "https://doi.org/10.1016/j.cell.2024.11.015",
+      "pdfUrl": null,
+      "abstract": "Cells are essential to understanding health and disease, yet traditional models fall short of modeling and simulating their function and behavior. Advances in AI and omics offer groundbreaking opportunities to create an AI virtual cell (AIVC), a multi-scale, multi-modal large-neural-network-based model that can represent and simulate the behavior of molecules, cells, and tissues across diverse states. This Perspective provides a vision on their design and how collaborative efforts to build AIVCs will transform biological research by allowing high-fidelity simulations, accelerating discoveries, and guiding experimental studies, offering new opportunities for understanding cellular functions and fostering interdisciplinary collaborations in open science."
+    },
+    {
+      "title": "Neural Granger Causality",
+      "year": 2021,
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "authors": [
+        "Alex Tank",
+        "Ian Covert",
+        "Nicholas J. Foti",
+        "Ali Shojaie",
+        "Emily B. Fox"
+      ],
+      "citations": 275,
+      "doi": "10.1109/tpami.2021.3065601",
+      "url": "http://arxiv.org/abs/1802.05842",
+      "pdfUrl": "https://arxiv.org/pdf/1802.05842",
+      "abstract": "While most classical approaches to Granger causality detection assume linear dynamics, many interactions in real-world applications, like neuroscience and genomics, are inherently nonlinear. In these cases, using linear models may lead to inconsistent estimation of Granger causal interactions. We propose a class of nonlinear methods by applying structured multilayer perceptrons (MLPs) or recurrent neural networks (RNNs) combined with sparsity-inducing penalties on the weights. By encouraging specific sets of weights to be zero-in particular, through the use of convex group-lasso penalties-we can extract the Granger causal structure. To further contrast with traditional approaches, our framework naturally enables us to efficiently capture long-range dependencies between series either via our RNNs or through an automatic lag selection in the MLP. We show that our neural Granger causalit..."
+    },
+    {
+      "title": "An HDP-HMM for systems with state persistence",
+      "year": 2008,
+      "venue": "ScholarlyCommons (University of Pennsylvania)",
+      "authors": [
+        "Emily B. Fox",
+        "Erik B. Sudderth",
+        "Michael I. Jordan",
+        "Alan S. Willsky"
+      ],
+      "citations": 272,
+      "doi": "10.1145/1390156.1390196",
+      "url": "https://repository.upenn.edu/statistics_papers/116",
+      "pdfUrl": "https://repository.upenn.edu/bitstreams/7da9a74e-0a2c-4c68-b3f3-fdb3564fcc96/download",
+      "abstract": "The hierarchical Dirichlet process hidden Markov model (HDP-HMM) is a flexible, nonparametric model which allows state spaces of unknown size to be learned from data. We demonstrate some limitations of the original HDP-HMM formulation (Teh et al., 2006), and propose a sticky extension which allows more robust learning of smoothly varying dynamics. Using DP mixtures, this formulation also allows learning of more complex, multimodal emission distributions. We further develop a sampling algorithm that employs a truncated approximation of the DP to jointly resample the full state sequence, greatly improving mixing rates. Via extensive experiments with synthetic data and the NIST speaker diarization database, we demonstrate the advantages of our sticky extension, and the utility of the HDP-HMM in real-world applications."
+    },
+    {
+      "title": "Bayesian Nonparametric Inference of Switching Dynamic Linear Models",
+      "year": 2011,
+      "venue": "IEEE Transactions on Signal Processing",
+      "authors": [
+        "Emily B. Fox",
+        "Erik B. Sudderth",
+        "Michael I. Jordan",
+        "Alan S. Willsky"
+      ],
+      "citations": 239,
+      "doi": "10.1109/tsp.2010.2102756",
+      "url": "http://arxiv.org/abs/1003.3829",
+      "pdfUrl": "https://arxiv.org/pdf/1003.3829",
+      "abstract": "Many complex dynamical phenomena can be effectively modeled by a system that switches among a set of conditionally linear dynamical modes. We consider two such models: the switching linear dynamical system (SLDS) and the switching vector autoregressive (VAR) process. Our Bayesian nonparametric approach utilizes a hierarchical Dirichlet process prior to learn an unknown number of persistent, smooth dynamical modes. We additionally employ automatic relevance determination to infer a sparse set of dynamic dependencies allowing us to learn SLDS with varying state dimension or switching VAR processes with varying autoregressive order. We develop a sampling algorithm that combines a truncated approximation to the Dirichlet process with efficient joint sampling of the mode and state sequences. The utility and flexibility of our model are demonstrated on synthetic data, sequences of dancing h..."
+    },
+    {
+      "title": "Improving Reproducibility in Machine Learning Research (A Report from the NeurIPS 2019 Reproducibility Program)",
+      "year": 2020,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Joëlle Pineau",
+        "Philippe Vincent‐Lamarre",
+        "Koustuv Sinha",
+        "Vincent Larivière",
+        "Alina Beygelzimer",
+        "Florence d’Alché–Buc",
+        "Emily B. Fox",
+        "Hugo Larochelle"
+      ],
+      "citations": 204,
+      "doi": "10.48550/arxiv.2003.12206",
+      "url": "http://arxiv.org/abs/2003.12206",
+      "pdfUrl": "https://arxiv.org/pdf/2003.12206",
+      "abstract": "One of the challenges in machine learning research is to ensure that presented and published results are sound and reliable. Reproducibility, that is obtaining similar results as presented in a paper or talk, using the same code and data (when available), is a necessary step to verify the reliability of research findings. Reproducibility is also an important step to promote open and accessible research, thereby allowing the scientific community to quickly integrate new findings and convert ideas to practice. Reproducibility also promotes the use of robust experimental workflows, which potentially reduce unintentional errors. In 2019, the Neural Information Processing Systems (NeurIPS) conference, the premier international conference for research in machine learning, introduced a reproducibility program, designed to improve the standards across the community for how we conduct, communi..."
+    },
+    {
+      "title": "A Complete Recipe for Stochastic Gradient MCMC",
+      "year": 2015,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Yi-An Ma",
+        "Tianqi Chen",
+        "Emily B. Fox"
+      ],
+      "citations": 197,
+      "doi": "10.48550/arxiv.1506.04696",
+      "url": "http://arxiv.org/abs/1506.04696",
+      "pdfUrl": "https://arxiv.org/pdf/1506.04696",
+      "abstract": "Many recent Markov chain Monte Carlo (MCMC) samplers leverage continuous dynamics to define a transition kernel that efficiently explores a target distribution. In tandem, a focus has been on devising scalable variants that subsample the data and use stochastic gradients in place of full-data gradients in the dynamic simulations. However, such stochastic gradient MCMC samplers have lagged behind their full-data counterparts in terms of the complexity of dynamics considered since proving convergence in the presence of the stochastic gradient noise is non-trivial. Even with simple dynamics, significant physical intuition is often required to modify the dynamical system to account for the stochastic gradient noise. In this paper, we provide a general recipe for constructing MCMC samplers--including stochastic gradient versions--based on continuous Markov processes specified via two matri..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:29.929Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxz5clxefajoo",
+  "userId": "demo-user",
+  "researcherId": "res_asuman-ozdaglar_mit",
+  "researcherName": "Asuman Ozdaglar",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 59.3,
+  "reasons": [
+    "Overlaps on multi-agent networks, network economics, machine learning",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "asuman@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:18:55.509Z",
+  "updatedAt": "2026-08-18T01:18:55.509Z"
+}

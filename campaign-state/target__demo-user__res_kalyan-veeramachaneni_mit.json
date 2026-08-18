@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxz5clwv3s07s",
+  "userId": "demo-user",
+  "researcherId": "res_kalyan-veeramachaneni_mit",
+  "researcherName": "Kalyan Veeramachaneni",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 60.1,
+  "reasons": [
+    "Overlaps on data science, machine learning, big data",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "kalyan@csail.mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:18:55.508Z",
+  "updatedAt": "2026-08-18T01:18:55.508Z"
+}

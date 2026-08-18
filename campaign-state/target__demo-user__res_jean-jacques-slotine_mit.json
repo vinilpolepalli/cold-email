@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxz5clvlxp17h",
+  "userId": "demo-user",
+  "researcherId": "res_jean-jacques-slotine_mit",
+  "researcherName": "Jean-Jacques Slotine",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 60.8,
+  "reasons": [
+    "Overlaps on computational neuroscience, machine learning, systems biology",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "jjs@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:18:55.507Z",
+  "updatedAt": "2026-08-18T01:18:55.507Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpjhja3re9",
+  "userId": "demo-user",
+  "researcherId": "res_james-j-collins_mit",
+  "researcherName": "James J. Collins",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 61.6,
+  "reasons": [
+    "Overlaps on synthetic biology, systems biology, ai for antibiotic discovery",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "jimjc@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:12:59.021Z",
+  "updatedAt": "2026-08-18T01:12:59.021Z"
+}

@@ -1,0 +1,151 @@
+{
+  "researcherId": "res_grant-m-rotskoff_stanford",
+  "authorName": "Grant M. Rotskoff",
+  "authorUrl": "https://openalex.org/A5071403558",
+  "worksCount": 107,
+  "citedByCount": 2095,
+  "topics": [
+    "Advanced Thermodynamics and Statistical Mechanics",
+    "Markov Chains and Monte Carlo Methods",
+    "Protein Structure and Dynamics",
+    "Machine Learning in Materials Science",
+    "Spectroscopy and Quantum Chemical Studies"
+  ],
+  "publications": [
+    {
+      "title": "Single-particle mapping of nonequilibrium nanocrystal transformations",
+      "year": 2016,
+      "venue": "Science",
+      "authors": [
+        "Xingchen Ye",
+        "Matthew R. Jones",
+        "Layne B. Frechette",
+        "Qian Chen",
+        "Alexander S. Powers",
+        "Peter Ercius",
+        "Gabriel Dunn",
+        "Grant M. Rotskoff"
+      ],
+      "citations": 264,
+      "doi": "10.1126/science.aah4434",
+      "url": "https://www.osti.gov/biblio/1347829",
+      "pdfUrl": null,
+      "abstract": "Chemists have developed mechanistic insight into numerous chemical reactions by thoroughly characterizing nonequilibrium species. Although methods to probe these processes are well established for molecules, analogous techniques for understanding intermediate structures in nanomaterials have been lacking. We monitor the shape evolution of individual anisotropic gold nanostructures as they are oxidatively etched in a graphene liquid cell with a controlled redox environment. Short-lived, nonequilibrium nanocrystals are observed, structurally analyzed, and rationalized through Monte Carlo simulations. Understanding these reaction trajectories provides important fundamental insight connecting high-energy nanocrystal morphologies to the development of kinetically stabilized surface features and demonstrates the importance of developing tools capable of probing short-lived nanoscale species..."
+    },
+    {
+      "title": "Inferring dissipation from current fluctuations",
+      "year": 2017,
+      "venue": "Journal of Physics A Mathematical and Theoretical",
+      "authors": [
+        "Todd R. Gingrich",
+        "Grant M. Rotskoff",
+        "Jordan M. Horowitz"
+      ],
+      "citations": 167,
+      "doi": "10.1088/1751-8121/aa672f",
+      "url": "http://arxiv.org/abs/1609.07131",
+      "pdfUrl": "https://arxiv.org/pdf/1609.07131",
+      "abstract": "Abstract Complex physical dynamics can often be modeled as a Markov jump process between mesoscopic configurations. When jumps between mesoscopic states are mediated by thermodynamic reservoirs, the time-irreversibility of the jump process is a measure of the physical dissipation. We rederive a recently introduced inequality relating the dissipation rate to current fluctuations in jump processes. We then adapt these results to diffusion processes via a limiting procedure, reaffirming that diffusions saturate the inequality. Finally, we study the impact of spatial coarse-graining in a two-dimensional model with driven diffusion. By observing fluctuations in coarse-grained currents, it is possible to infer a lower bound on the total dissipation rate, including the dissipation associated with hidden dynamics. The tightness of this bound depends on how well the spatial coarse-graining det..."
+    },
+    {
+      "title": "Nanocrystal Assemblies: Current Advances and Open Problems",
+      "year": 2024,
+      "venue": "ACS Nano",
+      "authors": [
+        "Carlos L. Bassani",
+        "Greg van Anders",
+        "Uri Banin",
+        "Dmitry Baranov",
+        "Qian Chen",
+        "Marjolein Dijkstra",
+        "Michael S. Dimitriyev",
+        "Efi Efrati"
+      ],
+      "citations": 117,
+      "doi": "10.1021/acsnano.3c10201",
+      "url": "http://hdl.handle.net/2013/ULB-DIPOT:oai:dipot.ulb.ac.be:2013/408968",
+      "pdfUrl": null,
+      "abstract": "We explore the potential of nanocrystals (a term used equivalently to nanoparticles) as building blocks for nanomaterials, and the current advances and open challenges for fundamental science developments and applications. Nanocrystal assemblies are inherently multiscale, and the generation of revolutionary material properties requires a precise understanding of the relationship between structure and function, the former being determined by classical effects and the latter often by quantum effects. With an emphasis on theory and computation, we discuss challenges that hamper current assembly strategies and to what extent nanocrystal assemblies represent thermodynamic equilibrium or kinetically trapped metastable states. We also examine dynamic effects and optimization of assembly protocols. Finally, we discuss promising material functions and examples of their realization with nanocry..."
+    },
+    {
+      "title": "Adaptive Monte Carlo augmented with normalizing flows",
+      "year": 2021,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Gabri\\'e, Marylou",
+        "Grant M. Rotskoff",
+        "Eric Vanden‐Eijnden"
+      ],
+      "citations": 117,
+      "doi": "10.1073/pnas.2109420119",
+      "url": "http://arxiv.org/abs/2105.12603",
+      "pdfUrl": "https://arxiv.org/pdf/2105.12603",
+      "abstract": "Many problems in the physical sciences, machine learning, and statistical inference necessitate sampling from a high-dimensional, multi-modal probability distribution. Markov Chain Monte Carlo (MCMC) algorithms, the ubiquitous tool for this task, typically rely on random local updates to propagate configurations of a given system in a way that ensures that generated configurations will be distributed according to a target probability distribution asymptotically. In high-dimensional settings with multiple relevant metastable basins, local approaches require either immense computational effort or intricately designed importance sampling strategies to capture information about, for example, the relative populations of such basins. Here we analyze an adaptive MCMC which augments MCMC sampling with nonlocal transition kernels parameterized with generative models known as normalizing flows...."
+    },
+    {
+      "title": "Neural networks as Interacting Particle Systems: Asymptotic convexity of the Loss Landscape and Universal Scaling of the Approximation Error",
+      "year": 2018,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Grant M. Rotskoff",
+        "Eric Vanden‐Eijnden"
+      ],
+      "citations": 103,
+      "doi": null,
+      "url": "https://arxiv.org/abs/1805.00915v1",
+      "pdfUrl": null,
+      "abstract": "Neural networks, a central tool in machine learning, have demonstrated remarkable, high fidelity performance on image recognition and classification tasks. These successes evince an ability to accurately represent high dimensional functions, potentially of great use in computational and applied mathematics. That said, there are few rigorous results about the representation error and trainability of neural networks, as well as how they scale with the network size. Here we characterize both the error and scaling by reinterpreting the standard optimization algorithm used in machine learning applications, stochastic gradient descent, as the evolution of a particle system with interactions governed by a potential related to the objective or loss function used to train the network. We show that, when the number $n$ of parameters is large, the empirical distribution of the particles descends..."
+    },
+    {
+      "title": "Trainability and Accuracy of Neural Networks: An Interacting Particle System Approach",
+      "year": 2018,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Grant M. Rotskoff",
+        "Eric Vanden‐Eijnden"
+      ],
+      "citations": 96,
+      "doi": "10.48550/arxiv.1805.00915",
+      "url": "http://export.arxiv.org/pdf/1805.00915",
+      "pdfUrl": null,
+      "abstract": "Neural networks, a central tool in machine learning, have demonstrated remarkable, high fidelity performance on image recognition and classification tasks. These successes evince an ability to accurately represent high dimensional functions, but rigorous results about the approximation error of neural networks after training are few. Here we establish conditions for global convergence of the standard optimization algorithm used in machine learning applications, stochastic gradient descent (SGD), and quantify the scaling of its error with the size of the network. This is done by reinterpreting SGD as the evolution of a particle system with interactions governed by a potential related to the objective or \"loss\" function used to train the network. We show that, when the number $n$ of units is large, the empirical distribution of the particles descends on a convex landscape towards the gl..."
+    },
+    {
+      "title": "Transition-Tempered Metadynamics: Robust, Convergent Metadynamics via On-the-Fly Transition Barrier Estimation",
+      "year": 2014,
+      "venue": "Journal of Chemical Theory and Computation",
+      "authors": [
+        "James F. Dama",
+        "Grant M. Rotskoff",
+        "Michele Parrinello",
+        "Gregory A. Voth"
+      ],
+      "citations": 93,
+      "doi": "10.1021/ct500441q",
+      "url": "https://doi.org/10.1021/ct500441q",
+      "pdfUrl": null,
+      "abstract": "Well-tempered metadynamics has proven to be a practical and efficient adaptive enhanced sampling method for the computational study of biomolecular and materials systems. However, choosing its tunable parameter can be challenging and requires balancing a trade-off between fast escape from local metastable states and fast convergence of an overall free energy estimate. In this article, we present a new smoothly convergent variant of metadynamics, transition-tempered metadynamics, that removes that trade-off and is more robust to changes in its own single tunable parameter, resulting in substantial speed and accuracy improvements. The new method is specifically designed to study state-to-state transitions in which the states of greatest interest are known ahead of time, but transition mechanisms are not. The design is guided by a picture of adaptive enhanced sampling as a means to incre..."
+    },
+    {
+      "title": "Unraveling Kinetically-Driven Mechanisms of Gold Nanocrystal Shape Transformations Using Graphene Liquid Cell Electron Microscopy",
+      "year": 2018,
+      "venue": "Nano Letters",
+      "authors": [
+        "Matthew R. Hauwiller",
+        "Layne B. Frechette",
+        "Matthew R. Jones",
+        "Justin C. Ondry",
+        "Grant M. Rotskoff",
+        "Phillip L. Geissler",
+        "A. Paul Alivisatos"
+      ],
+      "citations": 86,
+      "doi": "10.1021/acs.nanolett.8b02337",
+      "url": "https://www.osti.gov/biblio/1532337",
+      "pdfUrl": "https://www.osti.gov/biblio/1532337",
+      "abstract": "Mechanisms of kinetically driven nanocrystal shape transformations were elucidated by monitoring single particle etching of gold nanocrystals using in situ graphene liquid cell transmission electron microscopy (TEM). By systematically changing the chemical potential of the oxidative etching and then quantifying the facets of the nanocrystals, nonequilibrium processes of atom removal could be deduced. Etching at sufficiently high oxidation potentials, both cube and rhombic dodecahedra (RDD)-shaped gold nanocrystals transform into kinetically stable tetrahexahedra (THH)-shaped particles. Whereas {100}-faceted cubes adopt an { hk0}-faceted THH intermediate where h/ k depends on chemical potential, {110}-faceted RDD adopt a {210}-faceted THH intermediate regardless of driving force. For cube reactions, Monte Carlo simulations show that removing 6-coordinate edge atoms immediately reveals ..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:20:58.450Z"
+}

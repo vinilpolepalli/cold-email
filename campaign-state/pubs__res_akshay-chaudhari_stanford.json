@@ -1,0 +1,173 @@
+{
+  "researcherId": "res_akshay-chaudhari_stanford",
+  "authorName": "Akshay Chaudhari",
+  "authorUrl": "https://openalex.org/A5064829377",
+  "worksCount": 285,
+  "citedByCount": 5474,
+  "topics": [
+    "Osteoarthritis Treatment and Mechanisms",
+    "Radiomics and Machine Learning in Medical Imaging",
+    "Advanced MRI Techniques and Applications",
+    "Medical Imaging Techniques and Applications",
+    "Total Knee Arthroplasty Outcomes"
+  ],
+  "publications": [
+    {
+      "title": "Adapted large language models can outperform medical experts in clinical text summarization",
+      "year": 2024,
+      "venue": "Nature Medicine",
+      "authors": [
+        "Dave Van Veen",
+        "Cara Van Uden",
+        "Louis Blankemeier",
+        "Jean-Benoit Delbrouck",
+        "Asad Aali",
+        "Christian Bluethgen",
+        "Anuj Pareek",
+        "Malgorzata Polacin"
+      ],
+      "citations": 717,
+      "doi": "10.1038/s41591-024-02855-5",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/11479659",
+      "pdfUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11479659/pdf/nihms-2023710.pdf",
+      "abstract": null
+    },
+    {
+      "title": "Self-supervised learning for medical image classification: a systematic review and implementation guidelines",
+      "year": 2023,
+      "venue": "npj Digital Medicine",
+      "authors": [
+        "Shih-Cheng Huang",
+        "Anuj Pareek",
+        "Malte Jensen",
+        "Matthew P. Lungren",
+        "Serena Yeung",
+        "Akshay Chaudhari"
+      ],
+      "citations": 431,
+      "doi": "10.1038/s41746-023-00811-0",
+      "url": "https://doi.org/10.1038/s41746-023-00811-0",
+      "pdfUrl": "https://www.nature.com/articles/s41746-023-00811-0.pdf",
+      "abstract": "Advancements in deep learning and computer vision provide promising solutions for medical image analysis, potentially improving healthcare and patient outcomes. However, the prevailing paradigm of training deep learning models requires large quantities of labeled training data, which is both time-consuming and cost-prohibitive to curate for medical images. Self-supervised learning has the potential to make significant contributions to the development of robust medical imaging models through its ability to learn useful insights from copious medical datasets without labels. In this review, we provide consistent descriptions of different self-supervised learning strategies and compose a systematic review of papers published between 2012 and 2022 on PubMed, Scopus, and ArXiv that applied self-supervised learning to medical imaging classification. We screened a total of 412 relevant studie..."
+    },
+    {
+      "title": "Super‐resolution musculoskeletal MRI using deep learning",
+      "year": 2018,
+      "venue": "Magnetic Resonance in Medicine",
+      "authors": [
+        "Akshay Chaudhari",
+        "Zhongnan Fang",
+        "Feliks Kogan",
+        "Jeff Wood",
+        "Kathryn J. Stevens",
+        "Eric K. Gibbons",
+        "Jin Hyung Lee",
+        "Garry E. Gold"
+      ],
+      "citations": 407,
+      "doi": "10.1002/mrm.27178",
+      "url": "https://doi.org/10.1002/mrm.27178",
+      "pdfUrl": null,
+      "abstract": "PURPOSE: To develop a super-resolution technique using convolutional neural networks for generating thin-slice knee MR images from thicker input slices, and compare this method with alternative through-plane interpolation methods. METHODS: We implemented a 3D convolutional neural network entitled DeepResolve to learn residual-based transformations between high-resolution thin-slice images and lower-resolution thick-slice images at the same center locations. DeepResolve was trained using 124 double echo in steady-state (DESS) data sets with 0.7-mm slice thickness and tested on 17 patients. Ground-truth images were compared with DeepResolve, clinically used tricubic interpolation, and Fourier interpolation methods, along with state-of-the-art single-image sparse-coding super-resolution. Comparisons were performed using structural similarity, peak SNR, and RMS error image quality metrics..."
+    },
+    {
+      "title": "OpenCap: Human movement dynamics from smartphone videos",
+      "year": 2023,
+      "venue": "PLoS Computational Biology",
+      "authors": [
+        "Scott D. Uhlrich",
+        "Antoine Falisse",
+        "Łukasz Kidziński",
+        "Julie Muccini",
+        "Michael Ko",
+        "Akshay Chaudhari",
+        "Jennifer L. Hicks",
+        "Scott L. Delp"
+      ],
+      "citations": 356,
+      "doi": "10.1371/journal.pcbi.1011462",
+      "url": "https://doi.org/10.1371/journal.pcbi.1011462",
+      "pdfUrl": null,
+      "abstract": "Measures of human movement dynamics can predict outcomes like injury risk or musculoskeletal disease progression. However, these measures are rarely quantified in large-scale research studies or clinical practice due to the prohibitive cost, time, and expertise required. Here we present and validate OpenCap, an open-source platform for computing both the kinematics (i.e., motion) and dynamics (i.e., forces) of human movement using videos captured from two or more smartphones. OpenCap leverages pose estimation algorithms to identify body landmarks from videos; deep learning and biomechanical models to estimate three-dimensional kinematics; and physics-based simulations to estimate muscle activations and musculoskeletal dynamics. OpenCap's web application enables users to collect synchronous videos and visualize movement data that is automatically processed in the cloud, thereby elimina..."
+    },
+    {
+      "title": "Federated benchmarking of medical artificial intelligence with MedPerf",
+      "year": 2023,
+      "venue": "Nature Machine Intelligence",
+      "authors": [
+        "Alexandros Karargyris",
+        "Renato Umeton",
+        "Micah Sheller",
+        "Alejandro Aristizábal",
+        "Johnu George",
+        "Anna Wuest",
+        "Sarthak Pati",
+        "Hasan Kassem"
+      ],
+      "citations": 160,
+      "doi": "10.1038/s42256-023-00652-2",
+      "url": "https://doi.org/10.1038/s42256-023-00652-2",
+      "pdfUrl": "https://www.nature.com/articles/s42256-023-00652-2.pdf",
+      "abstract": "Medical artificial intelligence (AI) has tremendous potential to advance healthcare by supporting and contributing to the evidence-based practice of medicine, personalizing patient treatment, reducing costs, and improving both healthcare provider and patient experience. Unlocking this potential requires systematic, quantitative evaluation of the performance of medical AI models on large-scale, heterogeneous data capturing diverse patient populations. Here, to meet this need, we introduce MedPerf, an open platform for benchmarking AI models in the medical domain. MedPerf focuses on enabling federated evaluation of AI models, by securely distributing them to different facilities, such as healthcare organizations. This process of bringing the model to the data empowers each facility to assess and verify the performance of AI models in an efficient and human-supervised process, while prio..."
+    },
+    {
+      "title": "Deep learning for accelerated and robust MRI reconstruction",
+      "year": 2024,
+      "venue": "Magnetic Resonance Materials in Physics Biology and Medicine",
+      "authors": [
+        "Reinhard Heckel",
+        "Mathews Jacob",
+        "Akshay Chaudhari",
+        "Or Perlman",
+        "Efrat Shimron"
+      ],
+      "citations": 108,
+      "doi": "10.1007/s10334-024-01173-8",
+      "url": "https://doi.org/10.1007/s10334-024-01173-8",
+      "pdfUrl": "https://link.springer.com/content/pdf/10.1007/s10334-024-01173-8.pdf",
+      "abstract": "Deep learning (DL) has recently emerged as a pivotal technology for enhancing magnetic resonance imaging (MRI), a critical tool in diagnostic radiology. This review paper provides a comprehensive overview of recent advances in DL for MRI reconstruction, and focuses on various DL approaches and architectures designed to improve image quality, accelerate scans, and address data-related challenges. It explores end-to-end neural networks, pre-trained and generative models, and self-supervised methods, and highlights their contributions to overcoming traditional MRI limitations. It also discusses the role of DL in optimizing acquisition protocols, enhancing robustness against distribution shifts, and tackling biases. Drawing on the extensive literature and practical insights, it outlines current successes, limitations, and future directions for leveraging DL in MRI reconstruction, while em..."
+    },
+    {
+      "title": "A vision–language foundation model for the generation of realistic chest X-ray images",
+      "year": 2024,
+      "venue": "Nature Biomedical Engineering",
+      "authors": [
+        "Christian Bluethgen",
+        "Pierre Chambon",
+        "Jean-Benoit Delbrouck",
+        "Rogier van der Sluijs",
+        "Malgorzata Polacin",
+        "Juan Manuel Zambrano Chaves",
+        "Tanishq Mathew Abraham",
+        "Shivanshu Purohit"
+      ],
+      "citations": 100,
+      "doi": "10.1038/s41551-024-01246-y",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/11861387",
+      "pdfUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11861387/pdf/nihms-2023706.pdf",
+      "abstract": null
+    },
+    {
+      "title": "Clinical Text Summarization: Adapting Large Language Models Can Outperform Human Experts",
+      "year": 2023,
+      "venue": "Research Square",
+      "authors": [
+        "Dave Van Veen",
+        "Cara Van Uden",
+        "Louis Blankemeier",
+        "Jean-Benoit Delbrouck",
+        "Asad Aali",
+        "Christian Bluethgen",
+        "Anuj Pareek",
+        "Malgorzata Polacin"
+      ],
+      "citations": 99,
+      "doi": "10.21203/rs.3.rs-3483777/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-3483777/v1",
+      "pdfUrl": "https://www.researchsquare.com/article/rs-3483777/latest.pdf",
+      "abstract": null
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:20:53.718Z"
+}

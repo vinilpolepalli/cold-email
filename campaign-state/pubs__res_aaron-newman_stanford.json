@@ -1,0 +1,175 @@
+{
+  "researcherId": "res_aaron-newman_stanford",
+  "authorName": "Aaron M. Newman",
+  "authorUrl": "https://openalex.org/A5002498799",
+  "worksCount": 238,
+  "citedByCount": 51761,
+  "topics": [
+    "Cancer Genomics and Diagnostics",
+    "Cancer Immunotherapy and Biomarkers",
+    "Single-cell and spatial transcriptomics",
+    "Immune cells in cancer",
+    "Lung Cancer Treatments and Mutations"
+  ],
+  "publications": [
+    {
+      "title": "Robust enumeration of cell subsets from tissue expression profiles",
+      "year": 2015,
+      "venue": "Nature Methods",
+      "authors": [
+        "Aaron M. Newman",
+        "Chih Long Liu",
+        "Michael R. Green",
+        "Andrew J. Gentles",
+        "Weiguo Feng",
+        "Yue Xu",
+        "Chuong D. Hoang",
+        "Maximilian Diehn"
+      ],
+      "citations": 14310,
+      "doi": "10.1038/nmeth.3337",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4739640",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "The Immune Landscape of Cancer",
+      "year": 2018,
+      "venue": "Immunity",
+      "authors": [
+        "Vésteinn Thórsson",
+        "Vésteinn Thorsson",
+        "David L. Gibbs",
+        "Scott Brown",
+        "Denise Wolf",
+        "Dante S. Bortone",
+        "Tai-Hsien Ou Yang",
+        "Eduard Porta-Pardo"
+      ],
+      "citations": 6271,
+      "doi": "10.1016/j.immuni.2018.03.023",
+      "url": "https://doi.org/10.1016/j.immuni.2018.03.023",
+      "pdfUrl": "http://www.cell.com/article/S1074761318301213/pdf",
+      "abstract": "We performed an extensive immunogenomic analysis of more than 10,000 tumors comprising 33 diverse cancer types by utilizing data compiled by TCGA. Across cancer types, we identified six immune subtypes-wound healing, IFN-γ dominant, inflammatory, lymphocyte depleted, immunologically quiet, and TGF-β dominant-characterized by differences in macrophage or lymphocyte signatures, Th1:Th2 cell ratio, extent of intratumoral heterogeneity, aneuploidy, extent of neoantigen load, overall cell proliferation, expression of immunomodulatory genes, and prognosis. Specific driver mutations correlated with lower (CTNNB1, NRAS, or IDH1) or higher (BRAF, TP53, or CASP8) leukocyte levels across all cancers. Multiple control modalities of the intracellular and extracellular networks (transcription, microRNAs, copy number, and epigenetic processes) were involved in tumor-immune cell interactions, both ac..."
+    },
+    {
+      "title": "Determining cell type abundance and expression from bulk tissues with digital cytometry",
+      "year": 2019,
+      "venue": "Nature Biotechnology",
+      "authors": [
+        "Aaron M. Newman",
+        "Chloé B. Steen",
+        "Chih Long Liu",
+        "Andrew J. Gentles",
+        "Aadel A. Chaudhuri",
+        "Florian Scherer",
+        "Michael S. Khodadoust",
+        "Mohammad Shahrokh Esfahani"
+      ],
+      "citations": 4985,
+      "doi": "10.1038/s41587-019-0114-2",
+      "url": "https://doi.org/10.1038/s41587-019-0114-2",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Profiling Tumor Infiltrating Immune Cells with CIBERSORT",
+      "year": 2018,
+      "venue": "Methods in molecular biology",
+      "authors": [
+        "Binbin Chen",
+        "Michael S. Khodadoust",
+        "Chih Long Liu",
+        "Aaron M. Newman",
+        "Ash A. Alizadeh"
+      ],
+      "citations": 4237,
+      "doi": "10.1007/978-1-4939-7493-1_12",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5895181",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "The prognostic landscape of genes and infiltrating immune cells across human cancers",
+      "year": 2015,
+      "venue": "Nature Medicine",
+      "authors": [
+        "Andrew J. Gentles",
+        "Aaron M. Newman",
+        "Chih Long Liu",
+        "Scott V. Bratman",
+        "Weiguo Feng",
+        "Dongkyoon Kim",
+        "Viswam S. Nair",
+        "Yue Xu"
+      ],
+      "citations": 3291,
+      "doi": "10.1038/nm.3909",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4852857",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "An ultrasensitive method for quantitating circulating tumor DNA with broad patient coverage",
+      "year": 2014,
+      "venue": "Nature Medicine",
+      "authors": [
+        "Aaron M. Newman",
+        "Scott V. Bratman",
+        "Jacqueline To",
+        "Jacob Wynne",
+        "Neville Eclov",
+        "L.A. Modlin",
+        "Chih Long Liu",
+        "Joel W. Neal"
+      ],
+      "citations": 2281,
+      "doi": "10.1038/nm.3519",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4016134",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Single-cell transcriptional diversity is a hallmark of developmental potential",
+      "year": 2020,
+      "venue": "Science",
+      "authors": [
+        "Gunsagar S. Gulati",
+        "Shaheen S. Sikandar",
+        "Daniel J. Wesche",
+        "Anoop Manjunath",
+        "Anjan Bharadwaj",
+        "Mark J. Berger",
+        "Francisco Ilagan",
+        "Angera H. Kuo"
+      ],
+      "citations": 1650,
+      "doi": "10.1126/science.aax0249",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7694873",
+      "pdfUrl": null,
+      "abstract": "Single-cell RNA sequencing (scRNA-seq) is a powerful approach for reconstructing cellular differentiation trajectories. However, inferring both the state and direction of differentiation is challenging. Here, we demonstrate a simple, yet robust, determinant of developmental potential-the number of expressed genes per cell-and leverage this measure of transcriptional diversity to develop a computational framework (CytoTRACE) for predicting differentiation states from scRNA-seq data. When applied to diverse tissue types and organisms, CytoTRACE outperformed previous methods and nearly 19,000 annotated gene sets for resolving 52 experimentally determined developmental trajectories. Additionally, it facilitated the identification of quiescent stem cells and revealed genes that contribute to breast tumorigenesis. This study thus establishes a key RNA-based feature of developmental potentia..."
+    },
+    {
+      "title": "Integrated digital error suppression for improved detection of circulating tumor DNA",
+      "year": 2016,
+      "venue": "Nature Biotechnology",
+      "authors": [
+        "Aaron M. Newman",
+        "Alexander F. Lovejoy",
+        "Daniel M. Klass",
+        "David M. Kurtz",
+        "Jacob J. Chabon",
+        "Florian Scherer",
+        "Henning Stehr",
+        "Chih Long Liu"
+      ],
+      "citations": 1157,
+      "doi": "10.1038/nbt.3520",
+      "url": "https://doi.org/10.1038/nbt.3520",
+      "pdfUrl": null,
+      "abstract": null
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:20:46.755Z"
+}

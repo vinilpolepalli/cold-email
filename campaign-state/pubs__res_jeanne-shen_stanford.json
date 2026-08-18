@@ -1,0 +1,173 @@
+{
+  "researcherId": "res_jeanne-shen_stanford",
+  "authorName": "Jeanne Shen",
+  "authorUrl": "https://openalex.org/A5023062647",
+  "worksCount": 170,
+  "citedByCount": 5804,
+  "topics": [
+    "Cancer Immunotherapy and Biomarkers",
+    "Immune cells in cancer",
+    "Genetic factors in colorectal cancer",
+    "AI in cancer detection",
+    "RNA modifications and cancer"
+  ],
+  "publications": [
+    {
+      "title": "Pancreatic Adenocarcinoma, Version 2.2021, NCCN Clinical Practice Guidelines in Oncology",
+      "year": 2021,
+      "venue": "Journal of the National Comprehensive Cancer Network",
+      "authors": [
+        "Margaret A. Tempero",
+        "Mokenge P. Malafa",
+        "Mahmoud M. Al-Hawary",
+        "Stephen W. Behrman",
+        "Al B. Benson",
+        "Dana B. Cardin",
+        "E. Gabriela Chiorean",
+        "Vincent Chung"
+      ],
+      "citations": 1316,
+      "doi": "10.6004/jnccn.2021.0017",
+      "url": "https://doi.org/10.6004/jnccn.2021.0017",
+      "pdfUrl": "https://jnccn.org/downloadpdf/journals/jnccn/19/4/article-p439.pdf",
+      "abstract": "Pancreatic cancer is the fourth leading cause of cancer-related death among men and women in the United States. A major challenge in treatment remains patients' advanced disease at diagnosis. The NCCN Guidelines for Pancreatic Adenocarcinoma provides recommendations for the diagnosis, evaluation, treatment, and follow-up for patients with pancreatic cancer. Although survival rates remain relatively unchanged, newer modalities of treatment, including targeted therapies, provide hope for improving patient outcomes. Sections of the manuscript have been updated to be concordant with the most recent update to the guidelines. This manuscript focuses on the available systemic therapy approaches, specifically the treatment options for locally advanced and metastatic disease."
+    },
+    {
+      "title": "A Temporal Switch from Notch to Wnt Signaling in Muscle Stem Cells Is Necessary for Normal Adult Myogenesis",
+      "year": 2008,
+      "venue": "Cell stem cell",
+      "authors": [
+        "Andrew S. Brack",
+        "Irina M. Conboy",
+        "Michael J. Conboy",
+        "Jeanne Shen",
+        "Thomas A. Rando"
+      ],
+      "citations": 673,
+      "doi": "10.1016/j.stem.2007.10.006",
+      "url": "https://doi.org/10.1016/j.stem.2007.10.006",
+      "pdfUrl": "http://www.cell.com/article/S1934590907002238/pdf",
+      "abstract": null
+    },
+    {
+      "title": "Microsatellite Instability and BRAF Mutation Testing in Colorectal Cancer Prognostication",
+      "year": 2013,
+      "venue": "JNCI Journal of the National Cancer Institute",
+      "authors": [
+        "Paul Lochhead",
+        "Aya Kuchiba",
+        "Yu Imamura",
+        "Xiaoyun Liao",
+        "Mai Yamauchi",
+        "Reiko Nishihara",
+        "Zhi Rong Qian",
+        "Teppei Morikawa"
+      ],
+      "citations": 447,
+      "doi": "10.1093/jnci/djt173",
+      "url": "https://doi.org/10.1093/jnci/djt173",
+      "pdfUrl": "https://academic.oup.com/jnci/article-pdf/105/15/1151/17312694/djt173.pdf",
+      "abstract": "BRAF mutation in colorectal cancer is associated with microsatellite instability (MSI) through its relationship with high-level CpG island methylator phenotype (CIMP) and MLH1 promoter methylation. MSI and BRAF mutation analyses are routinely used for familial cancer risk assessment. To clarify clinical outcome associations of combined MSI/BRAF subgroups, we investigated survival in 1253 rectal and colon cancer patients within the Nurses' Health Study and Health Professionals Follow-up Study with available data on clinical and other molecular features, including CIMP, LINE-1 hypomethylation, and KRAS and PIK3CA mutations. Compared with the majority subtype of microsatellite stable (MSS)/BRAF-wild-type, MSS/BRAF-mutant, MSI-high/BRAF-mutant, and MSI-high/BRAF-wild-type subtypes showed multivariable colorectal cancer-specific mortality hazard ratios of 1.60 (95% confidence interval [CI]..."
+    },
+    {
+      "title": "Deep learning model for the prediction of microsatellite instability in colorectal cancer: a diagnostic study",
+      "year": 2020,
+      "venue": "The Lancet Oncology",
+      "authors": [
+        "Rikiya Yamashita",
+        "Jin Long",
+        "Teri A. Longacre",
+        "Lan Peng",
+        "Gerald J. Berry",
+        "Brock A. Martin",
+        "John Higgins",
+        "Daniel L. Rubin"
+      ],
+      "citations": 385,
+      "doi": "10.1016/s1470-2045(20)30535-0",
+      "url": "https://doi.org/10.1016/s1470-2045(20)30535-0",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Clinical, Pathologic, and Biologic Features Associated with BRAF Mutations in Non–Small Cell Lung Cancer",
+      "year": 2013,
+      "venue": "Clinical Cancer Research",
+      "authors": [
+        "Stephanie Cardarella",
+        "Atsuko Ogino",
+        "Mizuki Nishino",
+        "Mohit Butaney",
+        "Jeanne Shen",
+        "Christine Lydon",
+        "Beow Y. Yeap",
+        "Lynette M. Sholl"
+      ],
+      "citations": 375,
+      "doi": "10.1158/1078-0432.ccr-13-0657",
+      "url": "https://doi.org/10.1158/1078-0432.ccr-13-0657",
+      "pdfUrl": "https://clincancerres.aacrjournals.org/content/clincanres/19/16/4532.full.pdf",
+      "abstract": "PURPOSE: BRAF mutations are found in a subset of non-small cell lung cancers (NSCLC). We examined the clinical characteristics and treatment outcomes of patients with NSCLC harboring BRAF mutations. EXPERIMENTAL DESIGN: Using DNA sequencing, we successfully screened 883 patients with NSCLC for BRAF mutations between July 1, 2009 and July 16, 2012. Baseline characteristics and treatment outcomes were compared between patients with and without BRAF mutations. Wild-type controls consisted of patients with NSCLC without a somatic alteration in BRAF, KRAS, EGFR, and ALK. In vitro studies assessed the biologic properties of selected non-V600E BRAF mutations identified from patients with NSCLC. RESULTS: Of 883 tumors screened, 36 (4%) harbored BRAF mutations (V600E, 18; non-V600E, 18) and 257 were wild-type for BRAF, EGFR, KRAS, and ALK negative. Twenty-nine of 36 patients with BRAF mutation..."
+    },
+    {
+      "title": "Single-cell analyses define a continuum of cell state and composition changes in the malignant transformation of polyps to colorectal cancer",
+      "year": 2022,
+      "venue": "Nature Genetics",
+      "authors": [
+        "Winston R. Becker",
+        "Stephanie Nevins",
+        "Derek C. Chen",
+        "Roxanne Chiu",
+        "Aaron M. Horning",
+        "Tuhin K. Guha",
+        "Rozelle Laquindanum",
+        "Meredith Mills"
+      ],
+      "citations": 333,
+      "doi": "10.1038/s41588-022-01088-x",
+      "url": "https://doi.org/10.1038/s41588-022-01088-x",
+      "pdfUrl": "https://www.nature.com/articles/s41588-022-01088-x.pdf",
+      "abstract": "To chart cell composition and cell state changes that occur during the transformation of healthy colon to precancerous adenomas to colorectal cancer (CRC), we generated single-cell chromatin accessibility profiles and single-cell transcriptomes from 1,000 to 10,000 cells per sample for 48 polyps, 27 normal tissues and 6 CRCs collected from patients with or without germline APC mutations. A large fraction of polyp and CRC cells exhibit a stem-like phenotype, and we define a continuum of epigenetic and transcriptional changes occurring in these stem-like cells as they progress from homeostasis to CRC. Advanced polyps contain increasing numbers of stem-like cells, regulatory T cells and a subtype of pre-cancer-associated fibroblasts. In the cancerous state, we observe T cell exhaustion, RUNX1-regulated cancer-associated fibroblasts and increasing accessibility associated with HNF4A motif..."
+    },
+    {
+      "title": "Impact of a deep learning assistant on the histopathologic classification of liver cancer",
+      "year": 2020,
+      "venue": "npj Digital Medicine",
+      "authors": [
+        "Amirhossein Kiani",
+        "Bora Uyumazturk",
+        "Pranav Rajpurkar",
+        "Alex Wang",
+        "Rebecca W. Gao",
+        "Erik Jones",
+        "Yifan Yu",
+        "Curtis P. Langlotz"
+      ],
+      "citations": 317,
+      "doi": "10.1038/s41746-020-0232-8",
+      "url": "https://doi.org/10.1038/s41746-020-0232-8",
+      "pdfUrl": "https://www.nature.com/articles/s41746-020-0232-8.pdf",
+      "abstract": "Abstract Artificial intelligence (AI) algorithms continue to rival human performance on a variety of clinical tasks, while their actual impact on human diagnosticians, when incorporated into clinical workflows, remains relatively unexplored. In this study, we developed a deep learning-based assistant to help pathologists differentiate between two subtypes of primary liver cancer, hepatocellular carcinoma and cholangiocarcinoma, on hematoxylin and eosin-stained whole-slide images (WSI), and evaluated its effect on the diagnostic performance of 11 pathologists with varying levels of expertise. Our model achieved accuracies of 0.885 on a validation set of 26 WSI, and 0.842 on an independent test set of 80 WSI. Although use of the assistant did not change the mean accuracy of the 11 pathologists ( p = 0.184, OR = 1.281), it significantly improved the accuracy ( p = 0.045, OR = 1.499) of a..."
+    },
+    {
+      "title": "The persistent problem of new-onset postoperative atrial fibrillation: A single-institution experience over two decades",
+      "year": 2010,
+      "venue": "Journal of Thoracic and Cardiovascular Surgery",
+      "authors": [
+        "Jeanne Shen",
+        "Shelly C. Lall",
+        "Victoria Zheng",
+        "Patricia Buckley",
+        "Ralph J. Damiano",
+        "Richard B. Schuessler"
+      ],
+      "citations": 227,
+      "doi": "10.1016/j.jtcvs.2010.03.011",
+      "url": "https://doi.org/10.1016/j.jtcvs.2010.03.011",
+      "pdfUrl": "http://www.jtcvs.org/article/S0022522310003065/pdf",
+      "abstract": null
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:24.479Z"
+}

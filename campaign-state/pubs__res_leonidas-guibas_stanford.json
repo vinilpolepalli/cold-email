@@ -1,0 +1,151 @@
+{
+  "researcherId": "res_leonidas-guibas_stanford",
+  "authorName": "Leonidas Guibas",
+  "authorUrl": "https://openalex.org/A5065368881",
+  "worksCount": 878,
+  "citedByCount": 77999,
+  "topics": [
+    "3D Shape Modeling and Analysis",
+    "Computational Geometry and Mesh Generation",
+    "Computer Graphics and Visualization Techniques",
+    "Advanced Vision and Imaging",
+    "Human Pose and Action Recognition"
+  ],
+  "publications": [
+    {
+      "title": "PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation",
+      "year": 2017,
+      "venue": null,
+      "authors": [
+        "Raffaelli Charles",
+        "Hao Su",
+        "Kaichun Mo",
+        "Leonidas Guibas"
+      ],
+      "citations": 9896,
+      "doi": "10.1109/cvpr.2017.16",
+      "url": "https://doi.org/10.1109/cvpr.2017.16",
+      "pdfUrl": "https://arxiv.org/pdf/1612.00593",
+      "abstract": "Point cloud is an important type of geometric data structure. Due to its irregular format, most researchers transform such data to regular 3D voxel grids or collections of images. This, however, renders data unnecessarily voluminous and causes issues. In this paper, we design a novel type of neural network that directly consumes point clouds, which well respects the permutation invariance of points in the input. Our network, named PointNet, provides a unified architecture for applications ranging from object classification, part segmentation, to scene semantic parsing. Though simple, PointNet is highly efficient and effective. Empirically, it shows strong performance on par or even better than state of the art. Theoretically, we provide analysis towards understanding of what the network has learnt and why the network is robust with respect to input perturbation and corruption."
+    },
+    {
+      "title": "PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric\\n Space",
+      "year": 2017,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Charles R. Qi",
+        "Yi Li",
+        "Hao Su",
+        "Leonidas Guibas"
+      ],
+      "citations": 7092,
+      "doi": "10.48550/arxiv.1706.02413",
+      "url": "http://arxiv.org/abs/1706.02413",
+      "pdfUrl": "https://arxiv.org/pdf/1706.02413",
+      "abstract": "Few prior works study deep learning on point sets. PointNet by Qi et al. is a\\npioneer in this direction. However, by design PointNet does not capture local\\nstructures induced by the metric space points live in, limiting its ability to\\nrecognize fine-grained patterns and generalizability to complex scenes. In this\\nwork, we introduce a hierarchical neural network that applies PointNet\\nrecursively on a nested partitioning of the input point set. By exploiting\\nmetric space distances, our network is able to learn local features with\\nincreasing contextual scales. With further observation that point sets are\\nusually sampled with varying densities, which results in greatly decreased\\nperformance for networks trained on uniform densities, we propose novel set\\nlearning layers to adaptively combine features from multiple scales.\\nExperiments show that our network called PointNet++ is ab..."
+    },
+    {
+      "title": "A Point Set Generation Network for 3D Object Reconstruction from a Single Image",
+      "year": 2017,
+      "venue": null,
+      "authors": [
+        "Haoqiang Fan",
+        "Hao Su",
+        "Leonidas Guibas"
+      ],
+      "citations": 2488,
+      "doi": "10.1109/cvpr.2017.264",
+      "url": "https://doi.org/10.1109/cvpr.2017.264",
+      "pdfUrl": null,
+      "abstract": "Generation of 3D data by deep neural networks has been attracting increasing attention in the research community. The majority of extant works resort to regular representations such as volumetric grids or collections of images; however, these representations obscure the natural invariance of 3D shapes under geometric transformations, and also suffer from a number of other issues. In this paper we address the problem of 3D reconstruction from a single image, generating a straight-forward form of output - point cloud coordinates. Along with this problem arises a unique and interesting issue, that the groundtruth shape for an input image may be ambiguous. Driven by this unorthodox output form and the inherent ambiguity in groundtruth, we design architecture, loss function and learning paradigm that are novel and effective. Our final solution is a conditional shape sampler, capable of pre..."
+    },
+    {
+      "title": "ShapeNet: An Information-Rich 3D Model Repository",
+      "year": 2015,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Chang, Angel X.",
+        "Thomas Funkhouser",
+        "Leonidas Guibas",
+        "Pat Hanrahan",
+        "Qixing Huang",
+        "Zimo Li",
+        "Silvio Savarese",
+        "Manolis Savva"
+      ],
+      "citations": 2381,
+      "doi": "10.48550/arxiv.1512.03012",
+      "url": "http://arxiv.org/abs/1512.03012",
+      "pdfUrl": "https://arxiv.org/pdf/1512.03012",
+      "abstract": "We present ShapeNet: a richly-annotated, large-scale repository of shapes represented by 3D CAD models of objects. ShapeNet contains 3D models from a multitude of semantic categories and organizes them under the WordNet taxonomy. It is a collection of datasets providing many semantic annotations for each 3D model such as consistent rigid alignments, parts and bilateral symmetry planes, physical sizes, keywords, as well as other planned annotations. Annotations are made available through a public web-based interface to enable data visualization of object attributes, promote data-driven geometric analysis, and provide a large-scale quantitative benchmark for research in computer graphics and vision. At the time of this technical report, ShapeNet has indexed more than 3,000,000 models, 220,000 models out of which are classified into 3,135 categories (WordNet synsets). In this report we d..."
+    },
+    {
+      "title": "PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space",
+      "year": 2017,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Charles R. Qi",
+        "Li Yi",
+        "Hao Su",
+        "Leonidas Guibas"
+      ],
+      "citations": 2138,
+      "doi": "10.48550/arxiv.1706.02413",
+      "url": "http://arxiv.org/abs/1706.02413",
+      "pdfUrl": "https://arxiv.org/pdf/1706.02413",
+      "abstract": "Few prior works study deep learning on point sets. PointNet by Qi et al. is a pioneer in this direction. However, by design PointNet does not capture local structures induced by the metric space points live in, limiting its ability to recognize fine-grained patterns and generalizability to complex scenes. In this work, we introduce a hierarchical neural network that applies PointNet recursively on a nested partitioning of the input point set. By exploiting metric space distances, our network is able to learn local features with increasing contextual scales. With further observation that point sets are usually sampled with varying densities, which results in greatly decreased performance for networks trained on uniform densities, we propose novel set learning layers to adaptively combine features from multiple scales. Experiments show that our network called PointNet++ is able to learn..."
+    },
+    {
+      "title": "A metric for distributions with applications to image databases",
+      "year": 2002,
+      "venue": null,
+      "authors": [
+        "Yossi Rubner",
+        "Carlo Tomasi",
+        "Leonidas Guibas"
+      ],
+      "citations": 1758,
+      "doi": "10.1109/iccv.1998.710701",
+      "url": "https://doi.org/10.1109/iccv.1998.710701",
+      "pdfUrl": null,
+      "abstract": "We introduce a new distance between two distributions that we call the Earth Mover's Distance (EMD), which reflects the minimal amount of work that must be performed to transform one distribution into the other by moving \"distribution mass\" around. This is a special case of the transportation problem from linear optimization, for which efficient algorithms are available. The EMD also allows for partial matching. When used to compare distributions that have the same overall mass, the EMD is a true metric, and has easy-to-compute lower bounds. In this paper we focus on applications to image databases, especially color and texture. We use the EMD to exhibit the structure of color-distribution and texture spaces by means of Multi-Dimensional Scaling displays. We also propose a novel approach to the problem of navigating through a collection of color images, which leads to a new paradigm f..."
+    },
+    {
+      "title": "A Concise and Provably Informative Multi‐Scale Signature Based on Heat Diffusion",
+      "year": 2009,
+      "venue": "Computer Graphics Forum",
+      "authors": [
+        "Jian Sun",
+        "Maks Ovsjanikov",
+        "Leonidas Guibas"
+      ],
+      "citations": 1461,
+      "doi": "10.1111/j.1467-8659.2009.01515.x",
+      "url": "https://doi.org/10.1111/j.1467-8659.2009.01515.x",
+      "pdfUrl": null,
+      "abstract": "Abstract We propose a novel point signature based on the properties of the heat diffusion process on a shape. Our signature, called the Heat Kernel Signature (or HKS), is obtained by restricting the well‐known heat kernel to the temporal domain. Remarkably we show that under certain mild assumptions, HKS captures all of the information contained in the heat kernel, and characterizes the shape up to isometry. This means that the restriction to the temporal domain, on the one hand, makes HKS much more concise and easily commensurable, while on the other hand, it preserves all of the information about the intrinsic geometry of the shape. In addition, HKS inherits many useful properties from the heat kernel, which means, in particular, that it is stable under perturbations of the shape. Our signature also provides a natural and efficiently computable multi‐scale way to capture information..."
+    },
+    {
+      "title": "A scalable active framework for region annotation in 3D shape collections",
+      "year": 2016,
+      "venue": "ACM Transactions on Graphics",
+      "authors": [
+        "Li Yi",
+        "Vladimir G. Kim",
+        "Duygu Ceylan",
+        "I‐Chao Shen",
+        "Mengyan Yan",
+        "Hao Su",
+        "Cewu Lu",
+        "Qixing Huang"
+      ],
+      "citations": 1311,
+      "doi": "10.1145/2980179.2980238",
+      "url": "https://doi.org/10.1145/2980179.2980238",
+      "pdfUrl": null,
+      "abstract": "Large repositories of 3D shapes provide valuable input for data-driven analysis and modeling tools. They are especially powerful once annotated with semantic information such as salient regions and functional parts. We propose a novel active learning method capable of enriching massive geometric datasets with accurate semantic region annotations. Given a shape collection and a user-specified region label our goal is to correctly demarcate the corresponding regions with minimal manual work. Our active framework achieves this goal by cycling between manually annotating the regions, automatically propagating these annotations across the rest of the shapes, manually verifying both human and automatic annotations, and learning from the verification results to improve the automatic propagation algorithm. We use a unified utility function that explicitly models the time cost of human input a..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:10.999Z"
+}

@@ -1,0 +1,42 @@
+{
+  "routine": "build-queue",
+  "id": "run_msxz5ci32a20my",
+  "userId": "demo-user",
+  "startedAt": "2026-08-18T01:18:55.371Z",
+  "finishedAt": "2026-08-18T01:18:55.510Z",
+  "ok": true,
+  "dryRun": false,
+  "summary": "Queued 25 professor(s) from 384 ranked candidates.",
+  "counts": {
+    "added": 25,
+    "ranked": 384
+  },
+  "details": [
+    "Alan Jasanoff (MIT, cs-bio) — Overlaps on computational neuroscience, neural network modeling, molecular imaging; MIT is priority two",
+    "John Guttag (MIT, cs-robotics) — Overlaps on machine learning for healthcare, computer vision; MIT is priority two",
+    "Manolis Kellis (MIT, cs-bio) — Overlaps on computational biology, genomics, machine learning; MIT is priority two",
+    "Mina Konakovic Lukovic (MIT, cs-robotics) — Overlaps on machine learning, computational fabrication, vision and graphics; MIT is priority two",
+    "Wojciech Matusik (MIT, cs-robotics) — Overlaps on machine learning, computational fabrication, vision and graphics; MIT is priority two",
+    "Antonio Torralba (MIT, cs-robotics) — Overlaps on machine learning, computer vision; MIT is priority two",
+    "Caroline Uhler (MIT, cs-bio) — Overlaps on machine learning, causal inference, computational biology; MIT is priority two",
+    "Douglas A. Lauffenburger (MIT, cs-bio) — Overlaps on computational systems biology, predictive modeling, cell signaling networks; MIT is priority two",
+    "Jean-Jacques Slotine (MIT, cs-bio) — Overlaps on computational neuroscience, machine learning, systems biology; MIT is priority two",
+    "Alexander (Sasha) Rakhlin (MIT, cs-core) — Overlaps on machine learning theory, reinforcement learning; MIT is priority two",
+    "Kalyan Veeramachaneni (MIT, cs-core) — Overlaps on data science, machine learning, big data; MIT is priority two",
+    "W. Eric L Grimson (MIT, cs-robotics) — Overlaps on machine learning, computer vision; MIT is priority two",
+    "Yunha Hwang (MIT, cs-bio) — Overlaps on machine learning, computational biology; MIT is priority two",
+    "John Duchi (Stanford, cs-core) — Overlaps on machine learning, private inference; Stanford is priority one",
+    "Jonathan H. Chen (Stanford, cs-bio) — Overlaps on machine learning; Stanford is priority one",
+    "Todd Zickler (Harvard, cs-robotics) — Overlaps on computer vision, machine learning, computational imaging; Harvard is priority three",
+    "Asuman Ozdaglar (MIT, cs-robotics) — Overlaps on multi-agent networks, network economics, machine learning; MIT is priority two",
+    "Sven Dorkenwald (MIT, cs-bio) — Overlaps on computational tools, machine learning, neural network analysis; MIT is priority two",
+    "Edward Chang (Stanford, cs-bio) — Overlaps on machine learning; Stanford is priority one",
+    "Emily Fox (Stanford, cs-bio) — Overlaps on machine learning; Stanford is priority one",
+    "Gregory Valiant (Stanford, cs-core) — Overlaps on machine learning theory; Stanford is priority one",
+    "Ramesh Johari (Stanford, cs-core) — Overlaps on machine learning, statistical inference; Stanford is priority one",
+    "Renyuan Xu (Stanford, cs-core) — Overlaps on machine learning theory, mathematical finance; Stanford is priority one",
+    "Sanmi Koyejo (Stanford, cs-core) — Overlaps on machine learning; Stanford is priority one",
+    "Stefan Wager (Stanford, cs-core) — Overlaps on causal inference, machine learning; Stanford is priority one"
+  ],
+  "error": null
+}

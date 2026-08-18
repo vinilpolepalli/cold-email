@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpjiuvgfah",
+  "userId": "demo-user",
+  "researcherId": "res_shuran-song_stanford",
+  "researcherName": "Shuran Song",
+  "school": "Stanford",
+  "trackId": "cs-robotics",
+  "status": "drafted",
+  "rank": 61,
+  "reasons": [
+    "Overlaps on robotics, computer vision",
+    "Stanford is priority one"
+  ],
+  "subject": "Interested in your work on 3D scene understanding",
+  "body": "Hello Professor Song,\n\nMy name is Vinil Polepalli and I am an undergraduate at New York University studying Computer Science and Business. I have been a research intern in the Chiosis Lab at Memorial Sloan Kettering, where I built protein-ligand graph neural networks for Hsp90 and epichaperome complexes that reached 0.984 ROC AUC separating active from inactive inhibitor candidates.\n\nI read the SUN RGB-D paper, and the argument that a benchmark has to be built for the task rather than borrowed from an adjacent one is the part that applies to me. Scene understanding from a real depth sensor means partial, noisy, single-viewpoint observations, and evaluating on clean synthetic geometry measures something the robot will never face. My aerial segmentation work at Carnegie Mellon had the same gap and I did not close it: I evaluated on held-out frames drawn from the same 30 flights, so the benchmark shared every viewpoint bias with the training set and could not have told me the model was overfitting to how we happened to fly. What I would want to learn is how you construct an evaluation that is hard in the way deployment is hard, rather than just larger.\n\nI would like to hear more about what the lab is working on now, and where my background would be useful to you.\n\nIn the past, I have worked on the following related projects:\n- Semantic segmentation for UAV-based environmental monitoring at Carnegie Mellon Robotics Institute: 0.88 mean IoU and 0.94 F1 on 25,000 labeled aerial images, sub-100 ms inference across 30 flights\n- Hsp90 inhibitor virtual screening in the Chiosis Lab at Memorial Sloan Kettering: 4,566 candidates screened at 0.984 GNN ROC AUC and 5x enrichment, 0 Lipinski violations in the top 50: https://hsp90-dashboard.vercel.app/\n- Sole author, cVAE-augmented deep learning for pan-cancer RNA-seq classification, about 98% test accuracy across 5 cancer types on TCGA: https://arxiv.org/abs/2508.02743\n- First author, EGCG and piperine synergy in D. tigrina regeneration, IEEE MIT Undergraduate Research Technology Conference: https://ieeexplore.ieee.org/document/11533121\n\nOutside of research I was invited to Y Combinator's Startup School, reached the VEX Robotics World Championship semifinals, and have qualified for the AIME three times.\n\nI have extensively used PyTorch, OpenCV and Python in past work, along with robotics and vision tooling, but have a lot of coding experience and am adaptable to whichever libraries your lab uses. My resume is attached. Please let me know if there is a fit in your lab.\n\nI would be happy to elaborate on my skills and where I think I can best help out.\n\nThank you!\n\n--\nVinil Polepalli\nNew York University | Class of 2029\nB.S. Computer Science and B.S. Business",
+  "to": "shurans@cs.stanford.edu",
+  "cc": [],
+  "scheduledAt": "2026-08-20T17:40:09.408Z",
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": "Written for review",
+  "createdAt": "2026-08-18T01:12:59.022Z",
+  "updatedAt": "2026-08-18T01:40:09.436Z"
+}

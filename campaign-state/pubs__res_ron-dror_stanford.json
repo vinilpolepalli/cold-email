@@ -3,7 +3,7 @@
   "authorName": "Ron O. Dror",
   "authorUrl": "https://openalex.org/A5061322136",
   "worksCount": 369,
-  "citedByCount": 50223,
+  "citedByCount": 50228,
   "topics": [
     "Receptor Mechanisms and Signaling",
     "Protein Structure and Dynamics",
@@ -160,5 +160,5 @@
     }
   ],
   "provider": "openalex",
-  "fetchedAt": "2026-08-17T01:37:04.126Z"
+  "fetchedAt": "2026-08-18T01:20:40.763Z"
 }

@@ -2047,27 +2047,11 @@
       "reinforcement learning",
       "sequential decision-making",
       "mobile health",
-      "statistics"
+      "statistics",
+      "causal inference"
     ],
     "bio": "Leads the Statistical Reinforcement Learning Lab, which develops data-analytic algorithms and methods for informing sequential decision-making in health, including individualized adaptive interventions and micro-randomized trials.",
     "sourceUrl": "https://seas.harvard.edu/person/susan-murphy"
-  },
-  {
-    "id": "res_susan-murphy_harvard",
-    "name": "Susan Murphy",
-    "title": "Associate Faculty, Kempner Institute; Mallinckrodt Professor of Statistics and of Computer Science",
-    "school": "Harvard",
-    "department": "Kempner Institute for the Study of Natural and Artificial Intelligence",
-    "email": "samurphy@g.harvard.edu",
-    "website": "http://people.seas.harvard.edu/~samurphy/",
-    "researchAreas": [
-      "reinforcement learning",
-      "mobile health",
-      "causal inference",
-      "statistics"
-    ],
-    "bio": "Leads the Statistical Reinforcement Learning Lab, developing data-analytic algorithms for sequential decision making in health. Work includes just-in-time adaptive interventions delivered by smart devices.",
-    "sourceUrl": "https://kempnerinstitute.harvard.edu/people/our-people/susan-murphy/"
   },
   {
     "id": "res_talia-konkle_harvard",
@@ -4733,23 +4717,6 @@
     "sourceUrl": "https://be.mit.edu/faculty/paul-blainey/"
   },
   {
-    "id": "res_paul-liang_mit",
-    "name": "Paul Liang",
-    "title": "Sony Career Development Professor of Media Arts and Sciences; Assistant Professor, shared appointment with Media Arts and Sciences (MAS) and EECS",
-    "school": "MIT",
-    "department": "Electrical Engineering and Computer Science",
-    "email": "ppliang@mit.edu",
-    "website": "https://pliang279.github.io/",
-    "researchAreas": [
-      "machine learning",
-      "multisensory ai",
-      "nlp and speech",
-      "hci"
-    ],
-    "bio": "Directs the Multisensory Intelligence group at the MIT Media Lab and EECS, developing the foundations of self-evolving multisensory AI to advance human capabilities and well-being.",
-    "sourceUrl": "https://www.eecs.mit.edu/people/paul-liang/"
-  },
-  {
     "id": "res_paul-pu-liang_mit",
     "name": "Paul Pu Liang",
     "title": "Assistant Professor of Media Arts and Sciences; Assistant Professor of Electrical Engineering and Computer Science",
@@ -4761,7 +4728,10 @@
       "machine learning",
       "multimodal ai",
       "multisensory intelligence",
-      "human-ai interaction"
+      "human-ai interaction",
+      "multisensory ai",
+      "nlp and speech",
+      "hci"
     ],
     "bio": "Founding director of the Multisensory Intelligence research group, which studies the foundations of multisensory artificial intelligence to create human-AI symbiosis across scales and sensory mediums. His research builds theoretical foundations, large-scale resources, and neural network architectures for learning from multisensory data.",
     "sourceUrl": "https://www.media.mit.edu/people/ppliang/overview/"
@@ -5070,23 +5040,6 @@
     "sourceUrl": "https://be.mit.edu/faculty/ron-weiss/"
   },
   {
-    "id": "res_rosalind-picard_mit",
-    "name": "Rosalind Picard",
-    "title": "Professor; Founder and Director, Affective Computing Research Group, MIT Media Lab",
-    "school": "MIT",
-    "department": "MIT Media Lab",
-    "email": null,
-    "website": null,
-    "researchAreas": [
-      "affective computing",
-      "wearable sensing",
-      "digital health",
-      "mental health technology"
-    ],
-    "bio": "Best known for founding the field of affective computing, she pioneered wearable technologies that monitor and analyze physiological data in daily life, driving research at the intersection of wearables, physiology, and physical and mental health. She is a Jameel Clinic Principal Investigator.",
-    "sourceUrl": "https://jclinic.mit.edu/team-member/rosalind-picard/"
-  },
-  {
     "id": "res_rosalind-w-picard_mit",
     "name": "Rosalind W. Picard",
     "title": "Grover M. Hermann Professor in Health Sciences and Technology; Professor of Media Arts and Sciences",
@@ -5098,7 +5051,9 @@
       "affective computing",
       "emotion ai",
       "wearable sensing",
-      "machine learning for health"
+      "machine learning for health",
+      "digital health",
+      "mental health technology"
     ],
     "bio": "Founder and director of the Affective Computing research group at the MIT Media Lab and a faculty member of the MIT Center for Neurobiological Engineering. She co-founded Affectiva, providing emotion AI technologies, and Empatica, whose wearable sensors and analytics produced the first AI-based smart watch cleared by the FDA.",
     "sourceUrl": "https://www.media.mit.edu/people/picard/overview/"
@@ -5748,27 +5703,12 @@
       "boosting",
       "information theory",
       "sports analytics",
-      "probabilistic modeling"
+      "probabilistic modeling",
+      "applied statistics",
+      "machine learning"
     ],
     "bio": "Works on boosting, data compression, entropy, information theory, probabilistic modeling, and baseball analytics. Faculty Co-Director of the Wharton Sports Analytics and Business Initiative.",
     "sourceUrl": "https://statistics.wharton.upenn.edu/profile/ajw/"
-  },
-  {
-    "id": "res_abraham-wyner_penn",
-    "name": "Abraham Wyner",
-    "title": "Professor of Statistics and Data Science",
-    "school": "Penn",
-    "department": "Department of Statistics and Data Science",
-    "email": null,
-    "website": null,
-    "researchAreas": [
-      "applied statistics",
-      "machine learning",
-      "sports analytics",
-      "information theory"
-    ],
-    "bio": "Professor of Statistics and Data Science working on applied statistics, machine learning, sports analytics, and information theory.",
-    "sourceUrl": "https://www.amcs.upenn.edu/people/faculty"
   },
   {
     "id": "res_alejandro-ribeiro_penn",
@@ -6477,22 +6417,6 @@
     "sourceUrl": "https://directory.engineering.upenn.edu/dominique-duncan/"
   },
   {
-    "id": "res_duncan-j-watts_penn",
-    "name": "Duncan J. Watts",
-    "title": "Stevens University Professor",
-    "school": "Penn",
-    "department": "Computer and Information Science, Annenberg School for Communication, and Operations, Information and Decisions",
-    "email": "djwatts@cis.upenn.edu",
-    "website": "https://duncanjwatts.com/",
-    "researchAreas": [
-      "computational social science",
-      "network science",
-      "data science"
-    ],
-    "bio": "Stevens University Professor and Penn Integrates Knowledge Professor interested in social and organizational networks, collective dynamics of human systems, web-based experiments, and analysis of large-scale digital data including news production and consumption.",
-    "sourceUrl": "https://directory.engineering.upenn.edu/duncan-j-watts/"
-  },
-  {
     "id": "res_duncan-watts_penn",
     "name": "Duncan Watts",
     "title": "Stevens University Professor; Professor of Operations, Information and Decisions",
@@ -6504,7 +6428,9 @@
       "computational social science",
       "social networks",
       "collective dynamics",
-      "large-scale digital data"
+      "large-scale digital data",
+      "network science",
+      "data science"
     ],
     "bio": "Computational social scientist studying social and organizational networks, collective dynamics of human systems, web-based experiments, and analysis of large-scale digital data including news production and consumption. Founder and director of the Computational Social Science Lab at Penn.",
     "sourceUrl": "https://oid.wharton.upenn.edu/profile/djwatts/"
@@ -7876,28 +7802,14 @@
     "researchAreas": [
       "statistical genetics",
       "genomics",
-      "computational biology"
-    ],
-    "bio": "Develops statistical methods for genetics and genomics. Vice Dean of Wharton Doctoral Programs.",
-    "sourceUrl": "https://statistics.wharton.upenn.edu/profile/nzh/"
-  },
-  {
-    "id": "res_nancy-zhang_penn",
-    "name": "Nancy Zhang",
-    "title": "Professor of Statistics and Data Science",
-    "school": "Penn",
-    "department": "Department of Statistics and Data Science",
-    "email": null,
-    "website": null,
-    "researchAreas": [
-      "genomics",
+      "computational biology",
       "change-point methods",
       "empirical bayes",
       "statistical modeling",
       "model selection"
     ],
-    "bio": "Professor of Statistics and Data Science working on genomics, change-point methods, empirical Bayes estimation, and statistical modeling.",
-    "sourceUrl": "https://www.amcs.upenn.edu/people/faculty"
+    "bio": "Develops statistical methods for genetics and genomics. Vice Dean of Wharton Doctoral Programs.",
+    "sourceUrl": "https://statistics.wharton.upenn.edu/profile/nzh/"
   },
   {
     "id": "res_nat-trask_penn",
@@ -9976,27 +9888,11 @@
       "machine learning",
       "probabilistic methods",
       "bayesian inference",
-      "ai for science"
+      "ai for science",
+      "computational statistics"
     ],
     "bio": "Works on machine learning, artificial intelligence, and computational statistics, with applications across science and engineering, often on probabilistic methods and approximate Bayesian inference. He is Associate Chair of the Computer Science Department and co-director of the AI2 Initiative.",
     "sourceUrl": "https://www.cs.princeton.edu/people/profile/rpa"
-  },
-  {
-    "id": "res_ryan-p-adams_princeton",
-    "name": "Ryan P. Adams",
-    "title": "Professor of Computer Science, Director, Program in Statistics and Machine Learning",
-    "school": "Princeton",
-    "department": "Computer Science",
-    "email": "rpa@princeton.edu",
-    "website": "http://www.cs.princeton.edu/~rpa/",
-    "researchAreas": [
-      "machine learning",
-      "computational statistics",
-      "bayesian inference",
-      "ai for science"
-    ],
-    "bio": "Works on machine learning and computational statistics with applications across science and engineering. Directs the Program in Statistics and Machine Learning.",
-    "sourceUrl": "https://engineering.princeton.edu/faculty/ryan-p-adams"
   },
   {
     "id": "res_sabine-kastner_princeton",
@@ -11149,26 +11045,12 @@
       "bayesian dynamic modeling",
       "time series analysis",
       "machine learning for health",
-      "computational neuroscience"
-    ],
-    "bio": "Fox specializes in large-scale Bayesian dynamic modeling, interpretability and computation, with applications in health and computational neuroscience. She previously held the Amazon Professorship at the University of Washington and leads the Health AI team at Apple.",
-    "sourceUrl": "https://statistics.stanford.edu/people/emily-b-fox"
-  },
-  {
-    "id": "res_emily-fox_stanford",
-    "name": "Emily Fox",
-    "title": "Professor of Statistics and of Computer Science",
-    "school": "Stanford",
-    "department": "Statistics and Computer Science",
-    "email": "ebfox@cs.stanford.edu",
-    "website": null,
-    "researchAreas": [
-      "machine learning",
+      "computational neuroscience",
       "statistics",
       "ai for health"
     ],
-    "bio": "Professor in the Departments of Statistics and Computer Science; previously the Amazon Professor of Machine Learning at the University of Washington. From 2018-2021 she led the Health AI team at Apple as a Distinguished Engineer.",
-    "sourceUrl": "https://www.cs.stanford.edu/people/emily-fox"
+    "bio": "Fox specializes in large-scale Bayesian dynamic modeling, interpretability and computation, with applications in health and computational neuroscience. She previously held the Amazon Professorship at the University of Washington and leads the Health AI team at Apple.",
+    "sourceUrl": "https://statistics.stanford.edu/people/emily-b-fox"
   },
   {
     "id": "res_emma-brunskill_stanford",

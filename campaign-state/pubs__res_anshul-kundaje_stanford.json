@@ -3,7 +3,7 @@
   "authorName": "Anshul Kundaje",
   "authorUrl": "https://openalex.org/A5083952534",
   "worksCount": 627,
-  "citedByCount": 61787,
+  "citedByCount": 61790,
   "topics": [
     "Genomics and Chromatin Dynamics",
     "RNA and protein synthesis mechanisms",
@@ -164,5 +164,5 @@
     }
   ],
   "provider": "openalex",
-  "fetchedAt": "2026-08-17T01:24:28.342Z"
+  "fetchedAt": "2026-08-18T01:20:44.956Z"
 }

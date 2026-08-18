@@ -1,0 +1,138 @@
+{
+  "researcherId": "res_stephen-p-boyd_stanford",
+  "authorName": "Stephen Boyd",
+  "authorUrl": "https://openalex.org/A5011176205",
+  "worksCount": 735,
+  "citedByCount": 141839,
+  "topics": [
+    "Advanced Optimization Algorithms Research",
+    "Sparse and Compressive Sensing Techniques",
+    "Control Systems and Identification",
+    "Advanced Control Systems Optimization",
+    "Stability and Control of Uncertain Systems"
+  ],
+  "publications": [
+    {
+      "title": "Convex Optimization",
+      "year": 2004,
+      "venue": "Cambridge University Press eBooks",
+      "authors": [
+        "Stephen Boyd",
+        "Lieven Vandenberghe"
+      ],
+      "citations": 31248,
+      "doi": "10.1017/cbo9780511804441",
+      "url": "https://doi.org/10.17023/etpt-7q23",
+      "pdfUrl": null,
+      "abstract": "Convex optimization problems arise frequently in many different fields. This book provides a comprehensive introduction to the subject, and shows in detail how such problems can be solved numerically with great efficiency. The book begins with the basic elements of convex sets and functions, and then describes various classes of convex optimization problems. Duality and approximation techniques are then covered, as are statistical estimation techniques. Various geometrical problems are then presented, and there is detailed discussion of unconstrained and constrained minimization problems, and interior-point methods. The focus of the book is on recognizing convex optimization problems and then finding the most appropriate technique for solving them. It contains many worked examples and homework exercises and will appeal to students, researchers and practitioners in fields such as engin..."
+    },
+    {
+      "title": "Distributed Optimization and Statistical Learning via the Alternating Direction Method of Multipliers",
+      "year": 2011,
+      "venue": "Foundations and Trends® in Machine Learning",
+      "authors": [
+        "Stephen Boyd",
+        "Neal Parikh",
+        "Eric Chu",
+        "Borja Peleato",
+        "Jonathan Eckstein"
+      ],
+      "citations": 16245,
+      "doi": "10.1561/2200000016",
+      "url": "https://doi.org/10.1561/2200000016",
+      "pdfUrl": null,
+      "abstract": "Many problems of recent interest in statistics and machine learning can be posed in the framework of convex optimization. Due to the explosion in size and complexity of modern datasets, it is increasingly important to be able to solve problems with a very large number of features or training examples. As a result, both the decentralized collection or storage of these datasets as well as accompanying distributed solution methods are either necessary or at least highly desirable. In this review, we argue that the alternating direction method of multipliers is well suited to distributed convex optimization, and in particular to large-scale problems arising in statistics, machine learning, and related areas. The method was developed in the 1970s, with roots in the 1950s, and is equivalent or closely related to many other algorithms, such as dual decomposition, the method of multipliers, D..."
+    },
+    {
+      "title": "Enhancing Sparsity by Reweighted ℓ 1 Minimization",
+      "year": 2008,
+      "venue": "Journal of Fourier Analysis and Applications",
+      "authors": [
+        "Emmanuel J. Candès",
+        "Michael B. Wakin",
+        "Stephen Boyd"
+      ],
+      "citations": 4977,
+      "doi": "10.1007/s00041-008-9045-x",
+      "url": "https://doi.org/10.1007/s00041-008-9045-x",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Semidefinite Programming",
+      "year": 1996,
+      "venue": "SIAM Review",
+      "authors": [
+        "Lieven Vandenberghe",
+        "Stephen Boyd"
+      ],
+      "citations": 4112,
+      "doi": "10.1137/1038003",
+      "url": "https://doi.org/10.1137/1038003",
+      "pdfUrl": null,
+      "abstract": "In semidefinite programming one minimizes a linear function subject to the constraint that an affine combination of symmetric matrices is positive semidefinite. Such a constraint is nonlinear and nonsmooth, but convex, so semidefinite programs are convex optimization problems. Semidefinite programming unifies several standard problems (e.g., linear and quadratic programming) and finds many applications in engineering and combinatorial optimization. Although semidefinite programs are much more general than linear programs, they are not much harder to solve. Most interior-point methods for linear programming have been generalized to semidefinite programs. As in linear programming, these methods have polynomial worst-case complexity, and perform very well in practice. This paper gives a survey of the theory and applications of semidefinite programs, and an introduction to primal-dual int..."
+    },
+    {
+      "title": "Fast linear iterations for distributed averaging",
+      "year": 2004,
+      "venue": "Systems & Control Letters",
+      "authors": [
+        "Lin Xiao",
+        "Stephen Boyd"
+      ],
+      "citations": 2782,
+      "doi": "10.1016/j.sysconle.2004.02.022",
+      "url": "https://doi.org/10.1016/j.sysconle.2004.02.022",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Graph Implementations for Nonsmooth Convex Programs",
+      "year": 2007,
+      "venue": "Lecture notes in control and information sciences",
+      "authors": [
+        "Michael C. Grant",
+        "Stephen Boyd"
+      ],
+      "citations": 2740,
+      "doi": "10.1007/978-1-84800-155-8_7",
+      "url": "https://doi.org/10.1007/978-1-84800-155-8_7",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Randomized gossip algorithms",
+      "year": 2006,
+      "venue": "IEEE Transactions on Information Theory",
+      "authors": [
+        "Stephen Boyd",
+        "Aritra Ghosh",
+        "Balaji Prabhakar",
+        "Devavrat Shah"
+      ],
+      "citations": 2526,
+      "doi": "10.1109/tit.2006.874516",
+      "url": "https://doi.org/10.1109/tit.2006.874516",
+      "pdfUrl": null,
+      "abstract": "Motivated by applications to sensor, peer-to-peer, and ad hoc networks, we study distributed algorithms, also known as gossip algorithms, for exchanging information and for computing in an arbitrarily connected network of nodes. The topology of such networks changes continuously as new nodes join and old nodes leave the network. Algorithms for such networks need to be robust against changes in topology. Additionally, nodes in sensor networks operate under limited computational, communication, and energy resources. These constraints have motivated the design of \"gossip\" algorithms: schemes which distribute the computational burden and in which a node communicates with a randomly chosen neighbor. We analyze the averaging problem under the gossip constraint for an arbitrary network graph, and find that the averaging time of a gossip algorithm depends on the second largest eigenvalue of a..."
+    },
+    {
+      "title": "Applications of second-order cone programming",
+      "year": 1998,
+      "venue": "Linear Algebra and its Applications",
+      "authors": [
+        "Miguel Sousa Lobo",
+        "Lieven Vandenberghe",
+        "Stephen Boyd",
+        "Hervé Lebret"
+      ],
+      "citations": 2433,
+      "doi": "10.1016/s0024-3795(98)10032-0",
+      "url": "https://doi.org/10.1016/s0024-3795(98)10032-0",
+      "pdfUrl": "https://www.sciencedirect.com/science/article/pii/S0024379598100320/pdf",
+      "abstract": null
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:18.234Z"
+}

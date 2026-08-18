@@ -3,7 +3,7 @@
   "authorName": "Olivier Gevaert",
   "authorUrl": "https://openalex.org/A5078274543",
   "worksCount": 573,
-  "citedByCount": 16687,
+  "citedByCount": 16688,
   "topics": [
     "Radiomics and Machine Learning in Medical Imaging",
     "Glioma Diagnosis and Treatment",
@@ -168,5 +168,5 @@
     }
   ],
   "provider": "openalex",
-  "fetchedAt": "2026-08-17T01:37:00.124Z"
+  "fetchedAt": "2026-08-18T01:20:40.575Z"
 }

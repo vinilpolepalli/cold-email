@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxz5clt1t8awd",
+  "userId": "demo-user",
+  "researcherId": "res_alan-jasanoff_mit",
+  "researcherName": "Alan Jasanoff",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 68.6,
+  "reasons": [
+    "Overlaps on computational neuroscience, neural network modeling, molecular imaging",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "jasanoff@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:18:55.505Z",
+  "updatedAt": "2026-08-18T01:18:55.505Z"
+}

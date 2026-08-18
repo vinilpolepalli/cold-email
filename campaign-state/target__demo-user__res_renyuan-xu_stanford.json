@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxz5clyp8rk8o",
+  "userId": "demo-user",
+  "researcherId": "res_renyuan-xu_stanford",
+  "researcherName": "Renyuan Xu",
+  "school": "Stanford",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 59,
+  "reasons": [
+    "Overlaps on machine learning theory, mathematical finance",
+    "Stanford is priority one"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "renyuanxu@stanford.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:18:55.510Z",
+  "updatedAt": "2026-08-18T01:18:55.510Z"
+}

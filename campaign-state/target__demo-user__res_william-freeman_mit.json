@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpjhtxenqa",
+  "userId": "demo-user",
+  "researcherId": "res_william-freeman_mit",
+  "researcherName": "William Freeman",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 61.6,
+  "reasons": [
+    "Overlaps on computer vision, machine learning, computational photography",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "billf@csail.mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:12:59.021Z",
+  "updatedAt": "2026-08-18T01:12:59.021Z"
+}

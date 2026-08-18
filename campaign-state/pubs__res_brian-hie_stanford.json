@@ -1,0 +1,166 @@
+{
+  "researcherId": "res_brian-hie_stanford",
+  "authorName": "Brian Hie",
+  "authorUrl": "https://openalex.org/A5021962955",
+  "worksCount": 87,
+  "citedByCount": 11035,
+  "topics": [
+    "RNA and protein synthesis mechanisms",
+    "Machine Learning in Bioinformatics",
+    "Single-cell and spatial transcriptomics",
+    "Protein Structure and Dynamics",
+    "Genomics and Phylogenetic Studies"
+  ],
+  "publications": [
+    {
+      "title": "Evolutionary-scale prediction of atomic-level protein structure with a language model",
+      "year": 2023,
+      "venue": "Science",
+      "authors": [
+        "Zeming Lin",
+        "Halil Akin",
+        "Roshan Rao",
+        "Brian Hie",
+        "Zhongkai Zhu",
+        "Wenting Lu",
+        "Nikita Smetanin",
+        "Robert Verkuil"
+      ],
+      "citations": 5305,
+      "doi": "10.1126/science.ade2574",
+      "url": "https://doi.org/10.1126/science.ade2574",
+      "pdfUrl": "https://www.biorxiv.org/content/biorxiv/early/2022/10/31/2022.07.20.500902.full.pdf",
+      "abstract": "Recent advances in machine learning have leveraged evolutionary information in multiple sequence alignments to predict protein structure. We demonstrate direct inference of full atomic-level protein structure from primary sequence using a large language model. As language models of protein sequences are scaled up to 15 billion parameters, an atomic-resolution picture of protein structure emerges in the learned representations. This results in an order-of-magnitude acceleration of high-resolution structure prediction, which enables large-scale structural characterization of metagenomic proteins. We apply this capability to construct the ESM Metagenomic Atlas by predicting structures for >617 million metagenomic protein sequences, including >225 million that are predicted with high confidence, which gives a view into the vast breadth and diversity of natural proteins."
+    },
+    {
+      "title": "Efficient integration of heterogeneous single-cell transcriptomes using Scanorama",
+      "year": 2019,
+      "venue": "Nature Biotechnology",
+      "authors": [
+        "Brian Hie",
+        "Bryan D. Bryson",
+        "Bonnie Berger"
+      ],
+      "citations": 1023,
+      "doi": "10.1038/s41587-019-0113-3",
+      "url": "https://doi.org/10.1038/s41587-019-0113-3",
+      "pdfUrl": "https://www.nature.com/articles/s41587-019-0113-3.pdf",
+      "abstract": "Integration of single-cell RNA sequencing (scRNA-seq) data from multiple experiments, laboratories and technologies can uncover biological insights, but current methods for scRNA-seq data integration are limited by a requirement for datasets to derive from functionally similar cells. We present Scanorama, an algorithm that identifies and merges the shared cell types among all pairs of datasets and accurately integrates heterogeneous collections of scRNA-seq data. We applied Scanorama to integrate and remove batch effects across 105,476 cells from 26 diverse scRNA-seq experiments representing 9 different technologies. Scanorama is sensitive to subtle temporal changes within the same cell lineage, successfully integrating functionally similar cells across time series data of CD14+ monocytes at different stages of differentiation into macrophages. Finally, we show that Scanorama is order..."
+    },
+    {
+      "title": "Sequence modeling and design from molecular to genome scale with Evo",
+      "year": 2024,
+      "venue": "Science",
+      "authors": [
+        "Eric Nguyen",
+        "Michael Poli",
+        "Matthew G. Durrant",
+        "Brian Kang",
+        "Dhruva Katrekar",
+        "David Li",
+        "Liam J. Bartie",
+        "Armin W. Thomas"
+      ],
+      "citations": 480,
+      "doi": "10.1126/science.ado9336",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/12057570",
+      "pdfUrl": null,
+      "abstract": "The genome is a sequence that encodes the DNA, RNA, and proteins that orchestrate an organism's function. We present Evo, a long-context genomic foundation model with a frontier architecture trained on millions of prokaryotic and phage genomes, and report scaling laws on DNA to complement observations in language and vision. Evo generalizes across DNA, RNA, and proteins, enabling zero-shot function prediction competitive with domain-specific language models and the generation of functional CRISPR-Cas and transposon systems, representing the first examples of protein-RNA and protein-DNA codesign with a language model. Evo also learns how small mutations affect whole-organism fitness and generates megabase-scale sequences with plausible genomic architecture. These prediction and generation capabilities span molecular to genomic scales of complexity, advancing our understanding and contr..."
+    },
+    {
+      "title": "Efficient evolution of human antibodies from general protein language models",
+      "year": 2023,
+      "venue": "Nature Biotechnology",
+      "authors": [
+        "Brian Hie",
+        "Varun R. Shanker",
+        "Duo Xu",
+        "Theodora U. J. Bruun",
+        "Payton A. Weidenbacher",
+        "Shaogeng Tang",
+        "Wesley Wu",
+        "John E. Pak"
+      ],
+      "citations": 465,
+      "doi": "10.1038/s41587-023-01763-2",
+      "url": "https://doi.org/10.1038/s41587-023-01763-2",
+      "pdfUrl": "https://www.nature.com/articles/s41587-023-01763-2.pdf",
+      "abstract": "Natural evolution must explore a vast landscape of possible sequences for desirable yet rare mutations, suggesting that learning from natural evolutionary strategies could guide artificial evolution. Here we report that general protein language models can efficiently evolve human antibodies by suggesting mutations that are evolutionarily plausible, despite providing the model with no information about the target antigen, binding specificity or protein structure. We performed language-model-guided affinity maturation of seven antibodies, screening 20 or fewer variants of each antibody across only two rounds of laboratory evolution, and improved the binding affinities of four clinically relevant, highly mature antibodies up to sevenfold and three unmatured antibodies up to 160-fold, with many designs also demonstrating favorable thermostability and viral neutralization activity against ..."
+    },
+    {
+      "title": "Learning inverse folding from millions of predicted structures",
+      "year": 2022,
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "authors": [
+        "Chloe Hsu",
+        "Robert Verkuil",
+        "Jason Liu",
+        "Zeming Lin",
+        "Brian Hie",
+        "Tom Sercu",
+        "Adam Lerer",
+        "Alexander Rives"
+      ],
+      "citations": 451,
+      "doi": "10.1101/2022.04.10.487779",
+      "url": "https://doi.org/10.1101/2022.04.10.487779",
+      "pdfUrl": "https://www.biorxiv.org/content/biorxiv/early/2022/04/10/2022.04.10.487779.full.pdf",
+      "abstract": "Abstract We consider the problem of predicting a protein sequence from its backbone atom coordinates. Machine learning approaches to this problem to date have been limited by the number of available experimentally determined protein structures. We augment training data by nearly three orders of magnitude by predicting structures for 12M protein sequences using AlphaFold2. Trained with this additional data, a sequence-to-sequence transformer with invariant geometric input processing layers achieves 51% native sequence recovery on structurally held-out backbones with 72% recovery for buried residues, an overall improvement of almost 10 percentage points over existing methods. The model generalizes to a variety of more complex tasks including design of protein complexes, partially masked structures, binding interfaces, and multiple states."
+    },
+    {
+      "title": "Learning the language of viral evolution and escape",
+      "year": 2021,
+      "venue": "Science",
+      "authors": [
+        "Brian Hie",
+        "Ellen D. Zhong",
+        "Bonnie Berger",
+        "Bryan D. Bryson"
+      ],
+      "citations": 389,
+      "doi": "10.1126/science.abd7331",
+      "url": "https://doi.org/10.1126/science.abd7331",
+      "pdfUrl": null,
+      "abstract": "The ability for viruses to mutate and evade the human immune system and cause infection, called viral escape, remains an obstacle to antiviral and vaccine development. Understanding the complex rules that govern escape could inform therapeutic design. We modeled viral escape with machine learning algorithms originally developed for human natural language. We identified escape mutations as those that preserve viral infectivity but cause a virus to look different to the immune system, akin to word changes that preserve a sentence's grammaticality but change its meaning. With this approach, language models of influenza hemagglutinin, HIV-1 envelope glycoprotein (HIV Env), and severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) Spike viral proteins can accurately predict structural escape patterns using sequence data alone. Our study represents a promising conceptual bridge betwe..."
+    },
+    {
+      "title": "Genome modeling and design across all domains of life with Evo 2",
+      "year": 2025,
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "authors": [
+        "Garyk Brixi",
+        "Matthew G. Durrant",
+        "Ja‐Lok Ku",
+        "Michael Poli",
+        "Greg Brockman",
+        "Daniel Chang",
+        "Gabriel González",
+        "S. B. King"
+      ],
+      "citations": 214,
+      "doi": "10.1101/2025.02.18.638918",
+      "url": "https://doi.org/10.1101/2025.02.18.638918",
+      "pdfUrl": null,
+      "abstract": "Abstract All of life encodes information with DNA. While tools for sequencing, synthesis, and editing of genomic code have transformed biological research, intelligently composing new biological systems would also require a deep understanding of the immense complexity encoded by genomes. We introduce Evo 2, a biological foundation model trained on 9.3 trillion DNA base pairs from a highly curated genomic atlas spanning all domains of life. We train Evo 2 with 7B and 40B parameters to have an unprecedented 1 million token context window with single-nucleotide resolution. Evo 2 learns from DNA sequence alone to accurately predict the functional impacts of genetic variation—from noncoding pathogenic mutations to clinically significant BRCA1 variants—without task-specific finetuning. Applying mechanistic interpretability analyses, we reveal that Evo 2 autonomously learns a breadth of biol..."
+    },
+    {
+      "title": "Geometric Sketching Compactly Summarizes the Single-Cell Transcriptomic Landscape",
+      "year": 2019,
+      "venue": "Cell Systems",
+      "authors": [
+        "Brian Hie",
+        "Hyunghoon Cho",
+        "Benjamin DeMeo",
+        "Bryan D. Bryson",
+        "Bonnie Berger"
+      ],
+      "citations": 209,
+      "doi": "10.1016/j.cels.2019.05.003",
+      "url": "https://doi.org/10.1016/j.cels.2019.05.003",
+      "pdfUrl": "http://www.cell.com/article/S2405471219301528/pdf",
+      "abstract": null
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:20:47.518Z"
+}

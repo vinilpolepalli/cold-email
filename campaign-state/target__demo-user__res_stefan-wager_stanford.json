@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxz5clyztj3v8",
+  "userId": "demo-user",
+  "researcherId": "res_stefan-wager_stanford",
+  "researcherName": "Stefan Wager",
+  "school": "Stanford",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 59,
+  "reasons": [
+    "Overlaps on causal inference, machine learning",
+    "Stanford is priority one"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "swager@stanford.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:18:55.510Z",
+  "updatedAt": "2026-08-18T01:18:55.510Z"
+}

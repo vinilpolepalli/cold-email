@@ -1,0 +1,145 @@
+{
+  "researcherId": "res_christopher-manning_stanford",
+  "authorName": "Christopher D. Manning",
+  "authorUrl": "https://openalex.org/A5046006076",
+  "worksCount": 775,
+  "citedByCount": 178412,
+  "topics": [
+    "Natural Language Processing Techniques",
+    "Topic Modeling",
+    "Multimodal Machine Learning Applications",
+    "Text Readability and Simplification",
+    "Semantic Web and Ontologies"
+  ],
+  "publications": [
+    {
+      "title": "Glove: Global Vectors for Word Representation",
+      "year": 2014,
+      "venue": null,
+      "authors": [
+        "Jeffrey Pennington",
+        "Richard Socher",
+        "Christopher D. Manning"
+      ],
+      "citations": 33979,
+      "doi": "10.3115/v1/d14-1162",
+      "url": "https://doi.org/10.3115/v1/d14-1162",
+      "pdfUrl": null,
+      "abstract": "Recent methods for learning vector space representations of words have succeeded in capturing fine-grained semantic and syntactic regularities using vector arith-metic, but the origin of these regularities has remained opaque. We analyze and make explicit the model properties needed for such regularities to emerge in word vectors. The result is a new global log-bilinear regression model that combines the advantages of the two major model families in the literature: global matrix factorization and local context window methods. Our model efficiently leverages statistical information by training only on the nonzero elements in a word-word co-occurrence matrix, rather than on the en-tire sparse matrix or on individual context windows in a large corpus. The model pro-duces a vector space with meaningful sub-structure, as evidenced by its performance of 75 % on a recent word analogy task. I..."
+    },
+    {
+      "title": "Introduction to information retrieval",
+      "year": 2009,
+      "venue": "Choice Reviews Online",
+      "authors": [
+        "Christopher D. Manning",
+        "Prabhakar Raghavan",
+        "Hinrich Schütze"
+      ],
+      "citations": 12590,
+      "doi": "10.5860/choice.46-2715",
+      "url": "https://doi.org/10.5860/choice.46-2715",
+      "pdfUrl": null,
+      "abstract": "Class-tested and coherent, this textbook teaches classical and web information retrieval, including web search and the related areas of text classification and text clustering from basic concepts. It gives an up-to-date treatment of all aspects of the design and implementation of systems for gathering, indexing, and searching documents; methods for evaluating systems; and an introduction to the use of machine learning methods on text collections. All the important ideas are explained using examples and figures, making it perfect for introductory courses in information retrieval for advanced undergraduates and graduate students in computer science. Based on feedback from extensive classroom experience, the book has been carefully structured in order to make teaching more natural and effective. Slides and additional exercises (with solutions for lecturers) are also available through the..."
+    },
+    {
+      "title": "Foundations of statistical natural language processing",
+      "year": 1999,
+      "venue": "CERN Document Server (European Organization for Nuclear Research)",
+      "authors": [
+        "Christopher D. Manning",
+        "Hinrich Schütze"
+      ],
+      "citations": 9995,
+      "doi": null,
+      "url": "https://bvbr.bib-bvb.de:443/F?func=service&doc_library=BVB01&local_base=BVB01&doc_number=008594330&sequence=000002&line_number=0001&func_code=DB_RECORDS&service_type=MEDIA",
+      "pdfUrl": null,
+      "abstract": "Statistical approaches to processing natural language text have become dominant in recent years. This foundational text is the first comprehensive introduction to statistical natural language processing (NLP) to appear. The book contains all the theory and algorithms needed for building NLP tools. It provides broad but rigorous coverage of mathematical and linguistic foundations, as well as detailed discussion of statistical methods, allowing students and researchers to construct their own implementations. The book covers collocation finding, word sense disambiguation, probabilistic parsing, information retrieval, and other applications."
+    },
+    {
+      "title": "Effective Approaches to Attention-based Neural Machine Translation",
+      "year": 2015,
+      "venue": null,
+      "authors": [
+        "Thang Luong",
+        "Hieu Pham",
+        "Christopher D. Manning"
+      ],
+      "citations": 8606,
+      "doi": "10.18653/v1/d15-1166",
+      "url": "https://doi.org/10.18653/v1/d15-1166",
+      "pdfUrl": "https://www.aclweb.org/anthology/D15-1166.pdf",
+      "abstract": "An attentional mechanism has lately been used to improve neural machine translation (NMT) by selectively focusing on parts of the source sentence during translation. However, there has been little work exploring useful architectures for attention-based NMT. This paper examines two simple and effective classes of attentional mechanism: a global approach which always attends to all source words and a local one that only looks at a subset of source words at a time. We demonstrate the effectiveness of both approaches on the WMT translation tasks between English and German in both directions. With local attention, we achieve a significant gain of 5.0 BLEU points over non-attentional systems that already incorporate known techniques such as dropout. Our ensemble model using different attention architectures yields a new state-of-the-art result in the WMT'15 English to German translation tas..."
+    },
+    {
+      "title": "The Stanford CoreNLP Natural Language Processing Toolkit",
+      "year": 2014,
+      "venue": null,
+      "authors": [
+        "Christopher D. Manning",
+        "Mihai Surdeanu",
+        "John Bauer",
+        "Jenny Rose Finkel",
+        "Steven Bethard",
+        "David McClosky"
+      ],
+      "citations": 7260,
+      "doi": "10.3115/v1/p14-5010",
+      "url": "https://doi.org/10.3115/v1/p14-5010",
+      "pdfUrl": "https://aclanthology.org/P14-5010.pdf",
+      "abstract": "Christopher Manning, Mihai Surdeanu, John Bauer, Jenny Finkel, Steven Bethard, David McClosky. Proceedings of 52nd Annual Meeting of the Association for Computational Linguistics: System Demonstrations. 2014."
+    },
+    {
+      "title": "Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank",
+      "year": 2013,
+      "venue": null,
+      "authors": [
+        "Richard Socher",
+        "Alex Perelygin",
+        "Jean Y. Wu",
+        "Jason Chuang",
+        "Christopher D. Manning",
+        "Andrew Y. Ng",
+        "Christopher Potts"
+      ],
+      "citations": 6827,
+      "doi": "10.18653/v1/d13-1170",
+      "url": "https://doi.org/10.18653/v1/d13-1170",
+      "pdfUrl": "https://aclanthology.org/D13-1170.pdf",
+      "abstract": "Richard Socher, Alex Perelygin, Jean Wu, Jason Chuang, Christopher D. Manning, Andrew Ng, Christopher Potts. Proceedings of the 2013 Conference on Empirical Methods in Natural Language Processing. 2013."
+    },
+    {
+      "title": "Get To The Point: Summarization with Pointer-Generator Networks",
+      "year": 2017,
+      "venue": null,
+      "authors": [
+        "Abigail See",
+        "Peter J. Liu",
+        "Christopher D. Manning"
+      ],
+      "citations": 3931,
+      "doi": "10.18653/v1/p17-1099",
+      "url": "https://doi.org/10.18653/v1/p17-1099",
+      "pdfUrl": "https://www.aclweb.org/anthology/P17-1099.pdf",
+      "abstract": "Neural sequence-to-sequence models have provided a viable new approach for abstractive text summarization (meaning they are not restricted to simply selecting and rearranging passages from the original text). However, these models have two shortcomings: they are liable to reproduce factual details inaccurately, and they tend to repeat themselves. In this work we propose a novel architecture that augments the standard sequence-to-sequence attentional model in two orthogonal ways. First, we use a hybrid pointer-generator network that can copy words from the source text via pointing, which aids accurate reproduction of information, while retaining the ability to produce novel words through the generator. Second, we use coverage to keep track of what has been summarized, which discourages repetition. We apply our model to the CNN / Daily Mail summarization task, outperforming the current ..."
+    },
+    {
+      "title": "A large annotated corpus for learning natural language inference",
+      "year": 2015,
+      "venue": null,
+      "authors": [
+        "Samuel R. Bowman",
+        "Gabor Angeli",
+        "Christopher Potts",
+        "Christopher D. Manning"
+      ],
+      "citations": 3474,
+      "doi": "10.18653/v1/d15-1075",
+      "url": "https://doi.org/10.18653/v1/d15-1075",
+      "pdfUrl": "https://doi.org/10.18653/v1/d15-1075",
+      "abstract": "Understanding entailment and contradiction is fundamental to understanding natural language, and inference about entailment and contradiction is a valuable testing ground for the development of semantic representations. However, machine learning research in this area has been dramatically limited by the lack of large-scale resources. To address this, we introduce the Stanford Natural Language Inference corpus, a new, freely available collection of labeled sentence pairs, written by humans doing a novel grounded task based on image captioning. At 570K pairs, it is two orders of magnitude larger than all other resources of its type. This increase in scale allows lexicalized classifiers to outperform some sophisticated existing entailment models, and it allows a neural network-based model to perform competitively on natural language inference benchmarks for the first time."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:20:55.083Z"
+}

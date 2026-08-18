@@ -1,0 +1,146 @@
+{
+  "researcherId": "res_ramesh-johari_stanford",
+  "authorName": "Ramesh Johari",
+  "authorUrl": "https://openalex.org/A5042177635",
+  "worksCount": 220,
+  "citedByCount": 6642,
+  "topics": [
+    "Auction Theory and Applications",
+    "Game Theory and Applications",
+    "Consumer Market Behavior and Pricing",
+    "Economic theories and models",
+    "Advanced Bandit Algorithms Research"
+  ],
+  "publications": [
+    {
+      "title": "A buffer-based approach to rate adaptation",
+      "year": 2014,
+      "venue": null,
+      "authors": [
+        "Te-Yuan Huang",
+        "Ramesh Johari",
+        "Nick McKeown",
+        "Matthew Trunnell",
+        "Mark A. Watson"
+      ],
+      "citations": 1008,
+      "doi": "10.1145/2619239.2626296",
+      "url": "https://doi.org/10.1145/2619239.2626296",
+      "pdfUrl": "https://dl.acm.org/doi/pdf/10.1145/2619239.2626296",
+      "abstract": "Existing ABR algorithms face a significant challenge in estimating future capacity: capacity can vary widely over time, a phenomenon commonly observed in commercial services. In this work, we suggest an alternative approach: rather than presuming that capacity estimation is required, it is perhaps better to begin by using only the buffer, and then ask when capacity estimation is needed. We test the viability of this approach through a series of experiments spanning millions of real users in a commercial service. We start with a simple design which directly chooses the video rate based on the current buffer occupancy. Our own investigation reveals that capacity estimation is unnecessary in steady state; however using simple capacity estimation (based on immediate past throughput) is important during the startup phase, when the buffer itself is growing from empty. This approach allows u..."
+    },
+    {
+      "title": "Efficiency Loss in a Network Resource Allocation Game",
+      "year": 2004,
+      "venue": "Mathematics of Operations Research",
+      "authors": [
+        "Ramesh Johari",
+        "John N. Tsitsiklis"
+      ],
+      "citations": 553,
+      "doi": "10.1287/moor.1040.0091",
+      "url": "https://doi.org/10.1287/moor.1040.0091",
+      "pdfUrl": null,
+      "abstract": "We explore the properties of a congestion game in which users of a congested resource anticipate the effect of their actions on the price of the resource. When users are sharing a single resource, we establish that the aggregate utility received by the users is at least 3/4 of the maximum possible aggregate utility. We also consider extensions to a network context, where users submit individual payments for each link in the network they may wish to use. In this network model, we again show that the selfish behavior of the users leads to an aggregate utility that is no worse than 3/4 of the maximum possible aggregate utility. We also show that the same analysis extends to a wide class of resource allocation systems where end users simultaneously require multiple scarce resources. These results form part of a growing literature on the “price of anarchy,” i.e., the extent to which selfis..."
+    },
+    {
+      "title": "Confused, timid, and unstable",
+      "year": 2012,
+      "venue": null,
+      "authors": [
+        "Te-Yuan Huang",
+        "Nikhil Handigol",
+        "Brandon Heller",
+        "Nick McKeown",
+        "Ramesh Johari"
+      ],
+      "citations": 335,
+      "doi": "10.1145/2398776.2398800",
+      "url": "https://doi.org/10.1145/2398776.2398800",
+      "pdfUrl": null,
+      "abstract": "Today's commercial video streaming services use dynamic rate selection to provide a high-quality user experience. Most services host content on standard HTTP servers in CDNs, so rate selection must occur at the client. We measure three popular video streaming services -- Hulu, Netflix, and Vudu -- and find that accurate client-side bandwidth estimation above the HTTP layer is hard. As a result, rate selection based on inaccurate estimates can trigger a feedback loop, leading to undesirably variable and low-quality video. We call this phenomenon the \"downward spiral effect\", and we measure it on all three services, present insights into its root causes, and validate initial solutions to prevent it."
+    },
+    {
+      "title": "Pricing in Ride-Share Platforms: A Queueing-Theoretic Approach",
+      "year": 2015,
+      "venue": "SSRN Electronic Journal",
+      "authors": [
+        "Siddhartha Banerjee",
+        "Carlos Riquelme",
+        "Ramesh Johari"
+      ],
+      "citations": 229,
+      "doi": "10.2139/ssrn.2568258",
+      "url": "https://doi.org/10.2139/ssrn.2568258",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Carving research slices out of your production networks with OpenFlow",
+      "year": 2010,
+      "venue": "ACM SIGCOMM Computer Communication Review",
+      "authors": [
+        "Rob Sherwood",
+        "Michael Chan",
+        "Adam Covington",
+        "Glen Gibb",
+        "Mario Flajšlik",
+        "Nikhil Handigol",
+        "Te-Yuan Huang",
+        "Peyman Kazemian"
+      ],
+      "citations": 218,
+      "doi": "10.1145/1672308.1672333",
+      "url": "https://doi.org/10.1145/1672308.1672333",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Pricing in Ride-Sharing Platforms",
+      "year": 2015,
+      "venue": null,
+      "authors": [
+        "Siddhartha Banerjee",
+        "Ramesh Johari",
+        "Carlos Riquelme"
+      ],
+      "citations": 197,
+      "doi": "10.1145/2764468.2764527",
+      "url": "https://doi.org/10.1145/2764468.2764527",
+      "pdfUrl": null,
+      "abstract": "We study optimal pricing strategies for ride-sharing platforms, using a queueing-theoretic economic model. Analysis of pricing in such settings is complex: On one hand these platforms are two-sided - this requires economic models that capture the incentives of both drivers and passengers. On the other hand, these platforms support very high temporal-resolution for data collection and pricing - this requires stochastic models that capture the dynamics of drivers and passengers in the system."
+    },
+    {
+      "title": "Efficiency of Scalar-Parameterized Mechanisms",
+      "year": 2009,
+      "venue": "Operations Research",
+      "authors": [
+        "Ramesh Johari",
+        "John N. Tsitsiklis"
+      ],
+      "citations": 132,
+      "doi": "10.1287/opre.1080.0638",
+      "url": "https://doi.org/10.1287/opre.1080.0638",
+      "pdfUrl": null,
+      "abstract": "We consider the problem of allocating a fixed amount of an infinitely divisible resource among multiple competing, fully rational users. We study the efficiency guarantees that are possible when we restrict to mechanisms that satisfy certain scalability constraints motivated by large-scale communication networks; in particular, we restrict attention to mechanisms where users are restricted to one-dimensional strategy spaces. We first study the efficiency guarantees possible when the mechanism is not allowed to price differentiate. We study the worst-case efficiency loss (ratio of the utility associated with a Nash equilibrium to the maximum possible utility), and show that Kelly's proportional allocation mechanism minimizes the efficiency loss when users are price anticipating. We then turn our attention to mechanisms where price differentiation is permitted; using an adaptation of th..."
+    },
+    {
+      "title": "Peeking at A/B Tests",
+      "year": 2017,
+      "venue": null,
+      "authors": [
+        "Ramesh Johari",
+        "Pete Koomen",
+        "Leonid Pekelis",
+        "David Walsh"
+      ],
+      "citations": 129,
+      "doi": "10.1145/3097983.3097992",
+      "url": "https://doi.org/10.1145/3097983.3097992",
+      "pdfUrl": null,
+      "abstract": "This paper reports on novel statistical methodology, which has been deployed by the commercial A/B testing platform Optimizely to communicate experimental results to their customers. Our methodology addresses the issue that traditional p-values and confidence intervals give unreliable inference. This is because users of A/B testing software are known to continuously monitor these measures as the experiment is running. We provide always valid p-values and confidence intervals that are provably robust to this effect. Not only does this make it safe for a user to continuously monitor, but it empowers her to detect true effects more efficiently. This paper provides simulations and numerical studies on Optimizely's data, demonstrating an improvement in detection performance over traditional methods."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:35:06.250Z"
+}

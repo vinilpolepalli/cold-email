@@ -3,7 +3,7 @@
   "authorName": "Emily B. Fox",
   "authorUrl": "https://openalex.org/A5068568859",
   "worksCount": 195,
-  "citedByCount": 7194,
+  "citedByCount": 7197,
   "topics": [
     "Bayesian Methods and Mixture Models",
     "Gaussian Processes and Bayesian Inference",
@@ -151,5 +151,5 @@
     }
   ],
   "provider": "openalex",
-  "fetchedAt": "2026-08-17T01:37:18.774Z"
+  "fetchedAt": "2026-08-18T01:20:46.137Z"
 }

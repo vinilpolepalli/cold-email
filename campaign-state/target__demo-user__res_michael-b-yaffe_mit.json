@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpjcpl94g1",
+  "userId": "demo-user",
+  "researcherId": "res_michael-b-yaffe_mit",
+  "researcherName": "Michael B. Yaffe",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 72.5,
+  "reasons": [
+    "Overlaps on computational systems biology, signaling networks, cancer biology",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "myaffe@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:12:59.016Z",
+  "updatedAt": "2026-08-18T01:12:59.016Z"
+}

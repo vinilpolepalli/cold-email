@@ -1,0 +1,132 @@
+{
+  "researcherId": "res_markus-pelger_stanford",
+  "authorName": "Markus Pelger",
+  "authorUrl": "https://openalex.org/A5036333323",
+  "worksCount": 97,
+  "citedByCount": 2256,
+  "topics": [
+    "Financial Markets and Investment Strategies",
+    "Stock Market Forecasting Methods",
+    "Financial Risk and Volatility Modeling",
+    "Complex Systems and Time Series Analysis",
+    "Stochastic processes and financial applications"
+  ],
+  "publications": [
+    {
+      "title": "Deep Learning in Asset Pricing",
+      "year": 2023,
+      "venue": "Management Science",
+      "authors": [
+        "Luyang Chen",
+        "Markus Pelger",
+        "Jason Zhu"
+      ],
+      "citations": 429,
+      "doi": "10.1287/mnsc.2023.4695",
+      "url": "https://doi.org/10.1287/mnsc.2023.4695",
+      "pdfUrl": null,
+      "abstract": "We use deep neural networks to estimate an asset pricing model for individual stock returns that takes advantage of the vast amount of conditioning information, keeps a fully flexible form, and accounts for time variation. The key innovations are to use the fundamental no-arbitrage condition as criterion function to construct the most informative test assets with an adversarial approach and to extract the states of the economy from many macroeconomic time series. Our asset pricing model outperforms out-of-sample all benchmark approaches in terms of Sharpe ratio, explained variation, and pricing errors and identifies the key factors that drive asset prices. This paper was accepted by Agostino Capponi, finance. Supplemental Material: The online appendix and data are available at https://doi.org/10.1287/mnsc.2023.4695 ."
+    },
+    {
+      "title": "Factors That Fit the Time Series and Cross-Section of Stock Returns",
+      "year": 2020,
+      "venue": "Review of Financial Studies",
+      "authors": [
+        "Martin Lettau",
+        "Markus Pelger"
+      ],
+      "citations": 357,
+      "doi": "10.1093/rfs/hhaa020",
+      "url": "https://doi.org/10.1093/rfs/hhaa020",
+      "pdfUrl": "https://doi.org/10.3386/w24858",
+      "abstract": "Abstract We propose a new method for estimating latent asset pricing factors that fit the time series and cross-section of expected returns. Our estimator generalizes principal component analysis (PCA) by including a penalty on the pricing error in expected returns. Our approach finds weak factors with high Sharpe ratios that PCA cannot detect. We discover five factors with economic meaning that explain well the cross-section and time series of characteristic-sorted portfolio returns. The out-of-sample maximum Sharpe ratio of our factors is twice as large as with PCA with substantially smaller pricing errors. Our factors imply that a significant amount of characteristic information is redundant. Authors have furnished an Internet Appendix, which is available on the Oxford University Press Web site next to the link to the final published paper online."
+    },
+    {
+      "title": "Estimating latent asset-pricing factors",
+      "year": 2020,
+      "venue": "Journal of Econometrics",
+      "authors": [
+        "Martin Lettau",
+        "Markus Pelger"
+      ],
+      "citations": 188,
+      "doi": "10.1016/j.jeconom.2019.08.012",
+      "url": "https://doi.org/10.1016/j.jeconom.2019.08.012",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Forest Through the Trees: Building Cross-Sections of Stock Returns",
+      "year": 2019,
+      "venue": "SSRN Electronic Journal",
+      "authors": [
+        "Svetlana Bryzgalova",
+        "Markus Pelger",
+        "Jason Zhu"
+      ],
+      "citations": 149,
+      "doi": "10.2139/ssrn.3493458",
+      "url": "https://doi.org/10.2139/ssrn.3493458",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Large-dimensional factor modeling based on high-frequency observations",
+      "year": 2018,
+      "venue": "Journal of Econometrics",
+      "authors": [
+        "Markus Pelger"
+      ],
+      "citations": 119,
+      "doi": "10.1016/j.jeconom.2018.09.004",
+      "url": "https://doi.org/10.1016/j.jeconom.2018.09.004",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Understanding Systematic Risk: A High‐Frequency Approach",
+      "year": 2020,
+      "venue": "The Journal of Finance",
+      "authors": [
+        "Markus Pelger"
+      ],
+      "citations": 111,
+      "doi": "10.1111/jofi.12898",
+      "url": "https://doi.org/10.1111/jofi.12898",
+      "pdfUrl": null,
+      "abstract": "ABSTRACT Based on a novel high‐frequency data set for a large number of firms, I estimate the time‐varying latent continuous and jump factors that explain individual stock returns. The factors are estimated using principal component analysis applied to a local volatility and jump covariance matrix. I find four stable continuous systematic factors, which can be well approximated by a market, oil, finance, and electricity portfolio, while there is only one stable jump market factor. The exposure of stocks to these risk factors and their explained variation is time‐varying. The four continuous factors carry an intraday risk premium that reverses overnight."
+    },
+    {
+      "title": "Machine-learning the skill of mutual fund managers",
+      "year": 2023,
+      "venue": "Journal of Financial Economics",
+      "authors": [
+        "Ron Kaniel",
+        "Zihan Lin",
+        "Markus Pelger",
+        "Stijn Van Nieuwerburgh"
+      ],
+      "citations": 109,
+      "doi": "10.1016/j.jfineco.2023.07.004",
+      "url": "https://doi.org/10.1016/j.jfineco.2023.07.004",
+      "pdfUrl": null,
+      "abstract": "We show, using machine learning, that fund characteristics can consistently differentiate high from low-performing mutual funds, before and after fees. The outperformance persists for more than three years. Fund momentum and fund flow are the most important predictors of future risk-adjusted fund performance, while characteristics of the stocks that funds hold are not predictive. Returns of predictive long-short portfolios are higher following a period of high sentiment. Our estimation with neural networks enables us to uncover novel and substantial interaction effects between sentiment and both fund flow and fund momentum."
+    },
+    {
+      "title": "Large dimensional latent factor modeling with missing observations and applications to causal inference",
+      "year": 2022,
+      "venue": "Journal of Econometrics",
+      "authors": [
+        "Ruoxuan Xiong",
+        "Markus Pelger"
+      ],
+      "citations": 63,
+      "doi": "10.1016/j.jeconom.2022.04.005",
+      "url": "https://doi.org/10.1016/j.jeconom.2022.04.005",
+      "pdfUrl": null,
+      "abstract": null
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:11.273Z"
+}

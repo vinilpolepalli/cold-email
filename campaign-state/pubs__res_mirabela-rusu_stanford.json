@@ -1,0 +1,169 @@
+{
+  "researcherId": "res_mirabela-rusu_stanford",
+  "authorName": "Mirabela Rusu",
+  "authorUrl": "https://openalex.org/A5049258203",
+  "worksCount": 195,
+  "citedByCount": 6354,
+  "topics": [
+    "Prostate Cancer Diagnosis and Treatment",
+    "Radiomics and Machine Learning in Medical Imaging",
+    "AI in cancer detection",
+    "Medical Image Segmentation Techniques",
+    "MRI in cancer diagnosis"
+  ],
+  "publications": [
+    {
+      "title": "A Mammalian microRNA Expression Atlas Based on Small RNA Library Sequencing",
+      "year": 2007,
+      "venue": "Cell",
+      "authors": [
+        "Pablo Landgraf",
+        "Mirabela Rusu",
+        "Robert P. Sheridan",
+        "Alain Sewer",
+        "Nicola Iovino",
+        "Alexei A. Aravin",
+        "Sébastien Pfeffer",
+        "Amanda Rice"
+      ],
+      "citations": 3685,
+      "doi": "10.1016/j.cell.2007.04.040",
+      "url": "https://doi.org/10.1016/j.cell.2007.04.040",
+      "pdfUrl": "http://www.cell.com/article/S0092867407006046/pdf",
+      "abstract": null
+    },
+    {
+      "title": "Artificial intelligence and radiologists in prostate cancer detection on MRI (PI-CAI): an international, paired, non-inferiority, confirmatory study",
+      "year": 2024,
+      "venue": "The Lancet Oncology",
+      "authors": [
+        "Anindo Saha",
+        "Anindo Saha",
+        "Joeran Sander Bosma",
+        "Jasper J. Twilt",
+        "Bram van Ginneken",
+        "Anders Bjartell",
+        "Anwar R. Padhani",
+        "David Bonekamp"
+      ],
+      "citations": 307,
+      "doi": "10.1016/s1470-2045(24)00220-1",
+      "url": "https://pure.au.dk/portal/en/publications/10d8fdda-ecbf-4edc-927a-f19fa877d9ba",
+      "pdfUrl": null,
+      "abstract": "BACKGROUND: Artificial intelligence (AI) systems can potentially aid the diagnostic pathway of prostate cancer by alleviating the increasing workload, preventing overdiagnosis, and reducing the dependence on experienced radiologists. We aimed to investigate the performance of AI systems at detecting clinically significant prostate cancer on MRI in comparison with radiologists using the Prostate Imaging-Reporting and Data System version 2.1 (PI-RADS 2.1) and the standard of care in multidisciplinary routine practice at scale. METHODS: In this international, paired, non-inferiority, confirmatory study, we trained and externally validated an AI system (developed within an international consortium) for detecting Gleason grade group 2 or greater cancers using a retrospective cohort of 10 207 MRI examinations from 9129 patients. Of these examinations, 9207 cases from three centres (11 sites..."
+    },
+    {
+      "title": "A deep learning-based algorithm for 2-D cell segmentation in microscopy images",
+      "year": 2018,
+      "venue": "BMC Bioinformatics",
+      "authors": [
+        "Yousef Al‐Kofahi",
+        "Alla Zaltsman",
+        "Robert J. Graves",
+        "W. W. Marshall",
+        "Mirabela Rusu"
+      ],
+      "citations": 242,
+      "doi": "10.1186/s12859-018-2375-z",
+      "url": "https://doi.org/10.1186/s12859-018-2375-z",
+      "pdfUrl": "https://link.springer.com/content/pdf/10.1186/s12859-018-2375-z.pdf",
+      "abstract": "BACKGROUND: Automatic and reliable characterization of cells in cell cultures is key to several applications such as cancer research and drug discovery. Given the recent advances in light microscopy and the need for accurate and high-throughput analysis of cells, automated algorithms have been developed for segmenting and analyzing the cells in microscopy images. Nevertheless, accurate, generic and robust whole-cell segmentation is still a persisting need to precisely quantify its morphological properties, phenotypes and sub-cellular dynamics. RESULTS: We present a single-channel whole cell segmentation algorithm. We use markers that stain the whole cell, but with less staining in the nucleus, and without using a separate nuclear stain. We show the utility of our approach in microscopy images of cell cultures in a wide variety of conditions. Our algorithm uses a deep learning approach..."
+    },
+    {
+      "title": "Learn2Reg: comprehensive multi-task medical image registration challenge, dataset and evaluation in the era of deep learning",
+      "year": 2023,
+      "venue": "University of Birmingham Research Portal (University of Birmingham)",
+      "authors": [
+        "Alessa Hering",
+        "Lasse Hansen",
+        "Tony C. W. Mok",
+        "Albert C. S. Chung",
+        "Hanna Siebert",
+        "Stephanie Häger",
+        "Annkristin Lange",
+        "Sven Kuckertz"
+      ],
+      "citations": 240,
+      "doi": "10.1109/tmi.2022.3213983",
+      "url": "https://research.birmingham.ac.uk/files/187601417/HeringA2023Learn2Reg.pdf",
+      "pdfUrl": "https://pure-oai.bham.ac.uk/ws/files/187601417/HeringA2023Learn2Reg.pdf",
+      "abstract": "Image registration is a fundamental medical image analysis task, and a wide variety of approaches have been proposed. However, only a few studies have comprehensively compared medical image registration approaches on a wide range of clinically relevant tasks. This limits the development of registration methods, the adoption of research advances into practice, and a fair benchmark across competing approaches. The Learn2Reg challenge addresses these limitations by providing a multi-task medical image registration data set for comprehensive characterisation of deformable registration algorithms. A continuous evaluation will be possible at https:// learn2reg.grand-challenge.org. Learn2Reg covers a wide range of anatomies (brain, abdomen, and thorax), modalities (ultrasound, CT, MR), availability of annotations, as well as intra- and inter-patient registration evaluation. We established an..."
+    },
+    {
+      "title": "Radiomics Analysis on FLT-PET/MRI for Characterization of Early Treatment Response in Renal Cell Carcinoma: A Proof-of-Concept Study",
+      "year": 2016,
+      "venue": "Translational Oncology",
+      "authors": [
+        "Jacob Antunes",
+        "Satish E. Viswanath",
+        "Mirabela Rusu",
+        "Laia Valls",
+        "Christopher Hoimes",
+        "Norbert Avril",
+        "Anant Madabhushi"
+      ],
+      "citations": 103,
+      "doi": "10.1016/j.tranon.2016.01.008",
+      "url": "https://doi.org/10.1016/j.tranon.2016.01.008",
+      "pdfUrl": "https://www.sciencedirect.com/science/article/am/pii/S1936523315300292?via%3Dihub",
+      "abstract": "Studying early response to cancer treatment is significant for patient treatment stratification and follow-up. Although recent advances in positron emission tomography (PET) and magnetic resonance imaging (MRI) allow for evaluation of tumor response, a quantitative objective assessment of treatment-related effects offers localization and quantification of structural and functional changes in the tumor region. Radiomics, the process of computerized extraction of features from radiographic images, is a new strategy for capturing subtle changes in the tumor region that works by quantifying subvisual patterns which might escape human identification. The goal of this study was to demonstrate feasibility for performing radiomics analysis on integrated PET/MRI to characterize early treatment response in metastatic renal cell carcinoma (RCC) undergoing sunitinib therapy. Two patients with adv..."
+    },
+    {
+      "title": "ProsRegNet: A deep learning framework for registration of MRI and histopathology images of the prostate",
+      "year": 2020,
+      "venue": "Medical Image Analysis",
+      "authors": [
+        "Wei Shao",
+        "Linda Banh",
+        "Christian A. Kunder",
+        "Richard E. Fan",
+        "Simon John Christoph Soerensen",
+        "Jeffrey B. Wang",
+        "Nikola C. Teslovich",
+        "Nikhil Madhuripan"
+      ],
+      "citations": 95,
+      "doi": "10.1016/j.media.2020.101919",
+      "url": "https://doi.org/10.1016/j.media.2020.101919",
+      "pdfUrl": "https://www.sciencedirect.com/science/article/pii/S1361841520302838/pdf",
+      "abstract": "Magnetic resonance imaging (MRI) is an increasingly important tool for the diagnosis and treatment of prostate cancer. However, interpretation of MRI suffers from high inter-observer variability across radiologists, thereby contributing to missed clinically significant cancers, overdiagnosed low-risk cancers, and frequent false positives. Interpretation of MRI could be greatly improved by providing radiologists with an answer key that clearly shows cancer locations on MRI. Registration of histopathology images from patients who had radical prostatectomy to pre-operative MRI allows such mapping of ground truth cancer labels onto MRI. However, traditional MRI-histopathology registration approaches are computationally expensive and require careful choices of the cost function and registration hyperparameters. This paper presents ProsRegNet, a deep learning-based pipeline to accelerate an..."
+    },
+    {
+      "title": "Using Sculptor and Situs for simultaneous assembly of atomic components into low-resolution shapes",
+      "year": 2010,
+      "venue": "Journal of Structural Biology",
+      "authors": [
+        "Stefan Birmanns",
+        "Mirabela Rusu",
+        "Willy Wriggers"
+      ],
+      "citations": 84,
+      "doi": "10.1016/j.jsb.2010.11.002",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/3352678",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "A review of artificial intelligence in prostate cancer detection on imaging",
+      "year": 2022,
+      "venue": "Therapeutic Advances in Urology",
+      "authors": [
+        "Indrani Bhattacharya",
+        "Yash S. Khandwala",
+        "Sulaiman Vesal",
+        "Wei Shao",
+        "Qianye Yang",
+        "Simon John Christoph Soerensen",
+        "Richard E. Fan",
+        "Pejman Ghanouni"
+      ],
+      "citations": 73,
+      "doi": "10.1177/17562872221128791",
+      "url": "https://doi.org/10.1177/17562872221128791",
+      "pdfUrl": null,
+      "abstract": "A multitude of studies have explored the role of artificial intelligence (AI) in providing diagnostic support to radiologists, pathologists, and urologists in prostate cancer detection, risk-stratification, and management. This review provides a comprehensive overview of relevant literature regarding the use of AI models in (1) detecting prostate cancer on radiology images (magnetic resonance and ultrasound imaging), (2) detecting prostate cancer on histopathology images of prostate biopsy tissue, and (3) assisting in supporting tasks for prostate cancer detection (prostate gland segmentation, MRI-histopathology registration, MRI-ultrasound registration). We discuss both the potential of these AI models to assist in the clinical workflow of prostate cancer diagnosis, as well as the current limitations including variability in training data sets, algorithms, and evaluation criteria. We..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:19.245Z"
+}

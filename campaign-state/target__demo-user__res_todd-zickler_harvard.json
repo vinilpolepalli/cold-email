@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxz5clw90yrj1",
+  "userId": "demo-user",
+  "researcherId": "res_todd-zickler_harvard",
+  "researcherName": "Todd Zickler",
+  "school": "Harvard",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 59.4,
+  "reasons": [
+    "Overlaps on computer vision, machine learning, computational imaging",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "zickler@seas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:18:55.508Z",
+  "updatedAt": "2026-08-18T01:18:55.508Z"
+}

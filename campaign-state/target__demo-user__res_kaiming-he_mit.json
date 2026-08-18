@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpjb3yh6ir",
+  "userId": "demo-user",
+  "researcherId": "res_kaiming-he_mit",
+  "researcherName": "Kaiming He",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 75.7,
+  "reasons": [
+    "Overlaps on machine learning, computer vision, deep learning",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "kaiming@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:12:59.015Z",
+  "updatedAt": "2026-08-18T01:12:59.015Z"
+}

@@ -1,0 +1,163 @@
+{
+  "researcherId": "res_lester-mackey_stanford",
+  "authorName": "Lester Mackey",
+  "authorUrl": "https://openalex.org/A5018151279",
+  "worksCount": 409,
+  "citedByCount": 3407,
+  "topics": [
+    "Cryospheric studies and observations",
+    "Arctic and Antarctic ice dynamics",
+    "Markov Chains and Monte Carlo Methods",
+    "Statistical Methods and Inference",
+    "Climate change and permafrost"
+  ],
+  "publications": [
+    {
+      "title": "Evaluation of Combined Artificial Intelligence and Radiologist Assessment to Interpret Screening Mammograms",
+      "year": 2020,
+      "venue": "JAMA Network Open",
+      "authors": [
+        "Thomas Schaffter",
+        "Diana S.M. Buist",
+        "Christoph I. Lee",
+        "Yaroslav Nikulin",
+        "Dezső Ribli",
+        "Yuanfang Guan",
+        "William Lotter",
+        "Zequn Jie"
+      ],
+      "citations": 417,
+      "doi": "10.1001/jamanetworkopen.2020.0265",
+      "url": "https://doi.org/10.1001/jamanetworkopen.2020.0265",
+      "pdfUrl": "https://jamanetwork.com/journals/jamanetworkopen/articlepdf/2761795/schaffter_2020_oi_200024.pdf",
+      "abstract": "Importance: Mammography screening currently relies on subjective human interpretation. Artificial intelligence (AI) advances could be used to increase mammography screening accuracy by reducing missed cancers and false positives. Objective: To evaluate whether AI can overcome human mammography interpretation limitations with a rigorous, unbiased evaluation of machine learning algorithms. Design, Setting, and Participants: In this diagnostic accuracy study conducted between September 2016 and November 2017, an international, crowdsourced challenge was hosted to foster AI algorithm development focused on interpreting screening mammography. More than 1100 participants comprising 126 teams from 44 countries participated. Analysis began November 18, 2016. Main Outcomes and Measurements: Algorithms used images alone (challenge 1) or combined images, previous examinations (if available), and..."
+    },
+    {
+      "title": "Crowdsourced analysis of clinical trial data to predict amyotrophic lateral sclerosis progression",
+      "year": 2014,
+      "venue": "Nature Biotechnology",
+      "authors": [
+        "Robert Küffner",
+        "Neta Zach",
+        "Raquel Norel",
+        "Johann S. Hawe",
+        "David Schoenfeld",
+        "Liuxia Wang",
+        "Guang Li",
+        "Lilly Fang"
+      ],
+      "citations": 207,
+      "doi": "10.1038/nbt.3051",
+      "url": "https://doi.org/10.1038/nbt.3051",
+      "pdfUrl": "https://www.nature.com/articles/nbt.3051.pdf",
+      "abstract": "An open competition to predict the progression of amyotrophic lateral sclerosis (ALS, also known as Lou Gehrig's disease) disease from the largest database of ALS clinical trial data yields potential new biomarkers and algorithms that outperform human clinicians. Amyotrophic lateral sclerosis (ALS) is a fatal neurodegenerative disease with substantial heterogeneity in its clinical presentation. This makes diagnosis and effective treatment difficult, so better tools for estimating disease progression are needed. Here, we report results from the DREAM-Phil Bowen ALS Prediction Prize4Life challenge. In this crowdsourcing competition, competitors developed algorithms for the prediction of disease progression of 1,822 ALS patients from standardized, anonymized phase 2/3 clinical trials. The two best algorithms outperformed a method designed by the challenge organizers as well as prediction..."
+    },
+    {
+      "title": "Joint Link Prediction and Attribute Inference Using a Social-Attribute Network",
+      "year": 2014,
+      "venue": "ACM Transactions on Intelligent Systems and Technology",
+      "authors": [
+        "Neil Zhenqiang Gong",
+        "Ameet Talwalkar",
+        "Lester Mackey",
+        "Ling Huang",
+        "Eui Chul Richard Shin",
+        "Emil Stefanov",
+        "Elaine Shi",
+        "Dawn Song"
+      ],
+      "citations": 207,
+      "doi": "10.1145/2594455",
+      "url": "https://doi.org/10.1145/2594455",
+      "pdfUrl": null,
+      "abstract": "The effects of social influence and homophily suggest that both network structure and node-attribute information should inform the tasks of link prediction and node-attribute inference. Recently, Yin et al. [2010a, 2010b] proposed an attribute-augmented social network model, which we call Social-Attribute Network (SAN), to integrate network structure and node attributes to perform both link prediction and attribute inference. They focused on generalizing the random walk with a restart algorithm to the SAN framework and showed improved performance. In this article, we extend the SAN framework with several leading supervised and unsupervised link-prediction algorithms and demonstrate performance improvement for each algorithm on both link prediction and attribute inference. Moreover, we make the novel observation that attribute inference can help inform link prediction, that is, link-pr..."
+    },
+    {
+      "title": "Feature-Weighted Linear Stacking",
+      "year": 2009,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Joseph Sill",
+        "G. Takács",
+        "Lester Mackey",
+        "David Lin"
+      ],
+      "citations": 173,
+      "doi": "10.48550/arxiv.0911.0460",
+      "url": "http://arxiv.org/abs/0911.0460",
+      "pdfUrl": "https://arxiv.org/pdf/0911.0460",
+      "abstract": "Ensemble methods, such as stacking, are designed to boost predictive accuracy by blending the predictions of multiple machine learning models. Recent work has shown that the use of meta-features, additional inputs describing each example in a dataset, can boost the performance of ensemble methods, but the greatest reported gains have come from nonlinear procedures requiring significant tuning and training time. Here, we present a linear technique, Feature-Weighted Linear Stacking (FWLS), that incorporates meta-features for improved accuracy while retaining the well-known virtues of linear regression regarding speed, stability, and interpretability. FWLS combines model predictions linearly using coefficients that are themselves linear functions of meta-features. This technique was a key facet of the solution of the second place team in the recently concluded Netflix Prize competition. ..."
+    },
+    {
+      "title": "Deflation Methods for Sparse PCA",
+      "year": 2008,
+      "venue": "Neural Information Processing Systems",
+      "authors": [
+        "Lester Mackey"
+      ],
+      "citations": 172,
+      "doi": null,
+      "url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.143.9763",
+      "pdfUrl": null,
+      "abstract": "In analogy to the PCA setting, the sparse PCA problem is often solved by iteratively alternating between two subtasks: cardinality-constrained rank-one variance maximization and matrix deflation. While the former has received a great deal of attention in the literature, the latter is seldom analyzed and is typically borrowed without justification from the PCA context. In this work, we demonstrate that the standard PCA deflation procedure is seldom appropriate for the sparse PCA setting. To rectify the situation, we first develop several deflation alternatives better suited to the cardinality-constrained context. We then reformulate the sparse PCA optimization problem to explicitly reflect the maximum additional variance objective on each round. The result is a generalized deflation procedure that typically outperforms more standard techniques on real-world datasets. 1"
+    },
+    {
+      "title": "MATRIX CONCENTRATION INEQUALITIES VIA THE METHOD OF EXCHANGEABLE PAIRS",
+      "year": 2012,
+      "venue": null,
+      "authors": [
+        "Lester Mackey",
+        "Michael I. Jordan",
+        "Richard Y. Chen",
+        "Brendan Farrell",
+        "Joel A. Tropp"
+      ],
+      "citations": 121,
+      "doi": null,
+      "url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.394.4083",
+      "pdfUrl": null,
+      "abstract": "This paper derives exponential concentration inequalities and polynomial moment inequalities for the spectral norm of a random matrix. The analysis requires a matrix extension of the scalar concentration theory developed by Sourav Chatterjee using Stein’s method of exchangeable pairs. Whenapplied toasum of independentrandom matrices, this approach yields matrix generalizations of the classical inequalities due to Hoeffding, Bernstein, Khintchine, and Rosenthal. The same technique delivers bounds for sums of dependent random matrices and more general matrix-valued functions of dependent random variables. This paper is based on two independent manuscripts from mid-2011 that both applied the method of exchangeable pairs to establish matrix concentration inequalities. One manuscript is by Mackey and Jordan; the other is by Chen, Farrell, and Tropp. The authors have combined this research ..."
+    },
+    {
+      "title": "S2S reboot: An argument for greater inclusion of machine learning in subseasonal to seasonal forecasts",
+      "year": 2018,
+      "venue": "Wiley Interdisciplinary Reviews Climate Change",
+      "authors": [
+        "Judah Cohen",
+        "Dim Coumou",
+        "Jessica Hwang",
+        "Lester Mackey",
+        "Paulo Orenstein",
+        "Sonja Totz",
+        "Eli Tziperman"
+      ],
+      "citations": 117,
+      "doi": "10.1002/wcc.567",
+      "url": "https://doi.org/10.1002/wcc.567",
+      "pdfUrl": "https://wires.onlinelibrary.wiley.com/doi/pdfdirect/10.1002/wcc.567",
+      "abstract": "The discipline of seasonal climate prediction began as an exercise in simple statistical techniques. However, today the large government forecast centers almost exclusively rely on complex fully coupled dynamical forecast systems for their subseasonal to seasonal (S2S) predictions while statistical techniques are mostly neglected and those techniques still in use have not been updated in decades. In this Opinion Article, we argue that new statistical techniques mostly developed outside the field of climate science, collectively referred to as machine learning, can be adopted by climate forecasters to increase the accuracy of S2S predictions. We present an example of where unsupervised learning demonstrates higher accuracy in a seasonal prediction than the state‐of‐the‐art dynamical systems. We also summarize some relevant machine learning methods that are most applicable to climate pr..."
+    },
+    {
+      "title": "Participatory design with proxies",
+      "year": 2006,
+      "venue": null,
+      "authors": [
+        "Jordan Boyd‐Graber",
+        "Sonya Nikolova",
+        "Karyn Moffatt",
+        "Kenrick Kin",
+        "Joshua Lee",
+        "Lester Mackey",
+        "Marilyn Tremaine",
+        "Maria Klawe"
+      ],
+      "citations": 105,
+      "doi": "10.1145/1124772.1124797",
+      "url": "https://doi.org/10.1145/1124772.1124797",
+      "pdfUrl": null,
+      "abstract": "In this paper, we describe the design and preliminary evaluation of a hybrid desktop-handheld system developed to support individuals with aphasia, a disorder which impairs the ability to speak, read, write, or understand language. The system allows its users to develop speech communication through images and sound on a desktop computer and download this speech to a mobile device that can then support communication outside the home. Using a desktop computer for input addresses some of this population's difficulties interacting with handheld devices, while the mobile device addresses stigma and portability issues. A modified participatory design approach was used in which proxies, that is, speech-language pathologists who work with aphasic individuals, assumed the role normally filled by users. This was done because of the difficulties in communicating with the target population and th..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:07.420Z"
+}

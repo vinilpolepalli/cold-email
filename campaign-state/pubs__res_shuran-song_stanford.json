@@ -1,0 +1,160 @@
+{
+  "researcherId": "res_shuran-song_stanford",
+  "authorName": "Shuran Song",
+  "authorUrl": "https://openalex.org/A5004644695",
+  "worksCount": 196,
+  "citedByCount": 26089,
+  "topics": [
+    "Robot Manipulation and Learning",
+    "Reinforcement Learning in Robotics",
+    "Human Pose and Action Recognition",
+    "Multimodal Machine Learning Applications",
+    "Advanced Vision and Imaging"
+  ],
+  "publications": [
+    {
+      "title": "3D ShapeNets: A deep representation for volumetric shapes",
+      "year": 2015,
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "authors": [
+        "Zhirong Wu",
+        "Shuran Song",
+        "Aditya Khosla",
+        "Fisher Yu",
+        "Linguang Zhang",
+        "Xiaoou Tang",
+        "Jianxiong Xiao"
+      ],
+      "citations": 4746,
+      "doi": "10.1109/cvpr.2015.7298801",
+      "url": "https://doi.org/10.1109/CVPR.2015.7298801",
+      "pdfUrl": null,
+      "abstract": "3D shape is a crucial but heavily underutilized cue in today's computer vision systems, mostly due to the lack of a good generic shape representation. With the recent availability of inexpensive 2.5D depth sensors (e.g. Microsoft Kinect), it is becoming increasingly important to have a powerful 3D shape representation in the loop. Apart from category recognition, recovering full 3D shapes from view-based 2.5D depth maps is also a critical part of visual understanding. To this end, we propose to represent a geometric 3D shape as a probability distribution of binary variables on a 3D voxel grid, using a Convolutional Deep Belief Network. Our model, 3D ShapeNets, learns the distribution of complex 3D shapes across different object categories and arbitrary poses from raw CAD data, and discovers hierarchical compositional part representation automatically. It naturally supports joint objec..."
+    },
+    {
+      "title": "ShapeNet: An Information-Rich 3D Model Repository",
+      "year": 2015,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Chang, Angel X.",
+        "Thomas Funkhouser",
+        "Leonidas Guibas",
+        "Pat Hanrahan",
+        "Qixing Huang",
+        "Zimo Li",
+        "Silvio Savarese",
+        "Manolis Savva"
+      ],
+      "citations": 2381,
+      "doi": "10.48550/arxiv.1512.03012",
+      "url": "http://arxiv.org/abs/1512.03012",
+      "pdfUrl": "https://arxiv.org/pdf/1512.03012",
+      "abstract": "We present ShapeNet: a richly-annotated, large-scale repository of shapes represented by 3D CAD models of objects. ShapeNet contains 3D models from a multitude of semantic categories and organizes them under the WordNet taxonomy. It is a collection of datasets providing many semantic annotations for each 3D model such as consistent rigid alignments, parts and bilateral symmetry planes, physical sizes, keywords, as well as other planned annotations. Annotations are made available through a public web-based interface to enable data visualization of object attributes, promote data-driven geometric analysis, and provide a large-scale quantitative benchmark for research in computer graphics and vision. At the time of this technical report, ShapeNet has indexed more than 3,000,000 models, 220,000 models out of which are classified into 3,135 categories (WordNet synsets). In this report we d..."
+    },
+    {
+      "title": "SUN RGB-D: A RGB-D scene understanding benchmark suite",
+      "year": 2015,
+      "venue": null,
+      "authors": [
+        "Shuran Song",
+        "Samuel P. Lichtenberg",
+        "Jianxiong Xiao"
+      ],
+      "citations": 1933,
+      "doi": "10.1109/cvpr.2015.7298655",
+      "url": "https://doi.org/10.1109/cvpr.2015.7298655",
+      "pdfUrl": null,
+      "abstract": "Although RGB-D sensors have enabled major break-throughs for several vision tasks, such as 3D reconstruction, we have not attained the same level of success in high-level scene understanding. Perhaps one of the main reasons is the lack of a large-scale benchmark with 3D annotations and 3D evaluation metrics. In this paper, we introduce an RGB-D benchmark suite for the goal of advancing the state-of-the-arts in all major scene understanding tasks. Our dataset is captured by four different sensors and contains 10,335 RGB-D images, at a similar scale as PASCAL VOC. The whole dataset is densely annotated and includes 146,617 2D polygons and 64,595 3D bounding boxes with accurate object orientations, as well as a 3D room layout and scene category for each image. This dataset enables us to train data-hungry algorithms for scene-understanding tasks, evaluate them using meaningful 3D metrics,..."
+    },
+    {
+      "title": "Matterport3D: Learning from RGB-D Data in Indoor Environments",
+      "year": 2017,
+      "venue": null,
+      "authors": [
+        "Anne Lynn S. Chang",
+        "Angela Dai",
+        "Thomas Funkhouser",
+        "Maciej Halber",
+        "Matthias NieBner",
+        "Manolis Savva",
+        "Shuran Song",
+        "Andy Zeng"
+      ],
+      "citations": 1789,
+      "doi": "10.1109/3dv.2017.00081",
+      "url": "https://doi.org/10.1109/3dv.2017.00081",
+      "pdfUrl": null,
+      "abstract": "Access to large, diverse RGB-D datasets is critical for training RGB-D scene understanding algorithms. However, existing datasets still cover only a limited number of views or a restricted scale of spaces. In this paper, we introduce Matterport3D, a large-scale RGB-D dataset containing 10,800 panoramic views from 194,400 RGB-D images of 90 building-scale scenes. Annotations are provided with surface reconstructions, camera poses, and 2D and 3D semantic segmentations. The precise global alignment and comprehensive, diverse panoramic set of views over entire buildings enable a variety of supervised and self-supervised computer vision tasks, including keypoint matching, view overlap prediction, normal prediction from color, semantic segmentation, and region classification."
+    },
+    {
+      "title": "LSUN: Construction of a Large-scale Image Dataset using Deep Learning with Humans in the Loop",
+      "year": 2015,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Fisher Yu",
+        "Ari Seff",
+        "Yinda Zhang",
+        "Shuran Song",
+        "Funkhouser, Thomas",
+        "Jianxiong Xiao"
+      ],
+      "citations": 1370,
+      "doi": "10.48550/arxiv.1506.03365",
+      "url": "http://arxiv.org/abs/1506.03365",
+      "pdfUrl": "https://arxiv.org/pdf/1506.03365",
+      "abstract": "While there has been remarkable progress in the performance of visual recognition algorithms, the state-of-the-art models tend to be exceptionally data-hungry. Large labeled training datasets, expensive and tedious to produce, are required to optimize millions of parameters in deep network models. Lagging behind the growth in model capacity, the available datasets are quickly becoming outdated in terms of size and density. To circumvent this bottleneck, we propose to amplify human effort through a partially automated labeling scheme, leveraging deep learning with humans in the loop. Starting from a large set of candidate images for each category, we iteratively sample a subset, ask people to label them, classify the others with a trained model, split the set into positives, negatives, and unlabeled based on the classification confidence, and then iterate with the unlabeled set. To ass..."
+    },
+    {
+      "title": "Semantic Scene Completion from a Single Depth Image",
+      "year": 2017,
+      "venue": null,
+      "authors": [
+        "Shuran Song",
+        "Fisher Yu",
+        "Andy Zeng",
+        "Anne Lynn S. Chang",
+        "Manolis Savva",
+        "Thomas Funkhouser"
+      ],
+      "citations": 1290,
+      "doi": "10.1109/cvpr.2017.28",
+      "url": "https://doi.org/10.1109/cvpr.2017.28",
+      "pdfUrl": null,
+      "abstract": "This paper focuses on semantic scene completion, a task for producing a complete 3D voxel representation of volumetric occupancy and semantic labels for a scene from a single-view depth map observation. Previous work has considered scene completion and semantic labeling of depth maps separately. However, we observe that these two problems are tightly intertwined. To leverage the coupled nature of these two tasks, we introduce the semantic scene completion network (SSCNet), an end-to-end 3D convolutional network that takes a single depth image as input and simultaneously outputs occupancy and semantic labels for all voxels in the camera view frustum. Our network uses a dilation-based 3D context module to efficiently expand the receptive field and enable 3D context learning. To train our network, we construct SUNCG - a manually created largescale dataset of synthetic 3D scenes with dens..."
+    },
+    {
+      "title": "3DMatch: Learning Local Geometric Descriptors from RGB-D Reconstructions",
+      "year": 2017,
+      "venue": null,
+      "authors": [
+        "Andy Zeng",
+        "Shuran Song",
+        "Matthias Nießner",
+        "Matthew Fisher",
+        "Jianxiong Xiao",
+        "Thomas Funkhouser"
+      ],
+      "citations": 1149,
+      "doi": "10.1109/cvpr.2017.29",
+      "url": "https://doi.org/10.1109/cvpr.2017.29",
+      "pdfUrl": null,
+      "abstract": "Matching local geometric features on real-world depth images is a challenging task due to the noisy, low-resolution, and incomplete nature of 3D scan data. These difficulties limit the performance of current state-of-art methods, which are typically based on histograms over geometric properties. In this paper, we present 3DMatch, a data-driven model that learns a local volumetric patch descriptor for establishing correspondences between partial 3D data. To amass training data for our model, we propose a self-supervised feature learning method that leverages the millions of correspondence labels found in existing RGB-D reconstructions. Experiments show that our descriptor is not only able to match local geometry in new scenes for reconstruction, but also generalize to different tasks and spatial scales (e.g. instance-level object model alignment for the Amazon Picking Challenge, and me..."
+    },
+    {
+      "title": "Deep Sliding Shapes for Amodal 3D Object Detection in RGB-D Images",
+      "year": 2016,
+      "venue": null,
+      "authors": [
+        "Shuran Song",
+        "Jianxiong Xiao"
+      ],
+      "citations": 720,
+      "doi": "10.1109/cvpr.2016.94",
+      "url": "https://doi.org/10.1109/cvpr.2016.94",
+      "pdfUrl": null,
+      "abstract": "We focus on the task of amodal 3D object detection in RGB-D images, which aims to produce a 3D bounding box of an object in metric form at its full extent. We introduce Deep Sliding Shapes, a 3D ConvNet formulation that takes a 3D volumetric scene from a RGB-D image as input and outputs 3D object bounding boxes. In our approach, we propose the first 3D Region Proposal Network (RPN) to learn objectness from geometric shapes and the first joint Object Recognition Network (ORN) to extract geometric features in 3D and color features in 2D. In particular, we handle objects of various sizes by training an amodal RPN at two different scales and an ORN to regress 3D bounding boxes. Experiments show that our algorithm outperforms the state-of-the-art by 13.8 in mAP and is 200× faster than the original Sliding Shapes."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:26.912Z"
+}

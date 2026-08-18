@@ -3,7 +3,7 @@
   "authorName": "Jure Leskovec",
   "authorUrl": "https://openalex.org/A5091272738",
   "worksCount": 631,
-  "citedByCount": 113459,
+  "citedByCount": 113476,
   "topics": [
     "Complex Network Analysis Techniques",
     "Advanced Graph Neural Networks",
@@ -140,5 +140,5 @@
     }
   ],
   "provider": "openalex",
-  "fetchedAt": "2026-08-17T01:24:26.155Z"
+  "fetchedAt": "2026-08-18T01:20:40.277Z"
 }

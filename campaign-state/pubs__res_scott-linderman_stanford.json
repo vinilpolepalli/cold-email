@@ -1,0 +1,171 @@
+{
+  "researcherId": "res_scott-linderman_stanford",
+  "authorName": "Scott W. Linderman",
+  "authorUrl": "https://openalex.org/A5054079047",
+  "worksCount": 132,
+  "citedByCount": 3387,
+  "topics": [
+    "Neural dynamics and brain function",
+    "Gaussian Processes and Bayesian Inference",
+    "Neural Networks and Applications",
+    "Bayesian Methods and Mixture Models",
+    "Zebrafish Biomedical Research Applications"
+  ],
+  "publications": [
+    {
+      "title": "The Striatum Organizes 3D Behavior via Moment-to-Moment Action Selection",
+      "year": 2018,
+      "venue": "Cell",
+      "authors": [
+        "Jeffrey E. Markowitz",
+        "Winthrop F. Gillis",
+        "Celia Beron",
+        "Shay Q. Neufeld",
+        "Keiramarie Robertson",
+        "Neha D. Bhagat",
+        "Ralph E. Peterson",
+        "Emalee Peterson"
+      ],
+      "citations": 486,
+      "doi": "10.1016/j.cell.2018.04.019",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/6026065",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Spontaneous behaviour is structured by reinforcement without explicit reward",
+      "year": 2023,
+      "venue": "Nature",
+      "authors": [
+        "Jeffrey E. Markowitz",
+        "Winthrop F. Gillis",
+        "Maya Jay",
+        "Jeffrey J. Wood",
+        "Ryley Harris",
+        "Robert Cieszkowski",
+        "Rebecca Scott",
+        "David H. Brann"
+      ],
+      "citations": 230,
+      "doi": "10.1038/s41586-022-05611-2",
+      "url": "https://doi.org/10.1038/s41586-022-05611-2",
+      "pdfUrl": "https://www.nature.com/articles/s41586-022-05611-2.pdf",
+      "abstract": ". However, the neural mechanisms that guide the composition of naturalistic, self-motivated behaviour remain unknown. Here we show that dopamine systematically fluctuates in the dorsolateral striatum (DLS) as mice spontaneously express sub-second behavioural modules, despite the absence of task structure, sensory cues or exogenous reward. Photometric recordings and calibrated closed-loop optogenetic manipulations during open field behaviour demonstrate that DLS dopamine fluctuations increase sequence variation over seconds, reinforce the use of associated behavioural modules over minutes, and modulate the vigour with which modules are expressed, without directly influencing movement initiation or moment-to-moment kinematics. Although the reinforcing effects of optogenetic DLS dopamine manipulations vary across behavioural modules and individual mice, these differences are well predict..."
+    },
+    {
+      "title": "Keypoint-MoSeq: parsing behavior by linking point tracking to pose dynamics",
+      "year": 2024,
+      "venue": "Nature Methods",
+      "authors": [
+        "Caleb Weinreb",
+        "Jonah E Pearl",
+        "Sherry Lin",
+        "Mohammed Abdal Monium Osman",
+        "Libby Zhang",
+        "Sidharth Annapragada",
+        "Eli Conlin",
+        "Red Hoffmann"
+      ],
+      "citations": 211,
+      "doi": "10.1038/s41592-024-02318-2",
+      "url": "https://doi.org/10.1038/s41592-024-02318-2",
+      "pdfUrl": "https://www.nature.com/articles/s41592-024-02318-2.pdf",
+      "abstract": "Keypoint tracking algorithms can flexibly quantify animal movement from videos obtained in a wide variety of settings. However, it remains unclear how to parse continuous keypoint data into discrete actions. This challenge is particularly acute because keypoint data are susceptible to high-frequency jitter that clustering algorithms can mistake for transitions between actions. Here we present keypoint-MoSeq, a machine learning-based platform for identifying behavioral modules ('syllables') from keypoint data without human supervision. Keypoint-MoSeq uses a generative model to distinguish keypoint noise from behavior, enabling it to identify syllables whose boundaries correspond to natural sub-second discontinuities in pose dynamics. Keypoint-MoSeq outperforms commonly used alternative clustering methods at identifying these transitions, at capturing correlations between neural activit..."
+    },
+    {
+      "title": "Probabilistic Models of Larval Zebrafish Behavior Reveal Structure on Many Scales",
+      "year": 2019,
+      "venue": "Current Biology",
+      "authors": [
+        "Robert E. Johnson",
+        "Scott W. Linderman",
+        "Thomas Panier",
+        "Caroline Lei Wee",
+        "Erin Song",
+        "Kristian J. Herrera",
+        "Andrew Miller",
+        "Florian Engert"
+      ],
+      "citations": 188,
+      "doi": "10.1016/j.cub.2019.11.026",
+      "url": "https://doi.org/10.1016/j.cub.2019.11.026",
+      "pdfUrl": "http://www.cell.com/article/S0960982219314654/pdf",
+      "abstract": null
+    },
+    {
+      "title": "Bayesian Learning and Inference in Recurrent Switching Linear Dynamical Systems",
+      "year": 2017,
+      "venue": null,
+      "authors": [
+        "Scott W. Linderman",
+        "Matthew Johnson",
+        "Andrew C. Miller",
+        "Ryan P. Adams",
+        "David M. Blei",
+        "Liam Paninski"
+      ],
+      "citations": 142,
+      "doi": null,
+      "url": null,
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "An approximate line attractor in the hypothalamus encodes an aggressive state",
+      "year": 2023,
+      "venue": "Cell",
+      "authors": [
+        "Aditya Nair",
+        "Tomomi Karigo",
+        "Bin Yang",
+        "Surya Ganguli",
+        "Mark J. Schnitzer",
+        "Scott W. Linderman",
+        "David J. Anderson",
+        "Ann Kennedy"
+      ],
+      "citations": 135,
+      "doi": "10.1016/j.cell.2022.11.027",
+      "url": "https://doi.org/10.1016/j.cell.2022.11.027",
+      "pdfUrl": "http://www.cell.com/article/S0092867422014714/pdf",
+      "abstract": "The hypothalamus regulates innate social behaviors, including mating and aggression. These behaviors can be evoked by optogenetic stimulation of specific neuronal subpopulations within MPOA and VMHvl, respectively. Here, we perform dynamical systems modeling of population neuronal activity in these nuclei during social behaviors. In VMHvl, unsupervised analysis identified a dominant dimension of neural activity with a large time constant (>50 s), generating an approximate line attractor in neural state space. Progression of the neural trajectory along this attractor was correlated with an escalation of agonistic behavior, suggesting that it may encode a scalable state of aggressiveness. Consistent with this, individual differences in the magnitude of the integration dimension time constant were strongly correlated with differences in aggressiveness. In contrast, approximate line attra..."
+    },
+    {
+      "title": "Learning Latent Permutations with Gumbel-Sinkhorn Networks",
+      "year": 2018,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Gonzalo E. Mena",
+        "David Belanger",
+        "Scott W. Linderman",
+        "Jasper Snoek"
+      ],
+      "citations": 94,
+      "doi": "10.48550/arxiv.1802.08665",
+      "url": "http://arxiv.org/abs/1802.08665",
+      "pdfUrl": "https://arxiv.org/pdf/1802.08665",
+      "abstract": "Permutations and matchings are core building blocks in a variety of latent variable models, as they allow us to align, canonicalize, and sort data. Learning in such models is difficult, however, because exact marginalization over these combinatorial objects is intractable. In response, this paper introduces a collection of new methods for end-to-end learning in such models that approximate discrete maximum-weight matching using the continuous Sinkhorn operator. Sinkhorn iteration is attractive because it functions as a simple, easy-to-implement analog of the softmax operator. With this, we can define the Gumbel-Sinkhorn method, an extension of the Gumbel-Softmax method (Jang et al. 2016, Maddison2016 et al. 2016) to distributions over latent matchings. We demonstrate the effectiveness of our method by outperforming competitive baselines on a range of qualitatively different tasks: sor..."
+    },
+    {
+      "title": "Explaining dopamine through prediction errors and beyond",
+      "year": 2024,
+      "venue": "Nature Neuroscience",
+      "authors": [
+        "Samuel J. Gershman",
+        "John A. Assad",
+        "Sandeep Robert Datta",
+        "Scott W. Linderman",
+        "Bernardo L. Sabatini",
+        "Naoshige Uchida",
+        "Linda Wilbrecht"
+      ],
+      "citations": 88,
+      "doi": "10.1038/s41593-024-01705-4",
+      "url": "https://doi.org/10.1038/s41593-024-01705-4",
+      "pdfUrl": null,
+      "abstract": null
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:20:48.993Z"
+}

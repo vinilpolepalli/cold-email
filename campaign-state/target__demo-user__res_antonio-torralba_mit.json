@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxz5cluq7akd1",
+  "userId": "demo-user",
+  "researcherId": "res_antonio-torralba_mit",
+  "researcherName": "Antonio Torralba",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 60.8,
+  "reasons": [
+    "Overlaps on machine learning, computer vision",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "torralba@csail.mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:18:55.506Z",
+  "updatedAt": "2026-08-18T01:18:55.506Z"
+}

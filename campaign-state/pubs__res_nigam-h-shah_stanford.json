@@ -1,0 +1,169 @@
+{
+  "researcherId": "res_nigam-h-shah_stanford",
+  "authorName": "Nigam H. Shah",
+  "authorUrl": "https://openalex.org/A5041175834",
+  "worksCount": 564,
+  "citedByCount": 35029,
+  "topics": [
+    "Biomedical Text Mining and Ontologies",
+    "Machine Learning in Healthcare",
+    "Artificial Intelligence in Healthcare and Education",
+    "Electronic Health Records Systems",
+    "Semantic Web and Ontologies"
+  ],
+  "publications": [
+    {
+      "title": "The OBO Foundry: coordinated evolution of ontologies to support biomedical data integration",
+      "year": 2007,
+      "venue": "Nature Biotechnology",
+      "authors": [
+        "Barry Smith",
+        "Michael Ashburner",
+        "Cornelius Rosse",
+        "Jonathan Bard",
+        "William Bug",
+        "Werner Ceusters",
+        "Louis J. Goldberg",
+        "Karen Eilbeck"
+      ],
+      "citations": 2638,
+      "doi": "10.1038/nbt1346",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2814061",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Scalable and accurate deep learning with electronic health records",
+      "year": 2018,
+      "venue": "eScholarship (California Digital Library)",
+      "authors": [
+        "Alvin Rajkomar",
+        "Eyal Oren",
+        "Kai Chen",
+        "Andrew M. Dai",
+        "Hajaj, Nissan",
+        "Michaela Hardt",
+        "Peter J. Liu",
+        "Xiaobing Liu"
+      ],
+      "citations": 2399,
+      "doi": null,
+      "url": null,
+      "pdfUrl": null,
+      "abstract": "Predictive modeling with electronic health record (EHR) data is anticipated to drive personalized medicine and improve healthcare quality. Constructing predictive statistical models typically requires extraction of curated predictor variables from normalized EHR data, a labor-intensive process that discards the vast majority of information in each patient's record. We propose a representation of patients' entire raw EHR records based on the Fast Healthcare Interoperability Resources (FHIR) format. We demonstrate that deep learning methods using this representation are capable of accurately predicting multiple medical events from multiple centers without site-specific data harmonization. We validated our approach using de-identified EHR data from two US academic medical centers with 216,221 adult patients hospitalized for at least 24 h. In the sequential format we propose, this volume ..."
+    },
+    {
+      "title": "Implementing Machine Learning in Health Care — Addressing Ethical Challenges",
+      "year": 2018,
+      "venue": "New England Journal of Medicine",
+      "authors": [
+        "Danton Char",
+        "Nigam H. Shah",
+        "David Magnus"
+      ],
+      "citations": 1735,
+      "doi": "10.1056/nejmp1714229",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5962261",
+      "pdfUrl": null,
+      "abstract": "We need to consider the ethical challenges inherent in implementing machine learning in health care if its benefits are to be realized. Some of these challenges are straightforward, whereas others have less obvious risks but raise broader ethical concerns."
+    },
+    {
+      "title": "Observational Health Data Sciences and Informatics (OHDSI): Opportunities for Observational Researchers",
+      "year": 2015,
+      "venue": "Studies in health technology and informatics",
+      "authors": [
+        "George Hripcsak",
+        "Jon Duke",
+        "Nigam H. Shah",
+        "Christian Reich",
+        "Vojtech Huser",
+        "Martijn J. Schuemie",
+        "Marc A. Suchard",
+        "Park Rae Woong"
+      ],
+      "citations": 1165,
+      "doi": "10.3233/978-1-61499-564-7-574",
+      "url": "https://doi.org/10.3233/978-1-61499-564-7-574",
+      "pdfUrl": null,
+      "abstract": "The vision of creating accessible, reliable clinical evidence by accessing the clincial experience of hundreds of millions of patients across the globe is a reality. Observational Health Data Sciences and Informatics (OHDSI) has built on learnings from the Observational Medical Outcomes Partnership to turn methods research and insights into a suite of applications and exploration tools that move the field closer to the ultimate goal of generating evidence about all aspects of healthcare to serve the needs of patients, clinicians and all other decision-makers around the world."
+    },
+    {
+      "title": "BioPortal: ontologies and integrated data resources at the click of a mouse",
+      "year": 2009,
+      "venue": "Nucleic Acids Research",
+      "authors": [
+        "Natasha Noy",
+        "Nigam H. Shah",
+        "Patricia L. Whetzel",
+        "Bing Tian Dai",
+        "Michael C. Dorf",
+        "Niall Griffith",
+        "Clément Jonquet",
+        "Daniel L. Rubin"
+      ],
+      "citations": 891,
+      "doi": "10.1093/nar/gkp440",
+      "url": "https://doi.org/10.1093/nar/gkp440",
+      "pdfUrl": "https://academic.oup.com/nar/article-pdf/37/suppl_2/W170/3966326/gkp440.pdf",
+      "abstract": "Biomedical ontologies provide essential domain knowledge to drive data integration, information retrieval, data annotation, natural-language processing and decision support. BioPortal (http://bioportal.bioontology.org) is an open repository of biomedical ontologies that provides access via Web services and Web browsers to ontologies developed in OWL, RDF, OBO format and Protégé frames. BioPortal functionality includes the ability to browse, search and visualize ontologies. The Web interface also facilitates community-based participation in the evaluation and evolution of ontology content by providing features to add notes to ontology terms, mappings between terms and ontology reviews based on criteria such as usability, domain coverage, quality of content, and documentation and support. BioPortal also enables integrated search of biomedical data resources such as the Gene Expression O..."
+    },
+    {
+      "title": "Toward expert-level medical question answering with large language models",
+      "year": 2025,
+      "venue": "Nature Medicine",
+      "authors": [
+        "K. K. Singhal",
+        "Tao Tu",
+        "Juraj Gottweis",
+        "Rory Sayres",
+        "Ellery Wulczyn",
+        "Mohamed Amin",
+        "Le Hou",
+        "Kevin Clark"
+      ],
+      "citations": 846,
+      "doi": "10.1038/s41591-024-03423-7",
+      "url": "https://doi.org/10.1038/s41591-024-03423-7",
+      "pdfUrl": "https://www.nature.com/articles/s41591-024-03423-7.pdf",
+      "abstract": "Large language models (LLMs) have shown promise in medical question answering, with Med-PaLM being the first to exceed a 'passing' score in United States Medical Licensing Examination style questions. However, challenges remain in long-form medical question answering and handling real-world workflows. Here, we present Med-PaLM 2, which bridges these gaps with a combination of base LLM improvements, medical domain fine-tuning and new strategies for improving reasoning and grounding through ensemble refinement and chain of retrieval. Med-PaLM 2 scores up to 86.5% on the MedQA dataset, improving upon Med-PaLM by over 19%, and demonstrates dramatic performance increases across MedMCQA, PubMedQA and MMLU clinical topics datasets. Our detailed human evaluations framework shows that physicians prefer Med-PaLM 2 answers to those from other physicians on eight of nine clinical axes. Med-PaLM 2..."
+    },
+    {
+      "title": "Rates of Co-infection Between SARS-CoV-2 and Other Respiratory Pathogens",
+      "year": 2020,
+      "venue": "JAMA",
+      "authors": [
+        "David Kim",
+        "James Quinn",
+        "Benjamin A. Pinsky",
+        "Nigam H. Shah",
+        "Ian Brown"
+      ],
+      "citations": 826,
+      "doi": "10.1001/jama.2020.6266",
+      "url": "https://doi.org/10.1001/jama.2020.6266",
+      "pdfUrl": "https://jamanetwork.com/journals/jama/articlepdf/2764787/jama_kim_2020_ld_200032.pdf",
+      "abstract": "This study describes the prevalence of SARS-CoV-2 co-infection with noncoronavirus respiratory pathogens in a sample of symptomatic patients undergoing PCR testing in March 2020."
+    },
+    {
+      "title": "BioPortal: enhanced functionality via new Web services from the National Center for Biomedical Ontology to access and use ontologies in software applications",
+      "year": 2011,
+      "venue": "Nucleic Acids Research",
+      "authors": [
+        "Patricia L. Whetzel",
+        "Natasha Noy",
+        "Nigam H. Shah",
+        "Paul R. Alexander",
+        "Csongor Nyulas",
+        "Tania Tudorache",
+        "Mark A. Musen"
+      ],
+      "citations": 805,
+      "doi": "10.1093/nar/gkr469",
+      "url": "https://doi.org/10.1093/nar/gkr469",
+      "pdfUrl": "https://academic.oup.com/nar/article-pdf/39/suppl_2/W541/7631361/gkr469.pdf",
+      "abstract": "The National Center for Biomedical Ontology (NCBO) is one of the National Centers for Biomedical Computing funded under the NIH Roadmap Initiative. Contributing to the national computing infrastructure, NCBO has developed BioPortal, a web portal that provides access to a library of biomedical ontologies and terminologies (http://bioportal.bioontology.org) via the NCBO Web services. BioPortal enables community participation in the evaluation and evolution of ontology content by providing features to add mappings between terms, to add comments linked to specific ontology terms and to provide ontology reviews. The NCBO Web services (http://www.bioontology.org/wiki/index.php/NCBO_REST_services) enable this functionality and provide a uniform mechanism to access ontologies from a variety of knowledge representation formats, such as Web Ontology Language (OWL) and Open Biological and Biomed..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:25.218Z"
+}

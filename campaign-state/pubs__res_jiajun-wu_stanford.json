@@ -2,8 +2,8 @@
   "researcherId": "res_jiajun-wu_stanford",
   "authorName": "Jiajun Wu",
   "authorUrl": "https://openalex.org/A5100621605",
-  "worksCount": 349,
-  "citedByCount": 15261,
+  "worksCount": 350,
+  "citedByCount": 15264,
   "topics": [
     "Human Pose and Action Recognition",
     "Advanced Vision and Imaging",
@@ -81,7 +81,7 @@
       "doi": "10.1007/978-3-319-46448-0_48",
       "url": "https://doi.org/10.1007/978-3-319-46448-0_48",
       "pdfUrl": null,
-      "abstract": null
+      "abstract": "The sound of crashing waves, the roar of fast-moving cars – sound conveys important information about the objects in our surroundings. In this work, we show that ambient sounds can be used as a supervisory signal for learning visual models. To demonstrate this, we train a convolutional neural network to predict a statistical summary of the sound associated with a video frame. We show that, through this process, the network learns a representation that conveys information about objects and scenes. We evaluate this representation on several recognition tasks, finding that its performance is comparable to that of other state-of-the-art unsupervised learning methods. Finally, we show through visualizations that the network learns units that are selective to objects that are often associated with characteristic sounds."
     },
     {
       "title": "3D Shape Generation and Completion through Point-Voxel Diffusion",
@@ -152,5 +152,5 @@
     }
   ],
   "provider": "openalex",
-  "fetchedAt": "2026-08-17T01:36:52.971Z"
+  "fetchedAt": "2026-08-18T01:20:40.811Z"
 }

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpjd5vi2xo",
+  "userId": "demo-user",
+  "researcherId": "res_lester-mackey_stanford",
+  "researcherName": "Lester Mackey",
+  "school": "Stanford",
+  "trackId": "cs-core",
+  "status": "skipped",
+  "rank": 68,
+  "reasons": [
+    "Overlaps on statistical machine learning, algorithms and data structures, approximate inference",
+    "Stanford is priority one"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "lmackey@microsoft.com",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": "Skipped: published address is lmackey@microsoft.com and the Stanford role is adjunct, so an undergraduate research ask is misdirected",
+  "createdAt": "2026-08-18T01:12:59.017Z",
+  "updatedAt": "2026-08-18T01:34:21.433Z"
+}

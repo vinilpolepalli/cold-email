@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpjh3n25h0",
+  "userId": "demo-user",
+  "researcherId": "res_david-sontag_mit",
+  "researcherName": "David Sontag",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 61.6,
+  "reasons": [
+    "Overlaps on machine learning, clinical machine learning",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "dsontag@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:12:59.021Z",
+  "updatedAt": "2026-08-18T01:12:59.021Z"
+}

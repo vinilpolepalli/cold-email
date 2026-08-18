@@ -1,0 +1,173 @@
+{
+  "researcherId": "res_gill-bejerano_stanford",
+  "authorName": "Gill Bejerano",
+  "authorUrl": "https://openalex.org/A5085525898",
+  "worksCount": 180,
+  "citedByCount": 23245,
+  "topics": [
+    "Genomics and Rare Diseases",
+    "Genomics and Phylogenetic Studies",
+    "RNA and protein synthesis mechanisms",
+    "Genomics and Chromatin Dynamics",
+    "RNA Research and Splicing"
+  ],
+  "publications": [
+    {
+      "title": "GREAT improves functional interpretation of cis-regulatory regions",
+      "year": 2010,
+      "venue": "Nature Biotechnology",
+      "authors": [
+        "Cory Y. McLean",
+        "Dave Bristor",
+        "Michael Hiller",
+        "Shoa L. Clarke",
+        "Bruce T. Schaar",
+        "Craig B. Lowe",
+        "Aaron M. Wenger",
+        "Gill Bejerano"
+      ],
+      "citations": 5068,
+      "doi": "10.1038/nbt.1630",
+      "url": "https://doi.org/10.1038/nbt.1630",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Evolutionarily conserved elements in vertebrate, insect, worm, and yeast genomes",
+      "year": 2005,
+      "venue": "Genome Research",
+      "authors": [
+        "Adam Siepel",
+        "Gill Bejerano",
+        "Jakob Skou Pedersen",
+        "Angie S. Hinrichs",
+        "Minmei Hou",
+        "Kate R. Rosenbloom",
+        "Hiram Clawson",
+        "John Spieth"
+      ],
+      "citations": 4358,
+      "doi": "10.1101/gr.3715005",
+      "url": "https://doi.org/10.1101/gr.3715005",
+      "pdfUrl": "https://genome.cshlp.org/content/15/8/1034.full.pdf",
+      "abstract": "We have conducted a comprehensive search for conserved elements in vertebrate genomes, using genome-wide multiple alignments of five vertebrate species (human, mouse, rat, chicken, and Fugu rubripes). Parallel searches have been performed with multiple alignments of four insect species (three species of Drosophila and Anopheles gambiae), two species of Caenorhabditis, and seven species of Saccharomyces. Conserved elements were identified with a computer program called phastCons, which is based on a two-state phylogenetic hidden Markov model (phylo-HMM). PhastCons works by fitting a phylo-HMM to the data by maximum likelihood, subject to constraints designed to calibrate the model across species groups, and then predicting conserved elements based on this model. The predicted elements cover roughly 3%-8% of the human genome (depending on the details of the calibration procedure) and su..."
+    },
+    {
+      "title": "Ultraconserved Elements in the Human Genome",
+      "year": 2004,
+      "venue": "Science",
+      "authors": [
+        "Gill Bejerano",
+        "Michael Pheasant",
+        "Igor V. Makunin",
+        "Stuart Stephen",
+        "W. James Kent",
+        "John S. Mattick",
+        "David Haussler"
+      ],
+      "citations": 1774,
+      "doi": "10.1126/science.1098119",
+      "url": "https://doi.org/10.1126/science.1098119",
+      "pdfUrl": null,
+      "abstract": "There are 481 segments longer than 200 base pairs (bp) that are absolutely conserved (100% identity with no insertions or deletions) between orthologous regions of the human, rat, and mouse genomes. Nearly all of these segments are also conserved in the chicken and dog genomes, with an average of 95 and 99% identity, respectively. Many are also significantly conserved in fish. These ultraconserved elements of the human genome are most often located either overlapping exons in genes involved in RNA processing or in introns or nearby genes involved in the regulation of transcription and development. Along with more than 5000 sequences of over 100 bp that are absolutely conserved among the three sequenced mammals, these represent a class of genetic elements whose functions and evolutionary origins are yet to be determined, but which are more highly conserved between these species than ar..."
+    },
+    {
+      "title": "M-CAP eliminates a majority of variants of uncertain significance in clinical exomes at high sensitivity",
+      "year": 2016,
+      "venue": "Nature Genetics",
+      "authors": [
+        "Karthik A. Jagadeesh",
+        "Aaron M. Wenger",
+        "Mark J. Berger",
+        "Harendra Guturu",
+        "Peter D. Stenson",
+        "D.N. Cooper",
+        "Jonathan A. Bernstein",
+        "Gill Bejerano"
+      ],
+      "citations": 927,
+      "doi": "10.1038/ng.3703",
+      "url": "https://doi.org/10.1038/ng.3703",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Novel small RNA-encoding genes in the intergenic regions of Escherichia coli",
+      "year": 2001,
+      "venue": "Current Biology",
+      "authors": [
+        "Liron Argaman",
+        "Ruth Hershberg",
+        "Jörg Vogel",
+        "Gill Bejerano",
+        "E. Gerhart H. Wagner",
+        "Hanah Margalit",
+        "Shoshy Altuvia"
+      ],
+      "citations": 769,
+      "doi": "10.1016/s0960-9822(01)00270-6",
+      "url": "https://doi.org/10.1016/s0960-9822(01)00270-6",
+      "pdfUrl": "http://www.cell.com/article/S0960982201002706/pdf",
+      "abstract": "BACKGROUND\nSmall, untranslated RNA molecules were identified initially in bacteria, but examples can be found in all kingdoms of life. These RNAs carry out diverse functions, and many of them are regulators of gene expression. Genes encoding small, untranslated RNAs are difficult to detect experimentally or to predict by traditional sequence analysis approaches. Thus, in spite of the rising recognition that such RNAs may play key roles in bacterial physiology, many of the small RNAs known to date were discovered fortuitously.\n\n\nRESULTS\nTo search the Escherichia coli genome sequence for genes encoding small RNAs, we developed a computational strategy employing transcription signals and genomic features of the known small RNA-encoding genes. The search, for which we used rather restrictive criteria, has led to the prediction of 24 putative sRNA-encoding genes, of which 23 were tested ex..."
+    },
+    {
+      "title": "Enhancers: five essential questions",
+      "year": 2013,
+      "venue": "Nature Reviews Genetics",
+      "authors": [
+        "L Pennacchio",
+        "Wendy A. Bickmore",
+        "Ann Dean",
+        "Marcelo A. Nóbrega",
+        "Gill Bejerano"
+      ],
+      "citations": 654,
+      "doi": "10.1038/nrg3458",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4445073",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Human-specific loss of regulatory DNA and the evolution of human-specific traits",
+      "year": 2011,
+      "venue": "Nature",
+      "authors": [
+        "Cory Y. McLean",
+        "Philip L. Reno",
+        "Alex A. Pollen",
+        "Abraham I. Bassan",
+        "Terence D. Capellini",
+        "Catherine Guenther",
+        "Vahan B. Indjeian",
+        "Xinhong Lim"
+      ],
+      "citations": 569,
+      "doi": "10.1038/nature09774",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/3071156",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Forces Shaping the Fastest Evolving Regions in the Human Genome",
+      "year": 2006,
+      "venue": "PLoS Genetics",
+      "authors": [
+        "Katherine S. Pollard",
+        "Sofie R. Salama",
+        "Bryan H. King",
+        "Andrew D. Kern",
+        "Timothy R. Dreszer",
+        "Sol Katzman",
+        "Adam Siepel",
+        "Jakob Skou Pedersen"
+      ],
+      "citations": 556,
+      "doi": "10.1371/journal.pgen.0020168",
+      "url": "https://doi.org/10.1371/journal.pgen.0020168",
+      "pdfUrl": "https://journals.plos.org/plosgenetics/article/file?id=10.1371/journal.pgen.0020168&type=printable",
+      "abstract": "Comparative genomics allow us to search the human genome for segments that were extensively changed in the last approximately 5 million years since divergence from our common ancestor with chimpanzee, but are highly conserved in other species and thus are likely to be functional. We found 202 genomic elements that are highly conserved in vertebrates but show evidence of significantly accelerated substitution rates in human. These are mostly in non-coding DNA, often near genes associated with transcription and DNA binding. Resequencing confirmed that the five most accelerated elements are dramatically changed in human but not in other primates, with seven times more substitutions in human than in chimp. The accelerated elements, and in particular the top five, show a strong bias for adenine and thymine to guanine and cytosine nucleotide changes and are disproportionately located in hig..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:20:55.967Z"
+}
