@@ -9,7 +9,7 @@ import {
 } from '@/lib/campaign';
 import { getCurrentUserId, getUserProfile } from '@/lib/user';
 import { recordReviewedSend } from '@/lib/tracks';
-import { createSchoolGmailDraft, isSendableAddress, validateRecipients } from '@/lib/send';
+import { createSchoolGmailDraft, isSendableAddress, sendTestEmail, validateRecipients } from '@/lib/send';
 import { getResumeFile } from '@/lib/resume-file';
 
 export const dynamic = 'force-dynamic';
@@ -134,13 +134,53 @@ export async function POST(req: NextRequest) {
         attachment: resume
           ? { fileName: resume.fileName, contentType: resume.contentType, base64: resume.base64 }
           : null,
+        draftId: target.mailboxDraftId,
       });
       if (!result.ok) return NextResponse.json({ error: result.error }, { status: 502 });
 
       const updated = await updateTarget(userId, researcherId, {
+        mailboxDraftId: result.draftId,
         note: `Draft in ${result.email}${result.attached ? ` with ${result.attached} attached` : ' — no resume on file'}`,
       });
       return NextResponse.json({ target: updated, draft: result });
+    }
+
+    // Send one draft to the sender, so it can be read as a delivered email
+    // rather than a stored one. Only a real send shows whether the resume
+    // survives transit and how the From line renders.
+    //
+    // The queue is left exactly as it was. Testing the pipe is not evidence
+    // that a professor was contacted, so this records no outbox entry, moves
+    // no status, and counts toward no approval gate.
+    case 'send-test': {
+      if (!target.subject || !target.body) {
+        return NextResponse.json({ error: 'This target has no draft yet' }, { status: 400 });
+      }
+      const user = await getUserProfile(userId);
+      if (!user) return NextResponse.json({ error: 'Finish onboarding first' }, { status: 400 });
+
+      // Falls back to the onboarding address so the common case needs no input,
+      // and a typo cannot turn a test into a cold email to a stranger.
+      const requested = typeof body.to === 'string' ? body.to.trim() : '';
+      const destination = requested || user.email;
+      if (!destination || !isSendableAddress(destination)) {
+        return NextResponse.json({ error: 'No valid address to send the test to' }, { status: 400 });
+      }
+
+      const resume = await getResumeFile(userId);
+      const result = await sendTestEmail({
+        userId,
+        to: destination,
+        fromName: user.name,
+        replyTo: user.email && isSendableAddress(user.email) ? user.email : undefined,
+        subject: target.subject,
+        body: target.body,
+        attachment: resume
+          ? { fileName: resume.fileName, contentType: resume.contentType, base64: resume.base64 }
+          : null,
+      });
+      if (!result.ok) return NextResponse.json({ error: result.error }, { status: 502 });
+      return NextResponse.json({ test: result });
     }
 
     default:

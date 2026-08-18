@@ -44,6 +44,15 @@ export interface CampaignTarget {
   autoApproved: boolean;
   outboxId: string | null;
   sentAt: string | null;
+  /**
+   * The Gmail draft holding the review copy of this email, when one exists.
+   *
+   * Kept so re-drafting updates that message instead of adding a second one.
+   * Without it, editing a draft twice leaves two copies in the mailbox with no
+   * way to tell which is current, and the wrong one is as easy to send as the
+   * right one.
+   */
+  mailboxDraftId?: string | null;
   /** Why a target was skipped or failed, so the queue explains itself. */
   note: string | null;
   createdAt: string;

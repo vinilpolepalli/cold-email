@@ -219,6 +219,8 @@ export interface DraftRequest {
   subject: string;
   body: string;
   attachment?: EmailAttachment | null;
+  /** Existing Gmail draft to replace. Omit to create a new one. */
+  draftId?: string | null;
 }
 
 export type DraftResult =
@@ -241,6 +243,61 @@ export type DraftResult =
  *
  * Nothing here can send. The Gmail drafts endpoint only stores.
  */
+export type TestSendResult =
+  | { ok: true; to: string; from: string; attached: string | null }
+  | { ok: false; error: string };
+
+/**
+ * Send one draft to the sender's own address, to see it the way a professor
+ * will.
+ *
+ * A Gmail draft is not proof of an email. It shows what was composed, not what
+ * a mail server does with it: whether the resume survives transit, whether the
+ * From line reads as a person, whether anything lands in spam. Only a delivered
+ * message answers those, so this sends a real one — to the sender, and nobody
+ * else.
+ *
+ * Deliberately outside `sendEmail`. That path writes an outbox entry, marks the
+ * target sent, and counts toward the per-track approval gate, all of which
+ * would be false here: a test proves the pipe works, not that a professor was
+ * contacted. Nothing in the campaign learns that this happened.
+ */
+export async function sendTestEmail(req: DraftRequest): Promise<TestSendResult> {
+  let auth;
+  try {
+    auth = await getAccessToken(req.userId);
+  } catch (err) {
+    return { ok: false, error: String(err instanceof Error ? err.message : err).slice(0, 300) };
+  }
+  if (!auth) return { ok: false, error: 'No school account connected, so there is nothing to test.' };
+
+  const to = req.to.trim();
+  // The guard that makes this safe to call. A test addressed to a researcher is
+  // not a test, and the mistake is unrecoverable once Gmail has it.
+  if (!isSendableAddress(to)) return { ok: false, error: `${to} is not a valid address.` };
+
+  try {
+    const mime = buildMime({
+      from: `${req.fromName} <${auth.email}>`,
+      to,
+      subject: `[TEST] ${req.subject}`,
+      body: req.body,
+      replyTo: req.replyTo,
+      attachment: req.attachment,
+    });
+    const res = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${auth.token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ raw: Buffer.from(mime).toString('base64url') }),
+      signal: AbortSignal.timeout(30000),
+    });
+    if (!res.ok) return { ok: false, error: `Gmail API ${res.status}: ${(await res.text()).slice(0, 300)}` };
+    return { ok: true, to, from: auth.email, attached: req.attachment?.fileName ?? null };
+  } catch (err) {
+    return { ok: false, error: String(err).slice(0, 300) };
+  }
+}
+
 export async function createSchoolGmailDraft(req: DraftRequest): Promise<DraftResult> {
   let auth;
   try {
@@ -269,12 +326,28 @@ export async function createSchoolGmailDraft(req: DraftRequest): Promise<DraftRe
       replyTo: req.replyTo,
       attachment: req.attachment,
     });
-    const res = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/drafts', {
-      method: 'POST',
+    // Replacing the existing draft rather than adding one keeps the mailbox in
+    // step with the queue: one email per professor, always the current text.
+    const existing = req.draftId?.trim();
+    const url = existing
+      ? `https://gmail.googleapis.com/gmail/v1/users/me/drafts/${encodeURIComponent(existing)}`
+      : 'https://gmail.googleapis.com/gmail/v1/users/me/drafts';
+    let res = await fetch(url, {
+      method: existing ? 'PUT' : 'POST',
       headers: { Authorization: `Bearer ${auth.token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: { raw: Buffer.from(mime).toString('base64url') } }),
       signal: AbortSignal.timeout(30000),
     });
+    // The stored id can be stale: a draft deleted in Gmail is gone, and failing
+    // for that reason would strand the target with no review copy at all.
+    if (existing && (res.status === 404 || res.status === 400)) {
+      res = await fetch('https://gmail.googleapis.com/gmail/v1/users/me/drafts', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${auth.token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: { raw: Buffer.from(mime).toString('base64url') } }),
+        signal: AbortSignal.timeout(30000),
+      });
+    }
     if (!res.ok) return { ok: false, error: `Gmail API ${res.status}: ${(await res.text()).slice(0, 300)}` };
     const draft = (await res.json()) as { id?: string };
     if (!draft.id) return { ok: false, error: 'Gmail accepted the draft but returned no id' };
