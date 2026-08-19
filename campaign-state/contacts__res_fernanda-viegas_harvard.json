@@ -1,0 +1,17 @@
+{
+  "researcherId": "res_fernanda-viegas_harvard",
+  "contacts": [
+    {
+      "name": "Marina DiDonato McLaughlin",
+      "role": null,
+      "email": "marina@seas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://seas.harvard.edu/person/fernanda-viegas"
+    }
+  ],
+  "pagesChecked": [
+    "http://www.fernandaviegas.com/",
+    "https://seas.harvard.edu/person/fernanda-viegas"
+  ],
+  "fetchedAt": "2026-08-19T14:35:57.142Z"
+}

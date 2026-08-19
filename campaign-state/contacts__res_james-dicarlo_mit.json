@@ -1,0 +1,68 @@
+{
+  "researcherId": "res_james-dicarlo_mit",
+  "contacts": [
+    {
+      "name": "Daniel Oreper",
+      "role": "Program Manager for Neurophysiology of Cognition, with particular interest in developing b",
+      "email": "doreper@mit.edu",
+      "kind": "admin",
+      "sourceUrl": "https://dicarlolab.mit.edu/dicarlo-lab-community/"
+    },
+    {
+      "name": null,
+      "role": "Postdoc and later a Research Scientist in the lab of Dr",
+      "email": "ajemian@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://dicarlolab.mit.edu/dicarlo-lab-community/"
+    },
+    {
+      "name": null,
+      "role": "graduate student after receiving his BSE in Electrical Engineering and Biomedical Engineer",
+      "email": "mil@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://dicarlolab.mit.edu/dicarlo-lab-community/"
+    },
+    {
+      "name": null,
+      "role": "postdoc, and in August, 2024 became a Research Scientist",
+      "email": "yhb@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://dicarlolab.mit.edu/dicarlo-lab-community/"
+    },
+    {
+      "name": null,
+      "role": "PhD student at the Brain and Cognitive Sciences department at MIT",
+      "email": "ssazaidi@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://dicarlolab.mit.edu/dicarlo-lab-community/"
+    },
+    {
+      "name": null,
+      "role": "graduate student in September, 2023",
+      "email": "yu_xie@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://dicarlolab.mit.edu/dicarlo-lab-community/"
+    },
+    {
+      "name": null,
+      "role": "PhD candidate in Bioengineering at the Harvard School of Engineering and Applied Sciences",
+      "email": "weiwent@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://dicarlolab.mit.edu/dicarlo-lab-community/"
+    },
+    {
+      "name": null,
+      "role": "PhD student in Biological Engineering at MIT",
+      "email": "czhangyx@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://dicarlolab.mit.edu/dicarlo-lab-community/"
+    }
+  ],
+  "pagesChecked": [
+    "http://dicarlolab.mit.edu",
+    "https://dicarlolab.mit.edu/",
+    "https://dicarlolab.mit.edu/dicarlo-lab-community/",
+    "https://dicarlolab.mit.edu/contact/"
+  ],
+  "fetchedAt": "2026-08-19T14:37:39.860Z"
+}

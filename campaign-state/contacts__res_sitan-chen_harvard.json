@@ -1,0 +1,18 @@
+{
+  "researcherId": "res_sitan-chen_harvard",
+  "contacts": [
+    {
+      "name": "Allison O. Choat",
+      "role": null,
+      "email": "achoat@seas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://seas.harvard.edu/person/sitan-chen"
+    }
+  ],
+  "pagesChecked": [
+    "https://sitanchen.com/",
+    "https://sitanchen.com/ccsi_rg.html",
+    "https://seas.harvard.edu/person/sitan-chen"
+  ],
+  "fetchedAt": "2026-08-19T14:35:54.769Z"
+}

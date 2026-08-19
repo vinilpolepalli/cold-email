@@ -1,0 +1,19 @@
+{
+  "researcherId": "res_ila-fiete_mit",
+  "contacts": [
+    {
+      "name": "Administrative Asst",
+      "role": "Administrative Asst",
+      "email": "mriley4@mit.edu",
+      "kind": "admin",
+      "sourceUrl": "https://bcs.mit.edu/directory/ila-fiete"
+    }
+  ],
+  "pagesChecked": [
+    "https://bcs.mit.edu/directory/ila-fiete",
+    "https://bcs.mit.edu/about-bcs",
+    "https://bcs.mit.edu/about-bcs/mission",
+    "https://bcs.mit.edu/about-bcs/history"
+  ],
+  "fetchedAt": "2026-08-19T14:36:24.546Z"
+}

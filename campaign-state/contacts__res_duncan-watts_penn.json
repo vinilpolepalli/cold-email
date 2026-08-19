@@ -1,0 +1,25 @@
+{
+  "researcherId": "res_duncan-watts_penn",
+  "contacts": [
+    {
+      "name": null,
+      "role": "post-doctoral researchers: Email the CSSLab at",
+      "email": "csslab@seas.upenn.edu",
+      "kind": "lab",
+      "sourceUrl": "https://duncanjwatts.com/contact/"
+    },
+    {
+      "name": "PRESS INQUIRIES",
+      "role": "post-doctoral researchers: Email the CSSLab at csslab@seas",
+      "email": "arsekin@sas.upenn.edu",
+      "kind": "lab",
+      "sourceUrl": "https://duncanjwatts.com/contact/"
+    }
+  ],
+  "pagesChecked": [
+    "https://duncanjwatts.com/",
+    "https://duncanjwatts.com/contact/",
+    "https://oid.wharton.upenn.edu/profile/djwatts/"
+  ],
+  "fetchedAt": "2026-08-19T14:39:51.123Z"
+}

@@ -1,0 +1,19 @@
+{
+  "researcherId": "res_marinka-zitnik_harvard",
+  "contacts": [
+    {
+      "name": "Heather Viana",
+      "role": "Administrative Coordinator",
+      "email": "heather_viana@hms.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://dbmi.hms.harvard.edu/people/marinka-zitnik"
+    }
+  ],
+  "pagesChecked": [
+    "https://zitniklab.hms.harvard.edu/",
+    "https://zitniklab.hms.harvard.edu/contact/",
+    "https://zitniklab.hms.harvard.edu/people/",
+    "https://dbmi.hms.harvard.edu/people/marinka-zitnik"
+  ],
+  "fetchedAt": "2026-08-19T14:35:37.295Z"
+}

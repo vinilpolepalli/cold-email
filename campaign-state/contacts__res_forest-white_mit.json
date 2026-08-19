@@ -1,0 +1,19 @@
+{
+  "researcherId": "res_forest-white_mit",
+  "contacts": [
+    {
+      "name": "Senior Lab",
+      "role": "Administration",
+      "email": "isadora@mit.edu",
+      "kind": "admin",
+      "sourceUrl": "https://white-lab.mit.edu/contact/"
+    }
+  ],
+  "pagesChecked": [
+    "https://white-lab.mit.edu/",
+    "https://white-lab.mit.edu/people/",
+    "https://white-lab.mit.edu/lab-resources",
+    "https://white-lab.mit.edu/contact/"
+  ],
+  "fetchedAt": "2026-08-19T14:37:34.732Z"
+}

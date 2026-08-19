@@ -1,0 +1,19 @@
+{
+  "researcherId": "res_h-t-kung_harvard",
+  "contacts": [
+    {
+      "name": "Gioia Sweetland",
+      "role": null,
+      "email": "gioia@seas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://seas.harvard.edu/person/ht-kung"
+    }
+  ],
+  "pagesChecked": [
+    "http://www.eecs.harvard.edu/~htk",
+    "http://www.eecs.harvard.edu/htk/phdadvice/",
+    "http://www.eecs.harvard.edu/htk/contact/",
+    "https://seas.harvard.edu/person/ht-kung"
+  ],
+  "fetchedAt": "2026-08-19T14:36:08.955Z"
+}

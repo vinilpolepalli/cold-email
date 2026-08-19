@@ -1,0 +1,19 @@
+{
+  "researcherId": "res_pranav-rajpurkar_harvard",
+  "contacts": [
+    {
+      "name": "Heather Viana",
+      "role": "Administrative Coordinator",
+      "email": "heather_viana@hms.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://dbmi.hms.harvard.edu/people/pranav-rajpurkar"
+    }
+  ],
+  "pagesChecked": [
+    "https://rajpurkarlab.hms.harvard.edu/",
+    "https://rajpurkarlab.hms.harvard.edu/team",
+    "https://rajpurkarlab.hms.harvard.edu/contact",
+    "https://dbmi.hms.harvard.edu/people/pranav-rajpurkar"
+  ],
+  "fetchedAt": "2026-08-19T14:36:07.007Z"
+}

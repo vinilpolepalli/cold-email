@@ -1,0 +1,18 @@
+{
+  "researcherId": "res_sham-kakade_harvard",
+  "contacts": [
+    {
+      "name": "Sarah Gayer",
+      "role": null,
+      "email": "sgayer@seas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://seas.harvard.edu/person/sham-kakade"
+    }
+  ],
+  "pagesChecked": [
+    "https://shamulent.github.io/",
+    "https://shamulent.github.io/group",
+    "https://seas.harvard.edu/person/sham-kakade"
+  ],
+  "fetchedAt": "2026-08-19T14:36:11.037Z"
+}

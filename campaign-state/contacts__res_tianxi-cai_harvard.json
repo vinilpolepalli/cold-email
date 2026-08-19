@@ -1,0 +1,17 @@
+{
+  "researcherId": "res_tianxi-cai_harvard",
+  "contacts": [
+    {
+      "name": "Mohammed Moro \n Project",
+      "role": "Coordinator, Cai Lab",
+      "email": "mohammed_moro@hms.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://dbmi.hms.harvard.edu/people/tianxi-cai"
+    }
+  ],
+  "pagesChecked": [
+    "https://celehs.hms.harvard.edu/",
+    "https://dbmi.hms.harvard.edu/people/tianxi-cai"
+  ],
+  "fetchedAt": "2026-08-19T14:36:01.317Z"
+}

@@ -5,21 +5,22 @@
   "researcherName": "Lucas B Janson",
   "school": "Harvard",
   "trackId": "cs-core",
-  "status": "queued",
+  "status": "drafted",
   "rank": 45,
   "reasons": [
     "Overlaps on statistical machine learning, high-dimensional inference, representation learning theory",
     "Harvard is priority three"
   ],
-  "subject": null,
-  "body": null,
+  "subject": "Interested in your work on conditional randomization testing",
+  "body": "Hello Professor Janson,\n\nMy name is Vinil Polepalli and I am an undergraduate at New York University studying Computer Science and Business. I have been a research intern in the Chiosis Lab at Memorial Sloan Kettering, where I built protein-ligand graph neural networks for Hsp90 and epichaperome complexes that reached 0.984 ROC AUC separating active from inactive inhibitor candidates.\n\nThe distilled conditional randomization test solves a problem I ran into and then quietly walked around. The conditional randomization test gives exact, nonasymptotic Type-I error control using any statistic in any dimension, which sounds like it should end the argument, except recomputing that statistic on resampled data is unaffordable the moment there is multiple testing. That is precisely where I stopped. My pan-cancer work involved 801 TCGA samples against 20,531 gene features, and I wanted to say which genes mattered conditionally on the others, so I read feature importances off the model and reported them with no error control at all, because the honest test was computationally out of reach at that width. Distillation making the powerful statistic affordable is the piece that turns this from a principle into something I could have actually run.\n\nI would like to hear more about what the lab is working on now, and where my background would be useful to you.\n\nIn the past, I have worked on the following related projects:\n- Sole author, cVAE-augmented deep learning for pan-cancer RNA-seq classification, about 98% test accuracy across 5 cancer types on TCGA: https://arxiv.org/abs/2508.02743\n- Hsp90 inhibitor virtual screening in the Chiosis Lab at Memorial Sloan Kettering: 4,566 candidates screened at 0.984 GNN ROC AUC and 5x enrichment, 0 Lipinski violations in the top 50: https://hsp90-dashboard.vercel.app/\n- First author, EGCG and piperine synergy in D. tigrina regeneration, IEEE MIT Undergraduate Research Technology Conference: https://ieeexplore.ieee.org/document/11533121\n- Semantic segmentation for UAV-based environmental monitoring at Carnegie Mellon Robotics Institute: 0.88 mean IoU and 0.94 F1 on 25,000 labeled aerial images, sub-100 ms inference across 30 flights\n\nOutside of research I was invited to Y Combinator's Startup School, reached the VEX Robotics World Championship semifinals, and have qualified for the AIME three times.\n\nI have extensively used Python, scikit-learn and PyTorch in past work, along with standard high-dimensional statistics tooling, but have a lot of coding experience and am adaptable to whichever libraries your lab uses. My resume is attached. Please let me know if there is a fit in your lab.\n\nI would be happy to elaborate on my skills and where I think I can best help out.\n\nThank you!\n\n--\nVinil Polepalli\nNew York University | Class of 2029\nB.S. Computer Science and B.S. Business",
   "to": "ljanson@fas.harvard.edu",
   "cc": [],
-  "scheduledAt": null,
+  "scheduledAt": "2026-08-20T13:27:00.000Z",
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": null,
+  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T14:28:42.725Z",
-  "updatedAt": "2026-08-18T14:28:42.725Z"
+  "updatedAt": "2026-08-19T14:46:20.640Z",
+  "mailboxDraftId": "r-3745967743686240"
 }

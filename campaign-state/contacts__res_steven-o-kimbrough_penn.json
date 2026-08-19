@@ -1,0 +1,46 @@
+{
+  "researcherId": "res_steven-o-kimbrough_penn",
+  "contacts": [
+    {
+      "name": "Staff\n Tara Kenner \n Financial",
+      "role": "Administrative Coordinator",
+      "email": "mullinst@wharton.upenn.edu",
+      "kind": "admin",
+      "sourceUrl": "https://oid.wharton.upenn.edu/department-information/staff/"
+    },
+    {
+      "name": "Staff\n Tara Kenner \n Financial",
+      "role": "Administrative Coordinator",
+      "email": "brocd@wharton.upenn.edu",
+      "kind": "admin",
+      "sourceUrl": "https://oid.wharton.upenn.edu/department-information/staff/"
+    },
+    {
+      "name": "Daniel Brockman",
+      "role": "Program Manager",
+      "email": "ovadala@wharton.upenn.edu",
+      "kind": "admin",
+      "sourceUrl": "https://oid.wharton.upenn.edu/department-information/staff/"
+    },
+    {
+      "name": "Owen Vadala \n Senior Research",
+      "role": "Coordinator",
+      "email": "nursea@wharton.upenn.edu",
+      "kind": "admin",
+      "sourceUrl": "https://oid.wharton.upenn.edu/department-information/staff/"
+    },
+    {
+      "name": "Andrea Nurse \nBusiness",
+      "role": "Administrator",
+      "email": "jamiewa@wharton.upenn.edu",
+      "kind": "admin",
+      "sourceUrl": "https://oid.wharton.upenn.edu/department-information/staff/"
+    }
+  ],
+  "pagesChecked": [
+    "https://oid.wharton.upenn.edu/profile/sok/",
+    "https://oid.wharton.upenn.edu/department-information/staff/",
+    "https://oid.wharton.upenn.edu/department-information/contact-us/"
+  ],
+  "fetchedAt": "2026-08-19T14:41:19.308Z"
+}

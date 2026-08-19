@@ -1,0 +1,17 @@
+{
+  "researcherId": "res_yue-m-lu_harvard",
+  "contacts": [
+    {
+      "name": "Gioia Sweetland",
+      "role": null,
+      "email": "gioia@seas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://seas.harvard.edu/person/yue-lu"
+    }
+  ],
+  "pagesChecked": [
+    "http://lu.seas.harvard.edu/",
+    "https://seas.harvard.edu/person/yue-lu"
+  ],
+  "fetchedAt": "2026-08-19T14:36:07.916Z"
+}

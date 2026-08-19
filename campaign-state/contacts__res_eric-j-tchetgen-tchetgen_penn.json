@@ -1,0 +1,68 @@
+{
+  "researcherId": "res_eric-j-tchetgen-tchetgen_penn",
+  "contacts": [
+    {
+      "name": "Dr. Yuxin Chen",
+      "role": "COORDINATOR",
+      "email": "yuxinc@wharton.upenn.edu",
+      "kind": "admin",
+      "sourceUrl": "https://statistics.wharton.upenn.edu/programs/phd/contact-information/"
+    },
+    {
+      "name": "OORDINATOR \n Statistics PhD",
+      "role": "Coordinator for Enrolled Students",
+      "email": "doctoral-programs@wharton.upenn.edu",
+      "kind": "admin",
+      "sourceUrl": "https://statistics.wharton.upenn.edu/programs/phd/contact-information/"
+    },
+    {
+      "name": "Aid \n Students\n Jiahao Ai",
+      "role": "PhD Student",
+      "email": "jiahaoai@wharton.upenn.edu",
+      "kind": "lab",
+      "sourceUrl": "https://statistics.wharton.upenn.edu/programs/phd/contact-information/"
+    },
+    {
+      "name": "Aid \n Students\n Jiahao Ai",
+      "role": "PhD Student",
+      "email": "bekerman@wharton.upenn.edu",
+      "kind": "lab",
+      "sourceUrl": "https://statistics.wharton.upenn.edu/programs/phd/contact-information/"
+    },
+    {
+      "name": "Jiahao Ai",
+      "role": "PhD Student",
+      "email": "arunavb3@wharton.upenn.edu",
+      "kind": "lab",
+      "sourceUrl": "https://statistics.wharton.upenn.edu/programs/phd/contact-information/"
+    },
+    {
+      "name": "William Bekerman",
+      "role": "PhD Student",
+      "email": "jinhobok@wharton.upenn.edu",
+      "kind": "lab",
+      "sourceUrl": "https://statistics.wharton.upenn.edu/programs/phd/contact-information/"
+    },
+    {
+      "name": "Arunav Bhowmick",
+      "role": "PhD Student",
+      "email": "sayakc@wharton.upenn.edu",
+      "kind": "lab",
+      "sourceUrl": "https://statistics.wharton.upenn.edu/programs/phd/contact-information/"
+    },
+    {
+      "name": "Jinho Bok",
+      "role": "PhD Student",
+      "email": "duz@wharton.upenn.edu",
+      "kind": "lab",
+      "sourceUrl": "https://statistics.wharton.upenn.edu/programs/phd/contact-information/"
+    }
+  ],
+  "pagesChecked": [
+    "https://statistics.wharton.upenn.edu/profile/ett/",
+    "https://statistics.wharton.upenn.edu/programs/undergraduate/undergradcontactinfo/",
+    "https://statistics.wharton.upenn.edu/programs/mba/mba-contact-information-2/",
+    "https://statistics.wharton.upenn.edu/programs/phd/contact-information/"
+  ],
+  "fetchedAt": "2026-08-19T14:40:32.948Z"
+}

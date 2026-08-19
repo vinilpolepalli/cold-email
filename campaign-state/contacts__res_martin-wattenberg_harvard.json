@@ -1,0 +1,18 @@
+{
+  "researcherId": "res_martin-wattenberg_harvard",
+  "contacts": [
+    {
+      "name": "Marina DiDonato McLaughlin",
+      "role": null,
+      "email": "marina@seas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://seas.harvard.edu/person/martin-wattenberg"
+    }
+  ],
+  "pagesChecked": [
+    "http://www.bewitched.com/",
+    "http://www.bewitched.com/about.html",
+    "https://seas.harvard.edu/person/martin-wattenberg"
+  ],
+  "fetchedAt": "2026-08-19T14:36:10.355Z"
+}

@@ -1,0 +1,25 @@
+{
+  "researcherId": "res_kiant-brantley_harvard",
+  "contacts": [
+    {
+      "name": "Anana J. Charles",
+      "role": null,
+      "email": "acharles@seas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://seas.harvard.edu/person/kiante-brantley"
+    },
+    {
+      "name": "Daniel Ritter",
+      "role": "Postdocs:",
+      "email": "kdbrantley@g.harvard.edu",
+      "kind": "lab",
+      "sourceUrl": "https://xkianteb.github.io/group"
+    }
+  ],
+  "pagesChecked": [
+    "https://xkianteb.github.io/",
+    "https://xkianteb.github.io/group",
+    "https://seas.harvard.edu/person/kiante-brantley"
+  ],
+  "fetchedAt": "2026-08-19T14:35:50.865Z"
+}

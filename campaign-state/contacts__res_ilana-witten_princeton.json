@@ -1,0 +1,25 @@
+{
+  "researcherId": "res_ilana-witten_princeton",
+  "contacts": [
+    {
+      "name": "Tina Erdos",
+      "role": "Lab manager: Robert Fetcho, PhD",
+      "email": "tina.erdos@princeton.edu",
+      "kind": "lab",
+      "sourceUrl": "https://wittenlab.org/contact/"
+    },
+    {
+      "name": null,
+      "role": "Lab manager: Robert Fetcho, PhD",
+      "email": "rf6456@princeton.edu",
+      "kind": "lab",
+      "sourceUrl": "https://wittenlab.org/contact/"
+    }
+  ],
+  "pagesChecked": [
+    "https://wittenlab.org/",
+    "https://wittenlab.org/people/",
+    "https://wittenlab.org/contact/"
+  ],
+  "fetchedAt": "2026-08-19T14:39:16.195Z"
+}

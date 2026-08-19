@@ -1,0 +1,17 @@
+{
+  "researcherId": "res_michael-baym_harvard",
+  "contacts": [
+    {
+      "name": null,
+      "role": "Administrative Coordinator",
+      "email": "nichole_parker@hms.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://dbmi.hms.harvard.edu/people/michael-baym"
+    }
+  ],
+  "pagesChecked": [
+    "https://baymlab.hms.harvard.edu/",
+    "https://dbmi.hms.harvard.edu/people/michael-baym"
+  ],
+  "fetchedAt": "2026-08-19T14:35:47.715Z"
+}

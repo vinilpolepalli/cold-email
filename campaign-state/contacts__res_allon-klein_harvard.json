@@ -1,0 +1,19 @@
+{
+  "researcherId": "res_allon-klein_harvard",
+  "contacts": [
+    {
+      "name": null,
+      "role": "Postdoctoral Researcher and JCC Fellow, Harvard Medical School",
+      "email": "ccalla@hms.harvard.edu",
+      "kind": "lab",
+      "sourceUrl": "https://www.klein.hms.harvard.edu/team"
+    }
+  ],
+  "pagesChecked": [
+    "https://www.klein.hms.harvard.edu",
+    "https://www.klein.hms.harvard.edu/",
+    "https://www.klein.hms.harvard.edu/team",
+    "https://www.klein.hms.harvard.edu/lab-culture"
+  ],
+  "fetchedAt": "2026-08-19T14:35:32.207Z"
+}

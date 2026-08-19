@@ -5,21 +5,22 @@
   "researcherName": "Manoel Horta Ribeiro",
   "school": "Princeton",
   "trackId": "cs-core",
-  "status": "queued",
+  "status": "drafted",
   "rank": 18.3,
   "reasons": [
     "Overlaps on computational social science, machine learning",
     "Princeton is priority three"
   ],
-  "subject": null,
-  "body": null,
+  "subject": "Interested in your work on who benefits from workplace AI adoption",
+  "body": "Hello Professor Horta Ribeiro,\n\nMy name is Vinil Polepalli and I am an undergraduate at New York University studying Computer Science and Business. I have been a research intern in the Chiosis Lab at Memorial Sloan Kettering, where I built protein-ligand graph neural networks for Hsp90 and epichaperome complexes that reached 0.984 ROC AUC separating active from inactive inhibitor candidates.\n\nThe adoption study asks the question that gets skipped in most deployment write-ups: not whether the system works, but who ends up using it, who gains from it, and who is left behind, answered by combining search logs with surveys and interviews rather than by any one of those. Adoption depending on fit between the tool and the user's existing practice, rather than on the tool's capability, is the kind of finding only the mixed method produces. I have a personal stake in this. I am an undergraduate who has used these tools heavily in my own research, including the arXiv paper I wrote on cVAE-augmented pan-cancer classification, and I am aware that the fluency I have with them is not evenly distributed among my classmates and is starting to compound into a real difference in what we can each attempt. That dynamic seems worth measuring while it is still forming.\n\nI would like to hear more about what the lab is working on now, and where my background would be useful to you.\n\nIn the past, I have worked on the following related projects:\n- Sole author, cVAE-augmented deep learning for pan-cancer RNA-seq classification, about 98% test accuracy across 5 cancer types on TCGA: https://arxiv.org/abs/2508.02743\n- Hsp90 inhibitor virtual screening in the Chiosis Lab at Memorial Sloan Kettering: 4,566 candidates screened at 0.984 GNN ROC AUC and 5x enrichment, 0 Lipinski violations in the top 50: https://hsp90-dashboard.vercel.app/\n- First author, EGCG and piperine synergy in D. tigrina regeneration, IEEE MIT Undergraduate Research Technology Conference: https://ieeexplore.ieee.org/document/11533121\n- Semantic segmentation for UAV-based environmental monitoring at Carnegie Mellon Robotics Institute: 0.88 mean IoU and 0.94 F1 on 25,000 labeled aerial images, sub-100 ms inference across 30 flights\n\nOutside of research I was invited to Y Combinator's Startup School, reached the VEX Robotics World Championship semifinals, and have qualified for the AIME three times.\n\nI have extensively used Python, PyTorch and scikit-learn in past work, along with standard NLP and data analysis tooling, but have a lot of coding experience and am adaptable to whichever libraries your lab uses. My resume is attached. Please let me know if there is a fit in your lab.\n\nI would be happy to elaborate on my skills and where I think I can best help out.\n\nThank you!\n\n--\nVinil Polepalli\nNew York University | Class of 2029\nB.S. Computer Science and B.S. Business",
   "to": "mh3586@cs.princeton.edu",
   "cc": [],
-  "scheduledAt": null,
+  "scheduledAt": "2026-08-20T13:27:00.000Z",
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": null,
+  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T14:28:42.929Z",
-  "updatedAt": "2026-08-18T14:28:42.929Z"
+  "updatedAt": "2026-08-19T14:46:24.167Z",
+  "mailboxDraftId": "r7329656033588012964"
 }

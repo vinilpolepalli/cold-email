@@ -1,0 +1,17 @@
+{
+  "researcherId": "res_todd-zickler_harvard",
+  "contacts": [
+    {
+      "name": "Claudia Stearns",
+      "role": null,
+      "email": "cstearns@seas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://seas.harvard.edu/person/todd-zickler"
+    }
+  ],
+  "pagesChecked": [
+    "http://www.eecs.harvard.edu/~zickler/",
+    "https://seas.harvard.edu/person/todd-zickler"
+  ],
+  "fetchedAt": "2026-08-19T14:35:49.480Z"
+}

@@ -1,0 +1,18 @@
+{
+  "researcherId": "res_stratos-idreos_harvard",
+  "contacts": [
+    {
+      "name": "Emmy Ceballos",
+      "role": null,
+      "email": "eceballos@seas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://seas.harvard.edu/person/stratos-idreos"
+    }
+  ],
+  "pagesChecked": [
+    "http://daslab.seas.harvard.edu",
+    "http://daslab.seas.harvard.edu/reading-group",
+    "https://seas.harvard.edu/person/stratos-idreos"
+  ],
+  "fetchedAt": "2026-08-19T14:36:16.413Z"
+}

@@ -1,0 +1,18 @@
+{
+  "researcherId": "res_xihong-lin_harvard",
+  "contacts": [
+    {
+      "name": null,
+      "role": "Administrative Contact:",
+      "email": "dpcohen@hsph.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://hsph.harvard.edu/research/lin-lab/"
+    }
+  ],
+  "pagesChecked": [
+    "https://hsph.harvard.edu/profile/xihong-lin/",
+    "https://hsph.harvard.edu/contact/",
+    "https://hsph.harvard.edu/research/lin-lab/"
+  ],
+  "fetchedAt": "2026-08-19T14:35:33.750Z"
+}

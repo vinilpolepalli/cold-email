@@ -1,0 +1,19 @@
+{
+  "researcherId": "res_edward-h-adelson_mit",
+  "contacts": [
+    {
+      "name": "Administrative Asst",
+      "role": "Administrative Asst",
+      "email": "canfield@mit.edu",
+      "kind": "admin",
+      "sourceUrl": "https://bcs.mit.edu/directory/edward-h-adelson"
+    }
+  ],
+  "pagesChecked": [
+    "https://bcs.mit.edu/directory/edward-h-adelson",
+    "https://bcs.mit.edu/about-bcs",
+    "https://bcs.mit.edu/about-bcs/mission",
+    "https://bcs.mit.edu/about-bcs/history"
+  ],
+  "fetchedAt": "2026-08-19T14:37:47.717Z"
+}

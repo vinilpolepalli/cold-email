@@ -1,0 +1,26 @@
+{
+  "researcherId": "res_daniela-rus_mit",
+  "contacts": [
+    {
+      "name": null,
+      "role": "Administrative and technical contacts",
+      "email": "csail-fiscal@mit.edu",
+      "kind": "admin",
+      "sourceUrl": "http://www.csail.mit.edu/internal-resources"
+    },
+    {
+      "name": "CSAIL Living Lab \n CSAIL",
+      "role": "Postdoc & Graduate Student Council",
+      "email": "alliances@csail.mit.edu",
+      "kind": "lab",
+      "sourceUrl": "http://www.csail.mit.edu/internal-resources"
+    }
+  ],
+  "pagesChecked": [
+    "http://www.csail.mit.edu/user/876",
+    "http://www.csail.mit.edu/internal-resources",
+    "http://www.csail.mit.edu/people?roleFacets=Principal%20Investigators%2CCore/Dual%2CAssociates%2CEmeritus",
+    "http://www.csail.mit.edu/about"
+  ],
+  "fetchedAt": "2026-08-19T14:37:55.129Z"
+}

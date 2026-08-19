@@ -1,0 +1,17 @@
+{
+  "researcherId": "res_yilun-du_harvard",
+  "contacts": [
+    {
+      "name": "Mike Donohoe",
+      "role": null,
+      "email": "donohoe@seas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://seas.harvard.edu/person/yilun-du"
+    }
+  ],
+  "pagesChecked": [
+    "https://yilundu.github.io/",
+    "https://seas.harvard.edu/person/yilun-du"
+  ],
+  "fetchedAt": "2026-08-19T14:35:50.256Z"
+}

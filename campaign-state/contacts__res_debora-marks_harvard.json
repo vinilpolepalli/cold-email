@@ -1,0 +1,33 @@
+{
+  "researcherId": "res_debora-marks_harvard",
+  "contacts": [
+    {
+      "name": "Systems Biology",
+      "role": "graduate student in the Marks Lab, defedning her PhD in August 2025",
+      "email": "roseorenbuch@g.harvard.edu",
+      "kind": "lab",
+      "sourceUrl": "https://www.deboramarkslab.com/members"
+    },
+    {
+      "name": null,
+      "role": "postdoc in the lab",
+      "email": "noah.greenwald@ucsf.edu",
+      "kind": "lab",
+      "sourceUrl": "https://www.deboramarkslab.com/members"
+    },
+    {
+      "name": "Artem Gazizov",
+      "role": "RESEARCH ASSOCIATE",
+      "email": "jake_reardon@hms.harvard.edu",
+      "kind": "lab",
+      "sourceUrl": "https://www.deboramarkslab.com/members"
+    }
+  ],
+  "pagesChecked": [
+    "https://www.deboramarkslab.com",
+    "https://www.deboramarkslab.com/about",
+    "https://www.deboramarkslab.com/members",
+    "https://www.deboramarkslab.com/people"
+  ],
+  "fetchedAt": "2026-08-19T14:35:38.370Z"
+}

@@ -1,0 +1,18 @@
+{
+  "researcherId": "res_david-brooks_harvard",
+  "contacts": [
+    {
+      "name": "Gioia Sweetland",
+      "role": null,
+      "email": "gioia@seas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://seas.harvard.edu/person/david-brooks"
+    }
+  ],
+  "pagesChecked": [
+    "https://davidbrooks.seas.harvard.edu/",
+    "https://davidbrooks.seas.harvard.edu/students/",
+    "https://seas.harvard.edu/person/david-brooks"
+  ],
+  "fetchedAt": "2026-08-19T14:36:12.689Z"
+}

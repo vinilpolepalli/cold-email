@@ -1,0 +1,17 @@
+{
+  "researcherId": "res_stuart-m-shieber_harvard",
+  "contacts": [
+    {
+      "name": "Ann Marie King",
+      "role": null,
+      "email": "aking@seas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://seas.harvard.edu/person/stuart-shieber"
+    }
+  ],
+  "pagesChecked": [
+    "http://www.eecs.harvard.edu/~shieber/",
+    "https://seas.harvard.edu/person/stuart-shieber"
+  ],
+  "fetchedAt": "2026-08-19T14:36:18.598Z"
+}

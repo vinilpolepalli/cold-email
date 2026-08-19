@@ -1,0 +1,68 @@
+{
+  "researcherId": "res_douglas-a-lauffenburger_mit",
+  "contacts": [
+    {
+      "name": "Graduate Students\n Simone Gohsman",
+      "role": "PhD candidate (2025 cohort)",
+      "email": "gohsma25@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://dallab.mit.edu/people/"
+    },
+    {
+      "name": "Luka Karginov",
+      "role": "PhD candidate (2025 cohort)",
+      "email": "lukaak2@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://dallab.mit.edu/people/"
+    },
+    {
+      "name": "Natalie Lee",
+      "role": "PhD candidate (2025 cohort)",
+      "email": "nklee@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://dallab.mit.edu/people/"
+    },
+    {
+      "name": "Sean Pascoe",
+      "role": "PhD candidate (2022 cohort)",
+      "email": "spascoe@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://dallab.mit.edu/people/"
+    },
+    {
+      "name": "Julia Zhong",
+      "role": "PhD candidate (2025 cohort)",
+      "email": "jjzhong@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://dallab.mit.edu/people/"
+    },
+    {
+      "name": "Hratch Baghdassarian",
+      "role": "PhD candidate (2024 cohort)",
+      "email": "hmbaghda@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://dallab.mit.edu/people/"
+    },
+    {
+      "name": "Jose Cadavid",
+      "role": "PhD candidate (2024 cohort)",
+      "email": "jcadavid@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://dallab.mit.edu/people/"
+    },
+    {
+      "name": "Katarina DiLillo",
+      "role": "Postdoctoral Associate",
+      "email": "kdilillo@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://dallab.mit.edu/people/"
+    }
+  ],
+  "pagesChecked": [
+    "https://dallab.mit.edu/",
+    "https://dallab.mit.edu/people/",
+    "https://dallab.mit.edu/contact/",
+    "https://be.mit.edu/faculty/douglas-a-lauffenburger/"
+  ],
+  "fetchedAt": "2026-08-19T14:37:32.134Z"
+}

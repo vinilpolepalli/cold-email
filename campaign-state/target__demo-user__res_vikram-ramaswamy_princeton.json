@@ -5,21 +5,22 @@
   "researcherName": "Vikram Ramaswamy",
   "school": "Princeton",
   "trackId": "cs-robotics",
-  "status": "queued",
+  "status": "drafted",
   "rank": 20.1,
   "reasons": [
     "Overlaps on machine learning, computer vision",
     "Princeton is priority three"
   ],
-  "subject": null,
-  "body": null,
+  "subject": "Interested in your work on generative models for contextual debiasing",
+  "body": "Hello Professor Ramaswamy,\n\nMy name is Vinil Polepalli and I am an undergraduate at New York University studying Computer Science and Business. I have been a research intern in the Chiosis Lab at Memorial Sloan Kettering, where I built protein-ligand graph neural networks for Hsp90 and epichaperome complexes that reached 0.984 ROC AUC separating active from inactive inhibitor candidates.\n\nThe contextual debiasing paper describes my own project back to me with the reasoning made explicit. Visual patterns follow the world's frequencies, datasets inherit them, models recognize common configurations more easily, and the uncommon configuration is often the one that matters more, with a beach ball on a road being a better example than any I came up with. Since collecting the rare case is impractical, you ask whether generation can supply it. That is exactly what I did with 801 TCGA samples and a conditional VAE producing synthetic profiles for the rare cancer classes, but I framed it as fixing class imbalance rather than as supplying missing context, and I never tested whether the generated examples carried the uncommon combinations or just more of the common ones wearing a rare label. That test is the part I would want to learn to run.\n\nI would like to hear more about what the lab is working on now, and where my background would be useful to you.\n\nIn the past, I have worked on the following related projects:\n- Sole author, cVAE-augmented deep learning for pan-cancer RNA-seq classification, about 98% test accuracy across 5 cancer types on TCGA: https://arxiv.org/abs/2508.02743\n- Hsp90 inhibitor virtual screening in the Chiosis Lab at Memorial Sloan Kettering: 4,566 candidates screened at 0.984 GNN ROC AUC and 5x enrichment, 0 Lipinski violations in the top 50: https://hsp90-dashboard.vercel.app/\n- First author, EGCG and piperine synergy in D. tigrina regeneration, IEEE MIT Undergraduate Research Technology Conference: https://ieeexplore.ieee.org/document/11533121\n- Semantic segmentation for UAV-based environmental monitoring at Carnegie Mellon Robotics Institute: 0.88 mean IoU and 0.94 F1 on 25,000 labeled aerial images, sub-100 ms inference across 30 flights\n\nOutside of research I was invited to Y Combinator's Startup School, reached the VEX Robotics World Championship semifinals, and have qualified for the AIME three times.\n\nI have extensively used PyTorch, scikit-learn and Python in past work, along with standard computer vision and generative modeling tooling, but have a lot of coding experience and am adaptable to whichever libraries your lab uses. My resume is attached. Please let me know if there is a fit in your lab.\n\nI would be happy to elaborate on my skills and where I think I can best help out.\n\nThank you!\n\n--\nVinil Polepalli\nNew York University | Class of 2029\nB.S. Computer Science and B.S. Business",
   "to": "vr23@cs.princeton.edu",
   "cc": [],
-  "scheduledAt": null,
+  "scheduledAt": "2026-08-20T13:27:00.000Z",
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": null,
+  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T14:28:42.927Z",
-  "updatedAt": "2026-08-18T14:28:42.927Z"
+  "updatedAt": "2026-08-19T14:47:38.671Z",
+  "mailboxDraftId": "r-4137700060126989373"
 }

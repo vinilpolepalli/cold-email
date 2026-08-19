@@ -1,0 +1,19 @@
+{
+  "researcherId": "res_pawan-sinha_mit",
+  "contacts": [
+    {
+      "name": "Administrative Asst",
+      "role": "Administrative Asst",
+      "email": "cpotak@mit.edu",
+      "kind": "admin",
+      "sourceUrl": "https://bcs.mit.edu/directory/pawan-sinha"
+    }
+  ],
+  "pagesChecked": [
+    "https://bcs.mit.edu/directory/pawan-sinha",
+    "https://bcs.mit.edu/about-bcs",
+    "https://bcs.mit.edu/about-bcs/mission",
+    "https://bcs.mit.edu/about-bcs/history"
+  ],
+  "fetchedAt": "2026-08-19T14:36:29.382Z"
+}

@@ -5,21 +5,22 @@
   "researcherName": "Elad Hazan",
   "school": "Princeton",
   "trackId": "cs-core",
-  "status": "queued",
+  "status": "drafted",
   "rank": 16.5,
   "reasons": [
     "Overlaps on machine learning",
     "Princeton is priority three"
   ],
-  "subject": null,
-  "body": null,
+  "subject": "Interested in your work on spectral distillation for dynamical systems",
+  "body": "Hello Professor Hazan,\n\nMy name is Vinil Polepalli and I am an undergraduate at New York University studying Computer Science and Business. I have been a research intern in the Chiosis Lab at Memorial Sloan Kettering, where I built protein-ligand graph neural networks for Hsp90 and epichaperome complexes that reached 0.984 ROC AUC separating active from inactive inhibitor candidates.\n\nThe structure of the spectral distillation pipeline is what I find instructive: rather than attacking non-convex system identification head on, you first learn an implicit spectral predictor by a convex method that competes with the best linear observer, and only then distill that into an explicit state-space model. The non-convexity is routed around rather than fought, and each stage has a guarantee. My habit is the opposite and I have paid for it. Every model I have trained, from protein-ligand graph networks on Hsp90 to segmentation under a latency budget, was a non-convex problem attacked directly with a first-order method and a great deal of restarting, and when a run settled somewhere poor I had no account of why beyond initialization. Getting a provable pipeline out of a convex relaxation followed by distillation is a different way of thinking about the same difficulty.\n\nI would like to hear more about what the lab is working on now, and where my background would be useful to you.\n\nIn the past, I have worked on the following related projects:\n- Sole author, cVAE-augmented deep learning for pan-cancer RNA-seq classification, about 98% test accuracy across 5 cancer types on TCGA: https://arxiv.org/abs/2508.02743\n- Hsp90 inhibitor virtual screening in the Chiosis Lab at Memorial Sloan Kettering: 4,566 candidates screened at 0.984 GNN ROC AUC and 5x enrichment, 0 Lipinski violations in the top 50: https://hsp90-dashboard.vercel.app/\n- First author, EGCG and piperine synergy in D. tigrina regeneration, IEEE MIT Undergraduate Research Technology Conference: https://ieeexplore.ieee.org/document/11533121\n- Semantic segmentation for UAV-based environmental monitoring at Carnegie Mellon Robotics Institute: 0.88 mean IoU and 0.94 F1 on 25,000 labeled aerial images, sub-100 ms inference across 30 flights\n\nOutside of research I was invited to Y Combinator's Startup School, reached the VEX Robotics World Championship semifinals, and have qualified for the AIME three times.\n\nI have extensively used PyTorch, scikit-learn and Python in past work, along with standard optimization and machine learning tooling, but have a lot of coding experience and am adaptable to whichever libraries your lab uses. My resume is attached. Please let me know if there is a fit in your lab.\n\nI would be happy to elaborate on my skills and where I think I can best help out.\n\nThank you!\n\n--\nVinil Polepalli\nNew York University | Class of 2029\nB.S. Computer Science and B.S. Business",
   "to": "ehazan@cs.princeton.edu",
   "cc": [],
-  "scheduledAt": null,
+  "scheduledAt": "2026-08-20T13:27:00.000Z",
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": null,
+  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T14:28:42.932Z",
-  "updatedAt": "2026-08-18T14:28:42.932Z"
+  "updatedAt": "2026-08-19T14:45:19.092Z",
+  "mailboxDraftId": "r-3047278389202284569"
 }

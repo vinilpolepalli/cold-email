@@ -1,0 +1,17 @@
+{
+  "researcherId": "res_ruth-fong_princeton",
+  "contacts": [
+    {
+      "name": null,
+      "role": "Postdoc hiring: Looking Glass Lab and Visual AI Lab are hiring a joint postdoc to work on",
+      "email": "removethisifyouarehuman-ruthfong@princeton.edu",
+      "kind": "lab",
+      "sourceUrl": "https://www.cs.princeton.edu/~ruthfong"
+    }
+  ],
+  "pagesChecked": [
+    "https://www.cs.princeton.edu/~ruthfong",
+    "https://www.cs.princeton.edu/people/profile/ruthfong"
+  ],
+  "fetchedAt": "2026-08-19T14:38:52.848Z"
+}

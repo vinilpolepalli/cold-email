@@ -1,0 +1,19 @@
+{
+  "researcherId": "res_sueyeon-chung_harvard",
+  "contacts": [
+    {
+      "name": null,
+      "role": "Faculty assistant: Molly Neylan (",
+      "email": "molly_neylan@fas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://sites.google.com/site/sueyeonchung/contact"
+    }
+  ],
+  "pagesChecked": [
+    "https://sites.google.com/site/sueyeonchung/",
+    "https://sites.google.com/site/sueyeonchung/group",
+    "https://sites.google.com/site/sueyeonchung/contact",
+    "https://kempnerinstitute.harvard.edu/people/our-people/sueyeon-chung/"
+  ],
+  "fetchedAt": "2026-08-19T14:36:05.205Z"
+}

@@ -1,0 +1,47 @@
+{
+  "researcherId": "res_olga-troyanskaya_princeton",
+  "contacts": [
+    {
+      "name": null,
+      "role": "Administrator",
+      "email": "jrc@cs.princeton.edu",
+      "kind": "admin",
+      "sourceUrl": "https://www.cs.princeton.edu/people/restech"
+    },
+    {
+      "name": null,
+      "role": "Administrator",
+      "email": "advorkin@cs.princeton.edu",
+      "kind": "admin",
+      "sourceUrl": "https://www.cs.princeton.edu/people/restech"
+    },
+    {
+      "name": null,
+      "role": "Administrator",
+      "email": "bh19@cs.princeton.edu",
+      "kind": "admin",
+      "sourceUrl": "https://www.cs.princeton.edu/people/restech"
+    },
+    {
+      "name": null,
+      "role": "Administrator",
+      "email": "scott@cs.princeton.edu",
+      "kind": "admin",
+      "sourceUrl": "https://www.cs.princeton.edu/people/restech"
+    },
+    {
+      "name": "Web Developer",
+      "role": "Administrator",
+      "email": "fl8638@cs.princeton.edu",
+      "kind": "admin",
+      "sourceUrl": "https://www.cs.princeton.edu/people/restech"
+    }
+  ],
+  "pagesChecked": [
+    "https://www.cs.princeton.edu/people/profile/ogt",
+    "https://www.cs.princeton.edu/people/faculty?facultyType=faculty",
+    "https://www.cs.princeton.edu/people/research",
+    "https://www.cs.princeton.edu/people/restech"
+  ],
+  "fetchedAt": "2026-08-19T14:38:27.112Z"
+}

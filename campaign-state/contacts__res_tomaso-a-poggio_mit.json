@@ -1,0 +1,19 @@
+{
+  "researcherId": "res_tomaso-a-poggio_mit",
+  "contacts": [
+    {
+      "name": "Administrative Asst",
+      "role": "Administrative Asst",
+      "email": "emdowns@mit.edu",
+      "kind": "admin",
+      "sourceUrl": "https://bcs.mit.edu/directory/tomaso-poggio"
+    }
+  ],
+  "pagesChecked": [
+    "https://bcs.mit.edu/directory/tomaso-poggio",
+    "https://bcs.mit.edu/about-bcs",
+    "https://bcs.mit.edu/about-bcs/mission",
+    "https://bcs.mit.edu/about-bcs/history"
+  ],
+  "fetchedAt": "2026-08-19T14:36:23.492Z"
+}

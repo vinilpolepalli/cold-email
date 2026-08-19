@@ -1,0 +1,17 @@
+{
+  "researcherId": "res_hima-lakkaraju_harvard",
+  "contacts": [
+    {
+      "name": "Hima Lakkaraju",
+      "role": null,
+      "email": "hlakkaraju@seas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://himalakkaraju.github.io/"
+    }
+  ],
+  "pagesChecked": [
+    "https://himalakkaraju.github.io/",
+    "https://seas.harvard.edu/person/hima-lakkaraju"
+  ],
+  "fetchedAt": "2026-08-19T14:35:53.371Z"
+}

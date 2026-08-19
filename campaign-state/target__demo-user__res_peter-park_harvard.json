@@ -5,21 +5,22 @@
   "researcherName": "Peter Park",
   "school": "Harvard",
   "trackId": "cs-bio",
-  "status": "queued",
+  "status": "drafted",
   "rank": 39.6,
   "reasons": [
     "Overlaps on computational genomics, cancer genomics",
     "Harvard is priority three"
   ],
-  "subject": null,
-  "body": null,
+  "subject": "Interested in your work on somatic mutation in neurodegeneration",
+  "body": "Hello Professor Park,\n\nMy name is Vinil Polepalli and I am an undergraduate at New York University studying Computer Science and Business. I have been a research intern in the Chiosis Lab at Memorial Sloan Kettering, where I built protein-ligand graph neural networks for Hsp90 and epichaperome complexes that reached 0.984 ROC AUC separating active from inactive inhibitor candidates.\n\nThe TOP1 paper is a good argument for measuring at the level where the variation actually lives. Single-cell whole-genome sequencing of 469 neurons turned up an indel process in 22% of ALS, 76% of FTD and 61% of AD neurons against 2% of controls, and a bulk measurement would have averaged that into a number that looked like a modest elevation in all three. My own work is on the wrong side of that comparison: I trained a pan-cancer classifier on 801 bulk TCGA samples, where every tumor arrives as one averaged vector and any process that affects a subset of cells is diluted by the cells it does not affect. That the signature-based analysis pointed at a specific mechanism, confirmed independently by the RADAR adduct assays, is the part I would want to understand, because attributing a signature to a process is where I would expect the inference to be hardest.\n\nI would like to hear more about what the lab is working on now, and where my background would be useful to you.\n\nIn the past, I have worked on the following related projects:\n- Sole author, cVAE-augmented deep learning for pan-cancer RNA-seq classification, about 98% test accuracy across 5 cancer types on TCGA: https://arxiv.org/abs/2508.02743\n- Hsp90 inhibitor virtual screening in the Chiosis Lab at Memorial Sloan Kettering: 4,566 candidates screened at 0.984 GNN ROC AUC and 5x enrichment, 0 Lipinski violations in the top 50: https://hsp90-dashboard.vercel.app/\n- First author, EGCG and piperine synergy in D. tigrina regeneration, IEEE MIT Undergraduate Research Technology Conference: https://ieeexplore.ieee.org/document/11533121\n- Semantic segmentation for UAV-based environmental monitoring at Carnegie Mellon Robotics Institute: 0.88 mean IoU and 0.94 F1 on 25,000 labeled aerial images, sub-100 ms inference across 30 flights\n\nOutside of research I was invited to Y Combinator's Startup School, reached the VEX Robotics World Championship semifinals, and have qualified for the AIME three times.\n\nI have extensively used Python, scikit-learn and PyTorch in past work, along with standard genomic sequence analysis tooling, but have a lot of coding experience and am adaptable to whichever libraries your lab uses. My resume is attached. Please let me know if there is a fit in your lab.\n\nI would be happy to elaborate on my skills and where I think I can best help out.\n\nThank you!\n\n--\nVinil Polepalli\nNew York University | Class of 2029\nB.S. Computer Science and B.S. Business",
   "to": "peter_park@hms.harvard.edu",
   "cc": [],
-  "scheduledAt": null,
+  "scheduledAt": "2026-08-20T13:27:00.000Z",
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": null,
+  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T14:28:42.727Z",
-  "updatedAt": "2026-08-18T14:28:42.727Z"
+  "updatedAt": "2026-08-19T14:46:49.804Z",
+  "mailboxDraftId": "r-2925417343210465044"
 }

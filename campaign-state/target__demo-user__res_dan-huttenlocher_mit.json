@@ -5,21 +5,22 @@
   "researcherName": "Dan Huttenlocher",
   "school": "MIT",
   "trackId": "cs-robotics",
-  "status": "queued",
+  "status": "drafted",
   "rank": 73.3,
   "reasons": [
     "Overlaps on computer science, machine learning, vision and graphics",
     "MIT is priority two"
   ],
-  "subject": null,
-  "body": null,
+  "subject": "Interested in your work on coordination costs in distributed collaboration",
+  "body": "Hello Professor Huttenlocher,\n\nMy name is Vinil Polepalli and I am an undergraduate at New York University studying Computer Science and Business. I have been a research intern in the Chiosis Lab at Memorial Sloan Kettering, where I built protein-ligand graph neural networks for Hsp90 and epichaperome complexes that reached 0.984 ROC AUC separating active from inactive inhibitor candidates.\n\nThe coordination trade-off paper has stayed useful to me well outside its subject. Treating coordination as something with a cost that has to be paid out of the same budget as the work itself, rather than as an unqualified good, explains why adding structure to a distributed effort can make it worse, and the empirical grounding in real collaboration data is what makes the argument bite. I think about it in terms of data rather than people. My pan-cancer work drew on 801 TCGA samples contributed by many centers, and the value of pooling across sites is exactly this trade: shared structure buys statistical power, while the protocol differences between contributors are a coordination cost that shows up as batch effects. I pooled without accounting for either side of that ledger. Having the trade-off measured rather than assumed is the part I would want to learn from.\n\nI would like to hear more about what the lab is working on now, and where my background would be useful to you.\n\nIn the past, I have worked on the following related projects:\n- Sole author, cVAE-augmented deep learning for pan-cancer RNA-seq classification, about 98% test accuracy across 5 cancer types on TCGA: https://arxiv.org/abs/2508.02743\n- Hsp90 inhibitor virtual screening in the Chiosis Lab at Memorial Sloan Kettering: 4,566 candidates screened at 0.984 GNN ROC AUC and 5x enrichment, 0 Lipinski violations in the top 50: https://hsp90-dashboard.vercel.app/\n- First author, EGCG and piperine synergy in D. tigrina regeneration, IEEE MIT Undergraduate Research Technology Conference: https://ieeexplore.ieee.org/document/11533121\n- Semantic segmentation for UAV-based environmental monitoring at Carnegie Mellon Robotics Institute: 0.88 mean IoU and 0.94 F1 on 25,000 labeled aerial images, sub-100 ms inference across 30 flights\n\nOutside of research I was invited to Y Combinator's Startup School, reached the VEX Robotics World Championship semifinals, and have qualified for the AIME three times.\n\nI have extensively used Python, PyTorch and scikit-learn in past work, along with standard tooling for network and large-scale data analysis, but have a lot of coding experience and am adaptable to whichever libraries your lab uses. My resume is attached. Please let me know if there is a fit in your lab.\n\nI would be happy to elaborate on my skills and where I think I can best help out.\n\nThank you!\n\n--\nVinil Polepalli\nNew York University | Class of 2029\nB.S. Computer Science and B.S. Business",
   "to": "huttenlocher@mit.edu",
   "cc": [],
-  "scheduledAt": null,
+  "scheduledAt": "2026-08-20T13:27:00.000Z",
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": null,
+  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
   "createdAt": "2026-08-18T14:28:42.851Z",
-  "updatedAt": "2026-08-18T14:28:42.851Z"
+  "updatedAt": "2026-08-19T14:44:58.960Z",
+  "mailboxDraftId": "r-6280796975598697232"
 }

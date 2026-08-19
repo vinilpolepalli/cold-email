@@ -1,0 +1,18 @@
+{
+  "researcherId": "res_kun-hsing-yu_harvard",
+  "contacts": [
+    {
+      "name": null,
+      "role": "Administrative Coordinator",
+      "email": "faith_mcdonald@hms.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://dbmi.hms.harvard.edu/people/kun-hsing-yu"
+    }
+  ],
+  "pagesChecked": [
+    "https://khyulab.github.io/",
+    "https://khyulab.github.io/people/",
+    "https://dbmi.hms.harvard.edu/people/kun-hsing-yu"
+  ],
+  "fetchedAt": "2026-08-19T14:36:02.297Z"
+}

@@ -1,0 +1,19 @@
+{
+  "researcherId": "res_melanie-weber_harvard",
+  "contacts": [
+    {
+      "name": "Melissa Majkut",
+      "role": null,
+      "email": "mmajkut@seas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://seas.harvard.edu/person/melanie-weber"
+    }
+  ],
+  "pagesChecked": [
+    "http://melanie-weber.com/",
+    "http://melanie-weber.com/publication/approx-symmetry/",
+    "http://melanie-weber.com/publication/uniconv/",
+    "https://seas.harvard.edu/person/melanie-weber"
+  ],
+  "fetchedAt": "2026-08-19T14:36:03.910Z"
+}

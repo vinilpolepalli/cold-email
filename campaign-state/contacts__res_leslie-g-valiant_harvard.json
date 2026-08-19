@@ -1,0 +1,17 @@
+{
+  "researcherId": "res_leslie-g-valiant_harvard",
+  "contacts": [
+    {
+      "name": "Emmy Ceballos",
+      "role": null,
+      "email": "eceballos@seas.harvard.edu",
+      "kind": "admin",
+      "sourceUrl": "https://seas.harvard.edu/person/leslie-valiant"
+    }
+  ],
+  "pagesChecked": [
+    "http://people.seas.harvard.edu/~valiant",
+    "https://seas.harvard.edu/person/leslie-valiant"
+  ],
+  "fetchedAt": "2026-08-19T14:35:46.950Z"
+}

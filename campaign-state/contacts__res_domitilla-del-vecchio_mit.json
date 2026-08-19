@@ -1,0 +1,68 @@
+{
+  "researcherId": "res_domitilla-del-vecchio_mit",
+  "contacts": [
+    {
+      "name": "Joseph Gaken",
+      "role": "Administrative Assistant",
+      "email": "iruolo94@mit.edu",
+      "kind": "admin",
+      "sourceUrl": "https://scripts.mit.edu/~ddv/people.php"
+    },
+    {
+      "name": "Mechanical Engineering\n \n \n Joseph Gaken",
+      "role": "Administrative Assistant",
+      "email": "jichi@mit.edu",
+      "kind": "admin",
+      "sourceUrl": "https://scripts.mit.edu/~ddv/people.php"
+    },
+    {
+      "name": "Joseph Gaken",
+      "role": "Administrative Assistant",
+      "email": "jgaken@mit.edu",
+      "kind": "admin",
+      "sourceUrl": "https://scripts.mit.edu/~ddv/people.php"
+    },
+    {
+      "name": "Joseph Gaken",
+      "role": "Administrative Assistant",
+      "email": "overholt@mit.edu",
+      "kind": "admin",
+      "sourceUrl": "https://scripts.mit.edu/~ddv/people.php"
+    },
+    {
+      "name": "Joseph Gaken",
+      "role": "Administrative Assistant",
+      "email": "kmanoj@mit.edu",
+      "kind": "admin",
+      "sourceUrl": "https://scripts.mit.edu/~ddv/people.php"
+    },
+    {
+      "name": "Graduate Student",
+      "role": "Administrative Assistant",
+      "email": "ncn@mit.edu",
+      "kind": "admin",
+      "sourceUrl": "https://scripts.mit.edu/~ddv/people.php"
+    },
+    {
+      "name": "Eric Lu",
+      "role": "Graduate Student",
+      "email": "djatkar@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://scripts.mit.edu/~ddv/people.php"
+    },
+    {
+      "name": "Mechanical Engineering\n \n \n Eric Lu",
+      "role": "Graduate Student",
+      "email": "esalibi@mit.edu",
+      "kind": "lab",
+      "sourceUrl": "https://scripts.mit.edu/~ddv/people.php"
+    }
+  ],
+  "pagesChecked": [
+    "https://scripts.mit.edu/~ddv/index.php",
+    "https://scripts.mit.edu/~ddv/people.php",
+    "https://scripts.mit.edu/~ddv/contact.php",
+    "https://be.mit.edu/faculty/domitilla-del-vecchio/"
+  ],
+  "fetchedAt": "2026-08-19T14:36:59.783Z"
+}
