@@ -1,0 +1,17 @@
+{
+  "paused": false,
+  "maxPerDay": 60,
+  "maxPerRun": 60,
+  "minGapMinutes": 1,
+  "windowStartHour": 9,
+  "windowEndHour": 17,
+  "timezone": "America/Los_Angeles",
+  "weekdaysOnly": true,
+  "draftsPerRun": 12,
+  "followUpsEnabled": true,
+  "followUpDays": [
+    5,
+    12
+  ],
+  "followUpWithoutReplyDetection": false
+}

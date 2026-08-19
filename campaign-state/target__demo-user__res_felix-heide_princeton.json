@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0yys1zax0",
+  "userId": "demo-user",
+  "researcherId": "res_felix-heide_princeton",
+  "researcherName": "Felix Heide",
+  "school": "Princeton",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 25.5,
+  "reasons": [
+    "Overlaps on computational imaging, computer vision, machine learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "fheide@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.922Z",
+  "updatedAt": "2026-08-18T14:28:42.922Z"
+}

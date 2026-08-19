@@ -1,0 +1,16 @@
+{
+  "researcherId": "res_deblina-sarkar_mit",
+  "name": "Deblina Sarkar",
+  "school": "MIT",
+  "email": "deblina@mit.edu",
+  "foundOn": "https://web.mit.edu/deblina-sarkar/contact.html",
+  "pagesChecked": [
+    "https://web.mit.edu/deblina-sarkar/",
+    "https://www.media.mit.edu/people/deblina/overview/",
+    "https://web.mit.edu/deblina-sarkar/members.html",
+    "https://web.mit.edu/deblina-sarkar/contact.html"
+  ],
+  "status": "found",
+  "triedAt": "2026-08-17T01:36:15.939Z",
+  "attempts": 1
+}

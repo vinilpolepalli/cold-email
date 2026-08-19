@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0ten53oa9",
+  "userId": "demo-user",
+  "researcherId": "res_xihong-lin_harvard",
+  "researcherName": "Xihong Lin",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 52.8,
+  "reasons": [
+    "Overlaps on statistical machine learning, scalable inference for big data, statistical genetics and genomics",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "xihong_lin@harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.722Z",
+  "updatedAt": "2026-08-18T14:28:42.722Z"
+}

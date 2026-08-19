@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpje4plyib",
+  "userId": "demo-user",
+  "researcherId": "res_leonidas-guibas_stanford",
+  "researcherName": "Leonidas Guibas",
+  "school": "Stanford",
+  "trackId": "cs-robotics",
+  "status": "sent",
+  "rank": 65,
+  "reasons": [
+    "Overlaps on 3d computer vision, computer graphics, robotics",
+    "Stanford is priority one"
+  ],
+  "subject": "Interested in your work on learning directly on geometry",
+  "body": "Hello Professor Guibas,\n\nMy name is Vinil Polepalli and I am an undergraduate at New York University studying Computer Science and Business. I have been a research intern in the Chiosis Lab at Memorial Sloan Kettering, where I built protein-ligand graph neural networks for Hsp90 and epichaperome complexes that reached 0.984 ROC AUC separating active from inactive inhibitor candidates.\n\nI read the PointNet paper, and the argument for consuming point sets directly rather than voxelizing them is the one I ended up making myself without knowing it had been made this well. Voxelizing imposes an ordering and a resolution that the data never had, and the symmetric function is what lets the network respect permutation invariance instead of learning around it. My Hsp90 model works on molecular graphs for the same reason: atoms have no canonical order, and a model that has to discover that from data is spending capacity on an invariance it could have been given. Where I would want to push is the part PointNet++ addresses, since a docked protein-ligand pose has real metric structure at several scales at once, and my current featurization flattens the local geometry that PLIP interaction fingerprints say is what matters.\n\nI would like to hear more about what the group is working on now, and where my background would be useful to you.\n\nIn the past, I have worked on the following related projects:\n- Hsp90 inhibitor virtual screening in the Chiosis Lab at Memorial Sloan Kettering: 4,566 candidates screened at 0.984 GNN ROC AUC and 5x enrichment, 0 Lipinski violations in the top 50: https://hsp90-dashboard.vercel.app/\n- Semantic segmentation for UAV-based environmental monitoring at Carnegie Mellon Robotics Institute: 0.88 mean IoU and 0.94 F1 on 25,000 labeled aerial images, sub-100 ms inference across 30 flights\n- Sole author, cVAE-augmented deep learning for pan-cancer RNA-seq classification, about 98% test accuracy across 5 cancer types on TCGA: https://arxiv.org/abs/2508.02743\n- First author, EGCG and piperine synergy in D. tigrina regeneration, IEEE MIT Undergraduate Research Technology Conference: https://ieeexplore.ieee.org/document/11533121\n\nOutside of research I was invited to Y Combinator's Startup School, reached the VEX Robotics World Championship semifinals, and have qualified for the AIME three times.\n\nI have extensively used PyTorch and Python in past work, along with graph learning and molecular docking tooling, but have a lot of coding experience and am adaptable to whichever libraries your group uses. My resume is attached. Please let me know if there is a fit in your group.\n\nI would be happy to elaborate on my skills and where I think I can best help out.\n\nThank you!\n\n--\nVinil Polepalli\nNew York University | Class of 2029\nB.S. Computer Science and B.S. Business",
+  "to": "guibas@cs.stanford.edu",
+  "cc": [],
+  "scheduledAt": "2026-08-18T16:27:00.000Z",
+  "autoApproved": false,
+  "outboxId": "out_guibasmanualfix01",
+  "sentAt": "2026-08-18T17:03:50.000Z",
+  "note": "Sent from vrp5483@stern.nyu.edu (reconciled: real Gmail send succeeded before local state write completed)",
+  "createdAt": "2026-08-18T01:12:59.018Z",
+  "updatedAt": "2026-08-18T02:30:00.000Z"
+}

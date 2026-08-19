@@ -19,6 +19,7 @@ Next.js App Router + TypeScript + Tailwind 4. Cold-email site: scraped researche
 
 - Every external service (Clerk, NIM, SMTP, Resend) is optional; code must degrade gracefully when its env vars are unset. Demo mode = no env at all.
 - Researcher emails: only ever store emails published on official university pages; never construct/guess them.
+- Drafting an email means putting it in Gmail. A row in `campaign-state/` is queue bookkeeping, not a draft the sender can read — finish the job with the `draft-to-mailbox` action so it lands in the school mailbox with the resume attached. Storing a draft never sends.
 - `pdf-parse` must stay in `serverExternalPackages` (next.config.ts) or its pdfjs worker path breaks.
 
 <!-- BEGIN:nextjs-agent-rules -->

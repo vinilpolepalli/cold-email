@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x2r43dnu",
+  "userId": "demo-user",
+  "researcherId": "res_samuel-madden_mit",
+  "researcherName": "Samuel Madden",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 67.1,
+  "reasons": [
+    "Overlaps on machine learning, data systems",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "madden@csail.mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.854Z",
+  "updatedAt": "2026-08-18T14:28:42.854Z"
+}

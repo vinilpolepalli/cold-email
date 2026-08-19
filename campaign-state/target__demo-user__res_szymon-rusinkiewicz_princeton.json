@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z4rvftud",
+  "userId": "demo-user",
+  "researcherId": "res_szymon-rusinkiewicz_princeton",
+  "researcherName": "Szymon Rusinkiewicz",
+  "school": "Princeton",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 18.9,
+  "reasons": [
+    "Overlaps on computer graphics, computer vision, robotics",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "smr@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.928Z",
+  "updatedAt": "2026-08-18T14:28:42.928Z"
+}

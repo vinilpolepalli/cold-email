@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tjvpwdym",
+  "userId": "demo-user",
+  "researcherId": "res_chirag-patel_harvard",
+  "researcherName": "Chirag Patel",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 39,
+  "reasons": [
+    "Overlaps on computational biology, data science, genomics",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "Chirag_Patel@hms.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.727Z",
+  "updatedAt": "2026-08-18T14:28:42.728Z"
+}

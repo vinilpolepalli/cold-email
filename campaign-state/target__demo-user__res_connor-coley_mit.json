@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpjfu3spjq",
+  "userId": "demo-user",
+  "researcherId": "res_connor-coley_mit",
+  "researcherName": "Connor Coley",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 64,
+  "reasons": [
+    "Overlaps on machine learning, drug discovery, autonomous discovery",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ccoley@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:12:59.019Z",
+  "updatedAt": "2026-08-18T01:12:59.019Z"
+}

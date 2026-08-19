@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tf6p2qkm",
+  "userId": "demo-user",
+  "researcherId": "res_morgane-austern_harvard",
+  "researcherName": "Morgane Austern",
+  "school": "Harvard",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 49.8,
+  "reasons": [
+    "Overlaps on machine learning theory, learning on structured data",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "maustern@fas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.723Z",
+  "updatedAt": "2026-08-18T14:28:42.723Z"
+}

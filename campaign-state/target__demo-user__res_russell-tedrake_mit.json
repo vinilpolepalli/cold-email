@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x3nfxmj6",
+  "userId": "demo-user",
+  "researcherId": "res_russell-tedrake_mit",
+  "researcherName": "Russell Tedrake",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 64,
+  "reasons": [
+    "Overlaps on robotics, machine learning",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "russt@csail.mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.855Z",
+  "updatedAt": "2026-08-18T14:28:42.855Z"
+}

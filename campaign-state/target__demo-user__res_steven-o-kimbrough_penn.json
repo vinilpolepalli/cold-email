@@ -1,0 +1,24 @@
+{
+  "id": "tgt_msyrd10ywk6j1m",
+  "userId": "demo-user",
+  "researcherId": "res_steven-o-kimbrough_penn",
+  "researcherName": "Steven O. Kimbrough",
+  "school": "Penn",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 9.6,
+  "reasons": [
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "kimbrough@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.994Z",
+  "updatedAt": "2026-08-18T14:28:42.994Z"
+}

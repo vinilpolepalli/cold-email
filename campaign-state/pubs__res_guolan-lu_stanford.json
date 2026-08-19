@@ -1,0 +1,168 @@
+{
+  "researcherId": "res_guolan-lu_stanford",
+  "authorName": "Guolan Lu",
+  "authorUrl": "https://openalex.org/A5057729645",
+  "worksCount": 127,
+  "citedByCount": 5598,
+  "topics": [
+    "Immune cells in cancer",
+    "Cancer Immunotherapy and Biomarkers",
+    "Optical Imaging and Spectroscopy Techniques",
+    "Cancer Research and Treatments",
+    "Nanoplatforms for cancer theranostics"
+  ],
+  "publications": [
+    {
+      "title": "Medical hyperspectral imaging: a review",
+      "year": 2014,
+      "venue": "Journal of Biomedical Optics",
+      "authors": [
+        "Guolan Lu",
+        "Baowei Fei"
+      ],
+      "citations": 2276,
+      "doi": "10.1117/1.jbo.19.1.010901",
+      "url": "https://doi.org/10.1117/1.jbo.19.1.010901",
+      "pdfUrl": "https://www.spiedigitallibrary.org/journals/journal-of-biomedical-optics/volume-19/issue-1/010901/Medical-hyperspectral-imaging-a-review/10.1117/1.JBO.19.1.010901.pdf",
+      "abstract": "Hyperspectral imaging (HSI) is an emerging imaging modality for medical applications, especially in disease diagnosis and image-guided surgery. HSI acquires a three-dimensional dataset called hypercube, with two spatial dimensions and one spectral dimension. Spatially resolved spectral imaging obtained by HSI provides diagnostic information about the tissue physiology, morphology, and composition. This review paper presents an overview of the literature on medical hyperspectral imaging technology and its applications. The aim of the survey is threefold: an introduction for those new to the field, an overview for those working in the field, and a reference for those searching for literature on a specific application."
+    },
+    {
+      "title": "Ultrasound Imaging Technologies for Breast Cancer Detection and Management: A Review",
+      "year": 2017,
+      "venue": "Ultrasound in Medicine & Biology",
+      "authors": [
+        "Rongrong Guo",
+        "Guolan Lu",
+        "Binjie Qin",
+        "Baowei Fei"
+      ],
+      "citations": 542,
+      "doi": "10.1016/j.ultrasmedbio.2017.09.012",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/6169997",
+      "pdfUrl": null,
+      "abstract": "Ultrasound imaging is a commonly used modality for breast cancer detection and diagnosis. In this review we summarize ultrasound imaging technologies and their clinical applications for the management of breast cancer patients. The technologies include ultrasound elastography, contrast-enhanced ultrasound, three-dimensional ultrasound, automatic breast ultrasound, and computer-aided detection of breast ultrasound. We summarize the study results seen in the literature and discuss their future directions. We also provide a review of ultrasound-guided, breast biopsy and the fusion of ultrasound with other imaging modalities, especially magnetic resonance imaging (MRI). For comparison, we also discuss the diagnostic performance of mammography, MRI, PET, and CT for breast cancer diagnosis at the end of this review. New ultrasound imaging techniques, ultrasound–guided biopsy, and the fusion..."
+    },
+    {
+      "title": "Determination of Tumor Margins with Surgical Specimen Mapping Using Near-Infrared Fluorescence",
+      "year": 2018,
+      "venue": "Cancer Research",
+      "authors": [
+        "Rebecca W. Gao",
+        "Nutte Teraphongphom",
+        "Nynke S. van den Berg",
+        "Brock A. Martin",
+        "Nicholas J. Oberhelman",
+        "Vasu Divi",
+        "Michael J. Kaplan",
+        "Steven Hong"
+      ],
+      "citations": 224,
+      "doi": "10.1158/0008-5472.can-18-0878",
+      "url": "https://doi.org/10.1158/0008-5472.can-18-0878",
+      "pdfUrl": null,
+      "abstract": "Abstract For many solid tumors, surgical resection remains the gold standard and tumor-involved margins are associated with poor clinical outcomes. Near-infrared (NIR) fluorescence imaging using molecular agents has shown promise for in situ imaging during resection. However, for cancers with difficult imaging conditions, surgical value may lie in tumor mapping of surgical specimens. We thus evaluated a novel approach for real-time, intraoperative tumor margin assessment. Twenty-one adult patients with biopsy-confirmed squamous cell carcinoma arising from the head and neck (HNSCC) scheduled for standard-of-care surgery were enrolled. Cohort 1 (n = 3) received panitumumab-IRDye800CW at an intravenous microdose of 0.06 mg/kg, cohort 2A (n = 5) received 0.5 mg/kg, cohort 2B (n = 7) received 1 mg/kg, and cohort 3 (n = 6) received 50 mg. Patients were followed 30 days postinfusion and adve..."
+    },
+    {
+      "title": "Deep convolutional neural networks for classifying head and neck cancer using hyperspectral imaging",
+      "year": 2017,
+      "venue": "Journal of Biomedical Optics",
+      "authors": [
+        "Martin Halicek",
+        "Guolan Lu",
+        "James V. Little",
+        "Xu Wang",
+        "Mihir R. Patel",
+        "Christopher Griffith",
+        "Mark W. El‐Deiry",
+        "Amy Y. Chen"
+      ],
+      "citations": 222,
+      "doi": "10.1117/1.jbo.22.6.060503",
+      "url": "https://doi.org/10.1117/1.jbo.22.6.060503",
+      "pdfUrl": "https://www.spiedigitallibrary.org/journals/Journal-of-Biomedical-Optics/volume-22/issue-6/060503/Deep-convolutional-neural-networks-for-classifying-head-and-neck-cancer/10.1117/1.JBO.22.6.060503.pdf",
+      "abstract": "Surgical cancer resection requires an accurate and timely diagnosis of the cancer margins in order to achieve successful patient remission. Hyperspectral imaging (HSI) has emerged as a useful, noncontact technique for acquiring spectral and optical properties of tissue. A convolutional neural network (CNN) classifier is developed to classify excised, squamous-cell carcinoma, thyroid cancer, and normal head and neck tissue samples using HSI. The CNN classification was validated by the manual annotation of a pathologist specialized in head and neck cancer. The preliminary results of 50 patients indicate the potential of HSI and deep learning for automatic tissue-labeling of surgical specimens of head and neck patients."
+    },
+    {
+      "title": "Spatially Segregated Macrophage Populations Predict Distinct Outcomes in Colon Cancer",
+      "year": 2024,
+      "venue": "Cancer Discovery",
+      "authors": [
+        "Magdalena Matusiak",
+        "John W. Hickey",
+        "David G.P. van IJzendoorn",
+        "Guolan Lu",
+        "Łukasz Kidziński",
+        "Shirley Zhu",
+        "Deana R.C. Colburg",
+        "Bogdan Luca"
+      ],
+      "citations": 155,
+      "doi": "10.1158/2159-8290.cd-23-1300",
+      "url": "https://doi.org/10.1158/2159-8290.cd-23-1300",
+      "pdfUrl": "https://aacrjournals.org/cancerdiscovery/article-pdf/doi/10.1158/2159-8290.CD-23-1300/3434017/cd-23-1300.pdf",
+      "abstract": "Tumor-associated macrophages are transcriptionally heterogeneous, but the spatial distribution and cell interactions that shape macrophage tissue roles remain poorly characterized. Here, we spatially resolve five distinct human macrophage populations in normal and malignant human breast and colon tissue and reveal their cellular associations. This spatial map reveals that distinct macrophage populations reside in spatially segregated micro-environmental niches with conserved cellular compositions that are repeated across healthy and diseased tissue. We show that IL4I1+ macrophages phagocytose dying cells in areas with high cell turnover and predict good outcome in colon cancer. In contrast, SPP1+ macrophages are enriched in hypoxic and necrotic tumor regions and portend worse outcome in colon cancer. A subset of FOLR2+ macrophages is embedded in plasma cell niches. NLRP3+ macrophages ..."
+    },
+    {
+      "title": "Label-free reflectance hyperspectral imaging for tumor margin assessment: a pilot study on surgical specimens of cancer patients",
+      "year": 2017,
+      "venue": "Journal of Biomedical Optics",
+      "authors": [
+        "Baowei Fei",
+        "Guolan Lu",
+        "Xu Wang",
+        "Hongzheng Zhang",
+        "James V. Little",
+        "Mihir R. Patel",
+        "Christopher Griffith",
+        "Mark W. El-Diery"
+      ],
+      "citations": 134,
+      "doi": "10.1117/1.jbo.22.8.086009",
+      "url": "https://doi.org/10.1117/1.jbo.22.8.086009",
+      "pdfUrl": "https://www.spiedigitallibrary.org/journals/Journal-of-Biomedical-Optics/volume-22/issue-8/086009/Label-free-reflectance-hyperspectral-imaging-for-tumor-margin-assessment/10.1117/1.JBO.22.8.086009.pdf",
+      "abstract": "A label-free, hyperspectral imaging (HSI) approach has been proposed for tumor margin assessment. HSI data, i.e., hypercube (x,y,λ), consist of a series of high-resolution images of the same field of view that are acquired at different wavelengths. Every pixel on an HSI image has an optical spectrum. In this pilot clinical study, a pipeline of a machine-learning-based quantification method for HSI data was implemented and evaluated in patient specimens. Spectral features from HSI data were used for the classification of cancer and normal tissue. Surgical tissue specimens were collected from 16 human patients who underwent head and neck (H&N) cancer surgery. HSI, autofluorescence images, and fluorescence images with 2-deoxy-2-[(7-nitro-2,1,3-benzoxadiazol-4-yl)amino]-D-glucose (2-NBDG) and proflavine were acquired from each specimen. Digitized histologic slides were examined by an H&N ..."
+    },
+    {
+      "title": "Detection of Head and Neck Cancer in Surgical Specimens Using Quantitative Hyperspectral Imaging",
+      "year": 2017,
+      "venue": "Clinical Cancer Research",
+      "authors": [
+        "Guolan Lu",
+        "James V. Little",
+        "Xu Wang",
+        "Hongzheng Zhang",
+        "Mihir R. Patel",
+        "Christopher Griffith",
+        "Mark W. El‐Deiry",
+        "Amy Y. Chen"
+      ],
+      "citations": 127,
+      "doi": "10.1158/1078-0432.ccr-17-0906",
+      "url": "https://doi.org/10.1158/1078-0432.ccr-17-0906",
+      "pdfUrl": "https://clincancerres.aacrjournals.org/content/clincanres/23/18/5426.full.pdf",
+      "abstract": "Abstract Purpose: This study intends to investigate the feasibility of using hyperspectral imaging (HSI) to detect and delineate cancers in fresh, surgical specimens of patients with head and neck cancers. Experimental Design: A clinical study was conducted in order to collect and image fresh, surgical specimens from patients (N = 36) with head and neck cancers undergoing surgical resection. A set of machine-learning tools were developed to quantify hyperspectral images of the resected tissue in order to detect and delineate cancerous regions which were validated by histopathologic diagnosis. More than two million reflectance spectral signatures were obtained by HSI and analyzed using machine-learning methods. The detection results of HSI were compared with autofluorescence imaging and fluorescence imaging of two vital-dyes of the same specimens. Results: Quantitative HSI differentiat..."
+    },
+    {
+      "title": "Co-administered antibody improves penetration of antibody–dye conjugate into human cancers with implications for antibody–drug conjugates",
+      "year": 2020,
+      "venue": "Nature Communications",
+      "authors": [
+        "Guolan Lu",
+        "Naoki Nishio",
+        "Nynke S. van den Berg",
+        "Brock A. Martin",
+        "Shayan Fakurnejad",
+        "Stan van Keulen",
+        "A. Dimitrios Colevas",
+        "Greg M. Thurber"
+      ],
+      "citations": 122,
+      "doi": "10.1038/s41467-020-19498-y",
+      "url": "https://doi.org/10.1038/s41467-020-19498-y",
+      "pdfUrl": "https://www.nature.com/articles/s41467-020-19498-y.pdf",
+      "abstract": "Poor tissue penetration remains a major challenge for antibody-based therapeutics of solid tumors, but proper dosing can improve the tissue penetration and thus therapeutic efficacy of these biologics. Due to dose-limiting toxicity of the small molecule payload, antibody-drug conjugates (ADCs) are administered at a much lower dose than their parent antibodies, which further reduces tissue penetration. We conducted an early-phase clinical trial (NCT02415881) and previously reported the safety of an antibody-dye conjugate (panitumumab-IRDye800CW) as primary outcome. Here, we report a retrospective exploratory analysis of the trial to evaluate whether co-administration of an unconjugated antibody could improve the intratumoral distribution of the antibody-dye conjugate in patients. By measuring the multiscale distribution of the antibody-dye conjugate, this study demonstrates improved mi..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:21.359Z"
+}

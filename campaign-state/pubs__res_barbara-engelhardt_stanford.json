@@ -1,0 +1,178 @@
+{
+  "researcherId": "res_barbara-engelhardt_stanford",
+  "authorName": "Barbara E. Engelhardt",
+  "authorUrl": "https://openalex.org/A5065136437",
+  "worksCount": 223,
+  "citedByCount": 19145,
+  "topics": [
+    "Gene expression and cancer classification",
+    "Single-cell and spatial transcriptomics",
+    "Gaussian Processes and Bayesian Inference",
+    "AI-based Problem Solving and Planning",
+    "Genetic Associations and Epidemiology"
+  ],
+  "publications": [
+    {
+      "title": "The GTEx Consortium atlas of genetic regulatory effects across human tissues",
+      "year": 2020,
+      "venue": "Science",
+      "authors": [
+        "François Aguet",
+        "Shankara Anand",
+        "Kristin Ardlie",
+        "Stacey Gabriel",
+        "Gad Getz",
+        "Aaron Graubert",
+        "Kane Hadley",
+        "Robert E. Handsaker"
+      ],
+      "citations": 6028,
+      "doi": "10.1126/science.aaz1776",
+      "url": "https://doi.org/10.1126/science.aaz1776",
+      "pdfUrl": "https://science.sciencemag.org/content/sci/369/6509/1318.full.pdf",
+      "abstract": "The Genotype-Tissue Expression (GTEx) project was established to characterize genetic effects on the transcriptome across human tissues and to link these regulatory mechanisms to trait and disease associations. Here, we present analyses of the version 8 data, examining 15,201 RNA-sequencing samples from 49 tissues of 838 postmortem donors. We comprehensively characterize genetic associations for gene expression and splicing in cis and trans, showing that regulatory associations are found for almost all genes, and describe the underlying molecular mechanisms and their contribution to allelic heterogeneity and pleiotropy of complex traits. Leveraging the large diversity of tissues, we provide insights into the tissue specificity of genetic effects and show that cell type composition is a key factor in understanding gene regulatory mechanisms in human tissues."
+    },
+    {
+      "title": "Understanding mechanisms underlying human gene expression variation with RNA sequencing",
+      "year": 2010,
+      "venue": "Nature",
+      "authors": [
+        "Joseph K. Pickrell",
+        "John C. Marioni",
+        "Athma A. Pai",
+        "Jacob F. Degner",
+        "Barbara E. Engelhardt",
+        "Everlyne N. Nkadori",
+        "Jean‐Baptiste Veyrieras",
+        "Matthew Stephens"
+      ],
+      "citations": 1378,
+      "doi": "10.1038/nature08872",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/3089435",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Exploring the phenotypic consequences of tissue specific gene expression variation inferred from GWAS summary statistics",
+      "year": 2018,
+      "venue": "Nature Communications",
+      "authors": [
+        "Alvaro Barbeira",
+        "Scott Dickinson",
+        "Rodrigo Bonazzola",
+        "Jiamao Zheng",
+        "Heather E. Wheeler",
+        "Jason Torres",
+        "Eric S. Torstenson",
+        "Kaanan P. Shah"
+      ],
+      "citations": 1254,
+      "doi": "10.1038/s41467-018-03621-1",
+      "url": "https://doi.org/10.1038/s41467-018-03621-1",
+      "pdfUrl": "https://www.nature.com/articles/s41467-018-03621-1.pdf",
+      "abstract": "Scalable, integrative methods to understand mechanisms that link genetic variants with phenotypes are needed. Here we derive a mathematical expression to compute PrediXcan (a gene mapping approach) results using summary data (S-PrediXcan) and show its accuracy and general robustness to misspecified reference sets. We apply this framework to 44 GTEx tissues and 100+ phenotypes from GWAS and meta-analysis studies, creating a growing public catalog of associations that seeks to capture the effects of gene expression variation on human phenotypes. Replication in an independent cohort is shown. Most of the associations are tissue specific, suggesting context specificity of the trait etiology. Colocalized significant associations in unexpected tissues underscore the need for an agnostic scanning of multiple contexts to improve our ability to detect causal regulatory mechanisms. Monogenic di..."
+    },
+    {
+      "title": "The impact of sex on gene expression across human tissues",
+      "year": 2020,
+      "venue": "Science",
+      "authors": [
+        "Meritxell Oliva",
+        "Manuel Muñoz-Aguirre",
+        "Sarah Kim-Hellmuth",
+        "Valentin Wucher",
+        "Ariel DH Gewirtz",
+        "Daniel J. Cotter",
+        "Princy Parsana",
+        "Silva Kasela"
+      ],
+      "citations": 737,
+      "doi": "10.1126/science.aba3066",
+      "url": "https://hdl.handle.net/2445/197187",
+      "pdfUrl": "https://diposit.ub.edu/dspace/bitstream/2445/197187/1/705027.pdf",
+      "abstract": "Many complex human phenotypes exhibit sex-differentiated characteristics. However, the molecular mechanisms underlying these differences remain largely unknown. We generated a catalog of sex differences in gene expression and in the genetic regulation of gene expression across 44 human tissue sources surveyed by the Genotype-Tissue Expression project (GTEx, v8 release). We demonstrate that sex influences gene expression levels and cellular composition of tissue samples across the human body. A total of 37% of all genes exhibit sex-biased expression in at least one tissue. We identify cis expression quantitative trait loci (eQTLs) with sex-differentiated effects and characterize their cellular origin. By integrating sex-biased eQTLs with genome-wide association study data, we identify 58 gene-trait associations that are driven by genetic regulation of gene expression in a single sex. T..."
+    },
+    {
+      "title": "The Human Tumor Atlas Network: Charting Tumor Transitions across Space and Time at Single-Cell Resolution",
+      "year": 2020,
+      "venue": "Cell",
+      "authors": [
+        "Orit Rozenblatt–Rosen",
+        "Aviv Regev",
+        "Philipp Oberdoerffer",
+        "Tal Nawy",
+        "Anna Hupalowska",
+        "Jennifer Rood",
+        "Orr Ashenberg",
+        "Ethan Cerami"
+      ],
+      "citations": 613,
+      "doi": "10.1016/j.cell.2020.03.053",
+      "url": "https://doi.org/10.1016/j.cell.2020.03.053",
+      "pdfUrl": "http://www.cell.com/article/S0092867420303469/pdf",
+      "abstract": "Crucial transitions in cancer-including tumor initiation, local expansion, metastasis, and therapeutic resistance-involve complex interactions between cells within the dynamic tumor ecosystem. Transformative single-cell genomics technologies and spatial multiplex in situ methods now provide an opportunity to interrogate this complexity at unprecedented resolution. The Human Tumor Atlas Network (HTAN), part of the National Cancer Institute (NCI) Cancer Moonshot Initiative, will establish a clinical, experimental, computational, and organizational framework to generate informative and accessible three-dimensional atlases of cancer transitions for a diverse set of tumor types. This effort complements both ongoing efforts to map healthy organs and previous large-scale cancer genomics approaches focused on bulk sequencing at a single point in time. Generating single-cell, multiparametric, ..."
+    },
+    {
+      "title": "Cell type–specific genetic regulation of gene expression across human tissues",
+      "year": 2020,
+      "venue": "Science",
+      "authors": [
+        "Sarah Kim-Hellmuth",
+        "François Aguet",
+        "Meritxell Oliva",
+        "Manuel Muñoz-Aguirre",
+        "Silva Kasela",
+        "Valentin Wucher",
+        "Stephane E. Castel",
+        "Andrew R. Hamel"
+      ],
+      "citations": 601,
+      "doi": "10.1126/science.aaz8528",
+      "url": "https://kclpure.kcl.ac.uk/portal/en/publications/4af065d5-d474-45d4-b660-a0cf8fa325a7",
+      "pdfUrl": null,
+      "abstract": "The Genotype-Tissue Expression (GTEx) project has identified expression and splicing quantitative trait loci in cis (QTLs) for the majority of genes across a wide range of human tissues. However, the functional characterization of these QTLs has been limited by the heterogeneous cellular composition of GTEx tissue samples. We mapped interactions between computational estimates of cell type abundance and genotype to identify cell type-interaction QTLs for seven cell types and show that cell type-interaction expression QTLs (eQTLs) provide finer resolution to tissue specificity than bulk tissue cis-eQTLs. Analyses of genetic associations with 87 complex traits show a contribution from cell type-interaction QTLs and enables the discovery of hundreds of previously unidentified colocalized loci that are masked in bulk tissue."
+    },
+    {
+      "title": "Determinants of telomere length across human tissues",
+      "year": 2020,
+      "venue": "Science",
+      "authors": [
+        "Kathryn Demanelis",
+        "Farzana Jasmine",
+        "Lin Chen",
+        "Meytal Chernoff",
+        "Tong Lin",
+        "Dayana Delgado",
+        "Chenan Zhang",
+        "Justin Shinkle"
+      ],
+      "citations": 504,
+      "doi": "10.1126/science.aaz6876",
+      "url": "https://doi.org/10.1126/science.aaz6876",
+      "pdfUrl": "https://www.science.org/doi/pdf/10.1126/science.aaz6876?download=true",
+      "abstract": "Telomere shortening is a hallmark of aging. Telomere length (TL) in blood cells has been studied extensively as a biomarker of human aging and disease; however, little is known regarding variability in TL in nonblood, disease-relevant tissue types. Here, we characterize variability in TLs from 6391 tissue samples, representing >20 tissue types and 952 individuals from the Genotype-Tissue Expression (GTEx) project. We describe differences across tissue types, positive correlation among tissue types, and associations with age and ancestry. We show that genetic variation affects TL in multiple tissue types and that TL may mediate the effect of age on gene expression. Our results provide the foundational knowledge regarding TL in healthy tissues that is needed to interpret epidemiological studies of TL and human health."
+    },
+    {
+      "title": "A Quantitative Proteome Map of the Human Body",
+      "year": 2020,
+      "venue": "Cell",
+      "authors": [
+        "Lihua Jiang",
+        "Meng Wang",
+        "Shin Lin",
+        "Ruiqi Jian",
+        "Xiao Li",
+        "Joanne Chan",
+        "Guanlan Dong",
+        "Huaying Fang"
+      ],
+      "citations": 493,
+      "doi": "10.1016/j.cell.2020.08.036",
+      "url": "https://doi.org/10.1016/j.cell.2020.08.036",
+      "pdfUrl": "http://www.cell.com/article/S0092867420310783/pdf",
+      "abstract": null
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:05.030Z"
+}

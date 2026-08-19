@@ -1,0 +1,20 @@
+{
+  "id": "out_msywwhxaouuu5h",
+  "userId": "demo-user",
+  "researcherId": "res_tatsunori-hashimoto_stanford",
+  "researcherName": "Tatsunori Hashimoto",
+  "to": "thashim@cs.stanford.edu",
+  "cc": [],
+  "subject": "Interested in your work on worst-case generalization",
+  "body": "Hello Professor Hashimoto,\n\nMy name is Vinil Polepalli and I am an undergraduate at New York University studying Computer Science and Business. I have been a research intern in the Chiosis Lab at Memorial Sloan Kettering, where I built protein-ligand graph neural networks for Hsp90 and epichaperome complexes that reached 0.984 ROC AUC separating active from inactive inhibitor candidates.\n\nI read the group DRO paper, and the failure mode it identifies is one I probably have. An overparameterized model can drive average training loss to zero, at which point worst-case training loss is zero too and the robust objective has nothing left to push on, so strong regularization is what makes group DRO work at all rather than an afterthought. I reported about 98 percent test accuracy across five cancer types on 801 TCGA samples, which is an average over classes of very unequal size, and I never reported the worst group. Given the sample count against 20,531 features my model is firmly in the regime the paper describes. The first thing I would want to do is recompute that number per group and see how far the worst one sits from the headline, before deciding whether the regularization story applies.\n\nI would like to hear more about what the group is working on now, and where my background would be useful to you.\n\nIn the past, I have worked on the following related projects:\n- Sole author, cVAE-augmented deep learning for pan-cancer RNA-seq classification, about 98% test accuracy across 5 cancer types on TCGA: https://arxiv.org/abs/2508.02743\n- Hsp90 inhibitor virtual screening in the Chiosis Lab at Memorial Sloan Kettering: 4,566 candidates screened at 0.984 GNN ROC AUC and 5x enrichment, 0 Lipinski violations in the top 50: https://hsp90-dashboard.vercel.app/\n- First author, EGCG and piperine synergy in D. tigrina regeneration, IEEE MIT Undergraduate Research Technology Conference: https://ieeexplore.ieee.org/document/11533121\n- Semantic segmentation for UAV-based environmental monitoring at Carnegie Mellon Robotics Institute: 0.88 mean IoU and 0.94 F1 on 25,000 labeled aerial images, sub-100 ms inference across 30 flights\n\nOutside of research I was invited to Y Combinator's Startup School, reached the VEX Robotics World Championship semifinals, and have qualified for the AIME three times.\n\nI have extensively used PyTorch and Python in past work, along with standard training and evaluation tooling, but have a lot of coding experience and am adaptable to whichever libraries your group uses. My resume is attached. Please let me know if there is a fit in your group.\n\nI would be happy to elaborate on my skills and where I think I can best help out.\n\nThank you!\n\n--\nVinil Polepalli\nNew York University | Class of 2029\nB.S. Computer Science and B.S. Business",
+  "attachmentName": "Polepalli_Resume.pdf",
+  "method": "school-gmail",
+  "status": "sent",
+  "detail": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "createdAt": "2026-08-18T17:03:49.438Z",
+  "threadId": "1a015d44a8acedb7",
+  "rfcMessageId": "<CAFruEoqksKiLxSoLVTs1DX9Ow_QHGJ81-OY38O02P8-9Nscqhw@mail.gmail.com>",
+  "trackId": "cs-core",
+  "autonomous": true,
+  "followUpOf": null
+}

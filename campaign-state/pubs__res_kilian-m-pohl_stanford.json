@@ -1,0 +1,172 @@
+{
+  "researcherId": "res_kilian-m-pohl_stanford",
+  "authorName": "Kilian M. Pohl",
+  "authorUrl": "https://openalex.org/A5055107125",
+  "worksCount": 274,
+  "citedByCount": 7184,
+  "topics": [
+    "Functional Brain Connectivity Studies",
+    "Medical Image Segmentation Techniques",
+    "Advanced Neuroimaging Techniques and Applications",
+    "Advanced MRI Techniques and Applications",
+    "Machine Learning in Healthcare"
+  ],
+  "publications": [
+    {
+      "title": "Image processing and analysis methods for the Adolescent Brain Cognitive Development Study",
+      "year": 2019,
+      "venue": "NeuroImage",
+      "authors": [
+        "Donald J. Hagler",
+        "SeanN. Hatton",
+        "M. Daniela Cornejo",
+        "Carolina Makowski",
+        "Damien A. Fair",
+        "Anthony Steven Dick",
+        "Matthew T. Sutherland",
+        "B. J. Casey"
+      ],
+      "citations": 1181,
+      "doi": "10.1016/j.neuroimage.2019.116091",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/6981278",
+      "pdfUrl": "https://www.biorxiv.org/content/biorxiv/early/2018/11/04/457739.full.pdf",
+      "abstract": null
+    },
+    {
+      "title": "A Bayesian model for joint segmentation and registration",
+      "year": 2006,
+      "venue": "NeuroImage",
+      "authors": [
+        "Kilian M. Pohl",
+        "John W. Fisher",
+        "W. Eric L. Grimson",
+        "Ron Kikinis",
+        "William M. Wells"
+      ],
+      "citations": 276,
+      "doi": "10.1016/j.neuroimage.2005.11.044",
+      "url": "https://doi.org/10.1016/j.neuroimage.2005.11.044",
+      "pdfUrl": null,
+      "abstract": "A statistical model is presented that combines the registration of an atlas with the segmentation of magnetic resonance images. We use an Expectation Maximization-based algorithm to find a solution within the model, which simultaneously estimates image artifacts, anatomical labelmaps, and a structure-dependent hierarchical mapping from the atlas to the image space. The algorithm produces segmentations for brain tissues as well as their substructures. We demonstrate the approach on a set of 22 magnetic resonance images. On this set of images, the new approach performs significantly better than similar methods which sequentially apply registration and segmentation."
+    },
+    {
+      "title": "The National Consortium on Alcohol and NeuroDevelopment in Adolescence (NCANDA): A Multisite Study of Adolescent Development and Substance Use",
+      "year": 2015,
+      "venue": "Journal of Studies on Alcohol and Drugs",
+      "authors": [
+        "Sandra A. Brown",
+        "Ty Brumback",
+        "Kristin L. Tomlinson",
+        "Kevin Cummins",
+        "Wesley K. Thompson",
+        "Bonnie J. Nagel",
+        "Michael D. De Bellis",
+        "Stephen R. Hooper"
+      ],
+      "citations": 271,
+      "doi": "10.15288/jsad.2015.76.895",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4712659",
+      "pdfUrl": null,
+      "abstract": "OBJECTIVE: During adolescence, neurobiological maturation occurs concurrently with social and interpersonal changes, including the initiation of alcohol and other substance use. The National Consortium on Alcohol and NeuroDevelopment in Adolescence (NCANDA) is designed to disentangle the complex relationships between onset, escalation, and desistance of alcohol use and changes in neurocognitive functioning and neuromaturation. METHOD: A sample of 831 youth, ages 12-21 years, was recruited at five sites across the United States, oversampling those at risk for alcohol use problems. Most (83%) had limited or no history of alcohol or other drug use, and a smaller portion (17%) exceeded drinking thresholds. A comprehensive assessment of biological development, family background, psychiatric symptomatology, and neuropsychological functioning-in addition to anatomical, diffusion, and functio..."
+    },
+    {
+      "title": "GLISTR: Glioma Image Segmentation and Registration",
+      "year": 2012,
+      "venue": "IEEE Transactions on Medical Imaging",
+      "authors": [
+        "Ali Gooya",
+        "Kilian M. Pohl",
+        "Michel Bilello",
+        "Luigi Cirillo",
+        "George Biros",
+        "Elias R. Melhem",
+        "Christos Davatzikos"
+      ],
+      "citations": 219,
+      "doi": "10.1109/tmi.2012.2210558",
+      "url": "https://doi.org/10.1109/tmi.2012.2210558",
+      "pdfUrl": null,
+      "abstract": "We present a generative approach for simultaneously registering a probabilistic atlas of a healthy population to brain magnetic resonance (MR) scans showing glioma and segmenting the scans into tumor as well as healthy tissue labels. The proposed method is based on the expectation maximization (EM) algorithm that incorporates a glioma growth model for atlas seeding, a process which modifies the original atlas into one with tumor and edema adapted to best match a given set of patient's images. The modified atlas is registered into the patient space and utilized for estimating the posterior probabilities of various tissue labels. EM iteratively refines the estimates of the posterior probabilities of tissue labels, the deformation field and the tumor growth model parameters. Hence, in addition to segmentation, the proposed method results in atlas registration and a low-dimensional descri..."
+    },
+    {
+      "title": "Altered Brain Developmental Trajectories in Adolescents After Initiating Drinking",
+      "year": 2017,
+      "venue": "American Journal of Psychiatry",
+      "authors": [
+        "Adolf Pfefferbaum",
+        "Dongjin Kwon",
+        "Ty Brumback",
+        "Wesley K. Thompson",
+        "Kevin Cummins",
+        "Susan F. Tapert",
+        "Sandra A. Brown",
+        "Ian M. Colrain"
+      ],
+      "citations": 193,
+      "doi": "10.1176/appi.ajp.2017.17040469",
+      "url": "https://doi.org/10.1176/appi.ajp.2017.17040469",
+      "pdfUrl": "https://ajp.psychiatryonline.org/doi/pdf/10.1176/appi.ajp.2017.17040469",
+      "abstract": "OBJECTIVE: The authors sought evidence for altered adolescent brain growth trajectory associated with moderate and heavy alcohol use in a large national, multisite, prospective study of adolescents before and after initiation of appreciable alcohol use. METHOD: This study examined 483 adolescents (ages 12-21) before initiation of drinking and 1 and 2 years later. At the 2-year assessment, 356 participants continued to meet the study's no/low alcohol consumption entry criteria, 65 had initiated moderate drinking, and 62 had initiated heavy drinking. MRI was used to quantify regional cortical and white matter volumes. Percent change per year (slopes) in adolescents who continued to meet no/low criteria served as developmental control trajectories against which to compare those who initiated moderate or heavy drinking. RESULTS: In no/low drinkers, gray matter volume declined throughout a..."
+    },
+    {
+      "title": "Spatio-Temporal Graph Convolution for Resting-State fMRI Analysis",
+      "year": 2020,
+      "venue": "Lecture notes in computer science",
+      "authors": [
+        "Soham Gadgil",
+        "Qingyu Zhao",
+        "Adolf Pfefferbaum",
+        "Edith V. Sullivan",
+        "Ehsan Adeli",
+        "Kilian M. Pohl"
+      ],
+      "citations": 174,
+      "doi": "10.1007/978-3-030-59728-3_52",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7700758",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Adolescent Development of Cortical and White Matter Structure in the NCANDA Sample: Role of Sex, Ethnicity, Puberty, and Alcohol Drinking",
+      "year": 2015,
+      "venue": "Cerebral Cortex",
+      "authors": [
+        "Adolf Pfefferbaum",
+        "Torsten Rohlfing",
+        "Kilian M. Pohl",
+        "Barton Lane",
+        "Weiwei Chu",
+        "Dongjin Kwon",
+        "B. Nolan Nichols",
+        "Sandra A. Brown"
+      ],
+      "citations": 167,
+      "doi": "10.1093/cercor/bhv205",
+      "url": "https://doi.org/10.1093/cercor/bhv205",
+      "pdfUrl": "https://academic.oup.com/cercor/article-pdf/26/10/4101/17307940/bhv205.pdf",
+      "abstract": "Brain structural development continues throughout adolescence, when experimentation with alcohol is often initiated. To parse contributions from biological and environmental factors on neurodevelopment, this study used baseline National Consortium on Alcohol and NeuroDevelopment in Adolescence (NCANDA) magnetic resonance imaging (MRI) data, acquired in 674 adolescents meeting no/low alcohol or drug use criteria and 134 adolescents exceeding criteria. Spatial integrity of images across the 5 recruitment sites was assured by morphological scaling using Alzheimer's disease neuroimaging initiative phantom-derived volume scalar metrics. Clinical MRI readings identified structural anomalies in 11.4%. Cortical volume and thickness were smaller and white matter volumes were larger in older than in younger adolescents. Effects of sex (male > female) and ethnicity (majority > minority) were sig..."
+    },
+    {
+      "title": "Neocortical Gray Matter Volume in First-Episode Schizophrenia and First-Episode Affective Psychosis: A Cross-Sectional and Longitudinal MRI Study",
+      "year": 2007,
+      "venue": "Biological Psychiatry",
+      "authors": [
+        "Motoaki Nakamura",
+        "Dean F. Salisbury",
+        "Yoshio Hirayasu",
+        "Sylvain Bouix",
+        "Kilian M. Pohl",
+        "Takeshi Yoshida",
+        "Min‐Seong Koo",
+        "Martha E. Shenton"
+      ],
+      "citations": 161,
+      "doi": "10.1016/j.biopsych.2007.03.030",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2782514",
+      "pdfUrl": null,
+      "abstract": null
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:08.565Z"
+}

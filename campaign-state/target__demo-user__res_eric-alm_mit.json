@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x45jliiq",
+  "userId": "demo-user",
+  "researcherId": "res_eric-alm_mit",
+  "researcherName": "Eric Alm",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 60.8,
+  "reasons": [
+    "Overlaps on computational biology, systems biology",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ejalm@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.856Z",
+  "updatedAt": "2026-08-18T14:28:42.856Z"
+}

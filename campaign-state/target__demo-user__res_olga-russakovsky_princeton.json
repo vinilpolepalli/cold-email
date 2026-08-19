@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0yy3onx32",
+  "userId": "demo-user",
+  "researcherId": "res_olga-russakovsky_princeton",
+  "researcherName": "Olga Russakovsky",
+  "school": "Princeton",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 25.8,
+  "reasons": [
+    "Overlaps on computer vision, machine learning, human-computer interaction",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "olgarus@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.922Z",
+  "updatedAt": "2026-08-18T14:28:42.922Z"
+}

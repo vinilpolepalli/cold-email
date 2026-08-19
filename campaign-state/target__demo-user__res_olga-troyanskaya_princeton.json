@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z3efj3l0",
+  "userId": "demo-user",
+  "researcherId": "res_olga-troyanskaya_princeton",
+  "researcherName": "Olga Troyanskaya",
+  "school": "Princeton",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 21.3,
+  "reasons": [
+    "Overlaps on computational biology, deep learning, genomics",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ogt@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.927Z",
+  "updatedAt": "2026-08-18T14:28:42.927Z"
+}

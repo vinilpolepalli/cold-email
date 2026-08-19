@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0wz7mw0s4",
+  "userId": "demo-user",
+  "researcherId": "res_tomaso-a-poggio_mit",
+  "researcherName": "Tomaso A. Poggio",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 71,
+  "reasons": [
+    "Overlaps on computational neuroscience, machine learning, learning theory",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "tp@ai.mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.851Z",
+  "updatedAt": "2026-08-18T14:28:42.851Z"
+}

@@ -1,0 +1,145 @@
+{
+  "researcherId": "res_percy-liang_stanford",
+  "authorName": "Percy Liang",
+  "authorUrl": "https://openalex.org/A5025255782",
+  "worksCount": 416,
+  "citedByCount": 45211,
+  "topics": [
+    "Topic Modeling",
+    "Natural Language Processing Techniques",
+    "Machine Learning and Algorithms",
+    "Multimodal Machine Learning Applications",
+    "Machine Learning and Data Classification"
+  ],
+  "publications": [
+    {
+      "title": "SQuAD: 100,000+ Questions for Machine Comprehension of Text",
+      "year": 2016,
+      "venue": null,
+      "authors": [
+        "Pranav Rajpurkar",
+        "Jian Zhang",
+        "Konstantin Lopyrev",
+        "Percy Liang"
+      ],
+      "citations": 6412,
+      "doi": "10.18653/v1/d16-1264",
+      "url": "https://doi.org/10.18653/v1/d16-1264",
+      "pdfUrl": "https://aclanthology.org/D16-1264.pdf",
+      "abstract": "We present the Stanford Question Answering Dataset (SQuAD), a new reading comprehension dataset consisting of 100,000+ questions posed by crowdworkers on a set of Wikipedia articles, where the answer to each question is a segment of text from the corresponding reading passage. We analyze the dataset to understand the types of reasoning required to answer the questions, leaning heavily on dependency and constituency trees. We build a strong logistic regression model, which achieves an F1 score of 51.0%, a significant improvement over a simple baseline (20%). However, human performance (86.8%) is much higher, indicating that the dataset presents a good challenge problem for future research. The dataset is freely available at https://stanford-qa.com"
+    },
+    {
+      "title": "Prefix-Tuning: Optimizing Continuous Prompts for Generation",
+      "year": 2021,
+      "venue": null,
+      "authors": [
+        "Xiang Lisa Li",
+        "Percy Liang"
+      ],
+      "citations": 2301,
+      "doi": "10.18653/v1/2021.acl-long.353",
+      "url": "https://doi.org/10.18653/v1/2021.acl-long.353",
+      "pdfUrl": "https://aclanthology.org/2021.acl-long.353.pdf",
+      "abstract": "Xiang Lisa Li, Percy Liang. Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers). 2021."
+    },
+    {
+      "title": "On the Opportunities and Risks of Foundation Models",
+      "year": 2021,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Rishi Bommasani",
+        "Drew A. Hudson",
+        "Ehsan Adeli",
+        "Russ B. Altman",
+        "Simran Arora",
+        "Sydney von Arx",
+        "Michael S. Bernstein",
+        "Jeannette Bohg"
+      ],
+      "citations": 2247,
+      "doi": "10.48550/arxiv.2108.07258",
+      "url": "http://arxiv.org/abs/2108.07258",
+      "pdfUrl": "https://arxiv.org/pdf/2108.07258",
+      "abstract": "AI is undergoing a paradigm shift with the rise of models (e.g., BERT, DALL-E, GPT-3) that are trained on broad data at scale and are adaptable to a wide range of downstream tasks. We call these models foundation models to underscore their critically central yet incomplete character. This report provides a thorough account of the opportunities and risks of foundation models, ranging from their capabilities (e.g., language, vision, robotics, reasoning, human interaction) and technical principles(e.g., model architectures, training procedures, data, systems, security, evaluation, theory) to their applications (e.g., law, healthcare, education) and societal impact (e.g., inequity, misuse, economic and environmental impact, legal and ethical considerations). Though foundation models are based on standard deep learning and transfer learning, their scale results in new emergent capabilities..."
+    },
+    {
+      "title": "Know What You Don’t Know: Unanswerable Questions for SQuAD",
+      "year": 2018,
+      "venue": null,
+      "authors": [
+        "Pranav Rajpurkar",
+        "Robin Jia",
+        "Percy Liang"
+      ],
+      "citations": 2188,
+      "doi": "10.18653/v1/p18-2124",
+      "url": "https://doi.org/10.18653/v1/p18-2124",
+      "pdfUrl": "https://www.aclweb.org/anthology/P18-2124.pdf",
+      "abstract": "Extractive reading comprehension systems can often locate the correct answer to a question in a context document, but they also tend to make unreliable guesses on questions for which the correct answer is not stated in the context. Existing datasets either focus exclusively on answerable questions, or use automatically generated unanswerable questions that are easy to identify. To address these weaknesses, we present SQUADRUN, a new dataset that combines the existing Stanford Question Answering Dataset (SQuAD) with over 50,000 unanswerable questions written adversarially by crowdworkers to look similar to answerable ones. To do well on SQUADRUN, systems must not only answer questions when possible, but also determine when no answer is supported by the paragraph and abstain from answering. SQUADRUN is a challenging natural language understanding task for existing models: a strong neura..."
+    },
+    {
+      "title": "Generative Agents: Interactive Simulacra of Human Behavior",
+      "year": 2023,
+      "venue": null,
+      "authors": [
+        "Joon Sung Park",
+        "Joseph O’Brien",
+        "Carrie J. Cai",
+        "Meredith Ringel Morris",
+        "Percy Liang",
+        "Michael S. Bernstein"
+      ],
+      "citations": 1697,
+      "doi": "10.1145/3586183.3606763",
+      "url": "https://doi.org/10.1145/3586183.3606763",
+      "pdfUrl": "https://dl.acm.org/doi/pdf/10.1145/3586183.3606763",
+      "abstract": "Believable proxies of human behavior can empower interactive applications ranging from immersive environments to rehearsal spaces for interpersonal communication to prototyping tools. In this paper, we introduce generative agents: computational software agents that simulate believable human behavior. Generative agents wake up, cook breakfast, and head to work; artists paint, while authors write; they form opinions, notice each other, and initiate conversations; they remember and reflect on days past as they plan the next day. To enable generative agents, we describe an architecture that extends a large language model to store a complete record of the agent’s experiences using natural language, synthesize those memories over time into higher-level reflections, and retrieve them dynamically to plan behavior. We instantiate generative agents to populate an interactive sandbox environment..."
+    },
+    {
+      "title": "Semantic Parsing on Freebase from Question-Answer Pairs",
+      "year": 2013,
+      "venue": null,
+      "authors": [
+        "Jonathan Berant",
+        "Andrew Chou",
+        "Roy Frostig",
+        "Percy Liang"
+      ],
+      "citations": 1614,
+      "doi": "10.18653/v1/d13-1160",
+      "url": "https://doi.org/10.18653/v1/d13-1160",
+      "pdfUrl": "https://aclanthology.org/D13-1160.pdf",
+      "abstract": "In this paper, we train a semantic parser that scales up to Freebase.Instead of relying on annotated logical forms, which is especially expensive to obtain at large scale, we learn from question-answer pairs.The main challenge in this setting is narrowing down the huge number of possible logical predicates for a given question.We tackle this problem in two ways: First, we build a coarse mapping from phrases to predicates using a knowledge base and a large text corpus.Second, we use a bridging operation to generate additional predicates based on neighboring predicates.On the dataset of Cai and Yates (2013), despite not having annotated logical forms, our system outperforms their state-of-the-art parser.Additionally, we collected a more realistic and challenging dataset of question-answer pairs and improves over a natural baseline."
+    },
+    {
+      "title": "Adversarial Examples for Evaluating Reading Comprehension Systems",
+      "year": 2017,
+      "venue": null,
+      "authors": [
+        "Robin Jia",
+        "Percy Liang"
+      ],
+      "citations": 1299,
+      "doi": "10.18653/v1/d17-1215",
+      "url": "https://doi.org/10.18653/v1/d17-1215",
+      "pdfUrl": "https://www.aclweb.org/anthology/D17-1215.pdf",
+      "abstract": "Standard accuracy metrics indicate that reading comprehension systems are making rapid progress, but the extent to which these systems truly understand language remains unclear."
+    },
+    {
+      "title": "Understanding Black-box Predictions via Influence Functions",
+      "year": 2017,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Pang Wei Koh",
+        "Percy Liang"
+      ],
+      "citations": 1197,
+      "doi": "10.48550/arxiv.1703.04730",
+      "url": "http://arxiv.org/abs/1703.04730",
+      "pdfUrl": "https://arxiv.org/pdf/1703.04730",
+      "abstract": "How can we explain the predictions of a black-box model? In this paper, we use influence functions -- a classic technique from robust statistics -- to trace a model's prediction through the learning algorithm and back to its training data, thereby identifying training points most responsible for a given prediction. To scale up influence functions to modern machine learning settings, we develop a simple, efficient implementation that requires only oracle access to gradients and Hessian-vector products. We show that even on non-convex and non-differentiable models where the theory breaks down, approximations to influence functions can still provide valuable information. On linear models and convolutional neural networks, we demonstrate that influence functions are useful for multiple purposes: understanding model behavior, debugging models, detecting dataset errors, and even creating vi..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:08.082Z"
+}

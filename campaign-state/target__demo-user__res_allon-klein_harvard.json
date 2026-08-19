@@ -1,0 +1,26 @@
+{
+  "id": "tgt_msyrd0tdf31nda",
+  "userId": "demo-user",
+  "researcherId": "res_allon-klein_harvard",
+  "researcherName": "Allon Klein",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 53.8,
+  "reasons": [
+    "Overlaps on single-cell genomics, statistical modeling, stem cell fate",
+    "Harvard is priority three",
+    "Lab page says they are looking for undergrad"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "allon_klein@hms.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.721Z",
+  "updatedAt": "2026-08-18T14:28:42.721Z"
+}

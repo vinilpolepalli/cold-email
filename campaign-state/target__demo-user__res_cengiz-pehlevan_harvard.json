@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tfx1g2bh",
+  "userId": "demo-user",
+  "researcherId": "res_cengiz-pehlevan_harvard",
+  "researcherName": "Cengiz Pehlevan",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 48.6,
+  "reasons": [
+    "Overlaps on computational neuroscience, machine learning, neural network theory",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "cpehlevan@seas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.723Z",
+  "updatedAt": "2026-08-18T14:28:42.723Z"
+}

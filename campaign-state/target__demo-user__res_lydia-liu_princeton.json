@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z7qeb0ag",
+  "userId": "demo-user",
+  "researcherId": "res_lydia-liu_princeton",
+  "researcherName": "Lydia Liu",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 16.8,
+  "reasons": [
+    "Overlaps on machine learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ltliu@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.931Z",
+  "updatedAt": "2026-08-18T14:28:42.931Z"
+}

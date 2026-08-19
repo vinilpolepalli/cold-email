@@ -1,0 +1,164 @@
+{
+  "researcherId": "res_ron-dror_stanford",
+  "authorName": "Ron O. Dror",
+  "authorUrl": "https://openalex.org/A5061322136",
+  "worksCount": 369,
+  "citedByCount": 50228,
+  "topics": [
+    "Receptor Mechanisms and Signaling",
+    "Protein Structure and Dynamics",
+    "Neuropeptides and Animal Physiology",
+    "Computational Drug Discovery Methods",
+    "Mass Spectrometry Techniques and Applications"
+  ],
+  "publications": [
+    {
+      "title": "Improved side‐chain torsion potentials for the Amber ff99SB protein force field",
+      "year": 2010,
+      "venue": "Proteins Structure Function and Bioinformatics",
+      "authors": [
+        "Kresten Lindorff‐Larsen",
+        "Stefano Piana",
+        "Kim Palmö",
+        "Paul Maragakis",
+        "John L. Klepeis",
+        "Ron O. Dror",
+        "David E. Shaw"
+      ],
+      "citations": 6397,
+      "doi": "10.1002/prot.22711",
+      "url": "https://doi.org/10.1002/prot.22711",
+      "pdfUrl": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/prot.22711",
+      "abstract": "Recent advances in hardware and software have enabled increasingly long molecular dynamics (MD) simulations of biomolecules, exposing certain limitations in the accuracy of the force fields used for such simulations and spurring efforts to refine these force fields. Recent modifications to the Amber and CHARMM protein force fields, for example, have improved the backbone torsion potentials, remedying deficiencies in earlier versions. Here, we further advance simulation accuracy by improving the amino acid side-chain torsion potentials of the Amber ff99SB force field. First, we used simulations of model alpha-helical systems to identify the four residue types whose rotamer distribution differed the most from expectations based on Protein Data Bank statistics. Second, we optimized the side-chain torsion potentials of these residues to match new, high-level quantum-mechanical calculation..."
+    },
+    {
+      "title": "Molecular Dynamics Simulation for All",
+      "year": 2018,
+      "venue": "Neuron",
+      "authors": [
+        "Scott A. Hollingsworth",
+        "Ron O. Dror"
+      ],
+      "citations": 3205,
+      "doi": "10.1016/j.neuron.2018.08.011",
+      "url": "https://doi.org/10.1016/j.neuron.2018.08.011",
+      "pdfUrl": "http://www.cell.com/article/S0896627318306846/pdf",
+      "abstract": null
+    },
+    {
+      "title": "Molecular dynamics---Scalable algorithms for molecular dynamics simulations on commodity clusters",
+      "year": 2006,
+      "venue": null,
+      "authors": [
+        "K. J. Bowers",
+        "Federico D. Sacerdoti",
+        "John K. Salmon",
+        "Yibing Shan",
+        "David E. Shaw",
+        "Edmond Chow",
+        "Huafeng Xu",
+        "Ron O. Dror"
+      ],
+      "citations": 2586,
+      "doi": "10.1145/1188455.1188544",
+      "url": "https://doi.org/10.1145/1188455.1188544",
+      "pdfUrl": null,
+      "abstract": "Although molecular dynamics (MD) simulations of biomolecular systems often run for days to months, many events of great scientific interest and pharmaceutical relevance occur on long time scales that remain beyond reach. We present several new algorithms and implementation techniques that significantly accelerate parallel MD simulations compared with current state-of-the-art codes. These include a novel parallel decomposition method and message-passing techniques that reduce communication requirements, as well as novel communication primitives that further reduce communication time. We have also developed numerical techniques that maintain high accuracy while using single precision computation in order to exploit processor-level vector instructions. These methods are embodied in a newly developed MD code called Desmond that achieves unprecedented simulation throughput and parallel sca..."
+    },
+    {
+      "title": "How Fast-Folding Proteins Fold",
+      "year": 2011,
+      "venue": "Science",
+      "authors": [
+        "Kresten Lindorff‐Larsen",
+        "Stefano Piana",
+        "Ron O. Dror",
+        "David E. Shaw"
+      ],
+      "citations": 2041,
+      "doi": "10.1126/science.1208351",
+      "url": "https://doi.org/10.1126/science.1208351",
+      "pdfUrl": null,
+      "abstract": "An outstanding challenge in the field of molecular biology has been to understand the process by which proteins fold into their characteristic three-dimensional structures. Here, we report the results of atomic-level molecular dynamics simulations, over periods ranging between 100 μs and 1 ms, that reveal a set of common principles underlying the folding of 12 structurally diverse proteins. In simulations conducted with a single physics-based energy function, the proteins, representing all three major structural classes, spontaneously and repeatedly fold to their experimentally determined native structures. Early in the folding process, the protein backbone adopts a nativelike topology while certain secondary structure elements and a small number of nonlocal contacts form. In most cases, folding follows a single dominant route in which elements of the native structure appear in an ord..."
+    },
+    {
+      "title": "Atomic-Level Characterization of the Structural Dynamics of Proteins",
+      "year": 2010,
+      "venue": "Science",
+      "authors": [
+        "David E. Shaw",
+        "Paul Maragakis",
+        "Kresten Lindorff‐Larsen",
+        "Stefano Piana",
+        "Ron O. Dror",
+        "Michael P. Eastwood",
+        "Joseph A. Bank",
+        "John Jumper"
+      ],
+      "citations": 1944,
+      "doi": "10.1126/science.1187409",
+      "url": "https://doi.org/10.1126/science.1187409",
+      "pdfUrl": null,
+      "abstract": "Molecular dynamics (MD) simulations are widely used to study protein motions at an atomic level of detail, but they have been limited to time scales shorter than those of many biologically critical conformational changes. We examined two fundamental processes in protein dynamics--protein folding and conformational change within the folded state--by means of extremely long all-atom MD simulations conducted on a special-purpose machine. Equilibrium simulations of a WW protein domain captured multiple folding and unfolding events that consistently follow a well-defined folding pathway; separate simulations of the protein's constituent substructures shed light on possible determinants of this pathway. A 1-millisecond simulation of the folded protein BPTI reveals a small number of structurally distinct conformational states whose reversible interconversion is slower than local relaxations ..."
+    },
+    {
+      "title": "Scalable Algorithms for Molecular Dynamics Simulations on Commodity Clusters",
+      "year": 2006,
+      "venue": null,
+      "authors": [
+        "K. J. Bowers",
+        "David E. Chow",
+        "Huafeng Xu",
+        "Ron O. Dror",
+        "Michael P. Eastwood",
+        "Brent A. Gregersen",
+        "John L. Klepeis",
+        "István Kolossváry"
+      ],
+      "citations": 1711,
+      "doi": "10.1109/sc.2006.54",
+      "url": "https://doi.org/10.1109/sc.2006.54",
+      "pdfUrl": null,
+      "abstract": "Although molecular dynamics (MD) simulations of biomolecular systems often run for days to months, many events of great scientific interest and pharmaceutical relevance occur on long time scales that remain beyond reach. We present several new algorithms and implementation techniques that significantly accelerate parallel MD simulations compared with current state-of-the-art codes. These include a novel parallel decomposition method and message-passing techniques that reduce communication requirements, as well as novel communication primitives that further reduce communication time. We have also developed numerical techniques that maintain high accuracy while using single precision computation in order to exploit processor-level vector instructions. These methods are embodied in a newly developed MD code called Desmond that achieves unprecedented simulation throughput and parallel sca..."
+    },
+    {
+      "title": "Biomolecular Simulation: A Computational Microscope for Molecular Biology",
+      "year": 2012,
+      "venue": "Annual Review of Biophysics",
+      "authors": [
+        "Ron O. Dror",
+        "Robert M. Dirks",
+        "J.P. Grossman",
+        "Huafeng Xu",
+        "David E. Shaw"
+      ],
+      "citations": 1245,
+      "doi": "10.1146/annurev-biophys-042910-155245",
+      "url": "https://doi.org/10.1146/annurev-biophys-042910-155245",
+      "pdfUrl": null,
+      "abstract": "Molecular dynamics simulations capture the behavior of biological macromolecules in full atomic detail, but their computational demands, combined with the challenge of appropriately modeling the relevant physics, have historically restricted their length and accuracy. Dramatic recent improvements in achievable simulation speed and the underlying physical models have enabled atomic-level simulations on timescales as long as milliseconds that capture key biochemical processes such as protein folding, drug binding, membrane transport, and the conformational changes critical to protein function. Such simulation may serve as a computational microscope, revealing biomolecular mechanisms at spatial and temporal scales that are difficult to observe experimentally. We describe the rapidly evolving state of the art for atomic-level biomolecular simulation, illustrate the types of biological dis..."
+    },
+    {
+      "title": "Structural insights into µ-opioid receptor activation",
+      "year": 2015,
+      "venue": "Nature",
+      "authors": [
+        "Weijiao Huang",
+        "Aashish Manglik",
+        "AJ Venkatakrishnan",
+        "Toon Laeremans",
+        "Evan N. Feinberg",
+        "Adrian L. Sanborn",
+        "Hideaki Kato",
+        "Kathryn E. Livingston"
+      ],
+      "citations": 919,
+      "doi": "10.1038/nature14886",
+      "url": "https://doi.org/10.1038/nature14886",
+      "pdfUrl": "https://www.nature.com/articles/nature14886.pdf",
+      "abstract": null
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:20:40.763Z"
+}

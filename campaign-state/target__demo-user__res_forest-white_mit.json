@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpjjigz5rw",
+  "userId": "demo-user",
+  "researcherId": "res_forest-white_mit",
+  "researcherName": "Forest White",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 60.8,
+  "reasons": [
+    "Overlaps on signaling network analysis, systems biology, cancer biology",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "fwhite@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:12:59.023Z",
+  "updatedAt": "2026-08-18T01:12:59.023Z"
+}

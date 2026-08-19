@@ -1,0 +1,143 @@
+{
+  "researcherId": "res_john-duchi_stanford",
+  "authorName": "John C. Duchi",
+  "authorUrl": "https://openalex.org/A5061331093",
+  "worksCount": 187,
+  "citedByCount": 19528,
+  "topics": [
+    "Stochastic Gradient Optimization Techniques",
+    "Sparse and Compressive Sensing Techniques",
+    "Privacy-Preserving Technologies in Data",
+    "Advanced Bandit Algorithms Research",
+    "Machine Learning and Algorithms"
+  ],
+  "publications": [
+    {
+      "title": "Adaptive Subgradient Methods for Online Learning and Stochastic Optimization",
+      "year": 2010,
+      "venue": "UC Berkeley",
+      "authors": [
+        "John C. Duchi",
+        "Elad Hazan",
+        "Yoram Singer"
+      ],
+      "citations": 8622,
+      "doi": null,
+      "url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.164.213",
+      "pdfUrl": null,
+      "abstract": "Stochastic subgradient methods are widely used, well analyzed, and constitute effective tools for optimization and online learning. Stochastic gradient methods ’ popularity and appeal are largely due to their simplicity, as they largely follow predetermined procedural schemes. However, most common subgradient approaches are oblivious to the characteristics of the data being observed. We present a new family of subgradient methods that dynamically incorporate knowledge of the geometry of the data observed in earlier iterations to perform more informative gradient-based learning. The adaptation, in essence, allows us to find needles in haystacks in the form of very predictive but rarely seenfeatures. Ourparadigmstemsfromrecentadvancesinstochasticoptimizationandonlinelearning which employ proximal functions to control the gradient steps of the algorithm. We describe and analyze an appara..."
+    },
+    {
+      "title": "Efficient projections onto thel1-ball for learning in high dimensions",
+      "year": 2008,
+      "venue": null,
+      "authors": [
+        "John C. Duchi",
+        "Shai Shalev‐Shwartz",
+        "Yoram Singer",
+        "Tushar Chandra"
+      ],
+      "citations": 1243,
+      "doi": "10.1145/1390156.1390191",
+      "url": "https://doi.org/10.1145/1390156.1390191",
+      "pdfUrl": null,
+      "abstract": "We describe efficient algorithms for projecting a vector onto the ℓ1-ball. We present two methods for projection. The first performs exact projection in O(n) expected time, where n is the dimension of the space. The second works on vectors k of whose elements are perturbed outside the ℓ1-ball, projecting in O(k log(n)) time. This setting is especially useful for online learning in sparse feature spaces such as text categorization applications. We demonstrate the merits and effectiveness of our algorithms in numerous batch and online learning tasks. We show that variants of stochastic gradient projection methods augmented with our efficient projection procedures outperform interior point methods, which are considered state-of-the-art optimization techniques. We also show that in online settings gradient updates with ℓ1 projections outperform the exponentiated gradient algorithm while o..."
+    },
+    {
+      "title": "Local Privacy and Statistical Minimax Rates",
+      "year": 2013,
+      "venue": null,
+      "authors": [
+        "John C. Duchi",
+        "Michael I. Jordan",
+        "Martin J. Wainwright"
+      ],
+      "citations": 1004,
+      "doi": "10.1109/focs.2013.53",
+      "url": "https://doi.org/10.1109/focs.2013.53",
+      "pdfUrl": null,
+      "abstract": "Working under local differential privacy-a model of privacy in which data remains private even from the statistician or learner-we study the tradeoff between privacy guarantees and the utility of the resulting statistical estimators. We prove bounds on information-theoretic quantities, including mutual information and Kullback-Leibler divergence, that influence estimation rates as a function of the amount of privacy preserved. When combined with minimax techniques such as Le Cam's and Fano's methods, these inequalities allow for a precise characterization of statistical rates under local privacy constraints. In this paper, we provide a treatment of two canonical problem families: mean estimation in location family models and convex risk minimization. For these families, we provide lower and upper bounds for estimation of population quantities that match up to constant factors, giving ..."
+    },
+    {
+      "title": "Efficient Online and Batch Learning Using Forward Backward Splitting",
+      "year": 2009,
+      "venue": "Journal of Machine Learning Research",
+      "authors": [
+        "John C. Duchi",
+        "Yoram Singer"
+      ],
+      "citations": 505,
+      "doi": null,
+      "url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.216.1412",
+      "pdfUrl": null,
+      "abstract": "We describe, analyze, and experiment with a framework for empirical loss minimization with regularization. Our algorithmic framework alternates between two phases. On each iteration we first perform an unconstrained gradient descent step. We then cast and solve an instantaneous optimization problem that trades off minimization of a regularization term while keeping close proximity to the result of the first phase. This view yields a simple yet effective algorithm that can be used for batch penalized risk minimization and online learning. Furthermore, the two phase approach enables sparse solutions when used in conjunction with regularization functions that promote sparsity, such as ℓ1. We derive concrete and very simple algorithms for minimization of loss functions with ℓ1, ℓ2, ℓ 2 2, and ℓ ∞ regularization. We also show how to construct efficient algorithms for mixed-norm ℓ1/ℓq regul..."
+    },
+    {
+      "title": "Optimal Rates for Zero-Order Convex Optimization: The Power of Two Function Evaluations",
+      "year": 2015,
+      "venue": "IEEE Transactions on Information Theory",
+      "authors": [
+        "John C. Duchi",
+        "Michael I. Jordan",
+        "Martin J. Wainwright",
+        "Andre Wibisono"
+      ],
+      "citations": 389,
+      "doi": "10.1109/tit.2015.2409256",
+      "url": "https://doi.org/10.1109/tit.2015.2409256",
+      "pdfUrl": null,
+      "abstract": "We consider derivative-free algorithms for stochastic and nonstochastic convex optimization problems that use only function values rather than gradients. Focusing on nonasymptotic bounds on convergence rates, we show that if pairs of function values are available, algorithms for d-dimensional optimization that use gradient estimates based on random perturbations suffer a factor of at most √d in convergence rate over traditional stochastic gradient methods. We establish such results for both smooth and nonsmooth cases, sharpening previous analyses that suggested a worse dimension dependence, and extend our results to the case of multiple (m ≥ 2) evaluations. We complement our algorithmic development with information-theoretic lower bounds on the minimax convergence rate of such problems, establishing the sharpness of our achievable results up to constant (sometimes logarithmic) factors."
+    },
+    {
+      "title": "Generalizing to Unseen Domains via Adversarial Data Augmentation",
+      "year": 2018,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Riccardo Volpi",
+        "Hongseok Namkoong",
+        "Ozan Şener",
+        "John C. Duchi",
+        "Vittorio Murino",
+        "Silvio Savarese"
+      ],
+      "citations": 366,
+      "doi": "10.48550/arxiv.1805.12018",
+      "url": "http://arxiv.org/abs/1805.12018",
+      "pdfUrl": "https://arxiv.org/pdf/1805.12018",
+      "abstract": "We are concerned with learning models that generalize well to different \\emph{unseen} domains. We consider a worst-case formulation over data distributions that are near the source domain in the feature space. Only using training data from a single source distribution, we propose an iterative procedure that augments the dataset with examples from a fictitious target domain that is \"hard\" under the current model. We show that our iterative scheme is an adaptive data augmentation method where we append adversarial examples at each iteration. For softmax losses, we show that our method is a data-dependent regularization scheme that behaves differently from classical regularizers that regularize towards zero (e.g., ridge or lasso). On digit recognition and semantic segmentation tasks, our method learns models improve performance across a range of a priori unknown target domains."
+    },
+    {
+      "title": "Certifying Some Distributional Robustness with Principled Adversarial Training",
+      "year": 2017,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Aman Sinha",
+        "Hongseok Namkoong",
+        "Riccardo Volpi",
+        "John C. Duchi"
+      ],
+      "citations": 346,
+      "doi": "10.48550/arxiv.1710.10571",
+      "url": "http://arxiv.org/abs/1710.10571",
+      "pdfUrl": "https://arxiv.org/pdf/1710.10571",
+      "abstract": "Neural networks are vulnerable to adversarial examples and researchers have proposed many heuristic attack and defense mechanisms. We address this problem through the principled lens of distributionally robust optimization, which guarantees performance under adversarial input perturbations. By considering a Lagrangian penalty formulation of perturbing the underlying data distribution in a Wasserstein ball, we provide a training procedure that augments model parameter updates with worst-case perturbations of training data. For smooth losses, our procedure provably achieves moderate levels of robustness with little computational or statistical cost relative to empirical risk minimization. Furthermore, our statistical guarantees allow us to efficiently certify robustness for the population loss. For imperceptible perturbations, our method matches or outperforms heuristic approaches."
+    },
+    {
+      "title": "Divide and Conquer Kernel Ridge Regression: A Distributed Algorithm with Minimax Optimal Rates",
+      "year": 2013,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Yuchen Zhang",
+        "John C. Duchi",
+        "Martin J. Wainwright"
+      ],
+      "citations": 301,
+      "doi": "10.48550/arxiv.1305.5029",
+      "url": "http://arxiv.org/abs/1305.5029",
+      "pdfUrl": "https://arxiv.org/pdf/1305.5029",
+      "abstract": "We establish optimal convergence rates for a decomposition-based scalable approach to kernel ridge regression. The method is simple to describe: it randomly partitions a dataset of size N into m subsets of equal size, computes an independent kernel ridge regression estimator for each subset, then averages the local solutions into a global predictor. This partitioning leads to a substantial reduction in computation time versus the standard approach of performing kernel ridge regression on all N samples. Our two main theorems establish that despite the computational speed-up, statistical optimality is retained: as long as m is not too large, the partition-based estimator achieves the statistical minimax rate over all estimators using the set of N samples. As concrete examples, our theory guarantees that the number of processors m may grow nearly linearly for finite-rank kernels and Gaus..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:27.378Z"
+}

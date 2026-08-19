@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0wui3v4kz",
+  "userId": "demo-user",
+  "researcherId": "res_justin-solomon_mit",
+  "researcherName": "Justin Solomon",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 77.2,
+  "reasons": [
+    "Overlaps on machine learning, vision and graphics, robotics",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "jsolomon@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.846Z",
+  "updatedAt": "2026-08-18T14:28:42.846Z"
+}

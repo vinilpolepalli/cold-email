@@ -1,0 +1,20 @@
+{
+  "id": "out_msyx0nhrrbj6d3",
+  "userId": "demo-user",
+  "researcherId": "res_christopher-re_stanford",
+  "researcherName": "Christopher Re",
+  "to": "chrismre@cs.stanford.edu",
+  "cc": [],
+  "subject": "Interested in your work on weak supervision",
+  "body": "Hello Professor Re,\n\nMy name is Vinil Polepalli and I am an undergraduate at New York University studying Computer Science and Business. I have been a research intern in the Chiosis Lab at Memorial Sloan Kettering, where I built protein-ligand graph neural networks for Hsp90 and epichaperome complexes that reached 0.984 ROC AUC separating active from inactive inhibitor candidates.\n\nI read the Snorkel paper, and it described a problem I had without recognizing it. My Hsp90 model trained on 2,574 compounds labeled active or inactive, and I treated those labels as ground truth when they are really the output of several assays run by different groups at different thresholds, agreeing in the easy cases and disagreeing exactly where the model most needed guidance. That is a set of labeling functions with unknown accuracy and obvious correlations, which is the setting data programming was built for, and denoising them without ground truth would have been more honest than picking one convention and proceeding. What I would want to try is treating each assay and each activity cutoff as its own labeling function over the epichaperome set, and seeing whether the learned accuracies match which assays the chemists already trust.\n\nI would like to hear more about what the group is working on now, and where my background would be useful to you.\n\nIn the past, I have worked on the following related projects:\n- Hsp90 inhibitor virtual screening in the Chiosis Lab at Memorial Sloan Kettering: 4,566 candidates screened at 0.984 GNN ROC AUC and 5x enrichment, 0 Lipinski violations in the top 50: https://hsp90-dashboard.vercel.app/\n- Sole author, cVAE-augmented deep learning for pan-cancer RNA-seq classification, about 98% test accuracy across 5 cancer types on TCGA: https://arxiv.org/abs/2508.02743\n- First author, EGCG and piperine synergy in D. tigrina regeneration, IEEE MIT Undergraduate Research Technology Conference: https://ieeexplore.ieee.org/document/11533121\n- Semantic segmentation for UAV-based environmental monitoring at Carnegie Mellon Robotics Institute: 0.88 mean IoU and 0.94 F1 on 25,000 labeled aerial images, sub-100 ms inference across 30 flights\n\nOutside of research I was invited to Y Combinator's Startup School, reached the VEX Robotics World Championship semifinals, and have qualified for the AIME three times.\n\nI have extensively used PyTorch and Python in past work, along with standard data tooling, but have a lot of coding experience and am adaptable to whichever systems your group uses. My resume is attached. Please let me know if there is a fit in your group.\n\nI would be happy to elaborate on my skills and where I think I can best help out.\n\nThank you!\n\n--\nVinil Polepalli\nNew York University | Class of 2029\nB.S. Computer Science and B.S. Business",
+  "attachmentName": "Polepalli_Resume.pdf",
+  "method": "school-gmail",
+  "status": "sent",
+  "detail": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "createdAt": "2026-08-18T17:07:03.279Z",
+  "threadId": "1a015d73e1fac1be",
+  "rfcMessageId": "<CAFruEoofVPpDxpvTG2iQKVd=FCdH2joSAaUK7WtYs3ou89TG+A@mail.gmail.com>",
+  "trackId": "cs-core",
+  "autonomous": true,
+  "followUpOf": null
+}

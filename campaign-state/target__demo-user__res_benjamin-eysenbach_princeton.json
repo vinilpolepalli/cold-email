@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z3swcq0f",
+  "userId": "demo-user",
+  "researcherId": "res_benjamin-eysenbach_princeton",
+  "researcherName": "Benjamin Eysenbach",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 19.5,
+  "reasons": [
+    "Overlaps on reinforcement learning, machine learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "eysenbach@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.927Z",
+  "updatedAt": "2026-08-18T14:28:42.927Z"
+}

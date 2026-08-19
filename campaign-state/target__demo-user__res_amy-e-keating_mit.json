@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x5it2vin",
+  "userId": "demo-user",
+  "researcherId": "res_amy-e-keating_mit",
+  "researcherName": "Amy E. Keating",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 59.3,
+  "reasons": [
+    "Overlaps on protein design, protein-protein interactions, computational structural biology",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "keating@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.857Z",
+  "updatedAt": "2026-08-18T14:28:42.857Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tkyevbdz",
+  "userId": "demo-user",
+  "researcherId": "res_jeffrey-miller_harvard",
+  "researcherName": "Jeffrey Miller",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 39,
+  "reasons": [
+    "Overlaps on genomics, mathematical modeling, aging and cancer",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "jwmiller@hsph.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.728Z",
+  "updatedAt": "2026-08-18T14:28:42.728Z"
+}

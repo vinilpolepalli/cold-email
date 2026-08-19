@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpjjky3u3y",
+  "userId": "demo-user",
+  "researcherId": "res_dina-katabi_mit",
+  "researcherName": "Dina Katabi",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 60.8,
+  "reasons": [
+    "Overlaps on machine learning, computer vision",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "dina@csail.mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:12:59.023Z",
+  "updatedAt": "2026-08-18T01:12:59.023Z"
+}

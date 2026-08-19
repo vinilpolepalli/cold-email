@@ -1,0 +1,157 @@
+{
+  "researcherId": "res_kwabena-boahen_stanford",
+  "authorName": "Kwabena Boahen",
+  "authorUrl": "https://openalex.org/A5077089453",
+  "worksCount": 138,
+  "citedByCount": 9971,
+  "topics": [
+    "Advanced Memory and Neural Computing",
+    "Neuroscience and Neural Engineering",
+    "Neural dynamics and brain function",
+    "CCD and CMOS Imaging Sensors",
+    "Photoreceptor and optogenetics research"
+  ],
+  "publications": [
+    {
+      "title": "Neuromorphic Silicon Neuron Circuits",
+      "year": 2011,
+      "venue": "Frontiers in Neuroscience",
+      "authors": [
+        "Giacomo Indiveri",
+        "B. Linares-Barranco",
+        "Tara Julia Hamilton",
+        "André van Schaik",
+        "Ralph Etienne‐Cummings",
+        "Tobi Delbrück",
+        "Shih‐Chii Liu",
+        "Piotr Dudek"
+      ],
+      "citations": 1824,
+      "doi": "10.3389/fnins.2011.00073",
+      "url": "https://doi.org/10.3389/fnins.2011.00073",
+      "pdfUrl": "https://www.frontiersin.org/articles/10.3389/fnins.2011.00073/pdf",
+      "abstract": "Hardware implementations of spiking neurons can be extremely useful for a large variety of applications, ranging from high-speed modeling of large-scale neural systems to real-time behaving systems, to bidirectional brain-machine interfaces. The specific circuit solutions used to implement silicon neurons depend on the application requirements. In this paper we describe the most common building blocks and techniques used to implement these circuits, and present an overview of a wide range of neuromorphic silicon neurons, which implement different computational models, ranging from biophysically realistic and conductance-based Hodgkin-Huxley models to bi-dimensional generalized adaptive integrate and fire models. We compare the different design methodologies used for each silicon neuron design described, and demonstrate their features with experimental results, measured from a wide ran..."
+    },
+    {
+      "title": "Neurogrid: A Mixed-Analog-Digital Multichip System for Large-Scale Neural Simulations",
+      "year": 2014,
+      "venue": "Proceedings of the IEEE",
+      "authors": [
+        "Ben Varkey Benjamin",
+        "Peiran Gao",
+        "Emmett McQuinn",
+        "Swadesh Choudhary",
+        "Anand Chandrasekaran",
+        "Jean-Marie Bussat",
+        "Rodrigo Alvarez-Icaza",
+        "John V. Arthur"
+      ],
+      "citations": 1266,
+      "doi": "10.1109/jproc.2014.2313565",
+      "url": "https://doi.org/10.1109/jproc.2014.2313565",
+      "pdfUrl": null,
+      "abstract": "In this paper, we describe the design of Neurogrid, a neuromorphic system for simulating large-scale neural models in real time. Neuromorphic systems realize the function of biological neural systems by emulating their structure. Designers of such systems face three major design choices: 1) whether to emulate the four neural elements-axonal arbor, synapse, dendritic tree, and soma-with dedicated or shared electronic circuits; 2) whether to implement these electronic circuits in an analog or digital manner; and 3) whether to interconnect arrays of these silicon neurons with a mesh or a tree network. The choices we made were: 1) we emulated all neural elements except the soma with shared electronic circuits; this choice maximized the number of synaptic connections; 2) we realized all electronic circuits except those for axonal arbors in an analog manner; this choice maximized energy eff..."
+    },
+    {
+      "title": "Point-to-point connectivity between neuromorphic chips using address events",
+      "year": 2000,
+      "venue": "IEEE Transactions on Circuits and Systems II Analog and Digital Signal Processing",
+      "authors": [
+        "Kwabena Boahen"
+      ],
+      "citations": 651,
+      "doi": "10.1109/82.842110",
+      "url": "https://repository.upenn.edu/be_papers/6",
+      "pdfUrl": "https://repository.upenn.edu/bitstreams/4087da08-9301-4ab1-9de3-47924602da72/download",
+      "abstract": "This paper discusses connectivity between neuromorphic chips, which use the timing of fixed-height fixed-width pulses to encode information. Address-events (log/sub 2/(N)-bit packets that uniquely identify one of N neurons) are used to transmit these pulses in real time on a random-access time-multiplexed communication channel. Activity is assumed to consist of neuronal ensembles-spikes clustered in space and in time. This paper quantifies tradeoffs faced in allocating bandwidth, granting access, and queuing, as well as throughput requirements, and concludes that an arbitered channel design is the best choice. The arbitered channel is implemented with a formal design methodology for asynchronous digital VLSI CMOS systems, after introducing the reader to this top-down synthesis technique. Following the evolution of three generations of designs, it is shown how the overhead of arbitrati..."
+    },
+    {
+      "title": "A biomorphic digital image sensor",
+      "year": 2003,
+      "venue": "IEEE Journal of Solid-State Circuits",
+      "authors": [
+        "Eugenio Culurciello",
+        "Ralph Etienne‐Cummings",
+        "Kwabena Boahen"
+      ],
+      "citations": 363,
+      "doi": "10.1109/jssc.2002.807412",
+      "url": "https://repository.upenn.edu/be_papers/20",
+      "pdfUrl": "https://repository.upenn.edu/bitstreams/a0c6888f-004b-4a1f-a9b0-c87373b9652a/download",
+      "abstract": "An arbitrated address-event imager has been designed and fabricated in a 0.6-μm CMOS process. The imager is composed of 80 × 60 pixels of 32 × 30 μm. The value of the light intensity collected by each photosensitive element is inversely proportional to the pixel's interspike time interval. The readout of each spike is initiated by the individual pixel; therefore, the available output bandwidth is allocated according to pixel output demand. This encoding of light intensities favors brighter pixels, equalizes the number of integrated photons across light intensity, and minimizes power consumption. Tests conducted on the imager showed a large output dynamic range of 180 dB (under bright local illumination) for an individual pixel. The array, on the other hand, produced a dynamic range of 120 dB (under uniform bright illumination and when no lower bound was placed on the update rate per p..."
+    },
+    {
+      "title": "Current-mode subthreshold MOS circuits for analog VLSI neural systems",
+      "year": 1991,
+      "venue": "IEEE Transactions on Neural Networks",
+      "authors": [
+        "Andreas G. Andreou",
+        "Kwabena Boahen",
+        "Philippe O. Pouliquen",
+        "A. Pavasović",
+        "Robert E. Jenkins",
+        "K. Strohbehn"
+      ],
+      "citations": 313,
+      "doi": "10.1109/72.80331",
+      "url": "https://doi.org/10.1109/72.80331",
+      "pdfUrl": null,
+      "abstract": "An overview of the current-mode approach for designing analog VLSI neural systems in subthreshold CMOS technology is presented. Emphasis is given to design techniques at the device level using the current-controlled current conveyor and the translinear principle. Circuits for associative memory and silicon retina systems are used as examples. The design methodology and how it relates to actual biological microcircuits are discussed."
+    },
+    {
+      "title": "Catalyzing next-generation Artificial Intelligence through NeuroAI",
+      "year": 2023,
+      "venue": "Nature Communications",
+      "authors": [
+        "Anthony M. Zador",
+        "G. Sean Escola",
+        "Blake A. Richards",
+        "Bence P. Ölveczky",
+        "Yoshua Bengio",
+        "Kwabena Boahen",
+        "Matthew Botvinick",
+        "Dmitri B. Chklovskii"
+      ],
+      "citations": 297,
+      "doi": "10.1038/s41467-023-37180-x",
+      "url": "https://doi.org/10.1038/s41467-023-37180-x",
+      "pdfUrl": "https://www.nature.com/articles/s41467-023-37180-x.pdf",
+      "abstract": "Neuroscience has long been an essential driver of progress in artificial intelligence (AI). We propose that to accelerate progress in AI, we must invest in fundamental research in NeuroAI. A core component of this is the embodied Turing test, which challenges AI animal models to interact with the sensorimotor world at skill levels akin to their living counterparts. The embodied Turing test shifts the focus from those capabilities like game playing and language that are especially well-developed or uniquely human to those capabilities - inherited from over 500 million years of evolution - that are shared with all animals. Building models that can pass the embodied Turing test will provide a roadmap for the next generation of AI."
+    },
+    {
+      "title": "Different Circuits for ON and OFF Retinal Ganglion Cells Cause Different Contrast Sensitivities",
+      "year": 2003,
+      "venue": "Journal of Neuroscience",
+      "authors": [
+        "Kareem A. Zaghloul",
+        "Kwabena Boahen",
+        "Jonathan B. Demb"
+      ],
+      "citations": 242,
+      "doi": "10.1523/jneurosci.23-07-02645.2003",
+      "url": "https://doi.org/10.1523/jneurosci.23-07-02645.2003",
+      "pdfUrl": "https://www.jneurosci.org/content/jneuro/23/7/2645.full.pdf",
+      "abstract": "The theory of \"parallel pathways\" predicts that, except for a sign reversal, ON and OFF ganglion cells are driven by a similar presynaptic circuit. To test this hypothesis, we measured synaptic inputs to ON and OFF cells as reflected in the subthreshold membrane potential. We made intracellular recordings from brisk-transient (Y) cells in the in vitro guinea pig retina and show that ON and OFF cells in fact express significant asymmetries in their synaptic inputs. An ON cell receives relatively linear input that modulates a single excitatory conductance; whereas an OFF cell receives rectified input that modulates both inhibitory and excitatory conductances. The ON pathway, blocked by L-AP-4, tonically inhibits an OFF cell at mean luminance and phasically inhibits an OFF cell during a light increment. Our results suggest that basal glutamate release is high at ON but not OFF bipolar te..."
+    },
+    {
+      "title": "Selective modulation of cortical state during spatial attention",
+      "year": 2016,
+      "venue": "Science",
+      "authors": [
+        "Tatiana A. Engel",
+        "Nicholas A. Steinmetz",
+        "Marc Alwin Gieselmann",
+        "Alexander Thiele",
+        "Tirin Moore",
+        "Kwabena Boahen"
+      ],
+      "citations": 235,
+      "doi": "10.1126/science.aag1420",
+      "url": "https://discovery.ucl.ac.uk/id/eprint/1557431/",
+      "pdfUrl": "https://discovery.ucl.ac.uk/1557431/1/Engel_Selective_modulation_cortical.pdf",
+      "abstract": "Neocortical activity is permeated with endogenously generated fluctuations, but how these dynamics affect goal-directed behavior remains a mystery. We found that ensemble neural activity in primate visual cortex spontaneously fluctuated between phases of vigorous (On) and faint (Off) spiking synchronously across cortical layers. These On-Off dynamics, reflecting global changes in cortical state, were also modulated at a local scale during selective attention. Moreover, the momentary phase of local ensemble activity predicted behavioral performance. Our results show that cortical state is controlled locally within a cortical map according to cognitive demands and reveal the impact of these local changes in cortical state on goal-directed behavior."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:10.634Z"
+}

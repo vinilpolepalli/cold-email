@@ -1,0 +1,21 @@
+{
+  "researcherId": "res_allon-klein_harvard",
+  "stance": "open",
+  "kinds": [
+    "undergrad"
+  ],
+  "evidence": [
+    {
+      "quote": "Undergraduate / Internship Opportunities We host undergraduate researchers and summer interns through Harvard College programs, visiting student fellowships, and other internship initiatives.",
+      "url": "https://www.klein.hms.harvard.edu/join"
+    }
+  ],
+  "pagesChecked": [
+    "https://www.klein.hms.harvard.edu",
+    "https://sysbio.med.harvard.edu/allon-klein",
+    "https://www.klein.hms.harvard.edu/",
+    "https://www.klein.hms.harvard.edu/join",
+    "https://www.klein.hms.harvard.edu/lab-culture"
+  ],
+  "checkedAt": "2026-08-17T01:36:38.282Z"
+}

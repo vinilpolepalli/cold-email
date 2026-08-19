@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0wyypjq4j",
+  "userId": "demo-user",
+  "researcherId": "res_sherrie-wang_mit",
+  "researcherName": "Sherrie Wang",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 74.9,
+  "reasons": [
+    "Overlaps on machine learning, computational sustainability, spatial data",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "sherwang@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.850Z",
+  "updatedAt": "2026-08-18T14:28:42.850Z"
+}

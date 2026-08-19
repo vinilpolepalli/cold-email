@@ -1,0 +1,174 @@
+{
+  "researcherId": "res_andrew-gentles_stanford",
+  "authorName": "Andrew J. Gentles",
+  "authorUrl": "https://openalex.org/A5015367801",
+  "worksCount": 307,
+  "citedByCount": 46620,
+  "topics": [
+    "Cancer Genomics and Diagnostics",
+    "Cancer Immunotherapy and Biomarkers",
+    "CAR-T cell therapy research",
+    "Single-cell and spatial transcriptomics",
+    "Lymphoma Diagnosis and Treatment"
+  ],
+  "publications": [
+    {
+      "title": "Robust enumeration of cell subsets from tissue expression profiles",
+      "year": 2015,
+      "venue": "Nature Methods",
+      "authors": [
+        "Aaron M. Newman",
+        "Chih Long Liu",
+        "Michael R. Green",
+        "Andrew J. Gentles",
+        "Weiguo Feng",
+        "Yue Xu",
+        "Chuong D. Hoang",
+        "Maximilian Diehn"
+      ],
+      "citations": 14310,
+      "doi": "10.1038/nmeth.3337",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4739640",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "The Immune Landscape of Cancer",
+      "year": 2018,
+      "venue": "Immunity",
+      "authors": [
+        "Vésteinn Thórsson",
+        "Vésteinn Thorsson",
+        "David L. Gibbs",
+        "Scott Brown",
+        "Denise Wolf",
+        "Dante S. Bortone",
+        "Tai-Hsien Ou Yang",
+        "Eduard Porta-Pardo"
+      ],
+      "citations": 6271,
+      "doi": "10.1016/j.immuni.2018.03.023",
+      "url": "https://doi.org/10.1016/j.immuni.2018.03.023",
+      "pdfUrl": "http://www.cell.com/article/S1074761318301213/pdf",
+      "abstract": "We performed an extensive immunogenomic analysis of more than 10,000 tumors comprising 33 diverse cancer types by utilizing data compiled by TCGA. Across cancer types, we identified six immune subtypes-wound healing, IFN-γ dominant, inflammatory, lymphocyte depleted, immunologically quiet, and TGF-β dominant-characterized by differences in macrophage or lymphocyte signatures, Th1:Th2 cell ratio, extent of intratumoral heterogeneity, aneuploidy, extent of neoantigen load, overall cell proliferation, expression of immunomodulatory genes, and prognosis. Specific driver mutations correlated with lower (CTNNB1, NRAS, or IDH1) or higher (BRAF, TP53, or CASP8) leukocyte levels across all cancers. Multiple control modalities of the intracellular and extracellular networks (transcription, microRNAs, copy number, and epigenetic processes) were involved in tumor-immune cell interactions, both ac..."
+    },
+    {
+      "title": "Determining cell type abundance and expression from bulk tissues with digital cytometry",
+      "year": 2019,
+      "venue": "Nature Biotechnology",
+      "authors": [
+        "Aaron M. Newman",
+        "Chloé B. Steen",
+        "Chih Long Liu",
+        "Andrew J. Gentles",
+        "Aadel A. Chaudhuri",
+        "Florian Scherer",
+        "Michael S. Khodadoust",
+        "Mohammad Shahrokh Esfahani"
+      ],
+      "citations": 4985,
+      "doi": "10.1038/s41587-019-0114-2",
+      "url": "https://doi.org/10.1038/s41587-019-0114-2",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "The prognostic landscape of genes and infiltrating immune cells across human cancers",
+      "year": 2015,
+      "venue": "Nature Medicine",
+      "authors": [
+        "Andrew J. Gentles",
+        "Aaron M. Newman",
+        "Chih Long Liu",
+        "Scott V. Bratman",
+        "Weiguo Feng",
+        "Dongkyoon Kim",
+        "Viswam S. Nair",
+        "Yue Xu"
+      ],
+      "citations": 3291,
+      "doi": "10.1038/nm.3909",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4852857",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Machine Learning Identifies Stemness Features Associated with Oncogenic Dedifferentiation",
+      "year": 2018,
+      "venue": "Cell",
+      "authors": [
+        "Tathiane M. Malta",
+        "Artem Sokolov",
+        "Andrew J. Gentles",
+        "Tomasz Burzykowski",
+        "Laila Poisson",
+        "John N. Weinstein",
+        "Bożena Kamińska",
+        "Joerg Huelsken"
+      ],
+      "citations": 2378,
+      "doi": "10.1016/j.cell.2018.03.034",
+      "url": "https://doi.org/10.1016/j.cell.2018.03.034",
+      "pdfUrl": "http://www.cell.com/article/S0092867418303581/pdf",
+      "abstract": "Cancer progression involves the gradual loss of a differentiated phenotype and acquisition of progenitor and stem-cell-like features. Here, we provide novel stemness indices for assessing the degree of oncogenic dedifferentiation. We used an innovative one-class logistic regression (OCLR) machine-learning algorithm to extract transcriptomic and epigenetic feature sets derived from non-transformed pluripotent stem cells and their differentiated progeny. Using OCLR, we were able to identify previously undiscovered biological mechanisms associated with the dedifferentiated oncogenic state. Analyses of the tumor microenvironment revealed unanticipated correlation of cancer stemness with immune checkpoint expression and infiltrating immune cells. We found that the dedifferentiated oncogenic phenotype was generally most prominent in metastatic tumors. Application of our stemness indices to ..."
+    },
+    {
+      "title": "The CD47-signal regulatory protein alpha (SIRPa) interaction is a therapeutic target for human solid tumors",
+      "year": 2012,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "authors": [
+        "Stephen B. Willingham",
+        "Jens-Peter Volkmer",
+        "Andrew J. Gentles",
+        "Debashis Sahoo",
+        "Piero Dalerba",
+        "Siddhartha S. Mitra",
+        "Jian Wang",
+        "Humberto Contreras-Trujillo"
+      ],
+      "citations": 1693,
+      "doi": "10.1073/pnas.1121623109",
+      "url": "https://doi.org/10.1073/pnas.1121623109",
+      "pdfUrl": "https://www.pnas.org/content/pnas/109/17/6662.full.pdf",
+      "abstract": "CD47, a \"don't eat me\" signal for phagocytic cells, is expressed on the surface of all human solid tumor cells. Analysis of patient tumor and matched adjacent normal (nontumor) tissue revealed that CD47 is overexpressed on cancer cells. CD47 mRNA expression levels correlated with a decreased probability of survival for multiple types of cancer. CD47 is a ligand for SIRPα, a protein expressed on macrophages and dendritic cells. In vitro, blockade of CD47 signaling using targeted monoclonal antibodies enabled macrophage phagocytosis of tumor cells that were otherwise protected. Administration of anti-CD47 antibodies inhibited tumor growth in orthotopic immunodeficient mouse xenotransplantation models established with patient tumor cells and increased the survival of the mice over time. Anti-CD47 antibody therapy initiated on larger tumors inhibited tumor growth and prevented or treated ..."
+    },
+    {
+      "title": "Annotation, submission and screening of repetitive elements in Repbase: RepbaseSubmitter and Censor",
+      "year": 2006,
+      "venue": "BMC Bioinformatics",
+      "authors": [
+        "Oleksiy Kohany",
+        "Andrew J. Gentles",
+        "Lukasz Hankus",
+        "Jerzy Jurka"
+      ],
+      "citations": 946,
+      "doi": "10.1186/1471-2105-7-474",
+      "url": "https://doi.org/10.1186/1471-2105-7-474",
+      "pdfUrl": "https://bmcbioinformatics.biomedcentral.com/counter/pdf/10.1186/1471-2105-7-474",
+      "abstract": "BACKGROUND: Repbase is a reference database of eukaryotic repetitive DNA, which includes prototypic sequences of repeats and basic information described in annotations. Updating and maintenance of the database requires specialized tools, which we have created and made available for use with Repbase, and which may be useful as a template for other curated databases. RESULTS: We describe the software tools RepbaseSubmitter and Censor, which are designed to facilitate updating and screening the content of Repbase. RepbaseSubmitter is a java-based interface for formatting and annotating Repbase entries. It eliminates many common formatting errors, and automates actions such as calculation of sequence lengths and composition, thus facilitating curation of Repbase sequences. In addition, it has several features for predicting protein coding regions in sequences; searching and including Pubm..."
+    },
+    {
+      "title": "Calreticulin Is the Dominant Pro-Phagocytic Signal on Multiple Human Cancers and Is Counterbalanced by CD47",
+      "year": 2010,
+      "venue": "Science Translational Medicine",
+      "authors": [
+        "Mark P. Chao",
+        "Siddhartha Jaiswal",
+        "Rachel Weissman-Tsukamoto",
+        "Ash A. Alizadeh",
+        "Andrew J. Gentles",
+        "Jens Volkmer",
+        "Kipp Weiskopf",
+        "Stephen B. Willingham"
+      ],
+      "citations": 772,
+      "doi": "10.1126/scitranslmed.3001375",
+      "url": "https://doi.org/10.1126/scitranslmed.3001375",
+      "pdfUrl": null,
+      "abstract": "Under normal physiological conditions, cellular homeostasis is partly regulated by a balance of pro- and anti-phagocytic signals. CD47, which prevents cancer cell phagocytosis by the innate immune system, is highly expressed on several human cancers including acute myeloid leukemia, non-Hodgkin's lymphoma, and bladder cancer. Blocking CD47 with a monoclonal antibody results in phagocytosis of cancer cells and leads to in vivo tumor elimination, yet normal cells remain mostly unaffected. Thus, we postulated that cancer cells must also display a potent pro-phagocytic signal. Here, we identified calreticulin as a pro-phagocytic signal that was highly expressed on the surface of several human cancers, but was minimally expressed on most normal cells. Increased CD47 expression correlated with high amounts of calreticulin on cancer cells and was necessary for protection from calreticulin-me..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:07.700Z"
+}

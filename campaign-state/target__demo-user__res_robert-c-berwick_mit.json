@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x1abxfe7",
+  "userId": "demo-user",
+  "researcherId": "res_robert-c-berwick_mit",
+  "researcherName": "Robert C. Berwick",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 67.9,
+  "reasons": [
+    "Overlaps on computational linguistics, machine learning, language acquisition modeling",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "berwick@csail.mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.853Z",
+  "updatedAt": "2026-08-18T14:28:42.853Z"
+}

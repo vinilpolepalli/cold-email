@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxz5clwe5jh7e",
+  "userId": "demo-user",
+  "researcherId": "res_w-eric-l-grimson_mit",
+  "researcherName": "W. Eric L Grimson",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 60.1,
+  "reasons": [
+    "Overlaps on machine learning, computer vision",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "egrimson@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:18:55.508Z",
+  "updatedAt": "2026-08-18T01:18:55.508Z"
+}

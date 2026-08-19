@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0ti19hhlh",
+  "userId": "demo-user",
+  "researcherId": "res_nima-hejazi_harvard",
+  "researcherName": "Nima Hejazi",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 43.2,
+  "reasons": [
+    "Overlaps on causal inference, statistical machine learning, computational statistics",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "nhejazi@hsph.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.726Z",
+  "updatedAt": "2026-08-18T14:28:42.726Z"
+}

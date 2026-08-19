@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tl5mbj8s",
+  "userId": "demo-user",
+  "researcherId": "res_stuart-m-shieber_harvard",
+  "researcherName": "Stuart M. Shieber",
+  "school": "Harvard",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 37.8,
+  "reasons": [
+    "Overlaps on computational linguistics, machine learning",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "shieber@seas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.729Z",
+  "updatedAt": "2026-08-18T14:28:42.729Z"
+}

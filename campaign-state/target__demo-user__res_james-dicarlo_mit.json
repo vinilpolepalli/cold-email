@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x0c2pfmu",
+  "userId": "demo-user",
+  "researcherId": "res_james-dicarlo_mit",
+  "researcherName": "James DiCarlo",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 69.4,
+  "reasons": [
+    "Overlaps on computational neuroscience, machine learning",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "dicarlo@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.852Z",
+  "updatedAt": "2026-08-18T14:28:42.852Z"
+}

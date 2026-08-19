@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0yydadwwa",
+  "userId": "demo-user",
+  "researcherId": "res_zhuang-liu_princeton",
+  "researcherName": "Zhuang Liu",
+  "school": "Princeton",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 27,
+  "reasons": [
+    "Overlaps on deep learning, computer vision, machine learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "zhuangl@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.922Z",
+  "updatedAt": "2026-08-18T14:28:42.922Z"
+}

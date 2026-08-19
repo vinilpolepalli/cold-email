@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tejvqabe",
+  "userId": "demo-user",
+  "researcherId": "res_melanie-weber_harvard",
+  "researcherName": "Melanie Weber",
+  "school": "Harvard",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 51.6,
+  "reasons": [
+    "Overlaps on geometric machine learning, machine learning theory",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "mweber@seas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.722Z",
+  "updatedAt": "2026-08-18T14:28:42.722Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x5cyc676",
+  "userId": "demo-user",
+  "researcherId": "res_ankur-moitra_mit",
+  "researcherName": "Ankur Moitra",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 58.5,
+  "reasons": [
+    "Overlaps on machine learning",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "moitra@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.857Z",
+  "updatedAt": "2026-08-18T14:28:42.857Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10thoyo6y",
+  "userId": "demo-user",
+  "researcherId": "res_tony-cai_penn",
+  "researcherName": "Tony Cai",
+  "school": "Penn",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 26.4,
+  "reasons": [
+    "Overlaps on statistical machine learning, large-scale inference, genomics applications",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "tcai@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.989Z",
+  "updatedAt": "2026-08-18T14:28:42.989Z"
+}

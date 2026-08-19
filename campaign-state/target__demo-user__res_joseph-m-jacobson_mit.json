@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0wz9fmzgh",
+  "userId": "demo-user",
+  "researcherId": "res_joseph-m-jacobson_mit",
+  "researcherName": "Joseph M. Jacobson",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 72.5,
+  "reasons": [
+    "Overlaps on machine learning, protein design, gene synthesis",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "jacobson@media.mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.851Z",
+  "updatedAt": "2026-08-18T14:28:42.851Z"
+}

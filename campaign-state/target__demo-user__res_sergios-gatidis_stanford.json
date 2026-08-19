@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpji95oogq",
+  "userId": "demo-user",
+  "researcherId": "res_sergios-gatidis_stanford",
+  "researcherName": "Sergios Gatidis",
+  "school": "Stanford",
+  "trackId": "cs-core",
+  "status": "sent",
+  "rank": 61,
+  "reasons": [
+    "Overlaps on machine learning, medical image analysis",
+    "Stanford is priority one"
+  ],
+  "subject": "Interested in your work on annotated imaging datasets",
+  "body": "Hello Professor Gatidis,\n\nMy name is Vinil Polepalli and I am an undergraduate at New York University studying Computer Science and Business. I have been a research intern in the Chiosis Lab at Memorial Sloan Kettering, where I built protein-ligand graph neural networks for Hsp90 and epichaperome complexes that reached 0.984 ROC AUC separating active from inactive inhibitor candidates.\n\nI read the paper describing your whole-body FDG-PET/CT dataset with manually annotated lesions, and I have a specific appreciation for what that took. I spent a summer at Carnegie Mellon working toward 25,000 labeled aerial images, which is the easy version: my annotations needed a careful person, and yours needed a radiologist to segment every lesion across a whole-body volume. Releasing it is the part I want to ask about. That annotation effort is the most expensive thing either of us produced, and my instinct at the time was that it belonged to the project it was collected for. What I would want to learn is how you decide what to annotate when you know the dataset will outlive the first question asked of it, because that changes the design before any labeling starts.\n\nI would like to hear more about what the lab is working on now, and where my background would be useful to you.\n\nIn the past, I have worked on the following related projects:\n- Semantic segmentation for UAV-based environmental monitoring at Carnegie Mellon Robotics Institute: 0.88 mean IoU and 0.94 F1 on 25,000 labeled aerial images, sub-100 ms inference across 30 flights\n- Sole author, cVAE-augmented deep learning for pan-cancer RNA-seq classification, about 98% test accuracy across 5 cancer types on TCGA: https://arxiv.org/abs/2508.02743\n- Hsp90 inhibitor virtual screening in the Chiosis Lab at Memorial Sloan Kettering: 4,566 candidates screened at 0.984 GNN ROC AUC and 5x enrichment, 0 Lipinski violations in the top 50: https://hsp90-dashboard.vercel.app/\n- First author, EGCG and piperine synergy in D. tigrina regeneration, IEEE MIT Undergraduate Research Technology Conference: https://ieeexplore.ieee.org/document/11533121\n\nOutside of research I was invited to Y Combinator's Startup School, reached the VEX Robotics World Championship semifinals, and have qualified for the AIME three times.\n\nI have extensively used PyTorch, OpenCV and Python in past work, along with standard medical imaging tooling, but have a lot of coding experience and am adaptable to whichever libraries your lab uses. My resume is attached. Please let me know if there is a fit in your lab.\n\nI would be happy to elaborate on my skills and where I think I can best help out.\n\nThank you!\n\n--\nVinil Polepalli\nNew York University | Class of 2029\nB.S. Computer Science and B.S. Business",
+  "to": "sgatidis@stanford.edu",
+  "cc": [],
+  "scheduledAt": "2026-08-18T16:27:00.000Z",
+  "autoApproved": false,
+  "outboxId": "out_msyx2yi6asd3pj",
+  "sentAt": "2026-08-18T17:08:50.862Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "createdAt": "2026-08-18T01:12:59.022Z",
+  "updatedAt": "2026-08-18T17:08:50.862Z"
+}

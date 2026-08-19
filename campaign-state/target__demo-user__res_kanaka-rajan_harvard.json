@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tc2hv1ax",
+  "userId": "demo-user",
+  "researcherId": "res_kanaka-rajan_harvard",
+  "researcherName": "Kanaka Rajan",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 57,
+  "reasons": [
+    "Overlaps on computational neuroscience, neural networks, machine learning",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "kanaka_rajan@hms.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.720Z",
+  "updatedAt": "2026-08-18T14:28:42.720Z"
+}

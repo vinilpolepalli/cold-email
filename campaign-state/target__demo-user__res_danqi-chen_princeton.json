@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z44pyash",
+  "userId": "demo-user",
+  "researcherId": "res_danqi-chen_princeton",
+  "researcherName": "Danqi Chen",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 18.6,
+  "reasons": [
+    "Overlaps on large language models, machine learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "danqic@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.928Z",
+  "updatedAt": "2026-08-18T14:28:42.928Z"
+}

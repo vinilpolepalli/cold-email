@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0yzq8r38m",
+  "userId": "demo-user",
+  "researcherId": "res_ruth-fong_princeton",
+  "researcherName": "Ruth Fong",
+  "school": "Princeton",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 23.4,
+  "reasons": [
+    "Overlaps on computer vision, machine learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ruthfong@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.923Z",
+  "updatedAt": "2026-08-18T14:28:42.923Z"
+}

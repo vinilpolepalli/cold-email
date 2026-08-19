@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpj8gjstj8",
+  "userId": "demo-user",
+  "researcherId": "res_eric-sun_mit",
+  "researcherName": "Eric Sun",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 77.2,
+  "reasons": [
+    "Overlaps on machine learning, deep learning, aging biology",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "edsun@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:12:59.012Z",
+  "updatedAt": "2026-08-18T01:12:59.012Z"
+}

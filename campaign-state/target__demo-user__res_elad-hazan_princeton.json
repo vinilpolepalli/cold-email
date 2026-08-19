@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z8pjoxt3",
+  "userId": "demo-user",
+  "researcherId": "res_elad-hazan_princeton",
+  "researcherName": "Elad Hazan",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 16.5,
+  "reasons": [
+    "Overlaps on machine learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ehazan@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.932Z",
+  "updatedAt": "2026-08-18T14:28:42.932Z"
+}

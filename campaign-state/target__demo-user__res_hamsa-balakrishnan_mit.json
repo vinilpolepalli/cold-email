@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x6sicson",
+  "userId": "demo-user",
+  "researcherId": "res_hamsa-balakrishnan_mit",
+  "researcherName": "Hamsa Balakrishnan",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 58.5,
+  "reasons": [
+    "Overlaps on machine learning",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "hamsa@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.858Z",
+  "updatedAt": "2026-08-18T14:28:42.858Z"
+}

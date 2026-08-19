@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tl3g8lw4",
+  "userId": "demo-user",
+  "researcherId": "res_johan-paulsson_harvard",
+  "researcherName": "Johan Paulsson",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 37.8,
+  "reasons": [
+    "Overlaps on stochastic modeling, mathematical biology, gene networks",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "johan_paulsson@hms.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.729Z",
+  "updatedAt": "2026-08-18T14:28:42.729Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxz5clvtwqydm",
+  "userId": "demo-user",
+  "researcherId": "res_douglas-a-lauffenburger_mit",
+  "researcherName": "Douglas A. Lauffenburger",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 60.8,
+  "reasons": [
+    "Overlaps on computational systems biology, predictive modeling, cell signaling networks",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "lauffen@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:18:55.507Z",
+  "updatedAt": "2026-08-18T01:18:55.507Z"
+}

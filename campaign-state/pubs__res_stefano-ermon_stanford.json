@@ -1,0 +1,165 @@
+{
+  "researcherId": "res_stefano-ermon_stanford",
+  "authorName": "Stefano Ermon",
+  "authorUrl": "https://openalex.org/A5091179481",
+  "worksCount": 456,
+  "citedByCount": 25474,
+  "topics": [
+    "Generative Adversarial Networks and Image Synthesis",
+    "Domain Adaptation and Few-Shot Learning",
+    "Adversarial Robustness in Machine Learning",
+    "Topic Modeling",
+    "Model Reduction and Neural Networks"
+  ],
+  "publications": [
+    {
+      "title": "On the Opportunities and Risks of Foundation Models",
+      "year": 2021,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Rishi Bommasani",
+        "Drew A. Hudson",
+        "Ehsan Adeli",
+        "Russ B. Altman",
+        "Simran Arora",
+        "Sydney von Arx",
+        "Michael S. Bernstein",
+        "Jeannette Bohg"
+      ],
+      "citations": 2247,
+      "doi": "10.48550/arxiv.2108.07258",
+      "url": "http://arxiv.org/abs/2108.07258",
+      "pdfUrl": "https://arxiv.org/pdf/2108.07258",
+      "abstract": "AI is undergoing a paradigm shift with the rise of models (e.g., BERT, DALL-E, GPT-3) that are trained on broad data at scale and are adaptable to a wide range of downstream tasks. We call these models foundation models to underscore their critically central yet incomplete character. This report provides a thorough account of the opportunities and risks of foundation models, ranging from their capabilities (e.g., language, vision, robotics, reasoning, human interaction) and technical principles(e.g., model architectures, training procedures, data, systems, security, evaluation, theory) to their applications (e.g., law, healthcare, education) and societal impact (e.g., inequity, misuse, economic and environmental impact, legal and ethical considerations). Though foundation models are based on standard deep learning and transfer learning, their scale results in new emergent capabilities..."
+    },
+    {
+      "title": "Combining satellite imagery and machine learning to predict poverty",
+      "year": 2016,
+      "venue": "Science",
+      "authors": [
+        "Neal Jean",
+        "Marshall Burke",
+        "Sang Michael Xie",
+        "W. Matthew Davis",
+        "David B. Lobell",
+        "Stefano Ermon"
+      ],
+      "citations": 1672,
+      "doi": "10.1126/science.aaf7894",
+      "url": "https://doi.org/10.1126/science.aaf7894",
+      "pdfUrl": null,
+      "abstract": "Reliable data on economic livelihoods remain scarce in the developing world, hampering efforts to study these outcomes and to design policies that improve them. Here we demonstrate an accurate, inexpensive, and scalable method for estimating consumption expenditure and asset wealth from high-resolution satellite imagery. Using survey and satellite data from five African countries--Nigeria, Tanzania, Uganda, Malawi, and Rwanda--we show how a convolutional neural network can be trained to identify image features that can explain up to 75% of the variation in local-level economic outcomes. Our method, which requires only publicly available data, could transform efforts to track and target poverty in developing countries. It also demonstrates how powerful machine learning techniques can be applied in a setting with limited training data, suggesting broad potential application across many ..."
+    },
+    {
+      "title": "Score-Based Generative Modeling through Stochastic Differential Equations",
+      "year": 2020,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Yang Song",
+        "Jascha Sohl‐Dickstein",
+        "Diederik P. Kingma",
+        "Abhishek Kumar",
+        "Stefano Ermon",
+        "Ben Poole"
+      ],
+      "citations": 1282,
+      "doi": "10.48550/arxiv.2011.13456",
+      "url": "http://arxiv.org/abs/2011.13456",
+      "pdfUrl": "https://arxiv.org/pdf/2011.13456",
+      "abstract": "Creating noise from data is easy; creating data from noise is generative modeling. We present a stochastic differential equation (SDE) that smoothly transforms a complex data distribution to a known prior distribution by slowly injecting noise, and a corresponding reverse-time SDE that transforms the prior distribution back into the data distribution by slowly removing the noise. Crucially, the reverse-time SDE depends only on the time-dependent gradient field (\\aka, score) of the perturbed data distribution. By leveraging advances in score-based generative modeling, we can accurately estimate these scores with neural networks, and use numerical SDE solvers to generate samples. We show that this framework encapsulates previous approaches in score-based generative modeling and diffusion probabilistic modeling, allowing for new sampling procedures and new modeling capabilities. In parti..."
+    },
+    {
+      "title": "Closed-loop optimization of fast-charging protocols for batteries with machine learning",
+      "year": 2020,
+      "venue": "Nature",
+      "authors": [
+        "Peter M. Attia",
+        "Aditya Grover",
+        "Norman Jin",
+        "Kristen Severson",
+        "Todor Markov",
+        "Yang-Hung Liao",
+        "Michael H. Chen",
+        "Bryan Cheong"
+      ],
+      "citations": 1109,
+      "doi": "10.1038/s41586-020-1994-5",
+      "url": "https://www.osti.gov/biblio/1647088",
+      "pdfUrl": "https://www.osti.gov/servlets/purl/1647088",
+      "abstract": null
+    },
+    {
+      "title": "Generative Modeling by Estimating Gradients of the Data Distribution",
+      "year": 2019,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Yang Song",
+        "Stefano Ermon"
+      ],
+      "citations": 988,
+      "doi": "10.48550/arxiv.1907.05600",
+      "url": "http://arxiv.org/abs/1907.05600",
+      "pdfUrl": "https://arxiv.org/pdf/1907.05600",
+      "abstract": "We introduce a new generative model where samples are produced via Langevin dynamics using gradients of the data distribution estimated with score matching. Because gradients can be ill-defined and hard to estimate when the data resides on low-dimensional manifolds, we perturb the data with different levels of Gaussian noise, and jointly estimate the corresponding scores, i.e., the vector fields of gradients of the perturbed data distribution for all noise levels. For sampling, we propose an annealed Langevin dynamics where we use gradients corresponding to gradually decreasing noise levels as the sampling process gets closer to the data manifold. Our framework allows flexible model architectures, requires no sampling during training or the use of adversarial methods, and provides a learning objective that can be used for principled model comparisons. Our models produce samples compar..."
+    },
+    {
+      "title": "Rapid identification of pathogenic bacteria using Raman spectroscopy and deep learning",
+      "year": 2019,
+      "venue": "Nature Communications",
+      "authors": [
+        "Chi-Sing Ho",
+        "Neal Jean",
+        "Catherine A. Hogan",
+        "Lena Blackmon",
+        "Stefanie S. Jeffrey",
+        "Mark Holodniy",
+        "Niaz Banaei",
+        "Amr A. E. Saleh"
+      ],
+      "citations": 862,
+      "doi": "10.1038/s41467-019-12898-9",
+      "url": "https://doi.org/10.1038/s41467-019-12898-9",
+      "pdfUrl": "https://www.nature.com/articles/s41467-019-12898-9.pdf",
+      "abstract": "Raman optical spectroscopy promises label-free bacterial detection, identification, and antibiotic susceptibility testing in a single step. However, achieving clinically relevant speeds and accuracies remains challenging due to weak Raman signal from bacterial cells and numerous bacterial species and phenotypes. Here we generate an extensive dataset of bacterial Raman spectra and apply deep learning approaches to accurately identify 30 common bacterial pathogens. Even on low signal-to-noise spectra, we achieve average isolate-level accuracies exceeding 82% and antibiotic treatment identification accuracies of 97.0±0.3%. We also show that this approach distinguishes between methicillin-resistant and -susceptible isolates of Staphylococcus aureus (MRSA and MSSA) with 89±0.1% accuracy. We validate our results on clinical isolates from 50 patients. Using just 10 bacterial spectra from eac..."
+    },
+    {
+      "title": "Coupling between oxygen redox and cation migration explains unusual electrochemistry in lithium-rich layered oxides",
+      "year": 2017,
+      "venue": "Nature Communications",
+      "authors": [
+        "William E. Gent",
+        "Kipil Lim",
+        "Yufeng Liang",
+        "Qinghao Li",
+        "Taylor Barnes",
+        "Sung-Jin Ahn",
+        "Kevin H. Stone",
+        "Mitchell McIntire"
+      ],
+      "citations": 689,
+      "doi": "10.1038/s41467-017-02041-x",
+      "url": "https://doi.org/10.1038/s41467-017-02041-x",
+      "pdfUrl": "https://www.nature.com/articles/s41467-017-02041-x.pdf",
+      "abstract": "Abstract Lithium-rich layered transition metal oxide positive electrodes offer access to anion redox at high potentials, thereby promising high energy densities for lithium-ion batteries. However, anion redox is also associated with several unfavorable electrochemical properties, such as open-circuit voltage hysteresis. Here we reveal that in Li 1.17– x Ni 0.21 Co 0.08 Mn 0.54 O 2 , these properties arise from a strong coupling between anion redox and cation migration. We combine various X-ray spectroscopic, microscopic, and structural probes to show that partially reversible transition metal migration decreases the potential of the bulk oxygen redox couple by &gt; 1 V, leading to a reordering in the anionic and cationic redox potentials during cycling. First principles calculations show that this is due to the drastic change in the local oxygen coordination environments associated wi..."
+    },
+    {
+      "title": "A Survey on Behavior Recognition Using WiFi Channel State Information",
+      "year": 2017,
+      "venue": "IEEE Communications Magazine",
+      "authors": [
+        "Siamak Yousefi",
+        "Hirokazu Narui",
+        "Sankalp Dayal",
+        "Stefano Ermon",
+        "Shahrokh Valaee"
+      ],
+      "citations": 600,
+      "doi": "10.1109/mcom.2017.1700082",
+      "url": "https://doi.org/10.1109/mcom.2017.1700082",
+      "pdfUrl": null,
+      "abstract": "In this article, we present a survey of recent advances in passive human behavior recognition in indoor areas using the channel state information (CSI) of commercial WiFi systems. The movement of the human body parts cause changes in the wireless signal reflections, which result in variations in the CSI. By analyzing the data streams of CSIs for different activities and comparing them against stored models, human behavior can be recognized. This is done by extracting features from CSI data streams and using machine learning techniques to build models and classifiers. The techniques from the literature that are presented herein have great performance; however, instead of the machine learning techniques employed in these works, we propose to use deep learning techniques such as long-short term memory (LSTM) recurrent neural networking (RNN) and show the improved performance. We also dis..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:18.318Z"
+}

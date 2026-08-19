@@ -1,0 +1,150 @@
+{
+  "researcherId": "res_edward-chang_stanford",
+  "authorName": "Edward Yi Chang",
+  "authorUrl": "https://openalex.org/A5013545831",
+  "worksCount": 996,
+  "citedByCount": 18805,
+  "topics": [
+    "Semiconductor materials and devices",
+    "GaN-based semiconductor devices and materials",
+    "Advancements in Semiconductor Devices and Circuit Design",
+    "Ga2O3 and related materials",
+    "Radio Frequency Integrated Circuit Design"
+  ],
+  "publications": [
+    {
+      "title": "Support vector machine active learning for image retrieval",
+      "year": 2001,
+      "venue": null,
+      "authors": [
+        "Simon Tong",
+        "Edward Yi Chang"
+      ],
+      "citations": 1338,
+      "doi": "10.1145/500141.500159",
+      "url": "https://doi.org/10.1145/500141.500159",
+      "pdfUrl": null,
+      "abstract": "Relevance feedback is often a critical component when designing image databases. With these databases it is difficult to specify queries directly and explicitly. Relevance feedback interactively determinines a user's desired output or query concept by asking the user whether certain proposed images are relevant or not. For a relevance feedback algorithm to be effective, it must grasp a user's query concept accurately and quickly, while also only asking the user to label a small number of images. We propose the use of a support vector machine active learning algorithm for conducting effective relevance feedback for image retrieval. The algorithm selects the most informative images to query a user and quickly learns a boundary that separates the images that satisfy the user's query concept from the rest of the dataset. Experimental results show that our algorithm achieves significantly ..."
+    },
+    {
+      "title": "Network representation learning with rich text information",
+      "year": 2015,
+      "venue": "International Conference on Artificial Intelligence",
+      "authors": [
+        "Cheng Yang",
+        "Zhiyuan Liu",
+        "Deli Zhao",
+        "Maosong Sun",
+        "Edward Yi Chang"
+      ],
+      "citations": 894,
+      "doi": null,
+      "url": "http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.703.7147",
+      "pdfUrl": null,
+      "abstract": "Representation learning has shown its effectiveness in many tasks such as image classification and tex-t mining. Network representation learning aims at learning distributed vector representation for each vertex in a network, which is also increasingly rec-ognized as an important aspect for network anal-ysis. Most network representation learning meth-ods investigate network structures for learning. In reality, network vertices contain rich information (such as text), which cannot be well applied with algorithmic frameworks of typical representation learning methods. By proving that DeepWalk, a state-of-the-art network representation method, is actually equivalent to matrix factorization (MF), we propose text-associated DeepWalk (TADW). TAD-W incorporates text features of vertices into net-work representation learning under the framework of matrix factorization. We evaluate our method ..."
+    },
+    {
+      "title": "Parallel Spectral Clustering in Distributed Systems",
+      "year": 2010,
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "authors": [
+        "Wen-Yen Chen",
+        "Yangqiu Song",
+        "Hongjie Bai",
+        "Chih‐Jen Lin",
+        "Edward Yi Chang"
+      ],
+      "citations": 624,
+      "doi": "10.1109/tpami.2010.88",
+      "url": "https://doi.org/10.1109/tpami.2010.88",
+      "pdfUrl": null,
+      "abstract": "Spectral clustering algorithms have been shown to be more effective in finding clusters than some traditional algorithms, such as k-means. However, spectral clustering suffers from a scalability problem in both memory use and computational time when the size of a data set is large. To perform clustering on large data sets, we investigate two representative ways of approximating the dense similarity matrix. We compare one approach by sparsifying the matrix with another by the Nyström method. We then pick the strategy of sparsifying the matrix via retaining nearest neighbors and investigate its parallelization. We parallelize both memory use and computation on distributed computers. Through an empirical study on a document data set of 193,844 instances and a photo data set of 2,121,863, we show that our parallel algorithm can effectively handle large problems."
+    },
+    {
+      "title": "Improving Sequential Recommendation with Knowledge-Enhanced Memory Networks",
+      "year": 2018,
+      "venue": null,
+      "authors": [
+        "Jin Huang",
+        "Wayne Xin Zhao",
+        "Hongjian Dou",
+        "Ji-Rong Wen",
+        "Edward Yi Chang"
+      ],
+      "citations": 483,
+      "doi": "10.1145/3209978.3210017",
+      "url": "https://doi.org/10.1145/3209978.3210017",
+      "pdfUrl": null,
+      "abstract": "With the revival of neural networks, many studies try to adapt powerful sequential neural models, ıe Recurrent Neural Networks (RNN), to sequential recommendation. RNN-based networks encode historical interaction records into a hidden state vector. Although the state vector is able to encode sequential dependency, it still has limited representation power in capturing complicated user preference. It is difficult to capture fine-grained user preference from the interaction sequence. Furthermore, the latent vector representation is usually hard to understand and explain. To address these issues, in this paper, we propose a novel knowledge enhanced sequential recommender. Our model integrates the RNN-based networks with Key-Value Memory Network (KV-MN). We further incorporate knowledge base (KB) information to enhance the semantic representation of KV-MN. RNN-based models are good at cap..."
+    },
+    {
+      "title": "Proceedings of the 26th International Conference on Data Engineering, ICDE 2010",
+      "year": 2010,
+      "venue": "Max Planck Institute for Plasma Physics",
+      "authors": [
+        "Feifei Li",
+        "Mirella M. Moro",
+        "Shahram Ghandeharizadeh",
+        "Jayant R. Haritsa",
+        "Gerhard Weikum",
+        "Michael J. Carey",
+        "Fabio Casati",
+        "Edward Yi Chang"
+      ],
+      "citations": 452,
+      "doi": null,
+      "url": "http://edoc.mpg.de/536414",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "CBSA: content-based soft annotation for multimodal image retrieval using bayes point machines",
+      "year": 2003,
+      "venue": "IEEE Transactions on Circuits and Systems for Video Technology",
+      "authors": [
+        "Edward Yi Chang",
+        "King-Shy Goh",
+        "G. Sychay",
+        "Gang Wu"
+      ],
+      "citations": 452,
+      "doi": "10.1109/tcsvt.2002.808079",
+      "url": "https://doi.org/10.1109/tcsvt.2002.808079",
+      "pdfUrl": null,
+      "abstract": "We propose a content-based soft annotation (CBSA) procedure for providing images with semantical labels. The annotation procedure starts with labeling a small set of training images, each with one single semantical label (e.g., forest, animal, or sky). An ensemble of binary classifiers is then trained for predicting label membership for images. The trained ensemble is applied to each individual image to give the image multiple soft labels, and each label is associated with a label membership factor. To select a base binary-classifier for CBSA, we experiment with two learning methods, support vector machines (SVMs) and Bayes point machines (BPMs), and compare their class-prediction accuracy. Our empirical study on a 116-category 25K-image set shows that the BPM-based ensemble provides better annotation quality than the SVM-based ensemble for supporting multimodal image retrievals."
+    },
+    {
+      "title": "Pfp",
+      "year": 2008,
+      "venue": null,
+      "authors": [
+        "Haoyuan Li",
+        "Yi Wang",
+        "Dong Zhang",
+        "Ming Zhang",
+        "Edward Yi Chang"
+      ],
+      "citations": 441,
+      "doi": "10.1145/1454008.1454027",
+      "url": "https://doi.org/10.1145/1454008.1454027",
+      "pdfUrl": null,
+      "abstract": "Frequent itemset mining (FIM) is a useful tool for discovering frequently co-occurrent items. Since its inception, a number of significant FIM algorithms have been developed to speed up mining performance. Unfortunately, when the dataset size is huge, both the memory use and computational cost can still be prohibitively expensive. In this work, we propose to parallelize the FP-Growth algorithm (we call our parallel algorithm PFP) on distributed machines. PFP partitions computation in such a way that each machine executes an independent group of mining tasks. Such partitioning eliminates computational dependencies between machines, and thereby communication between them. Through empirical study on a large dataset of 802,939 Web pages and 1,021,107 tags, we demonstrate that PFP can achieve virtually linear speedup. Besides scalability, the empirical study demonstrates that PFP to be pro..."
+    },
+    {
+      "title": "KBA: kernel boundary alignment considering imbalanced data distribution",
+      "year": 2005,
+      "venue": "IEEE Transactions on Knowledge and Data Engineering",
+      "authors": [
+        "Gang Wu",
+        "Edward Yi Chang"
+      ],
+      "citations": 385,
+      "doi": "10.1109/tkde.2005.95",
+      "url": "https://doi.org/10.1109/tkde.2005.95",
+      "pdfUrl": null,
+      "abstract": "An imbalanced training data set can pose serious problems for many real-world data mining tasks that employ SVMs to conduct supervised learning. In this paper, we propose a kernel-boundary-alignment algorithm, which considers THE training data imbalance as prior information to augment SVMs to improve class-prediction accuracy. Using a simple example, we first show that SVMs can suffer from high incidences of false negatives when the training instances of the target class are heavily outnumbered by the training instances of a nontarget class. The remedy we propose is to adjust the class boundary by modifying the kernel matrix, according to the imbalanced data distribution. Through theoretical analysis backed by empirical study, we show that our kernel-boundary-alignment algorithm works effectively on several data sets."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:29.416Z"
+}

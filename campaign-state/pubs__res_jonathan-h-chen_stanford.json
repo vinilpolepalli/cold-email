@@ -1,0 +1,169 @@
+{
+  "researcherId": "res_jonathan-h-chen_stanford",
+  "authorName": "Jonathan H. Chen",
+  "authorUrl": "https://openalex.org/A5046725885",
+  "worksCount": 383,
+  "citedByCount": 11675,
+  "topics": [
+    "Machine Learning in Healthcare",
+    "Artificial Intelligence in Healthcare and Education",
+    "Electronic Health Records Systems",
+    "Topic Modeling",
+    "Biomedical Text Mining and Ontologies"
+  ],
+  "publications": [
+    {
+      "title": "Machine Learning and Prediction in Medicine — Beyond the Peak of Inflated Expectations",
+      "year": 2017,
+      "venue": "New England Journal of Medicine",
+      "authors": [
+        "Jonathan H. Chen",
+        "Steven M. Asch"
+      ],
+      "citations": 1186,
+      "doi": "10.1056/nejmp1702071",
+      "url": "https://doi.org/10.1056/nejmp1702071",
+      "pdfUrl": null,
+      "abstract": "Big data, we have all heard, promise to transform health care. But in the “hype cycle” of emerging technologies, machine learning now rides atop the “peak of inflated expectations,” and we need to better appreciate the technology’s capabilities and limitations."
+    },
+    {
+      "title": "Toward expert-level medical question answering with large language models",
+      "year": 2025,
+      "venue": "Nature Medicine",
+      "authors": [
+        "K. K. Singhal",
+        "Tao Tu",
+        "Juraj Gottweis",
+        "Rory Sayres",
+        "Ellery Wulczyn",
+        "Mohamed Amin",
+        "Le Hou",
+        "Kevin Clark"
+      ],
+      "citations": 846,
+      "doi": "10.1038/s41591-024-03423-7",
+      "url": "https://doi.org/10.1038/s41591-024-03423-7",
+      "pdfUrl": "https://www.nature.com/articles/s41591-024-03423-7.pdf",
+      "abstract": "Large language models (LLMs) have shown promise in medical question answering, with Med-PaLM being the first to exceed a 'passing' score in United States Medical Licensing Examination style questions. However, challenges remain in long-form medical question answering and handling real-world workflows. Here, we present Med-PaLM 2, which bridges these gaps with a combination of base LLM improvements, medical domain fine-tuning and new strategies for improving reasoning and grounding through ensemble refinement and chain of retrieval. Med-PaLM 2 scores up to 86.5% on the MedQA dataset, improving upon Med-PaLM by over 19%, and demonstrates dramatic performance increases across MedMCQA, PubMedQA and MMLU clinical topics datasets. Our detailed human evaluations framework shows that physicians prefer Med-PaLM 2 answers to those from other physicians on eight of nine clinical axes. Med-PaLM 2..."
+    },
+    {
+      "title": "Large Language Model Influence on Diagnostic Reasoning",
+      "year": 2024,
+      "venue": "JAMA Network Open",
+      "authors": [
+        "Ethan Goh",
+        "Robert Gallo",
+        "Jason Hom",
+        "Eric Strong",
+        "Yingjie Weng",
+        "Hannah Kerman",
+        "Joséphine A. Cool",
+        "Zahir Kanjee"
+      ],
+      "citations": 615,
+      "doi": "10.1001/jamanetworkopen.2024.40969",
+      "url": "https://doi.org/10.1001/jamanetworkopen.2024.40969",
+      "pdfUrl": null,
+      "abstract": "Importance: Large language models (LLMs) have shown promise in their performance on both multiple-choice and open-ended medical reasoning examinations, but it remains unknown whether the use of such tools improves physician diagnostic reasoning. Objective: To assess the effect of an LLM on physicians' diagnostic reasoning compared with conventional resources. Design, Setting, and Participants: A single-blind randomized clinical trial was conducted from November 29 to December 29, 2023. Using remote video conferencing and in-person participation across multiple academic medical institutions, physicians with training in family medicine, internal medicine, or emergency medicine were recruited. Intervention: Participants were randomized to either access the LLM in addition to conventional diagnostic resources or conventional resources only, stratified by career stage. Participants were al..."
+    },
+    {
+      "title": "Deep learning interpretation of echocardiograms",
+      "year": 2020,
+      "venue": "npj Digital Medicine",
+      "authors": [
+        "Amirata Ghorbani",
+        "David Ouyang",
+        "Abubakar Abid",
+        "Bryan He",
+        "Jonathan H. Chen",
+        "Robert A. Harrington",
+        "David Liang",
+        "Euan A. Ashley"
+      ],
+      "citations": 487,
+      "doi": "10.1038/s41746-019-0216-8",
+      "url": "https://doi.org/10.1038/s41746-019-0216-8",
+      "pdfUrl": "https://www.nature.com/articles/s41746-019-0216-8.pdf",
+      "abstract": "Abstract Echocardiography uses ultrasound technology to capture high temporal and spatial resolution images of the heart and surrounding structures, and is the most common imaging modality in cardiovascular medicine. Using convolutional neural networks on a large new dataset, we show that deep learning applied to echocardiography can identify local cardiac structures, estimate cardiac function, and predict systemic phenotypes that modify cardiovascular risk but not readily identifiable to human interpretation. Our deep learning model, EchoNet, accurately identified the presence of pacemaker leads (AUC = 0.89), enlarged left atrium (AUC = 0.86), left ventricular hypertrophy (AUC = 0.75), left ventricular end systolic and diastolic volumes ( $${R}^{2}$$ <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\"> <mml:msup> <mml:mrow> <mml:mi>R</mml:mi> </mml:mrow> <mml:mrow> <mml:mn>2</mm..."
+    },
+    {
+      "title": "The Transcription Factor FoxO1 Sustains Expression of the Inhibitory Receptor PD-1 and Survival of Antiviral CD8+ T Cells during Chronic Infection",
+      "year": 2014,
+      "venue": "Immunity",
+      "authors": [
+        "Matthew Staron",
+        "Simon M. Gray",
+        "Heather D. Marshall",
+        "Ian A. Parish",
+        "Jonathan H. Chen",
+        "Curtis J. Perry",
+        "Guoliang Cui",
+        "Ming O. Li"
+      ],
+      "citations": 384,
+      "doi": "10.1016/j.immuni.2014.10.013",
+      "url": "https://doi.org/10.1016/j.immuni.2014.10.013",
+      "pdfUrl": "http://www.cell.com/article/S1074761314003896/pdf",
+      "abstract": null
+    },
+    {
+      "title": "Mega-scale experimental analysis of protein folding stability in biology and design",
+      "year": 2023,
+      "venue": "Nature",
+      "authors": [
+        "Kotaro Tsuboyama",
+        "Justas Dauparas",
+        "Jonathan H. Chen",
+        "Élodie Laine",
+        "Yasser Mohseni Behbahani",
+        "Jonathan J. Weinstein",
+        "Niall M. Mangan",
+        "Sergey Ovchinnikov"
+      ],
+      "citations": 361,
+      "doi": "10.1038/s41586-023-06328-6",
+      "url": "https://doi.org/10.1038/s41586-023-06328-6",
+      "pdfUrl": "https://www.nature.com/articles/s41586-023-06328-6.pdf",
+      "abstract": "Abstract Advances in DNA sequencing and machine learning are providing insights into protein sequences and structures on an enormous scale 1 . However, the energetics driving folding are invisible in these structures and remain largely unknown 2 . The hidden thermodynamics of folding can drive disease 3,4 , shape protein evolution 5–7 and guide protein engineering 8–10 , and new approaches are needed to reveal these thermodynamics for every sequence and structure. Here we present cDNA display proteolysis, a method for measuring thermodynamic folding stability for up to 900,000 protein domains in a one-week experiment. From 1.8 million measurements in total, we curated a set of around 776,000 high-quality folding stabilities covering all single amino acid variants and selected double mutants of 331 natural and 148 de novo designed protein domains 40–72 amino acids in length. Using this..."
+    },
+    {
+      "title": "Explainable artificial intelligence models using real-world electronic health record data: a systematic scoping review",
+      "year": 2020,
+      "venue": "Journal of the American Medical Informatics Association",
+      "authors": [
+        "Seyedeh Neelufar Payrovnaziri",
+        "Zhaoyi Chen",
+        "Pablo Rengifo‐Moreno",
+        "Tim Miller",
+        "Jiang Bian",
+        "Jonathan H. Chen",
+        "Xiuwen Liu",
+        "Zhe He"
+      ],
+      "citations": 318,
+      "doi": "10.1093/jamia/ocaa053",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7647281",
+      "pdfUrl": null,
+      "abstract": "OBJECTIVE: To conduct a systematic scoping review of explainable artificial intelligence (XAI) models that use real-world electronic health record data, categorize these techniques according to different biomedical applications, identify gaps of current studies, and suggest future research directions. MATERIALS AND METHODS: We searched MEDLINE, IEEE Xplore, and the Association for Computing Machinery (ACM) Digital Library to identify relevant papers published between January 1, 2009 and May 1, 2019. We summarized these studies based on the year of publication, prediction tasks, machine learning algorithm, dataset(s) used to build the models, the scope, category, and evaluation of the XAI methods. We further assessed the reproducibility of the studies in terms of the availability of data and code and discussed open issues and challenges. RESULTS: Forty-two articles were included in thi..."
+    },
+    {
+      "title": "Diagnostic reasoning prompts reveal the potential for large language model interpretability in medicine",
+      "year": 2024,
+      "venue": "npj Digital Medicine",
+      "authors": [
+        "Thomas Savage",
+        "Ashwin Nayak",
+        "Robert Gallo",
+        "Ekanath Rangan",
+        "Jonathan H. Chen"
+      ],
+      "citations": 253,
+      "doi": "10.1038/s41746-024-01010-1",
+      "url": "https://doi.org/10.1038/s41746-024-01010-1",
+      "pdfUrl": "https://www.nature.com/articles/s41746-024-01010-1.pdf",
+      "abstract": "One of the major barriers to using large language models (LLMs) in medicine is the perception they use uninterpretable methods to make clinical decisions that are inherently different from the cognitive processes of clinicians. In this manuscript we develop diagnostic reasoning prompts to study whether LLMs can imitate clinical reasoning while accurately forming a diagnosis. We find that GPT-4 can be prompted to mimic the common clinical reasoning processes of clinicians without sacrificing diagnostic accuracy. This is significant because an LLM that can imitate clinical reasoning to provide an interpretable rationale offers physicians a means to evaluate whether an LLMs response is likely correct and can be trusted for patient care. Prompting methods that use diagnostic reasoning have the potential to mitigate the \"black box\" limitations of LLMs, bringing them one step closer to safe..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:27.960Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z5xkyjhz",
+  "userId": "demo-user",
+  "researcherId": "res_manoel-horta-ribeiro_princeton",
+  "researcherName": "Manoel Horta Ribeiro",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 18.3,
+  "reasons": [
+    "Overlaps on computational social science, machine learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "mh3586@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.929Z",
+  "updatedAt": "2026-08-18T14:28:42.929Z"
+}

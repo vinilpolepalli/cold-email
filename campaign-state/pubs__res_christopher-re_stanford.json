@@ -1,0 +1,150 @@
+{
+  "researcherId": "res_christopher-re_stanford",
+  "authorName": "Christopher Ré",
+  "authorUrl": "https://openalex.org/A5103852640",
+  "worksCount": 366,
+  "citedByCount": 17697,
+  "topics": [
+    "Advanced Database Systems and Queries",
+    "Topic Modeling",
+    "Data Management and Algorithms",
+    "Natural Language Processing Techniques",
+    "Machine Learning and Data Classification"
+  ],
+  "publications": [
+    {
+      "title": "On the Opportunities and Risks of Foundation Models",
+      "year": 2021,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Rishi Bommasani",
+        "Drew A. Hudson",
+        "Ehsan Adeli",
+        "Russ B. Altman",
+        "Simran Arora",
+        "Sydney von Arx",
+        "Michael S. Bernstein",
+        "Jeannette Bohg"
+      ],
+      "citations": 2247,
+      "doi": "10.48550/arxiv.2108.07258",
+      "url": "http://arxiv.org/abs/2108.07258",
+      "pdfUrl": "https://arxiv.org/pdf/2108.07258",
+      "abstract": "AI is undergoing a paradigm shift with the rise of models (e.g., BERT, DALL-E, GPT-3) that are trained on broad data at scale and are adaptable to a wide range of downstream tasks. We call these models foundation models to underscore their critically central yet incomplete character. This report provides a thorough account of the opportunities and risks of foundation models, ranging from their capabilities (e.g., language, vision, robotics, reasoning, human interaction) and technical principles(e.g., model architectures, training procedures, data, systems, security, evaluation, theory) to their applications (e.g., law, healthcare, education) and societal impact (e.g., inequity, misuse, economic and environmental impact, legal and ethical considerations). Though foundation models are based on standard deep learning and transfer learning, their scale results in new emergent capabilities..."
+    },
+    {
+      "title": "HOGWILD!: A Lock-Free Approach to Parallelizing Stochastic Gradient Descent",
+      "year": 2011,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Feng Niu",
+        "Benjamin Recht",
+        "Christopher Ré",
+        "Stephen J. Wright"
+      ],
+      "citations": 1225,
+      "doi": "10.48550/arxiv.1106.5730",
+      "url": "http://arxiv.org/abs/1106.5730",
+      "pdfUrl": "https://arxiv.org/pdf/1106.5730",
+      "abstract": "Stochastic Gradient Descent (SGD) is a popular algorithm that can achieve state-of-the-art performance on a variety of machine learning tasks. Several researchers have recently proposed schemes to parallelize SGD, but all require performance-destroying memory locking and synchronization. This work aims to show using novel theoretical analysis, algorithms, and implementation that SGD can be implemented without any locking. We present an update scheme called HOGWILD! which allows processors access to shared memory with the possibility of overwriting each other's work. We show that when the associated optimization problem is sparse, meaning most gradient updates only modify small parts of the decision variable, then HOGWILD! achieves a nearly optimal rate of convergence. We demonstrate experimentally that HOGWILD! outperforms alternative schemes that use locking by an order of magnitude."
+    },
+    {
+      "title": "Snorkel",
+      "year": 2017,
+      "venue": "Proceedings of the VLDB Endowment",
+      "authors": [
+        "Alexander Ratner",
+        "Stephen H. Bach",
+        "Henry R. Ehrenberg",
+        "Jason Fries",
+        "Sen Wu",
+        "Christopher Ré"
+      ],
+      "citations": 782,
+      "doi": "10.14778/3157794.3157797",
+      "url": "http://arxiv.org/abs/1711.10160",
+      "pdfUrl": "https://arxiv.org/pdf/1711.10160",
+      "abstract": "Labeling training data is increasingly the largest bottleneck in deploying machine learning systems. We present Snorkel, a first-of-its-kind system that enables users to train state-of- the-art models without hand labeling any training data. Instead, users write labeling functions that express arbitrary heuristics, which can have unknown accuracies and correlations. Snorkel denoises their outputs without access to ground truth by incorporating the first end-to-end implementation of our recently proposed machine learning paradigm, data programming. We present a flexible interface layer for writing labeling functions based on our experience over the past year collaborating with companies, agencies, and research labs. In a user study, subject matter experts build models 2.8× faster and increase predictive performance an average 45.5% versus seven hours of hand labeling. We study the mode..."
+    },
+    {
+      "title": "Efficiently Modeling Long Sequences with Structured State Spaces",
+      "year": 2021,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Albert Gu",
+        "Karan Goel",
+        "Christopher Ré"
+      ],
+      "citations": 498,
+      "doi": "10.48550/arxiv.2111.00396",
+      "url": "http://arxiv.org/abs/2111.00396",
+      "pdfUrl": "https://arxiv.org/pdf/2111.00396",
+      "abstract": "A central goal of sequence modeling is designing a single principled model that can address sequence data across a range of modalities and tasks, particularly on long-range dependencies. Although conventional models including RNNs, CNNs, and Transformers have specialized variants for capturing long dependencies, they still struggle to scale to very long sequences of $10000$ or more steps. A promising recent approach proposed modeling sequences by simulating the fundamental state space model (SSM) \\( x'(t) = Ax(t) + Bu(t), y(t) = Cx(t) + Du(t) \\), and showed that for appropriate choices of the state matrix \\( A \\), this system could handle long-range dependencies mathematically and empirically. However, this method has prohibitive computation and memory requirements, rendering it infeasible as a general sequence modeling solution. We propose the Structured State Space sequence model (S..."
+    },
+    {
+      "title": "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness",
+      "year": 2022,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Dao, Tri",
+        "Daniel Y. Fu",
+        "Stefano Ermon",
+        "Atri Rudra",
+        "Christopher Ré"
+      ],
+      "citations": 461,
+      "doi": "10.48550/arxiv.2205.14135",
+      "url": "http://arxiv.org/abs/2205.14135",
+      "pdfUrl": "https://arxiv.org/pdf/2205.14135",
+      "abstract": "Machine learning's explosive growth has produced a proliferation of accelerator architectures, yet no framework maps a workload's computational character to the hardware that serves it best. We build that framework: decomposing ML workloads — transformers, CNNs, GNNs, diffusion and state-space models — into core compute primitives characterized by arithmetic intensity, memory-access pattern, and parallelism, and evaluating how GPUs, TPUs, systolic arrays, dataflow processors, wafer-scale engines, and neuromorphic chips serve them. Using hierarchical roofline and utilization modelling, we show the binding constraint has shifted from peak FLOPS to memory bandwidth and data-movement energy — which quantization only sharpens — and consolidate eight persistent, unsolved problems. These motivate the central contribution: the Fused Memory-Compute Tile (FMCT, codename Habanero), an SRAM-first..."
+    },
+    {
+      "title": "Efficient Top-k Query Evaluation on Probabilistic Data",
+      "year": 2007,
+      "venue": null,
+      "authors": [
+        "Christopher Ré",
+        "Nilesh Dalvi",
+        "Dan Suciu"
+      ],
+      "citations": 374,
+      "doi": "10.1109/icde.2007.367934",
+      "url": "https://doi.org/10.1109/icde.2007.367934",
+      "pdfUrl": null,
+      "abstract": "Modern enterprise applications are forced to deal with unreliable, inconsistent and imprecise information. Probabilistic databases can model such data naturally, but SQL query evaluation on probabilistic databases is difficult: previous approaches have either restricted the SQL queries, or computed approximate probabilities, or did not scale, and it was shown recently that precise query evaluation is theoretically hard. In this paper we describe a novel approach, which computes and ranks efficiently the top-k answers to a SQL query on a probabilistic database. The restriction to top-k answers is natural, since imprecisions in the data often lead to a large number of answers of low quality, and users are interested only in the answers with the highest probabilities. The idea in our algorithm is to run in parallel several Monte-Carlo simulations, one for each candidate answer, and appro..."
+    },
+    {
+      "title": "Data Programming: Creating Large Training Sets, Quickly",
+      "year": 2016,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Alexander Ratner",
+        "Christopher De",
+        "Sen Wu",
+        "Daniel Selsam",
+        "Christopher Ré"
+      ],
+      "citations": 364,
+      "doi": "10.48550/arxiv.1605.07723",
+      "url": "http://arxiv.org/abs/1605.07723",
+      "pdfUrl": "https://arxiv.org/pdf/1605.07723",
+      "abstract": "Large labeled training sets are the critical building blocks of supervised learning methods and are key enablers of deep learning techniques. For some applications, creating labeled training sets is the most time-consuming and expensive part of applying machine learning. We therefore propose a paradigm for the programmatic creation of training sets called data programming in which users express weak supervision strategies or domain heuristics as labeling functions, which are programs that label subsets of the data, but that are noisy and may conflict. We show that by explicitly representing this training set labeling process as a generative model, we can \"denoise\" the generated training set, and establish theoretically that we can recover the parameters of these generative models in a handful of settings. We then show how to modify a discriminative loss function to make it noise-aware..."
+    },
+    {
+      "title": "Parallel stochastic gradient algorithms for large-scale matrix completion",
+      "year": 2013,
+      "venue": "Mathematical Programming Computation",
+      "authors": [
+        "Benjamin Recht",
+        "Christopher Ré"
+      ],
+      "citations": 315,
+      "doi": "10.1007/s12532-013-0053-8",
+      "url": "https://doi.org/10.1007/s12532-013-0053-8",
+      "pdfUrl": null,
+      "abstract": null
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:20:55.537Z"
+}

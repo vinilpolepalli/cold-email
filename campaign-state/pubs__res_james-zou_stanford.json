@@ -1,0 +1,163 @@
+{
+  "researcherId": "res_james-zou_stanford",
+  "authorName": "James Zou",
+  "authorUrl": "https://openalex.org/A5005779176",
+  "worksCount": 667,
+  "citedByCount": 42641,
+  "topics": [
+    "Topic Modeling",
+    "Artificial Intelligence in Healthcare and Education",
+    "Single-cell and spatial transcriptomics",
+    "Explainable Artificial Intelligence (XAI)",
+    "Cell Image Analysis Techniques"
+  ],
+  "publications": [
+    {
+      "title": "Analysis of protein-coding genetic variation in 60,706 humans",
+      "year": 2016,
+      "venue": "Nature",
+      "authors": [
+        "Monkol Lek",
+        "Konrad J. Karczewski",
+        "Eric Vallabh Minikel",
+        "Kaitlin E. Samocha",
+        "Eric Banks",
+        "Timothy R. Fennell",
+        "Anne O’Donnell‐Luria",
+        "James S. Ware"
+      ],
+      "citations": 10430,
+      "doi": "10.1038/nature19057",
+      "url": "https://doi.org/10.1038/nature19057",
+      "pdfUrl": "https://www.nature.com/articles/nature19057.pdf",
+      "abstract": "Large-scale reference data sets of human genetic variation are critical for the medical and functional interpretation of DNA sequence changes. Here we describe the aggregation and analysis of high-quality exome (protein-coding region) DNA sequence data for 60,706 individuals of diverse ancestries generated as part of the Exome Aggregation Consortium (ExAC). This catalogue of human genetic diversity contains an average of one variant every eight bases of the exome, and provides direct evidence for the presence of widespread mutational recurrence. We have used this catalogue to calculate objective metrics of pathogenicity for sequence variants, and to identify genes subject to strong selection against various classes of mutation; identifying 3,230 genes with near-complete depletion of predicted protein-truncating variants, with 72% of these genes having no currently established human di..."
+    },
+    {
+      "title": "Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings",
+      "year": 2016,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Tolga Bolukbasi",
+        "Kai-Wei Chang",
+        "James Zou",
+        "Venkatesh Saligrama",
+        "Adam Tauman Kalai"
+      ],
+      "citations": 1363,
+      "doi": "10.48550/arxiv.1607.06520",
+      "url": "http://arxiv.org/abs/1607.06520",
+      "pdfUrl": "https://arxiv.org/pdf/1607.06520",
+      "abstract": "The blind application of machine learning runs the risk of amplifying biases present in data. Such a danger is facing us with word embedding, a popular framework to represent text data as vectors which has been used in many machine learning and natural language processing tasks. We show that even word embeddings trained on Google News articles exhibit female/male gender stereotypes to a disturbing extent. This raises concerns because their widespread use, as we describe, often tends to amplify these biases. Geometrically, gender bias is first shown to be captured by a direction in the word embedding. Second, gender neutral words are shown to be linearly separable from gender definition words in the word embedding. Using these properties, we provide a methodology for modifying an embedding to remove gender stereotypes, such as the association between between the words receptionist and ..."
+    },
+    {
+      "title": "A single-cell transcriptomic atlas characterizes ageing tissues in the mouse",
+      "year": 2020,
+      "venue": "Nature",
+      "authors": [
+        "Nicole Almanzar",
+        "Jane Antony",
+        "Ankit S. Baghel",
+        "Isaac Bakerman",
+        "Ishita Bansal",
+        "Ben A. Barres",
+        "Philip A. Beachy",
+        "Daniela Berdnik"
+      ],
+      "citations": 1351,
+      "doi": "10.1038/s41586-020-2496-1",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8240505",
+      "pdfUrl": null,
+      "abstract": "Ageing is characterized by a progressive loss of physiological integrity, leading to impaired function and increased vulnerability to death1. Despite rapid advances over recent years, many of the molecular and cellular processes that underlie the progressive loss of healthy physiology are poorly understood2. To gain a better insight into these processes, here we generate a single-cell transcriptomic atlas across the lifespan of Mus musculus that includes data from 23 tissues and organs. We found cell-specific changes occurring across multiple cell types and organs, as well as age-related changes in the cellular composition of different organs. Using single-cell transcriptomic data, we assessed cell-type-specific manifestations of different hallmarks of ageing—such as senescence3, genomic instability4 and changes in the immune system2. This transcriptomic atlas—which we denote Tabula M..."
+    },
+    {
+      "title": "Word embeddings quantify 100 years of gender and ethnic stereotypes",
+      "year": 2018,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "authors": [
+        "Nikhil Garg",
+        "Londa Schiebinger",
+        "Dan Jurafsky",
+        "James Zou"
+      ],
+      "citations": 1107,
+      "doi": "10.1073/pnas.1720347115",
+      "url": "http://arxiv.org/abs/1711.08412",
+      "pdfUrl": "https://arxiv.org/pdf/1711.08412",
+      "abstract": "Word embeddings are a powerful machine-learning framework that represents each English word by a vector. The geometric relationship between these vectors captures meaningful semantic relationships between the corresponding words. In this paper, we develop a framework to demonstrate how the temporal dynamics of the embedding helps to quantify changes in stereotypes and attitudes toward women and ethnic minorities in the 20th and 21st centuries in the United States. We integrate word embeddings trained on 100 y of text data with the US Census to show that changes in the embedding track closely with demographic and occupation shifts over time. The embedding captures societal shifts-e.g., the women's movement in the 1960s and Asian immigration into the United States-and also illuminates how specific adjectives and occupations became more closely associated with certain populations over ti..."
+    },
+    {
+      "title": "Video-based AI for beat-to-beat assessment of cardiac function",
+      "year": 2020,
+      "venue": "Nature",
+      "authors": [
+        "David Ouyang",
+        "Bryan He",
+        "Amirata Ghorbani",
+        "Neal Yuan",
+        "Joseph E. Ebinger",
+        "Curtis P. Langlotz",
+        "Paul A. Heidenreich",
+        "Robert A. Harrington"
+      ],
+      "citations": 1086,
+      "doi": "10.1038/s41586-020-2145-8",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8979576",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "A primer on deep learning in genomics",
+      "year": 2018,
+      "venue": "Nature Genetics",
+      "authors": [
+        "James Zou",
+        "Mikael Huss",
+        "Abubakar Abid",
+        "Pejman Mohammadi",
+        "Ali Torkamani",
+        "Amalio Telenti"
+      ],
+      "citations": 930,
+      "doi": "10.1038/s41588-018-0295-5",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/11180539",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "AI can be sexist and racist — it’s time to make it fair",
+      "year": 2018,
+      "venue": "Nature",
+      "authors": [
+        "James Zou",
+        "Londa Schiebinger"
+      ],
+      "citations": 761,
+      "doi": "10.1038/d41586-018-05707-8",
+      "url": "https://doi.org/10.1038/d41586-018-05707-8",
+      "pdfUrl": "https://www.nature.com/magazine-assets/d41586-018-05707-8/d41586-018-05707-8.pdf",
+      "abstract": "Computer scientists must identify sources of bias, de-bias training data and develop artificial-intelligence algorithms that are robust to skews in the data, argue James Zou and Londa Schiebinger. Computer scientists must identify sources of bias, de-bias training data and develop artificial-intelligence algorithms that are robust to skews in the data."
+    },
+    {
+      "title": "Ageing hallmarks exhibit organ-specific temporal signatures",
+      "year": 2020,
+      "venue": "Nature",
+      "authors": [
+        "Nicholas Schaum",
+        "Benoit Lehallier",
+        "Oliver Hãhn",
+        "Róbert Pálovics",
+        "Shayan Hosseinzadeh",
+        "Song Eun Lee",
+        "Rene Sit",
+        "Davis P. Lee"
+      ],
+      "citations": 713,
+      "doi": "10.1038/s41586-020-2499-y",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7757734",
+      "pdfUrl": null,
+      "abstract": null
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:18.301Z"
+}

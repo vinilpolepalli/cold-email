@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpjdt5fmj1",
+  "userId": "demo-user",
+  "researcherId": "res_percy-liang_stanford",
+  "researcherName": "Percy Liang",
+  "school": "Stanford",
+  "trackId": "cs-core",
+  "status": "sent",
+  "rank": 67,
+  "reasons": [
+    "Overlaps on foundation models, machine learning",
+    "Stanford is priority one"
+  ],
+  "subject": "Interested in your work on what models do not know",
+  "body": "Hello Professor Liang,\n\nMy name is Vinil Polepalli and I am an undergraduate at New York University studying Computer Science and Business. I have been a research intern in the Chiosis Lab at Memorial Sloan Kettering, where I built protein-ligand graph neural networks for Hsp90 and epichaperome complexes that reached 0.984 ROC AUC separating active from inactive inhibitor candidates.\n\nI read the SQuAD 2.0 paper, and the design choice that stayed with me is that the unanswerable questions were written adversarially to look answerable, because anything easier would have been passed by pattern matching rather than by understanding. The failure it exposes is not wrong answers but confident ones where no answer exists. My Hsp90 screen has that shape and I did not build in the escape: the model ranked all 4,566 generated candidates, so it returns a top 50 whether or not the library contains anything worth synthesizing, and the enrichment I reported cannot distinguish those two cases. An abstention option with a cost attached seems like the honest fix, and I would want to know how you would construct the adversarial negatives for a chemical library, where the analogue of a plausible-looking wrong answer is a molecule that docks well and does nothing.\n\nI would like to hear more about what the group is working on now, and where my background would be useful to you.\n\nIn the past, I have worked on the following related projects:\n- Hsp90 inhibitor virtual screening in the Chiosis Lab at Memorial Sloan Kettering: 4,566 candidates screened at 0.984 GNN ROC AUC and 5x enrichment, 0 Lipinski violations in the top 50: https://hsp90-dashboard.vercel.app/\n- Sole author, cVAE-augmented deep learning for pan-cancer RNA-seq classification, about 98% test accuracy across 5 cancer types on TCGA: https://arxiv.org/abs/2508.02743\n- First author, EGCG and piperine synergy in D. tigrina regeneration, IEEE MIT Undergraduate Research Technology Conference: https://ieeexplore.ieee.org/document/11533121\n- Semantic segmentation for UAV-based environmental monitoring at Carnegie Mellon Robotics Institute: 0.88 mean IoU and 0.94 F1 on 25,000 labeled aerial images, sub-100 ms inference across 30 flights\n\nOutside of research I was invited to Y Combinator's Startup School, reached the VEX Robotics World Championship semifinals, and have qualified for the AIME three times.\n\nI have extensively used PyTorch and Python in past work, along with standard evaluation and benchmarking tooling, but have a lot of coding experience and am adaptable to whichever libraries your group uses. My resume is attached. Please let me know if there is a fit in your group.\n\nI would be happy to elaborate on my skills and where I think I can best help out.\n\nThank you!\n\n--\nVinil Polepalli\nNew York University | Class of 2029\nB.S. Computer Science and B.S. Business",
+  "to": "pliang@cs.stanford.edu",
+  "cc": [],
+  "scheduledAt": "2026-08-18T16:27:00.000Z",
+  "autoApproved": false,
+  "outboxId": "out_msywwhgy6b9efy",
+  "sentAt": "2026-08-18T17:03:48.850Z",
+  "note": "Sent from vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "createdAt": "2026-08-18T01:12:59.017Z",
+  "updatedAt": "2026-08-18T17:03:48.851Z"
+}

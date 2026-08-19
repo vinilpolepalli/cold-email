@@ -1,0 +1,166 @@
+{
+  "researcherId": "res_ehsan-adeli_stanford",
+  "authorName": "Ehsan Adeli",
+  "authorUrl": "https://openalex.org/A5015355317",
+  "worksCount": 293,
+  "citedByCount": 15602,
+  "topics": [
+    "Human Pose and Action Recognition",
+    "Anomaly Detection Techniques and Applications",
+    "Functional Brain Connectivity Studies",
+    "Machine Learning in Healthcare",
+    "Domain Adaptation and Few-Shot Learning"
+  ],
+  "publications": [
+    {
+      "title": "TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation",
+      "year": 2021,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Jieneng Chen",
+        "Yongyi Lu",
+        "Qihang Yu",
+        "Xiangde Luo",
+        "Ehsan Adeli",
+        "Yan Wang",
+        "Le Lü",
+        "Alan Yuille"
+      ],
+      "citations": 3927,
+      "doi": "10.48550/arxiv.2102.04306",
+      "url": "http://arxiv.org/abs/2102.04306",
+      "pdfUrl": "https://arxiv.org/pdf/2102.04306",
+      "abstract": "Medical image segmentation is an essential prerequisite for developing healthcare systems, especially for disease diagnosis and treatment planning. On various medical image segmentation tasks, the u-shaped architecture, also known as U-Net, has become the de-facto standard and achieved tremendous success. However, due to the intrinsic locality of convolution operations, U-Net generally demonstrates limitations in explicitly modeling long-range dependency. Transformers, designed for sequence-to-sequence prediction, have emerged as alternative architectures with innate global self-attention mechanisms, but can result in limited localization abilities due to insufficient low-level details. In this paper, we propose TransUNet, which merits both Transformers and U-Net, as a strong alternative for medical image segmentation. On one hand, the Transformer encodes tokenized image patches from ..."
+    },
+    {
+      "title": "On the Opportunities and Risks of Foundation Models",
+      "year": 2021,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Rishi Bommasani",
+        "Drew A. Hudson",
+        "Ehsan Adeli",
+        "Russ B. Altman",
+        "Simran Arora",
+        "Sydney von Arx",
+        "Michael S. Bernstein",
+        "Jeannette Bohg"
+      ],
+      "citations": 2247,
+      "doi": "10.48550/arxiv.2108.07258",
+      "url": "http://arxiv.org/abs/2108.07258",
+      "pdfUrl": "https://arxiv.org/pdf/2108.07258",
+      "abstract": "AI is undergoing a paradigm shift with the rise of models (e.g., BERT, DALL-E, GPT-3) that are trained on broad data at scale and are adaptable to a wide range of downstream tasks. We call these models foundation models to underscore their critically central yet incomplete character. This report provides a thorough account of the opportunities and risks of foundation models, ranging from their capabilities (e.g., language, vision, robotics, reasoning, human interaction) and technical principles(e.g., model architectures, training procedures, data, systems, security, evaluation, theory) to their applications (e.g., law, healthcare, education) and societal impact (e.g., inequity, misuse, economic and environmental impact, legal and ethical considerations). Though foundation models are based on standard deep learning and transfer learning, their scale results in new emergent capabilities..."
+    },
+    {
+      "title": "TransUNet: Rethinking the U-Net architecture design for medical image segmentation through the lens of transformers",
+      "year": 2024,
+      "venue": "Medical Image Analysis",
+      "authors": [
+        "Jieneng Chen",
+        "Jieru Mei",
+        "Xianhang Li",
+        "Yongyi Lu",
+        "Qihang Yu",
+        "Qingyue Wei",
+        "Xiangde Luo",
+        "Yutong Xie"
+      ],
+      "citations": 1178,
+      "doi": "10.1016/j.media.2024.103280",
+      "url": "https://doi.org/10.1016/j.media.2024.103280",
+      "pdfUrl": null,
+      "abstract": "Medical image segmentation is crucial for healthcare, yet convolution-based methods like U-Net face limitations in modeling long-range dependencies. To address this, Transformers designed for sequence-to-sequence predictions have been integrated into medical image segmentation. However, a comprehensive understanding of Transformers' self-attention in U-Net components is lacking. TransUNet, first introduced in 2021, is widely recognized as one of the first models to integrate Transformer into medical image analysis. In this study, we present the versatile framework of TransUNet that encapsulates Transformers' self-attention into two key modules: (1) a Transformer encoder tokenizing image patches from a convolution neural network (CNN) feature map, facilitating global context extraction, and (2) a Transformer decoder refining candidate regions through cross-attention between proposals a..."
+    },
+    {
+      "title": "Medical Image Segmentation Review: The Success of U-Net",
+      "year": 2024,
+      "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+      "authors": [
+        "Reza Azad",
+        "Ehsan Khodapanah Aghdam",
+        "Amelie Rauland",
+        "Yiwei Jia",
+        "Atlas Haddadi Avval",
+        "Afshin Bozorgpour",
+        "Sanaz Karimijafarbigloo",
+        "Joseph Cohen"
+      ],
+      "citations": 846,
+      "doi": "10.1109/tpami.2024.3435571",
+      "url": "https://doi.org/10.1109/tpami.2024.3435571",
+      "pdfUrl": null,
+      "abstract": "Automatic medical image segmentation is a crucial topic in the medical domain and successively a critical counterpart in the computer-aided diagnosis paradigm. U-Net is the most widespread image segmentation architecture due to its flexibility, optimized modular design, and success in all medical image modalities. Over the years, the U-Net model has received tremendous attention from academic and industrial researchers who have extended it to address the scale and complexity created by medical tasks. These extensions are commonly related to enhancing the U-Net's backbone, bottleneck, or skip connections, or including representation learning, or combining it with a Transformer architecture, or even addressing probabilistic prediction of the segmentation map. Having a compendium of different previously proposed U-Net variants makes it easier for machine learning researchers to identify ..."
+    },
+    {
+      "title": "Landmark-based deep multi-instance learning for brain disease diagnosis",
+      "year": 2017,
+      "venue": "Medical Image Analysis",
+      "authors": [
+        "Mingxia Liu",
+        "Jun Zhang",
+        "Ehsan Adeli",
+        "Dinggang Shen"
+      ],
+      "citations": 436,
+      "doi": "10.1016/j.media.2017.10.005",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/6203325",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Joint Classification and Regression via Deep Multi-Task Multi-Channel Learning for Alzheimer's Disease Diagnosis",
+      "year": 2018,
+      "venue": "IEEE Transactions on Biomedical Engineering",
+      "authors": [
+        "Mingxia Liu",
+        "Jun Zhang",
+        "Ehsan Adeli",
+        "Dinggang Shen"
+      ],
+      "citations": 312,
+      "doi": "10.1109/tbme.2018.2869989",
+      "url": "https://doi.org/10.1109/tbme.2018.2869989",
+      "pdfUrl": null,
+      "abstract": "In the field of computer-aided Alzheimer's disease (AD) diagnosis, jointly identifying brain diseases and predicting clinical scores using magnetic resonance imaging (MRI) have attracted increasing attention since these two tasks are highly correlated. Most of existing joint learning approaches require hand-crafted feature representations for MR images. Since hand-crafted features of MRI and classification/regression models may not coordinate well with each other, conventional methods may lead to sub-optimal learning performance. Also, demographic information (e.g., age, gender, and education) of subjects may also be related to brain status, and thus can help improve the diagnostic performance. However, conventional joint learning methods seldom incorporate such demographic information into the learning models. To this end, we propose a deep multi-task multi-channel learning (DM 2L) f..."
+    },
+    {
+      "title": "3D Deep Learning for Multi-modal Imaging-Guided Survival Time Prediction of Brain Tumor Patients",
+      "year": 2016,
+      "venue": "Lecture notes in computer science",
+      "authors": [
+        "Dong Nie",
+        "Han Zhang",
+        "Ehsan Adeli",
+        "Luyan Liu",
+        "Dinggang Shen"
+      ],
+      "citations": 290,
+      "doi": "10.1007/978-3-319-46723-8_25",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5278791",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Spatio-Temporal Graph for Video Captioning With Knowledge Distillation",
+      "year": 2020,
+      "venue": null,
+      "authors": [
+        "Boxiao Pan",
+        "Haoye Cai",
+        "De-An Huang",
+        "Kuan-Hui Lee",
+        "Adrien Gaidon",
+        "Ehsan Adeli",
+        "Juan Carlos Niebles"
+      ],
+      "citations": 265,
+      "doi": "10.1109/cvpr42600.2020.01088",
+      "url": "https://doi.org/10.1109/cvpr42600.2020.01088",
+      "pdfUrl": null,
+      "abstract": "Video captioning is a challenging task that requires a deep understanding of visual scenes. State-of-the-art methods generate captions using either scene-level or object-level information but without explicitly modeling object interactions. Thus, they often fail to make visually grounded predictions, and are sensitive to spurious correlations. In this paper, we propose a novel spatio-temporal graph model for video captioning that exploits object interactions in space and time. Our model builds interpretable links and is able to provide explicit visual grounding. To avoid unstable performance caused by the variable number of objects, we further propose an object-aware knowledge distillation mechanism, in which local object information is used to regularize global scene features. We demonstrate the efficacy of our approach through extensive experiments on two benchmarks, showing our app..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:20:49.549Z"
+}

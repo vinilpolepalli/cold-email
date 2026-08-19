@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x1nuyvmx",
+  "userId": "demo-user",
+  "researcherId": "res_daniela-rus_mit",
+  "researcherName": "Daniela Rus",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 67.9,
+  "reasons": [
+    "Overlaps on robotics, machine learning, autonomous vehicles",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "rus@csail.mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.853Z",
+  "updatedAt": "2026-08-18T14:28:42.853Z"
+}

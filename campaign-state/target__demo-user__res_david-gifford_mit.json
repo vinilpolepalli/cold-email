@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpjfuxvxic",
+  "userId": "demo-user",
+  "researcherId": "res_david-gifford_mit",
+  "researcherName": "David Gifford",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 64.7,
+  "reasons": [
+    "Overlaps on machine learning, computational genomics, gene regulation",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "gifford@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:12:59.019Z",
+  "updatedAt": "2026-08-18T01:12:59.019Z"
+}

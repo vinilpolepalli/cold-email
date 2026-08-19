@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10xy5ku7v",
+  "userId": "demo-user",
+  "researcherId": "res_sophie-yu_penn",
+  "researcherName": "Sophie Yu",
+  "school": "Penn",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 10.2,
+  "reasons": [
+    "Overlaps on network science",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "hysophie@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.993Z",
+  "updatedAt": "2026-08-18T14:28:42.993Z"
+}

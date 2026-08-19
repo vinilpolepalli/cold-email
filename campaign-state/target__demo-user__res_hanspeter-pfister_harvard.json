@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0terfxqjj",
+  "userId": "demo-user",
+  "researcherId": "res_hanspeter-pfister_harvard",
+  "researcherName": "Hanspeter Pfister",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 52.2,
+  "reasons": [
+    "Overlaps on visualization, computer vision, machine learning",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "pfister@seas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.722Z",
+  "updatedAt": "2026-08-18T14:28:42.722Z"
+}

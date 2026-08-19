@@ -1,0 +1,148 @@
+{
+  "researcherId": "res_julia-salzman_stanford",
+  "authorName": "Julia Salzman",
+  "authorUrl": "https://openalex.org/A5049726850",
+  "worksCount": 89,
+  "citedByCount": 11493,
+  "topics": [
+    "RNA Research and Splicing",
+    "Cancer-related molecular mechanisms research",
+    "Circular RNAs in diseases",
+    "Single-cell and spatial transcriptomics",
+    "RNA modifications and cancer"
+  ],
+  "publications": [
+    {
+      "title": "Circular RNAs Are the Predominant Transcript Isoform from Hundreds of Human Genes in Diverse Cell Types",
+      "year": 2012,
+      "venue": "PLoS ONE",
+      "authors": [
+        "Julia Salzman",
+        "Charles Gawad",
+        "Peter Lincoln Wang",
+        "Norman J. Lacayo",
+        "Patrick O. Brown"
+      ],
+      "citations": 2616,
+      "doi": "10.1371/journal.pone.0030733",
+      "url": "https://doi.org/10.1371/journal.pone.0030733",
+      "pdfUrl": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0030733&type=printable",
+      "abstract": "Most human pre-mRNAs are spliced into linear molecules that retain the exon order defined by the genomic sequence. By deep sequencing of RNA from a variety of normal and malignant human cells, we found RNA transcripts from many human genes in which the exons were arranged in a non-canonical order. Statistical estimates and biochemical assays provided strong evidence that a substantial fraction of the spliced transcripts from hundreds of genes are circular RNAs. Our results suggest that a non-canonical mode of RNA splicing, resulting in a circular RNA isoform, is a general feature of the gene expression program in human cells."
+    },
+    {
+      "title": "Cell-Type Specific Features of Circular RNA Expression",
+      "year": 2013,
+      "venue": "PLoS Genetics",
+      "authors": [
+        "Julia Salzman",
+        "Raymond Chen",
+        "Mari Olsen",
+        "Peter L. Wang",
+        "Patrick O. Brown"
+      ],
+      "citations": 2139,
+      "doi": "10.1371/journal.pgen.1003777",
+      "url": "https://doi.org/10.1371/journal.pgen.1003777",
+      "pdfUrl": "https://journals.plos.org/plosgenetics/article/file?id=10.1371/journal.pgen.1003777&type=printable",
+      "abstract": "Thousands of loci in the human and mouse genomes give rise to circular RNA transcripts; at many of these loci, the predominant RNA isoform is a circle. Using an improved computational approach for circular RNA identification, we found widespread circular RNA expression in Drosophila melanogaster and estimate that in humans, circular RNA may account for 1% as many molecules as poly(A) RNA. Analysis of data from the ENCODE consortium revealed that the repertoire of genes expressing circular RNA, the ratio of circular to linear transcripts for each gene, and even the pattern of splice isoforms of circular RNAs from each gene were cell-type specific. These results suggest that biogenesis of circular RNA is an integral, conserved, and regulated feature of the gene expression program."
+    },
+    {
+      "title": "Circular RNAs: analysis, expression and potential functions",
+      "year": 2016,
+      "venue": "Development",
+      "authors": [
+        "Steven Barrett",
+        "Julia Salzman"
+      ],
+      "citations": 914,
+      "doi": "10.1242/dev.128074",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4920157",
+      "pdfUrl": null,
+      "abstract": "Just a few years ago, it had been assumed that the dominant RNA isoforms produced from eukaryotic genes were variants of messenger RNA, functioning as intermediates in gene expression. In early 2012, however, a surprising discovery was made: circular RNA (circRNA) was shown to be a transcriptional product in thousands of human and mouse genes and in hundreds of cases constituted the dominant RNA isoform. Subsequent studies revealed that the expression of circRNAs is developmentally regulated, tissue and cell-type specific, and shared across the eukaryotic tree of life. These features suggest important functions for these molecules. Here, we describe major advances in the field of circRNA biology, focusing on the regulation of and functional roles played by these molecules."
+    },
+    {
+      "title": "Circular RNA Expression: Its Potential Regulation and Function",
+      "year": 2016,
+      "venue": "Trends in Genetics",
+      "authors": [
+        "Julia Salzman"
+      ],
+      "citations": 855,
+      "doi": "10.1016/j.tig.2016.03.002",
+      "url": "https://doi.org/10.1016/j.tig.2016.03.002",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Circular RNA Is Expressed across the Eukaryotic Tree of Life",
+      "year": 2014,
+      "venue": "PLoS ONE",
+      "authors": [
+        "Peter L. Wang",
+        "Yun Bao",
+        "Muh‐Ching Yee",
+        "Steven Barrett",
+        "Gregory J. Hogan",
+        "Mari Olsen",
+        "José R. Dinneny",
+        "Patrick O. Brown"
+      ],
+      "citations": 812,
+      "doi": "10.1371/journal.pone.0090859",
+      "url": "https://doi.org/10.1371/journal.pone.0090859",
+      "pdfUrl": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0090859&type=printable",
+      "abstract": "An unexpectedly large fraction of genes in metazoans (human, mouse, zebrafish, worm, fruit fly) express high levels of circularized RNAs containing canonical exons. Here we report that circular RNA isoforms are found in diverse species whose most recent common ancestor existed more than one billion years ago: fungi (Schizosaccharomyces pombe and Saccharomyces cerevisiae), a plant (Arabidopsis thaliana), and protists (Plasmodium falciparum and Dictyostelium discoideum). For all species studied to date, including those in this report, only a small fraction of the theoretically possible circular RNA isoforms from a given gene are actually observed. Unlike metazoans, Arabidopsis, D. discoideum, P. falciparum, S. cerevisiae, and S. pombe have very short introns (∼ 100 nucleotides or shorter), yet they still produce circular RNAs. A minority of genes in S. pombe and P. falciparum have docum..."
+    },
+    {
+      "title": "Detecting circular RNAs: bioinformatic and experimental challenges",
+      "year": 2016,
+      "venue": "Nature Reviews Genetics",
+      "authors": [
+        "Linda Szabo",
+        "Julia Salzman"
+      ],
+      "citations": 726,
+      "doi": "10.1038/nrg.2016.114",
+      "url": "https://doi.org/10.1038/nrg.2016.114",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Statistically based splicing detection reveals neural enrichment and tissue-specific induction of circular RNA during human fetal development",
+      "year": 2015,
+      "venue": "Genome biology",
+      "authors": [
+        "Linda Szabo",
+        "Robert Morey",
+        "Nathan J. Palpant",
+        "Peter L. Wang",
+        "Nastaran Afari",
+        "Jiang Chuan",
+        "Mana M. Parast",
+        "Charles E. Murry"
+      ],
+      "citations": 648,
+      "doi": "10.1186/s13059-015-0690-5",
+      "url": "https://doi.org/10.1186/s13059-015-0690-5",
+      "pdfUrl": "https://genomebiology.biomedcentral.com/counter/pdf/10.1186/s13059-015-0690-5",
+      "abstract": "BACKGROUND: The pervasive expression of circular RNA is a recently discovered feature of gene expression in highly diverged eukaryotes, but the functions of most circular RNAs are still unknown. Computational methods to discover and quantify circular RNA are essential. Moreover, discovering biological contexts where circular RNAs are regulated will shed light on potential functional roles they may play. RESULTS: We present a new algorithm that increases the sensitivity and specificity of circular RNA detection by discovering and quantifying circular and linear RNA splicing events at both annotated and un-annotated exon boundaries, including intergenic regions of the genome, with high statistical confidence. Unlike approaches that rely on read count and exon homology to determine confidence in prediction of circular RNA expression, our algorithm uses a statistical approach. Using our a..."
+    },
+    {
+      "title": "Circular RNA biogenesis can proceed through an exon-containing lariat precursor",
+      "year": 2015,
+      "venue": "eLife",
+      "authors": [
+        "Steven Barrett",
+        "Peter L. Wang",
+        "Julia Salzman"
+      ],
+      "citations": 440,
+      "doi": "10.7554/elife.07540",
+      "url": "https://doi.org/10.7554/elife.07540",
+      "pdfUrl": "https://elifesciences.org/articles/07540.bib",
+      "abstract": "Pervasive expression of circular RNA is a recently discovered feature of eukaryotic gene expression programs, yet its function remains largely unknown. The presumed biogenesis of these RNAs involves a non-canonical 'backsplicing' event. Recent studies in mammalian cell culture posit that backsplicing is facilitated by inverted repeats flanking the circularized exon(s). Although such sequence elements are common in mammals, they are rare in lower eukaryotes, making current models insufficient to describe circularization. Through systematic splice site mutagenesis and the identification of splicing intermediates, we show that circular RNA in Schizosaccharomyces pombe is generated through an exon-containing lariat precursor. Furthermore, we have performed high-throughput and comprehensive mutagenesis of a circle-forming exon, which enabled us to discover a systematic effect of exon lengt..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:20:43.527Z"
+}

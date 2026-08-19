@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z3o0hm05",
+  "userId": "demo-user",
+  "researcherId": "res_vikram-ramaswamy_princeton",
+  "researcherName": "Vikram Ramaswamy",
+  "school": "Princeton",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 20.1,
+  "reasons": [
+    "Overlaps on machine learning, computer vision",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "vr23@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.927Z",
+  "updatedAt": "2026-08-18T14:28:42.927Z"
+}

@@ -4,6 +4,8 @@ import { getProfile } from '@/lib/profiles';
 import { getOutbox, isSendableAddress, sendEmail, validateRecipients } from '@/lib/send';
 import { getResumeFile } from '@/lib/resume-file';
 import { getCurrentUserId, getUserProfile } from '@/lib/user';
+import { recordReviewedSend, trackOf } from '@/lib/tracks';
+import { updateTarget } from '@/lib/campaign';
 
 export const dynamic = 'force-dynamic';
 
@@ -38,6 +40,7 @@ export async function POST(req: NextRequest) {
   // Attach the uploaded resume unless the sender opted out.
   const stored = attachResume === false ? null : await getResumeFile(userId);
 
+  const trackId = trackOf(researcher);
   const entry = await sendEmail({
     userId,
     researcherId,
@@ -51,7 +54,27 @@ export async function POST(req: NextRequest) {
     attachment: stored
       ? { fileName: stored.fileName, contentType: stored.contentType, base64: stored.base64 }
       : null,
+    trackId,
+    // A human pressed send on this one, having read it. That is exactly what
+    // the per-track gate counts, so composing by hand is a way of proving a
+    // track just as much as approving from the campaign queue is.
+    autonomous: false,
   });
+
+  if (entry.status !== 'failed') {
+    // Best effort: a bookkeeping write must not turn a delivered email into an
+    // error the sender then tries to send again.
+    await recordReviewedSend(userId, trackId).catch(() => {});
+    // Keep the campaign queue honest. Emailing someone by hand means a routine
+    // must not queue them again tonight.
+    await updateTarget(userId, researcherId, {
+      status: 'sent',
+      outboxId: entry.id,
+      sentAt: entry.createdAt,
+      note: 'Sent by hand from compose',
+    }).catch(() => {});
+  }
+
   // The email has left. Reopening compose for this researcher should start
   // fresh rather than on the copy that was already sent.
   await discardDraft(userId, researcherId);

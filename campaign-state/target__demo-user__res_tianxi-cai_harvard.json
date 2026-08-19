@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0ti6614ou",
+  "userId": "demo-user",
+  "researcherId": "res_tianxi-cai_harvard",
+  "researcherName": "Tianxi Cai",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 43.2,
+  "reasons": [
+    "Overlaps on statistical machine learning, ehr data mining, predictive modeling",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "tcai@hsph.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.726Z",
+  "updatedAt": "2026-08-18T14:28:42.726Z"
+}

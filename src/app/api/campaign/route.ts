@@ -1,0 +1,189 @@
+import { NextRequest, NextResponse } from 'next/server';
+import {
+  getPolicy,
+  getTargets,
+  savePolicy,
+  summarize,
+  updateTarget,
+  nextSendSlot,
+} from '@/lib/campaign';
+import { getCurrentUserId, getUserProfile } from '@/lib/user';
+import { recordReviewedSend } from '@/lib/tracks';
+import { createSchoolGmailDraft, isSendableAddress, sendTestEmail, validateRecipients } from '@/lib/send';
+import { getResumeFile } from '@/lib/resume-file';
+
+export const dynamic = 'force-dynamic';
+
+/** The queue, the counts, and the current send policy. */
+export async function GET() {
+  const userId = await getCurrentUserId();
+  if (!userId) return NextResponse.json({ error: 'Sign in required' }, { status: 401 });
+
+  const [targets, summary, policy] = await Promise.all([
+    getTargets(userId),
+    summarize(userId),
+    getPolicy(userId),
+  ]);
+  return NextResponse.json({ targets, summary, policy });
+}
+
+const MAX_SUBJECT = 500;
+const MAX_BODY = 20_000;
+
+/**
+ * Act on one target, or change the policy.
+ *
+ * Approving is the moment a human takes responsibility for an email, so it is
+ * also where an edited subject and body are accepted: the sender reads the
+ * draft, fixes it, and approves the thing they actually read.
+ */
+export async function POST(req: NextRequest) {
+  const userId = await getCurrentUserId();
+  if (!userId) return NextResponse.json({ error: 'Sign in required' }, { status: 401 });
+
+  const body = await req.json().catch(() => ({}));
+  const action = typeof body?.action === 'string' ? body.action : '';
+
+  if (action === 'policy') {
+    const policy = await savePolicy(userId, body.policy ?? {});
+    return NextResponse.json({ policy });
+  }
+
+  const researcherId = typeof body?.researcherId === 'string' ? body.researcherId : '';
+  if (!researcherId) return NextResponse.json({ error: 'researcherId is required' }, { status: 400 });
+
+  const target = (await getTargets(userId)).find((t) => t.researcherId === researcherId);
+  if (!target) return NextResponse.json({ error: 'Not on the queue' }, { status: 404 });
+
+  switch (action) {
+    case 'approve': {
+      if (!target.subject || !target.body) {
+        return NextResponse.json({ error: 'This target has no draft yet' }, { status: 400 });
+      }
+      const policy = await getPolicy(userId);
+      // Approving something whose slot has already passed should send it at the
+      // next opening rather than immediately: a 6am approval must not produce a
+      // 6am email.
+      const scheduled = target.scheduledAt && Date.parse(target.scheduledAt) > Date.now()
+        ? target.scheduledAt
+        : nextSendSlot(new Date(), policy).toISOString();
+
+      const updated = await updateTarget(userId, researcherId, {
+        status: 'approved',
+        subject: typeof body.subject === 'string' ? body.subject.slice(0, MAX_SUBJECT) : target.subject,
+        body: typeof body.body === 'string' ? body.body.slice(0, MAX_BODY) : target.body,
+        scheduledAt: scheduled,
+        note: 'Approved by you',
+      });
+      // A human read this one, which is what the per-track gate counts.
+      await recordReviewedSend(userId, target.trackId);
+      return NextResponse.json({ target: updated });
+    }
+
+    case 'skip': {
+      const updated = await updateTarget(userId, researcherId, {
+        status: 'skipped',
+        note: typeof body.note === 'string' ? body.note.slice(0, 300) : 'Skipped by you',
+      });
+      return NextResponse.json({ target: updated });
+    }
+
+    case 'unapprove': {
+      const updated = await updateTarget(userId, researcherId, {
+        status: 'drafted',
+        autoApproved: false,
+        note: 'Pulled back for review',
+      });
+      return NextResponse.json({ target: updated });
+    }
+
+    case 'reschedule': {
+      const at = Date.parse(typeof body.scheduledAt === 'string' ? body.scheduledAt : '');
+      if (!Number.isFinite(at)) return NextResponse.json({ error: 'A valid scheduledAt is required' }, { status: 400 });
+      const updated = await updateTarget(userId, researcherId, { scheduledAt: new Date(at).toISOString() });
+      return NextResponse.json({ target: updated });
+    }
+
+    case 'replied': {
+      const updated = await updateTarget(userId, researcherId, { status: 'replied', note: 'They replied' });
+      return NextResponse.json({ target: updated });
+    }
+
+    // Copy the draft into the school mailbox so it can be read as an email
+    // rather than as a form field — with the resume attached, which is the one
+    // part of the message this screen cannot show. Storing a draft is not
+    // sending: nothing here touches the queue's status or its schedule.
+    case 'draft-to-mailbox': {
+      if (!target.subject || !target.body || !target.to) {
+        return NextResponse.json({ error: 'This target has no draft yet' }, { status: 400 });
+      }
+      const addresses = validateRecipients(target.to, target.cc);
+      if ('error' in addresses) return NextResponse.json({ error: addresses.error }, { status: 400 });
+
+      const [user, resume] = await Promise.all([getUserProfile(userId), getResumeFile(userId)]);
+      if (!user) return NextResponse.json({ error: 'Finish onboarding first' }, { status: 400 });
+
+      const result = await createSchoolGmailDraft({
+        userId,
+        to: addresses.to,
+        cc: addresses.cc,
+        fromName: user.name,
+        replyTo: user.email && isSendableAddress(user.email) ? user.email : undefined,
+        subject: typeof body.subject === 'string' ? body.subject.slice(0, MAX_SUBJECT) : target.subject,
+        body: typeof body.body === 'string' ? body.body.slice(0, MAX_BODY) : target.body,
+        attachment: resume
+          ? { fileName: resume.fileName, contentType: resume.contentType, base64: resume.base64 }
+          : null,
+        draftId: target.mailboxDraftId,
+      });
+      if (!result.ok) return NextResponse.json({ error: result.error }, { status: 502 });
+
+      const updated = await updateTarget(userId, researcherId, {
+        mailboxDraftId: result.draftId,
+        note: `Draft in ${result.email}${result.attached ? ` with ${result.attached} attached` : ' — no resume on file'}`,
+      });
+      return NextResponse.json({ target: updated, draft: result });
+    }
+
+    // Send one draft to the sender, so it can be read as a delivered email
+    // rather than a stored one. Only a real send shows whether the resume
+    // survives transit and how the From line renders.
+    //
+    // The queue is left exactly as it was. Testing the pipe is not evidence
+    // that a professor was contacted, so this records no outbox entry, moves
+    // no status, and counts toward no approval gate.
+    case 'send-test': {
+      if (!target.subject || !target.body) {
+        return NextResponse.json({ error: 'This target has no draft yet' }, { status: 400 });
+      }
+      const user = await getUserProfile(userId);
+      if (!user) return NextResponse.json({ error: 'Finish onboarding first' }, { status: 400 });
+
+      // Falls back to the onboarding address so the common case needs no input,
+      // and a typo cannot turn a test into a cold email to a stranger.
+      const requested = typeof body.to === 'string' ? body.to.trim() : '';
+      const destination = requested || user.email;
+      if (!destination || !isSendableAddress(destination)) {
+        return NextResponse.json({ error: 'No valid address to send the test to' }, { status: 400 });
+      }
+
+      const resume = await getResumeFile(userId);
+      const result = await sendTestEmail({
+        userId,
+        to: destination,
+        fromName: user.name,
+        replyTo: user.email && isSendableAddress(user.email) ? user.email : undefined,
+        subject: target.subject,
+        body: target.body,
+        attachment: resume
+          ? { fileName: resume.fileName, contentType: resume.contentType, base64: resume.base64 }
+          : null,
+      });
+      if (!result.ok) return NextResponse.json({ error: result.error }, { status: 502 });
+      return NextResponse.json({ test: result });
+    }
+
+    default:
+      return NextResponse.json({ error: `Unknown action "${action}"` }, { status: 400 });
+  }
+}

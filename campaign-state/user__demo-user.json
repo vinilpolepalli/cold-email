@@ -1,0 +1,73 @@
+{
+  "id": "demo-user",
+  "name": "Vinil Polepalli",
+  "email": "vinil.polepalli@gmail.com",
+  "education": [
+    "New York University — Dual degree: B.S. in Computer Science and B.S. in Business, expected May 2029",
+    "Khubani Program for Business, Technology & Entrepreneurship — selective 30 to 50 student cohort"
+  ],
+  "experience": [
+    "Research Intern, Chiosis Lab, Memorial Sloan Kettering Cancer Center (Apr 2025 - Mar 2026): achieved 0.984 ROC AUC classifying active versus inactive inhibitor candidates by developing protein-ligand graph neural network models for Hsp90 and epichaperome complexes",
+    "Research Intern, Chiosis Lab, Memorial Sloan Kettering Cancer Center: screened 4,566 inhibitor candidates by combining AutoDock Vina molecular docking with PLIP interaction fingerprinting to structure binding features for downstream modeling, and built a reproducible virtual-screening workflow integrating docking, interaction fingerprints, graph neural networks, candidate ranking and scientific data visualization",
+    "Machine Learning Research Intern, Carnegie Mellon University Robotics Institute (May 2025 - Sep 2025): achieved 0.88 mean IoU and 0.94 F1 for invasive-species identification by training a PyTorch semantic-segmentation model on 25,000 labeled aerial images",
+    "Machine Learning Research Intern, Carnegie Mellon University Robotics Institute: delivered sub-100 ms image inference and GPS-tagged mapping by integrating the model into an autonomous UAV pipeline across 30 drone flights and 1,000 to 3,000 acres",
+    "Venture Capital Intern, Utpata Ventures (Jun 2026 - Present): built a multi-agent AI system for venture research that sourced 500 startups and collected 10,000 startup data points across 10 deep-tech sectors"
+  ],
+  "projects": [
+    "Hsp90 inhibitor virtual screening at Memorial Sloan Kettering: 4,566 molecules generated, 0.984 GNN ROC AUC, 5x enrichment factor, 0 Lipinski violations in the top 50 candidates; https://hsp90-dashboard.vercel.app/",
+    "Sloan, an AI research-outreach agent: indexed 794 AI and CS faculty across 5 universities with 631 directory-published emails and 0 guessed addresses, combining resume parsing, researcher matching and draft generation",
+    "QuantFirm, an agent-operated systematic trading firm: 1.34 holdout Sharpe at -7.5% max drawdown against -19% for SPY, validating 17 strategies through walk-forward out-of-sample folds and deflated-Sharpe penalties across 486 registered trials",
+    "CashQuest, a gamified financial-literacy platform: 200 registered users and 50 monthly active users across six personal-finance topics"
+  ],
+  "skills": [
+    "python",
+    "pytorch",
+    "tensorflow",
+    "scikit-learn",
+    "numpy",
+    "pandas",
+    "opencv",
+    "semantic segmentation",
+    "computer vision",
+    "graph neural networks",
+    "molecular docking",
+    "virtual screening",
+    "typescript",
+    "c++",
+    "sql",
+    "react",
+    "next.js",
+    "docker"
+  ],
+  "publications": [
+    "Sole author, A Novel cVAE-Augmented Deep Learning Framework for Pan-Cancer RNA-Seq Classification (arXiv, August 2025): reduced 20,531 gene features to 500 across 801 TCGA tumor samples in 5 cancer types, used a conditional variational autoencoder to generate synthetic training samples, and reached about 98% test accuracy; https://arxiv.org/abs/2508.02743",
+    "First author, Quantifying the Impact of Epigallocatechin Gallate and Piperine on D. tigrina Regeneration (IEEE MIT Undergraduate Research Technology Conference, 2025): used planaria and their neoblast stem cells as a proliferation model, showed a synergistic growth-inhibiting effect of EGCG and piperine across concentrations at p < 0.05; https://ieeexplore.ieee.org/document/11533121"
+  ],
+  "researchInterests": [
+    "computational biology",
+    "graph neural networks",
+    "machine learning for drug discovery",
+    "cancer genomics",
+    "computer vision",
+    "semantic segmentation",
+    "generative models for biological data",
+    "cancer biology"
+  ],
+  "awards": [
+    "Invited to Y Combinator Startup School",
+    "VEX Robotics World Championship semifinalist",
+    "AIME qualifier 3x",
+    "Autodesk Design & Make Ambassador",
+    "Columbia Science Honors Program",
+    "National Junior Science & Humanities Symposium, 3rd Place",
+    "M3 Mathematical Modeling Challenge Semifinalist"
+  ],
+  "aiSummary": "Undergraduate at NYU pursuing a dual degree in Computer Science at the Courant Institute and Business at Stern. Works at the intersection of machine learning and biology: protein-ligand graph neural networks for Hsp90 and epichaperome inhibitor discovery at Memorial Sloan Kettering's Chiosis Lab, and a sole-authored paper using conditional variational autoencoders to augment pan-cancer RNA-seq classification. Also trained semantic segmentation models for UAV-based environmental monitoring at Carnegie Mellon's Robotics Institute.",
+  "rawResumeText": "Seeded from Polepalli_Resume_2.pdf. Re-upload the PDF at /onboarding to have it re-parsed.",
+  "updatedAt": "2026-08-17T17:08:59.747Z",
+  "standing": "undergraduate",
+  "school": "New York University",
+  "gradYear": "2029",
+  "degree": "B.S. Computer Science and B.S. Business",
+  "major": "Computer Science and Business"
+}

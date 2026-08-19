@@ -1,0 +1,178 @@
+{
+  "researcherId": "res_christina-curtis_stanford",
+  "authorName": "Christina Curtis",
+  "authorUrl": "https://openalex.org/A5036849769",
+  "worksCount": 307,
+  "citedByCount": 33119,
+  "topics": [
+    "Cancer Genomics and Diagnostics",
+    "Genetic factors in colorectal cancer",
+    "Pancreatic and Hepatic Oncology Research",
+    "CRISPR and Genetic Engineering",
+    "Bioinformatics and Genomic Networks"
+  ],
+  "publications": [
+    {
+      "title": "Comprehensive molecular characterization of gastric adenocarcinoma",
+      "year": 2014,
+      "venue": "Nature",
+      "authors": [
+        "Adam J. Bass",
+        "Vésteinn Thórsson",
+        "Ilya Shmulevich",
+        "Sheila M. Reynolds",
+        "Michael Miller",
+        "Brady Bernard",
+        "Vésteinn Thórsson",
+        "Lisa Iype"
+      ],
+      "citations": 6586,
+      "doi": "10.1038/nature13480",
+      "url": "https://doi.org/10.1038/nature13480",
+      "pdfUrl": "https://www.nature.com/articles/nature13480.pdf",
+      "abstract": "Gastric cancer is a leading cause of cancer deaths, but analysis of its molecular and clinical characteristics has been complicated by histological and aetiological heterogeneity. Here we describe a comprehensive molecular evaluation of 295 primary gastric adenocarcinomas as part of The Cancer Genome Atlas (TCGA) project. We propose a molecular classification dividing gastric cancer into four subtypes: tumours positive for Epstein–Barr virus, which display recurrent PIK3CA mutations, extreme DNA hypermethylation, and amplification of JAK2, CD274 (also known as PD-L1) and PDCD1LG2 (also known as PD-L2); microsatellite unstable tumours, which show elevated mutation rates, including mutations of genes encoding targetable oncogenic signalling proteins; genomically stable tumours, which are enriched for the diffuse histological variant and mutations of RHOA or fusions involving RHO-family ..."
+    },
+    {
+      "title": "The genomic and transcriptomic architecture of 2,000 breast tumours reveals novel subgroups",
+      "year": 2012,
+      "venue": "Nature",
+      "authors": [
+        "METABRIC Group",
+        "Christina Curtis",
+        "Sohrab P. Shah",
+        "Suet‐Feung Chin",
+        "Gulisa Turashvili",
+        "Oscar M. Rueda",
+        "Mark Dunning",
+        "Doug Speed"
+      ],
+      "citations": 6451,
+      "doi": "10.1038/nature10983",
+      "url": "https://www.repository.cam.ac.uk/handle/1810/302132",
+      "pdfUrl": "https://www.repository.cam.ac.uk/handle/1810/302132",
+      "abstract": "The elucidation of breast cancer subgroups and their molecular drivers requires integrated views of the genome and transcriptome from representative numbers of patients. We present an integrated analysis of copy number and gene expression in a discovery and validation set of 997 and 995 primary breast tumours, respectively, with long-term clinical follow-up. Inherited variants (copy number variants and single nucleotide polymorphisms) and acquired somatic copy number aberrations (CNAs) were associated with expression in ∼40% of genes, with the landscape dominated by cis- and trans-acting CNAs. By delineating expression outlier genes driven in cis by CNAs, we identified putative cancer genes, including deletions in PPP2R2A, MTAP and MAP2K4. Unsupervised analysis of paired DNA–RNA profiles revealed novel subgroups with distinct clinical outcomes, which reproduced in the validation cohor..."
+    },
+    {
+      "title": "The clonal and mutational evolution spectrum of primary triple-negative breast cancers",
+      "year": 2012,
+      "venue": "Nature",
+      "authors": [
+        "Sohrab P. Shah",
+        "Andrew Roth",
+        "Rodrigo Goya",
+        "Arusha Oloumi",
+        "Gavin Ha",
+        "Yongjun Zhao",
+        "Gulisa Turashvili",
+        "Jiarui Ding"
+      ],
+      "citations": 2037,
+      "doi": "10.1038/nature10933",
+      "url": "https://doi.org/10.1038/nature10933",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Intratumor heterogeneity in human glioblastoma reflects cancer evolutionary dynamics",
+      "year": 2013,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "authors": [
+        "Andrea Sottoriva",
+        "Inmaculada Spiteri",
+        "Sara Piccirillo",
+        "Anestis Touloumis",
+        "V. Peter Collins",
+        "John C. Marioni",
+        "Christina Curtis",
+        "Colin Watts"
+      ],
+      "citations": 1772,
+      "doi": "10.1073/pnas.1219747110",
+      "url": "https://doi.org/10.1073/pnas.1219747110",
+      "pdfUrl": "https://www.pnas.org/content/pnas/110/10/4009.full.pdf",
+      "abstract": "Glioblastoma (GB) is the most common and aggressive primary brain malignancy, with poor prognosis and a lack of effective therapeutic options. Accumulating evidence suggests that intratumor heterogeneity likely is the key to understanding treatment failure. However, the extent of intratumor heterogeneity as a result of tumor evolution is still poorly understood. To address this, we developed a unique surgical multisampling scheme to collect spatially distinct tumor fragments from 11 GB patients. We present an integrated genomic analysis that uncovers extensive intratumor heterogeneity, with most patients displaying different GB subtypes within the same tumor. Moreover, we reconstructed the phylogeny of the fragments for each patient, identifying copy number alterations in EGFR and CDKN2A/B/p14ARF as early events, and aberrations in PDGFRA and PTEN as later events during cancer progres..."
+    },
+    {
+      "title": "Clonal replacement of tumor-specific T cells following PD-1 blockade",
+      "year": 2019,
+      "venue": "Nature Medicine",
+      "authors": [
+        "Kathryn E. Yost",
+        "Ansuman T. Satpathy",
+        "Daniel K. Wells",
+        "Yanyan Qi",
+        "Chunlin Wang",
+        "Robin Kageyama",
+        "Katherine McNamara",
+        "Jeffrey M. Granja"
+      ],
+      "citations": 1570,
+      "doi": "10.1038/s41591-019-0522-3",
+      "url": "https://doi.org/10.1038/s41591-019-0522-3",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Sensitive and specific multi-cancer detection and localization using methylation signatures in cell-free DNA",
+      "year": 2020,
+      "venue": "Annals of Oncology",
+      "authors": [
+        "M.C. Liu",
+        "Geoffrey R. Oxnard",
+        "Eric A. Klein",
+        "Charles Swanton",
+        "Michael V. Seiden",
+        "M.V. Seiden",
+        "Minetta C. Liu",
+        "Geoffrey R. Oxnard"
+      ],
+      "citations": 1539,
+      "doi": "10.1016/j.annonc.2020.02.011",
+      "url": "https://doi.org/10.1016/j.annonc.2020.02.011",
+      "pdfUrl": "https://www.annalsofoncology.org/article/S0923-7534(20)36058-0/pdf",
+      "abstract": "BACKGROUND: Early cancer detection could identify tumors at a time when outcomes are superior and treatment is less morbid. This prospective case-control sub-study (from NCT02889978 and NCT03085888) assessed the performance of targeted methylation analysis of circulating cell-free DNA (cfDNA) to detect and localize multiple cancer types across all stages at high specificity. PARTICIPANTS AND METHODS: The 6689 participants [2482 cancer (>50 cancer types), 4207 non-cancer] were divided into training and validation sets. Plasma cfDNA underwent bisulfite sequencing targeting a panel of >100 000 informative methylation regions. A classifier was developed and validated for cancer detection and tissue of origin (TOO) localization. RESULTS: Performance was consistent in training and validation sets. In validation, specificity was 99.3% [95% confidence interval (CI): 98.3% to 99.8%; 0.7% false..."
+    },
+    {
+      "title": "The chromatin accessibility landscape of primary human cancers",
+      "year": 2018,
+      "venue": "Science",
+      "authors": [
+        "M. Ryan Corces",
+        "Jeffrey M. Granja",
+        "Shadi Shams",
+        "Bryan H. Louie",
+        "José A. Seoane",
+        "Wanding Zhou",
+        "Tiago C. Silva",
+        "Clarice S. Groeneveld"
+      ],
+      "citations": 1355,
+      "doi": "10.1126/science.aav1898",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/6408149",
+      "pdfUrl": null,
+      "abstract": "We present the genome-wide chromatin accessibility profiles of 410 tumor samples spanning 23 cancer types from The Cancer Genome Atlas (TCGA). We identify 562,709 transposase-accessible DNA elements that substantially extend the compendium of known cis-regulatory elements. Integration of ATAC-seq (the assay for transposase-accessible chromatin using sequencing) with TCGA multi-omic data identifies a large number of putative distal enhancers that distinguish molecular subtypes of cancers, uncovers specific driving transcription factors via protein-DNA footprints, and nominates long-range gene-regulatory interactions in cancer. These data reveal genetic risk loci of cancer predisposition as active DNA regulatory elements in cancer, identify gene-regulatory interactions underlying cancer immune evasion, and pinpoint noncoding mutations that drive enhancer activation and may affect patien..."
+    },
+    {
+      "title": "A Big Bang model of human colorectal tumor growth",
+      "year": 2015,
+      "venue": "Nature Genetics",
+      "authors": [
+        "Andrea Sottoriva",
+        "Haeyoun Kang",
+        "Zhicheng Ma",
+        "Trevor A. Graham",
+        "Matthew P. Salomon",
+        "Junsong Zhao",
+        "Paul Marjoram",
+        "Kimberly D. Siegmund"
+      ],
+      "citations": 1069,
+      "doi": "10.1038/ng.3214",
+      "url": "https://doi.org/10.1038/ng.3214",
+      "pdfUrl": null,
+      "abstract": "What happens in early, still undetectable human malignancies is unknown because direct observations are impractical. Here we present and validate a 'Big Bang' model, whereby tumors grow predominantly as a single expansion producing numerous intermixed subclones that are not subject to stringent selection and where both public (clonal) and most detectable private (subclonal) alterations arise early during growth. Genomic profiling of 349 individual glands from 15 colorectal tumors showed an absence of selective sweeps, uniformly high intratumoral heterogeneity (ITH) and subclone mixing in distant regions, as postulated by our model. We also verified the prediction that most detectable ITH originates from early private alterations and not from later clonal expansions, thus exposing the profile of the primordial tumor. Moreover, some tumors appear 'born to be bad', with subclone mixing i..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:20:53.172Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10w16iaqg",
+  "userId": "demo-user",
+  "researcherId": "res_anderson-ye-zhang_penn",
+  "researcherName": "Anderson Ye Zhang",
+  "school": "Penn",
+  "trackId": "cs-other",
+  "status": "queued",
+  "rank": 15.6,
+  "reasons": [
+    "Overlaps on network analysis, variational inference",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ayz@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.992Z",
+  "updatedAt": "2026-08-18T14:28:42.992Z"
+}

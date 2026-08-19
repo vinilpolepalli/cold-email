@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10uaii22t",
+  "userId": "demo-user",
+  "researcherId": "res_hamsa-bastani_penn",
+  "researcherName": "Hamsa Bastani",
+  "school": "Penn",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 22.8,
+  "reasons": [
+    "Overlaps on machine learning",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "hamsab@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.990Z",
+  "updatedAt": "2026-08-18T14:28:42.990Z"
+}

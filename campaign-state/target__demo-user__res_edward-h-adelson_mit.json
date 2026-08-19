@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x0qkaa8x",
+  "userId": "demo-user",
+  "researcherId": "res_edward-h-adelson_mit",
+  "researcherName": "Edward H. Adelson",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 70.2,
+  "reasons": [
+    "Overlaps on machine vision, human vision, computational photography",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "adelson@csail.mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.852Z",
+  "updatedAt": "2026-08-18T14:28:42.852Z"
+}

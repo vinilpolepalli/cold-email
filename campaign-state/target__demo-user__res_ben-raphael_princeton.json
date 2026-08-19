@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0yxlc0ekd",
+  "userId": "demo-user",
+  "researcherId": "res_ben-raphael_princeton",
+  "researcherName": "Ben Raphael",
+  "school": "Princeton",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 29.7,
+  "reasons": [
+    "Overlaps on computational biology, cancer genomics, machine learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "braphael@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.921Z",
+  "updatedAt": "2026-08-18T14:28:42.921Z"
+}

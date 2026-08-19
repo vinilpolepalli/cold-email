@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxz5cltfhaip6",
+  "userId": "demo-user",
+  "researcherId": "res_john-guttag_mit",
+  "researcherName": "John Guttag",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 61.6,
+  "reasons": [
+    "Overlaps on machine learning for healthcare, computer vision",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "guttag@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:18:55.505Z",
+  "updatedAt": "2026-08-18T01:18:55.505Z"
+}

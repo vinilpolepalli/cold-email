@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10vl0oh8i",
+  "userId": "demo-user",
+  "researcherId": "res_jiaoyang-huang_penn",
+  "researcherName": "Jiaoyang Huang",
+  "school": "Penn",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 20.7,
+  "reasons": [
+    "Overlaps on deep neural network optimization",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "huangjy@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.991Z",
+  "updatedAt": "2026-08-18T14:28:42.991Z"
+}

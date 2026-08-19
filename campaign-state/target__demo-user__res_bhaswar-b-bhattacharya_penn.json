@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10u52ovwv",
+  "userId": "demo-user",
+  "researcherId": "res_bhaswar-b-bhattacharya_penn",
+  "researcherName": "Bhaswar B. Bhattacharya",
+  "school": "Penn",
+  "trackId": "cs-other",
+  "status": "queued",
+  "rank": 22.5,
+  "reasons": [
+    "Overlaps on statistical learning, network analysis, graphical models",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "bhaswar@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.990Z",
+  "updatedAt": "2026-08-18T14:28:42.990Z"
+}

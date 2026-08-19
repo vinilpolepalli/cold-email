@@ -1,0 +1,21 @@
+{
+  "routine": "write-drafts",
+  "id": "run_mswjykrmrf27ef",
+  "userId": "demo-user",
+  "startedAt": "2026-08-17T01:25:59.074Z",
+  "finishedAt": "2026-08-17T01:25:59.113Z",
+  "ok": true,
+  "dryRun": false,
+  "summary": "Drafted 3; 0 on armed tracks, 3 waiting for review.",
+  "counts": {
+    "drafted": 3,
+    "autoApproved": 0,
+    "awaitingReview": 3
+  },
+  "details": [
+    "Jure Leskovec (Stanford, cs-core) — \"Interested in your graph neural networks work\" for Mon, Aug 17, 9:00 AM PDT [waiting for your review]",
+    "Anshul Kundaje (Stanford, cs-bio) — \"Interested in your machine learning work\" for Mon, Aug 17, 9:25 AM PDT [waiting for your review]",
+    "Chelsea Finn (Stanford, cs-robotics) — \"Interested in your machine learning work\" for Mon, Aug 17, 9:50 AM PDT [waiting for your review]"
+  ],
+  "error": null
+}

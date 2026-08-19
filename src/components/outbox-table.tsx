@@ -4,6 +4,10 @@ import { useState } from "react";
 import { OutboxEntry } from "@/lib/types";
 
 const METHOD_LABEL: Record<OutboxEntry["method"], string> = {
+  // The school account is named separately from the sign-in Gmail: which
+  // address a cold email left from is the first thing worth checking when a
+  // send looks wrong.
+  "school-gmail": "School",
   "gmail-oauth": "Gmail",
   smtp: "SMTP",
   resend: "Resend",

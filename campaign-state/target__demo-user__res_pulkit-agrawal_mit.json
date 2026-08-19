@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x1gzwuxw",
+  "userId": "demo-user",
+  "researcherId": "res_pulkit-agrawal_mit",
+  "researcherName": "Pulkit Agrawal",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 69.4,
+  "reasons": [
+    "Overlaps on machine learning, vision and graphics, robotics",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "pulkitag@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.853Z",
+  "updatedAt": "2026-08-18T14:28:42.853Z"
+}

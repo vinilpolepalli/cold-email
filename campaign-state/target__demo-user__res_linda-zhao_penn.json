@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10rhewbhw",
+  "userId": "demo-user",
+  "researcherId": "res_linda-zhao_penn",
+  "researcherName": "Linda Zhao",
+  "school": "Penn",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 29.7,
+  "reasons": [
+    "Overlaps on statistical machine learning, reinforcement learning, network analysis",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "lzhao@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.987Z",
+  "updatedAt": "2026-08-18T14:28:42.987Z"
+}

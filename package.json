@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "eslint",
     "mock:university": "node mock-university/server.mjs",
-    "scrape": "node scripts/scrape.mjs"
+    "scrape": "node scripts/scrape.mjs",
+    "routine": "node scripts/routine.mjs",
+    "campaign": "node scripts/campaign-cycle.mjs",
+    "connect-school": "node scripts/connect-school-account.mjs"
   },
   "dependencies": {
     "@clerk/nextjs": "^7.7.4",

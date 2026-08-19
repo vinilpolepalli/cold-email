@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x2lrm6ti",
+  "userId": "demo-user",
+  "researcherId": "res_matthew-a-wilson_mit",
+  "researcherName": "Matthew A. Wilson",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 67.1,
+  "reasons": [
+    "Overlaps on computational neuroscience, large-scale neural recording, neural decoding",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "mwilson@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.854Z",
+  "updatedAt": "2026-08-18T14:28:42.854Z"
+}

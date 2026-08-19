@@ -1,0 +1,168 @@
+{
+  "researcherId": "res_tatsunori-hashimoto_stanford",
+  "authorName": "Tatsunori Hashimoto",
+  "authorUrl": "https://openalex.org/A5015518638",
+  "worksCount": 239,
+  "citedByCount": 11821,
+  "topics": [
+    "Topic Modeling",
+    "Natural Language Processing Techniques",
+    "Physics of Superconductivity and Magnetism",
+    "Domain Adaptation and Few-Shot Learning",
+    "Machine Learning and Data Classification"
+  ],
+  "publications": [
+    {
+      "title": "Expanded encyclopaedias of DNA elements in the human and mouse genomes",
+      "year": 2020,
+      "venue": "Nature",
+      "authors": [
+        "Federico Abascal",
+        "Reyes Acosta",
+        "Nicholas J. Addleman",
+        "Jessika Adrian",
+        "Veena Afzal",
+        "Rizi Ai",
+        "Bronwen Aken",
+        "Jennifer A. Akiyama"
+      ],
+      "citations": 2636,
+      "doi": "10.1038/s41586-020-2493-4",
+      "url": "https://doi.org/10.1038/s41586-020-2493-4",
+      "pdfUrl": "https://www.nature.com/articles/s41586-020-2493-4.pdf",
+      "abstract": "Abstract The human and mouse genomes contain instructions that specify RNAs and proteins and govern the timing, magnitude, and cellular context of their production. To better delineate these elements, phase III of the Encyclopedia of DNA Elements (ENCODE) Project has expanded analysis of the cell and tissue repertoires of RNA transcription, chromatin structure and modification, DNA methylation, chromatin looping, and occupancy by transcription factors and RNA-binding proteins. Here we summarize these efforts, which have produced 5,992 new experimental datasets, including systematic determinations across mouse fetal development. All data are available through the ENCODE data portal ( https://www.encodeproject.org ), including phase II ENCODE 1 and Roadmap Epigenomics 2 data. We have developed a registry of 926,535 human and 339,815 mouse candidate cis -regulatory elements, covering 7.9..."
+    },
+    {
+      "title": "On the Opportunities and Risks of Foundation Models",
+      "year": 2021,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Rishi Bommasani",
+        "Drew A. Hudson",
+        "Ehsan Adeli",
+        "Russ B. Altman",
+        "Simran Arora",
+        "Sydney von Arx",
+        "Michael S. Bernstein",
+        "Jeannette Bohg"
+      ],
+      "citations": 2247,
+      "doi": "10.48550/arxiv.2108.07258",
+      "url": "http://arxiv.org/abs/2108.07258",
+      "pdfUrl": "https://arxiv.org/pdf/2108.07258",
+      "abstract": "AI is undergoing a paradigm shift with the rise of models (e.g., BERT, DALL-E, GPT-3) that are trained on broad data at scale and are adaptable to a wide range of downstream tasks. We call these models foundation models to underscore their critically central yet incomplete character. This report provides a thorough account of the opportunities and risks of foundation models, ranging from their capabilities (e.g., language, vision, robotics, reasoning, human interaction) and technical principles(e.g., model architectures, training procedures, data, systems, security, evaluation, theory) to their applications (e.g., law, healthcare, education) and societal impact (e.g., inequity, misuse, economic and environmental impact, legal and ethical considerations). Though foundation models are based on standard deep learning and transfer learning, their scale results in new emergent capabilities..."
+    },
+    {
+      "title": "Emergent Abilities of Large Language Models",
+      "year": 2022,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Wei, Jason",
+        "Yi Tay",
+        "Rishi Bommasani",
+        "Colin Raffel",
+        "Barret Zoph",
+        "Sebastian Borgeaud",
+        "Dani Yogatama",
+        "Maarten Bosma"
+      ],
+      "citations": 1043,
+      "doi": "10.48550/arxiv.2206.07682",
+      "url": "http://arxiv.org/abs/2206.07682",
+      "pdfUrl": "https://arxiv.org/pdf/2206.07682",
+      "abstract": "Scaling up language models has been shown to predictably improve performance and sample efficiency on a wide range of downstream tasks. This paper instead discusses an unpredictable phenomenon that we refer to as emergent abilities of large language models. We consider an ability to be emergent if it is not present in smaller models but is present in larger models. Thus, emergent abilities cannot be predicted simply by extrapolating the performance of smaller models. The existence of such emergence implies that additional scaling could further expand the range of capabilities of language models."
+    },
+    {
+      "title": "Discovery of directional and nondirectional pioneer transcription factors by modeling DNase profile magnitude and shape",
+      "year": 2014,
+      "venue": "Nature Biotechnology",
+      "authors": [
+        "Richard I. Sherwood",
+        "Tatsunori Hashimoto",
+        "Charles W O'Donnell",
+        "Sophia Lewis",
+        "Amira Barkal",
+        "John Peter van Hoff",
+        "Vivek Karun",
+        "Tommi Jaakkola"
+      ],
+      "citations": 480,
+      "doi": "10.1038/nbt.2798",
+      "url": "https://doi.org/10.1038/nbt.2798",
+      "pdfUrl": "https://www.nature.com/articles/nbt.2798.pdf",
+      "abstract": null
+    },
+    {
+      "title": "Distributionally Robust Neural Networks for Group Shifts: On the Importance of Regularization for Worst-Case Generalization",
+      "year": 2019,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Shiori Sagawa",
+        "Pang Wei Koh",
+        "Tatsunori Hashimoto",
+        "Percy Liang"
+      ],
+      "citations": 367,
+      "doi": "10.48550/arxiv.1911.08731",
+      "url": "http://arxiv.org/abs/1911.08731",
+      "pdfUrl": "https://arxiv.org/pdf/1911.08731",
+      "abstract": "Overparameterized neural networks can be highly accurate on average on an i.i.d. test set yet consistently fail on atypical groups of the data (e.g., by learning spurious correlations that hold on average but not in such groups). Distributionally robust optimization (DRO) allows us to learn models that instead minimize the worst-case training loss over a set of pre-defined groups. However, we find that naively applying group DRO to overparameterized neural networks fails: these models can perfectly fit the training data, and any model with vanishing average training loss also already has vanishing worst-case training loss. Instead, the poor worst-case performance arises from poor generalization on some groups. By coupling group DRO models with increased regularization---a stronger-than-typical L2 penalty or early stopping---we achieve substantially higher worst-group accuracies, with ..."
+    },
+    {
+      "title": "Benchmarking Large Language Models for News Summarization",
+      "year": 2024,
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "authors": [
+        "Tianyi Zhang",
+        "Faisal Ladhak",
+        "Esin Durmus",
+        "Percy Liang",
+        "Kathleen McKeown",
+        "Tatsunori Hashimoto"
+      ],
+      "citations": 344,
+      "doi": "10.1162/tacl_a_00632",
+      "url": "https://doi.org/10.1162/tacl_a_00632",
+      "pdfUrl": "https://direct.mit.edu/tacl/article-pdf/doi/10.1162/tacl_a_00632/2325685/tacl_a_00632.pdf",
+      "abstract": "Abstract Large language models (LLMs) have shown promise for automatic summarization but the reasons behind their successes are poorly understood. By conducting a human evaluation on ten LLMs across different pretraining methods, prompts, and model scales, we make two important observations. First, we find instruction tuning, not model size, is the key to the LLM’s zero-shot summarization capability. Second, existing studies have been limited by low-quality references, leading to underestimates of human performance and lower few-shot and finetuning performance. To better evaluate LLMs, we perform human evaluation over high-quality summaries we collect from freelance writers. Despite major stylistic differences such as the amount of paraphrasing, we find that LLM summaries are judged to be on par with human written summaries."
+    },
+    {
+      "title": "Generating Sentences by Editing Prototypes",
+      "year": 2018,
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "authors": [
+        "Kelvin Guu",
+        "Tatsunori Hashimoto",
+        "Yonatan Oren",
+        "Percy Liang"
+      ],
+      "citations": 291,
+      "doi": "10.1162/tacl_a_00030",
+      "url": "https://doi.org/10.1162/tacl_a_00030",
+      "pdfUrl": null,
+      "abstract": "We propose a new generative language model for sentences that first samples a prototype sentence from the training corpus and then edits it into a new sentence. Compared to traditional language models that generate from scratch either left-to-right or by first sampling a latent sentence vector, our prototype-then-edit model improves perplexity on language modeling and generates higher quality outputs according to human evaluation. Furthermore, the model gives rise to a latent edit vector that captures interpretable semantics such as sentence similarity and sentence-level analogies."
+    },
+    {
+      "title": "Easily Accessible Text-to-Image Generation Amplifies Demographic Stereotypes at Large Scale",
+      "year": 2023,
+      "venue": "BOA (University of Milano-Bicocca)",
+      "authors": [
+        "Federico Bianchi",
+        "Pratyusha Kalluri",
+        "Esin Durmus",
+        "Faisal Ladhak",
+        "Myra Cheng",
+        "Debora Nozza",
+        "Tatsunori Hashimoto",
+        "Dan Jurafsky"
+      ],
+      "citations": 283,
+      "doi": "10.1145/3593013.3594095",
+      "url": "https://doi.org/10.1145/3593013.3594095",
+      "pdfUrl": null,
+      "abstract": "Machine learning models that convert user-written text descriptions into images are now widely available online and used by millions of users to generate millions of images a day. We investigate the potential for these models to amplify dangerous and complex stereotypes. We find a broad range of ordinary prompts produce stereotypes, including prompts simply mentioning traits, descriptors, occupations, or objects. For example, we find cases of prompting for basic traits or social roles resulting in images reinforcing whiteness as ideal, prompting for occupations resulting in amplification of racial and gender disparities, and prompting for objects resulting in reification of American norms. Stereotypes are present regardless of whether prompts explicitly mention identity and demographic language or avoid such language. Moreover, stereotypes persist despite mitigation strategies; neithe..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:08.294Z"
+}

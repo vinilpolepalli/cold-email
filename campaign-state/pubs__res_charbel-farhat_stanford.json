@@ -1,0 +1,139 @@
+{
+  "researcherId": "res_charbel-farhat_stanford",
+  "authorName": "Charbel Farhat",
+  "authorUrl": "https://openalex.org/A5064139543",
+  "worksCount": 537,
+  "citedByCount": 27586,
+  "topics": [
+    "Computational Fluid Dynamics and Aerodynamics",
+    "Advanced Numerical Methods in Computational Mathematics",
+    "Model Reduction and Neural Networks",
+    "Probabilistic and Robust Engineering Design",
+    "Electromagnetic Simulation and Numerical Methods"
+  ],
+  "publications": [
+    {
+      "title": "A method of finite element tearing and interconnecting and its parallel solution algorithm",
+      "year": 1991,
+      "venue": "International Journal for Numerical Methods in Engineering",
+      "authors": [
+        "Charbel Farhat",
+        "François‐Xavier Roux"
+      ],
+      "citations": 1283,
+      "doi": "10.1002/nme.1620320604",
+      "url": "https://doi.org/10.1002/nme.1620320604",
+      "pdfUrl": null,
+      "abstract": "Abstract A novel domain decomposition approach for the parallel finite element solution of equilibrium equations is presented. The spatial domain is partitioned into a set of totally disconnected subdomains, each assigned to an individual processor. Lagrange multipliers are introduced to enforce compatibility at the interface nodes. In the static case, each floating subdomain induces a local singularity that is resolved in two phases. First, the rigid body modes are eliminated in parallel from each local problem and a direct scheme is applied concurrently to all subdomains in order to recover each partial local solution. Next, the contributions of these modes are related to the Lagrange multipliers through an orthogonality condition. A parallel conjugate projected gradient algorithm is developed for the solution of the coupled system of local rigid modes components and Lagrange multip..."
+    },
+    {
+      "title": "Partitioned analysis of coupled mechanical systems",
+      "year": 2001,
+      "venue": "Computer Methods in Applied Mechanics and Engineering",
+      "authors": [
+        "Carlos A. Felippa",
+        "K. C. Park",
+        "Charbel Farhat"
+      ],
+      "citations": 796,
+      "doi": "10.1016/s0045-7825(00)00391-1",
+      "url": "https://doi.org/10.1016/s0045-7825(00)00391-1",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Interpolation Method for Adapting Reduced-Order Models and Application to Aeroelasticity",
+      "year": 2008,
+      "venue": "AIAA Journal",
+      "authors": [
+        "David Amsallem",
+        "Charbel Farhat"
+      ],
+      "citations": 689,
+      "doi": "10.2514/1.35374",
+      "url": "https://doi.org/10.2514/1.35374",
+      "pdfUrl": null,
+      "abstract": "Reduced-order models are usually thought of as computationally inexpensive mathematical representations that offer the potential for near real-time analysis. Although most reduced-order models can operate in near real-time, their construction can be computationally expensive, as it requires accumulating a large number of system responses to input excitations. Furthermore, reduced-order models usually lack robustness with respect to parameter changes and therefore must often be rebuilt for each parameter variation. Together, these two issues underline the need for a fast and robust method for adapting precomputed reduced-order models to new sets of physical or modeling parameters. To this effect, this paper presents an interpolation method based on the Grassmann manifold and its tangent space at a point that is applicable to structural, aerodynamic, aeroelastic, and many other reduced-..."
+    },
+    {
+      "title": "Efficient non‐linear model reduction via a least‐squares Petrov–Galerkin projection and compressive tensor approximations",
+      "year": 2010,
+      "venue": "International Journal for Numerical Methods in Engineering",
+      "authors": [
+        "Kevin Carlberg",
+        "Charbel Bou‐Mosleh",
+        "Charbel Farhat"
+      ],
+      "citations": 688,
+      "doi": "10.1002/nme.3050",
+      "url": "https://doi.org/10.1002/nme.3050",
+      "pdfUrl": null,
+      "abstract": "Abstract A Petrov–Galerkin projection method is proposed for reducing the dimension of a discrete non‐linear static or dynamic computational model in view of enabling its processing in real time. The right reduced‐order basis is chosen to be invariant and is constructed using the Proper Orthogonal Decomposition method. The left reduced‐order basis is selected to minimize the two‐norm of the residual arising at each Newton iteration. Thus, this basis is iteration‐dependent, enables capturing of non‐linearities, and leads to the globally convergent Gauss–Newton method. To avoid the significant computational cost of assembling the reduced‐order operators, the residual and action of the Jacobian on the right reduced‐order basis are each approximated by the product of an invariant, large‐scale matrix, and an iteration‐dependent, smaller one. The invariant matrix is computed using a data co..."
+    },
+    {
+      "title": "The GNAT method for nonlinear model reduction: Effective implementation and application to computational fluid dynamics and turbulent flows",
+      "year": 2013,
+      "venue": "Journal of Computational Physics",
+      "authors": [
+        "Kevin Carlberg",
+        "Charbel Farhat",
+        "Julien Cortial",
+        "David Amsallem"
+      ],
+      "citations": 664,
+      "doi": "10.1016/j.jcp.2013.02.028",
+      "url": "https://arxiv.org/abs/1207.1349",
+      "pdfUrl": "https://arxiv.org/pdf/1207.1349",
+      "abstract": "The Gauss-Newton with approximated tensors (GNAT) method is a nonlinear model-reduction method that operates on fully discretized computational models. It achieves dimension reduction by a Petrov-Galerkin projection associated with residual minimization; it delivers computational efficiency by a hyper-reduction procedure based on the 'gappy POD' technique. Originally presented in Ref. [1], where it was applied to implicit nonlinear structural-dynamics models, this method is further developed here and applied to the solution of a benchmark turbulent viscous flow problem. To begin, this paper develops global state-space error bounds that justify the method's design and highlight its advantages in terms of minimizing components of these error bounds. Next, the paper introduces a 'sample mesh' concept that enables a distributed, computationally efficient implementation of the GNAT method ..."
+    },
+    {
+      "title": "Load and motion transfer algorithms for fluid/structure interaction problems with non-matching discrete interfaces: Momentum and energy conservation, optimal discretization and application to aeroelasticity",
+      "year": 1998,
+      "venue": "Computer Methods in Applied Mechanics and Engineering",
+      "authors": [
+        "Charbel Farhat",
+        "Michel Lesoinne",
+        "Patrick Le Tallec"
+      ],
+      "citations": 612,
+      "doi": "10.1016/s0045-7825(97)00216-8",
+      "url": "https://doi.org/10.1016/s0045-7825(97)00216-8",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "FETI‐DP: a dual–primal unified FETI method—part I: A faster alternative to the two‐level FETI method",
+      "year": 2001,
+      "venue": "International Journal for Numerical Methods in Engineering",
+      "authors": [
+        "Charbel Farhat",
+        "Michel Lesoinne",
+        "P. Letallec",
+        "Kendall Pierson",
+        "Daniel J. Rixen"
+      ],
+      "citations": 594,
+      "doi": "10.1002/nme.76",
+      "url": "https://doi.org/10.1002/nme.76",
+      "pdfUrl": null,
+      "abstract": "Abstract The FETI method and its two‐level extension (FETI‐2) are two numerically scalable domain decomposition methods with Lagrange multipliers for the iterative solution of second‐order solid mechanics and fourth‐order beam, plate and shell structural problems, respectively.The FETI‐2 method distinguishes itself from the basic or one‐level FETI method by a second set of Lagrange multipliers that are introduced at the subdomain cross‐points to enforce at each iteration the exact continuity of a subset of the displacement field at these specific locations. In this paper, we present a dual–primal formulation of the FETI‐2 concept that eliminates the need for that second set of Lagrange multipliers, and unifies all previously developed one‐level and two‐level FETI algorithms into a single dual–primal FETI‐DP method. We show that this new FETI‐DP method is numerically scalable for both ..."
+    },
+    {
+      "title": "Nonlinear model order reduction based on local reduced‐order bases",
+      "year": 2012,
+      "venue": "International Journal for Numerical Methods in Engineering",
+      "authors": [
+        "David Amsallem",
+        "Matthew J. Zahr",
+        "Charbel Farhat"
+      ],
+      "citations": 486,
+      "doi": "10.1002/nme.4371",
+      "url": "https://doi.org/10.1002/nme.4371",
+      "pdfUrl": null,
+      "abstract": "SUMMARY A new approach for the dimensional reduction via projection of nonlinear computational models based on the concept of local reduced‐order bases is presented. It is particularly suited for problems characterized by different physical regimes, parameter variations, or moving features such as discontinuities and fronts. Instead of approximating the solution of interest in a fixed lower‐dimensional subspace of global basis vectors, the proposed model order reduction method approximates this solution in a lower‐dimensional subspace generated by most appropriate local basis vectors. To this effect, the solution space is partitioned into subregions, and a local reduced‐order basis is constructed and assigned to each subregion offline. During the incremental solution online of the reduced problem, a local basis is chosen according to the subregion of the solution space where the curre..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:00.624Z"
+}

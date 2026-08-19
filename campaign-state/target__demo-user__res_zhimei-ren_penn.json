@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10wbfmpbj",
+  "userId": "demo-user",
+  "researcherId": "res_zhimei-ren_penn",
+  "researcherName": "Zhimei Ren",
+  "school": "Penn",
+  "trackId": "cs-other",
+  "status": "queued",
+  "rank": 15,
+  "reasons": [
+    "Overlaps on distribution-free inference, data-driven decision making, causal inference",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "zren@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.992Z",
+  "updatedAt": "2026-08-18T14:28:42.992Z"
+}

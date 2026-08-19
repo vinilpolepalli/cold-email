@@ -1,0 +1,156 @@
+{
+  "researcherId": "res_tengyu-ma_stanford",
+  "authorName": "Tengyu Ma",
+  "authorUrl": "https://openalex.org/A5101821970",
+  "worksCount": 173,
+  "citedByCount": 9428,
+  "topics": [
+    "Machine Learning and Algorithms",
+    "Domain Adaptation and Few-Shot Learning",
+    "Stochastic Gradient Optimization Techniques",
+    "Topic Modeling",
+    "Natural Language Processing Techniques"
+  ],
+  "publications": [
+    {
+      "title": "On the Opportunities and Risks of Foundation Models",
+      "year": 2021,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Rishi Bommasani",
+        "Drew A. Hudson",
+        "Ehsan Adeli",
+        "Russ B. Altman",
+        "Simran Arora",
+        "Sydney von Arx",
+        "Michael S. Bernstein",
+        "Jeannette Bohg"
+      ],
+      "citations": 2247,
+      "doi": "10.48550/arxiv.2108.07258",
+      "url": "http://arxiv.org/abs/2108.07258",
+      "pdfUrl": "https://arxiv.org/pdf/2108.07258",
+      "abstract": "AI is undergoing a paradigm shift with the rise of models (e.g., BERT, DALL-E, GPT-3) that are trained on broad data at scale and are adaptable to a wide range of downstream tasks. We call these models foundation models to underscore their critically central yet incomplete character. This report provides a thorough account of the opportunities and risks of foundation models, ranging from their capabilities (e.g., language, vision, robotics, reasoning, human interaction) and technical principles(e.g., model architectures, training procedures, data, systems, security, evaluation, theory) to their applications (e.g., law, healthcare, education) and societal impact (e.g., inequity, misuse, economic and environmental impact, legal and ethical considerations). Though foundation models are based on standard deep learning and transfer learning, their scale results in new emergent capabilities..."
+    },
+    {
+      "title": "A Simple but Tough-to-Beat Baseline for Sentence Embeddings",
+      "year": 2017,
+      "venue": "International Conference on Learning Representations",
+      "authors": [
+        "Sanjeev Arora",
+        "Yingyu Liang",
+        "Tengyu Ma"
+      ],
+      "citations": 1051,
+      "doi": null,
+      "url": "https://oar.princeton.edu/bitstream/88435/pr1rk2k/1/BaselineSentenceEmbedding.pdf",
+      "pdfUrl": null,
+      "abstract": "The success of neural network methods for computing word embeddings has motivated methods for generating semantic embeddings of longer pieces of text, such as sentences and paragraphs. Surprisingly, Wieting et al (ICLR'16) showed that such complicated methods are outperformed, especially in out-of-domain (transfer learning) settings, by simpler methods involving mild retraining of word embeddings and basic linear regression. The method of Wieting et al. requires retraining with a substantial labeled dataset such as Paraphrase Database (Ganitkevitch et al., 2013). \n\nThe current paper goes further, showing that the following completely unsupervised sentence embedding is a formidable baseline: Use word embeddings computed using one of the popular methods on unlabeled corpus like Wikipedia, represent the sentence by a weighted average of the word vectors, and then modify them a bit using ..."
+    },
+    {
+      "title": "Toward Fast, Flexible, and Robust Low-Light Image Enhancement",
+      "year": 2022,
+      "venue": "2022 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+      "authors": [
+        "Long Ma",
+        "Tengyu Ma",
+        "Risheng Liu",
+        "Xin Fan",
+        "Zhongxuan Luo"
+      ],
+      "citations": 1023,
+      "doi": "10.1109/cvpr52688.2022.00555",
+      "url": "https://doi.org/10.1109/cvpr52688.2022.00555",
+      "pdfUrl": null,
+      "abstract": "Existing low-light image enhancement techniques are mostly not only difficult to deal with both visual quality and computational efficiency but also commonly invalid in unknown complex scenarios. In this paper, we develop a new Self-Calibrated Illumination (SCI) learning framework for fast, flexible, and robust brightening images in real-world low-light scenarios. To be specific, we establish a cascaded illumination learning process with weight sharing to handle this task. Considering the computational burden of the cascaded pattern, we construct the self-calibrated module which realizes the convergence between results of each stage, producing the gains that only use the single basic block for inference (yet has not been exploited in previous works), which drastically diminishes computation cost. We then define the unsupervised training loss to elevate the model capability that can ad..."
+    },
+    {
+      "title": "Document-Level Relation Extraction with Adaptive Thresholding and Localized Context Pooling",
+      "year": 2021,
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "authors": [
+        "Wenxuan Zhou",
+        "Kevin Huang",
+        "Tengyu Ma",
+        "Jing Huang"
+      ],
+      "citations": 304,
+      "doi": "10.1609/aaai.v35i16.17717",
+      "url": "https://doi.org/10.1609/aaai.v35i16.17717",
+      "pdfUrl": "https://ojs.aaai.org/index.php/AAAI/article/download/17717/17524",
+      "abstract": "Document-level relation extraction (RE) poses new challenges compared to its sentence-level counterpart. One document commonly contains multiple entity pairs, and one entity pair occurs multiple times in the document associated with multiple possible relations. In this paper, we propose two novel techniques, adaptive thresholding and localized context pooling, to solve the multi-label and multi-entity problems. The adaptive thresholding replaces the global threshold for multi-label classification in the prior work with a learnable entities-dependent threshold. The localized context pooling directly transfers attention from pre-trained language models to locate relevant context that is useful to decide the relation. We experiment on three document-level RE benchmark datasets: DocRED, a recently released large-scale RE dataset, and two datasets CDRand GDA in the biomedical domain. Our A..."
+    },
+    {
+      "title": "A Latent Variable Model Approach to PMI-based Word Embeddings",
+      "year": 2016,
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "authors": [
+        "Sanjeev Arora",
+        "Yuanzhi Li",
+        "Yingyu Liang",
+        "Tengyu Ma",
+        "Andrej Risteski"
+      ],
+      "citations": 298,
+      "doi": "10.1162/tacl_a_00106",
+      "url": "https://doi.org/10.1162/tacl_a_00106",
+      "pdfUrl": "http://www.mitpressjournals.org/doi/pdf/10.1162/tacl_a_00106",
+      "abstract": "Semantic word embeddings represent the meaning of a word via a vector, and are created by diverse methods. Many use nonlinear operations on co-occurrence statistics, and have hand-tuned hyperparameters and reweighting methods. This paper proposes a new generative model, a dynamic version of the log-linear topic model of Mnih and Hinton (2007). The methodological novelty is to use the prior to compute closed form expressions for word statistics. This provides a theoretical justification for nonlinear models like PMI, word2vec, and GloVe, as well as some hyperparameter choices. It also helps explain why low-dimensional semantic embeddings contain linear algebraic structure that allows solution of word analogies, as shown by Mikolov et al. (2013a) and many subsequent papers. Experimental support is provided for the generative model assumptions, the most important of which is that latent ..."
+    },
+    {
+      "title": "SAM 2: Segment Anything in Images and Videos",
+      "year": 2024,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Nikhila Ravi",
+        "Valentin Gabeur",
+        "Yuan-Ting Hu",
+        "Ronghang Hu",
+        "Chaitanya K. Ryali",
+        "Tengyu Ma",
+        "Haitham Khedr",
+        "Roman Rädle"
+      ],
+      "citations": 263,
+      "doi": "10.48550/arxiv.2408.00714",
+      "url": "http://arxiv.org/abs/2408.00714",
+      "pdfUrl": "https://arxiv.org/pdf/2408.00714",
+      "abstract": "We present Segment Anything Model 2 (SAM 2), a foundation model towards solving promptable visual segmentation in images and videos. We build a data engine, which improves model and data via user interaction, to collect the largest video segmentation dataset to date. Our model is a simple transformer architecture with streaming memory for real-time video processing. SAM 2 trained on our data provides strong performance across a wide range of tasks. In video segmentation, we observe better accuracy, using 3x fewer interactions than prior approaches. In image segmentation, our model is more accurate and 6x faster than the Segment Anything Model (SAM). We believe that our data, model, and insights will serve as a significant milestone for video segmentation and related perception tasks. We are releasing our main model, dataset, as well as code for model training and our demo."
+    },
+    {
+      "title": "Provable Bounds for Learning Some Deep Representations",
+      "year": 2013,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Sanjeev Arora",
+        "Aditya Bhaskara",
+        "Rong Ge",
+        "Tengyu Ma"
+      ],
+      "citations": 242,
+      "doi": "10.48550/arxiv.1310.6343",
+      "url": "http://arxiv.org/abs/1310.6343",
+      "pdfUrl": "https://arxiv.org/pdf/1310.6343",
+      "abstract": "We give algorithms with provable guarantees that learn a class of deep nets in the generative model view popularized by Hinton and others. Our generative model is an $n$ node multilayer neural net that has degree at most $n^γ$ for some $γ&lt;1$ and each edge has a random edge weight in $[-1,1]$. Our algorithm learns {\\em almost all} networks in this class with polynomial running time. The sample complexity is quadratic or cubic depending upon the details of the model. The algorithm uses layerwise learning. It is based upon a novel idea of observing correlations among features and using these to infer the underlying edge structure via a global graph recovery procedure. The analysis of the algorithm reveals interesting structure of neural networks with random edge weights."
+    },
+    {
+      "title": "Learning Imbalanced Datasets with Label-Distribution-Aware Margin Loss",
+      "year": 2019,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Kaidi Cao",
+        "Colin Wei",
+        "Adrien Gaidon",
+        "Nikos Aréchiga",
+        "Tengyu Ma"
+      ],
+      "citations": 226,
+      "doi": "10.48550/arxiv.1906.07413",
+      "url": "http://arxiv.org/abs/1906.07413",
+      "pdfUrl": "https://arxiv.org/pdf/1906.07413",
+      "abstract": "Deep learning algorithms can fare poorly when the training dataset suffers from heavy class-imbalance but the testing criterion requires good generalization on less frequent classes. We design two novel methods to improve performance in such scenarios. First, we propose a theoretically-principled label-distribution-aware margin (LDAM) loss motivated by minimizing a margin-based generalization bound. This loss replaces the standard cross-entropy objective during training and can be applied with prior strategies for training with class-imbalance such as re-weighting or re-sampling. Second, we propose a simple, yet effective, training schedule that defers re-weighting until after the initial stage, allowing the model to learn an initial representation while avoiding some of the complications associated with re-weighting or re-sampling. We test our methods on several benchmark vision task..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:20:47.134Z"
+}

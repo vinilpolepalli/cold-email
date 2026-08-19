@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0wvdohvcr",
+  "userId": "demo-user",
+  "researcherId": "res_alexandru-damian_mit",
+  "researcherName": "Alexandru Damian",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 74.9,
+  "reasons": [
+    "Overlaps on deep learning theory, machine learning",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "adamian@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.847Z",
+  "updatedAt": "2026-08-18T14:28:42.847Z"
+}

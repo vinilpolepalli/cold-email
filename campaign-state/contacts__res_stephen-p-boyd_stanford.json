@@ -1,0 +1,17 @@
+{
+  "researcherId": "res_stephen-p-boyd_stanford",
+  "contacts": [
+    {
+      "name": "Shea Goodner",
+      "role": "administrator",
+      "email": "sgoodner@stanford.edu",
+      "kind": "admin",
+      "sourceUrl": "https://web.stanford.edu/~boyd"
+    }
+  ],
+  "pagesChecked": [
+    "https://web.stanford.edu/~boyd",
+    "https://icme.stanford.edu/people/stephen-boyd"
+  ],
+  "fetchedAt": "2026-08-18T01:19:12.431Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z8odcizl",
+  "userId": "demo-user",
+  "researcherId": "res_jason-altschuler_princeton",
+  "researcherName": "Jason Altschuler",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 16.5,
+  "reasons": [
+    "Overlaps on machine learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "jaltschuler@princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.932Z",
+  "updatedAt": "2026-08-18T14:28:42.932Z"
+}

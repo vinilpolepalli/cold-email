@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0wzhr2v8u",
+  "userId": "demo-user",
+  "researcherId": "res_vivienne-sze_mit",
+  "researcherName": "Vivienne Sze",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 72.5,
+  "reasons": [
+    "Overlaps on machine learning, computer architecture",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "sze@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.851Z",
+  "updatedAt": "2026-08-18T14:28:42.851Z"
+}

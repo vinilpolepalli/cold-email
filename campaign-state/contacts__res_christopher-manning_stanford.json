@@ -1,0 +1,19 @@
+{
+  "researcherId": "res_christopher-manning_stanford",
+  "contacts": [
+    {
+      "name": "Contact Suzanne",
+      "role": null,
+      "email": "slessard@stanford.edu",
+      "kind": "admin",
+      "sourceUrl": "https://nlp.stanford.edu/~manning/"
+    }
+  ],
+  "pagesChecked": [
+    "https://nlp.stanford.edu/~manning/",
+    "https://nlp.stanford.edu/",
+    "http://nlp.stanford.edu/pubs/",
+    "http://nlp.stanford.edu/people/"
+  ],
+  "fetchedAt": "2026-08-18T01:19:04.301Z"
+}

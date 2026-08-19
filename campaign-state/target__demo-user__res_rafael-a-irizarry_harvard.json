@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tglepv3u",
+  "userId": "demo-user",
+  "researcherId": "res_rafael-a-irizarry_harvard",
+  "researcherName": "Rafael A. Irizarry",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 46.2,
+  "reasons": [
+    "Overlaps on genomics data analysis, computational biology, data science",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "rafael_irizarry@dfci.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.724Z",
+  "updatedAt": "2026-08-18T14:28:42.724Z"
+}

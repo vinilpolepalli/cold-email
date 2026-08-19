@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tge1ncvc",
+  "userId": "demo-user",
+  "researcherId": "res_pranav-rajpurkar_harvard",
+  "researcherName": "Pranav Rajpurkar",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 46.2,
+  "reasons": [
+    "Overlaps on deep learning, computer vision",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "pranav_rajpurkar@hms.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.724Z",
+  "updatedAt": "2026-08-18T14:28:42.724Z"
+}

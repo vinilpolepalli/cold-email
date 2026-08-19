@@ -1,0 +1,38 @@
+{
+  "routine": "send-due",
+  "id": "run_msyx0f50uqeide",
+  "userId": "demo-user",
+  "startedAt": "2026-08-18T17:06:52.452Z",
+  "finishedAt": "2026-08-18T17:07:04.522Z",
+  "ok": true,
+  "dryRun": false,
+  "summary": "Sent 20 from vrp5483@stern.nyu.edu.",
+  "counts": {
+    "sent": 20,
+    "failed": 0,
+    "capRemaining": 9
+  },
+  "details": [
+    "Sent to Jure Leskovec <jure@cs.stanford.edu>",
+    "Sent to Jiajun Wu <jiajunwu@cs.stanford.edu>",
+    "Sent to Sylvia K. Plevritis <sylvia.plevritis@stanford.edu>",
+    "Sent to Olivier Gevaert <ogevaert@stanford.edu>",
+    "Sent to Ron Dror <rondror@cs.stanford.edu>",
+    "Sent to Julia Salzman <julia.salzman@stanford.edu>",
+    "Sent to Anshul Kundaje <akundaje@stanford.edu>",
+    "Sent to Emily B. Fox <ebfox@stanford.edu>",
+    "Sent to Vasilis Syrgkanis <vsyrgk@stanford.edu>",
+    "Sent to Aaron Newman <amnewman@stanford.edu>",
+    "Sent to Tengyu Ma <tengyuma@cs.stanford.edu>",
+    "Sent to Brian Hie <brianhie@stanford.edu>",
+    "Sent to Scott Linderman <scott.linderman@stanford.edu>",
+    "Sent to Ehsan Adeli <eadeli@stanford.edu>",
+    "Sent to Christina Curtis <cncurtis@stanford.edu>",
+    "Sent to Akshay Chaudhari <akshaysc@stanford.edu>",
+    "Sent to Christopher Manning <manning@stanford.edu>",
+    "Sent to Christopher Re <chrismre@cs.stanford.edu>",
+    "Sent to Gill Bejerano <bejerano@stanford.edu>",
+    "Sent to Grant M. Rotskoff <rotskoff@stanford.edu>"
+  ],
+  "error": null
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tfl15pc8",
+  "userId": "demo-user",
+  "researcherId": "res_david-alvarez-melis_harvard",
+  "researcherName": "David Alvarez-Melis",
+  "school": "Harvard",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 48.6,
+  "reasons": [
+    "Overlaps on machine learning, data-centric ai, generative modeling",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "dam@seas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.723Z",
+  "updatedAt": "2026-08-18T14:28:42.724Z"
+}

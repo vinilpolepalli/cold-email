@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10u81xra8",
+  "userId": "demo-user",
+  "researcherId": "res_nancy-r-zhang_penn",
+  "researcherName": "Nancy R. Zhang",
+  "school": "Penn",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 22.8,
+  "reasons": [
+    "Overlaps on genomics, computational biology, statistical modeling",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "nzh@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.990Z",
+  "updatedAt": "2026-08-18T14:28:42.990Z"
+}

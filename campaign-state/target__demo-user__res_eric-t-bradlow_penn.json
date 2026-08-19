@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10vlnw37n",
+  "userId": "demo-user",
+  "researcherId": "res_eric-t-bradlow_penn",
+  "researcherName": "Eric T. Bradlow",
+  "school": "Penn",
+  "trackId": "cs-other",
+  "status": "queued",
+  "rank": 17.7,
+  "reasons": [
+    "Overlaps on latent variable models, missing data",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ebradlow@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.991Z",
+  "updatedAt": "2026-08-18T14:28:42.991Z"
+}

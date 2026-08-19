@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10u6cv16e",
+  "userId": "demo-user",
+  "researcherId": "res_edgar-dobriban_penn",
+  "researcherName": "Edgar Dobriban",
+  "school": "Penn",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 22.8,
+  "reasons": [
+    "Overlaps on machine learning",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "dobriban@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.990Z",
+  "updatedAt": "2026-08-18T14:28:42.990Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z01mn7mm",
+  "userId": "demo-user",
+  "researcherId": "res_h-sebastian-seung_princeton",
+  "researcherName": "H. Sebastian Seung",
+  "school": "Princeton",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 21.9,
+  "reasons": [
+    "Overlaps on machine learning, computational biology",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "sseung@princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.924Z",
+  "updatedAt": "2026-08-18T14:28:42.924Z"
+}

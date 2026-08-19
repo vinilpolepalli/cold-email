@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tfpadzsr",
+  "userId": "demo-user",
+  "researcherId": "res_walter-fontana_harvard",
+  "researcherName": "Walter Fontana",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 50.4,
+  "reasons": [
+    "Overlaps on computational biology, theoretical biology, rule-based modeling",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "walter_fontana@hms.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.723Z",
+  "updatedAt": "2026-08-18T14:28:42.723Z"
+}

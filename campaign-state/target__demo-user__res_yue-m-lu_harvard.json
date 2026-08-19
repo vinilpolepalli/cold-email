@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0thj45dnl",
+  "userId": "demo-user",
+  "researcherId": "res_yue-m-lu_harvard",
+  "researcherName": "Yue M. Lu",
+  "school": "Harvard",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 43.8,
+  "reasons": [
+    "Overlaps on high-dimensional learning theory, machine learning",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "yuelu@seas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.725Z",
+  "updatedAt": "2026-08-18T14:28:42.725Z"
+}

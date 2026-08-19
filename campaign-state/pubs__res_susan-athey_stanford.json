@@ -1,0 +1,130 @@
+{
+  "researcherId": "res_susan-athey_stanford",
+  "authorName": "Susan Athey",
+  "authorUrl": "https://openalex.org/A5001211242",
+  "worksCount": 364,
+  "citedByCount": 23169,
+  "topics": [
+    "Advanced Causal Inference Techniques",
+    "Auction Theory and Applications",
+    "Consumer Market Behavior and Pricing",
+    "Statistical Methods and Inference",
+    "Economic theories and models"
+  ],
+  "publications": [
+    {
+      "title": "Estimation and Inference of Heterogeneous Treatment Effects using Random Forests",
+      "year": 2017,
+      "venue": "Journal of the American Statistical Association",
+      "authors": [
+        "Stefan Wager",
+        "Susan Athey"
+      ],
+      "citations": 2877,
+      "doi": "10.1080/01621459.2017.1319839",
+      "url": "https://doi.org/10.1080/01621459.2017.1319839",
+      "pdfUrl": null,
+      "abstract": "Many scientific and engineering challenges—ranging from personalized medicine to customized marketing recommendations—require an understanding of treatment effect heterogeneity. In this article, we develop a nonparametric causal forest for estimating heterogeneous treatment effects that extends Breiman’s widely used random forest algorithm. In the potential outcomes framework with unconfoundedness, we show that causal forests are pointwise consistent for the true treatment effect and have an asymptotically Gaussian and centered sampling distribution. We also discuss a practical method for constructing asymptotic confidence intervals for the true treatment effect that are centered at the causal forest estimates. Our theoretical results rely on a generic Gaussian theory for a large family of random forest algorithms. To our knowledge, this is the first set of results that allows any typ..."
+    },
+    {
+      "title": "Recursive partitioning for heterogeneous causal effects",
+      "year": 2016,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "authors": [
+        "Susan Athey",
+        "Guido W. Imbens"
+      ],
+      "citations": 1573,
+      "doi": "10.1073/pnas.1510489113",
+      "url": "https://doi.org/10.1073/pnas.1510489113",
+      "pdfUrl": "https://www.pnas.org/content/pnas/113/27/7353.full.pdf",
+      "abstract": "In this paper we propose methods for estimating heterogeneity in causal effects in experimental and observational studies and for conducting hypothesis tests about the magnitude of differences in treatment effects across subsets of the population. We provide a data-driven approach to partition the data into subpopulations that differ in the magnitude of their treatment effects. The approach enables the construction of valid confidence intervals for treatment effects, even with many covariates relative to the sample size, and without \"sparsity\" assumptions. We propose an \"honest\" approach to estimation, whereby one sample is used to construct the partition and another to estimate treatment effects for each subpopulation. Our approach builds on regression tree methods, modified to optimize for goodness of fit in treatment effects and to account for honest estimation. Our model selection..."
+    },
+    {
+      "title": "When Should You Adjust Standard Errors for Clustering?",
+      "year": 2017,
+      "venue": "National Bureau of Economic Research",
+      "authors": [
+        "Alberto Abadie",
+        "Susan Athey",
+        "Guido W. Imbens",
+        "Jeffrey M. Wooldridge"
+      ],
+      "citations": 1395,
+      "doi": "10.3386/w24003",
+      "url": "https://doi.org/10.3386/w24003",
+      "pdfUrl": null,
+      "abstract": "In empirical work in economics it is common to report standard errors that account for clustering of units.Typically, the motivation given for the clustering adjustments is that unobserved components in outcomes for units within clusters are correlated.However, because correlation may occur across more than one dimension, this motivation makes it difficult to justify why researchers use clustering in some dimensions, such as geographic, but not others, such as age cohorts or gender.This motivation also makes it difficult to explain why one should not cluster with data from a randomized experiment.In this paper, we argue that clustering is in essence a design problem, either a sampling design or an experimental design issue.It is a sampling design issue if sampling follows a two stage process where in the first stage, a subset of clusters were sampled randomly from a population of clus..."
+    },
+    {
+      "title": "Identification and Inference in Nonlinear Difference-in-Differences Models",
+      "year": 2006,
+      "venue": "Econometrica",
+      "authors": [
+        "Susan Athey",
+        "Guido W. Imbens"
+      ],
+      "citations": 1091,
+      "doi": "10.1111/j.1468-0262.2006.00668.x",
+      "url": "https://doi.org/10.1111/j.1468-0262.2006.00668.x",
+      "pdfUrl": null,
+      "abstract": "This paper develops a generalization of the widely used difference-in-differences method for evaluating the effects of policy changes. We propose a model that allows the control and treatment groups to have different average benefits from the treatment. The assumptions of the proposed model are invariant to the scaling of the outcome. We provide conditions under which the model is nonparametrically identified and propose an estimator that can be applied using either repeated cross section or panel data. Our approach provides an estimate of the entire counterfactual distribution of outcomes that would have been experienced by the treatment group in the absence of the treatment and likewise for the untreated group in the presence of the treatment. Thus, it enables the evaluation of policy interventions according to criteria such as a mean-variance trade-off. We also propose methods for ..."
+    },
+    {
+      "title": "Machine Learning Methods That Economists Should Know About",
+      "year": 2019,
+      "venue": "Annual Review of Economics",
+      "authors": [
+        "Susan Athey",
+        "Guido W. Imbens"
+      ],
+      "citations": 1087,
+      "doi": "10.1146/annurev-economics-080217-053433",
+      "url": "https://doi.org/10.1146/annurev-economics-080217-053433",
+      "pdfUrl": null,
+      "abstract": "We discuss the relevance of the recent machine learning (ML) literature for economics and econometrics. First we discuss the differences in goals, methods, and settings between the ML literature and the traditional econometrics and statistics literatures. Then we discuss some specific methods from the ML literature that we view as important for empirical researchers in economics. These include supervised learning methods for regression and classification, unsupervised learning methods, and matrix completion methods. Finally, we highlight newly developed methods at the intersection of ML and econometrics that typically perform better than either off-the-shelf ML or more traditional econometric methods when applied to particular classes of problems, including causal inference for average treatment effects, optimal policy estimation, and estimation of the counterfactual effect of price c..."
+    },
+    {
+      "title": "Single Crossing Properties and the Existence of Pure Strategy Equilibria in Games of Incomplete Information",
+      "year": 2001,
+      "venue": "Econometrica",
+      "authors": [
+        "Susan Athey"
+      ],
+      "citations": 586,
+      "doi": "10.1111/1468-0262.00223",
+      "url": "https://doi.org/10.1111/1468-0262.00223",
+      "pdfUrl": null,
+      "abstract": "This paper derives sufficient conditions for a class of games of incomplete information, such as first price auctions, to have pure strategy Nash equilibria (PSNE).The paper treats games between two or more heterogeneous agents, each with private information about his own type (for example, a bidder's value for an object or a firm's marginal cost of production), and the types are drawn from an atomless joint probability distribution which potentially allows for correlation between types.Agents' utility may depend directly on the realizations of other agents' types, as in MUgrom and Weber's (1982) formulation of the \"mineral rights\" auction.The restriction we consider is that each player's expected payoffs satisfy the following single crossing condition: whenever each opponent uses a nondecreasing strategy (that is, an opponent who has a higher type chooses a higher action), then a pla..."
+    },
+    {
+      "title": "Beyond prediction: Using big data for policy problems",
+      "year": 2017,
+      "venue": "Science",
+      "authors": [
+        "Susan Athey"
+      ],
+      "citations": 585,
+      "doi": "10.1126/science.aal4321",
+      "url": "https://doi.org/10.1126/science.aal4321",
+      "pdfUrl": null,
+      "abstract": "Machine-learning prediction methods have been extremely productive in applications ranging from medicine to allocating fire and health inspectors in cities. However, there are a number of gaps between making a prediction and making a decision, and underlying assumptions need to be understood in order to optimize data-driven decision-making."
+    },
+    {
+      "title": "The Econometrics of Randomized Experiments",
+      "year": 2017,
+      "venue": "Handbook of economic field experiments",
+      "authors": [
+        "Susan Athey",
+        "Guido W. Imbens"
+      ],
+      "citations": 575,
+      "doi": "10.1016/bs.hefe.2016.10.003",
+      "url": "https://doi.org/10.1016/bs.hefe.2016.10.003",
+      "pdfUrl": null,
+      "abstract": null
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:14.582Z"
+}

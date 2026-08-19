@@ -1,0 +1,174 @@
+{
+  "researcherId": "res_sergios-gatidis_stanford",
+  "authorName": "Sergios Gatidis",
+  "authorUrl": "https://openalex.org/A5080097591",
+  "worksCount": 315,
+  "citedByCount": 6509,
+  "topics": [
+    "Medical Imaging Techniques and Applications",
+    "Radiomics and Machine Learning in Medical Imaging",
+    "Advanced MRI Techniques and Applications",
+    "MRI in cancer diagnosis",
+    "Advanced X-ray and CT Imaging"
+  ],
+  "publications": [
+    {
+      "title": "Adapted large language models can outperform medical experts in clinical text summarization",
+      "year": 2024,
+      "venue": "Nature Medicine",
+      "authors": [
+        "Dave Van Veen",
+        "Cara Van Uden",
+        "Louis Blankemeier",
+        "Jean-Benoit Delbrouck",
+        "Asad Aali",
+        "Christian Bluethgen",
+        "Anuj Pareek",
+        "Malgorzata Polacin"
+      ],
+      "citations": 717,
+      "doi": "10.1038/s41591-024-02855-5",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/11479659",
+      "pdfUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11479659/pdf/nihms-2023710.pdf",
+      "abstract": null
+    },
+    {
+      "title": "A whole-body FDG-PET/CT Dataset with manually annotated Tumor Lesions",
+      "year": 2022,
+      "venue": "Scientific Data",
+      "authors": [
+        "Sergios Gatidis",
+        "Tobias Hepp",
+        "Marcel Früh",
+        "Christian la Fougère",
+        "Konstantin Nikolaou",
+        "Christina Pfannenberg",
+        "Bernhard Schölkopf",
+        "Thomas Küstner"
+      ],
+      "citations": 262,
+      "doi": "10.1038/s41597-022-01718-3",
+      "url": "https://doi.org/10.1038/s41597-022-01718-3",
+      "pdfUrl": "https://www.nature.com/articles/s41597-022-01718-3.pdf",
+      "abstract": "We describe a publicly available dataset of annotated Positron Emission Tomography/Computed Tomography (PET/CT) studies. 1014 whole body Fluorodeoxyglucose (FDG)-PET/CT datasets (501 studies of patients with malignant lymphoma, melanoma and non small cell lung cancer (NSCLC) and 513 studies without PET-positive malignant lesions (negative controls)) acquired between 2014 and 2018 were included. All examinations were acquired on a single, state-of-the-art PET/CT scanner. The imaging protocol consisted of a whole-body FDG-PET acquisition and a corresponding diagnostic CT scan. All FDG-avid lesions identified as malignant based on the clinical PET/CT report were manually segmented on PET images in a slice-per-slice (3D) manner. We provide the anonymized original DICOM files of all studies as well as the corresponding DICOM segmentation masks. In addition, we provide scripts for image pro..."
+    },
+    {
+      "title": "Simultaneous Whole-Body PET/MR Imaging in Comparison to PET/CT in Pediatric Oncology: Initial Results",
+      "year": 2014,
+      "venue": "Radiology",
+      "authors": [
+        "Jürgen Schäfer",
+        "Sergios Gatidis",
+        "Holger Schmidt",
+        "Brigitte Gückel",
+        "Ilja Bezrukov",
+        "Christina Pfannenberg",
+        "Matthias Reimold",
+        "Martin Ebinger"
+      ],
+      "citations": 218,
+      "doi": "10.1148/radiol.14131732",
+      "url": "https://doi.org/10.1148/radiol.14131732",
+      "pdfUrl": null,
+      "abstract": "PURPOSE: To compare positron emission tomography (PET)/magnetic resonance (MR) imaging and PET/computed tomography (CT) for lesion detection and interpretation, quantification of fluorine 18 ((18)F) fluorodeoxyglucose (FDG) uptake, and accuracy of MR-based PET attenuation correction in pediatric patients with solid tumors. Materials and Methods This prospective study had local ethics committee and German Federal Institute for Drugs and Medical Devices approval. Written informed consent was obtained from all patients and legal guardians. Twenty whole-body (18)F-FDG PET/CT and (18)F-FDG PET/MR examinations were performed in 18 pediatric patients (median age, 14 years; range, 11-17 years). (18)F-FDG PET/CT and (18)F-FDG PET/MR data were acquired sequentially on the same day for all patients. PET standardized uptake values (SUVs) were quantified with volume of interest measurements in les..."
+    },
+    {
+      "title": "Conjugated bilirubin triggers anemia by inducing erythrocyte death",
+      "year": 2014,
+      "venue": "Hepatology",
+      "authors": [
+        "Elisabeth Lang",
+        "Sergios Gatidis",
+        "Noemi F. Freise",
+        "H.R. Bock",
+        "Ralf Kubitz",
+        "Christian Lauermann",
+        "Hans Martin Orth",
+        "Caroline Klindt"
+      ],
+      "citations": 165,
+      "doi": "10.1002/hep.27338",
+      "url": "https://doi.org/10.1002/hep.27338",
+      "pdfUrl": null,
+      "abstract": "UNLABELLED: Hepatic failure is commonly associated with anemia, which may result from gastrointestinal bleeding, vitamin deficiency, or liver-damaging diseases, such as infection and alcohol intoxication. At least in theory, anemia during hepatic failure may result from accelerated clearance of circulating erythrocytes. Here we show that bile duct ligation (BDL) in mice leads to severe anemia despite increased reticulocyte numbers. Bilirubin stimulated suicidal death of human erythrocytes. Mechanistically, bilirubin triggered rapid Ca(2+) influx, sphingomyelinase activation, formation of ceramide, and subsequent translocation of phosphatidylserine to the erythrocyte surface. Consistent with our in vitro and in vivo findings, incubation of erythrocytes in serum from patients with liver disease induced suicidal death of erythrocytes in relation to their plasma bilirubin concentration. C..."
+    },
+    {
+      "title": "The Inflammatory Chemokine CXC Motif Ligand 16 Triggers Platelet Activation and Adhesion Via CXC Motif Receptor 6–Dependent Phosphatidylinositide 3-Kinase/Akt Signaling",
+      "year": 2012,
+      "venue": "Circulation Research",
+      "authors": [
+        "Oliver Borst",
+        "Patrick Münzer",
+        "Sergios Gatidis",
+        "Eva‐Maria Schmidt",
+        "Tanja Schönberger",
+        "Evi Schmid",
+        "Syeda Tasneem Towhid",
+        "Konstantinos Stellos"
+      ],
+      "citations": 146,
+      "doi": "10.1161/circresaha.112.276444",
+      "url": "https://doi.org/10.1161/circresaha.112.276444",
+      "pdfUrl": "https://www.ahajournals.org/doi/pdf/10.1161/CIRCRESAHA.112.276444",
+      "abstract": "RATIONALE: The recently discovered chemokine CXC motif ligand 16 (CXCL16) is highly expressed in atherosclerotic lesions and is a potential pathogenic mediator in coronary artery disease. OBJECTIVE: The aim of this study was to test the role of CXCL16 on platelet activation and vascular adhesion, as well as the underlying mechanism and signaling pathway. METHODS AND RESULTS: Reverse-transcriptase polymerase chain reaction, Western blotting, confocal microscopy, and flow cytometry revealed that CXCL16-specific receptor, CXC motif receptor 6, is highly expressed in platelets. According to flow cytometry and confocal microscopy, stimulation of platelets with CXCL16 induced platelet degranulation, integrin α(IIb)β(3) activation, and shape change. CXCL16 increased Akt phosphorylation (Thr(308)/Ser(473)), an effect abrogated by phosphatidylinositide 3-kinase inhibitors wortmannin (100 nmol/..."
+    },
+    {
+      "title": "p38 MAPK Activation and Function following Osmotic Shock of Erythrocytes",
+      "year": 2011,
+      "venue": "Cellular Physiology and Biochemistry",
+      "authors": [
+        "Sergios Gatidis",
+        "Christine Zelenak",
+        "Abul Fajol",
+        "Elisabeth Lang",
+        "Kashif Jilani",
+        "Diana Michael",
+        "Syed M. Qadri",
+        "Florian Läng"
+      ],
+      "citations": 144,
+      "doi": "10.1159/000335859",
+      "url": "https://doi.org/10.1159/000335859",
+      "pdfUrl": null,
+      "abstract": "p38 protein kinase is activated by hyperosmotic shock, participates in the regulation of cell volume sensitive transport and metabolism and is involved in the regulation of various physiological functions including cell proliferation and apoptosis. Similar to apoptosis of nucleated cells, erythrocytes may undergo suicidal death or eryptosis, which is paralleled by cell shrinkage and cell membrane scrambling with phosphatidylserine exposure at the cell surface. Triggers of eryptosis include hyperosmotic shock, which increases cytosolic Ca(2+) activity and ceramide formation. The present study explored whether p38 kinase is expressed in human erythrocytes, is activated by hyperosmotic shock and participates in the regulation of eryptosis. Western blotting was utilized to determine phosphorylation of p38 kinase, forward scatter to estimate cell volume, annexin V binding to depict phospha..."
+    },
+    {
+      "title": "Retrospective correction of motion‐affected MR images using deep learning frameworks",
+      "year": 2019,
+      "venue": "Magnetic Resonance in Medicine",
+      "authors": [
+        "Thomas Küstner",
+        "Karim Armanious",
+        "Jiahuan Yang",
+        "Bin Yang",
+        "Fritz Schick",
+        "Sergios Gatidis"
+      ],
+      "citations": 139,
+      "doi": "10.1002/mrm.27783",
+      "url": "https://doi.org/10.1002/mrm.27783",
+      "pdfUrl": null,
+      "abstract": "PURPOSE: Motion is 1 extrinsic source for imaging artifacts in MRI that can strongly deteriorate image quality and, thus, impair diagnostic accuracy. In addition to involuntary physiological motion such as respiration and cardiac motion, intended and accidental patient movements can occur. Any impairment by motion artifacts can reduce the reliability and precision of the diagnosis and a motion-free reacquisition can become time- and cost-intensive. Numerous motion correction strategies have been proposed to reduce or prevent motion artifacts. These methods have in common that they need to be applied during the actual measurement procedure with a-priori knowledge about the expected motion type and appearance. For retrospective motion correction and without the existence of any a-priori knowledge, this problem is still challenging. METHODS: We propose the use of deep learning frameworks..."
+    },
+    {
+      "title": "Unsupervised Medical Image Translation Using Cycle-MedGAN",
+      "year": 2019,
+      "venue": "arXiv (Cornell University)",
+      "authors": [
+        "Karim Armanious",
+        "Chenming Jiang",
+        "Sherif Abdulatif",
+        "Thomas Küstner",
+        "Sergios Gatidis",
+        "Bin Yang"
+      ],
+      "citations": 111,
+      "doi": "10.23919/eusipco.2019.8902799",
+      "url": "http://arxiv.org/abs/1903.03374",
+      "pdfUrl": "https://arxiv.org/pdf/1903.03374",
+      "abstract": "Image-to-image translation is a new field in computer vision with multiple potential applications in the medical domain. However, for supervised image translation frameworks, co-registered datasets, paired in a pixel-wise sense, are required. This is often difficult to acquire in realistic medical scenarios. On the other hand, unsupervised translation frameworks often result in blurred translated images with unrealistic details. In this work, we propose a new unsupervised translation framework which is titled Cycle-MedGAN. The proposed framework utilizes new non-adversarial cycle losses which direct the framework to minimize the textural and perceptual discrepancies in the translated images. Qualitative and quantitative comparisons against other unsupervised translation approaches demonstrate the performance of the proposed framework for PET-CT translation and MR motion correction."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:26.388Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0th2u60px",
+  "userId": "demo-user",
+  "researcherId": "res_h-t-kung_harvard",
+  "researcherName": "H.T. Kung",
+  "school": "Harvard",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 43.2,
+  "reasons": [
+    "Overlaps on machine learning, computer architecture",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "kung@harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.725Z",
+  "updatedAt": "2026-08-18T14:28:42.725Z"
+}

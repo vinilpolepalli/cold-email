@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z93akp2d",
+  "userId": "demo-user",
+  "researcherId": "res_jaime-fern-ndez-fisac_princeton",
+  "researcherName": "Jaime Fernández Fisac",
+  "school": "Princeton",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 15.6,
+  "reasons": [
+    "Overlaps on safe robotics, reinforcement learning, human-ai interaction",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "jfisac@princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.933Z",
+  "updatedAt": "2026-08-18T14:28:42.933Z"
+}

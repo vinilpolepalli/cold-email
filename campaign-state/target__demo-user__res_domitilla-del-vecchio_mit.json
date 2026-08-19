@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x32xq9eh",
+  "userId": "demo-user",
+  "researcherId": "res_domitilla-del-vecchio_mit",
+  "researcherName": "Domitilla Del Vecchio",
+  "school": "MIT",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 64.7,
+  "reasons": [
+    "Overlaps on mathematical modeling, synthetic biology, biomolecular networks",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ddv@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.855Z",
+  "updatedAt": "2026-08-18T14:28:42.855Z"
+}

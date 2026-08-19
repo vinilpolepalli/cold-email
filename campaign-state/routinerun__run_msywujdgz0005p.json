@@ -1,0 +1,38 @@
+{
+  "routine": "send-due",
+  "id": "run_msywujdgz0005p",
+  "userId": "demo-user",
+  "startedAt": "2026-08-18T17:02:18.004Z",
+  "finishedAt": "2026-08-18T17:02:18.903Z",
+  "ok": true,
+  "dryRun": false,
+  "summary": "Sent 0 from vrp5483@stern.nyu.edu, 20 failed.",
+  "counts": {
+    "sent": 0,
+    "failed": 20,
+    "capRemaining": 40
+  },
+  "details": [
+    "Failed for Jure Leskovec: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Jiajun Wu: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Sylvia K. Plevritis: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Olivier Gevaert: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Ron Dror: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Julia Salzman: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Anshul Kundaje: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Emily B. Fox: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Vasilis Syrgkanis: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Aaron Newman: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Tengyu Ma: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Brian Hie: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Scott Linderman: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Ehsan Adeli: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Christina Curtis: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Akshay Chaudhari: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Christopher Manning: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Christopher Re: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Gill Bejerano: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.).",
+    "Failed for Grant M. Rotskoff: The connection to vrp5483@stern.nyu.edu needs to be renewed (The provided client secret is invalid.)."
+  ],
+  "error": null
+}

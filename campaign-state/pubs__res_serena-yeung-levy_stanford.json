@@ -1,0 +1,168 @@
+{
+  "researcherId": "res_serena-yeung-levy_stanford",
+  "authorName": "Serena Yeung-Levy",
+  "authorUrl": "https://openalex.org/A5093429554",
+  "worksCount": 53,
+  "citedByCount": 606,
+  "topics": [
+    "Multimodal Machine Learning Applications",
+    "Human Pose and Action Recognition",
+    "Biomedical Text Mining and Ontologies",
+    "Cell Image Analysis Techniques",
+    "Topic Modeling"
+  ],
+  "publications": [
+    {
+      "title": "How to build the virtual cell with artificial intelligence: Priorities and opportunities",
+      "year": 2024,
+      "venue": "Cell",
+      "authors": [
+        "Charlotte Bunne",
+        "Yusuf Roohani",
+        "Yanay Rosen",
+        "Ankit Gupta",
+        "Xikun Zhang",
+        "Marcel Roed",
+        "Theodore Alexandrov",
+        "Mohammed AlQuraishi"
+      ],
+      "citations": 339,
+      "doi": "10.1016/j.cell.2024.11.015",
+      "url": "https://doi.org/10.1016/j.cell.2024.11.015",
+      "pdfUrl": null,
+      "abstract": "Cells are essential to understanding health and disease, yet traditional models fall short of modeling and simulating their function and behavior. Advances in AI and omics offer groundbreaking opportunities to create an AI virtual cell (AIVC), a multi-scale, multi-modal large-neural-network-based model that can represent and simulate the behavior of molecules, cells, and tissues across diverse states. This Perspective provides a vision on their design and how collaborative efforts to build AIVCs will transform biological research by allowing high-fidelity simulations, accelerating discoveries, and guiding experimental studies, offering new opportunities for understanding cellular functions and fostering interdisciplinary collaborations in open science."
+    },
+    {
+      "title": "Global organelle profiling reveals subcellular localization and remodeling at proteome scale",
+      "year": 2024,
+      "venue": "Cell",
+      "authors": [
+        "Marco Y. Hein",
+        "Duo Peng",
+        "Verina Todorova",
+        "Frank McCarthy",
+        "Kibeom Kim",
+        "Chad Liu",
+        "Laura Savy",
+        "Camille Januel"
+      ],
+      "citations": 87,
+      "doi": "10.1016/j.cell.2024.11.028",
+      "url": "https://doi.org/10.1016/j.cell.2024.11.028",
+      "pdfUrl": "https://www.biorxiv.org/content/biorxiv/early/2023/12/18/2023.12.18.572249.full.pdf",
+      "abstract": "Defining the subcellular distribution of all human proteins and their remodeling across cellular states remains a central goal in cell biology. Here, we present a high-resolution strategy to map subcellular organization using organelle immunocapture coupled to mass spectrometry. We apply this workflow to a cell-wide collection of membranous and membraneless compartments. A graph-based analysis assigns the subcellular localization of over 7,600 proteins, defines spatial networks, and uncovers interconnections between cellular compartments. Our approach can be deployed to comprehensively profile proteome remodeling during cellular perturbation. By characterizing the cellular landscape following HCoV-OC43 viral infection, we discover that many proteins are regulated by changes in their spatial distribution rather than by changes in abundance. Our results establish that proteome-wide anal..."
+    },
+    {
+      "title": "VideoAgent: Long-Form Video Understanding with Large Language Model as Agent",
+      "year": 2024,
+      "venue": "Lecture notes in computer science",
+      "authors": [
+        "Xiaohan Wang",
+        "Yuhui Zhang",
+        "Orr Zohar",
+        "Serena Yeung-Levy"
+      ],
+      "citations": 50,
+      "doi": "10.1007/978-3-031-72989-8_4",
+      "url": "https://doi.org/10.1007/978-3-031-72989-8_4",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Analyzing Surgical Technique in Diverse Open Surgical Videos With Multitask Machine Learning",
+      "year": 2023,
+      "venue": "JAMA Surgery",
+      "authors": [
+        "Emmett D. Goodman",
+        "Krishna Patel",
+        "Yilun Zhang",
+        "William N. Locke",
+        "Christopher J. Kennedy",
+        "Rohan Mehrotra",
+        "Stephen Ren",
+        "Melody Y. Guan"
+      ],
+      "citations": 38,
+      "doi": "10.1001/jamasurg.2023.6262",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/10701669",
+      "pdfUrl": null,
+      "abstract": "Objective: To overcome limitations of open surgery artificial intelligence (AI) models by curating the largest collection of annotated videos and to leverage this AI-ready data set to develop a generalizable multitask AI model capable of real-time understanding of clinically significant surgical behaviors in prospectively collected real-world surgical videos. Design, Setting, and Participants: The study team programmatically queried open surgery procedures on YouTube and manually annotated selected videos to create the AI-ready data set used to train a multitask AI model for 2 proof-of-concept studies, one generating surgical signatures that define the patterns of a given procedure and the other identifying kinematics of hand motion that correlate with surgeon skill level and experience. The Annotated Videos of Open Surgery (AVOS) data set includes 1997 videos from 23 open-surgical pr..."
+    },
+    {
+      "title": "Describing Differences in Image Sets with Natural Language",
+      "year": 2024,
+      "venue": null,
+      "authors": [
+        "Lisa Dunlap",
+        "Yuhui Zhang",
+        "Xiaohan Wang",
+        "Ruiqi Zhong",
+        "Trevor Darrell",
+        "Jacob Steinhardt",
+        "Joseph E. Gonzalez",
+        "Serena Yeung-Levy"
+      ],
+      "citations": 14,
+      "doi": "10.1109/cvpr52733.2024.02284",
+      "url": "https://doi.org/10.1109/cvpr52733.2024.02284",
+      "pdfUrl": null,
+      "abstract": "How do two sets of images differ? Discerning set-level differences is crucial for understanding model behaviors and analyzing datasets, yet manually sifting through thousands of images is impractical. To aid in this discovery process, we explore the task of automatically describing the differences between two sets of images, which we term Set Difference Captioning. This task takes in image sets$\\mathcal{D}_{A}$and$\\mathcal{D}_{B}$, and outputs a description that is more often true on$\\mathcal{D}_{A}$than$\\mathcal{D}_{B}$. We outline a two-stage approach that first proposes candidate difference descriptions from image sets and then re-ranks the candidates by checking how well they can differentiate the two sets. We introduce VisDiff, which first captions the images and prompts a language model to propose candidate descriptions, then re-ranks these descriptions using CLIP. To evaluate V..."
+    },
+    {
+      "title": "BIOMEDICA: An Open Biomedical Image-Caption Archive, Dataset, and Vision-Language Models Derived from Scientific Literature",
+      "year": 2025,
+      "venue": null,
+      "authors": [
+        "Alejandro Lozano",
+        "Min Sun",
+        "James Burgess",
+        "Liangyu Chen",
+        "Jeffrey Nirschl",
+        "Jeffrey Gu",
+        "Iván López",
+        "Josiah Aklilu"
+      ],
+      "citations": 11,
+      "doi": "10.1109/cvpr52734.2025.01837",
+      "url": "https://doi.org/10.1109/cvpr52734.2025.01837",
+      "pdfUrl": null,
+      "abstract": "The development of vision-language models (VLMs) is driven by large-scale and diverse multi-modal datasets. However, progress toward generalist biomedical VLMs is limited by the lack of annotated, publicly accessible datasets across biology and medicine. Existing efforts are limited to narrow domains, missing the full diversity of biomedical knowledge encoded in scientific literature. To address this gap, we introduce BIOMEDICA: a scalable, open-source framework to extract, annotate, and serialize the entirety of the PubMed Central Open Access subset into an easy-to-use, publicly accessible dataset. Our framework produces a comprehensive archive with over 24 million unique image-text pairs from over 6 million articles. Metadata and expert-guided annotations are additionally provided.We demonstrate the utility and accessibility of our resource by releasing BMC-CLIP, a suite of CLIP-sty..."
+    },
+    {
+      "title": "A Systematic Review and Implementation Guidelines of Multimodal Foundation Models in Medical Imaging",
+      "year": 2025,
+      "venue": "Research Square",
+      "authors": [
+        "Shih-Cheng Huang",
+        "Malte Jensen",
+        "Serena Yeung-Levy",
+        "Matthew P. Lungren",
+        "Hoifung Poon",
+        "Akshay Chaudhari"
+      ],
+      "citations": 8,
+      "doi": "10.21203/rs.3.rs-5537908/v1",
+      "url": "https://doi.org/10.21203/rs.3.rs-5537908/v1",
+      "pdfUrl": "https://www.researchsquare.com/article/rs-5537908/latest.pdf",
+      "abstract": null
+    },
+    {
+      "title": "NegVQA: Can Vision Language Models Understand Negation?",
+      "year": 2025,
+      "venue": null,
+      "authors": [
+        "Yuhui Zhang",
+        "Yuchang Su",
+        "Yiming Liu",
+        "Serena Yeung-Levy"
+      ],
+      "citations": 6,
+      "doi": "10.18653/v1/2025.findings-acl.191",
+      "url": "https://doi.org/10.18653/v1/2025.findings-acl.191",
+      "pdfUrl": "https://aclanthology.org/2025.findings-acl.191.pdf",
+      "abstract": "Negation is a fundamental linguistic phenomenon that can entirely reverse the meaning of a sentence.As vision language models (VLMs) continue to advance and are deployed in high-stakes applications, assessing their ability to comprehend negation becomes essential.To address this, we introduce NegVQA, a visual question answering (VQA) benchmark consisting of 7,379 two-choice questions covering diverse negation scenarios and imagequestion distributions.We construct NegVQA by leveraging large language models to generate negated versions of questions from existing VQA datasets.Evaluating 20 state-of-the-art VLMs across seven model families, we find that these models struggle significantly with negation, exhibiting a substantial performance drop compared to their responses to the original questions.Furthermore, we uncover a Ushaped scaling trend, where increasing model size initially degra..."
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:20:59.168Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10wixdqfx",
+  "userId": "demo-user",
+  "researcherId": "res_hummy-song_penn",
+  "researcherName": "Hummy Song",
+  "school": "Penn",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 13.8,
+  "reasons": [
+    "Overlaps on data analytics",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "hummy@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.992Z",
+  "updatedAt": "2026-08-18T14:28:42.992Z"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z63gwi39",
+  "userId": "demo-user",
+  "researcherId": "res_bartolomeo-stellato_princeton",
+  "researcherName": "Bartolomeo Stellato",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 17.7,
+  "reasons": [
+    "Overlaps on machine learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "bstellato@princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.930Z",
+  "updatedAt": "2026-08-18T14:28:42.930Z"
+}

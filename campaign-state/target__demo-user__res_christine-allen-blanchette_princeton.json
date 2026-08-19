@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z6b5the5",
+  "userId": "demo-user",
+  "researcherId": "res_christine-allen-blanchette_princeton",
+  "researcherName": "Christine Allen-Blanchette",
+  "school": "Princeton",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 17.1,
+  "reasons": [
+    "Overlaps on robotics, machine learning",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "ca15@princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.930Z",
+  "updatedAt": "2026-08-18T14:28:42.930Z"
+}

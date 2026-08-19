@@ -1,0 +1,13 @@
+{
+  "routine": "follow-up",
+  "id": "run_mswkalphl9nstm",
+  "userId": "demo-user",
+  "startedAt": "2026-08-17T01:35:20.165Z",
+  "finishedAt": "2026-08-17T01:35:20.166Z",
+  "ok": true,
+  "dryRun": false,
+  "summary": "Campaign is paused, so nothing was nudged",
+  "counts": {},
+  "details": [],
+  "error": null
+}

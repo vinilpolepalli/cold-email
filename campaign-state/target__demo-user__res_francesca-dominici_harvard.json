@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0titg6obe",
+  "userId": "demo-user",
+  "researcherId": "res_francesca-dominici_harvard",
+  "researcherName": "Francesca Dominici",
+  "school": "Harvard",
+  "trackId": "cs-bio",
+  "status": "queued",
+  "rank": 41.4,
+  "reasons": [
+    "Overlaps on data science, causal inference, environmental health",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "fdominic@hsph.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.726Z",
+  "updatedAt": "2026-08-18T14:28:42.726Z"
+}

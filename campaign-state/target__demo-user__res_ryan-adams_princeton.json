@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z4q88w59",
+  "userId": "demo-user",
+  "researcherId": "res_ryan-adams_princeton",
+  "researcherName": "Ryan Adams",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 19.2,
+  "reasons": [
+    "Overlaps on machine learning, bayesian inference, computational statistics",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "rpa@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.928Z",
+  "updatedAt": "2026-08-18T14:28:42.928Z"
+}

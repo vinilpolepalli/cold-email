@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0tflkgodr",
+  "userId": "demo-user",
+  "researcherId": "res_boris-kozinsky_harvard",
+  "researcherName": "Boris Kozinsky",
+  "school": "Harvard",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 48.6,
+  "reasons": [
+    "Overlaps on machine learning, computational science and engineering, data science",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "bkoz@seas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.723Z",
+  "updatedAt": "2026-08-18T14:28:42.723Z"
+}

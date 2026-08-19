@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10xi8pdfc",
+  "userId": "demo-user",
+  "researcherId": "res_ying-jin_penn",
+  "researcherName": "Ying Jin",
+  "school": "Penn",
+  "trackId": "cs-other",
+  "status": "queued",
+  "rank": 11.4,
+  "reasons": [
+    "Overlaps on distribution-free inference, causal inference, selective inference",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "yjinstat@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.993Z",
+  "updatedAt": "2026-08-18T14:28:42.993Z"
+}

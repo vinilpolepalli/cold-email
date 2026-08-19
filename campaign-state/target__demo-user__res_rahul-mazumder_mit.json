@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x5vjbyse",
+  "userId": "demo-user",
+  "researcherId": "res_rahul-mazumder_mit",
+  "researcherName": "Rahul Mazumder",
+  "school": "MIT",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 60.8,
+  "reasons": [
+    "Overlaps on machine learning, high-dimensional data",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "rahulmaz@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.857Z",
+  "updatedAt": "2026-08-18T14:28:42.857Z"
+}

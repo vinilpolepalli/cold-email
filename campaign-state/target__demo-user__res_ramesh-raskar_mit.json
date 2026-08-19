@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0x3uzknjy",
+  "userId": "demo-user",
+  "researcherId": "res_ramesh-raskar_mit",
+  "researcherName": "Ramesh Raskar",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 64.7,
+  "reasons": [
+    "Overlaps on machine learning, computational imaging, health technology",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "raskar@media.mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.855Z",
+  "updatedAt": "2026-08-18T14:28:42.855Z"
+}

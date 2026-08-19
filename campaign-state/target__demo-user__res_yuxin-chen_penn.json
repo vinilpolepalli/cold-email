@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd10siyqd3c",
+  "userId": "demo-user",
+  "researcherId": "res_yuxin-chen_penn",
+  "researcherName": "Yuxin Chen",
+  "school": "Penn",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 27.9,
+  "reasons": [
+    "Overlaps on machine learning theory, reinforcement learning",
+    "Penn is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "yuxinc@wharton.upenn.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.988Z",
+  "updatedAt": "2026-08-18T14:28:42.988Z"
+}

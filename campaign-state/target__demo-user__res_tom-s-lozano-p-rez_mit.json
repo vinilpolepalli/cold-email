@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msxyxpjeeirct2",
+  "userId": "demo-user",
+  "researcherId": "res_tom-s-lozano-p-rez_mit",
+  "researcherName": "Tomás Lozano-Pérez",
+  "school": "MIT",
+  "trackId": "cs-robotics",
+  "status": "queued",
+  "rank": 65.5,
+  "reasons": [
+    "Overlaps on robotics, machine learning, computer vision",
+    "MIT is priority two"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "tlp@mit.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T01:12:59.018Z",
+  "updatedAt": "2026-08-18T01:12:59.018Z"
+}

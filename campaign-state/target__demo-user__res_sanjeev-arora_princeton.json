@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0z3fk9mku",
+  "userId": "demo-user",
+  "researcherId": "res_sanjeev-arora_princeton",
+  "researcherName": "Sanjeev Arora",
+  "school": "Princeton",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 19.8,
+  "reasons": [
+    "Overlaps on machine learning, deep learning theory",
+    "Princeton is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "arora@cs.princeton.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.927Z",
+  "updatedAt": "2026-08-18T14:28:42.927Z"
+}

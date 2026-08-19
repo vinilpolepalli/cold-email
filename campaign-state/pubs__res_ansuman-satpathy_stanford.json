@@ -1,0 +1,173 @@
+{
+  "researcherId": "res_ansuman-satpathy_stanford",
+  "authorName": "Ansuman T. Satpathy",
+  "authorUrl": "https://openalex.org/A5055604014",
+  "worksCount": 335,
+  "citedByCount": 30727,
+  "topics": [
+    "CAR-T cell therapy research",
+    "Immune Cell Function and Interaction",
+    "Single-cell and spatial transcriptomics",
+    "Cancer Immunotherapy and Biomarkers",
+    "T-cell and B-cell Immunology"
+  ],
+  "publications": [
+    {
+      "title": "An improved ATAC-seq protocol reduces background and enables interrogation of frozen tissues",
+      "year": 2017,
+      "venue": "Nature Methods",
+      "authors": [
+        "M. Ryan Corces",
+        "Alexandro E. Trevino",
+        "Emily G. Hamilton",
+        "Peyton Greenside",
+        "Nicholas A. Sinnott‐Armstrong",
+        "Sam Vesuna",
+        "Ansuman T. Satpathy",
+        "Adam J. Rubin"
+      ],
+      "citations": 2809,
+      "doi": "10.1038/nmeth.4396",
+      "url": "https://doi.org/10.1038/nmeth.4396",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Clonal replacement of tumor-specific T cells following PD-1 blockade",
+      "year": 2019,
+      "venue": "Nature Medicine",
+      "authors": [
+        "Kathryn E. Yost",
+        "Ansuman T. Satpathy",
+        "Daniel K. Wells",
+        "Yanyan Qi",
+        "Chunlin Wang",
+        "Robin Kageyama",
+        "Katherine McNamara",
+        "Jeffrey M. Granja"
+      ],
+      "citations": 1570,
+      "doi": "10.1038/s41591-019-0522-3",
+      "url": "https://doi.org/10.1038/s41591-019-0522-3",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "CRISPR-engineered T cells in patients with refractory cancer",
+      "year": 2020,
+      "venue": "Science",
+      "authors": [
+        "Edward A. Stadtmauer",
+        "Joseph A. Fraietta",
+        "Megan M. Davis",
+        "Adam D. Cohen",
+        "Kristy Weber",
+        "Eric Lancaster",
+        "Patricia Mangan",
+        "Irina Kulikovskaya"
+      ],
+      "citations": 1477,
+      "doi": "10.1126/science.aba7365",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/11249135",
+      "pdfUrl": null,
+      "abstract": "CRISPR takes first steps in humans CRISPR-Cas9 is a revolutionary gene-editing technology that offers the potential to treat diseases such as cancer, but the effects of CRISPR in patients are currently unknown. Stadtmauer et al. report a phase 1 clinical trial to assess the safety and feasibility of CRISPR-Cas9 gene editing in three patients with advanced cancer (see the Perspective by Hamilton and Doudna). They removed immune cells called T lymphocytes from patients and used CRISPR-Cas9 to disrupt three genes ( TRAC, TRBC , and PDCD1 ) with the goal of improving antitumor immunity. A cancer-targeting transgene, NY-ESO-1, was also introduced to recognize tumors. The engineered cells were administered to patients and were well tolerated, with durable engraftment observed for the study duration. These encouraging observations pave the way for future trials to study CRISPR-engineered can..."
+    },
+    {
+      "title": "Embryonic and Adult-Derived Resident Cardiac Macrophages Are Maintained through Distinct Mechanisms at Steady State and during Inflammation",
+      "year": 2014,
+      "venue": "Immunity",
+      "authors": [
+        "Slava Epelman",
+        "Kory J. Lavine",
+        "Anna E. Beaudin",
+        "Dorothy K. Sojka",
+        "Javier A. Carrero",
+        "Boris Calderón",
+        "Thaddeus Brija",
+        "Emmanuel L. Gautier"
+      ],
+      "citations": 1469,
+      "doi": "10.1016/j.immuni.2013.11.019",
+      "url": "https://doi.org/10.1016/j.immuni.2013.11.019",
+      "pdfUrl": "http://www.cell.com/article/S107476131300558X/pdf",
+      "abstract": null
+    },
+    {
+      "title": "The chromatin accessibility landscape of primary human cancers",
+      "year": 2018,
+      "venue": "Science",
+      "authors": [
+        "M. Ryan Corces",
+        "Jeffrey M. Granja",
+        "Shadi Shams",
+        "Bryan H. Louie",
+        "José A. Seoane",
+        "Wanding Zhou",
+        "Tiago C. Silva",
+        "Clarice S. Groeneveld"
+      ],
+      "citations": 1355,
+      "doi": "10.1126/science.aav1898",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/6408149",
+      "pdfUrl": null,
+      "abstract": "We present the genome-wide chromatin accessibility profiles of 410 tumor samples spanning 23 cancer types from The Cancer Genome Atlas (TCGA). We identify 562,709 transposase-accessible DNA elements that substantially extend the compendium of known cis-regulatory elements. Integration of ATAC-seq (the assay for transposase-accessible chromatin using sequencing) with TCGA multi-omic data identifies a large number of putative distal enhancers that distinguish molecular subtypes of cancers, uncovers specific driving transcription factors via protein-DNA footprints, and nominates long-range gene-regulatory interactions in cancer. These data reveal genetic risk loci of cancer predisposition as active DNA regulatory elements in cancer, identify gene-regulatory interactions underlying cancer immune evasion, and pinpoint noncoding mutations that drive enhancer activation and may affect patien..."
+    },
+    {
+      "title": "Massively parallel single-cell chromatin landscapes of human immune cell development and intratumoral T cell exhaustion",
+      "year": 2019,
+      "venue": "Nature Biotechnology",
+      "authors": [
+        "Ansuman T. Satpathy",
+        "Jeffrey M. Granja",
+        "Kathryn E. Yost",
+        "Yanyan Qi",
+        "Francesca Meschi",
+        "Geoffrey P. McDermott",
+        "Brett N. Olsen",
+        "Maxwell R. Mumbach"
+      ],
+      "citations": 1075,
+      "doi": "10.1038/s41587-019-0206-z",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7299161",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "c-Jun overexpression in CAR T cells induces exhaustion resistance",
+      "year": 2019,
+      "venue": "Nature",
+      "authors": [
+        "Rachel C. Lynn",
+        "Evan W. Weber",
+        "Elena Sotillo",
+        "David Gennert",
+        "Peng Xu",
+        "Zinaida Good",
+        "Hima Anbunathan",
+        "John Lattin"
+      ],
+      "citations": 908,
+      "doi": "10.1038/s41586-019-1805-z",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/6944329",
+      "pdfUrl": null,
+      "abstract": null
+    },
+    {
+      "title": "Gene regulation in the immune system by long noncoding RNAs",
+      "year": 2017,
+      "venue": "Nature Immunology",
+      "authors": [
+        "Y. Grace Chen",
+        "Ansuman T. Satpathy",
+        "Howard Y. Chang"
+      ],
+      "citations": 743,
+      "doi": "10.1038/ni.3771",
+      "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/9830650",
+      "pdfUrl": null,
+      "abstract": null
+    }
+  ],
+  "provider": "openalex",
+  "fetchedAt": "2026-08-18T01:21:01.106Z"
+}

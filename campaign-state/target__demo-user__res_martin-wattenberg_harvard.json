@@ -1,0 +1,25 @@
+{
+  "id": "tgt_msyrd0til8rd9x",
+  "userId": "demo-user",
+  "researcherId": "res_martin-wattenberg_harvard",
+  "researcherName": "Martin Wattenberg",
+  "school": "Harvard",
+  "trackId": "cs-core",
+  "status": "queued",
+  "rank": 43.2,
+  "reasons": [
+    "Overlaps on machine learning, data visualization",
+    "Harvard is priority three"
+  ],
+  "subject": null,
+  "body": null,
+  "to": "wattenberg@seas.harvard.edu",
+  "cc": [],
+  "scheduledAt": null,
+  "autoApproved": false,
+  "outboxId": null,
+  "sentAt": null,
+  "note": null,
+  "createdAt": "2026-08-18T14:28:42.726Z",
+  "updatedAt": "2026-08-18T14:28:42.726Z"
+}
