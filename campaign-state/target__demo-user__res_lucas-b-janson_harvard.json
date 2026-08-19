@@ -5,7 +5,7 @@
   "researcherName": "Lucas B Janson",
   "school": "Harvard",
   "trackId": "cs-core",
-  "status": "drafted",
+  "status": "approved",
   "rank": 45,
   "reasons": [
     "Overlaps on statistical machine learning, high-dimensional inference, representation learning theory",
@@ -19,8 +19,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 09:27 ET send on Thu Aug 20",
   "createdAt": "2026-08-18T14:28:42.725Z",
-  "updatedAt": "2026-08-19T14:46:20.640Z",
+  "updatedAt": "2026-08-19T14:55:04.683Z",
   "mailboxDraftId": "r-3745967743686240"
 }

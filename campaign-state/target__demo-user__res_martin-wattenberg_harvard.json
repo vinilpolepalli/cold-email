@@ -5,7 +5,7 @@
   "researcherName": "Martin Wattenberg",
   "school": "Harvard",
   "trackId": "cs-core",
-  "status": "drafted",
+  "status": "approved",
   "rank": 43.2,
   "reasons": [
     "Overlaps on machine learning, data visualization",
@@ -21,8 +21,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 09:27 ET send on Thu Aug 20",
   "createdAt": "2026-08-18T14:28:42.726Z",
-  "updatedAt": "2026-08-19T14:46:27.684Z",
+  "updatedAt": "2026-08-19T14:55:04.683Z",
   "mailboxDraftId": "r-228049283233529338"
 }

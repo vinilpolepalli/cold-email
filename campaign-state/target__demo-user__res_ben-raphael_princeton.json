@@ -5,7 +5,7 @@
   "researcherName": "Ben Raphael",
   "school": "Princeton",
   "trackId": "cs-bio",
-  "status": "drafted",
+  "status": "approved",
   "rank": 29.7,
   "reasons": [
     "Overlaps on computational biology, cancer genomics, machine learning",
@@ -19,8 +19,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 09:27 ET send on Thu Aug 20",
   "createdAt": "2026-08-18T14:28:42.921Z",
-  "updatedAt": "2026-08-19T14:44:43.504Z",
+  "updatedAt": "2026-08-19T14:55:04.676Z",
   "mailboxDraftId": "r7633111194550974355"
 }

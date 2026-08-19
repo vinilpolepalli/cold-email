@@ -5,7 +5,7 @@
   "researcherName": "Ying Jin",
   "school": "Penn",
   "trackId": "cs-other",
-  "status": "drafted",
+  "status": "approved",
   "rank": 11.4,
   "reasons": [
     "Overlaps on distribution-free inference, causal inference, selective inference",
@@ -19,8 +19,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 09:27 ET send on Thu Aug 20",
   "createdAt": "2026-08-18T14:28:42.993Z",
-  "updatedAt": "2026-08-19T14:47:48.142Z",
+  "updatedAt": "2026-08-19T14:55:04.688Z",
   "mailboxDraftId": "r6260665260539616356"
 }

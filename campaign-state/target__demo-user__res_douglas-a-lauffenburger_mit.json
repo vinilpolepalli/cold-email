@@ -5,7 +5,7 @@
   "researcherName": "Douglas A. Lauffenburger",
   "school": "MIT",
   "trackId": "cs-bio",
-  "status": "drafted",
+  "status": "approved",
   "rank": 60.8,
   "reasons": [
     "Overlaps on computational systems biology, predictive modeling, cell signaling networks",
@@ -22,8 +22,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 09:27 ET send on Thu Aug 20",
   "createdAt": "2026-08-18T01:18:55.507Z",
-  "updatedAt": "2026-08-19T14:45:13.253Z",
+  "updatedAt": "2026-08-19T14:55:04.678Z",
   "mailboxDraftId": "r8161453808131025774"
 }

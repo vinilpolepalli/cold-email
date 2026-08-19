@@ -5,7 +5,7 @@
   "researcherName": "Duncan Watts",
   "school": "Penn",
   "trackId": "cs-other",
-  "status": "drafted",
+  "status": "approved",
   "rank": 27.3,
   "reasons": [
     "Overlaps on computational social science, social networks, large-scale digital data",
@@ -22,8 +22,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 09:27 ET send on Thu Aug 20",
   "createdAt": "2026-08-18T14:28:42.988Z",
-  "updatedAt": "2026-08-19T14:45:14.419Z",
+  "updatedAt": "2026-08-19T14:55:04.678Z",
   "mailboxDraftId": "r653592985837662221"
 }

@@ -5,7 +5,7 @@
   "researcherName": "Nancy R. Zhang",
   "school": "Penn",
   "trackId": "cs-bio",
-  "status": "drafted",
+  "status": "approved",
   "rank": 22.8,
   "reasons": [
     "Overlaps on genomics, computational biology, statistical modeling",
@@ -19,8 +19,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 09:27 ET send on Thu Aug 20",
   "createdAt": "2026-08-18T14:28:42.990Z",
-  "updatedAt": "2026-08-19T14:46:38.167Z",
+  "updatedAt": "2026-08-19T14:55:04.684Z",
   "mailboxDraftId": "r-3472495682213515259"
 }

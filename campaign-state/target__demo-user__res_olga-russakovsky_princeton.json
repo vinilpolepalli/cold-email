@@ -5,7 +5,7 @@
   "researcherName": "Olga Russakovsky",
   "school": "Princeton",
   "trackId": "cs-robotics",
-  "status": "drafted",
+  "status": "approved",
   "rank": 25.8,
   "reasons": [
     "Overlaps on computer vision, machine learning, human-computer interaction",
@@ -19,8 +19,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 09:27 ET send on Thu Aug 20",
   "createdAt": "2026-08-18T14:28:42.922Z",
-  "updatedAt": "2026-08-19T14:46:42.917Z",
+  "updatedAt": "2026-08-19T14:55:04.684Z",
   "mailboxDraftId": "r149089241949412518"
 }

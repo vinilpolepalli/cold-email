@@ -291,8 +291,12 @@ export async function getPolicy(userId: string): Promise<SendPolicy> {
     // value, which the sender sets. Raised from 40/20 so a deliberately
     // configured single-batch send is expressible; a send at this size is the
     // pattern spam filters look for, and pacing remains the safer default.
-    maxPerDay: clamp(merged.maxPerDay, 1, 100),
-    maxPerRun: clamp(merged.maxPerRun, 1, 100),
+    // Ceilings, not recommendations. Pacing a cold-email campaign is what the
+    // defaults are for; these bounds exist so a deliberately configured single
+    // batch is expressible at all. Raised to 200 for a 177-email morning that
+    // did not fit under the previous limit of 100.
+    maxPerDay: clamp(merged.maxPerDay, 1, 200),
+    maxPerRun: clamp(merged.maxPerRun, 1, 200),
     minGapMinutes: clamp(merged.minGapMinutes, 1, 24 * 60),
     windowStartHour: clamp(merged.windowStartHour, 0, 23),
     windowEndHour: clamp(merged.windowEndHour, 1, 24),

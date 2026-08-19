@@ -5,7 +5,7 @@
   "researcherName": "Jianqing Fan",
   "school": "Princeton",
   "trackId": "cs-bio",
-  "status": "drafted",
+  "status": "approved",
   "rank": 22.5,
   "reasons": [
     "Overlaps on machine learning, financial econometrics, computational biology",
@@ -19,8 +19,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 09:27 ET send on Thu Aug 20",
   "createdAt": "2026-08-18T14:28:42.924Z",
-  "updatedAt": "2026-08-19T14:45:59.263Z",
+  "updatedAt": "2026-08-19T14:55:04.681Z",
   "mailboxDraftId": "r5326615848624102432"
 }

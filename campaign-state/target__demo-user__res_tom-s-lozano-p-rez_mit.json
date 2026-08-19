@@ -5,7 +5,7 @@
   "researcherName": "Tomás Lozano-Pérez",
   "school": "MIT",
   "trackId": "cs-robotics",
-  "status": "drafted",
+  "status": "approved",
   "rank": 65.5,
   "reasons": [
     "Overlaps on robotics, machine learning, computer vision",
@@ -21,8 +21,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 09:27 ET send on Thu Aug 20",
   "createdAt": "2026-08-18T01:12:59.018Z",
-  "updatedAt": "2026-08-19T14:47:32.840Z",
+  "updatedAt": "2026-08-19T14:55:04.687Z",
   "mailboxDraftId": "r-1981250747303399557"
 }

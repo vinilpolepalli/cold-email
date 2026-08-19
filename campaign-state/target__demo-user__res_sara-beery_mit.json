@@ -5,7 +5,7 @@
   "researcherName": "Sara Beery",
   "school": "MIT",
   "trackId": "cs-robotics",
-  "status": "drafted",
+  "status": "approved",
   "rank": 76.4,
   "reasons": [
     "Overlaps on machine learning, computer vision",
@@ -19,8 +19,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 09:27 ET send on Thu Aug 20",
   "createdAt": "2026-08-18T14:28:42.847Z",
-  "updatedAt": "2026-08-19T14:47:11.899Z",
+  "updatedAt": "2026-08-19T14:55:04.686Z",
   "mailboxDraftId": "r8922120908113623007"
 }

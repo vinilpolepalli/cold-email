@@ -5,7 +5,7 @@
   "researcherName": "Kalyan Veeramachaneni",
   "school": "MIT",
   "trackId": "cs-core",
-  "status": "drafted",
+  "status": "approved",
   "rank": 60.1,
   "reasons": [
     "Overlaps on data science, machine learning, big data",
@@ -19,8 +19,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 09:27 ET send on Thu Aug 20",
   "createdAt": "2026-08-18T01:18:55.508Z",
-  "updatedAt": "2026-08-19T14:46:10.082Z",
+  "updatedAt": "2026-08-19T14:55:04.682Z",
   "mailboxDraftId": "r-5176043723506981762"
 }

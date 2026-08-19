@@ -5,7 +5,7 @@
   "researcherName": "Stratos Idreos",
   "school": "Harvard",
   "trackId": "cs-core",
-  "status": "drafted",
+  "status": "approved",
   "rank": 39,
   "reasons": [
     "Overlaps on data systems, machine learning",
@@ -21,8 +21,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 09:27 ET send on Thu Aug 20",
   "createdAt": "2026-08-18T14:28:42.728Z",
-  "updatedAt": "2026-08-19T14:47:22.449Z",
+  "updatedAt": "2026-08-19T14:55:04.686Z",
   "mailboxDraftId": "r-697770269371590398"
 }

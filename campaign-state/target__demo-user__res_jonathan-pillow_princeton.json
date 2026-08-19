@@ -5,7 +5,7 @@
   "researcherName": "Jonathan Pillow",
   "school": "Princeton",
   "trackId": "cs-bio",
-  "status": "drafted",
+  "status": "approved",
   "rank": 24.6,
   "reasons": [
     "Overlaps on statistical machine learning, neural coding, latent variable models",
@@ -19,8 +19,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 09:27 ET send on Thu Aug 20",
   "createdAt": "2026-08-18T14:28:42.922Z",
-  "updatedAt": "2026-08-19T14:46:04.102Z",
+  "updatedAt": "2026-08-19T14:55:04.682Z",
   "mailboxDraftId": "r-3088884840373602578"
 }

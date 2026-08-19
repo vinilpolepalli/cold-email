@@ -5,7 +5,7 @@
   "researcherName": "Kaiming He",
   "school": "MIT",
   "trackId": "cs-robotics",
-  "status": "drafted",
+  "status": "approved",
   "rank": 75.7,
   "reasons": [
     "Overlaps on machine learning, computer vision, deep learning",
@@ -19,8 +19,8 @@
   "autoApproved": false,
   "outboxId": null,
   "sentAt": null,
-  "note": "Draft in vrp5483@stern.nyu.edu with Polepalli_Resume.pdf attached",
+  "note": "Approved for the 09:27 ET send on Thu Aug 20",
   "createdAt": "2026-08-18T01:12:59.015Z",
-  "updatedAt": "2026-08-19T14:46:08.734Z",
+  "updatedAt": "2026-08-19T14:55:04.682Z",
   "mailboxDraftId": "r5354569257704626303"
 }
